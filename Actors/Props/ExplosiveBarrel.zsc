@@ -165,3 +165,17 @@ Class BarrelDebris : DebrisCore
 
 Class BarrelDebrisSmoke : EquestriaRocketSmoke
 {	Default{	Alpha 0.35;	Scale 0.2;	VSpeed 0;}	}
+
+Class EquestriaBurningBarrel : BurningBarrel replaces BurningBarrel
+{
+	Default
+	{
+		Radius 10;
+	}
+	States
+	{
+	Spawn:
+		FCAN ABC 4 BRIGHT;
+		Loop;
+	}
+}
