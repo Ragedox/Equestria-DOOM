@@ -124,7 +124,7 @@ Class BigLampshade1 : Actor
 	{
 	//$NotAngled
 	//$Category Light sources
-		Radius 9; Height 55;
+		Radius 5; Height 55;
 		ProjectilePassHeight -16;
 		+SOLID
 	}
@@ -142,12 +142,12 @@ Class BigLampshade2 : BigLampshade1
 	{
 	//$NotAngled
 	//$Category Light sources
-		Radius 11; Height 32;
+		Height 52;
 	}
 	States
 	{
 	Spawn:
-		lamp A -1 bright;
+		LAMP A -1 bright;
 		Stop;
 	}
 }
