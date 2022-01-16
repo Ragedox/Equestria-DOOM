@@ -123,17 +123,11 @@ OptionMenu "VideoSettings"
 	StaticText "Display"
 	StaticText ""
 
-	Option "$VIDMNU_FULLSCREEN",				"vid_fullscreen", "YesNo"
-	Option "$VIDMNU_FORCEASPECT",				"vid_aspect", "ForceRatios"
-	SubMenu "$VIDMNU_RESPRESET",				CustomResolutionMenu
-	Command "$VIDMNU_APPLYW",					"menu_resolution_commit_changes 0"
-	Command "$VIDMNU_APPLYFS",					"menu_resolution_commit_changes 1"
-	StaticText ""
-	
 	Option "$DSPLYMNU_VSYNC",					"vid_vsync", "OnOff"
 	Option "$VIDMNU_MAXFPS",					"vid_maxfps", "MaxFps"
 	Option "$VIDMNU_PREFERBACKEND",				"vid_preferbackend", "PreferBackend"
 	StaticText ""
+	
 	Option "$VIDMNU_RENDERMODE",				"vid_rendermode", "RenderMode"
 	IfOption(Mac)
 	{
@@ -143,6 +137,13 @@ OptionMenu "VideoSettings"
 	{
 		Option "$DSPLYMNU_GPUSWITCH",			vid_gpuswitch, "GPUSwitch"
 	}
+	StaticText ""
+	
+	Option "$VIDMNU_FULLSCREEN",				"vid_fullscreen", "YesNo"
+	Option "$VIDMNU_FORCEASPECT",				"vid_aspect", "ForceRatios"
+	SubMenu "$VIDMNU_RESPRESET",				CustomResolutionMenu
+	Command "$VIDMNU_APPLYW",					"menu_resolution_commit_changes 0"
+	Command "$VIDMNU_APPLYFS",					"menu_resolution_commit_changes 1"
 	
 	StaticText ""
 	StaticText "Video"
