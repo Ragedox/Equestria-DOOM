@@ -154,7 +154,7 @@ Class StonedAura : FastProjectile
 		
 		Speed 50;
 		
-		Radius 8; Height 16;
+		Radius 7; Height 14;
 		
 		RenderStyle "Add";
 		SeeSound "misc/magic";
@@ -166,6 +166,7 @@ Class StonedAura : FastProjectile
 		BAL3 AAAAAAABBBBBBB 1 Bright A_SpawnItemEx("StonedAuraTrail", 0,0,0,0,0,0,0, SXF_TRANSFERSPRITEFRAME);
 		Loop;
 	Death:
+		BAL3 C 0 A_SetRenderStyle(1, STYLE_Normal);
 		BAL3 CDE 4 Bright;
 		Stop;
 	}

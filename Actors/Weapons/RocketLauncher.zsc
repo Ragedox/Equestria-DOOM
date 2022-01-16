@@ -51,7 +51,7 @@ Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
 		
 		MISG B 6
 		{
-			A_FireProjectile("EquestriaRocket", 0, 1, 0, -8);
+			A_FireProjectile("EquestriaRocket", 0, 1, 0, -12);
 			A_WeaponOffset(0, 42, WOF_KEEPX | WOF_INTERPOLATE);
 			A_Overlay(2, "CamRecoil");
 		}
@@ -84,6 +84,8 @@ Class EquestriaRocket : Rocket replaces Rocket
 {
 	Default
 	{
+		Radius 15; Height 10;
+		
 		+RollSprite +RollCenter
 		+ForceXYBillBoard
 		-RocketTrail
