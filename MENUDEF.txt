@@ -116,9 +116,13 @@ OptionMenu "VideoSettings"
 {
 	Title "$VIDEOSETTINGS"
 	
+	Submenu "$DSPLYMNU_GLOPT", 			"OpenGLOptions"
+	Submenu "$DSPLYMNU_SWOPT", 			"SWROptions"
+	Submenu "$GLMNU_DYNLIGHT",			"GLLightOptions"
+	
 	StaticText "Display"
 	StaticText ""
-	
+
 	Option "$VIDMNU_FULLSCREEN",				"vid_fullscreen", "YesNo"
 	Option "$VIDMNU_FORCEASPECT",				"vid_aspect", "ForceRatios"
 	SubMenu "$VIDMNU_RESPRESET",				CustomResolutionMenu
@@ -147,7 +151,7 @@ OptionMenu "VideoSettings"
 	Slider "$DSPLYMNU_FOV",						"fov",							75.0, 120.0, 0.1, 1
 	StaticText ""
 	
-	//Option "$DSPLYMNU_CUSTOMINVERTMAP",			"cl_customizeinvulmap", "OnOff"
+	Option "$DSPLYMNU_CUSTOMINVERTMAP",			"cl_customizeinvulmap", "OnOff"
 	
 	Slider "$DSPLYMNU_GAMMA",					"vid_gamma",					0.75, 3.0, 0.05, 2
 	Slider "$DSPLYMNU_QUAKEINTENSITY",			"r_quakeintensity", 0.0, 1.0, 0.05, 2
@@ -158,12 +162,6 @@ OptionMenu "VideoSettings"
 	Option "$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", "SpriteShadowModes"
 	Option "$GORETOGGLE", "GoreToggle",			"GoreType"
 	Option "$GIBSFOREVER", "GibsStayForever",	"onoff"
-	//Option "$FLOORDECALS",				"FlatDecals", "onoff"
-	StaticText ""
-	
-	Submenu "$DSPLYMNU_GLOPT", 			"OpenGLOptions"
-	Submenu "$DSPLYMNU_SWOPT", 			"SWROptions"
-	Submenu "$GLMNU_DYNLIGHT",			"GLLightOptions"
 }
 
 OptionMenu "UISettings"
