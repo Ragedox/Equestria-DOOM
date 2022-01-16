@@ -85,11 +85,10 @@ Class EquestriaBlood : Blood replaces Blood
 		Stop;
 		
 	Crash:
-		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); A_Stop();	}
+		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
 		
-		POB2 A random(4, 32);
-		POB2 BCD 4 A_FadeOut(0.15);
-		POB2 E 1 A_FadeOut(0.1);
+		POB2 BCD 2 A_FadeOut(frandom(0.001, 0.1));
+		POB2 E 1 A_FadeOut(0.005);
 		Wait;
 	}
 }
