@@ -28,7 +28,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 	{
 	
 	Pain:
-		PLAY G 4 ACS_NamedExecute ("PainVisor");
+		PLAY G 4;
 		PLAY G 4 A_Pain();
 		Goto Spawn;
 	

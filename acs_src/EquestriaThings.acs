@@ -1,6 +1,29 @@
 #library "EquestriaThings"
 #include "zcommon.acs"
 
+Script "LowHealth" ENTER
+{
+	if (GetActorProperty (0, APROP_HEALTH) <= 25 && !CheckInventory("LowHealthCheck"))
+	{
+		GiveInventory("LowHealthCheck", 1);
+		
+		ACS_NamedExecute("BloodOnVisor", 0);
+		
+		//SetHudSize(430,300,0);
+		
+		SetFont("BIGFONT");
+		
+		HudMessage(l:"LOWHEALTH"; HUDMSG_TYPEON, 99, CR_RED, 1.5, 1.0, 3.5, 0.05, 1.0);
+	}
+	else if (GetActorProperty (0, APROP_HEALTH) > 25 && CheckInventory("LowHealthCheck"))
+	{
+		TakeInventory("LowHealthCheck", 999);
+	}
+	Delay (1);
+	
+	Restart;
+}
+
 script "YouAreHere" enter
 {
 	SetFont("BIGFONT");

@@ -55,7 +55,7 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 			A_GiveInventory("BlurSphere");
 			A_SetBlend("Red", 0.5, 16, "Blue");
 		}
-		TNT1 A 0 ACS_NamedExecute("BlurMugshot");
+		//TNT1 A 0 ACS_NamedExecute("BlurMugshot");
 		Stop;
 	}
 }
@@ -127,7 +127,8 @@ Class EquestriaSoulSphere : CustomInventory replaces Soulsphere
 		TNT1 A 0
 		{
 			A_GiveInventory("SoulSphereHealth");
-			ACS_NamedExecute("Screen_PickSoul");
+			A_SetBlend("Blue", 0.5, 16);
+			//ACS_NamedExecute("Screen_PickSoul");
 		}
 		Stop;
 	}

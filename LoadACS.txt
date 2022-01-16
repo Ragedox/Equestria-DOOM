@@ -3,4 +3,3 @@ EquestriaThings
 BossBar
 Pickups
 FloorCheck
-ScreenEffects
