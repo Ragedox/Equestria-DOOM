@@ -7,7 +7,7 @@ Script "LowHealth" ENTER
 	{
 		GiveInventory("LowHealthCheck", 1);
 		
-		ACS_NamedExecute("BloodOnVisor", 0);
+		//ACS_NamedExecute("BloodOnVisor", 0);
 		
 		//SetHudSize(430,300,0);
 		
