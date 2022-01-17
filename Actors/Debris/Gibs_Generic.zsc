@@ -82,6 +82,7 @@ Class EquestriaBlood : Blood replaces Blood
 		+NOTELEPORT +NOBLOCKMAP
 		+CORPSE
 		+MISSILE
+		+MOVEWITHSECTOR
 	}
 	States
 	{
