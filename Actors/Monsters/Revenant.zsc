@@ -20,6 +20,7 @@ Class EquestriaRevenantTracer : RevenantTracer replaces RevenantTracer
 {
 	Default
 	{
+		Height 12; Radius 6;
 		RenderStyle "Normal";
 		Alpha 1;
 		
