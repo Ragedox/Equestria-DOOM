@@ -49,10 +49,6 @@ SuperWillGaming (Twitter: @njsw88)
 
 https://freesound.org/
 
-Quake 1
-
-DOOM 3
-
 Per Kristan's Hi-res sound pack
 
 Doom Sound Bulb by SeanTheBermanator
@@ -75,3 +71,11 @@ NashDecals (Blood decals)
 Kinsie's Test Map: https://forum.zdoom.org/viewtopic.php?t=57221
 
 "Universal" fade-to-black on death : https://forum.zdoom.org/viewtopic.php?f=46&t=65028
+
+= Other Games =
+
+Strife
+
+DOOM 3
+
+Quake 1, Quake 3
