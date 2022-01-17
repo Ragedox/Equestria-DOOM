@@ -48,7 +48,7 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 	Fire:
 		SHT2 A 8
 		{
-			A_FireBullets (11.2, 7.1, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
+			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
 			A_FireProjectile("SuperShotgunLight", 0, 0, 0, -5);
 			A_StartSound ("weapons/sshotf", CHAN_WEAPON);
 			A_GunFlash();
