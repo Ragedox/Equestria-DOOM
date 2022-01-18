@@ -6,19 +6,19 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		
 		DamageType "BarrelExp";
 		
-		+NOBLOOD;
-		+ALLOWPAIN;
-		-OLDRADIUSDMG;
-		+CANPASS;
+		+NOBLOOD
+		+ALLOWPAIN
+		-OLDRADIUSDMG
+		+CANPASS
 		
 		//BloodColor "66 a2 66";
 		//BloodType "ExploBarrel"
-		Painchance 256;
+		Painchance 128;
 	}
 	States
 	{
 	Pain:
-		BAR1 "#" 1 A_SpawnItem("SplashSmoke", 0, 40);
+		BAR1 A 0 A_SpawnItem("SplashSmoke", 0, 40);
 	Spawn:
 		BAR1 A 8;
 		Loop;
@@ -26,9 +26,9 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 	Death.BarrelExp:
 	XDeath.BarrelExp:
 	Death:
-		BAR1 AAAA 1 Bright A_SpawnProjectile("Smoke", random(0, 32), 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));
+		BAR1 AAAA 1 A_SpawnProjectile("Smoke", random(0, 32), 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));
 
-		BAR1 AAAAA 1 Bright A_SetScale(Scale.X + 0.05, 1.0, 1, true);
+		BAR1 AAAAA 1 A_SetScale(Scale.X + 0.05, 1.0, 1, true);
 		BEXP AAAAA 1 Bright A_SetScale(Scale.X + 0.2, Scale.Y + 0.025);
 		
 		TNT1 AAAAAAAAAA 0 A_SpawnProjectile("Smoke", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
@@ -65,7 +65,7 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 	XDeath:
 		TNT1 AAAA 0 A_SpawnProjectile("Smoke", random(0, 32), 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));
 		
-		BAR1 AAA 1 Bright A_SetScale(Scale.X + 0.4, Scale.Y + 0.025);
+		BAR1 AAA 1 A_SetScale(Scale.X + 0.4, Scale.Y + 0.025);
 		BEXP A 4 Bright;
 		
 		TNT1 AAAAAAAAAA 0 A_SpawnProjectile("Smoke", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
