@@ -1,10 +1,10 @@
 // Doom Imp Fireball
 Pulselight IMPBALL
 {
-    color 1.0 0.7 0.4
-    size 60
-	secondarysize 80
-	interval 1
+    color 1.0 0.25 0.0
+    size 70
+	secondarysize 75
+	interval 0.25
 	attenuate 1
 }
 
@@ -12,8 +12,8 @@ Pulselight IMPBALL
 flickerlight IMPBALL_X1
 {
     color 0.7 0.4 0.25
-    size 120
-    secondarySize 132
+    size 50
+    secondarySize 60
     chance 0.25
 	attenuate 1
 }
@@ -21,8 +21,8 @@ flickerlight IMPBALL_X1
 flickerlight IMPBALL_X2
 {
     color 0.4 0.2 0.1
-    size 144
-    secondarySize 156
+    size 30
+    secondarySize 40
     chance 0.25
 	attenuate 1
 }
@@ -30,8 +30,8 @@ flickerlight IMPBALL_X2
 flickerlight IMPBALL_X3
 {
     color 0.2 0.1 0.0
-    size 168
-    secondarySize 180
+    size 10
+    secondarySize 20
     chance 0.25
 	attenuate 1
 }
@@ -51,7 +51,7 @@ object EquestriaImpBall
 // Cacodemon fireball
 Pulselight CACOBALL
 {
-    color 1.0 0.5 0.8
+    color 1.0 0.25 0.8
     size 80
     secondarySize 90
     interval 1.5
@@ -61,8 +61,8 @@ Pulselight CACOBALL
 flickerlight CACOBALL_X1
 {
     color 0.9 0.4 0.7
-    size 108
-    secondarySize 120
+    size 70
+    secondarySize 80
     chance 0.25
 	attenuate 1
 }
@@ -70,8 +70,8 @@ flickerlight CACOBALL_X1
 flickerlight CACOBALL_X2
 {
     color 0.6 0.3 0.5
-    size 132
-    secondarySize 144
+    size 50
+    secondarySize 60
     chance 0.25
 	attenuate 1
 }
@@ -79,8 +79,8 @@ flickerlight CACOBALL_X2
 flickerlight CACOBALL_X3
 {
     color 0.3 0.1 0.1
-    size 156
-    secondarySize 168
+    size 30
+    secondarySize 40
     chance 0.25
 	attenuate 1
 }
@@ -98,10 +98,10 @@ object CacodemonBall
 // Baron / Hell Knight fireball
 Pulselight BARONBALL
 {
-    color 0.0 1.0 0.0
-    size 15
-	secondarysize 30
-	interval 2
+    color 0.0 1.0 0.25
+    size 25
+	secondarysize 45
+	interval 0.5
 	attenuate 1
 }
 
@@ -117,8 +117,8 @@ flickerlight BARONBALL_X1
 flickerlight BARONBALL_X2
 {
     color 0.45 0.6 0.45
-    size 50
-    secondarySize 55
+    size 30
+    secondarySize 35
     chance 0.25
 	attenuate 1
 }
@@ -126,45 +126,35 @@ flickerlight BARONBALL_X2
 flickerlight BARONBALL_X3
 {
     color 0.2 0.3 0.2
-    size 60
-    secondarySize 60
+    size 20
+    secondarySize 25
     chance 0.25
 	attenuate 1
 }
 
-object BaronBall
-{
-    frame BAL7A { light BARONBALL    }
-    frame BAL7B { light BARONBALL    }
-
-    frame BAL7C { light BARONBALL_X1 }
-    frame BAL7D { light BARONBALL_X2 }
-    frame BAL7E { light BARONBALL_X3 }
-}
-
 object EquestriaBaronBall
 {
-	frame BBALA { light BARONBALL    }
-	frame BBALB { light BARONBALL    }
+	frame BAL7A { light BARONBALL    }
+	frame BAL7B { light BARONBALL    }
 	
-	frame BBALC { light BARONBALL_X1 }
-    frame BBALD { light BARONBALL_X2 }
-    frame BBALE { light BARONBALL_X3 }
+	frame BAL7C { light BARONBALL_X1 }
+    frame BAL7D { light BARONBALL_X2 }
+    frame BAL7E { light BARONBALL_X3 }
 }
 
 object KnightBall
 {
-    frame BAL7A { light BARONBALL    }
-    frame BAL7B { light BARONBALL    }
+    frame BBALA { light BARONBALL    }
+    frame BBALB { light BARONBALL    }
 
-    frame BAL7C { light BARONBALL_X1 }
-    frame BAL7D { light BARONBALL_X2 }
-    frame BAL7E { light BARONBALL_X3 }
+    frame BBALC { light BARONBALL_X1 }
+    frame BBALD { light BARONBALL_X2 }
+    frame BBALE { light BARONBALL_X3 }
 }
 
 
 // Mancubus Fireball
-object FatShot
+object EquestriaFatShot
 {
     frame MANFA { light IMPBALL   }
     frame MANFB { light IMPBALL   }
@@ -187,8 +177,8 @@ pulselight ARACHPLAS
 flickerlight ARACHPLAS_X1
 {
     color 0.4 0.8 0.3
-    size 30
-    secondarySize 55
+    size 25
+    secondarySize 30
     chance 0.5
 	attenuate 1
 }
@@ -197,7 +187,7 @@ flickerlight ARACHPLAS_X2
 {
     color 0.6 0.6 0.3
     size 35
-    secondarySize 60
+    secondarySize 45
     chance 0.5
 	attenuate 1
 }
@@ -368,4 +358,19 @@ object ArchvileFire
     frame FIREF { light ARCHFIRE6 }
     frame FIREG { light ARCHFIRE7 }
     frame FIREH { light ARCHFIRE8 }
+}
+
+PulseLight LStonedAura
+{
+	color 1.0 0.2 0.0
+    size 50 SecondarySize 75
+	Interval 0.5
+	attenuate 1
+}
+
+object StonedAura
+{
+	frame BAL3A { light LStonedAura }
+	frame BAL3B { light LStonedAura }
+	frame BAL3C { light LStonedAura }
 }
