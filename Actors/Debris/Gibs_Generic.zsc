@@ -44,7 +44,7 @@ Class GenericGib : DebrisCore
 			A_SetRoll(roll + random(-100, 100));
 		}
 	Roll:
-		#### # 4 A_SpawnItem("BloodTrail");
+		#### # 8 A_SpawnItem("BloodTrail");
 		Loop;
 	
 	Death:
@@ -178,9 +178,14 @@ Class TinyGenericGib : GenericGib
 		Goto Spawn2;
 		#### E 0;
 		Goto Spawn2;
-
+	
+	Spawn2:
+		#### # 0 A_JumpIf(GetCVar("GoreToggle")== 0, "Bye");
+		#### # 0 { A_SetRoll(random(0,359)); bSPRITEFLIP = randompick(0, 1); }
+		Goto Roll;
+		
 	Roll:
-		#### # 8 A_SpawnItem("SmallBloodTrail");
+		#### # 70 A_SpawnItem("SmallBloodTrail");
 		Loop;
 	}
 }
