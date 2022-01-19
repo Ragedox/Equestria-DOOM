@@ -27,11 +27,16 @@ include "MAPINFO/Episodes.txt"
 include "MAPINFO/DoomEdNumbers.txt"
 include "MAPINFO/Season1.txt"
 include "MAPINFO/Season2.txt"
-include "MAPINFO/Others.txt"
 
 map TITLEMAP ""
 {
 	//Music = "D_DM2TTL"
+	Sky1 = ASKY3
+}
+
+map DoomTest "Kinsie's Test Map"
+{
+	BorderTexture = "MSSINGT1"
 }
 
 clearskills
