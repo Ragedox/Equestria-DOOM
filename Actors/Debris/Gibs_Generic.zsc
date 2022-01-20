@@ -92,14 +92,14 @@ Class EquestriaBlood : Blood replaces Blood
 		
 	Bounce.Wall:
 	Death:
-		BLUD B 10 A_SprayDecal("BloodSplat", 10);
+		BLUD A 2;
 		Stop;
 		
 	Crash:
 		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
 		
-		POB2 BCD 2 A_FadeOut(frandom(0.001, 0.1));
-		POB2 E 1 A_FadeOut(0.005);
+		BLUD DEF 2 A_FadeOut(frandom(0.001, 0.1));
+		BLUD G 1 A_FadeOut(0.005);
 		Wait;
 	}
 }
