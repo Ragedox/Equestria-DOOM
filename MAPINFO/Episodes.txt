@@ -25,3 +25,35 @@ episode DoomTest
 {
 	name = "Test Map"
 }
+
+episode e1m1
+{
+	picname = "M_EPI1"
+	name = "$TXT_D1E1"
+	key = "k"
+	optional
+}
+
+episode e2m1
+{
+	picname = "M_EPI2"
+	name = "$TXT_D1E2"
+	key = "t"
+	optional
+}
+
+episode e3m1
+{
+	picname = "M_EPI3"
+	name = "$TXT_D1E3"
+	key = "i"
+	optional
+}
+
+episode e4m1
+{
+	picname = "M_EPI4"
+	name = "$TXT_D1E4"
+	key = "t"
+	optional
+} 

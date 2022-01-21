@@ -61,12 +61,10 @@ decalgroup FireBallScorch
 
 decal PlasmaScorchLower1
 {
-	pic PLASMA1
+	pic plasma1
 	shade "00 00 00"
 	x-scale 0.6
 	y-scale 0.6
-	randomflipx
-	randomflipy
 }
 
 decal PlasmaScorch1
@@ -80,12 +78,10 @@ decal PlasmaScorch1
 
 decal PlasmaScorchLower2
 {
-	pic PLASMA2
+	pic plasma2
 	shade "00 00 00"
 	x-scale 0.6
 	y-scale 0.6
-	randomflipx
-	randomflipy
 }
 
 decal PlasmaScorch2
@@ -118,7 +114,7 @@ decal LowerScorch
 
 decal Scorch1
 {
-	pic PLASMA1
+	pic RocketScorch1
 	FullBright
 	shade "Red"
 	randomflipx randomflipy
@@ -129,7 +125,7 @@ decal Scorch1
 
 decal Scorch2
 {
-	pic PLASMA2
+	pic RocketScorch2
 	FullBright
 	shade "Red"
 	randomflipx randomflipy

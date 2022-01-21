@@ -33,10 +33,25 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
         POSS A 10 A_Look();
         Loop;
 
+	/*See:
+		POSS AA 5 A_Wander();
+		#### # 0 A_LookEx(0,0,0,0,0,"Seek");
+		POSS BB 5 A_Wander();
+		#### # 0 A_LookEx(0,0,0,0,0,"Seek");
+		POSS CC 5 A_Wander();
+		#### # 0 A_LookEx(0,0,0,0,0,"Seek");
+		POSS DD 5 A_Wander();
+		#### # 0 A_LookEx(0,0,0,0,0,"Seek");
+		#### # 0 A_Jump(100, 1);
+		Loop;
+		#### # 35;
+		Goto See;*/
+		
 	See:
 		#### # 0 A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
         POSS AABBCCDD 4 A_Chase();
         Loop;
+		
 	See.Trainer:
 		#### AABBCCDD 4
 		{
@@ -44,7 +59,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 			A_SpawnProjectile("DEWaterSplashChunk", random(32, 56), 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));
 		}
 		Goto See;
-   
+		
 	Missile:
         POSS E 10 A_FaceTarget();
         POSS F 8 A_CustomBulletAttack (20, 10, 1, random(1,5)*2, "EquestriaBulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");

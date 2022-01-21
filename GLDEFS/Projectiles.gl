@@ -64,8 +64,8 @@ pulselight PLASMABALL
 flickerlight PLASMA_X1
 {
     color 0.5 0.25 1.0
-    size 30
-    secondarySize 55
+    size 25
+    secondarySize 30
     chance 0.5
 	attenuate 1
 }
@@ -74,7 +74,7 @@ flickerlight PLASMA_X2
 {
     color 0.4 0.4 1.0
     size 35
-    secondarySize 60
+    secondarySize 45
     chance 0.5
 	attenuate 1
 }
