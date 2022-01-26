@@ -2,7 +2,7 @@
 Pulselight IMPBALL
 {
     color 1.0 0.25 0.0
-    size 70
+    size 60
 	secondarysize 75
 	interval 0.25
 	attenuate 1
@@ -51,10 +51,10 @@ object EquestriaImpBall
 // Cacodemon fireball
 Pulselight CACOBALL
 {
-    color 1.0 0.25 0.8
-    size 80
-    secondarySize 90
-    interval 1.5
+    color 1.0 0.25 0.75
+    size 60
+    secondarySize 75
+    interval 1
 	attenuate 1
 }
 
@@ -85,7 +85,7 @@ flickerlight CACOBALL_X3
 	attenuate 1
 }
 
-object CacodemonBall
+object EquestriaCacodemonBall
 {
     frame BAL2A { light CACOBALL }
     frame BAL2B { light CACOBALL }
@@ -159,9 +159,9 @@ object EquestriaFatShot
     frame MANFA { light IMPBALL   }
     frame MANFB { light IMPBALL   }
 
-    frame MISLB { light ROCKET_X1 }
-    frame MISLC { light ROCKET_X2 }
-    frame MISLD { light ROCKET_X3 }
+    frame MISLB { light Explosion }
+    frame MISLC { light Explosion }
+    frame MISLD { light Explosion }
 }
 
 // Arachnotron Fireball
@@ -174,52 +174,38 @@ pulselight ARACHPLAS
 	attenuate 1
 }
 
-flickerlight ARACHPLAS_X1
+pulselight AracPlasmaExplosion
 {
-    color 0.4 0.8 0.3
-    size 25
-    secondarySize 30
-    chance 0.5
-	attenuate 1
-}
-
-flickerlight ARACHPLAS_X2
-{
-    color 0.6 0.6 0.3
-    size 35
-    secondarySize 45
-    chance 0.5
-	attenuate 1
-}
-
-flickerlight ARACHPLAS_X3
-{
-    color 0.4 0.4 0.2
-    size 15
-    secondarySize 20
-    chance 0.5
-	attenuate 1
-}
-
-flickerlight ARACHPLAS_X4
-{
-    color 0.2 0.2 0.1
-    size 5
-    secondarySize 10
-    chance 0.5
-	attenuate 1
-}
+    color 0.75 1.0 0.6
+    size 0
+    secondarySize 25
+    interval 0.75
+} 
 
 object EquestriaAracPlasmaBall
 {
     frame APLSA { light ARACHPLAS }
     frame APLSB { light ARACHPLAS }
 
-    frame APBXA { light ARACHPLAS_X1 }
-    frame APBXB { light ARACHPLAS_X2 }
-    frame APBXC { light ARACHPLAS_X2 }
-    frame APBXD { light ARACHPLAS_X3 }
-    frame APBXE { light ARACHPLAS_X4 }
+    frame APBXA { light AracPlasmaExplosion }
+    frame APBXB { light AracPlasmaExplosion }
+    frame APBXC { light AracPlasmaExplosion }
+    frame APBXD { light AracPlasmaExplosion }
+    frame APBXE { light AracPlasmaExplosion }
+}
+
+Pulselight AracPlasmaSparkle
+{
+    color 0.6 1.0 0.4
+    size 5
+    secondarySize 15
+    interval 0.5
+	attenuate 1
+}
+
+object AracPlasmaSparkle
+{
+	frame APLSA { light AracPlasmaSparkle }
 }
 
 // Revenant tracer
