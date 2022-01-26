@@ -209,4 +209,3 @@ generator EquestriaShotgunGuy		ShellDecal
 generator EquestriaChaingunGuy		ChipDecal
 generator WolfensteinSS				ChipDecal
 generator EquestriaSpiderMastermind	ShellDecal
-generator EquestriaRevenantTracer	RevenantScorch
