@@ -76,9 +76,9 @@ Class EquestriaBlood : Blood replaces Blood
 		
 		Gravity 0.75;
 		Speed 8;
+		Mass 2;
 		
 		+ForceXYBillBoard
-		+DONTSPLASH
 		+NOTELEPORT +NOBLOCKMAP
 		+CORPSE
 		+MISSILE
@@ -87,7 +87,7 @@ Class EquestriaBlood : Blood replaces Blood
 	States
 	{
 	Spawn:
-		BLUD CBA 35;
+		BLUD CBA 30;
 		Wait;
 		
 	Bounce.Wall:
@@ -96,6 +96,7 @@ Class EquestriaBlood : Blood replaces Blood
 		Stop;
 		
 	Crash:
+		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
 		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
 		
 		BLUD DEF 2 A_FadeOut(frandom(0.001, 0.1));
@@ -114,6 +115,16 @@ Class BloodTrail : EquestriaBlood
 		Gravity 0.2;
 		Scale 0.6;
 	}
+	States
+	{
+	Crash:
+		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
+		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
+		
+		BLUD DEF 1 A_FadeOut(frandom(0.01, 0.1));
+		BLUD G 1 A_FadeOut(0.01);
+		Wait;
+	}
 }
 
 Class SmallBloodTrail : BloodTrail
@@ -123,35 +134,17 @@ Class SmallBloodTrail : BloodTrail
 		Gravity 0.1;
 		Scale 0.5;
 	}
-}
-
-Class SmallBloodParticle : DEParticles
-{
-	Default
-	{
-		+BounceOnFloors;
-		+ThruActors;
-		-NoGravity;
-		BounceType "Doom"; BounceFactor 0.25;
-		Gravity 0.1;
-		Speed 1;
-		Scale 0.5;
-		Height 2; Radius 1;
-		
-		RenderStyle "Translucent";
-		Alpha 0.5;
-	}
 	States
 	{
 	Spawn:
-		BLUD A 1;
-		Loop;
-	Death:
-		BLUD A 1
-		{
-			A_SetScale((Scale.X - 0.01), (Scale.Y - 0.01), false);
-			A_FadeOut(frandom(0.1, 0.2));
-		}
+		BLUD CBA 15;
+		Wait;
+	
+	Crash:
+		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
+		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
+		
+		POB2 A 1 A_FadeOut(0.025);
 		Wait;
 	}
 }
@@ -163,7 +156,6 @@ Class TinyGenericGib : GenericGib
 		BounceSound "";
 		BounceType "None";
 		BounceFactor 0;
-		Gravity 0.3;
 		Speed 10;
 		DebrisCore.RollSpeed 25;
 		
