@@ -1,54 +1,26 @@
 // Rocket
 pointlight ROCKET
 {
-    color 1.0 0.7 0.0
+    color 1.0 0.7 0.1
 	size 20
 	attenuate 1
 }
 
-PulseLight ROCKETEXPL
+pulselight Explosion
 {
-    color 1.0 0.7 0.5
+    color 1.0 0.5 0.0
     size 0
     secondarySize 50
-    Interval 0.5
-	attenuate 1
-}
-
-flickerlight ROCKET_X1
-{
-    color 1.0 0.7 0.5
-    size 50
-    secondarySize 45
-    chance 0.3
-	attenuate 1
-}
-
-flickerlight ROCKET_X2
-{
-    color 0.5 0.3 0.2
-    size 40
-    secondarySize 35
-    chance 0.3
-	attenuate 1
-}
-
-flickerlight ROCKET_X3
-{
-    color 0.3 0.1 0.1
-    size 30
-    secondarySize 25
-    chance 0.3
-	attenuate 1
-}
+    interval 0.25
+} 
 
 object EquestriaRocket
 {
     frame MISLA { light ROCKET    }
 
-    frame MISLB { light ROCKET_X1 }
-    frame MISLC { light ROCKET_X2 }
-    frame MISLD { light ROCKET_X3 }
+    frame MISLB { light Explosion }
+    frame MISLC { light Explosion }
+    frame MISLD { light Explosion }
 }
 
 // Plasma
@@ -61,57 +33,29 @@ pulselight PLASMABALL
 	attenuate 1
 }
 
-flickerlight PLASMA_X1
+pulselight PlasmaExplosion
 {
-    color 0.5 0.25 1.0
-    size 25
-    secondarySize 30
-    chance 0.5
-	attenuate 1
-}
-
-flickerlight PLASMA_X2
-{
-    color 0.4 0.4 1.0
-    size 35
-    secondarySize 45
-    chance 0.5
-	attenuate 1
-}
-
-flickerlight PLASMA_X3
-{
-    color 0.25 0.25 0.75
-    size 15
-    secondarySize 20
-    chance 0.5
-	attenuate 1
-}
-
-flickerlight PLASMA_X4
-{
-    color 0.1 0.1 0.25
-    size 5
-    secondarySize 10
-    chance 0.5
-	attenuate 1
-}
+    color 0.5 0.5 1.0
+    size 0
+    secondarySize 25
+    interval 0.75
+} 
 
 object EquestriaPlasmaBall
 {
     frame PLSSA { light PLASMABALL }
     frame PLSSB { light PLASMABALL }
 
-    frame PLSEA { light PLASMA_X1 }
-    frame PLSEB { light PLASMA_X2 }
-    frame PLSEC { light PLASMA_X2 }
-    frame PLSED { light PLASMA_X3 }
-    frame PLSEE { light PLASMA_X4 }
+    frame PLSEA { light PlasmaExplosion }
+    frame PLSEB { light PlasmaExplosion }
+    frame PLSEC { light PlasmaExplosion }
+    frame PLSED { light PlasmaExplosion }
+    frame PLSEE { light PlasmaExplosion }
 }
 
 Pulselight PlasmaSparkle
 {
-    color 0.25 0.25 0.75
+    color 0.25 0.25 1.0
     size 5
     secondarySize 15
     interval 0.5
