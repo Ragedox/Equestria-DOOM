@@ -135,7 +135,6 @@ Class ChainsawPuff : Player_BulletPuff
 		}
 		
 		PUFF A random(5, 8) Bright;
-		//PUFF A 0 A_Recoil(-2);
 		PUFF B 4;
 		Goto Melee;
 	}
