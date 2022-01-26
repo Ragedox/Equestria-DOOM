@@ -64,10 +64,15 @@ Class EquestriaPainElemental : PainElemental replaces PainElemental
 		{
 			A_QuakeEx(3, 3, 3, 4, 0, 500, "", 0,0,0,0, 1);
 			
-			A_SpawnItemEx("BloodExplosionSphere",0,0,32,0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,32,0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,32,0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,32,0,0,0,0, SXF_TRANSFERPOINTERS);
+			for (int i = 0; i < 10; i++)
+			{
+				A_SpawnProjectile("GenericGib", frandom(0, 50), frandom(-25, 25), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnItemEx("BloodExplosionSphere",0,0,25,0,0,0,0, SXF_TRANSFERPOINTERS);
+				A_SpawnProjectile("BigGoreRandom", frandom(0, 50), frandom(-25, 25), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
 		}
 		PAIN L 8 Bright
 		{
