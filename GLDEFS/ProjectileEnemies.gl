@@ -204,51 +204,6 @@ object AracPlasmaSparkle
 	frame APLSA { light AracPlasmaSparkle }
 }
 
-// Revenant tracer
-pointlight TRACER
-{
-    color 1.0 0.5 0.3
-    size 72
-	attenuate 1
-}
-
-flickerlight TRACER_X1
-{
-    color 1.0 0.5 0.2
-    size 96
-    secondarySize 108
-    chance 0.25
-	attenuate 1
-}
-
-flickerlight TRACER_X2
-{
-    color 0.6 0.3 0.1
-    size 120
-    secondarySize 132
-    chance 0.25
-	attenuate 1
-}
-
-flickerlight TRACER_X3
-{
-    color 0.3 0.1 0.0
-    size 144
-    secondarySize 156
-    chance 0.25
-	attenuate 1
-}
-
-object RevenantTracer
-{
-    frame FATBA { light TRACER    }
-    frame FATBB { light TRACER    }
-
-    frame FBXPA { light TRACER_X1 }
-    frame FBXPB { light TRACER_X2 }
-    frame FBXPC { light TRACER_X3 }
-}
-
 // Arch Vile Fire
 flickerlight ARCHFIRE1
 {
