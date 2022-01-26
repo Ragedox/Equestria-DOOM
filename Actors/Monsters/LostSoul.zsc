@@ -14,10 +14,61 @@ Class LostSoulVariants : RandomSpawner replaces LostSoul
 To Do
 
 				Kirins/Niriks more agressive
-				Unicorns more faster but weaker
+				Unicorns more faster but weaker (Alpha Doom skull)
 				Normal Pony the normal Lost Soul
 
 */
+
+Class LostSoulGib : DebrisCore
+{
+	Default
+	{
+		Height 2; Radius 1;
+		Gravity 0.5;
+		Speed 8;
+		DebrisCore.RollSpeed 25;
+		BounceType "Doom"; BounceFactor 0.25;
+		Mass 2;
+	}
+	States
+	{
+	Spawn:
+		GIB2 ABC 0 { bSPRITEFLIP = RandomPick(0,1); A_SetRoll(random(0, 359)); A_SetScale(frandom(0.5, 1)); }
+		GIB2 # 0 A_Jump(256, 1,2,3);
+		Wait;
+		
+		GIB2 A 0;
+		Goto Roll;
+		GIB2 B 0;
+		Goto Roll;
+		GIB2 C 0;
+		Goto Roll;
+		
+	Bounce:
+		#### # 0 A_SetRoll(roll + random(-100, 100));
+	Roll:
+		#### # 1;
+		Loop;
+	
+	Death:
+	Crash:
+		#### # 350;
+		#### # 0 A_JumpIf(GetCVar("GibsStayForever") == 0, "FadeOut");
+		#### # 0; //A_JumpIf(GetCVar("GibsStayForever") == 2, "CheckSight");
+		Loop;
+		
+	FadeOut:
+		#### # 1 A_FadeOut(0.1);
+		Wait;
+	
+	CheckSight:
+		#### # 35 A_CheckSight("FadeOut");
+		Loop;
+	
+	Bye: TNT1 A 0;
+		Stop;
+	}
+}
 
 Class EquestriaLostSoul : LostSoul
 {
@@ -69,9 +120,15 @@ Class EquestriaLostSoul : LostSoul
 		SKUL F 6;
 		SKUL G 6 A_Scream();
 		SKUL H 6;
-		SKUL I 6 A_NoBlocking();
-		SKUL J 3;
-		SKUL J 3 A_SpawnItemEX("DeathLostSoul");
+		SKUL I 6
+		{
+			A_NoBlocking();
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
+		SKUL J 6;
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	
@@ -80,9 +137,15 @@ Class EquestriaLostSoul : LostSoul
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
 		SKUL H 6 Bright A_Scream();
-		SKUL I 3 Bright A_NoBlocking();
+		SKUL I 3
+		{
+			A_NoBlocking();
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
 		SKUL J 3;
-		SKUL J 3 A_SpawnItemEX("DeathLostSoul");
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	
@@ -125,9 +188,15 @@ Class UnicornSoul : EquestriaLostSoul
 		SKUL F 6 Bright;
 		SKUL G 6 Bright A_Scream();
 		SKUL H 6 Bright;
-		SKUL I 6 Bright A_NoBlocking();
-		SKUL J 3;
-		SKUL J 3 A_SpawnItemEX("DeathLostSoul");
+		SKUL I 6
+		{
+			A_NoBlocking();
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
+		SKUL J 6;
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	
@@ -136,9 +205,15 @@ Class UnicornSoul : EquestriaLostSoul
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
 		SKUL H 6 Bright A_Scream();
-		SKUL I 3 Bright A_NoBlocking();
+		SKUL I 3
+		{
+			A_NoBlocking();
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
 		SKUL J 3;
-		SKUL J 3 A_SpawnItemEX("DeathLostSoul");
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	}
@@ -218,9 +293,15 @@ Class NirikSoul : EquestriaLostSoul
 		SKUL F 3 A_Explode(5, 50);
 		SKUL G 3 A_Scream();
 		SKUL H 3;
-		SKUL I 3 A_NoBlocking();
-		SKUL J 3;
-		SKUL J 3 A_SpawnItemEX("DeathLostSoul");
+		SKUL I 6
+		{
+			A_NoBlocking();
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
+		SKUL J 6;
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	}
@@ -267,9 +348,15 @@ Class MissileNirikSoul : FastProjectile
 		SKUL F 3 A_Explode(5, 50);
 		SKUL G 3 A_Scream();
 		SKUL H 3;
-		SKUL I 3 A_NoBlocking();
+		SKUL I 3
+		{
+			A_NoBlocking();
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
 		SKUL J 3;
-		SKUL J 3 A_SpawnItemEX("DeathLostSoul");
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	}
