@@ -187,11 +187,7 @@ object EquestriaAracPlasmaBall
     frame APLSA { light ARACHPLAS }
     frame APLSB { light ARACHPLAS }
 
-    frame APBXA { light AracPlasmaExplosion }
-    frame APBXB { light AracPlasmaExplosion }
-    frame APBXC { light AracPlasmaExplosion }
-    frame APBXD { light AracPlasmaExplosion }
-    frame APBXE { light AracPlasmaExplosion }
+    frame APBX { light AracPlasmaExplosion }
 }
 
 Pulselight AracPlasmaSparkle
