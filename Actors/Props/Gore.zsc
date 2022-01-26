@@ -44,7 +44,7 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 {
 	Default
 	{
-		Radius 10;
+		Height 81; Radius 8;
 	}
 	States
 	{
@@ -72,18 +72,18 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 		Goto Prop;
 		
 	Prop:
-		GOR3 A random(3, 10) A_SpawnItemEx("EquestriaBlood", random(-8, 8), random(-8, 8),random(0, 46),0,0,0,0,0,200);
+		GOR3 A random(3, 10)
+		{
+			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,230);
+			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,185);
+			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,128);
+		}
 		Loop;
 	}
 }
 
 Class EquestriaNonsolidMeat3 : EquestriaMeat3 replaces NonsolidMeat3
-{
-	Default
-	{
-		-SOLID
-	}
-}
+{Default{	-SOLID	}}
 
 Class EquestriaMeat4 : Meat4 replaces Meat4
 {
@@ -103,15 +103,46 @@ Class EquestriaMeat5 : Meat5 replaces Meat5
 {
 	Default
 	{
-		Radius 10;
+		Height 42; Radius 7;
 	}
 	States
 	{
 	Spawn:
-		GOR5 A random(3, 10) A_SpawnItemEx("EquestriaBlood", random(-8, 8), random(-8, 8),0,0,0,0,0,0,150);
+		GOR3 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
+		GOR3 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9);
+		Wait;
+		#### # 0 A_SetTranslation("White");
+		Goto Prop;
+		#### # 0 A_SetTranslation("Gray");
+		Goto Prop;
+		#### # 0 A_SetTranslation("LightishRed");
+		Goto Prop;
+		#### # 0 A_SetTranslation("Red");
+		Goto Prop;
+		#### # 0 A_SetTranslation("Blue");
+		Goto Prop;
+		#### # 0 A_SetTranslation("LimeGreen");
+		Goto Prop;
+		#### # 0 A_SetTranslation("Green");
+		Goto Prop;
+		#### # 0 A_SetTranslation("Orange");
+		Goto Prop;
+		#### # 0 A_SetTranslation("Beige");
+		Goto Prop;
+		
+	Prop:
+		GOR5 A random(3, 10)
+		{
+			A_SpawnItemEx("EquestriaBlood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,240);
+			A_SpawnItemEx("BloodTrail",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,200);
+			A_SpawnItemEx("SmallBloodTrail",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,128);
+		}
 		Loop;
 	}
 }
+
+Class EquestriaNonsolidMeat6 : EquestriaMeat5 replaces NonsolidMeat5
+{Default{	-SOLID	}}
 
 //
 
