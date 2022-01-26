@@ -142,11 +142,12 @@ Class EquestriaBaronBall : BaronBall replaces BaronBall
 		Decal "BaronScorch";
 		
 		+ForceXYBillBoard
+		+Bright
 	}
 	States
 	{
 	Spawn:
-		BAL7 AB 4 Bright A_SpawnItem("BaronBallTrail");
+		BAL7 AB 4 Fast A_SpawnItem("BaronBallTrail");
 		Loop;
  
 	Death:
@@ -167,7 +168,7 @@ Class KnightBall : EquestriaBaronBall
 	States
 	{
 	Spawn:
-		BBAL AB 4 Bright A_SpawnItem("BaronBallTrail");
+		BBAL AB 4 Fast A_SpawnItem("BaronBallTrail");
 		Loop;
 	}
 }
