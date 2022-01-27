@@ -18,15 +18,33 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 		+FORCEXYBILLBOARD
 		+NOGRAVITY
 		+FLOATBOB
+		//-SOLID
+		
+		RenderStyle "Translucent"; Alpha 0;
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 1;
-		TNT1 A 1 A_SpawnItemEx("Candlestick");
+		TNT1 A 0 NoDelay A_SpawnItemEx("Candlestick");
+		#### # 1 A_CheckProximity("FadeIn", "EquestriaDoomPlayer", 1024, 1, CPXF_CHECKSIGHT);
+		Wait;
+		
+	FadeIn:
+		CEYE AAAAABBBBBCCCCCBBBBB 1 A_FadeIn(0.05, FTF_CLAMP);
 	Summon:
-		CEYE ABCB 6 Bright;
+		CEYE AAAAAABBBBBBCCCCCCBBBBBB 1 Bright A_CheckProximity("FadeOut", "EquestriaDoomPlayer", 128, 1, CPXF_CHECKSIGHT);
 		Loop;
+	
+	FadeLittle:
+		CEYE ##### 1 Bright A_FadeOut(0.1, FTF_CLAMP);
+		
+	Watch:
+		CEYE AAAAAABBBBBBCCCCCCBBBBBB 1 A_CheckProximity("FadeOut", "EquestriaDoomPlayer", 128, 1, CPXF_CHECKSIGHT);
+		Goto FadeIn;
+	
+	FadeOut:
+		#### ########## 1 A_FadeOut(0.1, FTF_CLAMP);
+		Goto Watch;
 	}
 }
 
