@@ -71,7 +71,6 @@ DoomEdNums
 	15406 = "Rock"
 	15407 = "Stalagtite2"
 	15408 = "Stalagtite3"
-	15409 = "Stalagtite4"
 	15410 = "BigStalagtite"
 /*  15411 = 
 	15412 = 

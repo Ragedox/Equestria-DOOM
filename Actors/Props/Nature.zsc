@@ -92,6 +92,21 @@ Class Rock : Actor
 	}
 }
 
+class EquestriaStalagmite : Actor replaces Stalagmite
+{
+	Default
+	{
+		Radius 10; Height 47;
+		+SOLID
+	}
+	States
+	{
+	Spawn:
+		SMT2 A -1;
+		Stop;
+	}
+}
+
 Class Stalagtite2 : Actor
 {
 	Default
@@ -121,16 +136,6 @@ Class Stalagtite3 : Stalagtite2
 	{
 	Spawn:
 		SMIT C -1;
-		Stop;
-	}
-}
-
-Class Stalagtite4 : Stalagtite2
-{
-	States
-	{
-	Spawn:
-		SMIT D -1;
 		Stop;
 	}
 }
