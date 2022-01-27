@@ -45,6 +45,7 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 	Default
 	{
 		Height 81; Radius 8;
+		//+Shootable +DontThrust
 	}
 	States
 	{
@@ -77,6 +78,15 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,230);
 			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,185);
 			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,128);
+		}
+		Loop;
+		
+	Death:
+		GOR5 A random(3, 10)
+		{
+			A_SpawnItemEx("EquestriaBlood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,240);
+			A_SpawnItemEx("BloodTrail",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,200);
+			A_SpawnItemEx("SmallBloodTrail",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,128);
 		}
 		Loop;
 	}
