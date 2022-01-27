@@ -1,3 +1,20 @@
+// Evil Eye
+
+PulseLight EvilEyeLight
+{
+	Color 0.0 1.0 0.5
+	Size 60
+	SecondarySize 63
+	Interval 0.5
+	DontLightSelf 1
+	Attenuate 1
+}
+
+Object EquestriaEvilEye
+{
+	frame CEYE { light EvilEyeLight }
+}
+
 // Barrel
 pulselight BARREL
 {
