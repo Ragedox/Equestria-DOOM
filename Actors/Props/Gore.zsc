@@ -51,33 +51,27 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 	{
 	Spawn:
 		GOR3 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		GOR3 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9);
+		GOR3 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11);
 		Wait;
-		#### # 0 A_SetTranslation("White");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Gray");
-		Goto Prop;
-		#### # 0 A_SetTranslation("LightishRed");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Red");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Blue");
-		Goto Prop;
-		#### # 0 A_SetTranslation("LimeGreen");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Green");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Orange");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Beige");
-		Goto Prop;
+		
+	White:			#### # 0 A_SetTranslation("White");			Goto Prop;
+	Gray:			#### # 0 A_SetTranslation("Gray");			Goto Prop;
+	DarkGray:		#### # 0 A_SetTranslation("DarkGray");		Goto Prop;
+	LightishRed:	#### # 0 A_SetTranslation("LightishRed");	Goto Prop;
+	Red:			#### # 0 A_SetTranslation("Red");			Goto Prop;
+	Blue:			#### # 0 A_SetTranslation("Blue");			Goto Prop;
+	LimeGreen:		#### # 0 A_SetTranslation("LimeGreen");		Goto Prop;
+	Green: 			#### # 0 A_SetTranslation("Green");			Goto Prop;
+	Orange:			#### # 0 A_SetTranslation("Orange");		Goto Prop;
+	Beige:			#### # 0 A_SetTranslation("Beige");			Goto Prop;
+	Brown:			#### # 0 A_SetTranslation("Brown");			Goto Prop;
 		
 	Prop:
 		GOR3 A random(3, 10)
 		{
-			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,230);
-			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,185);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,128);
+			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,240);
+			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,200);
+			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,150);
 		}
 		Loop;
 		
@@ -118,40 +112,34 @@ Class EquestriaMeat5 : Meat5 replaces Meat5
 	States
 	{
 	Spawn:
-		GOR3 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		GOR3 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9);
+		GOR5 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
+		GOR5 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11);
 		Wait;
-		#### # 0 A_SetTranslation("White");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Gray");
-		Goto Prop;
-		#### # 0 A_SetTranslation("LightishRed");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Red");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Blue");
-		Goto Prop;
-		#### # 0 A_SetTranslation("LimeGreen");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Green");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Orange");
-		Goto Prop;
-		#### # 0 A_SetTranslation("Beige");
-		Goto Prop;
+		
+	White:			#### # 0 A_SetTranslation("White");			Goto Prop;
+	Gray:			#### # 0 A_SetTranslation("Gray");			Goto Prop;
+	DarkGray:		#### # 0 A_SetTranslation("DarkGray");		Goto Prop;
+	LightishRed:	#### # 0 A_SetTranslation("LightishRed");	Goto Prop;
+	Red:			#### # 0 A_SetTranslation("Red");			Goto Prop;
+	Blue:			#### # 0 A_SetTranslation("Blue");			Goto Prop;
+	LimeGreen:		#### # 0 A_SetTranslation("LimeGreen");		Goto Prop;
+	Green: 			#### # 0 A_SetTranslation("Green");			Goto Prop;
+	Orange:			#### # 0 A_SetTranslation("Orange");		Goto Prop;
+	Beige:			#### # 0 A_SetTranslation("Beige");			Goto Prop;
+	Brown:			#### # 0 A_SetTranslation("Brown");			Goto Prop;
 		
 	Prop:
 		GOR5 A random(3, 10)
 		{
 			A_SpawnItemEx("EquestriaBlood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,240);
 			A_SpawnItemEx("BloodTrail",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,200);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,128);
+			A_SpawnItemEx("SmallBloodTrail",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,150);
 		}
 		Loop;
 	}
 }
 
-Class EquestriaNonsolidMeat6 : EquestriaMeat5 replaces NonsolidMeat5
+Class EquestriaNonsolidMeat5 : EquestriaMeat5 replaces NonsolidMeat5
 {Default{	-SOLID	}}
 
 //
