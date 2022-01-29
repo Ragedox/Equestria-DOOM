@@ -133,10 +133,14 @@ Class PossessedTrainer : DoomEquestriaMonster
 		
 		CPOS O 5
 		{
-			A_SpawnItemEx("XDeathGibber",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
+			for (int i = 0; i < 10; i++)
+			{
+				A_SpawnProjectile("GenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
+				A_SpawnProjectile("TinyGenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));
+			}
 			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_XScream();
-			A_NoBlocking();
+			
+			A_ScreamAndUnblock();
 		}
 		CPOS P 5 A_XScream();
 		CPOS Q 5;

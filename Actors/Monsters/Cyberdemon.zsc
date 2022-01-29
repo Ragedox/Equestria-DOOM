@@ -24,14 +24,9 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
    
 	Death:
 		CYBR H 10;
-		TNT1 AAAAAAAAAA 0 A_SpawnItemEx("CyberdemonExplosion", frandom(-40, 40), frandom(-40, 40), frandom(32, 110));
-		CYBR I 10
-		{
-			A_SpawnItemEx("XDeathGibber",0,0,random(32, 75),0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,random(32, 50),0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_Scream();
-			A_NoBlocking();
-		}
+		CYBR I 5;
+		CYBR IJKLMNOPPP 0 A_SpawnItemEx("CyberdemonExplosion", random(radius * -1, radius), random(radius * -1, radius), random(32, 110));
+		CYBR I 5 A_Scream();
 		CYBR J 8;
 		CYBR KL 5
 		{
@@ -39,20 +34,16 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
 			
 			A_SpawnItemEx("BigGibber",0,0,random(32, 110),0,0,0,0, SXF_TRANSFERPOINTERS);
 		}
-		TNT1 A 0
+		CYBR MNOPP 0
 		{
-			for (int i = 0; i < 25; i++)
-			{
-				A_SpawnProjectile("EquestriaBlood", frandom(32, 80), frandom(-80, 80), random (0, 359), CMF_AIMDIRECTION, random (0, -180));
-				A_SpawnProjectile("BloodTrail", frandom(32, 80), frandom(-80, 80), random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
-				A_SpawnProjectile("SmallBloodTrail", frandom(32, 80), frandom(-80, 80), random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
-			}
+			A_SpawnProjectile("EquestriaBlood", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (-180, 0));
+			A_SpawnProjectile("BloodTrail", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (-180, 0));	
+			A_SpawnProjectile("SmallBloodTrail", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (-180, 0));	
 		}
-			
-		CYBR M 5 A_NoBlocking;
+		CYBR M 5 A_NoBlocking();
 		CYBR NO 5;
 		CYBR P 30;
-		CYBR P -1 A_BossDeath;
+		CYBR P -1 A_BossDeath();
 		Stop;
 	}
 }
@@ -65,6 +56,8 @@ Class CyberdemonExplosion : DEParticles
 		RenderStyle "Translucent"; Alpha 0.75;
 		+NOINTERACTION
 		+ZDOOMTRANS
+		
+		Height 0; Radius 0;
 	}
 	States
 	{
@@ -72,12 +65,7 @@ Class CyberdemonExplosion : DEParticles
 		TNT1 A random(0,16) NoDelay
 		{
 			A_SetScale(frandom(0.5, 1.0));
-			for (int i = 0; i < 5; i++)
-			{
-				A_SpawnProjectile("EquestriaBlood", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));
-				A_SpawnProjectile("BloodTrail", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
-				A_SpawnProjectile("SmallBloodTrail", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
-			}
+			A_SpawnItem("BloodExplosionSphere");
 		}
 		EXP2 A random(3,6);
 		EXP2 B 4;

@@ -8,18 +8,18 @@ Class DebrisCore : Actor
 	
 	Default
 	{
-		+MISSILE
-		+CORPSE
-		+NOBLOCKMAP
-		+NOTAUTOAIMED
-		+DROPOFF
-		+NOTELEPORT
-		+FORCEXYBILLBOARD
-		+MOVEWITHSECTOR
-		+CANNOTPUSH
-		+NOBLOCKMONST
-		+CANPASS
-		+THRUACTORS
+		+Missile
+		+Corpse
+		+NoBlockMap
+		+NotAutoAimed
+		+DropOff
+		+NoTeleport
+		+ForceXYBillboard
+		+MoveWithSector
+		+CannotPush
+		+NoBlockMonst
+		+CanPass
+		+ThruActors
 	  
 		-ACTIVATEIMPACT -ACTIVATEPCROSS
 		-SOLID

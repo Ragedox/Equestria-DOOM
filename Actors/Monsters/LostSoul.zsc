@@ -81,6 +81,7 @@ Class EquestriaLostSoul : LostSoul
 		RenderStyle "Normal";
 		
 		Height 30; Radius 15;
+		DeathHeight 30;
 		
 		DamageFactor "Plasma", 1.75;
 		
@@ -123,9 +124,10 @@ Class EquestriaLostSoul : LostSoul
 		SKUL I 6
 		{
 			A_NoBlocking();
+			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 6;
@@ -140,9 +142,10 @@ Class EquestriaLostSoul : LostSoul
 		SKUL I 3
 		{
 			A_NoBlocking();
+			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 3;
@@ -191,9 +194,10 @@ Class UnicornSoul : EquestriaLostSoul
 		SKUL I 6
 		{
 			A_NoBlocking();
+			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 6;
@@ -208,9 +212,10 @@ Class UnicornSoul : EquestriaLostSoul
 		SKUL I 3
 		{
 			A_NoBlocking();
+			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 3;
@@ -296,9 +301,10 @@ Class NirikSoul : EquestriaLostSoul
 		SKUL I 6
 		{
 			A_NoBlocking();
+			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 6;
