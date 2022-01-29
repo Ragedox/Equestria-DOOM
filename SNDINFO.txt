@@ -65,4 +65,4 @@ gore/impact3 GibImp3
 DoomTorch/Burn		DSFIRLOP
 
 $limit DoomTorch/Burn 0
-$attenuation DoomTorch/Burn 4
+$attenuation DoomTorch/Burn 3
