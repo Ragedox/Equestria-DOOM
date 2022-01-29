@@ -28,7 +28,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 	{
 	
 	Pain:
-		PLAY G 4;
+		PLAY G 4 A_QuakeEx(1,1,1,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN);
 		PLAY G 4 A_Pain();
 		Goto Spawn;
 	
