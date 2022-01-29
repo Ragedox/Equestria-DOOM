@@ -109,7 +109,7 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 			}
 			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
 			
-			A_ScreamAndUnblock();
+			A_Fall(); A_XScream();
 		}
 		SPOS NOPQRST 5;
         SPOS U -1;

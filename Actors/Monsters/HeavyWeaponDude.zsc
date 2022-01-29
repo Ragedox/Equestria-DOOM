@@ -81,8 +81,7 @@ Class EquestriaChaingunGuy : ChaingunGuy replaces ChaingunGuy
 				A_SpawnProjectile("GenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
 				A_SpawnProjectile("TinyGenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));
 			}
-			A_XScream();
-			A_NoBlocking();
+			A_Fall(); A_XScream();
 		}
 		CPOS T -1;
 		Stop;

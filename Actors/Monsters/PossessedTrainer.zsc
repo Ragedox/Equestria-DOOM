@@ -140,7 +140,7 @@ Class PossessedTrainer : DoomEquestriaMonster
 			}
 			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
 			
-			A_ScreamAndUnblock();
+			A_Fall(); A_XScream();
 		}
 		CPOS P 5 A_XScream();
 		CPOS Q 5;

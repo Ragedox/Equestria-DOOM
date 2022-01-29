@@ -112,21 +112,30 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		}
 		Goto Death;
 	
-	XDeath:
-		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
-
+	Classic.XDeath:
+		POSS M 4 { A_Fall(); A_XScream(); }
+		POSS NOPQRST 4;
+        POSS U -1;
+        Stop;
+		
+	Real.XDeath:
 		POSS M 5
 		{	
 			for (int i = 0; i < 10; i++)
 			{
-				A_SpawnProjectile("GenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
-				A_SpawnProjectile("TinyGenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));
+				A_SpawnProjectile("GenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));	
+				A_SpawnProjectile("TinyGenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
 			}
-			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
+			for (int i = 0; i < 6; i++)
+			{
+				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+			}
 			
-			A_ScreamAndUnblock();
+			A_Fall(); A_XScream();
 		}
-		POSS NOPQRST 5;
+		POSS NOPQRST 1;
         POSS U -1;
         Stop;
 
