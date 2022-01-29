@@ -166,7 +166,7 @@ Class EquestriaLostSoul : LostSoul
 
 Class UnicornSoul : EquestriaLostSoul
 {
-	Default { Speed 6; -Bright }
+	Default { Speed 6; DamageType "Unicorn"; -Bright }
 	States
 	{
 	
@@ -175,14 +175,32 @@ Class UnicornSoul : EquestriaLostSoul
 		Loop;
 		
 	See:
-		SKUL A 3 A_Chase();
-		SKUL A 3 A_Chase (null,null);
+	//	#### # 0 A_JumpIfCloser(128, "Charge");
+		SKUL A 3 A_Chase(null, "Missile"); //CHF_FASTCHASE
+	//	#### # 0 A_JumpIfCloser(128, "Charge");
+		SKUL A 3 A_Chase(null,null);
 		Loop;
 	
+	Charge:
+		SKUL C 10 A_FaceTarget();
+		SKUL D 0
+		{
+			A_SpawnItem("LostSoulCharge", 0, 15);
+			A_FaceTarget();
+		}
+		SKUL D 4 A_SkullAttack();
+		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
+		Goto Charge+3;
+	
 	Missile:
-		SKUL C 10 Bright A_FaceTarget();
-		SKUL D 4 Bright A_SpawnProjectile("StonedAura", 28);
+		SKUL C 8 Bright A_FaceTarget();
+		SKUL D 4 Bright
+		{
+			A_SpawnProjectile("StonedAura", 28);
+			A_Recoil(5);
+		}
 		SKUL CD 4 Bright;
+		#### # 0 A_Stop();
 		Goto See;
 	
 	Death:
@@ -221,7 +239,17 @@ Class UnicornSoul : EquestriaLostSoul
 		SKUL J 3;
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
+
 	}
+	
+	/*Override void Tick() ////// cool ///////
+	{
+		if (!isFrozen())
+		{
+			A_SpawnItem("UnicornTrail", -10);
+		}
+		Super.Tick();
+	}*/
 }
 
 Class StonedAura : FastProjectile
@@ -230,7 +258,7 @@ Class StonedAura : FastProjectile
 	{
 		+RANDOMIZE
 		
-		Damage 4;
+		Damage 3;
 		
 		Speed 50;
 		
@@ -397,6 +425,25 @@ Class LostSoulCharge : Trails
 	}
 }
 
+Class UnicornTrail : LostSoulCharge
+{
+	Default { Scale 0.75; }
+	States
+	{
+	Spawn:
+		MISL B 15 Bright;
+		
+	Bye:
+		#### # 1 Bright A_SetScale(Scale.X - 0.01);
+		#### # 0 A_JumpIf(Scale.X <= 0, null);
+		Loop;
+		
+	Bye2:
+		TNT1 A 1;
+		Stop;
+	}
+}
+		
 /*actor DELostSoul : LostSoul replaces LostSoul
 {
   +FLOATBOB
