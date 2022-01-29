@@ -169,30 +169,3 @@ Class CeilingLamp1 : Actor
 		Stop;
 	}
 }
-
-/* Torches */
-
-Class EquestriaWallTorch : Actor
-{
-	Default
-	{
-	//$Title Wall Torch
-	//$Category Light Sources
-	//$IsDecoration
-	//$NotAngled
-	
-		+RANDOMIZE
-		+NOBLOCKMAP
-		+NOGRAVITY
-		+FIXMAPTHINGPOS
-		Radius 6.5; Height 10;
-	}
-	States
-	{
-	Spawn:
-		WTCH A 0 A_SpawnItem("BerserkPuff", 0, 15);
-		WTCH A 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
-		WTCH ABCDABCD 4 Bright;
-		Loop;
-	}
-}
