@@ -435,12 +435,8 @@ Class UnicornTrail : LostSoulCharge
 		
 	Bye:
 		#### # 1 Bright A_SetScale(Scale.X - 0.01);
-		#### # 0 A_JumpIf(Scale.X <= 0, null);
+		#### # 0 A_JumpIf(Scale.X <= 0, "Null");
 		Loop;
-		
-	Bye2:
-		TNT1 A 1;
-		Stop;
 	}
 }
 		
