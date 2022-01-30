@@ -112,6 +112,10 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		}
 		Goto Death;
 	
+	XDeath.Plasma:
+		#### # 0 A_SpawnItem("PlasmaExplosion",0, 25);
+		Goto XDeath;
+		
 	Classic.XDeath:
 		POSS M 4 { A_Fall(); A_XScream(); }
 		POSS NOPQRST 4;
