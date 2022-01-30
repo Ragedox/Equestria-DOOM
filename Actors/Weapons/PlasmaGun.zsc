@@ -178,15 +178,15 @@ Class EquestriaPlasmaBall : Actor
 		Wait;
 
 	XDeath:
-		PLSE AA 0 A_SpawnItemEx("NoBlood_TinyGenericGib",0,0,0,random(1, 2),random(1, 2),random(1, 2),frandom(0, 359),0, 128);
+		PLSE AB 0 A_SpawnItemEx("NoBlood_TinyGenericGib",0,0,0,random(1, 2),random(1, 2),random(1, 2),frandom(0, 359),0, 128);
 	Death:
-		PLSE A 0
+		PLSE C 0
 		{
 			A_FadeIn(0.5, FTF_CLAMP);
 			A_SpawnItem("SmokePuff");
 		}
-		PLSS AA 0 A_SpawnProjectile("PlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
-		PLSE ABCDE 4 Bright A_FadeOut(0.15);
+		PLSE DE 0 A_SpawnProjectile("PlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		PLSE ABCDE 4 Bright;
 		Stop;
 	}
 }
@@ -245,5 +245,22 @@ Class PlasmaSparkle : PuffSparkles
 			A_ScaleVelocity(0.90);
 			A_Recoil(frandom(-1, 1));
 		}	
+	}
+}
+
+Class PlasmaExplosion : Actor
+{
+	Default
+	{
+		+ForceXYBillBoard +NoInteraction +Bright
+		RenderStyle "Add"; Translation "112:127=199:192", "224:231=192:196", "160:167=199:192";
+	}
+	States
+	{
+	Spawn:
+		BFE2 AB 0 A_SpawnProjectile("PlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		BFE2 A 8 Bright A_QuakeEx(1,1,1,10,0,100,0,QF_SCALEDOWN);
+		BFE2 BCD 6 Bright;
+		Stop;
 	}
 }
