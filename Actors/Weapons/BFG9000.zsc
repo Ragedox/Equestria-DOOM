@@ -168,8 +168,9 @@ Class EquestriaBFGExtra : BFGExtra replaces BFGExtra
 	States
 	{
 	Spawn:
-		BFE2 AAAAAA 0 A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
-		BFE2 ABCD 8 Bright;
+		BFE2 ABCD 0 A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		BFE2 A 8 Bright A_QuakeEx(1,1,1,10,0,100,0,QF_SCALEDOWN);
+		BFE2 BCD 6 Bright;
 		Stop;
 	}
 }
