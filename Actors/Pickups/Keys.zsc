@@ -26,7 +26,7 @@ Class EquestriaBlueCard : BlueCard replaces BlueCard
 {
 	Default
 	{	+FORCEXYBILLBOARD
-		Species "BlueKey";
+		Species "BlueCard";
 }}
 
 Class EquestriaYellowCard : YellowCard replaces YellowCard
