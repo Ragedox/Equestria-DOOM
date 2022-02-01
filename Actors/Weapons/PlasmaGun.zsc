@@ -45,7 +45,7 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		
 		PLSG A 1
 		{
-			A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -12);
+			A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -14);
 			A_FirePlasma();
 		//	A_GunFlash();
 		}
@@ -56,7 +56,7 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 	Fire.CamRecoil:
 		PLSG A 1
 		{
-			A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -12);
+			A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -14);
 			A_FirePlasma();
 		//	A_GunFlash();
 			A_ZoomFactor(0.995, ZOOM_NOSCALETURNING);
@@ -153,7 +153,7 @@ Class EquestriaPlasmaBall : Actor
 		
 		Radius 6; Height 12;
 	  
-		RenderStyle "Add"; Alpha 0.5;
+		RenderStyle "Add"; Alpha 1;
 		
 		+RollSprite +RollCenter
 		+ForceXYBillBoard
@@ -171,12 +171,14 @@ Class EquestriaPlasmaBall : Actor
 			A_SpawnProjectile("PlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			A_SetRoll(random(0, 359));
 		}
-		PLSS A 1 Bright
+		
+	Projectile:
+		PLSS AB 1 Bright
 		{
-			A_SpawnItem("PlasmaTrail");
+			A_SpawnItemEx("PlasmaTrail",0,0,0,0,0,0,0, SXF_TRANSFERSPRITEFRAME | SXF_TRANSFERROLL);
 			A_SetRoll((roll + 15), SPF_INTERPOLATE);
 		}
-		Wait;
+		Loop;
 
 	XDeath:
 		PLSE AB 0 A_SpawnItemEx("NoBlood_TinyGenericGib",0,0,0,random(1, 2),random(1, 2),random(1, 2),frandom(0, 359),0, 128);
@@ -194,12 +196,11 @@ Class EquestriaPlasmaBall : Actor
 
 Class PlasmaTrail : Trails
 {
+	Default { Scale 1; Alpha 0.3; }
 	States
 	{
 	Spawn:
-		TNT1 A 2;
-		PLSS A 0 A_SetRoll(random(0, 359));
-		PLSS A 1 Bright A_FadeOut(0.1);
+		#### # 1 Bright A_FadeOut(0.025);
 		Wait;
 	}
 }
@@ -231,11 +232,12 @@ Class PlasmaSparkle : PuffSparkles
 	States
 	{
 	Spawn:
-		PLSS A 0 NoDelay A_SetRoll(random(0, 359));
+		PLS2 A 0 NoDelay A_SetRoll(random(0, 359));
 		
-		PLSS A random(15,25);
-		PLSS AAAA 1 A_SetScale(Scale.X + 0.25, Scale.Y + 0.25);
-		PLSS AAAA 1 A_SetScale(Scale.X - 0.25, Scale.Y - 0.25);
+		PLS2 A random(15,25);
+	Death:
+		PLS2 AAAA 1 A_SetScale(Scale.X + 0.25, Scale.Y + 0.25);
+		PLS2 AAAA 1 A_SetScale(Scale.X - 0.25, Scale.Y - 0.25);
 		Stop;
 	}
 	Override void Tick()
