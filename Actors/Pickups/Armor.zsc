@@ -35,23 +35,11 @@ Class SecurityArmor : GreenArmor replaces GreenArmor
 	//$Title Security Armor (100)
 		Inventory.PickupSound "pickup/armor1";
 	}
-}
-
-Class SecurityArmor2 : SecurityArmor
-{
-	Default
-	{
-	//$Category Health and Armor
-	//$Title Security Armor with Boots (125)
-
-		Armor.SavePercent 35;
-		Armor.SaveAmount 125;
-	}
 	States
 	{
 	Spawn:
-		ARM3 A 6;
-		ARM3 A 7 Bright;
+		ARM1 A 8 Bright;
+		ARM1 B 8;
 		Loop;
 	}
 }
@@ -62,5 +50,12 @@ Class CombatArmor : BlueArmor replaces BlueArmor
 	{
 	//$Title Security Armor (200)
 		Inventory.PickupSound "pickup/armor2";
+	}
+	States
+	{
+	Spawn:
+		ARM2 B 8;
+		ARM2 A 8 Bright;
+		Loop;
 	}
 }

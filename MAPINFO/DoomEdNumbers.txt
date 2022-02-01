@@ -27,11 +27,10 @@ DoomEdNums
 	15101 = "HealthPack"
 	15102 = "BigHealthBonus"
 	15103 = "BigArmorBonus"
-	15104 = "SecurityArmor2"
 
 	/* Ammo */
 
-	15200 = "Clip2"
+/*	15200 =					*/
 	15201 = "AmmoClips"
 	15202 = "AmmoCache"
 	15203 = "LargeClip"
@@ -92,7 +91,7 @@ DoomEdNums
 	
 	//Hell
 	
-	15600 = "EvilEye2"
+/*	15600 =					*/
 	15601 = "DemonSkull"
 	15602 = "DemonSkull2"
 	15603 = "DemonSkull3"
@@ -100,6 +99,9 @@ DoomEdNums
 	15605 = "DemonSkull5"
 	15606 = "DemonSkull6"
 	15607 = "BaronStatue3"
+	
+	
+	
 	15611 = "BaronStatue1"
 	15612 = "BaronStatue2"
 	15613 = "DemonArm"

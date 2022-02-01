@@ -52,23 +52,6 @@ Class AmmoClips : EquestriaClip
 	}
 }
 
-Class Clip2 : EquestriaClip
-{
-	Default
-	{
-		//$Category Ammunition
-		//$Title Clip 2 (10)
-		Inventory.PickupMessage "$GOTCLIP"; // "Picked up a clip.";
-		Inventory.Amount 10;
-	}
-	States
-	{
-	Spawn:
-		CLIQ A -1;
-		Stop;
-	}
-}
-
 Class LargeClip : EquestriaClip
 {
 	Default

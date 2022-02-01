@@ -15,6 +15,7 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 	//$NotAngle
 	//$Category "Decoration/Hell"
 	//$Title Evil Eye
+	//$Sprite CEYEA0
 		+FORCEXYBILLBOARD
 		+NOGRAVITY
 		+FLOATBOB
@@ -25,8 +26,12 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_SpawnItemEx("Candlestick");
-		#### # 1 A_CheckProximity("FadeIn", "EquestriaDoomPlayer", 1024, 1, CPXF_CHECKSIGHT);
+		CEYE A 0 NoDelay A_SpawnItemEx("Candlestick");
+		CEYE B 0 A_Jump(256, 1,2);
+		Wait;
+		#### # 0 A_SetTranslation("BeigeEye");
+		
+		CEYE C 1 A_CheckProximity("FadeIn", "EquestriaDoomPlayer", 512, 1, CPXF_CHECKSIGHT);
 		Wait;
 		
 	FadeIn:
@@ -45,23 +50,6 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 	FadeOut:
 		#### ########## 1 A_FadeOut(0.1, FTF_CLAMP);
 		Goto Watch;
-	}
-}
-
-Class EvilEye2 : Actor
-{
-	Default
-	{
-		//$NotAngled
-		//$Category "Decoration/Hell"
-		Radius 16; Height 54; ProjectilePassHeight -16;
-		+SOLID
-	}
-	States
-	{
-	Spawn:
-		DEYE ABCB 6 Bright;
-		Loop;
 	}
 }
 
@@ -134,7 +122,7 @@ Class BaronStatue1 : Actor
 	States
 	{
 	Spawn:
-		BRST A -1;
+		STAT A -1;
 		Stop;
 	}
 }
@@ -144,7 +132,7 @@ Class BaronStatue2 : BaronStatue1
 	States
 	{
 	Spawn:
-		BRST B -1;
+		STAT B -1;
 		Stop;
 }}
 
@@ -153,7 +141,7 @@ Class BaronStatue3 : BaronStatue1
 	States
 	{
 	Spawn:
-		BRST C -1;
+		STAT C -1;
 		Stop;
 }}
 
