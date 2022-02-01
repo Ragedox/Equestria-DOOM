@@ -38,6 +38,7 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 
 	Deselect:
 		TNT1 A 0 A_TakeInventory("KickCheck", 999);
+		TNT1 A 0 A_JumpIf(health <= 0, "DeathCheck");
 		
 		BFGG A 1 A_Lower();
 		Wait;

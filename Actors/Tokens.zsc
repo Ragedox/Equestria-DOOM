@@ -1,5 +1,5 @@
 Class InvToken : Inventory
-{	Default {	Inventory.MaxAmount 1;	+INVENTORY.QUIET;	-INVENTORY.INVBAR;	}}
+{	Default {	Inventory.MaxAmount 1;	+INVENTORY.QUIET; -INVENTORY.INVBAR;	}}
 
 Class DeadCheck : InvToken	{}
 

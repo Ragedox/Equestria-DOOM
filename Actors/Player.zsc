@@ -1,3 +1,9 @@
+Class Death_Common : InvToken {}
+Class Death_Fire : InvToken {}
+Class Death_Blast : InvToken {}
+Class Death_Nukage : InvToken {}
+Class Death_Lava : InvToken {}
+
 Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 {
 	Default
@@ -39,21 +45,21 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		PLAY KLM 10;
 		PLAY N -1;
 		Stop;
+	
+	Death.Fire:
+		TNT1 A 0 A_GiveInventory("Death_Fire", 1);
+		Goto Death;
 		
 	Death.Nukage:
-		TNT1 A 0 A_GiveInventory("NukageDeath", 1);
+		TNT1 A 0 A_GiveInventory("Death_Nukage", 1);
 		Goto Death;
 	
 	Death.Lava:
-		TNT1 A 0 A_GiveInventory("LavaDeath", 1);
+		TNT1 A 0 A_GiveInventory("Death_Lava", 1);
 		Goto Death;
-		
-	Death.Fire:
-		TNT1 A 0 A_GiveInventory("FireDeath", 1);
-		Goto Death;
-		
+	
 	Death.Blast:
-		PLAY H 0 A_GiveInventory("BlastDeath", 1);
+		PLAY H 0 A_GiveInventory("Death_Blast", 1);
 		PLAY H 10;
 		PLAY I 10 A_PlayerScream();
 		PLAY J 10 A_NoBlocking();
@@ -84,11 +90,6 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		Stop;
 	}
 }
-
-Class BlastDeath : InvToken {}
-Class NukageDeath : InvToken {}
-Class LavaDeath : InvToken {}
-Class FireDeath : InvToken {}
 
 Class PopSkull : PlayerChunk
 {
