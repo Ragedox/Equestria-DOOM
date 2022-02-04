@@ -8,45 +8,24 @@ Pulselight IMPBALL
 	attenuate 1
 }
 
-// Doom imp fireball explosion
-flickerlight IMPBALL_X1
+pulselight IMPBALLDEATH
 {
-    color 0.7 0.4 0.25
-    size 50
-    secondarySize 60
-    chance 0.25
+    color 1.0 0.25 0.0
+    size 0
+    secondarySize 25
+    interval 0.75
 	attenuate 1
-}
-
-flickerlight IMPBALL_X2
-{
-    color 0.4 0.2 0.1
-    size 30
-    secondarySize 40
-    chance 0.25
-	attenuate 1
-}
-
-flickerlight IMPBALL_X3
-{
-    color 0.2 0.1 0.0
-    size 10
-    secondarySize 20
-    chance 0.25
-	attenuate 1
-}
+} 
 
 object EquestriaImpBall
 {
     frame BAL1A { light IMPBALL    }
     frame BAL1B { light IMPBALL    }
 
-    frame BAL1C { light IMPBALL_X1 }
-    frame BAL1D { light IMPBALL_X2 }
-    frame BAL1E { light IMPBALL_X3 }
+    frame BAL1C { light IMPBALLDEATH }
+    frame BAL1D { light IMPBALLDEATH }
+    frame BAL1E { light IMPBALLDEATH }
 }
-
-
 
 // Cacodemon fireball
 Pulselight CACOBALL
@@ -58,45 +37,27 @@ Pulselight CACOBALL
 	attenuate 1
 }
 
-flickerlight CACOBALL_X1
+pulselight CACOBALLDEATH
 {
     color 0.9 0.4 0.7
-    size 70
-    secondarySize 80
-    chance 0.25
+    size 0
+    secondarySize 30
+    interval 0.70
 	attenuate 1
-}
-
-flickerlight CACOBALL_X2
-{
-    color 0.6 0.3 0.5
-    size 50
-    secondarySize 60
-    chance 0.25
-	attenuate 1
-}
-
-flickerlight CACOBALL_X3
-{
-    color 0.3 0.1 0.1
-    size 30
-    secondarySize 40
-    chance 0.25
-	attenuate 1
-}
+} 
 
 object EquestriaCacodemonBall
 {
     frame BAL2A { light CACOBALL }
     frame BAL2B { light CACOBALL }
 
-    frame BAL2C { light CACOBALL_X1 }
-    frame BAL2D { light CACOBALL_X2 }
-    frame BAL2E { light CACOBALL_X3 }
+    frame BAL2C { light CACOBALLDEATH }
+    frame BAL2D { light CACOBALLDEATH }
+    frame BAL2E { light CACOBALLDEATH }
 }
 
 // Baron / Hell Knight fireball
-Pulselight BARONBALL
+Pulselight BRUISERBALL
 {
     color 0.0 1.0 0.25
     size 25
@@ -105,51 +66,33 @@ Pulselight BARONBALL
 	attenuate 1
 }
 
-flickerlight BARONBALL_X1
+pulselight BRUISERBALLDEATH
 {
     color 0.6 0.9 0.6
-    size 40
-    secondarySize 45
-    chance 0.25
+    size 0
+    secondarySize 30
+    interval 0.7
 	attenuate 1
-}
-
-flickerlight BARONBALL_X2
-{
-    color 0.45 0.6 0.45
-    size 30
-    secondarySize 35
-    chance 0.25
-	attenuate 1
-}
-
-flickerlight BARONBALL_X3
-{
-    color 0.2 0.3 0.2
-    size 20
-    secondarySize 25
-    chance 0.25
-	attenuate 1
-}
+} 
 
 object EquestriaBaronBall
 {
-	frame BAL7A { light BARONBALL    }
-	frame BAL7B { light BARONBALL    }
+	frame BAL7A { light BRUISERBALL    }
+	frame BAL7B { light BRUISERBALL    }
 	
-	frame BAL7C { light BARONBALL_X1 }
-    frame BAL7D { light BARONBALL_X2 }
-    frame BAL7E { light BARONBALL_X3 }
+	frame BAL7C { light BRUISERBALLDEATH }
+    frame BAL7D { light BRUISERBALLDEATH }
+    frame BAL7E { light BRUISERBALLDEATH }
 }
 
 object KnightBall
 {
-    frame BBALA { light BARONBALL    }
-    frame BBALB { light BARONBALL    }
+    frame BBALA { light BRUISERBALL    }
+    frame BBALB { light BRUISERBALL    }
 
-    frame BBALC { light BARONBALL_X1 }
-    frame BBALD { light BARONBALL_X2 }
-    frame BBALE { light BARONBALL_X3 }
+    frame BBALC { light BRUISERBALLDEATH }
+    frame BBALD { light BRUISERBALLDEATH }
+    frame BBALE { light BRUISERBALLDEATH }
 }
 
 
@@ -174,12 +117,13 @@ pulselight ARACHPLAS
 	attenuate 1
 }
 
-pulselight AracPlasmaExplosion
+pulselight ARACPLASMAEXPLOSION
 {
     color 0.75 1.0 0.6
     size 0
     secondarySize 25
     interval 0.75
+	attenuate 1
 } 
 
 object EquestriaAracPlasmaBall
@@ -187,21 +131,7 @@ object EquestriaAracPlasmaBall
     frame APLSA { light ARACHPLAS }
     frame APLSB { light ARACHPLAS }
 
-    frame APBX { light AracPlasmaExplosion }
-}
-
-Pulselight AracPlasmaSparkle
-{
-    color 0.6 1.0 0.4
-    size 5
-    secondarySize 15
-    interval 0.5
-	attenuate 1
-}
-
-object AracPlasmaSparkle
-{
-	frame APLSA { light AracPlasmaSparkle }
+    frame APBX { light ARACPLASMAEXPLOSION }
 }
 
 // Arch Vile Fire
