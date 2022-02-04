@@ -2,30 +2,28 @@
 
 /* Season 1 */
 
-MAINBASE = "Main Facility";
+MAINBASE = "Main Facility"; SEWERS = "Sewers";
 NUCLEAR_PLANT = "Nuclear Plant";
 TOXIN_REFINERY = "Toxin Refinery";
-COMMAND_CONTROL = "Command Control";
 CENTRAL_PROCESSING = "Central Processing";
 COMPUTER_STATION = "Computer Station";
+COMMAND_CONTROL = "Command Control";
 PHOBOS_LAB = "Phobos Laboratory";
 PHOBOS_ANOMALY = "Phobos Anomaly";
 
-SEWERS = "Sewers";
 MILITARY_BASE = "Military Base";
 
 [ptb pt br]
 
 /* Temporada 1 */
 
-HANGAR = "Base Principal";
+HANGAR = "Base Principal"; SEWERS = "Esgoto";
 NUCLEAR_PLANT = "Usina Nuclear";
 TOXIN_REFINERY = "Refinaria de Toxinas";
-COMMAND_CONTROL = "Comando e controle";
 CENTRAL_PROCESSING = "Central de Processamento";
 COMPUTER_STATION = "Estação de Computador";
+COMMAND_CONTROL = "Comando e controle";
 PHOBOS_LAB = "Laboratório de Phobos";
 PHOBOS_ANOMALY = "Anomalia de Phobos";
 
-SEWERS = "Esgoto";
 MILITARY_BASE = "Base Militar";
