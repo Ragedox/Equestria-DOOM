@@ -5,10 +5,9 @@ Class PuffSparkles : DebrisCore
 		+Bright
 		+ThruActors
 		+DontSplash
+		-MISSILE
 		
-		BounceType "Doom";
-		
-		Scale 0.50;
+		Scale 0.5;
 		
 		Height 2; Radius 1;
 		
@@ -25,8 +24,6 @@ Class PuffSparkles : DebrisCore
 		TNT1 A 0 A_JumpIf(waterlevel > 1, "Vanish");
 		
 		PUFF A random(5, 35);
-		
-	Death:
 		PUFF AAA 4 A_SetScale(Scale.X - 0.10, Scale.Y - 0.10);
 		PUFF AA 3 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
 		PUFF AAAA 2 A_SetScale(Scale.X - 0.025, Scale.Y - 0.025);
@@ -50,10 +47,7 @@ Class ChainsawSparkles : PuffSparkles
 	Spawn:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
 		TNT1 A 0 A_JumpIf(waterlevel > 1, "Vanish");
-		PUFF A 1;
-		Loop;
-	
-	Death:
+		PUFF A random(35, 70);
 		PUFF AAA 4 A_SetScale(Scale.X - 0.10, Scale.Y - 0.10);
 		PUFF AA 3 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
 		PUFF AAAA 2 A_SetScale(Scale.X - 0.025, Scale.Y - 0.025);
@@ -96,10 +90,6 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 		PUFF C 4;
 		PUFF D 1 A_FadeOut(0.1);
 		Wait;
-	
-	Vanish:
-		TNT1 A 0;
-		Stop;
 	}
 	
 	Override void Tick()
