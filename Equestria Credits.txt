@@ -28,8 +28,10 @@ Ragedox, JoeyTD
 = Title Screen Hi-res Sprites =
 IsaacPony
 
-= Season 1 : Knee-Deep in the Dead (Reimagined) =
-Ragedox, SuperWillGaming
+= Season 1 : Knee-Deep in the Dead =
+Ragedox (Episode 1, Episode 2, Secret 1 - Episode 9)
+SuperWillGaming (Episode 3)
+IsaacPony (Secret 1 - Episode 9)
 
 = Shainer's Voice =
 Cinny!
