@@ -15,7 +15,7 @@ Class Trails : DEParticles
 	{
 		Scale 0.75;
 		RenderStyle "Add";
-		Alpha 0.75;
+		Alpha 0.7;
 		
 		+NoInteraction
 	}
