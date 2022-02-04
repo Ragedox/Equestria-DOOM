@@ -3,10 +3,12 @@ Class BulletCasing : PuffSparkles
 	Default
 	{
 		-BRIGHT
+		+MISSILE
 		RenderStyle "Normal";
 		Scale 0.15;
 		Gravity 0.5;
 		
+		BounceType "Doom";
 		BounceFactor 0.5;
 	}
 	States
@@ -38,5 +40,41 @@ Class ShellCasing : BulletCasing
 		CSIG B 3500 A_Recoil(frandom(-2, -1));
 		CSIG B 1 A_FadeOut(0.1);
 		Wait;
+	}
+}
+
+Class BulletCasingSpawn : Actor
+{
+	Default
+	{
+		Speed 20;
+		PROJECTILE;
+		+NOCLIP
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnProjectile("BulletCasing",0,0, frandom(-80,-100), CMF_AIMDIRECTION, frandom(-60,-40));
+		Stop;
+	}
+}
+
+Class ShotCasingSpawn : BulletCasingSpawn
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnProjectile("ShellCasing",0,0, frandom(-80,-100), CMF_AIMDIRECTION, frandom(-60,-40));
+		Stop;
+	}
+}
+
+Class SSGCasingSpawn : ShotCasingSpawn
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_SpawnProjectile("ShellCasing",0,0, frandom(80,100), CMF_AIMDIRECTION, frandom(-70,-40));
+		Stop;
 	}
 }

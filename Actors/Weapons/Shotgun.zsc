@@ -63,7 +63,7 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		SHTG B 2;
 		SHTG C 2;
 		SHTG DEFGHIJ 1;
-		SHTG H 0 A_FireProjectile("ShellCasing",-90,0,0,-8, FPF_NOAUTOAIM);
+		SHTG H 0 A_FireProjectile("ShotCasingSpawn",random(0,5),0, -15, -20);
 		SHTG IH 4;
 		SHTG GFEDCB 1;
 		SHTG A 3;
@@ -71,7 +71,7 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		Goto Ready;
 	
 	Flash:
-		SHTF A 1 Bright A_WeaponOffset(0, random( 40, 45), WOF_KEEPX | WOF_INTERPOLATE);
+		SHTF A 1 Bright A_WeaponOffset(0, random(40, 45), WOF_KEEPX | WOF_INTERPOLATE);
 		SHTF B 3 Bright;
 		SHTF A 2 Bright A_WeaponOffset(0, 32, WOF_KEEPX | WOF_INTERPOLATE);
 		Goto LightDone;

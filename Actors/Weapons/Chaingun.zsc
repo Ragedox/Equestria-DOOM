@@ -50,7 +50,7 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		CHGG AB 9;
 		CHGG AB 6;
 		CHGG AB 3;
-		CHGG A 1 A_Refire;
+		CHGG A 1 A_Refire();
 		Goto WindDown;
 		
 	Hold:
@@ -58,14 +58,23 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		{
 			A_FireBullets(6, 6, -1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash("Flash");
-			A_FireProjectile("BulletCasing",90,0,0,random(-8, -4), FPF_NOAUTOAIM);
+			A_FireProjectile("BulletCasing",frandom(90, 45),0,0,frandom(0, -7), FPF_NOAUTOAIM);
+			
+			if (GetCVar("CamRecoilToggle") == true)
+			{
+				A_QuakeEx(1,1,1,3,0,2,0, QF_SCALEUP | QF_SCALEDOWN);
+			}
 		}
-		
 		CHGG B 3
 		{
 			A_FireBullets(6, 6, -1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash("Flash2");
-			A_FireProjectile("BulletCasing",90,0,0,random(-8, -4), FPF_NOAUTOAIM);
+			A_FireProjectile("BulletCasing",frandom(90, 45),0,0,frandom(0, -7), FPF_NOAUTOAIM);
+		
+			if (GetCVar("CamRecoilToggle") == true)
+			{
+				A_QuakeEx(1,1,1,3,0,2,0, QF_SCALEUP | QF_SCALEDOWN);
+			}
 		}
 
 		CHGG A 0
@@ -86,7 +95,7 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		CHGF A 2 Bright
 		{
 			A_Light1();
-			A_WeaponOffset(0, random(36, 28), WOF_INTERPOLATE);
+			A_WeaponOffset(random(-3, 3), random(36, 28), WOF_INTERPOLATE);
 		}
 		Goto LightDone;
 	
@@ -94,7 +103,7 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		CHGF B 2 Bright
 		{
 			A_Light2();
-			A_WeaponOffset(0, random(36, 28), WOF_INTERPOLATE);
+			A_WeaponOffset(random(-3, 3), random(36, 28), WOF_INTERPOLATE);
 		}
 		Goto LightDone;
 	
