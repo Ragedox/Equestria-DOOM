@@ -32,7 +32,11 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
 		{
 			A_QuakeEx(4, 4, 4, 35, 0, 800, "world/quake", QF_SCALEDOWN, 0,0,0, 1);
 			
-			A_SpawnItemEx("BigGibber",0,0,random(32, 110),0,0,0,0, SXF_TRANSFERPOINTERS);
+			for (int i = 0; i < 20; i++)
+			{
+				A_SpawnProjectile("BigGoreRandom", frandom(32, 110), frandom(radius * -1, radius), frandom(0, 359), CMF_AIMDIRECTION, frandom(0, 359));
+				A_SpawnProjectile("GenericGib", frandom(32, 110), frandom(radius * -1, radius), frandom(0, 359), CMF_AIMDIRECTION, frandom(0, 359));
+			}
 		}
 		CYBR MNOPP 0
 		{
