@@ -45,7 +45,7 @@ Class EquestriaAracPlasmaBall : EquestriaPlasmaBall replaces ArachnotronPlasma
  
 	XDeath:
 		APBX AB 0 A_SpawnItemEx("NoBlood_TinyGenericGib",0,0,0,random(1, 2),random(1, 2),random(1, 2),frandom(0, 359),0, 128);
-
+	Crash:
 	Death:
 		APBX A 0 A_SpawnItem("SmokePuff");
 		APBX AAAA 0 A_SpawnProjectile("AracPlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
