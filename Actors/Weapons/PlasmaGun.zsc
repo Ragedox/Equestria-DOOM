@@ -167,6 +167,7 @@ Class EquestriaPlasmaBall : Actor
 
 	XDeath:
 		PLSE AB 0 A_SpawnItemEx("NoBlood_TinyGenericGib",0,0,0,random(1, 2),random(1, 2),random(1, 2),frandom(0, 359),0, 128);
+	Crash:
 	Death:
 		PLSE C 0
 		{
