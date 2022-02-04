@@ -117,7 +117,7 @@ Class BaronStatue1 : Actor
 	{
 		//$Category "Decoration/Hell"
 		+FloorClip +Solid
-		Height 86; Radius 26; ProjectilePassHeight -16;
+		Height 64; Radius 26; ProjectilePassHeight -16;
 	}
 	States
 	{
@@ -129,6 +129,10 @@ Class BaronStatue1 : Actor
 
 Class BaronStatue2 : BaronStatue1
 {
+	Default
+	{
+		Height 86;
+	}
 	States
 	{
 	Spawn:
@@ -136,7 +140,7 @@ Class BaronStatue2 : BaronStatue1
 		Stop;
 }}
 
-Class BaronStatue3 : BaronStatue1
+Class BaronStatue3 : BaronStatue2
 {
 	States
 	{
