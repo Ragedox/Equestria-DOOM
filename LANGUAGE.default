@@ -11,7 +11,7 @@ WARNING	= 		"WARNING!";
 NOKIDS = 		"This is NOT a children's game!";
 MAYCONTAIN = 	"May contain images and content sensitive\nfor some audiences, such as\nBlood, Gore and Extreme Violence.";
 
-BABYSKILL =		 "I'm a Little Pony";
+BABYSKILL =		"I'm a Little Pony";
 EASYSKILL = 	"Hey, not too rough";
 NORMALSKILL = 	"Hurt me plenty";
 HARDSKILL = 	"Ultra-Violence";
