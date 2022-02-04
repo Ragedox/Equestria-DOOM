@@ -10,9 +10,7 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		+ALLOWPAIN
 		-OLDRADIUSDMG
 		+CANPASS
-		
-		//BloodColor "66 a2 66";
-		//BloodType "ExploBarrel"
+
 		Painchance 128;
 	}
 	States
@@ -31,7 +29,11 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		BAR1 AAAAA 1 A_SetScale(Scale.X + 0.05, 1.0, 1, true);
 		BEXP AAAAA 1 Bright A_SetScale(Scale.X + 0.2, Scale.Y + 0.025);
 		
-		TNT1 AAAAAAAAAA 0 A_SpawnProjectile("Smoke", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		TNT1 AAAAAAAAAA 0
+		{
+			A_SpawnProjectile("Smoke", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			A_SpawnProjectile("ExplosionSparkle", random(0,32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		}
 		
 		TNT1 BBBBBBBBBBBBBBB 0 A_SpawnProjectile("BarrelDebris", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (-10, -90));
 		
@@ -68,7 +70,11 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		BAR1 AAA 1 A_SetScale(Scale.X + 0.4, Scale.Y + 0.025);
 		BEXP A 4 Bright;
 		
-		TNT1 AAAAAAAAAA 0 A_SpawnProjectile("Smoke", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		TNT1 AAAAAAAAAA 0
+		{
+			A_SpawnProjectile("Smoke", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			A_SpawnProjectile("ExplosionSparkle", random(0,32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		}
 		
 		TNT1 BBBBBBBBBBBBBBBBBBBB 0 A_SpawnProjectile("BarrelDebris", random(0, 32), random(-20, 20), random (0, 359), CMF_AIMDIRECTION, random (-10, -90));
 		
@@ -114,7 +120,7 @@ Class BarrelDebris : DebrisCore
 {
 	Default
 	{
-		Radius 10; Height 10;
+		Radius 5; Height 10;
 		Mass 50;
 		
 		Speed 12;
