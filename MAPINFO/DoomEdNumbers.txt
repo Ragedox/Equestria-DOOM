@@ -6,7 +6,8 @@ DoomEdNums
 	/* Weapons */
 	
 	90 = "Broom"
-
+	91 = "EquestriaRifle"
+	
 	/* Title Map and Season Scenes Props */
 	
 	900 = "TheHorse"
