@@ -2,6 +2,7 @@ Class BulletCasing : PuffSparkles
 {
 	Default
 	{
+		Height 4; Radius 2;
 		-BRIGHT
 		+MISSILE
 		RenderStyle "Normal";
