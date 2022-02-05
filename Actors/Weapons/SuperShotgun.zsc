@@ -66,12 +66,8 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 		SHT2 E 3;
 		SHT2 F 4;
 		SHT2 G 5 A_CheckReload();
-		SHT2 H 5
-		{
-			A_OpenShotgun2();
-			A_FireProjectile("SSGCasingSpawn",5,0,-8, frandom(-20, -15));
-			A_FireProjectile("SSGCasingSpawn",5,0,-8, frandom(-20, -15));
-		}
+		SHT2 H 5 A_OpenShotgun2();
+		TNT1 AA 0 A_FireProjectile("SSGCasingSpawn",random(0, 5),0,-8, frandom(-20, -15));
 		SHT2 IJ 4;
 		SHT2 K 6 A_LoadShotgun2();
 		SHT2 LM 4;
