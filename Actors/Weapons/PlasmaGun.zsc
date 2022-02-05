@@ -208,7 +208,7 @@ Class PlasmaGunLight : Actor replaces PlasmaBall
 	}
 }
 
-Class PlasmaSparkle : DEParticles
+Class PlasmaSparkle : PuffSparkles
 {
 	Default
 	{
