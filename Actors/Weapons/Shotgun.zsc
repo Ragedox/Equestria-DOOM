@@ -52,10 +52,12 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 			A_FireBullets (6, 1, 8, 5, "Player_ShotgunPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash();
 			A_StartSound ("weapons/shotgf", CHAN_WEAPON);
-			
-			A_FireProjectile("ShotgunLight", 0, 0, 0, -5);
-
 			A_Overlay(2, "CamRecoil");
+			
+			if (GetCVAR("WeaponLight") == true)
+			{
+				A_FireProjectile("ShotgunLight",0,0,0, -14);
+			}
 		}
 		Goto Pump;
 		

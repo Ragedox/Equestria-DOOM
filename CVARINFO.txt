@@ -4,3 +4,4 @@ user bool AuraToggle = true;
 server int GoreToggle = 1;
 server bool GibsStayForever = false;
 server bool FlatDecals = false;
+server bool WeaponLight = true;

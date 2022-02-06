@@ -50,6 +50,11 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 			A_WeaponOffset(0, 30, WOF_KEEPX | WOF_INTERPOLATE);
 			A_StartSound("weapons/pistol", CHAN_WEAPON);
 			A_GunFlash();
+			
+			if (GetCVAR("WeaponLight") == true)
+			{
+				A_FireProjectile("PistolLight",0,0,0, -14);
+			}
 		}
 		PISG C 2
 		{
@@ -72,3 +77,6 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 	
 	}
 }
+
+Class PistolLight : ShotgunLight
+{}

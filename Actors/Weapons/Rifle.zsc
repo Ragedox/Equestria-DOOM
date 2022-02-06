@@ -49,6 +49,11 @@ Class EquestriaRifle : DoomEquestriaWeapon
 			A_WeaponOffset(0, 34, WOF_INTERPOLATE | WOF_KEEPX);
 			A_Overlay(2, "CamRecoil");
 			A_FireProjectile("BulletCasingSpawn",0,0,0,-25, FPF_NOAUTOAIM);
+			
+			if (GetCVAR("WeaponLight") == true)
+			{
+				A_FireProjectile("PistolLight",0,0,0, -14);
+			}
 		}
 		
 		RFLE A 2 A_WeaponOffset(0, 36, WOF_INTERPOLATE | WOF_KEEPX);
