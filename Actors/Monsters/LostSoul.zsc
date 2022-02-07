@@ -276,7 +276,8 @@ Class StonedAura : FastProjectile
 	Death:
 		BAL3 C 0 A_SetRenderStyle(1, STYLE_Normal);
 		BAL3 CDE 4 Bright;
-		Stop;
+		#### # 1 A_FadeOut(0.1);
+		Wait;
 	}
 }
 

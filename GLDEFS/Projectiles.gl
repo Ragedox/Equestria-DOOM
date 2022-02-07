@@ -12,6 +12,7 @@ pulselight Explosion
     size 0
     secondarySize 50
     interval 0.25
+	attenuate 1
 } 
 
 object EquestriaRocket
@@ -39,6 +40,7 @@ pulselight PlasmaExplosion
     size 0
     secondarySize 25
     interval 0.75
+	attenuate 1
 } 
 
 object EquestriaPlasmaBall
@@ -47,20 +49,6 @@ object EquestriaPlasmaBall
     frame PLSSB { light PLASMABALL }
 
     frame PLSE { light PlasmaExplosion }
-}
-
-Pulselight PlasmaSparkle
-{
-    color 0.25 0.25 1.0
-    size 5
-    secondarySize 15
-    interval 0.5
-	attenuate 1
-}
-
-object PlasmaSparkle
-{
-	frame PLSS { light PlasmaSparkle }
 }
 
 // BFG

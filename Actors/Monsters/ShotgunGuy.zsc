@@ -104,8 +104,8 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		{
 			for (int i = 0; i < 10; i++)
 			{
-				A_SpawnProjectile("GenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));	
-				A_SpawnProjectile("TinyGenericGib", random(8, 56), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, -180));
+				A_SpawnItemEx("GenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 5),Random(2, 5),Random(2, 5), FRandom (0, 359));
+				A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 8),Random(2, 8),Random(2, 8), FRandom (0, 359));
 			}
 			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
 			

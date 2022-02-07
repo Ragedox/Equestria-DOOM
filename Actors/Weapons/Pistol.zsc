@@ -50,11 +50,16 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 			A_WeaponOffset(0, 30, WOF_KEEPX | WOF_INTERPOLATE);
 			A_StartSound("weapons/pistol", CHAN_WEAPON);
 			A_GunFlash();
+			
+			if (GetCVAR("WeaponLight") == true)
+			{
+				A_FireProjectile("PistolLight",0,0,0, -14);
+			}
 		}
 		PISG C 2
 		{
 			A_WeaponOffset(0, 29, WOF_KEEPX | WOF_INTERPOLATE);
-			A_FireProjectile("BulletCasing",90,0,0,-8, FPF_NOAUTOAIM);
+			A_FireProjectile("BulletCasingSpawn",0,0,0,-10, FPF_NOAUTOAIM);
 		}
 		PISG D 4;
 		PISG E 5;
@@ -72,3 +77,6 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 	
 	}
 }
+
+Class PistolLight : ShotgunLight
+{}

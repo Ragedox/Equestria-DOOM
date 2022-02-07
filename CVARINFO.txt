@@ -1,6 +1,7 @@
-user int CamRecoilToggle = 1;
-user int AuraToggle = 1;
+user bool CamRecoilToggle = true;
+user bool AuraToggle = true;
 
 server int GoreToggle = 1;
-server int GibsStayForever = 0;
-server int FlatDecals = 0;
+server bool GibsStayForever = false;
+server bool FlatDecals = false;
+server bool WeaponLight = true;

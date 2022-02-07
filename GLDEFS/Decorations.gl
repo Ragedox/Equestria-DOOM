@@ -29,11 +29,7 @@ pulselight BARREL
 
 object EquestriaExploBarrel
 {
-    //frame BAR1  { light BARREL    }
-
-    frame BEXPC { light ROCKET_X1 }
-    frame BEXPD { light ROCKET_X2 }
-    frame BEXPE { light ROCKET_X3 }
+    frame BEXP { light Explosion }
 }
 
 
@@ -90,9 +86,9 @@ object EquestriaBlueTorch
 flickerlight2 SMALLREDTORCH
 {
     color 0.7 0.2 0.2
-    size 72
-    secondarySize 81
-    interval 0.1
+    size 25
+    secondarySize 50
+    interval 0.5
     offset 0 35 0
 	attenuate 1
 }
@@ -106,9 +102,9 @@ object EquestriaShortRedTorch
 flickerlight2 SMALLGREENTORCH
 {
     color 0.2 0.7 0.2
-    size 72
-    secondarySize 81
-    interval 0.1
+    size 25
+    secondarySize 50
+    interval 0.5
     offset 0 35 0
 	attenuate 1
 }
@@ -122,9 +118,9 @@ object EquestriaShortGreenTorch
 flickerlight2 SMALLBLUETORCH
 {
     color 0.2 0.2 0.7
-    size 72
-    secondarySize 81
-    interval 0.1
+    size 25
+    secondarySize 50
+    interval 0.5
     offset 0 35 0
 	attenuate 1
 }
@@ -138,14 +134,14 @@ object EquestriaShortBlueTorch
 flickerlight2 FIREBARREL
 {
     color 1.0 0.9 0.4
-    size 72
-    secondarySize 81
+    size 50
+    secondarySize 80
     interval 0.1
     offset 0 32 0
 	attenuate 1
 }
 
-object BurningBarrel
+object EquestriaBurningBarrel
 {
     frame FCAN { light FIREBARREL }
 }
@@ -189,7 +185,7 @@ pointlight CANDELABRA
 	attenuate 1
 }
 
-object Candelabra
+object EquestriaCandelabra
 {
     frame CBRA { light CANDELABRA }
 }

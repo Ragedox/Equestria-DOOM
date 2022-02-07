@@ -163,6 +163,7 @@ OptionMenu "VideoSettings"
 	Option "$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", "SpriteShadowModes"
 	Option "$GORETOGGLE", "GoreToggle",			"GoreType"
 	Option "$GIBSFOREVER", "GibsStayForever",	"onoff"
+	Option "$WEAPONLIGHT", "WeaponLight",		"onoff"
 }
 
 OptionMenu "UISettings"

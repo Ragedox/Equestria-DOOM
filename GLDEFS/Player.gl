@@ -1,12 +1,25 @@
 // Weapons Light
 
+flickerlight2 PistolLight
+{
+    color 0.8 0.8 0.2
+    size 10
+	secondarySize 25
+	interval 0.05
+	attenuate 1
+}
+
+object PistolLight
+{
+	frame TNT1A { light ChaingunLight }
+}
+
 flickerlight2 ShotgunLight
 {
     color 0.8 0.8 0.2
     size 50
 	secondarySize 75
 	interval 0.05
-	offset 0 -5 0
 	attenuate 1
 }
 
@@ -21,7 +34,6 @@ flickerlight2 SuperShotgunLight
     size 75
 	secondarySize 100
 	interval 0.05
-	offset 0 -5 0
 	attenuate 1
 }
 
@@ -33,10 +45,9 @@ object SuperShotgunLight
 flickerlight2 ChaingunLight
 {
     color 0.8 0.8 0.2
-    size 50
-	secondarySize 75
+    size 75
+	secondarySize 100
 	interval 0.05
-	offset 0 -5 0
 	attenuate 1
 }
 
@@ -51,7 +62,6 @@ flickerlight2 PlasmaGunLight
     size 75
 	secondarySize 100
 	interval 0.05
-	offset 0 -5 0
 	attenuate 1
 }
 
@@ -67,6 +77,5 @@ flickerlight2 BFGLight
     size 100
 	secondarySize 150
 	interval 0.05
-	offset 0 0 0
 	attenuate 1
 }
