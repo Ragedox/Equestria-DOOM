@@ -24,10 +24,10 @@ Class PuffSparkles : DebrisCore
 		TNT1 A 0 A_JumpIf(waterlevel > 1, "Vanish");
 		
 		PUFF A random(5, 35);
-		PUFF AAA 4 A_SetScale(Scale.X - 0.10, Scale.Y - 0.10);
-		PUFF AA 3 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
-		PUFF AAAA 2 A_SetScale(Scale.X - 0.025, Scale.Y - 0.025);
-		Stop;
+	Bye:
+		PUFF A 1 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
+		PUFF A 0 A_JumpIf(Scale.X <= 0, "Null");
+		Loop;
 		
 	Vanish:
 		PUFF A 1 A_FadeOut(0.1);
@@ -48,10 +48,11 @@ Class ChainsawSparkles : PuffSparkles
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
 		TNT1 A 0 A_JumpIf(waterlevel > 1, "Vanish");
 		PUFF A random(35, 70);
-		PUFF AAA 4 A_SetScale(Scale.X - 0.10, Scale.Y - 0.10);
-		PUFF AA 3 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
-		PUFF AAAA 2 A_SetScale(Scale.X - 0.025, Scale.Y - 0.025);
-		Stop;
+	
+	Bye:
+		PUFF A 1 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
+		PUFF A 0 A_JumpIf(Scale.X <= 0, "Null");
+		Loop;
 	}
 }
 
@@ -70,6 +71,7 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 		+NOBLOCKMAP +NOTELEPORT
 		+FORCEXYBILLBOARD
 		+ROLLSPRITE +ROLLCENTER
+		+CORPSE
 	}
 	States
 	{
