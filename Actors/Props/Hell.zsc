@@ -44,7 +44,7 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 		CEYE ##### 1 Bright A_FadeOut(0.1, FTF_CLAMP);
 		
 	Watch:
-		CEYE AAAAAABBBBBBCCCCCCBBBBBB 1 A_CheckProximity("FadeOut", "EquestriaDoomPlayer", 128, 1, CPXF_CHECKSIGHT);
+		TNT1 A 35 A_CheckProximity("FadeOut", "EquestriaDoomPlayer", 128, 1, CPXF_CHECKSIGHT);
 		Goto FadeIn;
 	
 	FadeOut:
