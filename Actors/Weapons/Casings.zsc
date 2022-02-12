@@ -51,6 +51,7 @@ Class BulletCasingSpawn : Actor
 		Speed 20;
 		PROJECTILE;
 		+NOCLIP
+		+NOINTERACTION
 	}
 	States
 	{
