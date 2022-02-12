@@ -15,11 +15,11 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
 		
 	 Missile:
 		CYBR E 6 A_FaceTarget();
-		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 45, -26);
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 50, -26);
 		CYBR E 12 A_FaceTarget();
-		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 45, -26);
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 50, -26);
 		CYBR E 12 A_FaceTarget();
-		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 45, -26);
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 50, -26);
 		Goto See;
    
 	Death:
