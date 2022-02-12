@@ -48,7 +48,11 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		
 	Missile:
 		SPOS E 10 A_FaceTarget();
-		SPOS F 10 Bright A_CustomBulletAttack(25, 20, 8, random(1,3)*3, "ShotgunPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+		SPOS F 10 Bright
+		{
+			A_CustomBulletAttack(25, 20, 8, random(1,3)*3, "ShotgunPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_SpawnProjectile("ShotCasingSpawn");
+		}
 		SPOS E 10;
 		Goto See;
 	

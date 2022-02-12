@@ -62,8 +62,12 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		
 	Missile:
         POSS E 10 A_FaceTarget();
-        POSS F 8 A_CustomBulletAttack (20, 10, 1, random(1,5)*2, "EquestriaBulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
-        POSS E 8;
+        POSS F 8
+		{
+			A_CustomBulletAttack (20, 10, 1, random(1,5)*2, "EquestriaBulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_SpawnProjectile("BulletCasingSpawn");
+		}
+		POSS E 8;
         Goto See;
     
 	Pain.Kick:

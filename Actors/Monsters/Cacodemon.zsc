@@ -11,7 +11,7 @@ Class EquestriaCacodemon : Cacodemon replaces Cacodemon
 		Height 50; Radius 25;
 		
 		Mass 750;
-		Speed 10;
+		Speed 8;
 		PainChance 128;
 		BloodColor "blue";
 		

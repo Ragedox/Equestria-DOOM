@@ -38,7 +38,11 @@ Class EquestriaChaingunGuy : ChaingunGuy replaces ChaingunGuy
 		
 	Missile:
 		CPOS E 10 A_FaceTarget();
-		CPOS F 3 bright A_CustomBulletAttack(20, 10, 1, random(1,5)*2, "BulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+		CPOS F 3 bright
+		{
+			A_CustomBulletAttack(20, 10, 1, random(1,5)*2, "BulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_SpawnProjectile("BulletCasingSpawn", 32, 15);
+		}
 		CPOS E 1 A_CPosRefire();
 		Goto Missile+1;
 	
