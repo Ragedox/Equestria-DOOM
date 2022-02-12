@@ -17,10 +17,12 @@ gamedefaults
 	NoCrouch
 	DisableSkyboxAO
 
-	Compat_Invisibility = 1
 	LightMode = 2
 	lightadditivesurfaces = 1
 	SmoothLighting
+	
+	Compat_Invisibility = 1
+	AvoidMelee = 1
 }
 
 include "MAPINFO/Episodes.txt"
