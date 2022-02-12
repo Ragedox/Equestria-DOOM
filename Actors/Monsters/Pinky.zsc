@@ -9,6 +9,26 @@ Class Pinky : Demon replaces Demon
 	Spawn:
 		IDLP AB 10 A_Look();
 		Loop;
+		
+	See:
+		SARG AABBCCDD 2 Fast
+		{
+			A_Chase();
+			A_JumpIfInTargetInventory("BlurSphere", 1, "ClearTarget");
+		}
+		Loop;
+		
+	ClearTarget:
+		SARG # 0 A_ClearTarget();
+		Goto Wander;
+		
+	Wander:
+		SARG AABBCCDD 4
+		{
+			A_Wander();
+			A_Look();
+		}
+		Loop;
 	}
 }
 
@@ -16,7 +36,9 @@ Class EquestriaSpectre : Spectre replaces Spectre
 {
 	Default
 	{
-		+NOSPRITESHADOW;
+		+NOSPRITESHADOW
+		+SEEINVISIBLE
+
 		RenderStyle "Shaded";
 	
 		SeeSound "spectre/sight";
