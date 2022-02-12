@@ -59,6 +59,8 @@ Class BroomProjectile : Actor
 		-NOGRAVITY;
 		-NOICEDEATH;
 		
+		BounceType "Doom"; BounceFactor 0.25;
+		
 		ProjectileKickBack 200;
 		Radius 10;
 		Height 20;
