@@ -166,7 +166,7 @@ Class EquestriaLostSoul : LostSoul
 
 Class UnicornSoul : EquestriaLostSoul
 {
-	Default { Speed 6; DamageType "Unicorn"; -Bright }
+	Default { Speed 6; DamageType "Unicorn"; -Bright +MISSILEMORE }
 	States
 	{
 	
@@ -257,6 +257,8 @@ Class StonedAura : FastProjectile
 	Default
 	{
 		+RANDOMIZE
+		+SEEKERMISSILE
+		+SCREENSEEKER
 		
 		Damage 3;
 		
@@ -271,7 +273,11 @@ Class StonedAura : FastProjectile
 	States
 	{
 	Spawn:
-		BAL3 AAAAAAABBBBBBB 1 Bright A_SpawnItemEx("StonedAuraTrail", 0,0,0,0,0,0,0, SXF_TRANSFERSPRITEFRAME);
+		BAL3 AAAAAAABBBBBBB 1 Bright
+		{
+			A_SpawnItemEx("StonedAuraTrail", 0,0,0,0,0,0,0, SXF_TRANSFERSPRITEFRAME);
+			A_SeekerMissile(0, 2, SMF_PRECISE);
+		}
 		Loop;
 	Death:
 		BAL3 C 0 A_SetRenderStyle(1, STYLE_Normal);
@@ -360,6 +366,7 @@ Class MissileNirikSoul : FastProjectile
 		DamageFactor "Plasma", 1.75;
 		
 		+SHOOTABLE
+		-NOBLOCKMAP
 		+CASTSPRITESHADOW
 		+FORCEXYBILLBOARD
 		-COUNTKILL
@@ -394,6 +401,13 @@ Class MissileNirikSoul : FastProjectile
 		SKUL J 3;
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
+	
+	/*Death.Shotgun:
+	Death.Kick:
+	Death.Berserk:
+	Pain.Shotgun:
+		SKUL A 0 A_SpawnProjectile("MissileNirikSoul",15,0,angle * -1,CMF_AIMDIRECTION, pitch * -1);
+		Stop;*/
 	}
 }
 
