@@ -87,7 +87,7 @@ Class EquestriaBlood : Blood replaces Blood
 	States
 	{
 	Spawn:
-		BLUD CBA 30;
+		BLUD CBA 15;
 		Wait;
 		
 	Bounce.Wall:
@@ -97,7 +97,7 @@ Class EquestriaBlood : Blood replaces Blood
 		
 	Crash:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
+		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
 		
 		BLUD DEF 2 A_FadeOut(FRandom(0.001, 0.1));
 		BLUD G 1 A_FadeOut(0.005);
@@ -117,6 +117,10 @@ Class BloodTrail : EquestriaBlood
 	}
 	States
 	{
+	Spawn:
+		BLUD CBA 25;
+		Wait;
+		
 	Crash:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
 		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
@@ -137,7 +141,7 @@ Class SmallBloodTrail : BloodTrail
 	States
 	{
 	Spawn:
-		BLUD CBA 15;
+		BLUD CBA 10;
 		Wait;
 	
 	Crash:
