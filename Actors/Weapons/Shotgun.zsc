@@ -90,6 +90,8 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		Goto Ready;
 	
 	Flash:
+		TNT1 A 0 { A_OverlayFlags(1000, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(1000, STYLE_Add); }
+		
 		SHTF A 1 Bright A_WeaponOffset(0, random(40, 45), WOF_KEEPX | WOF_INTERPOLATE);
 		SHTF B 3 Bright;
 		SHTF A 2 Bright A_WeaponOffset(0, 32, WOF_KEEPX | WOF_INTERPOLATE);

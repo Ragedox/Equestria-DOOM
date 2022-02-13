@@ -72,6 +72,8 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 	Goto Ready;
   
 	Flash:
+		TNT1 A 0 { A_OverlayFlags(1000, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(1000, STYLE_Add); }
+		
 		PISF A 1 Bright;
 		Goto LightDone;
 	
