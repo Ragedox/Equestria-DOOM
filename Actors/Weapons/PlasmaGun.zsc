@@ -29,7 +29,6 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 	
 	Select:
 		PLSG A 0 A_SetCrossHair(12);
-		
 		PLSG A 1 A_Raise();
 		Wait;
 		
@@ -51,7 +50,17 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		Goto Chill;
 
 	Chill:
-		PLSG B 1;
+		PLSG B 1
+		{
+			if (GetCVAR("AuraToggle") == true)
+			{
+				A_Overlay(10, "Aura.Chill");
+			}
+			else
+			{
+				A_ClearOverlays(10, 11);
+			}
+		}
 		PLSG CDE 1;
 		PLSG F 12;
 		PLSG EDCB 1;
@@ -116,6 +125,14 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		PLSG A 1;
 		Stop;
 		
+	Aura.Chill:
+		AUR3 A 0 A_Overlay(11, "Aura.Setup");
+		
+		AUR3 A 1 Bright		A_OverlayScale(10,1,1, WOF_INTERPOLATE);
+		AUR3 BCD 1 Bright	A_OverlayScale(10,1,1, WOF_INTERPOLATE);
+		AUR3 E 12 Bright	A_OverlayScale(10,1,1, WOF_INTERPOLATE);
+		AUR3 DCBA 1 Bright	A_OverlayScale(10,1,1, WOF_INTERPOLATE);
+		Stop;
 	}
 }
 		
