@@ -173,7 +173,7 @@ OptionMenu "UISettings"
 	Submenu "$HUDMNU_FLASH", 				"FlashOptions"
 	
 	Option "$CAMRECOILTOGGLE", "CamRecoilToggle", "onoff"
-	//Option "$AURATOGGLE", "AuraToggle", "onoff"
+	Option "$AURATOGGLE", "AuraToggle", "onoff"
 	StaticText ""
 	
 	Slider "$DSPLYMNU_MOVEBOB",				"movebob", 0, 1.0, 0.05, 2
