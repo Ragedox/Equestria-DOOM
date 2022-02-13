@@ -2,6 +2,7 @@ Class Pinky : Demon replaces Demon
 {
 	Default
 	{
+		Radius 20;
 		+CASTSPRITESHADOW;
 	}
 	States
@@ -36,6 +37,8 @@ Class EquestriaSpectre : Spectre replaces Spectre
 {
 	Default
 	{
+		Radius 20;
+		
 		+NOSPRITESHADOW
 		+SEEINVISIBLE
 
