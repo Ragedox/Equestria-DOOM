@@ -171,45 +171,45 @@ Class UnicornSoul : EquestriaLostSoul
 	{
 	
 	Spawn:
-		SKUL AB 10 A_Look();
+		SKU2 AB 10 A_Look();
 		Loop;
 		
 	See:
 	//	#### # 0 A_JumpIfCloser(128, "Charge");
-		SKUL A 3 A_Chase(null, "Missile"); //CHF_FASTCHASE
+		SKU2 A 3 A_Chase(null, "Missile"); //CHF_FASTCHASE
 	//	#### # 0 A_JumpIfCloser(128, "Charge");
-		SKUL A 3 A_Chase(null,null);
+		SKU2 A 3 A_Chase(null,null);
 		Loop;
 	
 	Charge:
-		SKUL C 10 A_FaceTarget();
-		SKUL D 0
+		SKU2 C 10 A_FaceTarget();
+		SKU2 D 0
 		{
 			A_SpawnItem("LostSoulCharge", 0, 15);
 			A_FaceTarget();
 		}
-		SKUL D 4 A_SkullAttack();
-		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
+		SKU2 D 4 A_SkullAttack();
+		SKU2 CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
 		Goto Charge+3;
 	
 	Missile:
-		SKUL C 8 Bright A_FaceTarget();
-		SKUL D 4 Bright
+		SKU2 C 8 Bright A_FaceTarget();
+		SKU2 D 4 Bright
 		{
 			A_SpawnProjectile("StonedAura", 28);
 			A_Recoil(5);
 		}
-		SKUL CD 4 Bright;
+		SKU2 CD 4 Bright;
 		#### # 0 A_Stop();
 		Goto See;
 	
 	Death:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
-		SKUL F 6 Bright;
-		SKUL G 6 Bright A_Scream();
-		SKUL H 6 Bright;
-		SKUL I 6
+		SKU2 F 6 Bright;
+		SKU2 G 6 Bright A_Scream();
+		SKU2 H 6 Bright;
+		SKU2 I 6
 		{
 			A_NoBlocking();
 			
@@ -218,16 +218,16 @@ Class UnicornSoul : EquestriaLostSoul
 				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
-		SKUL J 6;
-		SKUL K 1 A_FadeOut(0.1);
+		SKU2 J 6;
+		SKU2 K 1 A_FadeOut(0.1);
 		Wait;
 	
 	XDeath:
 	Death.Berserk:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
-		SKUL H 6 Bright A_Scream();
-		SKUL I 3
+		SKU2 H 6 Bright A_Scream();
+		SKU2 I 3
 		{
 			A_NoBlocking();
 			
@@ -236,8 +236,8 @@ Class UnicornSoul : EquestriaLostSoul
 				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
-		SKUL J 3;
-		SKUL K 1 A_FadeOut(0.1);
+		SKU2 J 3;
+		SKU2 K 1 A_FadeOut(0.1);
 		Wait;
 
 	}
