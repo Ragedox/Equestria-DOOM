@@ -73,7 +73,7 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		{
 			if (GetCVAR("AuraToggle") == true)
 			{
-				A_Overlay(10, "Aura.Fire");
+				A_Overlay(10, "Aura.Pump");
 			}
 			else
 			{
@@ -105,13 +105,12 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		Stop;
 	
 	Aura.Ready:
-		AURA A -1 Bright A_Overlay(11, "Aura.Setup");
+		AURA A -1 Bright A_Overlay(11, "Aura.Setup", true);
 		Stop;
 		
-	Aura.Fire:
+	Aura.Pump:
 		AURA A 0 A_Overlay(11, "Aura.Setup");
 		
-		AURA A 0 				A_OverlayScale(10,1,1, WOF_INTERPOLATE);
 		AURA BC 2 Bright		A_OverlayScale(10,1,1, WOF_INTERPOLATE);
 		AURA DEFGHIJ 1 Bright	A_OverlayScale(10,1,1, WOF_INTERPOLATE);
 		AURA IH 4 Bright		A_OverlayScale(10,1,1, WOF_INTERPOLATE);

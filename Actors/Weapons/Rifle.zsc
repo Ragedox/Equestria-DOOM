@@ -31,13 +31,20 @@ Class EquestriaRifle : DoomEquestriaWeapon
 		TNT1 A 0 A_JumpIf(health <= 0, "DeathCheck");
 		
 		RFLE A 1 A_Lower();
-		Loop;
+		Wait;
 		
 	Select:
-		TNT1 A 0 A_SetCrossHair(2);
-		
+		TNT1 A 0
+		{
+			A_SetCrossHair(2);
+			
+			if (GetCVAR("AuraToggle") == true)
+			{
+				A_Overlay(10, "Aura.Ready");
+			}
+		}
 		RFLE A 1 A_Raise();
-		Loop;
+		Wait;
 		
 	Fire:
 		RFLE A 2
@@ -53,6 +60,15 @@ Class EquestriaRifle : DoomEquestriaWeapon
 			if (GetCVAR("WeaponLight") == true)
 			{
 				A_FireProjectile("PistolLight",0,0,0, -14);
+			}
+			
+			if (GetCVAR("AuraToggle") == true)
+			{
+				A_Overlay(10, "Aura.Fire");
+			}
+			else
+			{
+				A_ClearOverlays(10, 11);
 			}
 		}
 		
@@ -81,5 +97,15 @@ Class EquestriaRifle : DoomEquestriaWeapon
 		//TNT1 A 1 A_ZoomFactor(1, ZOOM_NOSCALETURNING);
 		TNT1 AA 1 A_SetPitch(pitch+0.15);
 		Stop;
+		
+	Aura.Ready:
+		AUR2 A -1 Bright A_Overlay(11, "Aura.Setup", true);
+		Stop;
+		
+	Aura.Fire:
+		AUR2 A 0 A_Overlay(11, "Aura.Setup");
+
+		AUR2 AB 2 Bright A_OverlayScale(10,1,1);
+		Goto Aura.Ready;
 	}
 }
