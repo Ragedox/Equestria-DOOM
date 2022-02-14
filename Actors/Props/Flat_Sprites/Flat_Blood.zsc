@@ -1,41 +1,23 @@
 Class BloodSmear1 : FlatProps
 {	States	{
 	Spawn:
-		FLAT E -1;	Stop;
+		FLAT E -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
 }	}
 
 Class BloodSmear2 : FlatProps
 {	States	{
 	Spawn:
-		FLAT F -1;	Stop;
+		FLAT F -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
 }	}
 
 Class BloodSplat1 : FlatProps
 {	States	{
 	Spawn:
-		FLAT G -1;	Stop;
+		FLAT G -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
 }	}
 
 Class BloodSplat2 : FlatProps
 {	States	{
 	Spawn:
-		FLAT H -1;	Stop;
-}	}
-
-Class BloodSplat3 : FlatProps
-{	States	{
-	Spawn:
-		FLAT I -1;	Stop;
-}	}
-
-Class BloodSplat4 : FlatProps
-{	States	{
-	Spawn:
-		FLAT J -1;	Stop;
-}	}
-
-Class BloodSplat5 : FlatProps
-{	States	{
-	Spawn:
-		FLAT K -1;	Stop;
+		FLAT H -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
 }	}

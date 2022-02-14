@@ -122,7 +122,4 @@ DoomEdNums
 	15804 = "BloodSmear2"
 	15805 = "BloodSplat1"
 	15806 = "BloodSplat2"
-	15807 = "BloodSplat3"
-	15808 = "BloodSplat4"
-	15809 = "BloodSplat5"
 }
