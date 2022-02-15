@@ -89,6 +89,7 @@ Class EquestriaRocket : Rocket replaces Rocket
 		+RollSprite +RollCenter
 		+ForceXYBillBoard
 		-RocketTrail
+		+CastSpriteShadow
 		
 		Decal "Scorch";
 	}
