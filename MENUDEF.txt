@@ -116,11 +116,7 @@ OptionMenu "VideoSettings"
 {
 	Title "$VIDEOSETTINGS"
 	
-	Submenu "$DSPLYMNU_GLOPT", 			"OpenGLOptions"
-	Submenu "$DSPLYMNU_SWOPT", 			"SWROptions"
-	Submenu "$GLMNU_DYNLIGHT",			"GLLightOptions"
-	
-	StaticText "Display"
+	StaticText "Display", "Brick"
 	StaticText ""
 
 	Option "$DSPLYMNU_VSYNC",					"vid_vsync", "OnOff"
@@ -139,31 +135,47 @@ OptionMenu "VideoSettings"
 	}
 	StaticText ""
 	
-	Option "$VIDMNU_FULLSCREEN",				"vid_fullscreen", "YesNo"
-	Option "$VIDMNU_FORCEASPECT",				"vid_aspect", "ForceRatios"
-	SubMenu "$VIDMNU_RESPRESET",				CustomResolutionMenu
-	Command "$VIDMNU_APPLYW",					"menu_resolution_commit_changes 0"
-	Command "$VIDMNU_APPLYFS",					"menu_resolution_commit_changes 1"
+	Option		"$VIDMNU_FULLSCREEN",				"vid_fullscreen", "YesNo"
+	Option		"$VIDMNU_FORCEASPECT",				"vid_aspect", "ForceRatios"
+	SubMenu		"$VIDMNU_RESPRESET",				CustomResolutionMenu
+	Command		"$VIDMNU_APPLYW",					"menu_resolution_commit_changes 0"
+	Command		"$VIDMNU_APPLYFS",					"menu_resolution_commit_changes 1"
 	
 	StaticText ""
-	StaticText "Video"
+	StaticText "Video", "Brick"
 	StaticText ""
 	
-	Slider "$DSPLYMNU_FOV",						"fov",							75.0, 120.0, 0.1, 1
+	Slider 		"$DSPLYMNU_FOV",					"fov",							75.0, 120.0, 0.1, 1
 	StaticText ""
 	
-	Option "$DSPLYMNU_CUSTOMINVERTMAP",			"cl_customizeinvulmap", "OnOff"
+	Option		"$DSPLYMNU_CUSTOMINVERTMAP",		"cl_customizeinvulmap",			"OnOff"
 	
-	Slider "$DSPLYMNU_GAMMA",					"vid_gamma",					0.75, 3.0, 0.05, 2
-	Slider "$DSPLYMNU_QUAKEINTENSITY",			"r_quakeintensity", 0.0, 1.0, 0.05, 2
+	Slider 		"$DSPLYMNU_GAMMA",					"vid_gamma",					0.75, 3.0, 0.05, 2
+	Slider 		"$DSPLYMNU_QUAKEINTENSITY",			"r_quakeintensity",				0.0, 1.0, 0.05, 2
 	StaticText ""
 	
 	//Option "DOOM Renderer Mode",				"ClassicToggle", "onoff"
-	Option "$GLTEXMNU_ANISOTROPIC",		gl_texture_filter_anisotropic,	"Anisotropy"
-	Option "$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", "SpriteShadowModes"
-	Option "$GORETOGGLE", "GoreToggle",			"GoreType"
-	Option "$GIBSFOREVER", "GibsStayForever",	"onoff"
-	Option "$WEAPONLIGHT", "WeaponLight",		"onoff"
+	Option 		"$GLTEXMNU_ANISOTROPIC",			gl_texture_filter_anisotropic,	"Anisotropy"
+	Option 		"$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", 			"SpriteShadowModes"
+	Option 		"$GORETOGGLE", "GoreToggle",		"GoreType"
+	Option 		"$GIBSFOREVER", "GibsStayForever",	"onoff"
+	Option		"$WEAPONLIGHT", "WeaponLight",		"onoff"
+	
+	
+	Option 		"$GLPREFMNU_BLOOM",		 			gl_bloom,						"OnOff"
+	Option		"$GLPREFMNU_SSAO",		 			gl_ssao,						"SSAOModes"
+	Option		"$GLPREFMNU_ENVIRONMENTMAPMIRROR",	gl_mirror_envmap,				"OnOff"
+	Option		"$GLPREFMNU_ENV",					gl_enhanced_nightvision,		"OnOff"
+	Option		"$GLPREFMNU_SPRCLIP",				gl_spriteclip,					"SpriteclipModes"
+	StaticText 	"Anti-Aliasing", "Brick"
+	Option 		"$GLPREFMNU_FXAA",		 			gl_fxaa,						"FXAAQuality"
+	Option 		"$GLPREFMNU_MULTISAMPLE", 			gl_multisample,					"Multisample"
+	StaticText 	"Lights", "Brick"
+	Option 		"$GLLIGHTMNU_LIGHTSENABLED",			gl_lights,				"OnOff"
+	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAP",			gl_light_shadowmap,		"YesNo"
+	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPQUALITY",	gl_shadowmap_quality,	"ShadowMapQuality"
+	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPFILTER",		gl_shadowmap_filter,	"ShadowMapFilter"
+	
 }
 
 OptionMenu "UISettings"
