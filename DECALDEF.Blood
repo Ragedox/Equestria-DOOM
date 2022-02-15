@@ -7,74 +7,86 @@
  * when something bleeds. If a blood color is set, the shade color will be ignored,
  * and the actor's blood color will be used instead.
  */
+ 
+stretcher BloodStretchLittle
+{
+	StretchTime	35
+	GoalY		1.0
+}
+
+slider BloodSlider
+{
+	SlideTime	35
+	DistY		-5
+}
+
+combiner BloodSplatAnim
+{
+	BloodStretchLittle
+	BloodSlider
+}
+
 Decal BloodSplat1
 {
 	Pic BSPLAT1
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 Decal BloodSplat2
 {
 	Pic BSPLAT2
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 Decal BloodSplat3
 {
 	Pic BSPLAT3
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 Decal BloodSplat4
 {
 	Pic BSPLAT4
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 Decal BloodSplat5
 {
 	Pic BSPLAT5
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 Decal BloodSplat6
 {
 	Pic BSPLAT6
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 Decal BloodSplat7
 {
 	Pic BSPLAT7
 	OpaqueBlood
-	X-Scale 0.75
-	Y-Scale 0.75
-	RandomFlipX
-	RandomFlipY
+	X-Scale 0.75 Y-Scale 0.75
+	RandomFlipX RandomFlipY
+	Animator BloodSplatAnim
 }
 
 // The smaller blood splats are more common than the big ones.
