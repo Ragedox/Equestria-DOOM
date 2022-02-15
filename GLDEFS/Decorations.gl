@@ -86,7 +86,7 @@ object EquestriaBlueTorch
 flickerlight2 SMALLREDTORCH
 {
     color 0.7 0.2 0.2
-    size 25
+    size 40
     secondarySize 50
     interval 0.5
     offset 0 35 0
@@ -102,7 +102,7 @@ object EquestriaShortRedTorch
 flickerlight2 SMALLGREENTORCH
 {
     color 0.2 0.7 0.2
-    size 25
+    size 40
     secondarySize 50
     interval 0.5
     offset 0 35 0
@@ -118,7 +118,7 @@ object EquestriaShortGreenTorch
 flickerlight2 SMALLBLUETORCH
 {
     color 0.2 0.2 0.7
-    size 25
+    size 40
     secondarySize 50
     interval 0.5
     offset 0 35 0
@@ -180,9 +180,10 @@ object Candlestick
 pointlight CANDELABRA
 {
     color 1.0 1.0 0.3
-    size 67
-    offset 0 52 0
+    size 50
+    offset 0 55 0
 	attenuate 1
+	dontlightself 1
 }
 
 object EquestriaCandelabra
