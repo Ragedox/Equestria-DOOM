@@ -6,7 +6,7 @@
 This is the **development** version, so it may contain bugs and errors;
 **Updates** can happen at **any time**, this version does ***NOT represent*** the final version;
 
-# Running
+## Running
 
 **Make sure you are using GZDoom 4.7.1/LZDoom 3.88a or later and you have a copy of doom2.wad (Original, BFG or Unity);**
 Download repository as a ZIP file and drag it over gzdoom.exe/lzdoom.exe;
@@ -21,31 +21,31 @@ You can learn from this mod, but if you want to use something, you may not be ab
 
 Discord Server: https://discord.gg/xgzkMmayMz
 
-# Credits
+## Credits
 See "CREDITS.txt" for more detailed credits;
 
 = The DOOM franchise is owned by ID Sotfware, part of the ZeniMax Media Inc. Family (and Microsoft?) =
 = My Little Pony is owned by Hasbro =
 
-= Main idea by Isaac Pony =
+### = Main idea by Isaac Pony =
 
-= Project Lead =
+### = Project Lead =
 Ragedox
 
-= Code =
+### = Code =
 Ragedox, SuperWillGaming 
 
-= Sprites =
+### = Sprites =
 Ragedox, JoeyTD
 
-= Title Screen Hi-res Sprites =
+### = Title Screen Hi-res Sprites =
 IsaacPony
 
-= Season 1 : Knee-Deep in the Dead (Reimagined) =
+### = Season 1 : Knee-Deep in the Dead (Reimagined) =
 Ragedox, SuperWillGaming
 
-= Shainer's Voice =
+### = Shainer's Voice =
 Cinny!
 
-= Special Thanks to =
+### = Special Thanks to =
 RedLy_2XBR
