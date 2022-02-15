@@ -4,7 +4,7 @@ class EquestriaOptionMenu : OptionMenu
 
 	override void Drawer ()
 	{
-		Frame = TexMan.CheckForTexture("FRMETEST", TexMan.Type_MiscPatch);
+		TextureID Frame = TexMan.CheckForTexture("FRMETEST", TexMan.Type_MiscPatch);
 		
 		screen.DrawTexture (Frame, true, 29, 34, DTA_320x200, true);
 		Super.Drawer();
