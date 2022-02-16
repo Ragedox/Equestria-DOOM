@@ -45,6 +45,6 @@ statusbar normal // Standard Doom Status bar
 	}
 	drawselectedinventory alternateonempty, INDEXFONT, 143, 168
 	{
-		drawmugshot "STF", 5, xdeathface, animatedgodmode, 143, 168;
+		drawmugshot "STF", 5, xdeathface, animatedgodmode, 160, 198;
 	}
 }
