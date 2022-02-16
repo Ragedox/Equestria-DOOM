@@ -55,54 +55,54 @@ object EquestriaPlasmaBall
 pulselight BFGBALL
 {
     color 0.0 1.0 0.0
-    size 100
-	secondarysize 150
+    size 150
+	secondarysize 200
 	interval 0.1
 	attenuate 1
 }
 
-flickerlight BFGBALL_X1
+flickerlight2 BFGBALL_X1
 {
     color 0.2 1.0 0.2
     size 100
     secondarySize 125
-    chance 0.5
+    interval 0.5
 	attenuate 1
 }
 
-flickerlight BFGBALL_X2
+flickerlight2 BFGBALL_X2
 {
     color 0.3 1.0 0.3
     size 160
     secondarySize 170
-    chance 0.5
+    interval 0.5
 	attenuate 1
 }
 
-flickerlight BFGBALL_X3
+flickerlight2 BFGBALL_X3
 {
     color 0.4 1.0 0.4
     size 180
-    secondarySize 200
-    chance 0.5
+    secondarySize 250
+    interval 0.5
 	attenuate 1
 }
 
-flickerlight BFGBALL_X4
+flickerlight2 BFGBALL_X4
 {
     color 0.3 0.7 0.3
-    size 85
+    size 150
     secondarySize 100
-    chance 0.5
+    interval 0.5
 	attenuate 1
 }
 
-flickerlight BFGBALL_X5
+flickerlight2 BFGBALL_X5
 {
     color 0.1 0.3 0.1
     size 70
     secondarySize 80
-    chance 0.5
+    interval 0.5
 	attenuate 1
 }
 
@@ -134,16 +134,16 @@ object BFGExtra
     frame BFE2D { light BFGBALL_X5 }
 }
 
-Pulselight BFGSparkle
+flickerlight2 BFGSparkle
 {
     color 0.2 1.0 0.2
-    size 10
-    secondarySize 20
-    interval 0.5
+    size 0
+    secondarySize 25
+    interval 0.25
 	attenuate 1
 }
 
 object BFGSparkles
 {
-	frame APLS { light BFGSparkle }
+	frame PLS2 { light BFGSparkle }
 }	
