@@ -119,9 +119,9 @@ OptionMenu "VideoSettings"
 	StaticText "Display", "Brick"
 	StaticText ""
 
-	Option "$DSPLYMNU_VSYNC",					"vid_vsync", "OnOff"
-	Option "$VIDMNU_MAXFPS",					"vid_maxfps", "MaxFps"
 	Option "$VIDMNU_PREFERBACKEND",				"vid_preferbackend", "PreferBackend"
+	Option "$VIDMNU_MAXFPS",					"vid_maxfps", "MaxFps"
+	Option "$DSPLYMNU_VSYNC",					"vid_vsync", "OnOff"
 	StaticText ""
 	
 	Option "$VIDMNU_RENDERMODE",				"vid_rendermode", "RenderMode"
@@ -145,37 +145,48 @@ OptionMenu "VideoSettings"
 	StaticText "Video", "Brick"
 	StaticText ""
 	
-	Slider 		"$DSPLYMNU_FOV",					"fov",							75.0, 120.0, 0.1, 1
+	Slider 		"$DSPLYMNU_FOV",					"fov",							75.0, 125.0, 5.0, 0
 	StaticText ""
-	
-	Option		"$DSPLYMNU_CUSTOMINVERTMAP",		"cl_customizeinvulmap",			"OnOff"
 	
 	Slider 		"$DSPLYMNU_GAMMA",					"vid_gamma",					0.75, 3.0, 0.05, 2
 	Slider 		"$DSPLYMNU_QUAKEINTENSITY",			"r_quakeintensity",				0.0, 1.0, 0.05, 2
 	StaticText ""
 	
-	//Option "DOOM Renderer Mode",				"ClassicToggle", "onoff"
-	Option 		"$GLTEXMNU_ANISOTROPIC",			gl_texture_filter_anisotropic,	"Anisotropy"
 	Option 		"$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", 			"SpriteShadowModes"
-	Option 		"$GORETOGGLE", "GoreToggle",		"GoreType"
-	Option 		"$GIBSFOREVER", "GibsStayForever",	"onoff"
-	Option		"$WEAPONLIGHT", "WeaponLight",		"onoff"
-	
+	Option 		"$GORETOGGLE", 						"GoreToggle",					"GoreType"
+	Option 		"$GIBSFOREVER", 					"GibsStayForever",				"onoff"
+	StaticText ""
 	
 	Option 		"$GLPREFMNU_BLOOM",		 			gl_bloom,						"OnOff"
 	Option		"$GLPREFMNU_SSAO",		 			gl_ssao,						"SSAOModes"
-	Option		"$GLPREFMNU_ENVIRONMENTMAPMIRROR",	gl_mirror_envmap,				"OnOff"
 	Option		"$GLPREFMNU_ENV",					gl_enhanced_nightvision,		"OnOff"
-	Option		"$GLPREFMNU_SPRCLIP",				gl_spriteclip,					"SpriteclipModes"
+	
+	StaticText 	"Textures", "Brick"
+	Option "$GLTEXMNU_TEXFILTER",		gl_texture_filter,				"FilterModes"
+	Option "$GLTEXMNU_ANISOTROPIC",		gl_texture_filter_anisotropic,	"Anisotropy"
+
+	ifOption(MMX)
+	{
+		Option "$GLTEXMNU_HQRESIZE",		gl_texture_hqresizemode,		"HqResizeModes"
+	}
+	else
+	{
+		Option "$GLTEXMNU_HQRESIZE",		gl_texture_hqresizemode,		"HqResizeModesNoMMX"
+	}
+	Option "$GLTEXMNU_HQRESIZEMULT",	gl_texture_hqresizemult,		"HqResizeMultipliers"
+	StaticText "!HQRESIZE_WARNING!"
+	Class "GLTextureGLOptions"
+	
 	StaticText 	"Anti-Aliasing", "Brick"
 	Option 		"$GLPREFMNU_FXAA",		 			gl_fxaa,						"FXAAQuality"
 	Option 		"$GLPREFMNU_MULTISAMPLE", 			gl_multisample,					"Multisample"
+	
 	StaticText 	"Lights", "Brick"
 	Option 		"$GLLIGHTMNU_LIGHTSENABLED",			gl_lights,				"OnOff"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAP",			gl_light_shadowmap,		"YesNo"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPQUALITY",	gl_shadowmap_quality,	"ShadowMapQuality"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPFILTER",		gl_shadowmap_filter,	"ShadowMapFilter"
-	
+	Option		"$WEAPONLIGHT", "WeaponLight",		"onoff"
 }
 
 OptionMenu "UISettings"
