@@ -22,6 +22,8 @@ SIMPLISTIC =			"Simplistic";
 REALISTIC = 			"Cartoon";
 GIBSFOREVER = 			"Gibs stay down forever";
 
+GLPREFMNU_MULTISAMPLE =			"MSAA Quality";
+
 [ptb pt br]
 
 CAMPAIGN =				"Campanha";
@@ -40,3 +42,5 @@ AURATOGGLE = 			"Aura mágica nas armas";
 GORETOGGLE = 			"Tipo de Gore";
 REALISTIC = 			"Realista";
 GIBSFOREVER = 			"Gibs ficam no chão para sempre";
+
+GLPREFMNU_MULTISAMPLE =			"Qualidade do MSAA";
