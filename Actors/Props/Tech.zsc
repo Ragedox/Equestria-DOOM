@@ -8,16 +8,15 @@ Class Zapper : Actor
 		+SpawnCeiling;
 		+NoGravity;
 		+Solid;
-		+Bright;
 		
-		Radius 12;
-		Height 32;
+		Radius 2.5;
+		Height 21;
 	}
 	States
 	{
 	Spawn:
-		ZAPR A random(21, 42);
-		ZAPR BCDEDCDEDCDEDCDEDCDEDCB random(2, 8);
+		ZAPR A random(35, 70);
+		ZAPR BCDEDCDEDCDEDCDEDCDEDCB random(2, 8) Bright;
 		Loop;
 	}
 }
