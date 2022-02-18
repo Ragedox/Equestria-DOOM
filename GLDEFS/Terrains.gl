@@ -36,10 +36,10 @@ Glow
 		NUKAGE3
 		NUKAGE4
 	}
-	Texture "NUKAGE1", 80FF80, 50, fullbright
-	Texture "NUKAGE2", 80FF80, 50, fullbright
-	Texture "NUKAGE3", 80FF80, 50, fullbright
-	Texture "NUKAGE4", 80FF80, 50, fullbright
+	Texture "NUKAGE1", 80FF80, 50
+	Texture "NUKAGE2", 80FF80, 50
+	Texture "NUKAGE3", 80FF80, 50
+	Texture "NUKAGE4", 80FF80, 50
 }
 
 Glow

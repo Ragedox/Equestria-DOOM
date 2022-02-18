@@ -158,7 +158,7 @@ Class CeilingLamp1 : Actor
 	{
 	//$NotAngled
 	//$Category Light sources
-		Radius 11.5; Height 35;
+		Radius 11.5; Height 33;
 		+NOGRAVITY
 		+SPAWNCEILING
 	}
