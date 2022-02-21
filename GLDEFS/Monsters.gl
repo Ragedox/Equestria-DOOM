@@ -1,3 +1,18 @@
+pulselight NIGHTMAREEYE
+{
+	color 1.0 0.0 0.0
+	size 100 secondarysize 150
+	interval 1
+	attenuate 1
+	noshadowmap 1
+	dontlightself 1
+}
+
+object NightMare_Eye
+{
+	frame EYES { light NIGHTMAREEYE }
+}
+
 // Lost Soul
 pulselight LOSTSOUL
 {
@@ -268,4 +283,19 @@ object EquestriaArchvile
     frame VILE[ { light ARCHRES }
     frame VILE\ { light ARCHRES }
     frame VILE] { light ARCHRES }
+}
+
+PulseLight ARCHFIRE
+{
+    color 0.8 0.8 0.4
+    size 0
+    secondarySize 108
+    interval 1
+    offset 0 40 0
+	attenuate 1
+}
+
+object EquestriaArchvileFire
+{
+    frame FIRE { light ARCHFIRE }
 }

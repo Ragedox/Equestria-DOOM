@@ -14,13 +14,15 @@ DoomEdNums
 	901 = "PoorImp"
 	902 = "GoatHorse"
 	
-	/* Monsters */
+	/* Monsters and Bosses*/
 
 	15000 = "PossessedHacker"
 	15001 = "DemonNirik"
 	15002 = "DemonicDog"
 	15003 = "BossBaronofHell"
 	15004 = "PossessedTrainer"
+	
+	15005 = "NightMare_Eye"
 
 	/* Heath and Armor */
 

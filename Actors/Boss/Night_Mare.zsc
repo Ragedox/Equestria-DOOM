@@ -1,0 +1,27 @@
+Class NightMare_Eye : Actor
+{
+	Default
+	{
+		Height 45; Radius 22.5;
+		Speed 100;
+		+NOGRAVITY
+		+FLOAT
+		+SLIDESONWALLS
+		+BOSS
+		+SHOOTABLE
+		+SOLID
+	}
+	States
+	{
+	Spawn:
+		EYES AB 1 BRIGHT A_Look();
+		Loop;
+	See:
+		EYES AAAABBBB 1 BRIGHT
+		{	
+			A_FaceTarget();
+			A_SkullAttack(50);
+		}
+		Loop;
+	}
+}

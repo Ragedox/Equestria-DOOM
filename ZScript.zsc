@@ -96,12 +96,14 @@ Class DebrisCore : Actor
 #include "Actors/Monsters/PossessedTrainer.zsc"
 #include "Actors/Monsters/PossessedHacker.zsc"
 #include "Actors/Monsters/Pinky.zsc"
-#include "Actors/Monsters/Cyberdemon.zsc"
 #include "Actors/Monsters/Revenant.zsc"
 #include "Actors/Monsters/Canines.zsc"
 #include "Actors/Monsters/ScriptedMarines.zsc"
-#include "Actors/Monsters/SpiderMastermind.zsc"
 #include "Actors/Monsters/WolfensteinActors.zsc"
+
+#include "Actors/Boss/Cyberdemon.zsc"
+#include "Actors/Boss/Night_Mare.zsc"
+#include "Actors/Boss/SpiderMastermind.zsc"
 
 ////Props
 
