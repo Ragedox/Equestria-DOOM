@@ -1,0 +1,102 @@
+Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
+{
+	Default
+	{
+		//$Sprite CYBRA2
+		Monster;
+		
+		Tag "$FN_CYBER";
+		Obituary "$OB_CYBORG";
+		
+		Health 4000;
+		
+		Mass 1500;
+		Scale 1.25;
+		Height 136; Radius 40;
+
+		Speed 16;
+		PainChance 20;
+		MinMissileChance 160;
+		
+		+CASTSPRITESHADOW
+		+BOSS +BOSSDEATH +E2M8BOSS +E4M6BOSS
+		+MISSILEMORE
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		
+		SeeSound "cyber/sight";
+		PainSound "cyber/pain";
+		DeathSound "cyber/death";
+		ActiveSound "cyber/active";
+	}
+	States
+	{
+	Spawn:
+		IDLY AB 10 A_Look();
+		Loop;
+		
+	Missile:
+		CYBR E 6 A_FaceTarget();
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 63, -32);
+		CYBR E 12 A_FaceTarget();
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 63, -32);
+		CYBR E 12 A_FaceTarget();
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 63, -32);
+		Goto See;
+   
+	Death:
+		CYBR H 10;
+		CYBR I 5;
+		CYBR IJKLMNOPPP 0 A_SpawnItemEx("CyberdemonExplosion", random(radius * -1, radius), random(radius * -1, radius), random(32, 110));
+		CYBR I 5 A_Scream();
+		CYBR J 8;
+		CYBR KL 5
+		{
+			A_QuakeEx(4, 4, 4, 35, 0, 800, "world/quake", QF_SCALEDOWN, 0,0,0, 1);
+			
+			for (int i = 0; i < 20; i++)
+			{
+				A_SpawnProjectile("BigGoreRandom", frandom(32, 137.5), frandom(radius * -1, radius), frandom(0, 359), CMF_AIMDIRECTION, frandom(0, 359));
+				A_SpawnProjectile("GenericGib", frandom(32, 137.5), frandom(radius * -1, radius), frandom(0, 359), CMF_AIMDIRECTION, frandom(0, 359));
+			}
+		}
+		CYBR MNOPP 0
+		{
+			A_SpawnProjectile("EquestriaBlood", frandom(32, 137.5), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (-180, 0));
+			A_SpawnProjectile("BloodTrail", frandom(32, 137.5), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (-180, 0));	
+			A_SpawnProjectile("SmallBloodTrail", frandom(32, 137.5), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (-180, 0));	
+		}
+		CYBR M 5 A_NoBlocking();
+		CYBR NO 5;
+		CYBR P 30;
+		CYBR P -1 A_BossDeath();
+		Stop;
+	}
+}
+
+Class CyberdemonExplosion : DEParticles
+{
+	Default
+	{
+		Speed 0;
+		RenderStyle "Translucent"; Alpha 0.75;
+		+NOINTERACTION
+		+ZDOOMTRANS
+		
+		Height 0; Radius 0;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A random(0,16) NoDelay
+		{
+			A_SetScale(frandom(0.5, 1.0));
+			A_SpawnItem("BloodExplosionSphere");
+		}
+		EXP2 A random(3,6);
+		EXP2 B 4;
+		EXP2 C 1 A_FadeOut(0.1);
+		Wait;
+	}
+}
