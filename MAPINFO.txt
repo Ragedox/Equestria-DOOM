@@ -20,6 +20,7 @@ gamedefaults
 
 	LightMode = 2
 	lightadditivesurfaces = 1
+	EnableShadowmap
 	SmoothLighting
 	
 	Compat_Invisibility = 1
