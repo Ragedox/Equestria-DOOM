@@ -32,8 +32,6 @@ object EquestriaExploBarrel
     frame BEXP { light Explosion }
 }
 
-
-
 // Tall red torch
 flickerlight2 BIGREDTORCH
 {
