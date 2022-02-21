@@ -3,7 +3,7 @@
 
 Script "LowHealth" ENTER
 {
-	if (GetActorProperty (0, APROP_HEALTH) <= 25 && !CheckInventory("LowHealthCheck"))
+	if (GetActorProperty (0, APROP_HEALTH) <= 50 && !CheckInventory("LowHealthCheck"))
 	{
 		GiveInventory("LowHealthCheck", 1);
 		
