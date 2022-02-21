@@ -102,3 +102,6 @@ Class ExplosionSmoke : Smoke
 		Wait;
 	}
 }
+
+Class EquestriaTeleportFog : TeleportFog replaces TeleportFog
+{	Default	{	+ForceXYBillBoard	}	}
