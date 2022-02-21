@@ -1,8 +1,8 @@
-Class PossessedHacker : Actor
+Class PossessedHacker : DoomEquestriaMonster
 {
 	Default
 	{
-	Monster;
+		Monster;
 	//$Category Monsters
 	//$Title Possessed Hacker
 		Tag "$TECHDUDE";
@@ -16,7 +16,6 @@ Class PossessedHacker : Actor
 		
 		+FloorClip
 		+MissileMore
-		+CastSpriteShadow
 		
 		SeeSound "female/sight";
 		AttackSound "";
@@ -164,7 +163,7 @@ Class PossessedHacker : Actor
 	}
 }
 
-Class DemonNirik : Actor
+Class DemonNirik : DoomEquestriaMonster
 {
 	Default
 	{
@@ -182,8 +181,7 @@ Class DemonNirik : Actor
 		Speed 10; FastSpeed 15;
 		
 		PainChance 100;
-
-		+CastSpriteShadow
+		
 		+FloorClip
 		+ExtremeDeath
 		+JumpDown

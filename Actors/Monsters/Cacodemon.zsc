@@ -1,4 +1,4 @@
-Class EquestriaCacodemon : Cacodemon replaces Cacodemon
+Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 {
 	Default
 	{
@@ -70,6 +70,7 @@ Class EquestriaCacodemon : Cacodemon replaces Cacodemon
 		HEAD A 0 A_Stop();
 		Goto See;
 	
+	XDeath:
 	Death:
 		TNT1 A 0 
 		{
@@ -101,7 +102,6 @@ Class EquestriaCacodemon : Cacodemon replaces Cacodemon
 			bFORCEXYBILLBOARD = 1;
 		}
 		Goto See;
-
 	}
 }
 

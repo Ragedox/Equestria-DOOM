@@ -1,9 +1,24 @@
-Class Pinky : Demon replaces Demon
+Class EquestriaPinky : Demon replaces Demon
 {
 	Default
 	{
-		Radius 20;
-		+CASTSPRITESHADOW;
+		Tag "$FN_DEMON";	
+		Obituary "$OB_DEMONHIT";
+		
+		Health 150;
+		PainChance 180;
+		Speed 10;
+		Height 56; Radius 20;
+		Mass 400;
+		
+		+FLOORCLIP
+		+EXTREMEDEATH
+		
+		SeeSound "demon/sight";
+		AttackSound "demon/melee";
+		PainSound "demon/pain";
+		DeathSound "demon/death";
+		ActiveSound "demon/active";
 	}
 	States
 	{
@@ -30,15 +45,40 @@ Class Pinky : Demon replaces Demon
 			A_Look();
 		}
 		Loop;
+	
+	Melee:
+		SARG EF 8 Fast A_FaceTarget();
+		SARG G 8 Fast A_SargAttack();
+		Goto See;
+		
+	Pain:
+		SARG H 2 Fast;
+		SARG H 2 Fast A_Pain();
+		Goto See;
+	
+	XDeath:
+	Death:
+		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
+		SARG I 6;
+		SARG J 6 A_Scream();
+		SARG K 4;
+		SARG L 2 A_NoBlocking();
+		SARG M 2;
+		SARG N -1;
+		Stop;
+		
+	Raise:
+		SARG N 5;
+		SARG MLKJI 5;
+		"####" "#" 0 { bSPRITEFLIP = 0; }
+		Goto See;
 	}
 }
 
-Class EquestriaSpectre : Spectre replaces Spectre
+Class EquestriaSpectre : EquestriaPinky replaces Spectre
 {
 	Default
 	{
-		Radius 20;
-		
 		+NOSPRITESHADOW
 		+SEEINVISIBLE
 
@@ -54,6 +94,7 @@ Class EquestriaSpectre : Spectre replaces Spectre
 	}
 	States
 	{
+	XDeath:
 	Death:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		

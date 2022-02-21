@@ -1,10 +1,27 @@
-Class EquestriaImp : DoomImp Replaces DoomImp
+Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 {
 	Default
 	{
-		+CASTSPRITESHADOW;
+		Monster;
 		
-		+ROLLSPRITE; +ROLLCENTER;
+		Tag "$FN_IMP";
+		Obituary "$OB_IMP";
+		
+		Health 60;
+		
+		Height 56; Radius 20;
+		Mass 100;
+		Speed 8;
+		PainChance 200;
+		
+		+FLOORCLIP
+		+ROLLSPRITE +ROLLCENTER
+		
+		SeeSound "imp/sight";
+		PainSound "imp/pain";
+		DeathSound "imp/death";
+		ActiveSound "imp/active";
+		HitObituary "$OB_IMPHIT";
 	}
 	States
 	{

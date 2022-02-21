@@ -91,6 +91,7 @@ Class EquestriaLostSoul : LostSoul
 		-COUNTKILL
 		+NOBLOOD
 		+Bright
+		-AVOIDMELEE
 	}
 	States
 	{
