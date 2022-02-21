@@ -123,6 +123,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 		Speed 25;
 		
 		Damage 50;
+		DamageType "BFGball";
 		Decal "BFGLightning";
 		
 		RenderStyle "Add";
@@ -154,7 +155,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			A_Explode(100, 256, 0);
 			A_SetRoll(0);
 			A_SetScale(2);
-			A_SpawnItem("BFGShockwave");
+			A_SpawnItem("BFGShockwave", 0, 12);
 						
 			A_QuakeEx(9, 9, 9, 35, 0, 1000, "world/quake", QF_SCALEDOWN,0,0,0,1);
 		}
