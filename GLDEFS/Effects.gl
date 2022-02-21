@@ -1,50 +1,17 @@
 // Doom Teleport fog
-flickerlight DTFOG1
+pulselight TELEPORTFOG
 {
     color 0.4 1.0 0.4
-    size 84
-    secondarySize 96
-    chance 0.4
+    size 0
+    secondarySize 100
+    interval 2
 	attenuate 1
+	dontlightself 1
 }
 
-flickerlight DTFOG2
+object EquestriaTeleportFog
 {
-    color 0.4 1.0 0.4
-    size 60
-    secondarySize 72
-    chance 0.4
-	attenuate 1
-}
-
-flickerlight DTFOG3
-{
-    color 0.4 1.0 0.4
-    size 36
-    secondarySize 48
-    chance 0.4
-	attenuate 1
-}
-
-flickerlight DTFOG4
-{
-    color 0.4 1.0 0.4
-    size 15
-    secondarySize 24
-    chance 0.4
-	attenuate 1
-}
-
-object TeleportFog
-{
-    frame TFOGA { light DTFOG1 }
-    frame TFOGB { light DTFOG2 }
-    frame TFOGC { light DTFOG2 }
-    frame TFOGD { light DTFOG2 }
-    frame TFOGE { light DTFOG3 }
-    frame TFOGF { light DTFOG4 }
-    frame TFOGI { light DTFOG4 }
-    frame TFOGJ { light DTFOG3 }
+    frame TFOG { light TELEPORTFOG }
 }
 
 // Bullet puff
