@@ -9,7 +9,7 @@ Class EquestriaPainElemental : PainElemental replaces PainElemental
 		Health 400;
 		Height 50; Radius 25; DeathHeight 50;
 		Mass 400;
-		Speed 8;
+		Speed 8 / 3;
 		PainChance 100;
 		FloatBobStrength 0.25;
 		
@@ -29,7 +29,18 @@ Class EquestriaPainElemental : PainElemental replaces PainElemental
 		Loop;
 	See:
 		//PAIN # 0 A_CheckProximity("EquestriaRocket")
-		PAIN AABBCC 3 A_Chase();
+		PAIN A 1 A_Chase();
+		PAIN AA 1 A_Chase(null,null);
+		#### # 1 A_Chase();
+		#### ## 1 A_Chase(null,null);
+		PAIN B 1 A_Chase();
+		PAIN BB 1 A_Chase(null,null);
+		#### # 1 A_Chase();
+		#### ## 1 A_Chase(null,null);
+		PAIN C 1 A_Chase();
+		PAIN CC 1 A_Chase(null,null);
+		#### # 1 A_Chase();
+		#### ## 1 A_Chase(null,null);
 		Loop;
 		
 	Missile:
