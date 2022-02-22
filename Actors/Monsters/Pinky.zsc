@@ -1,4 +1,4 @@
-Class EquestriaPinky : Demon replaces Demon
+Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 {
 	Default
 	{
