@@ -11,7 +11,7 @@ Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 		Height 50; Radius 25;
 		
 		Mass 750;
-		Speed 8;
+		Speed 8 / 3;
 		PainChance 128;
 		BloodColor "blue";
 		
@@ -34,11 +34,12 @@ Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 	{
 
 	Spawn:
-		HEAD A 10 A_Look;
+		HEAD A 10 A_Look();
 		Loop;
 	
 	See:
-		HEAD A 3 A_Chase();
+		HEAD A 1 A_Chase();
+		HEAD AA 1 A_Chase("Melee",null);
 		Loop;
 	
 	Melee:
