@@ -85,7 +85,6 @@ Class PossessedTrainer : DoomEquestriaMonster
 		Goto See;
 	
 	Pain:
-		CPOS G 3;
 		CPOS G 3 A_Pain();
 		Goto See;
 	
