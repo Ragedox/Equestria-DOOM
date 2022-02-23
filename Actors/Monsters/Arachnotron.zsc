@@ -2,7 +2,7 @@ Class EquestriaArachnotron : Arachnotron replaces Arachnotron
 {
 	Default
 	{
-		Radius 40; Height 50;
+		Radius 25; Height 50;
 		+CastSpriteShadow
 		Translation "160:167=112:127";
 	}
