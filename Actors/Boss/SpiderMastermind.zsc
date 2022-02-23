@@ -3,7 +3,7 @@ Class EquestriaSpiderMastermind : SpiderMastermind replaces SpiderMastermind
 	Default
 	{
 		Height 150; Radius 80;
-		Speed 14;
+		Speed 15;
 		Scale 1.5;
 		PainChance "BFGball", 128;
 		PainChance "BFGSplash", 10;
