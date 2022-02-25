@@ -8,7 +8,7 @@ Class EquestriaGibs : Gibs replaces Gibs
 {	Default	{ +ForceXYBillboard } }
 
 Class EquestriaColonGibs : ColonGibs replaces ColonGibs
-{	Default	{ +ForceXYBillboard } }
+{	Default	{ +ForceXYBillboard} }
 
 Class EquestriaBloodyTwitch : BloodyTwitch replaces BloodyTwitch
 {
@@ -159,3 +159,35 @@ class PonyHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
 		Radius 2;
 	}
 }
+
+Class DeadWallPony : FlatProps
+{	States	{
+	Spawn:
+		GOR3 A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
+		Stop;
+	}
+}
+
+Class BloodSmear1 : FlatProps
+{	States	{
+	Spawn:
+		FLAT E -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
+}	}
+
+Class BloodSmear2 : FlatProps
+{	States	{
+	Spawn:
+		FLAT F -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
+}	}
+
+Class BloodSplat1 : FlatProps
+{	States	{
+	Spawn:
+		FLAT G -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
+}	}
+
+Class BloodSplat2 : FlatProps
+{	States	{
+	Spawn:
+		FLAT H -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
+}	}
