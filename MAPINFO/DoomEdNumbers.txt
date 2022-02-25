@@ -114,7 +114,7 @@ DoomEdNums
 	
 	15700 = "DeadPlasmaKirin"
 	
-	// Wall Sprites
+	// Wall Sprites/Props
 	
 	15800 = "ExplosiveWarning"
 	15801 = "VoltageWarning"
@@ -124,4 +124,6 @@ DoomEdNums
 	15804 = "BloodSmear2"
 	15805 = "BloodSplat1"
 	15806 = "BloodSplat2"
+	
+	15807 = "DeadWallPony"
 }
