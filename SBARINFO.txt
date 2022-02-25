@@ -68,3 +68,44 @@ statusbar normal
 		drawmugshot "STF", 5, xdeathface, animatedgodmode, 160, 198;
 	}
 }
+
+statusbar fullscreen, fullscreenoffsets // ZDoom HUD
+{
+	//health
+	drawimage "STATSA", 50, -32, centerbottom;
+	drawnumber 2147483647, HUDFONT_DOOM, white, health, drawshadow, interpolate(10), 112, -50, 0, red, 50, lightblue, 100;
+
+	//armor
+	drawimage armoricon, 50, -54, centerbottom;
+	drawnumber 2147483647, HUDFONT_DOOM, white, armor, drawshadow, interpolate(10), whennotzero, 112, -69, 0, darkgray, 50, green, 100;
+
+	//ammo
+	drawimage ammoicon1, -44, -34, centerbottom;
+
+	WeaponAmmo Clip
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 75;
+	}
+	WeaponAmmo Shell
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 10, white, 25;
+	}
+	WeaponAmmo RocketAmmo
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 10, white, 25;
+	}
+	WeaponAmmo Cell
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 100;
+	}
+	
+	gamemode deathmatch
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, untranslated, frags, drawshadow, -3, 1;
+	}
+	else
+	{
+		// let's hope no mod ever uses 100 keys...
+		drawkeybar 100, vertical, reverserows, auto, -10, 2, 0, 3, auto;
+	}
+}
