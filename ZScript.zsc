@@ -107,16 +107,13 @@ Class DebrisCore : Actor
 
 ////Props
 
-#include "Actors/Props/Tech.zsc"
+#include "Actors/Props/Facility.zsc"
 #include "Actors/Props/Nature.zsc"
 #include "Actors/Props/Hell.zsc"
 #include "Actors/Props/Gothic.zsc"
 #include "Actors/Props/Gore.zsc"
 #include "Actors/Props/Corpses.zsc"
 #include "Actors/Props/Barrels.zsc"
-
-#include "Actors/Props/Flat_Sprites/Flat_Facility.zsc"
-#include "Actors/Props/Flat_Sprites/Flat_Blood.zsc"
 
 #include "Actors/Props/Light_Tech.zsc"
 #include "Actors/Props/Light_Hell.zsc"
