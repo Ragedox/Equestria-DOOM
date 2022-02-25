@@ -131,7 +131,7 @@ Class FlatProps : Actor
 {
 	Default
 	{
-	//$Category Wall Sprites
+	//$Category Wall Props
 		+NOCLIP +NOGRAVITY +NOINTERACTION +FLATSPRITE  +NOTONAUTOMAP
 		Height 40; Radius 20;
 	}
