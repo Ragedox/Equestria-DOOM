@@ -161,9 +161,9 @@ class PonyHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
 }
 
 Class DeadWallPony : FlatProps
-{	States	{
+{	States {
 	Spawn:
-		GOR3 A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
+		FLT2 A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
 		Stop;
 	}
 }
