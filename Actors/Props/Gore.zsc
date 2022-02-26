@@ -163,8 +163,21 @@ class PonyHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
 Class DeadWallPony : FlatProps
 {	States {
 	Spawn:
-		FLT2 A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		Stop;
+		FLT2 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
+		FLT2 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11);
+		Wait;
+		
+	White:			#### # -1 A_SetTranslation("White");		Stop;
+	Gray:			#### # -1 A_SetTranslation("Gray");			Stop;
+	DarkGray:		#### # -1 A_SetTranslation("DarkGray");		Stop;
+	LightishRed:	#### # -1 A_SetTranslation("LightishRed");	Stop;
+	Red:			#### # -1 A_SetTranslation("Red");			Stop;
+	Blue:			#### # -1 A_SetTranslation("Blue");			Stop;
+	LimeGreen:		#### # -1 A_SetTranslation("LimeGreen");	Stop;
+	Green: 			#### # -1 A_SetTranslation("Green");		Stop;
+	Orange:			#### # -1 A_SetTranslation("Orange");		Stop;
+	Beige:			#### # -1 A_SetTranslation("Beige");		Stop;
+	Brown:			#### # -1 A_SetTranslation("Brown");		Stop;
 	}
 }
 
