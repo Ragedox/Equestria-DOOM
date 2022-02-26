@@ -1,13 +1,12 @@
 gameinfo
 {
 	IntermissionMusic = "Music/INTER1.mid"
-	AddEventHandlers = "DeathFadeBootstrap"
+	//AddEventHandlers = "DeathFadeBootstrap"
 	DimColor = "00 00 00"
 	DimAmount = 0.5
 	DefaultDropStyle = 2
 	CursorPic = "cursor"
 	AddQuitMessages = "$QUITGAME1", "$QUITGAME2", "$QUITGAME3", "$QUITGAME4"
-	//AddEventHandlers = "EquestriaOptionMenu"
 }
 
 gamedefaults 
@@ -25,6 +24,22 @@ gamedefaults
 	
 	Compat_Invisibility = 1
 	AvoidMelee = 1
+}
+
+Automap
+{
+	Base =			"Doom"
+	ShowLocks =		True
+
+	YourColor =		"LimeGreen"
+	/*
+	WallColor =		"Cyan"
+	FloorDiffWallColor = 	"709a9c"
+	CeilingDiffWallColor = 	"709a9c"
+	NotSeenColor = "DarkGray"
+	IntraTeleportColor = "Green"
+	SecretSectorColor = "Pink"
+	*/
 }
 
 include "MAPINFO/Episodes.txt"

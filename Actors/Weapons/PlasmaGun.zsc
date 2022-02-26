@@ -258,7 +258,7 @@ Class PlasmaExplosion : Actor
 	}
 }
 
-Class PlasmaGunLight : Actor replaces PlasmaBall
+Class DummyPlasma : Actor replaces PlasmaBall
 {
 	Default
 	{
@@ -267,7 +267,7 @@ Class PlasmaGunLight : Actor replaces PlasmaBall
 	States
 	{
 	Spawn:
-		TNT1 A 3;
+		TNT1 A 0;
 		Stop;
 	}
 }

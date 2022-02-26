@@ -105,3 +105,35 @@ Class ExplosionSmoke : Smoke
 
 Class EquestriaTeleportFog : TeleportFog replaces TeleportFog
 {	Default	{	+ForceXYBillBoard	}	}
+
+Class SoulParticle : DebrisCore
+{
+	Default
+	{
+		+NOINTERACTION
+	}
+	States
+	{
+	Spawn:
+		SOUP A random(0, 3);
+		SOUP BCD random(2, 3);
+		SOUP EFGH random(5, 6) BRIGHT;
+		#### # 1
+		{
+			A_FadeOut(0.1);
+			A_SetScale(scale.x - 0.1);
+		}
+		Wait;
+	}
+}
+
+Class SoulSpawn : Actor
+{
+	Default { +NOINTERACTION }
+	States
+	{
+	Spawn:
+		TNT1 AAAAAAAAAA 0 NoDelay A_SpawnItemEx("SoulParticle", random(-20, 20), random(-20, 20), random(20, 55),0,0, 0.75);
+		Stop;
+	}
+}

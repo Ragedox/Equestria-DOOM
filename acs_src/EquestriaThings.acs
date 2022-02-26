@@ -15,7 +15,7 @@ Script "LowHealth" ENTER
 		
 		HudMessage(l:"LOWHEALTH"; HUDMSG_TYPEON, 99, CR_RED, 1.5, 1.0, 3.5, 0.05, 1.0);
 	}
-	else if (GetActorProperty (0, APROP_HEALTH) > 25 && CheckInventory("LowHealthCheck"))
+	else if (GetActorProperty (0, APROP_HEALTH) > 50 && CheckInventory("LowHealthCheck"))
 	{
 		TakeInventory("LowHealthCheck", 999);
 	}

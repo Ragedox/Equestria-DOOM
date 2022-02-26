@@ -55,27 +55,3 @@ object ChaingunLight
 {
 	frame TNT1A { light ChaingunLight }
 }
-
-flickerlight2 PlasmaGunLight
-{
-    color 0.25 0.25 1.0
-    size 75
-	secondarySize 100
-	interval 0.05
-	attenuate 1
-}
-
-object PlasmaGunLight
-{
-	frame TNT1A { light PlasmaGunLight }
-}
-
-
-flickerlight2 BFGLight
-{
-    color 0.0 1.0 0.0
-    size 100
-	secondarySize 150
-	interval 0.05
-	attenuate 1
-}

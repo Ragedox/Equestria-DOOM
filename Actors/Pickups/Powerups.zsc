@@ -1,5 +1,22 @@
-Class EquestriaBackpack : Backpack replaces Backpack
-{	Default {	Inventory.PickupSound "pickup/backpack";	}}
+Class EquestriaBackpack : CustomInventory replaces Backpack
+{
+	Default
+	{	
+		Height 26;
+		Inventory.PickupSound "pickup/backpack";	
+		Inventory.PickupMessage "$GOTBACKPACK"; // "Picked up a backpack full of ammo!"
+	}
+	States
+	{
+	Spawn:
+		BPAK A -1;
+		Stop;
+		
+	Pickup:
+		TNT1 A 0 A_GiveInventory("Backpack", 1);
+		Stop;
+	}
+}
 
 Class EquestriaComputerMap : Allmap replaces Allmap
 {	Default { +RANDOMIZE }
@@ -24,7 +41,7 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 {
 	Default
 	{	
-		Height 40; Radius 20;
+		Height 50; Radius 20;
 
 		+COUNTITEM
 		+VISIBILITYPULSE
@@ -66,7 +83,7 @@ Class EquestriaInvulSphere : CustomInventory replaces InvulnerabilitySphere
 {
 	Default
 	{
-		Height 40; Radius 20;
+		Height 50; Radius 20;
 		
 		+COUNTITEM
 		+FLOATBOB
@@ -103,7 +120,7 @@ Class EquestriaSoulSphere : CustomInventory replaces Soulsphere
 {
 	Default
 	{
-		Height 40; Radius 20;
+		Height 50; Radius 20;
 		
 		+COUNTITEM
 		+FLOATBOB
@@ -117,6 +134,7 @@ Class EquestriaSoulSphere : CustomInventory replaces Soulsphere
 		
 		Inventory.PickupMessage "$GOTSUPER";
 		Inventory.PickupSound "misc/p_pkup";
+		Inventory.PickupFlash "SoulSpawn";
 	}
 	States
 	{
@@ -150,7 +168,7 @@ Class EquestriaMegaSphere : CustomInventory replaces Megasphere
 {
 	Default
 	{
-		Height 40; Radius 20;
+		Height 50; Radius 20;
 		
 		+COUNTITEM
 		+FLOATBOB

@@ -149,5 +149,16 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 	}
 }
 
-Class SuperShotgunLight : PlasmaGunLight
-{}
+Class SuperShotgunLight : Actor
+{
+	Default
+	{
+		Speed 0; Damage 0; +NOINTERACTION
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 3;
+		Stop;
+	}
+}
