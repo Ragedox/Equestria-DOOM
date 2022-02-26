@@ -77,7 +77,7 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	
 	drawbar "PINSA0", "NothingA", poweruptime("BlurSphere"), vertical, interpolate(10), 0 + center, -10;
 	drawbar "PINVA0", "NothingA", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 0 + center, -10;
-	drawbar "PVISA0", "NothingB", poweruptime("Infrared"), vertical, interpolate(10), 0 + center, -25;
+	drawbar "PVISA0", "NothingB", poweruptime("Infrared"), vertical, interpolate(10), 0 + center, -64;
 	
 	//health
 
