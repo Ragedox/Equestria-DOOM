@@ -14,6 +14,8 @@ statusbar normal
 	
 	drawbar "PINSA0", "nullimage", poweruptime("BlurSphere"), vertical, interpolate(10), 299, 222;
 	drawbar "PINVA0", "nullimage", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 299, 222;
+	drawbar "PVISA0", "NothingB",poweruptime("Infrared"), vertical, interpolate(10), 299, 188;
+
 	//Keys
 	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 181, 171;
 	drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 181, 181;
@@ -71,8 +73,18 @@ statusbar normal
 
 statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
+	drawkeybar 6, horizontal, reverserows, auto, -14 + center, 42, 0, 3, auto;
+	drawbar "PINSA0", "NothingA", poweruptime("BlurSphere"), vertical, interpolate(10), 0 + center, -10;
+	drawbar "PINVA0", "NothingA", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 0 + center, -10;
+	drawbar "PVISA0", "NothingB", poweruptime("Infrared"), vertical, interpolate(10), 0 + center, -25;
+	
 	//health
-	drawimage "STATSA", 50, -32, centerbottom;
+
+	drawimage "STATUSA", 50, -32, centerbottom;
+	inInventory BerserkFist, 1
+	{
+		drawimage "STATUSC", 130, -32, centerbottom;
+	}
 	drawnumber 2147483647, HUDFONT_DOOM, white, health, drawshadow, interpolate(10), 112, -50, 0, red, 50, lightblue, 100;
 
 	//armor
@@ -81,7 +93,12 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 
 	//ammo
 	drawimage ammoicon1, -44, -34, centerbottom;
-
+	
+	inInventory EquestriaBackpack, 1
+	{
+		drawimage "BPAKA0", 0, 0, centerbottom;
+	}
+	
 	WeaponAmmo Clip
 	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 75;
@@ -99,13 +116,4 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 100;
 	}
 	
-	gamemode deathmatch
-	{
-		drawnumber 2147483647, HUDFONT_DOOM, untranslated, frags, drawshadow, -3, 1;
-	}
-	else
-	{
-		// let's hope no mod ever uses 100 keys...
-		drawkeybar 100, vertical, reverserows, auto, -10, 2, 0, 3, auto;
-	}
 }
