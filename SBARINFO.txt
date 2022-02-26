@@ -74,6 +74,7 @@ statusbar normal
 statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
 	drawkeybar 6, horizontal, reverserows, auto, -14 + center, 42, 0, 3, auto;
+	
 	drawbar "PINSA0", "NothingA", poweruptime("BlurSphere"), vertical, interpolate(10), 0 + center, -10;
 	drawbar "PINVA0", "NothingA", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 0 + center, -10;
 	drawbar "PVISA0", "NothingB", poweruptime("Infrared"), vertical, interpolate(10), 0 + center, -25;
@@ -92,12 +93,12 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	drawnumber 2147483647, HUDFONT_DOOM, white, armor, drawshadow, interpolate(10), whennotzero, 112, -69, 0, darkgray, 50, green, 100;
 
 	//ammo
-	drawimage ammoicon1, -44, -34, centerbottom;
 	
-	inInventory EquestriaBackpack, 1
-	{
-		drawimage "BPAKA0", 0, 0, centerbottom;
-	}
+	InInventory BackpackCheck, 1
+    {
+         drawimage "BPAKA0", -55, -34, centerbottom;
+    }
+	drawimage ammoicon1, -44, -34, centerbottom;
 	
 	WeaponAmmo Clip
 	{
@@ -115,5 +116,4 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 100;
 	}
-	
 }
