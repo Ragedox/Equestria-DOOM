@@ -13,10 +13,16 @@ Class EquestriaBackpack : CustomInventory replaces Backpack
 		Stop;
 		
 	Pickup:
-		TNT1 A 0 A_GiveInventory("Backpack", 1);
+		TNT1 A 0
+		{
+			A_GiveInventory("Backpack", 1);
+			A_GiveInventory("BackpackCheck");
+		}
 		Stop;
 	}
 }
+
+Class BackpackCheck : InvToken {}
 
 Class EquestriaComputerMap : Allmap replaces Allmap
 {	Default { +RANDOMIZE }
