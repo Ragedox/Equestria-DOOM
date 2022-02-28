@@ -19,7 +19,7 @@ Class DoomEquestriaWeapon : Weapon
 		TNT1 A 1 offset(0, 32)
 		{
 			A_OverlayFlags(1, PSPF_PLAYERTRANSLATED, 1);
-			A_ClearOverlays();
+			A_ClearOverlays(2, 1000, false);
 			A_OverlayScale(PSP_WEAPON, 1, 1);
 			A_ZoomFactor(1.0);
 		}
