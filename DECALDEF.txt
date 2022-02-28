@@ -69,7 +69,7 @@ decal PlasmaScorchLower1
 
 decal PlasmaScorch1
 {
-	pic PLSSA0
+	pic BAL4C0
 	add 1.0
 	fullbright
 	animator GoAway
@@ -86,7 +86,7 @@ decal PlasmaScorchLower2
 
 decal PlasmaScorch2
 {
-	pic PLSSB0
+	pic BAL4D0
 	add 1.0
 	fullbright
 	animator GoAway
