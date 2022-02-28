@@ -96,7 +96,7 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	
 	InInventory BackpackCheck, 1
     {
-         drawimage "BPAKA0", -55, -34, centerbottom;
+         drawimage "BPAKA0", -53, -34, centerbottom;
     }
 	drawimage ammoicon1, -44, -34, centerbottom;
 	
