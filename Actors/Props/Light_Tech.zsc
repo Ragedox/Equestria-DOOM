@@ -13,12 +13,12 @@ Class EquestriaTechLamp : TechLamp replaces TechLamp
 		
 		+NOTAUTOAIMED
 		+SOLID
-		+DONTTHRUST
+		/*+DONTTHRUST
 		+SHOOTABLE
 		+NOBLOOD
 		+RANDOMIZE
 		+NOICEDEATH
-		+DONTGIB
+		+DONTGIB*/
 	}
 	States
 	{
