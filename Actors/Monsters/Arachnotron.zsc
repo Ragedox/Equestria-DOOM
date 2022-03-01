@@ -30,14 +30,14 @@ Class EquestriaAracPlasmaBall : EquestriaPlasmaBall replaces ArachnotronPlasma
 	States
 	{
 	Spawn:
-		APLS A 0 NoDelay
+		BAL4 A 0 NoDelay
 		{
 			A_SetRoll(random(0, 359)); bSPRITEFLIP = RandomPick(0,1);
 			A_SpawnProjectile("AracPlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 		}
 		
 	Projectile:
-		APLS AB 1 Bright
+		BAL4 AB 1 Bright
 		{
 			A_SpawnItemEx("AracPlasmaTrail",0,0,0,0,0,0,0, SXF_TRANSFERSPRITEFRAME | SXF_TRANSFERROLL);
 			A_SetRoll((roll + 15), SPF_INTERPOLATE);
@@ -63,7 +63,7 @@ Class AracPlasmaTrail : PlasmaTrail
 	Spawn:
 		TNT1 A 2 NoDelay { A_SetRoll(random(0, 359)); bSPRITEFLIP = RandomPick(0,1); }
 
-		APLS A 1 Bright A_FadeOut(0.1);
+		BAL4 A 1 Bright A_FadeOut(0.1);
 		Wait;
 	}
 }

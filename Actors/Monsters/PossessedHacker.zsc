@@ -47,21 +47,21 @@ Class PossessedHacker : DoomEquestriaMonster
 		TECH F 2 Bright 
 		{
 			A_FaceTarget();
-			A_SpawnProjectile("EquestriaPlasmaBall");
+			A_SpawnProjectile("EquestriaPlasmaBall", 32, 0, frandom(-2, 2));
 		}
 		TECH E 1;
 		TECH F 2 Bright 
 		{
 			A_FaceTarget();
-			A_SpawnProjectile("EquestriaPlasmaBall");
+			A_SpawnProjectile("EquestriaPlasmaBall", 32, 0, frandom(-4, 4));
 		}
 		TECH E 1;
 		TECH F 2 Bright 
 		{
 			A_FaceTarget();
-			A_SpawnProjectile("EquestriaPlasmaBall");
+			A_SpawnProjectile("EquestriaPlasmaBall", 32, 0, frandom(-6, 6));
 		}
-		TECH E 20 A_CposRefire();
+		TECH E 20;
 		Goto See;
 	
 	Pain.Kick:
