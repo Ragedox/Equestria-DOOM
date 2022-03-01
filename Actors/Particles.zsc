@@ -115,7 +115,7 @@ Class SoulParticle : DebrisCore
 	States
 	{
 	Spawn:
-		SOUP A random(0, 3);
+		SOUP A random(0, 4) NODELAY { bSPRITEFLIP = RandomPick(0,1); }
 		SOUP BCD random(2, 3);
 		SOUP EFGH random(5, 6) BRIGHT;
 		#### # 1
