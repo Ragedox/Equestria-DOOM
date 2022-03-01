@@ -128,7 +128,7 @@ Class EquestriaLostSoul : LostSoul
 			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 6;
@@ -146,7 +146,7 @@ Class EquestriaLostSoul : LostSoul
 			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKUL J 3;
@@ -215,7 +215,7 @@ Class UnicornSoul : EquestriaLostSoul
 			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
 		SKU2 J 6;
