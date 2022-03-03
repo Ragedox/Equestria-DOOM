@@ -11,6 +11,9 @@ WARNING	= 		"WARNING!";
 NOKIDS = 		"This is NOT a children's game!";
 MAYCONTAIN = 	"May contain images and content sensitive\nfor some audiences, such as\nBlood, Gore and Extreme Violence.";
 
+FREEDOOMCOMP =	"Hey! FreeDOOM compatibility is still in early progress";
+FREEDOOMCOMP2 =	"Stay tuned for more news and updates!";
+
 BABYSKILL =		"I'm a Little Pony";
 EASYSKILL = 	"Hey, not too rough";
 NORMALSKILL = 	"Hurt me plenty";

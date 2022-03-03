@@ -1,0 +1,125 @@
+#include "SBARINFO.Mugshots"
+
+base Doom;
+
+statusbar normal
+{
+	drawstring CONFONT, white, "$FREEDOOMCOMP", -117, -108, 0, alignment (left);
+	drawstring CONFONT, white, "$FREEDOOMCOMP2", -117, -98, 0, alignment (left);
+	
+	drawimage "STBAR", 0, 168;
+	
+	drawnumber 3, HUDFONT_DOOM, white, health,	interpolate(10), 135, 173, 0, red, 50, lightblue, 100;
+	drawnumber 3, HUDFONT_DOOM, white, armor,	interpolate(10), 76, 173, 0, darkgray, 50, green, 100;
+
+	drawnumber 3, INDEXFONT_DOOM, untranslated, kills, interpolate(1), 24, 190, 0, gray, 0;
+	drawnumber 3, INDEXFONT_DOOM, untranslated, secrets, interpolate(1), 24, 173, 0, gray, 0;
+	
+	drawbar "PINSA0", "nullimage", poweruptime("BlurSphere"), vertical, interpolate(10), 299, 222;
+	drawbar "PINVA0", "nullimage", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 299, 222;
+	drawbar "PVISA0", "NothingB",poweruptime("Infrared"), vertical, interpolate(10), 299, 188;
+
+	//Keys
+	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 181, 171;
+	drawswitchableimage keyslot 3 && 6, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 181, 181;
+	drawswitchableimage keyslot 1 && 4, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 181, 191;
+
+	//Ammo
+	drawnumber 3, INDEXFONT_DOOM, white, ammo(Clip),				interpolate(10), 217, 173;
+	drawnumber 3, INDEXFONT_DOOM, white, ammo(Shell),				interpolate(10), 217, 179;
+	drawnumber 3, INDEXFONT_DOOM, white, ammo(RocketAmmo),			interpolate(10), 217, 185;
+	drawnumber 3, INDEXFONT_DOOM, white, ammo(Cell),				interpolate(10), 217, 191;
+	
+	drawnumber 3, INDEXFONT_DOOM, white, ammocapacity(Clip),		interpolate(10), 239, 173;
+	drawnumber 3, INDEXFONT_DOOM, white, ammocapacity(Shell),		interpolate(10), 239, 179;
+	drawnumber 3, INDEXFONT_DOOM, white, ammocapacity(RocketAmmo),	interpolate(10), 239, 185;
+	drawnumber 3, INDEXFONT_DOOM, white, ammocapacity(Cell),		interpolate(10), 239, 191;
+	
+	isSelected EquestriaPistol, EquestriaRifle
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Clip),			interpolate(10), 217, 173; }
+	isSelected EquestriaChaingun
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Clip),			interpolate(10), 217, 173; }
+	isSelected EquestriaShotgun, EquestriaSuperShotgun
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Shell),		interpolate(10), 217, 179; }
+	isSelected EquestriaRocketLauncher
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(RocketAmmo),	interpolate(10), 217, 185; }
+	isSelected EquestriaPlasmaGun, EquestriaBFG9K
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammo(Cell),			interpolate(10), 217, 191; }
+	//sorry
+	isSelected EquestriaPistol, EquestriaRifle
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Clip),			interpolate(10), 239, 173; }
+	isSelected EquestriaChaingun
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Clip),			interpolate(10), 239, 173; }
+	isSelected EquestriaShotgun, EquestriaSuperShotgun
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Shell),		interpolate(10), 239, 179; }
+	isSelected EquestriaRocketLauncher
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(RocketAmmo),	interpolate(10), 239, 185; }
+	isSelected EquestriaPlasmaGun, EquestriaBFG9K
+		{	drawnumber 3, INDEXFONT_DOOM, untranslated, ammocapacity(Cell),			interpolate(10), 239, 191; }
+	
+	drawswitchableimage weaponslot 2, "STGNUM2", "STYSNUM2", 247, 172; 
+	drawswitchableimage weaponslot 3, "STGNUM3", "STYSNUM3", 259, 172;
+	drawswitchableimage weaponslot 4, "STGNUM4", "STYSNUM4", 271, 172;
+	drawswitchableimage weaponslot 5, "STGNUM5", "STYSNUM5", 247, 182;
+	drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", 259, 182;
+	drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", 271, 182;
+	
+	gamemode cooperative, deathmatch, teamgame
+	{
+		drawimage translatable "STFBANY", 143, 169;
+	}
+	drawselectedinventory alternateonempty, INDEXFONT, 143, 168
+	{
+		drawmugshot "STF", 5, xdeathface, animatedgodmode, 160, 198;
+	}
+}
+
+statusbar fullscreen, fullscreenoffsets // ZDoom HUD
+{
+	drawstring CONFONT, white, "$FREEDOOMCOMP", 39, 36, 0, alignment (left);
+	drawstring CONFONT, white, "$FREEDOOMCOMP2", 39, 46, 0, alignment (left);
+	
+	drawkeybar 6, horizontal, reverserows, auto, -14 + center, 42, 0, 3, auto;
+	
+	drawbar "PINSA0", "NothingA", poweruptime("BlurSphere"), vertical, interpolate(10), 0 + center, -10;
+	drawbar "PINVA0", "NothingA", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 0 + center, -10;
+	drawbar "PVISA0", "NothingB", poweruptime("Infrared"), vertical, interpolate(10), 0 + center, -64;
+	
+	//health
+
+	drawimage "STATUSA", 50, -32, centerbottom;
+	inInventory BerserkFist, 1
+	{
+		drawimage "STATUSC", 130, -32, centerbottom;
+	}
+	drawnumber 2147483647, HUDFONT_DOOM, white, health, drawshadow, interpolate(10), 112, -50, 0, red, 50, lightblue, 100;
+
+	//armor
+	drawimage armoricon, 50, -54, centerbottom;
+	drawnumber 2147483647, HUDFONT_DOOM, white, armor, drawshadow, interpolate(10), whennotzero, 112, -69, 0, darkgray, 50, green, 100;
+
+	//ammo
+	
+	InInventory BackpackCheck, 1
+    {
+         drawimage "BPAKA0", -53, -34, centerbottom;
+    }
+	drawimage ammoicon1, -44, -34, centerbottom;
+	
+	WeaponAmmo Clip
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 75;
+	}
+	WeaponAmmo Shell
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 10, white, 25;
+	}
+	WeaponAmmo RocketAmmo
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 10, white, 25;
+	}
+	WeaponAmmo Cell
+	{
+		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 100;
+	}
+}
