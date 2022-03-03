@@ -2,7 +2,7 @@
 
 *Are you tired of colorful little ponies and the colorful world of equestria? Would you rather go on a killing spree on all of Hell itself? This is not the time to care about friendship! They don't care who you are, go and kill as many demons as you need!*
 
-# The mod is still in the beginning, there are a lot of placeholders and unfinished things!
+# The mod is under development, there are a lot of placeholders and unfinished things!
 This is the **development** version, so it may contain bugs and errors;
 **Updates** can happen at **any time**, this version does ***NOT represent*** the final version;
 
