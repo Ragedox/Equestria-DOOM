@@ -14,6 +14,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		
 		+FLOORCLIP
 		+CASTSPRITESHADOW
+		+MISSILEMORE
 		
 		SeeSound "grunt/sight";
 		AttackSound "grunt/attack";
@@ -67,7 +68,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 			A_CustomBulletAttack (20, 10, 1, random(1,5)*2, "EquestriaBulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
 			A_SpawnProjectile("BulletCasingSpawn");
 		}
-		POSS E 8 A_JumpIfCloser(256, "Missile");
+		POSS E 8;
         Goto See;
     
 	Pain.Kick:
