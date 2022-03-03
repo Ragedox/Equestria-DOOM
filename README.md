@@ -15,7 +15,7 @@ FreeDOOM: Phase 2 is supported, but there will be problems with mismatching text
 for the FreeDOOM version go to [easysqweasy's FreeDOOM Equestria](https://github.com/easysqweasy/FreeDOOM-Equestria)
 
 # This project is **NOT Open Source**!
-You can learn from this mod, but if you want to use something, you may not be able to use the content of this project as a basis for your own projects without permission from the authors **(permission is not guaranteed)**, you will have to ask **Isaac Pony and Ragedox** for permission;
+You can learn from this mod, but if you want to use something, you may not be able to use the content of this project as a basis for your own projects without permission from the authors **(permission is not guaranteed)**, you will have to ask **Ragedox** for permission;
 
 **Ragedox**: https://twitter.com/TheRagedox
 
