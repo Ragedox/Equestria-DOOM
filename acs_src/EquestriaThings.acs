@@ -55,7 +55,7 @@ script "CheckClopper" enter //Ragedox says: Hands off!
 		
 		Delay (13);
 
-		ChangeLevel ("SECRET1", 0, CHANGELEVEL_NOINTERMISSION);
+		ChangeLevel ("SECRET1", 0, CHANGELEVEL_RESETHEALTH | CHANGELEVEL_NOINTERMISSION, SKILL_NORMAL);
 	}
 }
 

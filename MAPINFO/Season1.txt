@@ -15,7 +15,7 @@ map S1E1 lookup "MAINBASE"
 	OutsideFog = "20 00 00"
 	
 	sky1 = RSKY4
-	cluster = 1
+
 	//par = 30
 	
 	BorderTexture = "STARGR2"
@@ -34,7 +34,6 @@ map S1E2 lookup "NUCLEAR_PLANT"
 	OutsideFog = "20 00 00"
 	
 	sky1 = RSKY4
-	cluster = 1
 	
 	BorderTexture = "STARTAN2"
 }
@@ -53,7 +52,6 @@ map S1E3 lookup "TOXIN_REFINERY"
 	OutsideFog = "46 48 33"
 	
 	sky1 = RSKY4
-	cluster = 1
 	
 	BorderTexture = "STARG2"
 }
@@ -70,7 +68,6 @@ map S1E4 lookup "COMMAND_CONTROL"
 	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
-	cluster = 1
 	
 	BorderTexture = "STARGR2"
 }
@@ -86,7 +83,6 @@ map S1E5 lookup "CENTRAL_PROCECESSING"
 	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
-	cluster = 1
 	
 	BorderTexture = "STARGR2"
 }
@@ -102,7 +98,6 @@ map S1E6 lookup "COMPUTER_STATION"
 	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
-	cluster = 1
 	
 	BorderTexture = "STARGR2"
 }
@@ -118,7 +113,6 @@ map S1E7 lookup "PHOBOS_LAB"
 	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
-	cluster = 1
 	
 	BorderTexture = "STARGR2"
 }
@@ -146,8 +140,6 @@ map S1E9 lookup "SEWERS"
 	Music = "Music/Season1/S1E9.mid"
 	
 	OutsideFog = "20 00 00"
-
-	cluster = 1
 	
 	BorderTexture = "TP6_2"
 }
@@ -161,5 +153,4 @@ map S1E10 lookup "MILITARY_BASE"
 	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
-	cluster = 1
 }
