@@ -4,7 +4,7 @@ Season 1: Kee-Deep in the Dead
 
 map S1E1 lookup "MAINBASE"
 {
-	//Author = "The Ragedox"	
+	//Author = "The Ragedox"
 	
 	levelnum = 1
 	next = "S1E2"
@@ -12,7 +12,7 @@ map S1E1 lookup "MAINBASE"
 	
 	Music = "Music/Season1/S1E1.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = RSKY4
 	cluster = 1
@@ -23,14 +23,14 @@ map S1E1 lookup "MAINBASE"
 
 map S1E2 lookup "NUCLEAR_PLANT"
 {
-	//Author = "The Ragedox"	
+	//Author = "The Ragedox"
 	
 	levelnum = 2
 	next = "S1E3"
 	
 	Music = "Music/Season1/S1E2.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -40,13 +40,16 @@ map S1E2 lookup "NUCLEAR_PLANT"
 
 map S1E3 lookup "TOXIN_REFINERY"
 {	
+	//Author = "SuperWillGaming"
+	
 	levelnum = 3
 	
 	next = "S1E4"
 	
 	Music = "Music/Season1/S1E3.mid"
 	
-	OutsideFog = 200
+	Fade = "27 38 20"
+	OutsideFog = "46 48 33"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -63,7 +66,7 @@ map S1E4 lookup "COMMAND_CONTROL"
 	
 	Music = "Music/Season1/S1E4.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -79,7 +82,7 @@ map S1E5 lookup "CENTRAL_PROCECESSING"
 	
 	Music = "Music/Season1/S1E5.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -95,7 +98,7 @@ map S1E6 lookup "COMPUTER_STATION"
 	
 	Music = "Music/Season1/S1E6.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -111,7 +114,7 @@ map S1E7 lookup "PHOBOS_LAB"
 	
 	Music = "Music/Season1/S1E7.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -125,7 +128,7 @@ map S1E8 lookup "PHOBOS_ANOMALY"
 	
 	Music = "Music/Season1/S1E8.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
@@ -141,7 +144,7 @@ map S1E9 lookup "SEWERS"
 	
 	Music = "Music/Season1/S1E9.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 
 	cluster = 1
 	
@@ -154,7 +157,7 @@ map S1E10 lookup "MILITARY_BASE"
 	
 	Music = "Music/Season1/S1E10.mid"
 	
-	OutsideFog = 200
+	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
 	cluster = 1
