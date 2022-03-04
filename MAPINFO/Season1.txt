@@ -33,7 +33,7 @@ map S1E2 lookup "NUCLEAR_PLANT"
 	//Fade = "46 48 33"
 	OutsideFog = "20 00 00"
 	
-	sky1 = "SKY1"
+	sky1 = RSKY4
 	cluster = 1
 	
 	BorderTexture = "STARTAN2"
@@ -52,7 +52,7 @@ map S1E3 lookup "TOXIN_REFINERY"
 	Fade = "00 1A 00"
 	OutsideFog = "46 48 33"
 	
-	sky1 = "SKY1"
+	sky1 = RSKY4
 	cluster = 1
 	
 	BorderTexture = "STARG2"
