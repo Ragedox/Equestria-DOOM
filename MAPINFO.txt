@@ -58,6 +58,11 @@ map DoomTest "Kinsie's Test Map"
 	BorderTexture = "MSSINGT1"
 }
 
+map SECRET1 "Unknow Mansion"
+{
+	BorderTexture = "UNKNOWNA"
+}
+
 clearskills
 
 //Change "I'm Too Young To Die" to "I'm a Little Pony"
