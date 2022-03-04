@@ -30,6 +30,7 @@ map S1E2 lookup "NUCLEAR_PLANT"
 	
 	Music = "Music/Season1/S1E2.mid"
 	
+	//Fade = "46 48 33"
 	OutsideFog = "20 00 00"
 	
 	sky1 = "SKY1"
@@ -48,7 +49,7 @@ map S1E3 lookup "TOXIN_REFINERY"
 	
 	Music = "Music/Season1/S1E3.mid"
 	
-	Fade = "27 38 20"
+	Fade = "00 1A 00"
 	OutsideFog = "46 48 33"
 	
 	sky1 = "SKY1"
