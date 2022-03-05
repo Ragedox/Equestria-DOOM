@@ -12,6 +12,9 @@ female/death1		MAREDTH
 female/death2		MAREDTH2
 female/death3		MAREDTH3
 
+/* Imp */
+
+imp/pain			DSBGPAIN
 /* Spiders */
 
 baby/pain			dsbsppai
