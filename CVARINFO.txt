@@ -1,5 +1,6 @@
 user bool CamRecoilToggle = true;
 user bool AuraToggle = true;
+user bool KickCamera = true;
 
 server int GoreToggle = 1;
 server bool GibsStayForever = false;
