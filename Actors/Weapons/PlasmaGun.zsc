@@ -153,8 +153,6 @@ Class EquestriaPlasmaBall : Actor
 	  
 		RenderStyle "Add"; Alpha 1;
 		
-		Translation "112:127=192:207", "224:231=192:195";
-		
 		+RollSprite +RollCenter
 		+ForceXYBillBoard
 		+ZDoomTrans
@@ -175,9 +173,9 @@ Class EquestriaPlasmaBall : Actor
 			bSPRITEFLIP = RandomPick(0,1);
 		}
 		
-		BAL4 ABABAB 1 Bright A_SetRoll((roll + 15), SPF_INTERPOLATE);
+		BAL4 CDCDCD 1 Bright A_SetRoll((roll + 15), SPF_INTERPOLATE);
 	Projectile:
-		BAL4 AB 1 Bright
+		BAL4 CD 1 Bright
 		{
 			A_SpawnItemEx("PlasmaTrail");
 			A_SetRoll((roll + 15), SPF_INTERPOLATE);
@@ -201,13 +199,13 @@ Class EquestriaPlasmaBall : Actor
 
 Class PlasmaTrail : Trails
 {
-	Default { Scale 0.8; Alpha 0.7; RenderStyle "Add"; Translation "112:127=192:207", "224:231=192:195"; }
+	Default { Scale 0.8; Alpha 0.7; RenderStyle "Add"; }
 	States
 	{
 	Spawn:
 		TNT1 A 2 NoDelay { A_SetRoll(random(0, 359)); bSPRITEFLIP = RandomPick(0,1); }
 
-		BAL4 A 1 Bright A_FadeOut(0.1);
+		BAL4 C 1 Bright A_FadeOut(0.1);
 		Wait;
 	}
 }
