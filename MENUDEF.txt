@@ -196,6 +196,7 @@ OptionMenu "UISettings"
 	Submenu "$HUDMNU_FLASH", 				"FlashOptions"
 	
 	Option "$CAMRECOILTOGGLE", "CamRecoilToggle", "onoff"
+	Option "$KICKCAMERA", "KickCamera", "onoff"
 	Option "$AURATOGGLE", "AuraToggle", "onoff"
 	StaticText ""
 	
