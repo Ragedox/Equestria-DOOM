@@ -92,6 +92,8 @@ Class EquestriaRocket : Rocket replaces Rocket
 		+CastSpriteShadow
 		
 		Decal "Scorch";
+		
+		DamageType "Explosion";
 	}
 	States
 	{
