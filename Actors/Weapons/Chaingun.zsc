@@ -102,7 +102,7 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		Goto WindDown;
 	
 	WindDown:
-		CHGG AB 3 { A_Refire(); A_CheckReload();}
+		CHGG AB 4 { A_CheckReload(); A_Refire(); }
 		CHGG AB 5 A_Refire();
 		CHGG AB 6 A_Refire();
 		CHGG B 1 A_ClearRefire();
