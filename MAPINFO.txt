@@ -15,7 +15,6 @@ gamedefaults
 	StrictMonsterActivation
 	ClipMidTextures
 	NoCrouch
-	DisableSkyboxAO
 
 	LightMode = 2
 	lightadditivesurfaces = 1
