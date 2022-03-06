@@ -2,8 +2,6 @@
 Season 1: Kee-Deep in the Dead
 *////////////////////
 
-include "MAPINFO/DoomEdNumbers.txt"
-
 map S1E1 lookup "MAINBASE"
 {
 	//Author = "The Ragedox"
