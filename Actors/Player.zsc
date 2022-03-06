@@ -21,7 +21,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		Player.DamageScreenColor "Red";
 		
 		Player.StartItem "EquestriaPistol";
-		Player.StartItem "Clip", 20;
+		Player.StartItem "Clip", 40;
 		//Player.StartItem "Fist";
 	  
 		Player.WeaponSlot 1, "EquestriaChainsaw", "BerserkFist";
