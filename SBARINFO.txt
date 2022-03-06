@@ -82,7 +82,7 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	//health
 
 	drawimage "STATUSA", 50, -32, centerbottom;
-	inInventory BerserkFist, 1
+	inInventory PowerStrength, 1
 	{
 		drawimage "STATUSC", 130, -32, centerbottom;
 	}
