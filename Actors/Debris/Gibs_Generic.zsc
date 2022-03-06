@@ -23,18 +23,22 @@ Class GenericGib : DebrisCore
 	States
 	{
 	Spawn:
-		GORE A 0 NoDelay A_Jump(256, 1,2,3);
+		TNT1 A 0 NoDelay
+		{
+			if (GetCVar("GoreToggle")== 0)
+			{
+				Destroy();
+			}
+			A_SetRoll(FRandom(0,359));
+			bSPRITEFLIP = RandomPick(0, 1);
+		}
+		GORE A 0 A_Jump(256, 1,2,3);
 		Wait;
 		#### A 0;
-		Goto Spawn2;
+		Goto Roll;
 		#### B 0;
-		Goto Spawn2;
+		Goto Roll;
 		#### C 0;
-		Goto Spawn2;
-		
-	Spawn2:
-		#### # 0 A_JumpIf(GetCVar("GoreToggle")== 0, "Bye");
-		#### # 0 { A_SetRoll(FRandom(0,359)); bSPRITEFLIP = RandomPick(0, 1); }
 		Goto Roll;
 	
 	Bounce:
@@ -168,16 +172,20 @@ Class TinyGenericGib : GenericGib
 	States
 	{
 	Spawn:
-		GORE D 0 NoDelay A_Jump(256, 1,2);
+		TNT1 A 0 NoDelay
+		{
+			if (GetCVar("GoreToggle")== 0)
+			{
+				Destroy();
+			}
+			A_SetRoll(FRandom(0,359));
+			bSPRITEFLIP = RandomPick(0, 1);
+		}
+		GORE D 0 A_Jump(256, 1,2);
 		Wait;
 		#### D 0;
-		Goto Spawn2;
+		Goto Roll;
 		#### E 0;
-		Goto Spawn2;
-	
-	Spawn2:
-		#### # 0 A_JumpIf(GetCVar("GoreToggle")== 0, "Bye");
-		#### # 0 { A_SetRoll(FRandom(0,359)); bSPRITEFLIP = RandomPick(0, 1); }
 		Goto Roll;
 		
 	Roll:
@@ -192,16 +200,20 @@ Class NoBlood_TinyGenericGib : TinyGenericGib
 	States
 	{
 	Spawn:
-		GORE D 0 NoDelay A_Jump(256, 1,2);
+		TNT1 A 0 NoDelay
+		{
+			if (GetCVar("GoreToggle")== 0)
+			{
+				Destroy();
+			}
+			A_SetRoll(FRandom(0,359));
+			bSPRITEFLIP = RandomPick(0, 1);
+		}
+		GORE D 0 A_Jump(256, 1,2);
 		Wait;
 		#### D 0;
-		Goto Spawn2;
+		Goto Roll;
 		#### E 0;
-		Goto Spawn2;
-	
-	Spawn2:
-		#### # 0 A_JumpIf(GetCVar("GoreToggle")== 0, "Bye");
-		#### # 0 { A_SetRoll(FRandom(0,359)); bSPRITEFLIP = RandomPick(0, 1); }
 		Goto Roll;
 		
 	Roll:
