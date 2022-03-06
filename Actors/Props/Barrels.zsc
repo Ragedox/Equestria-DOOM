@@ -5,6 +5,7 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		Radius 10; Height 32;
 		
 		DamageType "BarrelExp";
+		DamageFactor "Nukage", 0.0; PainChance "Nukage", 0.0;
 		
 		+NOBLOOD
 		+ALLOWPAIN
@@ -49,8 +50,7 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		
 		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(0, 32), random (-40, 40), random (0, 359), CMF_AIMDIRECTION, random(0, -90));
 		
-		BEXP CCCCC 1 A_FadeOut(0.1);
-		BEXP D 1 A_FadeOut(0.1);
+		BEXP C 1 A_FadeOut(0.1);
 		Wait;
 		
 	Death.SuperShotgun:
@@ -90,29 +90,8 @@ Class EquestriaExploBarrel : ExplosiveBarrel replaces ExplosiveBarrel
 		
 		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(0, 32), random (-40, 40), random (0, 359), CMF_AIMDIRECTION, random(0, -90));
 		
-		BEXP CCCCC 1 A_FadeOut(0.1);
-		BEXP D 1 A_FadeOut(0.1);
+		BEXP C 1 A_FadeOut(0.1);
 		Wait;
-	}
-}
-
-Class EmptyBarrel : EquestriaExploBarrel
-{
-	Default
-	{
-		+NOBLOOD
-		-ALLOWPAIN
-		-OLDRADIUSDMG
-	}
-	States
-	{
-	Spawn:
-		BAR1 A -1;
-		Stop;
-		
-	Death:
-		BEXP ABCDE 4;
-		Stop;
 	}
 }
 
@@ -138,7 +117,16 @@ Class BarrelDebris : DebrisCore
 	{
 	Spawn:
 		TNT1 A 0 NoDelay { A_SetRoll(random(0,359)); bSPRITEFLIP = randompick(0,1); }
-		Goto ChooseDebris;
+		TNT1 A 0 A_Jump(256, 1, 2, 3, 4);
+		Wait;
+		EXPD A 0;
+		Goto Roll;
+		EXPD B 0;
+		Goto Roll;
+		EXPD C 0;
+		Goto Roll;
+		EXPD D 0;
+		Goto Roll;
 	
 	Bounce:
 		#### # 0 A_SetRoll(roll + random(-100, 100));
@@ -154,23 +142,158 @@ Class BarrelDebris : DebrisCore
 	FadeOut:
 		#### # 1 A_FadeOut(0.1);
 		Wait;
-	
-	ChooseDebris:
-		TNT1 A 0 A_Jump(256, 1, 2, 3, 4);
-		Wait;
-		EXPD A 0;
-		Goto Roll;
-		EXPD B 0;
-		Goto Roll;
-		EXPD C 0;
-		Goto Roll;
-		EXPD D 0;
-		Goto Roll;
 	}
 }
 
 Class BarrelDebrisSmoke : EquestriaRocketSmoke
 {	Default{	Alpha 0.35;	Scale 0.2;	VSpeed 0;}	}
+
+Class AcidBarrel : EquestriaExploBarrel
+{
+	States
+	{
+	Pain:
+		BAR1 A 0 A_SpawnProjectile("AcidDrop",32, frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (0, -180));
+	Spawn:
+		BAR2 AB 6 A_Jump(10, "Pain");
+		Loop;
+	
+	Death.SuperShotgun:
+		#### # 0 A_JumpIfCloser(150, 1);
+		Goto Death;
+		#### # 0
+		{
+			A_FaceTarget();
+			ThrustThingZ(0,20,0,1);
+			A_Recoil(7.5);
+		}
+		Goto XDeath;
+		
+	Death:
+	Death.BarrelExp:
+		BAR2 # 5 Bright;
+		BAR2 C 5 Bright A_Scream();
+	XDeath:
+	XDeath.BarrelExp:
+		BAR2 DDDDD 1 Bright A_SpawnProjectile("AcidDrop",frandom(0, 32), frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (0, -180));
+		BAR2 E 5 Bright
+		{
+			A_Explode(5, 64, XF_NOTMISSILE);
+			
+			for (int i = 0; i < 25; i++)
+			{
+				A_SpawnProjectile("AcidDrop",frandom(0, 32), frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (0, -180));
+			}
+		}
+		BAR2 F 10 Bright;
+		TNT1 A 1050 Bright A_BarrelDestroy();
+		TNT1 A 5 A_Respawn();
+		Wait;
+	}
+}
+
+Class AcidDrop : EquestriaBlood
+{
+	Default
+	{
+		Decal "";
+		Height 4; Radius 2;
+		
+		Gravity 0.75;
+		Speed 8;
+		Mass 35;
+		Damage 10;
+		DamageType "Nukage";
+		
+		+ForceXYBillBoard
+		+SLIDESONWALLS
+		+NOTELEPORT +NOBLOCKMAP
+		+CORPSE
+		+MISSILE
+		+MOVEWITHSECTOR
+		+ROLLSPRITE +ROLLCENTER
+		+BRIGHT
+		
+		Translation "176:191=112:127";
+	}
+	States
+	{
+	Spawn:
+		BLUD C 0 NoDelay A_SetRoll(Frandom(0, 360));
+		BLUD C 1 A_SetRoll(roll + 8, SPF_INTERPOLATE);
+		Wait;
+
+	Death:
+		BLUD CBA 70;
+		Stop;
+		
+	Crash:
+		TNT1 A 0 A_SpawnItemEX("AcidPuddle", 0,0,0,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_TRANSFERROLL);
+		Stop;
+	}
+}
+
+Class AcidPuddle : Actor
+{
+	Default
+	{
+		Radius 20; Height 5;
+		Damage 5;
+		DamageType "Nukage";
+		
+		+MOVEWITHSECTOR
+		+CORPSE
+		+NOTELEPORT +NOBLOCKMAP
+		+FLATSPRITE
+		+ROLLSPRITE +ROLLCENTER
+		+BRIGHT
+	}
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay A_Jump(256, 1,2,3,4);
+		Wait;
+		FLAT E 0;
+		Goto InFloor;
+		FLAT F 0;
+		Goto InFloor;
+		FLAT G 0;
+		Goto InFloor;
+		FLAT H 0;
+		Goto InFloor;
+		
+	InFloor:
+		FLAT ########## 35 Bright A_Explode(5, 20, XF_NOTMISSILE | XF_NOSPLASH);
+		FLAT #################### 1 A_FadeOut(0.025);
+		
+	Dry:
+		FLAT # 350;
+		FLAT # 0 A_JumpIf(GetCVar("GibsStayForever")== 0, 1);
+		Goto Dry;
+		FLAT # 1 A_FadeOut(0.025);
+		Wait;
+	}
+}
+
+Class EmptyBarrel : EquestriaExploBarrel
+{
+	Default
+	{
+		+NOBLOOD
+		-ALLOWPAIN
+		-OLDRADIUSDMG
+	}
+	States
+	{
+	Spawn:
+		BAR1 A -1;
+		Stop;
+		
+	Death:
+		BEXP ABCDE 4;
+		Stop;
+	}
+}
 
 Class EquestriaBurningBarrel : BurningBarrel replaces BurningBarrel
 {
