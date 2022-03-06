@@ -43,7 +43,7 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		Wait;
 	
 	Fire:
-		PISG A 4;
+		PISG A 3;
 		PISG B 1
 		{
 			A_FireBullets (0.5, 1, 1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
@@ -61,8 +61,8 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 			A_WeaponOffset(0, 29, WOF_KEEPX | WOF_INTERPOLATE);
 			A_FireProjectile("BulletCasingSpawn",0,0,0,-10, FPF_NOAUTOAIM);
 		}
-		PISG D 4;
-		PISG E 5;
+		PISG D 3;
+		PISG E 4;
 		PISG DD 1;
 		PISG B 1
 		{
