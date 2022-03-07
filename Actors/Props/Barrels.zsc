@@ -171,23 +171,25 @@ Class AcidBarrel : EquestriaExploBarrel
 		
 	Death:
 	Death.BarrelExp:
-		BAR2 # 5 Bright;
-		BAR2 C 5 Bright A_Scream();
+		BAR2 # 5;
+		BAR2 C 5 A_Scream();
 	XDeath:
 	XDeath.BarrelExp:
 		BAR2 DDDDD 1 Bright A_SpawnProjectile("AcidDrop",frandom(0, 32), frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (0, -180));
 		BAR2 E 5 Bright
 		{
 			A_Explode(5, 64, XF_NOTMISSILE);
-			
+			A_SpawnItem("AcidPuddle",0,1);
+			bFORCEXYBILLBOARD = 1;
 			for (int i = 0; i < 25; i++)
 			{
 				A_SpawnProjectile("AcidDrop",frandom(0, 32), frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (0, -180));
 			}
 		}
-		BAR2 F 10 Bright;
-		TNT1 A 1050 Bright A_BarrelDestroy();
-		TNT1 A 5 A_Respawn();
+		
+		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(0, 32), random (-40, 40), random (0, 359), CMF_AIMDIRECTION, random(0, -90));
+		
+		BAR2 F 1 Bright A_FadeOut(0.1);
 		Wait;
 	}
 }
@@ -198,7 +200,7 @@ Class AcidDrop : EquestriaBlood
 	{
 		Decal "";
 		Height 4; Radius 2;
-		
+		RenderStyle "Add";
 		Gravity 0.75;
 		Speed 8;
 		Mass 35;
@@ -228,7 +230,7 @@ Class AcidDrop : EquestriaBlood
 		Stop;
 		
 	Crash:
-		TNT1 A 0 A_SpawnItemEX("AcidPuddle", 0,0,0,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_TRANSFERROLL);
+		TNT1 A 0 A_SpawnItemEX("AcidPuddle", 0,0,0,0,0,0,0, SXF_TRANSFERROLL);
 		Stop;
 	}
 }
@@ -240,7 +242,7 @@ Class AcidPuddle : Actor
 		Radius 20; Height 5;
 		Damage 5;
 		DamageType "Nukage";
-		
+		Translation "176:191=112:127";
 		+MOVEWITHSECTOR
 		+CORPSE
 		+NOTELEPORT +NOBLOCKMAP
