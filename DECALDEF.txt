@@ -37,7 +37,6 @@ Decal FireBallScorch1
 {
 	Pic CBALSCR1
 	Shade "FF 34 03"
-	FullBright
 	Y-Scale 0.75 X-Scale 0.75
 	RandomFlipY RandomFlipX
 	Animator ToBlack
@@ -47,7 +46,6 @@ Decal FireBallScorch2
 {
 	Pic CBALSCR2
 	Shade "FF 34 03"
-	FullBright
 	Y-Scale 0.75 X-Scale 0.75
 	RandomFlipY RandomFlipX
 	Animator ToBlack
