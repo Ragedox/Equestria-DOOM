@@ -62,6 +62,8 @@ DoomEdNums
 	15311 = "Equipment3"
 	15312 = "Spark2"
 	
+	15313 = "AcidBarrel"
+	
 	//Nature
 	
 	15400 = "Bush1"

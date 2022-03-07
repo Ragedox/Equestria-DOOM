@@ -87,6 +87,7 @@ Class EquestriaBlood : Blood replaces Blood
 		+CORPSE
 		+MISSILE
 		+MOVEWITHSECTOR
+		+ROLLSPRITE +ROLLCENTER
 	}
 	States
 	{
@@ -101,11 +102,20 @@ Class EquestriaBlood : Blood replaces Blood
 		
 	Crash:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
+		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
 		
 		BLUD DEF 2 A_FadeOut(FRandom(0.001, 0.1));
 		BLUD G 1 A_FadeOut(0.005);
 		Wait;
+		
+	}
+	override void Tick()
+	{
+		if (InStateSequence(CurState, ResolveState("Spawn")) && !isFrozen())
+		{
+			A_SetRoll((roll + 8), SPF_INTERPOLATE);
+		}
+		Super.Tick();
 	}
 }
 
@@ -127,7 +137,7 @@ Class BloodTrail : EquestriaBlood
 		
 	Crash:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
+		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); }
 		
 		BLUD DEF 1 A_FadeOut(FRandom(0.01, 0.1));
 		BLUD G 1 A_FadeOut(0.01);
@@ -150,7 +160,7 @@ Class SmallBloodTrail : BloodTrail
 	
 	Crash:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRenderStyle(1.0, STYLE_Normal); }
+		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); }
 		
 		POB2 A 1 A_FadeOut(0.025);
 		Wait;
