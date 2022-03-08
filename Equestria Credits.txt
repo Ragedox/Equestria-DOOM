@@ -29,9 +29,10 @@ Ragedox, JoeyTD
 IsaacPony
 
 = Season 1 : Knee-Deep in the Dead =
-Ragedox (Episode 1, Episode 2, Secret 1 - Episode 9)
-SuperWillGaming (Episode 3)
-IsaacPony (Secret 1 - Episode 9)
+
+Ragedox			(Episode 1, Episode 2, Secret Episode 9)
+SuperWillGaming (Episode 3, Secret Episode 9)
+IsaacPony		(Secret Episode 9)
 
 = Shainer's Voice =
 Cinny!
@@ -39,14 +40,17 @@ Cinny!
 = Special Thanks to =
 Redly_2XBR
 
-=====
+===== Team =====
+					Twitter
+					
+Ragedox 		  @TheRagedox
+IsaacPony		  @Isaac_Pony
+JoeyTD			@beardeddoomguy
+Cinny! 			    @idolkve
+SuperWillGaming     @njsw88
+InfernoKirin 	 @InfernoKirin
 
-Ragedox (Twitter: @TheRagedox)
-IsaacPony( Twitter: @Isaac_Pony)
-JoeyTD (Twitter: @beardeddoomguy)
-Cinny! (Twitter: @idolkve)
-SuperWillGaming (Twitter: @njsw88)
-
+==========
 = Sounds =
 
 https://freesound.org/
