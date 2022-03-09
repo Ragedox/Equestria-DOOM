@@ -20,7 +20,7 @@ Class CoreSplashChunk : PuffSparkles
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); A_SetScale(scale.x = frandom(0.5, 1.0)); A_SetRoll(random(0, 359));}
 
-		NSL1 ABCD 6 A_FadeOut(0.05);
+		NWAT ABCD 6 A_FadeOut(0.05);
 		Wait;
 	}
 }
@@ -56,10 +56,10 @@ Class SplashSmoke : Actor
 	States
 	{
 	Spawn:
-		NLAV G 0 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		BSMK A 0 NoDelay { bSPRITEFLIP = randompick(0,1); }
 		
-		NLAV GGGHHHIIJJKK 3 A_Fadeout(0.05);
-		NLAV K 1 A_FadeOut(0.05);
+		BSMK AAABBBCCDDEE 3 A_Fadeout(0.05);
+		BSMK E 1 A_FadeOut(0.05);
 		Wait;
 	}
 }
@@ -69,7 +69,7 @@ Class SplashSmoke : Actor
 
 Class DEBloodChunk : CoreSplashChunk
 {
-	Default { TRANSLATION "112:127=176:191"; } 
+	Default { TRANSLATION "193:207=32:47"; } 
 }
 
 Class DEBloodBase : DEBloodChunk
@@ -79,7 +79,7 @@ Class DEBloodBase : DEBloodChunk
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }	
 		
-		NSL1 EFGHIJK 5 A_FadeOut(0.05);
+		SPSH EFGHIJK 5 A_FadeOut(0.05);
 		Stop;
 	}
 }
@@ -110,7 +110,7 @@ Class DENukageBase : CoreSplashBase
 {
 	Default
 	{
-		Translation "112:123=116:127", "124:127=9:12";
+		Translation "192:207=112:127";
 		Renderstyle "Add";
 		Alpha 0.6;
 	}
@@ -128,7 +128,7 @@ Class DENukageBase : CoreSplashBase
 
 Class DESlimeBrownChunk : CoreSplashChunk
 {
-	Default	{	TRANSLATION "112:127=[107,71,39]:[23,15,7]";	}
+	Default	{	TRANSLATION "192:207=136:151";	}
 }
 
 Class DESlimeBrownBase : DESlimeBrownChunk
@@ -152,7 +152,7 @@ Class DESludgeChunk : CoreSplashChunk
 	{
 		Renderstyle "Translucent";
 		Alpha 0.8;
-		TRANSLATION "112:123=116:127", "124:127=76:79";
+		TRANSLATION "192:207=136:151";
 	}
 }
 
@@ -162,8 +162,6 @@ Class DESludgeBase : CoreSplashBase
 	{
 		Renderstyle "Translucent";
 		Alpha 0.9;
-		TRANSLATION 	"112:123=116:127", "124:124=79:79", 
-						"125:125=239:239", "126:127=1:2";
 	}
 	States
 	{
@@ -182,17 +180,11 @@ Class DEWaterSplashChunk : CoreSplashChunk
 	Default
 	{
 		Alpha 0.6;
-		TRANSLATION "112:127=192:207";
 	}
 }
 
 Class DEWaterSplashBase : CoreSplashBase
 {
-	Default
-	{
-		Alpha 0.6;
-		TRANSLATION "112:119=200:207", "120:127=240:247";
-	}
 	States
 	{
 	Spawn:

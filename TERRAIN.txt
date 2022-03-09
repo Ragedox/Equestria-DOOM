@@ -130,7 +130,7 @@ splash Water
 //dull red blood
 terrain Blood
 {
-	splash			Blood
+	splash			"Blood"
 	footclip		10
 	liquid
 }
@@ -139,7 +139,7 @@ terrain Blood
 terrain Lava
 {
 	DamageType		"Lava"
-	splash			Lava
+	splash			"Lava"
 	footclip		10
 	liquid
 }
@@ -147,7 +147,7 @@ terrain Lava
 //just smoke
 terrain LavaSmoke
 {
-	splash			LavaSmoke
+	splash			"LavaSmoke"
 	footclip		0
 	liquid
 }
@@ -164,7 +164,7 @@ terrain Nukage
 //brown and gloopy
 terrain SlimeBrown
 {
-	splash			SlimeBrown
+	splash			"SlimeBrown"
 	footclip		10
 	liquid
 }
@@ -172,7 +172,7 @@ terrain SlimeBrown
 //greeny brown and gloopy
 terrain SludgeGreenBrown
 {
-	splash			SludgeGreenBrown
+	splash			"SludgeGreenBrown"
 	footclip		10
 	liquid
 }
@@ -180,7 +180,7 @@ terrain SludgeGreenBrown
 //normal water
 terrain Water
 {
-	splash			Water
+	splash			"Water"
 	footclip		10
 	liquid
 }
