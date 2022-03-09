@@ -107,12 +107,11 @@ Class EquestriaLostSoul : LostSoul
 	
 	Missile:
 		SKUL C 10 A_FaceTarget();
-		SKUL D 0
+		SKUL D 4
 		{
-			A_SpawnItem("LostSoulCharge", 0, 15);
-			A_FaceTarget();
+			A_SkullAttack();
+			A_SpawnItem("LostSoulCharge", 0, height / 2);
 		}
-		SKUL D 4 A_SkullAttack();
 		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
 		Goto Missile+3;
 	
@@ -121,26 +120,10 @@ Class EquestriaLostSoul : LostSoul
 		
 		SKUL F 6;
 		SKUL G 6 A_Scream();
-		SKUL H 6;
-		SKUL I 6
-		{
-			A_NoBlocking();
-			
-			for (int i = 0; i < 25; i++)
-			{
-				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
-			}
-		}
-		SKUL J 6;
-		SKUL K 1 A_FadeOut(0.1);
-		Wait;
-	
 	XDeath:
 	Death.Berserk:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
-		SKUL H 6 Bright A_Scream();
-		SKUL I 3
+		SKUL H 6;
+		SKUL I 4
 		{
 			A_NoBlocking();
 			
@@ -152,7 +135,6 @@ Class EquestriaLostSoul : LostSoul
 		SKUL J 3;
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
-	
 	}
 	
 	/*override void Tick() 
@@ -208,8 +190,10 @@ Class UnicornSoul : EquestriaLostSoul
 		
 		SKU2 F 6 Bright;
 		SKU2 G 6 Bright A_Scream();
+	XDeath:
+	Death.Berserk:	
 		SKU2 H 6 Bright;
-		SKU2 I 6
+		SKU2 I 4
 		{
 			A_NoBlocking();
 			
@@ -218,28 +202,9 @@ Class UnicornSoul : EquestriaLostSoul
 				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 			}
 		}
-		SKU2 J 6;
-		SKU2 K 1 A_FadeOut(0.1);
-		Wait;
-	
-	XDeath:
-	Death.Berserk:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
-		SKU2 H 6 Bright A_Scream();
-		SKU2 I 3
-		{
-			A_NoBlocking();
-			
-			for (int i = 0; i < 25; i++)
-			{
-				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
-			}
-		}
 		SKU2 J 3;
 		SKU2 K 1 A_FadeOut(0.1);
 		Wait;
-
 	}
 	
 	/*Override void Tick() ////// cool ///////
@@ -318,21 +283,22 @@ Class NirikSoul : EquestriaLostSoul
 	
 	Missile:
 		SKUL C 10 A_FaceTarget();
-		SKUL D 0
+		SKUL D 4
 		{
+			A_SkullAttack();
 			A_SpawnItem("LostSoulCharge", 0, 15);
-			A_FaceTarget();
 		}
-		SKUL D 4 A_SkullAttack();
 		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
 		Goto Missile+3;
 	
 	Death:
+	Death.Berserk:
+	XDeath:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
-		SKUL F 3 A_Explode(5, 50);
+		SKUL F 3;
 		SKUL G 3 A_Scream();
-		SKUL H 3;
+		SKUL H 3 A_Explode(5, 60);
 		SKUL I 6
 		{
 			A_NoBlocking();
