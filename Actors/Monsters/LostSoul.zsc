@@ -113,7 +113,7 @@ Class EquestriaLostSoul : LostSoul
 			A_SpawnItem("LostSoulCharge", 0, height / 2);
 		}
 		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
-		Goto Missile+3;
+		Goto Missile+2;
 	
 	Death:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
@@ -289,7 +289,7 @@ Class NirikSoul : EquestriaLostSoul
 			A_SpawnItem("LostSoulCharge", 0, 15);
 		}
 		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
-		Goto Missile+3;
+		Goto Missile+2;
 	
 	Death:
 	Death.Berserk:
