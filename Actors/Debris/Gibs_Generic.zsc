@@ -92,7 +92,8 @@ Class EquestriaBlood : Blood replaces Blood
 	States
 	{
 	Spawn:
-		BLUD CBA 15;
+		BLUD C 15 NoDelay A_SetRoll(frandom(0, 360));
+		BLUD BA 15;
 		Wait;
 		
 	Bounce.Wall:
