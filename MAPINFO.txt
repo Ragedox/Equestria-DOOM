@@ -60,6 +60,8 @@ map DoomTest "Kinsie's Test Map"
 map SECRET1 "Unknow Mansion"
 {
 	BorderTexture = "UNKNOWNA"
+	
+	Music = "SECRET1"
 }
 
 clearskills
