@@ -46,8 +46,7 @@ pulselight PlasmaExplosion
 
 object EquestriaPlasmaBall
 {
-    frame PLSSA { light PLASMABALL }
-    frame PLSSB { light PLASMABALL }
+    frame BAL4 { light PLASMABALL }
 
     frame PLSE { light PlasmaExplosion }
 }

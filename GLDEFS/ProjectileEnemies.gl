@@ -128,8 +128,7 @@ pulselight ARACPLASMAEXPLOSION
 
 object EquestriaAracPlasmaBall
 {
-    frame APLSA { light ARACHPLAS }
-    frame APLSB { light ARACHPLAS }
+    frame BAL4 { light ARACHPLAS }
 
     frame APBX { light ARACPLASMAEXPLOSION }
 }
