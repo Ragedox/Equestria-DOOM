@@ -149,14 +149,18 @@ Class BarrelDebrisSmoke : EquestriaRocketSmoke
 {	Default{	Alpha 0.35;	Scale 0.2;	VSpeed 0;}	}
 
 Class AcidBarrel : EquestriaExploBarrel
-{
+{	Default { +LOOKALLAROUND }
 	States
 	{
 	Pain:
-		BAR1 A 0 A_SpawnProjectile("AcidDrop",height, frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (-90, 0));
+		BAR1 A 0 A_SpawnProjectile("AcidDrop",height, frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (-90, -45));
 	Spawn:
-		BAR2 AB 6 A_Jump(10, "Pain");
+		BAR2 AB 6 A_LookEx(LOF_NOSOUNDCHECK | LOF_NOSEESOUND,0,512,0,360);
 		Loop;
+		
+	See:
+		BAR2 AB 6 A_Jump(10, "Pain");
+		Goto Spawn;
 	
 	Death.SuperShotgun:
 		#### # 0 A_JumpIfCloser(150, 1);
