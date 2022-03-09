@@ -19,8 +19,7 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		PIST A -1;
+		PIST A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
 		Stop;
 	
 	Ready:
