@@ -262,8 +262,15 @@ Class BigGenericGib : GenericGib
 		Goto Spawn2;
 	
 	Spawn2:
-		#### # 0 A_JumpIf(GetCVar("GoreToggle")== 0, "Bye");
-		#### # 0 { A_SetRoll(FRandom(0,359)); bSPRITEFLIP = RandomPick(0, 1); }
+		#### # 0
+		{
+			if (GetCVar("GoreToggle")== 0) 
+			{
+				Destroy();
+			}
+			A_SetRoll(FRandom(0,359));
+			bSPRITEFLIP = RandomPick(0, 1);
+		}
 		Goto Roll;
 	
 	Bounce:
@@ -317,9 +324,7 @@ Class XDeathGibber : Actor
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(GetCvar("GoreToggle") == 0, "Bye");
-		
-		TNT1 A 0
+		TNT1 A 0 NoDelay
 		{
 			for (int i = 0; i < 10; i++)
 			{
@@ -328,9 +333,6 @@ Class XDeathGibber : Actor
 			}
 		}
 		Stop;
-		
-	Bye: TNT1 A 0;
-	Stop;
 	}
 }
 
@@ -339,8 +341,6 @@ Class BigGibber : XDeathGibber
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(GetCvar("GoreToggle")== 0, "Bye");
-		
 		TNT1 AAAAA 0 A_SpawnProjectile("BigGoreRandom", FRandom(8, 32), FRandom(-40, 40), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
 		Stop;
 	}
@@ -351,7 +351,7 @@ Class BloodExplosion : XDeathGibber
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(GetCVar("GoreToggle")== 0, "Bye");
+		TNT1 A 0 NoDelay { if (GetCVar("GoreToggle")== 0) { Destroy(); } }
 		
 		TNT1 AAAAA 0 A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
 		TNT1 BBBBBB 0 A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
@@ -366,7 +366,7 @@ Class BloodExplosionSphere : BloodExplosion
 	States
 	{
 	Spawn:
-		TNT1 A 0 A_JumpIf(GetCVar("GoreToggle") == 0, "Bye");
+		TNT1 A 0 NoDelay { if (GetCVar("GoreToggle")== 0) { Destroy(); } }
 
 		TNT1 AAAAA 0 A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
 		TNT1 BBBBBB 0 A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
