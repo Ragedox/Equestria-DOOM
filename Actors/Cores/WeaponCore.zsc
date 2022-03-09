@@ -42,26 +42,10 @@ Class DoomEquestriaWeapon : Weapon
 		}
 		TNT1 AAAAAA 1 A_SetRoll(roll + 2, SPF_INTERPOLATE);
 		TNT1 AAAAAA 1 A_SetRoll(roll + 3, SPF_INTERPOLATE);
-		TNT1 AA 1
-		{
-			A_SetRoll(roll - 2, SPF_INTERPOLATE);
-			A_SetPitch(pitch + 6, SPF_INTERPOLATE);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll + 2, SPF_INTERPOLATE);
-			A_SetPitch(pitch - 6, SPF_INTERPOLATE);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll - 1, SPF_INTERPOLATE);
-			A_SetPitch(pitch + 4, SPF_INTERPOLATE);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll + 1, SPF_INTERPOLATE);
-			A_SetPitch(pitch - 4, SPF_INTERPOLATE);
-		}
+		TNT1 AA 1 { A_SetRoll(roll - 2, SPF_INTERPOLATE); A_SetPitch(pitch + 6, SPF_INTERPOLATE);}
+		TNT1 AA 1 { A_SetRoll(roll + 2, SPF_INTERPOLATE); A_SetPitch(pitch - 6, SPF_INTERPOLATE); }
+		TNT1 AA 1 { A_SetRoll(roll - 1, SPF_INTERPOLATE); A_SetPitch(pitch + 4, SPF_INTERPOLATE); }
+		TNT1 AA 1 { A_SetRoll(roll + 1, SPF_INTERPOLATE); A_SetPitch(pitch - 4, SPF_INTERPOLATE); }
 		TNT1 A 1 A_JumpIf(health >= 1, "Resurrect");
 		Wait;
 		
@@ -76,50 +60,24 @@ Class DoomEquestriaWeapon : Weapon
 		Stop;
 	
 	CameraRoll2:
-		TNT1 A 0 ThrustThingZ(0, 40, 0, 1);
-		TNT1 AA 1
-		{
-			A_SetPitch(pitch - 45, SPF_INTERPOLATE);
-			ThrustThing(angle * 256 / 360 + 170, 1, 0, 0);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll - 2, SPF_INTERPOLATE);
-			A_SetPitch(pitch + 10, SPF_INTERPOLATE);
-		}
+		TNT1 A 0 { ThrustThingZ(0, 40, 0, 1); ThrustThing(angle * 256 / 360 + randompick(90, 180),1,0,0); }
+		TNT1 AA 1 A_SetPitch(pitch - 45, SPF_INTERPOLATE);
+		TNT1 AA 1 { A_SetRoll(roll - 2, SPF_INTERPOLATE);	A_SetPitch(pitch + 10, SPF_INTERPOLATE); }
+		
 		TNT1 A 1 A_CheckFloor(1);
 		Wait;
 		
 		TNT1 A 0 ThrustThingZ(0, 10, 0, 1);
-		TNT1 AA 1
-		{
-			A_SetRoll(roll - 4, SPF_INTERPOLATE);
-			A_SetPitch(pitch + 10, SPF_INTERPOLATE);
-		}
+		TNT1 AA 1 {	A_SetRoll(roll - 4, SPF_INTERPOLATE);	A_SetPitch(pitch + 10, SPF_INTERPOLATE); }
+		
 		TNT1 A 1 A_CheckFloor(1);
 		Wait;
 		
 		TNT1 A 0 ThrustThingZ(0, 5, 0, 1);
-		TNT1 AA 1
-		{
-			A_SetRoll(roll + 8, SPF_INTERPOLATE);
-			A_SetPitch(pitch - 10, SPF_INTERPOLATE);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll - 16, SPF_INTERPOLATE);
-			A_SetPitch(pitch + 10, SPF_INTERPOLATE);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll + 16, SPF_INTERPOLATE);
-			A_SetPitch(pitch - 6, SPF_INTERPOLATE);
-		}
-		TNT1 AA 1
-		{
-			A_SetRoll(roll + 2, SPF_INTERPOLATE);
-			A_SetPitch(pitch + 6, SPF_INTERPOLATE);
-		}
+		TNT1 AA 1 {	A_SetRoll(roll + 8, SPF_INTERPOLATE);	A_SetPitch(pitch - 10, SPF_INTERPOLATE); }
+		TNT1 AA 1 { A_SetRoll(roll - 16, SPF_INTERPOLATE);	A_SetPitch(pitch + 10, SPF_INTERPOLATE); }
+		TNT1 AA 1 { A_SetRoll(roll + 16, SPF_INTERPOLATE);	A_SetPitch(pitch - 6, SPF_INTERPOLATE); }
+		TNT1 AA 1 {	A_SetRoll(roll + 2, SPF_INTERPOLATE);	A_SetPitch(pitch + 6, SPF_INTERPOLATE); }
 		
 		TNT1 A 1 A_JumpIf(health >= 1, "Resurrect");
 		Wait;
