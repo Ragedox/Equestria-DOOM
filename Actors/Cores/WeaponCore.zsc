@@ -164,7 +164,7 @@ Class DoomEquestriaWeapon : Weapon
 			A_StartSound ("skeleton/swing");
 			A_AlertMonsters (500, 0);
 			A_Overlay(-3, "Kick.Overlay");
-			A_Overlay(3, "Overlay.AirAside");
+			A_Overlay(3, "Overlay.Aside");
 			
 			A_Recoil(-6);
 		}
@@ -237,29 +237,6 @@ Class DoomEquestriaWeapon : Weapon
 		{
 			A_OverlayOffset(3, 0, 0, WOF_INTERPOLATE );
 			A_OverlayRotate(3, -8, WOF_ADD);
-		}
-		SHTG A 1;
-		Stop;
-	
-	Overlay.AirAside:
-		TNT1 A 0 A_OverlayFlags(3, PSPF_ADDBOB, true);
-		TNT1 A 0 A_OverlayPivotAlign(3, PSPA_RIGHT, PSPA_BOTTOM);
-		
-		SHTG AEE 1
-		{
-			A_OverlayOffset(3, -35, 5, WOF_INTERPOLATE );
-			A_OverlayRotate(3, 5, WOF_ADD);
-		}
-		SHTG FF 1
-		{
-			A_OverlayOffset(3, -30, 10, WOF_INTERPOLATE );
-			A_OverlayRotate(3, 10, WOF_ADD);
-		}
-		SHTG F 8;
-		SHTG FEE 1
-		{
-			A_OverlayOffset(3, 0, 0, WOF_KEEPY | WOF_INTERPOLATE );
-			A_OverlayRotate(3, -10, WOF_ADD);
 		}
 		SHTG A 1;
 		Stop;
