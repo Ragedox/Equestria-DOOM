@@ -7,7 +7,8 @@ Class DoomEquestriaWeapon : Weapon
 		Weapon.BobSpeed 1.5;
 		Weapon.BobRangeX 0.5; Weapon.BobRangeY 0.75;
 		
-		+ForceXYBillBoard;
+		+ForceXYBillBoard
+		+CASTSPRITESHADOW
 	}
 	States
 	{
@@ -278,6 +279,7 @@ Class DoomEquestriaWeapon : Weapon
 		Stop;
 	}
 }
+
 Class BulletTracer : FastProjectile
 {
 	Default
