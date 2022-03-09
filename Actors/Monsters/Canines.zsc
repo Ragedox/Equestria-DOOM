@@ -2,13 +2,13 @@ Class DemonicDog : Actor
 {
 	Default
 	{
-		//$Title Demonic Dog
+		//$Title Possessed Dog
 		//$Category Monsters
 		Monster;
 		
 		Tag "$FN_DOG";
 		
-		Health 100;
+		Health 75;
 		
 		Speed 10;
 		
@@ -18,8 +18,9 @@ Class DemonicDog : Actor
 		
 		Mass 100;
 		
-		+CASTSPRITESHADOW;
-		+JUMPDOWN;
+		+CASTSPRITESHADOW
+		+JUMPDOWN
+		-COUNTKILL
 		
 		ActiveSound "dog/active";
 		AttackSound "dog/attack";
@@ -32,16 +33,16 @@ Class DemonicDog : Actor
 	States
 	{
 	Spawn:
-		DOGS AB 10 A_Look;
+		DOGS AB 10 A_Look();
 		Loop;
 	
 	See:
-		DOGS AABBCCDD 2 A_Chase;
+		DOGS AABBCCDD 2 A_Chase();
 		Loop;
 	
 	Melee:
-		DOGS EF 8 A_FaceTarget;
-		DOGS G 8 A_SargAttack;
+		DOGS EF 8 A_FaceTarget();
+		DOGS G 8 A_SargAttack();
 		Goto See;
 	
 	Pain:
@@ -56,9 +57,9 @@ Class DemonicDog : Actor
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
 		DOGS I 8;
-		DOGS J 8 A_Scream;
+		DOGS J 8 A_Scream();
 		DOGS K 4;
-		DOGS L 4 A_Fall;
+		DOGS L 4 A_Fall();
 		DOGS M 4;
 		DOGS N -1;
 		Stop;
