@@ -15,6 +15,11 @@ Object EquestriaEvilEye
 	frame CEYE { light EvilEyeLight }
 }
 
+Object TitleEvilEye
+{
+	frame CEYE { light EvilEyeLight }
+}
+
 // Barrel
 pulselight BARREL
 {
