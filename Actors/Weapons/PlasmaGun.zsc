@@ -17,8 +17,7 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		PLAS A -1;
+		PLAS A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
 		Stop;
 		
 	Ready:

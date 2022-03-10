@@ -16,8 +16,7 @@ Class EquestriaRifle : DoomEquestriaWeapon
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		RFLE E -1;
+		RFLE E -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
 		Stop;
 		
 	Ready:
