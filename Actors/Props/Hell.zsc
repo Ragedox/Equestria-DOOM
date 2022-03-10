@@ -53,6 +53,23 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 	}
 }
 
+Class TitleEvilEye : EquestriaEvilEye
+{	Default { //$Category "Decoration/Hell"
+	Alpha 1; }
+	States
+	{
+	Spawn:
+		CEYE A 0 NoDelay A_SpawnItemEx("Candlestick");
+		CEYE B 0 A_Jump(256, 1,2);
+		Wait;
+		#### # 0 A_SetTranslation("BeigeEye");
+	
+	Summon:
+		CEYE AAAAAABBBBBBCCCCCCBBBBBB 1 Bright;
+		Loop;
+	}
+}
+
 Class DemonSkull : Actor
 {	Default
 	{
