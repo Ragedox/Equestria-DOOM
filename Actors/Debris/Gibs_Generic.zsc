@@ -88,6 +88,8 @@ Class EquestriaBlood : Blood replaces Blood
 		+MISSILE
 		+MOVEWITHSECTOR
 		+ROLLSPRITE +ROLLCENTER
+		
+		DeathSound "gore/bloodimpact";
 	}
 	States
 	{

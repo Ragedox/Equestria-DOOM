@@ -24,11 +24,20 @@ $random weapons/ricochet	{	weapons/ricochet1	weapons/ricochet2	weapons/ricochet3
 weapons/ricochet1	RIC1
 weapons/ricochet2	RIC2
 weapons/ricochet3	RIC3
+$limit weapons/ricochet 0
 
 weapons/impact		RIC1
 $attenuation		weapons/impact	0.5
 
 weapons/chaingun	DSCHAIN
+
+weapons/casinga		CASINGA
+weapons/casingb		CASINGB
+
+$limit weapons/casinga 0
+$attenuation weapons/casinga 5
+$limit weapons/casingb 0
+$attenuation weapons/casingb 5
 
 misc/magic		DSMAGIC
 
@@ -59,6 +68,11 @@ $random gore/impact { gore/impact1 gore/impact2 gore/impact3 }
 gore/impact1 GibImp1
 gore/impact2 GibImp2
 gore/impact3 GibImp3
+
+gore/bloodimpact	BLUDSPLT
+
+$limit gore/bloodimpact 5
+$attenuation gore/bloodimpact 5
 
 /* World */
 

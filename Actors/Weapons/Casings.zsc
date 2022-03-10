@@ -10,7 +10,9 @@ Class BulletCasing : PuffSparkles
 		Gravity 0.5;
 		
 		BounceType "Doom";
-		BounceFactor 0.5;
+		BounceFactor 0.25;
+		
+		BounceSound "weapons/casinga";
 	}
 	States
 	{
@@ -19,8 +21,8 @@ Class BulletCasing : PuffSparkles
 		CSIG A 1 A_SetRoll(roll + 25, SPF_INTERPOLATE);
 		Wait;
 	Death:
-		CSIG A 3500 A_Recoil(frandom(-2, -1));
-		CSIG A 1 A_FadeOut(0.1);
+		CSIG A 350 A_Recoil(frandom(-2, 2));
+		CSIG A 1 A_FadeOut(0.01);
 		Wait;
 	}
 }
@@ -30,6 +32,8 @@ Class ShellCasing : BulletCasing
 	Default
 	{
 		Scale 0.15;
+		
+		BounceSound "weapons/casingb";
 	}
 	States
 	{
@@ -38,8 +42,8 @@ Class ShellCasing : BulletCasing
 		CSIG B 1 A_SetRoll(roll + 25, SPF_INTERPOLATE);
 		Wait;
 	Death:
-		CSIG B 3500 A_Recoil(frandom(-2, -1));
-		CSIG B 1 A_FadeOut(0.1);
+		CSIG B 350 A_Recoil(frandom(-2, 2));
+		CSIG B 1 A_FadeOut(0.01);
 		Wait;
 	}
 }
