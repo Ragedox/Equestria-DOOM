@@ -149,13 +149,13 @@ Class BarrelDebrisSmoke : EquestriaRocketSmoke
 {	Default{	Alpha 0.35;	Scale 0.2;	VSpeed 0;}	}
 
 Class AcidBarrel : EquestriaExploBarrel
-{	Default { +LOOKALLAROUND }
+{	Default { +LOOKALLAROUND BloodType "AcidDrop"; }
 	States
 	{
 	Pain:
 		BAR1 A 0 A_SpawnProjectile("AcidDrop",height, frandom(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom (-90, -45));
 	Spawn:
-		BAR2 AB 6 A_LookEx(LOF_NOSOUNDCHECK | LOF_NOSEESOUND,0,512,0,360);
+		BAR2 AAABBBBBBAAA 1 A_LookEx(LOF_NOSOUNDCHECK | LOF_NOSEESOUND,0,512,0,360);
 		Loop;
 		
 	See:
