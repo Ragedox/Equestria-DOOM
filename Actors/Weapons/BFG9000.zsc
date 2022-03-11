@@ -44,7 +44,7 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 
 	Fire:
 		BFGG B 10 A_StartSound("weapons/bfgf", CHAN_WEAPON);
-		BFGG B 10 A_Overlay(2, "Shake");
+		BFGG B 10 {	if(GetCVAR("CamRecoilToggle") == true) { A_Overlay(2, "Shake"); }}
 		BFGG B 10
 		{
 			A_Overlay(-10, "Flash");
@@ -55,7 +55,11 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 			A_FireProjectile("EquestriaBFGBall", 0, 1, 0, -20);
 			A_StartSound("weapons/bfgshot");
 			A_WeaponOffset(0, 45, WOF_KEEPX | WOF_INTERPOLATE);
-			A_Overlay(3, "CamRecoil");
+			
+			if (GetCVar("CamRecoilToggle") == 1)
+			{
+				A_Overlay(2, "CamRecoil");
+			}
 			//A_SetBlend("green", 0.5, 16);
 		}
 		BFGG C 6;
@@ -77,7 +81,6 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 		Goto LightDone;
 	
 	Shake:
-		TNT1 A 0 A_JumpIf(GetCVar("CamRecoilToggle") == 0, "Off");
 		TNT1 A 0 A_QuakeEx(5, 3, 5, 20, 0, 1, "", QF_SCALEUP | QF_RELATIVE, 1,1,1,0,0,1,1);
 		
 		TNT1 AAAA 1
@@ -98,7 +101,6 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 		Stop;
 
 	CamRecoil:
-		TNT1 A 0 A_JumpIf(GetCVar("CamRecoilToggle") == 0, "Off");
 		TNT1 A 0 A_ZoomFactor(0.85, ZOOM_INSTANT | ZOOM_NOSCALETURNING);
 
 		TNT1 A 2 A_SetPitch(pitch-6, SPF_INTERPOLATE);

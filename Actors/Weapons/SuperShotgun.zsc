@@ -55,7 +55,7 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 			A_StartSound ("weapons/sshotf", CHAN_WEAPON);
 			A_GunFlash();
 			
-			if (GetCVAR("CamRecoilToggle") == true);
+			if (GetCVAR("CamRecoilToggle") == true)
 			{
 				A_Overlay(2, "CamRecoil");
 			}
