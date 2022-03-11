@@ -82,12 +82,7 @@ Class Gib_ImpArm1 : LegsArmsGib
 
 Class Gib_ImpArm2 : Gib_ImpArm1
 {
-	States
-	{
-	Spawn:
-		ARMG A 0 { bSPRITEFLIP = 1; }
-		Goto Roll;
-	}
+	Default { +SPRITEFLIP }
 }
 
 Class Gib_ImpLeg1 : LegsArmsGib
@@ -110,10 +105,5 @@ Class Gib_ImpLeg1 : LegsArmsGib
 
 Class Gib_ImpLeg2 : Gib_ImpLeg1
 {
-	States
-	{
-	Spawn:
-		LEGG A 0 { bSPRITEFLIP = 1; }
-		Goto Roll;
-	}
+	Default { +SPRITEFLIP }
 }
