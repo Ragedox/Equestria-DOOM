@@ -16,6 +16,11 @@ world/watersplash 	GLOOP
 world/lavasizzle	ACID5
 world/sludgegloop	MUCK5
 
+$limit world/drip       0
+$limit world/watersplash      0
+$limit world/lavasizzle      0
+$limit world/sludgegloop      0
+
 /* Weapons */
 
 weapons/bfgshot		BFGSHOT
@@ -61,6 +66,22 @@ pickup/plasmagun "Sounds/Pickups/Weapons/GetPlasmaGun.wav"
 pickup/rocklauncher "Sounds/Pickups/Weapons/GetRKTLauncher.wav"
 pickup/bfg "Sounds/Pickups/Weapons/GetBFG.wav"
 
+$limit pickup/skullkey	0
+
+$limit pickup/potion	0
+
+$limit pickup/armor1	0
+$limit pickup/armor2	0
+
+$limit pickup/clip		0
+$limit pickup/shell		0
+$limit pickup/backpack	0
+
+$limit misc/i_pkup      0
+$limit misc/k_pkup      0
+$limit misc/w_pkup      0
+$limit misc/p_pkup      0
+
 /* Gore */
 
 $random gore/impact { gore/impact1 gore/impact2 gore/impact3 }
@@ -72,7 +93,7 @@ gore/impact3 GibImp3
 gore/bloodimpact	BLUDSPLT
 
 $limit gore/bloodimpact 5
-$attenuation gore/bloodimpact 5
+$attenuation gore/bloodimpact 8
 
 /* World */
 
