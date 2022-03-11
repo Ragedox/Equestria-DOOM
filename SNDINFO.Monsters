@@ -15,6 +15,7 @@ female/death3		MAREDTH3
 /* Imp */
 
 imp/pain			DSBGPAIN
+
 /* Spiders */
 
 baby/pain			dsbsppai
@@ -32,7 +33,6 @@ caco/pain			dscacpai
 caco/active			DSCACACT
 
 /* Chaingunner */
-
 
 $random chainguy/sight		{ chainguy/sight1  chainguy/sight2  chainguy/sight3 }
 chainguy/sight1			DSPOSIT1
