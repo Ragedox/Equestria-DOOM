@@ -7,7 +7,7 @@ Class BulletCasing : PuffSparkles
 		+MISSILE
 		RenderStyle "Normal";
 		Scale 0.15;
-		Gravity 0.5;
+		Gravity 0.3;
 		
 		BounceType "Doom";
 		BounceFactor 0.25;
@@ -31,8 +31,7 @@ Class ShellCasing : BulletCasing
 {
 	Default
 	{
-		Scale 0.15;
-		
+		Gravity 0.5;
 		BounceSound "weapons/casingb";
 	}
 	States
