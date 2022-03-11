@@ -6,6 +6,10 @@ Class DebrisCore : Actor
 
 	property RollSpeed: rollspd;
 	
+	//string rollstt;
+	
+	//property RollState: rollstt;
+	
 	Default
 	{
 		+Missile
@@ -27,6 +31,7 @@ Class DebrisCore : Actor
 		+ROLLSPRITE +ROLLCENTER
 		
 		DebrisCore.RollSpeed 15;
+		//DebrisCore.RollState "Roll";
 	}
 	override void Tick()
 	{
@@ -55,6 +60,7 @@ Class DebrisCore : Actor
 #include "Actors/Puffs.zsc"
 
 #include "Actors/Debris/Gibs_Generic.zsc"
+#include "Actors/Debris/Gibs_Enemies.zsc"
 
 ////Weapons
 

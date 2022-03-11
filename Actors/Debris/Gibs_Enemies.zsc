@@ -1,17 +1,119 @@
-Class HeadGib : GibBase	{}
-
-Class TorsoGib : GibBase
-{
-	Default
-	{
-		Gravity 1;
-	}
-}
-
-Class LegsArmsGib : GibBase
+Class HeadGib : GenericGib
 {
 	Default
 	{
 		Gravity 0.5;
+		BounceFactor 0.7;
+		DebrisCore.RollSpeed 15;
+	}
+}
+
+Class TorsoGib : GenericGib
+{
+	Default
+	{
+		Gravity 0.75;
+		DebrisCore.RollSpeed 15;
+	}
+}
+
+Class LegsArmsGib : GenericGib
+{
+	Default
+	{
+		Gravity 0.25;
+		DebrisCore.RollSpeed 15;
+	}
+}
+
+Class Gib_ImpHead : HeadGib
+{
+	Default
+	{
+		Height 14; Radius 7;
+	}
+	States
+	{
+	Spawn:
+		HEDG A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
+		Goto Roll;
+	
+	Death:
+		HEDG A 350;
+		Stop;
+	}
+}
+
+Class Gib_ImpTorso : TorsoGib
+{
+	Default
+	{
+		Height 24; Radius 12;
+	}
+	States
+	{
+	Spawn:
+		TRSO A 0;
+		Goto Roll;
+	
+	Death:
+		TRSO A 350;
+		Stop;
+	}
+}
+
+Class Gib_ImpArm1 : LegsArmsGib
+{
+	Default
+	{
+		Height 14; Radius 7;
+	}
+	States
+	{
+	Spawn:
+		ARMG A 0;
+		Goto Roll;
+	
+	Death:
+		ARMG B 350 A_SetRoll(randompick(-200, 200, -180, 180, 0));
+		Stop;
+	}
+}
+
+Class Gib_ImpArm2 : Gib_ImpArm1
+{
+	States
+	{
+	Spawn:
+		ARMG A 0 { bSPRITEFLIP = 1; }
+		Goto Roll;
+	}
+}
+
+Class Gib_ImpLeg1 : LegsArmsGib
+{
+	Default
+	{
+		Height 14; Radius 7;
+	}
+	States
+	{
+	Spawn:
+		LEGG A 0;
+		Goto Roll;
+	
+	Death:
+		LEGG B 350 A_SetRoll(randompick(-200, 200, -180, 180, 0));
+		Stop;
+	}
+}
+
+Class Gib_ImpLeg2 : Gib_ImpLeg1
+{
+	States
+	{
+	Spawn:
+		LEGG A 0 { bSPRITEFLIP = 1; }
+		Goto Roll;
 	}
 }

@@ -107,20 +107,35 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		}
 		Goto Death;
 		
-	XDeath:
-		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
-		#### # 0
+	Classic.XDeath:
+		TROO N 4 A_ScreamAndUnblock();
+		TROO OPQRST 4;
+		TROO U -1;
+		Stop;
+		
+	Real.XDeath:
+		TROO U 0
 		{
-			for (int i = 0; i < 10; i++)
-			{
-				A_SpawnItemEx("GenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 5),Random(2, 5),Random(2, 5), FRandom (0, 359));
-				A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 8),Random(2, 8),Random(2, 8), FRandom (0, 359));
-			}
-			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("Gib_ImpHead",0,0, 50, random(4, 8), random(4, 8), random(4, 8), frandom(-360,360)); 
+			A_SpawnItemEx("Gib_ImpTorso",0,0, 32, 4, 4, 4, frandom(-360,360));
 			
-			A_ScreamAndUnblock();
+			A_SpawnItemEx("Gib_ImpArm1",10,0, 40, 2, 2, 2, -90);
+			A_SpawnItemEx("Gib_ImpArm2",-10,0, 40, 2, 2, 2, 90);
+			
+			A_SpawnItemEx("Gib_ImpLeg1",10,0, 20, 2, 2, 2, -90);
+			A_SpawnItemEx("Gib_ImpLeg2",-10,0, 20, 2, 2, 2, 90);
+			
+			for (int i = 0; i < 6; i++)
+			{
+				A_SpawnProjectile("GenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));	
+				A_SpawnProjectile("TinyGenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
+				
+				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+			}
 		}
-		TROO NOPQRST 4;
+		TROO NOPQRST 1;
 		TROO U -1;
 		Stop;
 		

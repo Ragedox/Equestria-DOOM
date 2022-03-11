@@ -47,6 +47,8 @@ Class GenericGib : DebrisCore
 			A_SprayDecal("BloodSplat", 20);
 			A_SetRoll(roll + FRandom(-100, 100));
 		}
+		Goto Roll;
+		
 	Roll:
 		#### # 8 A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4));
 		Loop;
