@@ -123,7 +123,7 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		Goto See;
 	
 	Death:
-		#### # { bSPRITEFLIP = randompick(0, 1); }
+		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
 		
 		BOS2 I 8;
 		BOS2 J 8 A_Scream();
@@ -148,7 +148,7 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		BOS2 O 8;
 		BOS2 NMLKJI  8;
 		
-		#### # { bSPRITEFLIP = 0; }
+		#### # 0 { bSPRITEFLIP = 0; }
 		Goto See;
 	}
 }
