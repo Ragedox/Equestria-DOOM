@@ -1,3 +1,8 @@
+$alias monster/miss		skeleton/swing
+
+monster/miss2		dsskeswg
+$attenuation monster/miss2 5
+
 /* Females */
 
 female/sight		MARESIT
