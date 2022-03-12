@@ -50,7 +50,7 @@ Class GenericGib : DebrisCore
 		Goto Roll;
 		
 	Roll:
-		#### # 8 A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4));
+		#### # 8 A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(-1,1),random(-1,1),random(-1,1),0, SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
 		Loop;
 	
 	Death:
@@ -96,8 +96,23 @@ Class EquestriaBlood : Blood replaces Blood
 	States
 	{
 	Spawn:
-		BLUD C 15 NoDelay A_SetRoll(frandom(0, 360));
-		BLUD BA 15;
+		BLUD C 15 NoDelay
+		{
+			A_SetRoll(frandom(0, 360));
+			
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnItemEX("BloodTrail",0,0,0, 2,2,2, frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 64);
+			}
+		}
+		BLUD B 15
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,1, frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
+			}
+		}
+		BLUD A 15;
 		Wait;
 		
 	Bounce.Wall:
@@ -121,6 +136,18 @@ Class EquestriaBlood : Blood replaces Blood
 			A_SetRoll((roll + 8), SPF_INTERPOLATE);
 		}
 		Super.Tick();
+	}
+}
+
+Class EquestriaBloodSplatter : BloodSplatter replaces BloodSplatter
+{
+	Default{ +NoInteraction }
+	States
+	{
+	Spawn:
+		TNT1 AAAAAAAAAA 0 NoDelay A_SpawnItemEX("EquestriaBlood", 0,0,0, random(3,6),random(3,6),random(-6,6), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
+		TNT1 AAAAA 0 A_SpawnItemEx("TinyGenericGib",0,0,0, random(1, 4),random(1, 4),random(-4, 4), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
+		Stop;
 	}
 }
 
@@ -204,7 +231,7 @@ Class TinyGenericGib : GenericGib
 		Goto Roll;
 		
 	Roll:
-		#### # 70 A_SpawnItem("SmallBloodTrail");
+		#### # 70 A_SpawnItemEx("SmallBloodTrail",0,0,0,random(-1,1),random(-1,1),random(-1,1),0, SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
 		Loop;
 	}
 }
@@ -285,7 +312,7 @@ Class BigGenericGib : GenericGib
 			A_SetRoll(roll + FRandom(-100, 100));
 		}
 	Roll:
-		#### # 2 A_SpawnItemEx("BloodTrail", FRandom(-10, 10), FRandom(-10, 10), FRandom(-10, 10));
+		#### # 2 A_SpawnItemEx("BloodTrail", FRandom(-10, 10), FRandom(-10, 10), FRandom(-10, 10), random(-1,1),random(-1,1),random(-1,1),0, SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
 		Loop;
 		
 	Death:

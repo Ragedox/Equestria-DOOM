@@ -133,6 +133,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 		+RollSprite +RollCenter
 		+Bright
 		+ZDoomTrans
+		+BloodSplatter
 		
 		DeathSound "weapons/bfgx";
 		Obituary "$OB_MPBFG_BOOM";
