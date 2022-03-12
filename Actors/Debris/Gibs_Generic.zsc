@@ -100,18 +100,18 @@ Class EquestriaBlood : Blood replaces Blood
 		{
 			A_SetRoll(frandom(0, 360));
 			
-			for (int i = 0; i < 4; i++)
+			/*for (int i = 0; i < 4; i++)
 			{
 				A_SpawnItemEX("BloodTrail",0,0,0, 2,2,2, frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 64);
-			}
+			}*/
 		}
-		BLUD B 15
-		{
+		BLUD B 15;
+		/*{
 			for (int i = 0; i < 4; i++)
 			{
 				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,1, frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
 			}
-		}
+		}*/
 		BLUD A 15;
 		Wait;
 		
