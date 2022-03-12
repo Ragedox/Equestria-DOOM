@@ -16,10 +16,10 @@ world/watersplash 	GLOOP
 world/lavasizzle	ACID5
 world/sludgegloop	MUCK5
 
-$limit world/drip       0
-$limit world/watersplash      0
-$limit world/lavasizzle      0
-$limit world/sludgegloop      0
+$limit world/drip			0
+$limit world/watersplash	0
+$limit world/lavasizzle		0
+$limit world/sludgegloop	0
 
 /* Weapons */
 
