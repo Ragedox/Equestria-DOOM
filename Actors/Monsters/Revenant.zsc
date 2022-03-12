@@ -53,7 +53,7 @@ Class EquestriaRevenant : DoomEquestriaMonster replaces Revenant
 	Death:
 	XDeath:
 		#### # 0 { bSPRITEFLIP = randompick(0,1); }
-		SKEL LM 7();
+		SKEL LM 7;
 		SKEL N 7 A_Scream();
 		SKEL O 7 A_NoBlocking();
 		SKEL P 7;
