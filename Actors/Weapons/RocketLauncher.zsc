@@ -91,6 +91,7 @@ Class EquestriaRocket : Rocket replaces Rocket
 		+ForceXYBillBoard
 		-RocketTrail
 		+CastSpriteShadow
+		+BloodSplatter
 		
 		Decal "Scorch";
 		
