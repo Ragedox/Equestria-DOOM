@@ -90,7 +90,7 @@ Class DebrisCore : Actor
 
 #include "Actors/Monsters/Arachnotron.zsc"
 #include "Actors/Monsters/ArchVile.zsc"
-#include "Actors/Monsters/BaronHellKnight.zsc"
+#include "Actors/Monsters/Bruisers.zsc"
 #include "Actors/Monsters/Cacodemon.zsc"
 #include "Actors/Monsters/Imp.zsc"
 #include "Actors/Monsters/LostSoul.zsc"

@@ -1,22 +1,27 @@
-Class EquestriaChaingunGuy : ChaingunGuy replaces ChaingunGuy
+Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 {
 	Default
 	{
+		Tag "$FN_HEAVY";
+		Obituary "$OB_CHAINGUY";
+		
 		Health 70;
 		Radius 20; Height 56;
 		Mass 100;
 		Speed 8;
 		PainChance 170; PainThreshold 5;
 		
-		+CastSpriteShadow
+		+FLOORCLIP
 		
-		//SeeSound "chainguy/sight";
-		//DeathSound "chainguy/death";
-		//PainSound "chainguy/pain";
+		SeeSound "chainguy/sight";
+		DeathSound "chainguy/death";
+		PainSound "chainguy/pain";
 		AttackSound "weapons/chaingun";
-		//ActiveSound "chaingun/active";
-		Dropitem "EquestriaChaingun";
+		ActiveSound "chaingun/active";
+
 		Species "Couple";
+		
+		Dropitem "EquestriaChaingun";
 	}
 	States
 	{

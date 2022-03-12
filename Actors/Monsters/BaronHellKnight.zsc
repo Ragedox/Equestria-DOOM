@@ -1,13 +1,28 @@
-Class EquestriaBaronofHell : BaronOfHell replaces BaronOfHell
+Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 {
 	Default
 	{
 		//$Sprite BOSSA2C8
+		Tag "$FN_BARON";
+		Obituary "$OB_BARON";
+		HitObituary "$OB_BARONHIT";
+		
+		Health 1000;
+		Radius 24; Height 64;
+		Mass 1000;
+		Speed 8;
+		PainChance 50; PainThreshold 5;
 		BloodColor "darkgreen";
 		
-		+CastSpriteShadow
+		+FLOORCLIP
+		+BOSSDEATH
+		+E1M8BOSS
 		
-		PainThreshold 5;
+		SeeSound "baron/sight";
+		PainSound "baron/pain";
+		DeathSound "baron/death";
+		ActiveSound "baron/active";
+		
 	}
 	States
 	{
@@ -15,10 +30,14 @@ Class EquestriaBaronofHell : BaronOfHell replaces BaronOfHell
 		IDLB CD 10 A_Look();
 		Loop;
 	
+	See:
+		BOSS AABBCCDD 3 A_Chase();
+		Loop;
+		
 	Melee:
 		BOSS E 8 A_FaceTarget();
 		BOSS F 6 A_FaceTarget();
-		BOSS G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "skel/swing", "BruisersMelee");
+		BOSS G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "monster/miss", "BruisersMelee", true);
 		Goto See;
 		
 	Missile:
@@ -26,6 +45,11 @@ Class EquestriaBaronofHell : BaronOfHell replaces BaronOfHell
 		BOSS G 8 A_SpawnProjectile("EquestriaBaronBall");
 		Goto See;
 	
+	Pain:
+		BOSS H  2;
+		BOSS H  2 A_Pain;
+		Goto See;
+		
 	Death:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
@@ -38,6 +62,7 @@ Class EquestriaBaronofHell : BaronOfHell replaces BaronOfHell
 		Stop;
 		
 	XDeath:
+	Crush:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
 		BOSD G 8;
@@ -45,21 +70,35 @@ Class EquestriaBaronofHell : BaronOfHell replaces BaronOfHell
 		BOSD I 8;
 		BOSD J 8 A_NoBlocking();
 		BOSD KL 8;
-		BOSD M -1 A_BossDeath;
+		BOSD M -1 A_BossDeath();
 		Stop;
+		
+	Raise:
+		BOSS O 8;
+		BOSS NMLKJI  8;
+		"####" "#" 0 { bSPRITEFLIP = 0; }
+		Goto See;
 	}
 }
  
-Class EquestriaHellKnight : HellKnight replaces HellKnight
+Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 {
 	Default
 	{
-		+CASTSPRITESHADOW
+		Health 500;
 		
 		Speed 10;
 		PainThreshold 5;
 		PainChance 75;
 		BloodColor "green";
+		-BOSSDEATH;
+		SeeSound "knight/sight";
+		ActiveSound "knight/active";
+		PainSound "knight/pain";
+		DeathSound "knight/death";
+		HitObituary "$OB_KNIGHTHIT";
+		Obituary "$OB_KNIGHT";
+		Tag "$FN_HELL";
 	}
 	States
 	{
@@ -67,11 +106,15 @@ Class EquestriaHellKnight : HellKnight replaces HellKnight
 	Spawn:
 		IDLB AB 10 A_Look();
 		Loop;
- 
+	
+	See:
+		BOS2 AABBCCDD 3 A_Chase();
+		Loop;
+		
 	Melee:
 		BOS2 E 8 A_FaceTarget();
 		BOS2 F 6 A_FaceTarget();
-		BOS2 G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "skel/swing", "BruisersMelee");
+		BOS2 G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "monster/miss", "BruisersMelee", true);
 		Goto See;
 		
 	Missile:
@@ -80,7 +123,7 @@ Class EquestriaHellKnight : HellKnight replaces HellKnight
 		Goto See;
 	
 	Death:
-		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); }
+		#### # { bSPRITEFLIP = randompick(0, 1); }
 		
 		BOS2 I 8;
 		BOS2 J 8 A_Scream();
@@ -91,7 +134,8 @@ Class EquestriaHellKnight : HellKnight replaces HellKnight
 		Stop;
 		
 	XDeath:
-		TNT1 A 0 { bSPRITEFLIP = randompick(0, 1); }
+	Crush:
+		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
 		
 		BOS2 P 5 A_Scream();
 		BOS2 Q 5 A_NoBlocking();
@@ -99,6 +143,13 @@ Class EquestriaHellKnight : HellKnight replaces HellKnight
 		BOS2 STUVW 5;
 		BOS2 X -1;
 		Stop;
+		
+	Raise:
+		BOS2 O 8;
+		BOS2 NMLKJI  8;
+		
+		#### # { bSPRITEFLIP = 0; }
+		Goto See;
 	}
 }
 

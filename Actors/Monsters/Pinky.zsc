@@ -71,6 +71,10 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 		SARG NMLKJI 5;
 		"####" "#" 0 { bSPRITEFLIP = 0; }
 		Goto See;
+		
+	Crush:
+		TROO U -1 { A_Fall(); A_XScream(); }
+		Stop;
 	}
 }
 

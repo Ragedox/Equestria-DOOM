@@ -1,4 +1,4 @@
-Class DemonicDog : Actor
+Class DemonicDog : DoomEquestriaMonster
 {
 	Default
 	{

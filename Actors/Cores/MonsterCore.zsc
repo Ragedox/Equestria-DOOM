@@ -7,7 +7,7 @@ Class DoomEquestriaMonster : Actor
 		+CastSpriteShadow
 		+AvoidMelee
 		
-		BloodType "EquestriaBlood", "EquestriaBloodSplatter";
+		BloodType "EquestriaBlood_Enemies", "EquestriaBloodSplatter", "EquestriaBloodAxe";
 	}
 	States
 	{

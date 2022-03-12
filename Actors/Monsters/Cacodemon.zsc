@@ -57,7 +57,7 @@ Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 		HEAD C 3 A_Recoil(-15);
 		HEAD B 4;
 		
-		HEAD A 8 A_CustomMeleeAttack(10 * random(1, 6), "demon/melee", "skeleton/swing");
+		HEAD A 8 A_CustomMeleeAttack(10 * random(1, 6), "demon/melee", "monster/miss", "", true);
 		HEAD A 0 A_Stop();
 		Goto See;
 	

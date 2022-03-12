@@ -70,7 +70,7 @@ Class LostSoulGib : DebrisCore
 	}
 }
 
-Class EquestriaLostSoul : LostSoul
+Class EquestriaLostSoul : DoomEquestriaMonster
 {
 	Default
 	{
@@ -78,20 +78,32 @@ Class EquestriaLostSoul : LostSoul
 		
 		Speed 10 / 6;
 		
-		RenderStyle "Normal";
-		
 		Height 30; Radius 15;
 		DeathHeight 30;
 		
-		DamageFactor "Plasma", 1.75;
+		PainChance 256;
+		Damage 3; DamageFactor "Plasma", 1.75;
 		
-		+CASTSPRITESHADOW
+		Mass 50;
+		RenderStyle "Normal";
+		
 		+FORCEXYBILLBOARD
 		+FLOATBOB
 		-COUNTKILL
 		+NOBLOOD
 		+Bright
 		-AVOIDMELEE
+		+FLOAT +NOGRAVITY
+		+MISSILEMORE +DONTFALL
+		+NOICEDEATH +ZDOOMTRANS +RETARGETAFTERSLAM
+		
+		AttackSound "skull/melee";
+		PainSound "skull/pain";
+		DeathSound "skull/death";
+		ActiveSound "skull/active";
+		RenderStyle "SoulTrans";
+		Obituary "$OB_SKULL";
+		Tag "$FN_LOST";
 	}
 	States
 	{
