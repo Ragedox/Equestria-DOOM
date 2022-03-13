@@ -119,6 +119,13 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
         SPOS U -1;
         Stop;
     
+	Classic.XDeath:
+	Crush:
+		SPOS M 5 { A_Fall(); A_XScream(); }
+		SPOS NOPQRST 5;
+		SPOS U -1;
+		Stop;
+		
 	Death.Berserk:
 	XDeath.Berserk:
 		"####" "#" 0 ThrustThingZ(0,30,0,1);

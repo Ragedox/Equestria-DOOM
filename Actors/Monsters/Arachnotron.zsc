@@ -1,14 +1,42 @@
-Class EquestriaArachnotron : Arachnotron replaces Arachnotron
+Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 {
 	Default
 	{
+		Tag "$FN_ARACH";
+		Obituary "$OB_BABY";
+		
+		Health 500;
+		
 		Radius 25; Height 50;
-		+CastSpriteShadow
+		Mass 500;
+		Speed 12;
+		PainChance 128;
+		
+		+FLOORCLIP
+		+BOSSDEATH
+		+MAP07BOSS2
+		
+		SeeSound "baby/sight";
+		PainSound "baby/pain";
+		DeathSound "baby/death";
+		ActiveSound "baby/active";
+
 		Translation "160:167=112:127";
 	}
 	States
 	{
-	
+	Spawn:
+		BSPI AB 10 A_Look();
+		Loop;
+		
+	See:
+		BSPI A 20;
+		BSPI A 3 A_BabyMetal();
+		BSPI ABBCC 3 A_Chase();
+		BSPI D 3 A_BabyMetal();
+		BSPI DEEFF 3 A_Chase();
+		Goto See+1;
+		
 	Missile:
 		BSPI A 20 A_FaceTarget();
 		BSPI G 4 bright A_SpawnProjectile("EquestriaAracPlasmaBall", 16, 4);
@@ -16,6 +44,25 @@ Class EquestriaArachnotron : Arachnotron replaces Arachnotron
 		BSPI H 1 bright A_SpidRefire();
 		Goto Missile+1;
    
+   Pain:
+		BSPI I 3;
+		BSPI I 3 A_Pain();
+		Goto See+1;
+		
+	XDeath: //to do
+	Death:
+		#### # 0 { bSPRITEFLIP = randompick(0,1); }
+		BSPI J 20 A_Scream();
+		BSPI K 7 A_NoBlocking();
+		BSPI LMNO 7;
+		BSPI P -1 A_BossDeath();
+		Stop;
+		
+    Raise:
+		BSPI P 5;
+		BSPI ONMLKJ 5;
+		#### # 0 { bSPRITEFLIP = 0; }
+		Goto See+1;
 	}
 }
 

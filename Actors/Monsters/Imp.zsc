@@ -53,7 +53,7 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		TROO G 6
 		{
 			A_Recoil(-4);
-			A_CustomMeleeAttack(3 * random(1, 8), "imp/melee");
+			A_CustomMeleeAttack(3 * random(1, 8), "imp/melee", "monster/miss2", "", true);
 		}
 		TROO G 0 A_Stop();
 		Goto See;
@@ -108,7 +108,8 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		Goto Death;
 		
 	Classic.XDeath:
-		TROO N 4 A_ScreamAndUnblock();
+	Crush:
+		TROO N 4 { A_Fall(); A_XScream(); }
 		TROO OPQRST 4;
 		TROO U -1;
 		Stop;

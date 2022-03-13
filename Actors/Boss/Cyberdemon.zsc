@@ -1,10 +1,8 @@
-Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
+Class EquestriaCyberdemon : DoomEquestriaMonster replaces Cyberdemon
 {
 	Default
 	{
 		//$Sprite CYBRA2
-		Monster;
-		
 		Tag "$FN_CYBER";
 		Obituary "$OB_CYBORG";
 		
@@ -18,7 +16,6 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
 		PainChance 20;
 		MinMissileChance 160;
 		
-		+CASTSPRITESHADOW
 		+BOSS +BOSSDEATH +E2M8BOSS +E4M6BOSS
 		+MISSILEMORE
 		+FLOORCLIP
@@ -35,6 +32,17 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
 	Spawn:
 		IDLY AB 10 A_Look();
 		Loop;
+	
+	See:
+		CYBR A 3 A_Hoof();
+		CYBR ABBCC 3 A_Chase();
+		CYBR D 3 A_Metal();
+		CYBR D 3 A_Chase();
+		Loop;
+	
+	Pain:
+		CYBR G 10 A_Pain();
+		Goto See;
 		
 	Missile:
 		CYBR E 6 A_FaceTarget();
@@ -44,7 +52,8 @@ Class EquestriaCyberdemon : Cyberdemon replaces Cyberdemon
 		CYBR E 12 A_FaceTarget();
 		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5, random(-2, 2));
 		Goto See;
-   
+	
+	XDeath:
 	Death:
 		CYBR H 10;
 		CYBR I 5;

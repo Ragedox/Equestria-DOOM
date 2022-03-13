@@ -1,4 +1,4 @@
 IWAD = "DOOM2.WAD"
-STARTUPTITLE = "DOOM Equestria - Discord Pre-Alpha" 
+STARTUPTITLE = "Equestria DOOM - Discord Alpha" 
 StartupType = "Hexen"
 StartupColors = "#FFFFFF", "#2a2e33"

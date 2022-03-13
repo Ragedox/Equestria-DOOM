@@ -7,8 +7,8 @@ ListMenu "MainMenu"
 	//Original code by Jimmy in ZDoom forums
 	StaticTextCentered 160, 75, "$CAMPAIGN"
 	StaticTextCentered 160, 100, "$MNU_OPTIONS"
-	/*StaticPatchCentered 75, 128, "Notlog"
-	StaticTextCentered 160, 125, "Bethesda.net" Why not?*/
+	//StaticPatchCentered 75, 128, "Notlog"
+	//StaticTextCentered 160, 125, "Bethesda.net" Why not?
 	StaticTextCentered 160, 125, "$MNU_INFO"
 	StaticTextCentered 160, 150, "$MNU_QUITGAME"
 
@@ -23,7 +23,17 @@ ListMenu "MainMenu"
 	PatchItem "TNT1A0",	"4", "QuitMenu"
 	
 	//Dumb old note
-	//Postion 0, 72 (A Morden Look, maybe for a future Doom Equestria
+		//A Morden Look, maybe for a future Doom Equestria
+	
+	/*	Position 0, 75
+		TextItem "Campaign", 1, "PlayMenu"
+		Position 0, 100
+		TextItem "Options", 2, "EquestriaOptions"
+		Position 0, 125
+		TextItem "Info", 3, "ReadThisMenu"
+		Position 0, 150
+		TextItem "Quit", 4, "QuitMenu"	*/
+	
 }
 
 ListMenu "PlayMenu"
