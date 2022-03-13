@@ -39,7 +39,7 @@ Class DoomEquestriaWeapon : Weapon
 		TNT1 AAAA 1
 		{
 			A_SetRoll(roll + 1, SPF_INTERPOLATE);
-			ThrustThing(angle * 256 / 360 + 170, 1, 0, 0);
+			ThrustThing(angle * 256 / 360 + 150, 1, 0, 0);
 		}
 		TNT1 AAAAAA 1 A_SetRoll(roll + 2, SPF_INTERPOLATE);
 		TNT1 AAAAAA 1 A_SetRoll(roll + 3, SPF_INTERPOLATE);
