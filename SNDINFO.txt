@@ -30,6 +30,7 @@ weapons/ricochet1	RIC1
 weapons/ricochet2	RIC2
 weapons/ricochet3	RIC3
 $limit weapons/ricochet 0
+$attenuation		weapons/ricochet	0.5
 
 weapons/impact		RIC1
 $attenuation		weapons/impact	0.5
@@ -43,6 +44,9 @@ $limit weapons/casinga 0
 $attenuation weapons/casinga 5
 $limit weapons/casingb 0
 $attenuation weapons/casingb 5
+
+$limit weapons/bfgx 0
+$attenuation weapons/bfgx 0.5
 
 misc/magic		DSMAGIC
 
