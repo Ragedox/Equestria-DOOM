@@ -3,7 +3,6 @@ Class EquestriaRifle : DoomEquestriaWeapon
 	Default
 	{
 		Weapon.SelectionOrder 3;
-		Weapon.BobStyle "InverseSmooth";
 		
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 30;
