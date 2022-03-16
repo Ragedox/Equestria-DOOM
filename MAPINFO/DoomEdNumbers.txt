@@ -128,5 +128,5 @@ DoomEdNums
 	15805 = "BloodSplat1"
 	15806 = "BloodSplat2"
 	
-	15807 = "DeadWallPony"
+	15807 = "DeadAnimalWall"
 }
