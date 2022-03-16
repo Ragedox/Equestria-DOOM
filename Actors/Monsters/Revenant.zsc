@@ -88,6 +88,7 @@ Class EquestriaRevenantTracer : RevenantTracer replaces RevenantTracer
 		+DontSeekInvisible
 		+SeekerMissile
 		+Randomize
+		+CASTSPRITESHADOW
 		-ZDOOMTRANS
 		
 		SeeSound "skeleton/attack";

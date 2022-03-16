@@ -112,8 +112,7 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		Loop;
 		
 	Melee:
-		BOS2 E 8 A_FaceTarget();
-		BOS2 F 6 A_FaceTarget();
+		BOS2 EF 6 A_FaceTarget(180, 270,0,0, FAF_MIDDLE);
 		BOS2 G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "monster/miss", "BruisersMelee", true);
 		Goto See;
 		

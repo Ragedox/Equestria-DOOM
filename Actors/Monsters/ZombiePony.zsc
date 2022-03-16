@@ -62,7 +62,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		Goto See;
 		
 	Missile:
-        POSS E 10 A_FaceTarget();
+        POSS E 10 A_FaceTarget(180, 270, 0, FAF_MIDDLE);
         POSS F 8
 		{
 			A_CustomBulletAttack (20, 10, 1, random(1,5)*2, "EquestriaBulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");

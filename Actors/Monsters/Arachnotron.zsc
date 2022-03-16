@@ -38,7 +38,7 @@ Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 		Goto See+1;
 		
 	Missile:
-		BSPI A 20 A_FaceTarget();
+		BSPI A 20 A_FaceTarget(90, 270, 0, FAF_MIDDLE);
 		BSPI G 4 bright A_SpawnProjectile("EquestriaAracPlasmaBall", 16, 4);
 		BSPI H 4 bright;
 		BSPI H 1 bright A_SpidRefire();

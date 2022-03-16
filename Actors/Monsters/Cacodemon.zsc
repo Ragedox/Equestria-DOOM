@@ -64,7 +64,7 @@ Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 	Missile:
 		HEAD BC 5
 		{
-			A_FaceTarget();
+			A_FaceTarget(180, 270, 0, 0, FAF_MIDDLE);
 			A_JumpIfCloser(radius + 128, "Melee2");
 		}
 		HEAD D 5 Bright { A_SpawnProjectile("EquestriaCacodemonBall", 16); A_Recoil(-2); }
