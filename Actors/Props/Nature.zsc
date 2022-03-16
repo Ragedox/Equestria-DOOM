@@ -6,7 +6,7 @@ Class Bush1 : Actor
 	//$Category "Decoration/Nature"
 		Radius 10; Height 20;
 		ProjectilePassHeight -16;
-		+SOLID;
+		+SOLID +CASTSPRITESHADOW
 	}
 	States
 	{
@@ -36,14 +36,12 @@ Class Bush3 : Bush1
 	}
 }
 
-Class BushTall : Actor
+Class BushTall : Bush1
 {
 	Default
-		{
+	{
 	//$NotAngled
 	//$Category "Decoration/Nature"
-		Radius 10; Height 20;
-		+SOLID;
 	}
 	States
 	{
@@ -63,7 +61,7 @@ Class BushTall2 : Bush1
 	}
 }
 
-Class BushTall3 : BushTall
+Class BushTall3 : Bush1
 {
 	States
 	{

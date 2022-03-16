@@ -8,13 +8,14 @@ Class EquestriaGibs : Gibs replaces Gibs
 {	Default	{ +ForceXYBillboard } }
 
 Class EquestriaColonGibs : ColonGibs replaces ColonGibs
-{	Default	{ +ForceXYBillboard} }
+{	Default	{ +ForceXYBillboard } }
 
 Class EquestriaBloodyTwitch : BloodyTwitch replaces BloodyTwitch
 {
 	Default
 	{
 		Radius 10;
+		+CASTSPRITESHADOW
 	}
 	States
 	{
@@ -31,6 +32,7 @@ Class EquestriaMeat2 : Meat2 replaces Meat2
 	Default
 	{
 		Radius 10;
+		+CASTSPRITESHADOW
 	}
 	States
 	{
@@ -45,6 +47,7 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 	Default
 	{
 		Height 81; Radius 8;
+		+CASTSPRITESHADOW
 		//+Shootable +DontThrust
 	}
 	States
@@ -86,14 +89,12 @@ Class EquestriaMeat3 : Meat3 replaces Meat3
 	}
 }
 
-Class EquestriaNonsolidMeat3 : EquestriaMeat3 replaces NonsolidMeat3
-{Default{	-SOLID	}}
-
 Class EquestriaMeat4 : Meat4 replaces Meat4
 {
 	Default
 	{
 		Radius 10;
+		+CASTSPRITESHADOW
 	}
 	States
 	{
@@ -108,6 +109,7 @@ Class EquestriaMeat5 : Meat5 replaces Meat5
 	Default
 	{
 		Height 42; Radius 7;
+		+CASTSPRITESHADOW
 	}
 	States
 	{
@@ -139,28 +141,30 @@ Class EquestriaMeat5 : Meat5 replaces Meat5
 	}
 }
 
-Class EquestriaNonsolidMeat5 : EquestriaMeat5 replaces NonsolidMeat5
-{Default{	-SOLID	}}
+Class EquestriaNonsolidMeat2 : EquestriaMeat2 replaces NonsolidMeat2
+{Default{ -SOLID }}
 
+Class EquestriaNonsolidMeat3 : EquestriaMeat3 replaces NonsolidMeat3
+{Default{ -SOLID }}
+
+Class EquestriaNonsolidMeat4 : EquestriaMeat4 replaces NonsolidMeat4
+{Default{ -SOLID }}
+
+Class EquestriaNonsolidMeat5 : EquestriaMeat5 replaces NonsolidMeat5
+{Default{ -SOLID }}
+
+Class EquestriaNonsolidTwitch : EquestriaBloodyTwitch replaces NonsolidTwitch
+{Default{ -SOLID }}
+	
 //
 
-class PonyHeadOnAStick : HeadOnAStick replaces HeadOnAStick
-{
-	Default
-	{
-		Radius 2;
-	}
-}
+Class EquestriaHeadOnAStick : HeadOnAStick replaces HeadOnAStick
+{Default { Radius 2; +CASTSPRITESHADOW }}
 
-class PonyHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
-{
-	Default
-	{
-		Radius 2;
-	}
-}
+Class EquestriaHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
+{Default { Radius 2; +CASTSPRITESHADOW }}
 
-Class DeadWallPony : FlatProps
+Class DeadAnimalWall : FlatProps
 {	States {
 	Spawn:
 		FLT2 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
@@ -180,6 +184,113 @@ Class DeadWallPony : FlatProps
 	Brown:			#### # -1 A_SetTranslation("Brown");		Stop;
 	}
 }
+
+class EquestriaDeadStick : Actor replaces DeadStick
+{
+	Default
+	{
+		Radius 16; Height 64;
+		ProjectilePassHeight -16;
+		+SOLID +CASTSPRITESHADOW
+	}
+	States
+	{
+	Spawn:
+		POL1 A -1;
+		Stop;
+	}
+}
+
+class EquestriaLiveStick : Actor replaces LiveStick
+{
+	Default
+	{
+		Radius 16; Height 64;
+		ProjectilePassHeight -16;
+		+SOLID +CASTSPRITESHADOW
+	}
+	States
+	{
+	Spawn:
+		POL6 AB random(6, 8);
+		Loop;
+	}
+}
+
+Class EquestriaHangNoGuts : Actor replaces HangNoGuts
+{
+	Default
+	{
+		Radius 16; Height 88;
+		+SOLID
+		+NOGRAVITY
+		+SPAWNCEILING
+		+CASTSPRITESHADOW
+	}
+	States
+	{
+	Spawn:
+		HDB1 A -1;
+		Stop;
+	}
+}
+
+Class EquestriaHangBNoBrain : EquestriaHangNoGuts replaces HangBNoBrain
+{
+	States
+	{
+	Spawn:
+		HDB2 A -1;
+		Stop;
+	}
+}
+
+Class EquestriaHangTLookingDown : EquestriaHangNoGuts replaces HangTLookingDown
+{
+	Default
+	{
+		Height 64;
+	}
+	States
+	{
+	Spawn:
+		HDB3 A -1;
+		Stop;
+	}
+}
+
+Class EquestriaHangTLookingUp : EquestriaHangTLookingDown replaces HangTLookingUp
+{
+	States
+	{
+	Spawn:
+		HDB5 A -1;
+		Stop;
+	}
+}
+
+Class EquestriaHangTSkull : EquestriaHangTLookingDown replaces HangTSkull
+{
+	States
+	{
+	Spawn:
+		HDB4 A -1;
+		Stop;
+	}
+}
+
+class EquestriaHangTNoBrain : EquestriaHangTLookingDown replaces HangTNoBrain
+{
+	States
+	{
+	Spawn:
+		HDB6 A -1;
+		Stop;
+	}
+}
+
+/////
+
 
 Class BloodSmear1 : FlatProps
 {	States	{
