@@ -2,7 +2,7 @@ Class EquestriaFloatingSkull : FloatingSkull replaces FloatingSkull
 {
 	Default
 	{
-		+FLOATBOB FloatBobStrength 0.5;
+		+FLOATBOB +NOGRAVITY FloatBobStrength 0.5;
 	
 		Radius 15; Height 50;
 	}
