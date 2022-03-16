@@ -103,7 +103,7 @@ Class EquestriaBlood : Blood replaces Blood
 		
 	Crash:
 		TNT1 A 0 { ACS_NamedExecute("CheckLiquid"); }
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
+		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_ChangeVelocity(0, 0, 0, 2); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
 		
 		BLUD DEF 2 A_FadeOut(FRandom(0.001, 0.1));
 		BLUD G 1 A_FadeOut(0.005);
