@@ -45,12 +45,12 @@ Class EquestriaCyberdemon : DoomEquestriaMonster replaces Cyberdemon
 		Goto See;
 		
 	Missile:
-		CYBR E 6 A_FaceTarget();
-		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5);
-		CYBR E 12 A_FaceTarget();
-		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5, random(-2, 2));
-		CYBR E 12 A_FaceTarget();
-		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5, random(-2, 2));
+		CYBR E 6 A_FaceTarget(100, 0, 0, 0, FAF_BOTTOM);
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5, 0, CMF_OFFSETPITCH, 2);
+		CYBR E 12 A_FaceTarget(100, 0, 0, FAF_BOTTOM);
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5, random(-2, 2), CMF_OFFSETPITCH, 2);
+		CYBR E 12 A_FaceTarget(100, 0, 0, 0, FAF_BOTTOM);
+		CYBR F 12 A_SpawnProjectile("EquestriaRocket", 52 * 1.5, -26 * 1.5, random(-2, 2), CMF_OFFSETPITCH, 2);
 		Goto See;
 	
 	XDeath:
