@@ -155,7 +155,6 @@ Class EquestriaPlasmaBall : Actor
 		+RollSprite +RollCenter
 		+ForceXYBillBoard
 		+ZDoomTrans
-		+BloodSplatter
 		
 		SeeSound "weapons/plasmaf";
 		DeathSound "weapons/plasmax";
