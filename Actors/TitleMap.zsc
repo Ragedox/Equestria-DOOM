@@ -49,3 +49,21 @@ Class GoatHorse : TitleMapProps
 		Stop;
 	}
 }
+
+Class SpookySkull : TitleMapProps
+{
+	Default
+	{
+		//$Category TitleMap and End Screens
+		+FORCEXYBILLBOARD
+	}
+	States
+	{
+	Spawn:
+		TNT1 A -1;
+		Stop;
+	}
+}
+
+Class AngrySkull : SpookySkull
+{}
