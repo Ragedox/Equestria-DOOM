@@ -1,1 +1,20 @@
 Class Hellya : Actor //Friendly Baroness of Hell
+{
+	Default
+	{
+	//$Title "Hellya"
+	//$Sprite BOSSA1
+		Radius 20; Height 56;
+		Activation THINGSPEC_Switch|THINGSPEC_ThingTargets;
+		+USESPECIAL;
+		+SOLID;
+	}
+	States
+	{
+	Spawn:
+		BOSS A 1;
+		Loop;
+	Active:
+		TNT1 A 0 { bUSESPECIAL = 0 };
+		
+		// aaaaaaa this will be pain
