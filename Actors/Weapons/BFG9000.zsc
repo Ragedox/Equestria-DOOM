@@ -75,7 +75,7 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 		
 		BFGF B 5 Bright A_Light(2);
 		BFGF A 5 Bright A_Light(4);
-		BFGF D 8 Bright A_Light(6);
+		BFGF C 8 Bright A_Light(6);
 		BFGF A 4 Bright A_Light(1);
 		BFGF B 2 Bright;
 		Goto LightDone;

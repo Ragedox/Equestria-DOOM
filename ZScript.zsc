@@ -107,9 +107,9 @@ Class DebrisCore : Actor
 #include "Actors/Monsters/ScriptedMarines.zsc"
 #include "Actors/Monsters/WolfensteinActors.zsc"
 
-#include "Actors/Boss/Cyberdemon.zsc"
-#include "Actors/Boss/Night_Mare.zsc"
-#include "Actors/Boss/SpiderMastermind.zsc"
+#include "Actors/Monsters/Boss/Cyberdemon.zsc"
+#include "Actors/Monsters/Boss/Night_Mare.zsc"
+#include "Actors/Monsters/Boss/SpiderMastermind.zsc"
 
 ////Props
 

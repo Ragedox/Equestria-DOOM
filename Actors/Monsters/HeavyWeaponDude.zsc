@@ -42,14 +42,32 @@ Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 		Goto See;
 		
 	Missile:
-		CPOS E 10 A_FaceTarget();
+		CPOS E 10 A_FaceTarget(180, 270, 0, FAF_MIDDLE);
+		TNT1 A 0 A_JumpIfInTargetLOS("Missile.Stand", 0, JLOSF_DEADNOJUMP, 512);
+		TNT1 A 0 A_Jump(256, "Missile.Stand", "Missile.Walking");
+		Wait;
+		
+	Missile.Stand:
 		CPOS F 3 bright
 		{
 			A_CustomBulletAttack(20, 10, 1, random(1,5)*2, "BulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
 			A_SpawnProjectile("BulletCasingSpawn", 32, 15);
 		}
 		CPOS E 1 A_CPosRefire();
-		Goto Missile+1;
+		CPOS E 0 A_JumpIfInTargetLOS("Missile.Stand", 0, JLOSF_DEADNOJUMP, 512);
+		Goto See;
+		
+	Missile.Walking:
+		CPOS F 3 bright
+		{
+			A_Chase(null,null); A_FaceTarget(180, 270, 0, FAF_MIDDLE);
+			A_CustomBulletAttack(10, 5, 1, random(1,5)*2, "BulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_SpawnProjectile("BulletCasingSpawn", 32, 15);
+		}
+		CPOS E 2 { A_Chase(null,null); }
+		CPOS E 2 { A_Chase(null,null); }
+		CPOS E 0 A_CPosRefire();
+		Loop;
 	
 	Pain:
 		CPOS G 2;

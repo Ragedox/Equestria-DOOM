@@ -59,7 +59,7 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		Goto See;
 		
 	Missile:
-		TROO EF 8 A_FaceTarget();
+		TROO EF 8 A_FaceTarget(0, 270, 0, FAF_MIDDLE);
 		TROO G 6 A_SpawnProjectile("DoomImpBall");
 		Goto See;
 	
@@ -183,12 +183,12 @@ Class EquestriaImpBall : DoomImpBall replaces DoomImpBall
 	States
 	{
 	Spawn:
-		BAL1 B 2 A_SpawnItem("SmokePuff");
+		BAL1 B 2 A_SpawnItem("SmokePuff",0, height / 2);
 		BAL1 A 2 A_SpawnItem("FireBallTrail");
 		Loop;
 		
 	Death:
-		#### # 0 A_SpawnItem("SmokePuff");
+		#### # 0 A_SpawnItem("SplashSmoke");
 		BAL1 CD 6;
 		BAL1 E 1 A_FadeOut(0.1);
 		Wait;

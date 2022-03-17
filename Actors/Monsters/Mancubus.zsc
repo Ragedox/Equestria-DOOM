@@ -38,19 +38,19 @@ Class EquestriaMancubus : DoomEquestriaMonster replaces Fatso
 			A_SpawnProjectile("EquestriaFatShot", 16, 30, -10);
 			A_SpawnProjectile("EquestriaFatShot", 16, -30, 0);
 		}
-		FATT IG 5 Fast A_FaceTarget();
+		FATT IG 5 Fast A_FaceTarget(180, 270, 0, FAF_MIDDLE);
 		FATT H 10 Bright
 		{
 			A_SpawnProjectile("EquestriaFatShot", 16, 30, 0);
 			A_SpawnProjectile("EquestriaFatShot", 16, -30, 10);
 		}
-		FATT IG 5 Fast A_FaceTarget();
+		FATT IG 5 Fast A_FaceTarget(180, 270, 0, FAF_MIDDLE);
 		FATT H 10 Bright
 		{
 			A_SpawnProjectile("EquestriaFatShot", 16, 30, -4);
 			A_SpawnProjectile("EquestriaFatShot", 16, -30, 4);
 		}
-		FATT IG 5 A_FaceTarget();
+		FATT IG 5 A_FaceTarget(180, 270, 0, FAF_MIDDLE);
 		Goto See;
 		
 	Pain:

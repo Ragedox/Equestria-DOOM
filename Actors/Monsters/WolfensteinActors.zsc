@@ -36,10 +36,10 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		Loop;
 	
 	Missile:
-		SSWV E 10 A_FaceTarget();
-		SSWV F 10 A_FaceTarget();
+		SSWV E 10 A_FaceTarget(180);
+		SSWV F 10 A_FaceTarget(180);
 		SSWV G 4 BRIGHT A_CPosAttack();
-		SSWV F 6 A_FaceTarget();
+		SSWV F 6 A_FaceTarget(180);
 		SSWV G 4 BRIGHT A_CPosAttack();
 		SSWV F 1 A_CPosRefire();
 		Goto Missile+1;

@@ -229,6 +229,7 @@ OptionMenu "UISettings"
 	ScaleSlider "$HUDMNU_UISCALE",				"uiscale", 0.0, 8.0, 1.0, "$SCALEMNU_ADAPT"
 	Option "$SCALEMNU_HUDASPECT", 				"hud_aspectscale", "OnOff"
 	Slider "$DSPLYMNU_SCREENSIZE",				"screenblocks", 				3.0, 12.0, 1.0, 0
+	Option		"Warning on Startup", "WarningStartup", "onoff"
 }
 	
 OptionValue "MuzzleStyle"

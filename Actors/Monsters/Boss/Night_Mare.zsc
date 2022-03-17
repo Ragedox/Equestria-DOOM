@@ -20,7 +20,7 @@ Class NightMare_Eye : Actor
 	See:
 		EYES AAAABBBB 1 BRIGHT
 		{	
-			A_FaceTarget();
+			A_FaceTarget(0,270,0,0,FAF_TOP);
 			A_SkullAttack(50);
 		}
 		Loop;
