@@ -96,6 +96,7 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		+FLOAT +NOGRAVITY
 		+MISSILEMORE +DONTFALL
 		+NOICEDEATH +ZDOOMTRANS +RETARGETAFTERSLAM
+		-AVOIDMELEE
 		
 		AttackSound "skull/melee";
 		PainSound "skull/pain";
@@ -187,9 +188,10 @@ Class UnicornSoul : EquestriaLostSoul
 		Goto Charge+3;
 	
 	Missile:
-		SKU2 C 8 Bright A_FaceTarget();
+		SKU2 C 8 Bright A_FaceTarget(0);
 		SKU2 D 4 Bright
 		{
+			A_FaceTarget(0,0,0,0,FAF_MIDDLE);
 			A_SpawnProjectile("StonedAura", 28);
 			A_Recoil(5);
 		}

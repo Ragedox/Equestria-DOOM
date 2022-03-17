@@ -15,6 +15,7 @@ Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 		+FLOORCLIP
 		+BOSSDEATH
 		+MAP07BOSS2
+		-AVOIDMELEE
 		
 		SeeSound "baby/sight";
 		PainSound "baby/pain";

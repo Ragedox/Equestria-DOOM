@@ -21,6 +21,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		+NORADIUSDMG
 		+DONTMORPH
 		+BOSSDEATH
+		-AVOIDMELEE
 	}
 	States
 	{

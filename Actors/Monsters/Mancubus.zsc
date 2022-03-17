@@ -12,10 +12,11 @@ Class EquestriaMancubus : DoomEquestriaMonster replaces Fatso
 		Mass 1028;
 		Speed 8;
 		PainChance 80;
-		Monster;
+		
 		+FLOORCLIP
 		+BOSSDEATH
 		+MAP07BOSS1
+		-AVOIDMELEE
 		
 		SeeSound "fatso/sight";
 		PainSound "fatso/pain";

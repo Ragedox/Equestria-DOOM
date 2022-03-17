@@ -16,6 +16,7 @@ Class PossessedHacker : DoomEquestriaMonster
 		
 		+FloorClip
 		+MissileMore
+		-AvoidMelee
 		
 		SeeSound "female/sight";
 		AttackSound "";
@@ -170,8 +171,6 @@ Class DemonNirik : DoomEquestriaMonster
 	//$Category Monsters
 		Tag "$DEMONIRIK";
 		
-		Monster;
-		
 		Health 50;
 		
 		Radius 20; Height 56;
@@ -186,6 +185,7 @@ Class DemonNirik : DoomEquestriaMonster
 		+ExtremeDeath
 		+JumpDown
 		+Bright
+		-AvoidMelee
 		 
 		SeeSound "demon/sight";
 		AttackSound "demon/melee";

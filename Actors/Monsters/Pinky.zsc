@@ -30,15 +30,16 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 		SARG AABBCCDD 2 Fast
 		{
 			A_Chase();
-			A_JumpIfInTargetInventory("BlurSphere", 1, "ClearTarget");
+			if (CheckInventory("BlurSphere", 1, AAPTR_TARGET))
+			{
+				A_ClearTarget();
+				return A_Jump(256, "Idle");
+			}
+			return state(null);
 		}
 		Loop;
-		
-	ClearTarget:
-		SARG # 0 A_ClearTarget();
-		Goto Wander;
-		
-	Wander:
+
+	Idle:
 		SARG AABBCCDD 4
 		{
 			A_Wander();
