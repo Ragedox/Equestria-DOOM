@@ -22,7 +22,7 @@ gamedefaults
 	SmoothLighting
 	
 	Compat_Invisibility = 1
-	AvoidMelee = 1
+	//AvoidMelee = 1
 }
 
 Automap
