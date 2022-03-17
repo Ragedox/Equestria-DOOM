@@ -48,7 +48,7 @@ include "MAPINFO/Season2.txt"
 
 map TITLEMAP ""
 {
-	//Music = "D_DM2TTL"
+	Music = "TITLE"
 	Sky1 = ASKY3
 }
 
