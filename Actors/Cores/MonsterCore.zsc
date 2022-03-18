@@ -4,6 +4,8 @@ Class DoomEquestriaMonster : Actor
 	{
 		Monster;
 		
+		PainThreshold 5;
+		
 		+CastSpriteShadow
 		+AvoidMelee
 		

@@ -9,7 +9,7 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		Mass 100;
 		Speed 8;
 		
-		PainChance 170; PainThreshold 5;
+		PainChance 170; PainThreshold 4;
 		
 		+CASTSPRITESHADOW;
 		+FLOORCLIP;

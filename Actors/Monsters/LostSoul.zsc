@@ -81,7 +81,7 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		Height 30; Radius 15;
 		DeathHeight 30;
 		
-		PainChance 256;
+		PainChance 256; PainThreshold 0;
 		Damage 3; DamageFactor "Plasma", 1.75;
 		
 		Mass 50;

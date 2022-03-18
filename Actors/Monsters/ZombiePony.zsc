@@ -2,15 +2,13 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 {
 	Default
 	{
-		Monster;
-		
 		Health 20;
 		
 		Radius 20; Height 56;
 		
 		Speed 8;
 		
-		PainChance 200; PainThreshold 2;
+		PainChance 200; PainThreshold 4;
 		
 		+FLOORCLIP
 		+CASTSPRITESHADOW
