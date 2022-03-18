@@ -5,7 +5,6 @@ Class Bush1 : Actor
 	//$NotAngled
 	//$Category "Decoration/Nature"
 		Radius 10; Height 20;
-		ProjectilePassHeight -16;
 		+SOLID +CASTSPRITESHADOW
 	}
 	States
@@ -80,7 +79,7 @@ Class Rock : Actor
 	//$NotAngled
 	//$Category "Decoration/Nature"
 		Radius 17; Height 22;
-		+SOLID;
+		+SOLID
 	}
 	States
 	{
@@ -112,8 +111,7 @@ Class Stalagtite2 : Actor
 	//$NotAngled
 	//$Category "Decoration/Nature"
 		Radius 16; Height 40;
-		ProjectilePassHeight -16;
-		+SOLID;
+		+SOLID
 	}
 	States
 	{
@@ -145,8 +143,7 @@ Class BigStalagtite : Actor
 	//$NotAngled
 	//$Category "Decoration/Nature"
 		Radius 24; Height 96;
-		ProjectilePassHeight -16;
-		+SOLID;
+		+SOLID
 	}
 	States
 	{

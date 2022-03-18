@@ -3,7 +3,6 @@ class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 	Default
 	{
 		Radius 2; Height 37;
-		ProjectilePassHeight -16;
 		+Solid
 	}
 	States
@@ -21,7 +20,6 @@ class EquestriaBlueTorch : Actor replaces BlueTorch
 	Default
 	{
 		Radius 2; Height 60;
-		ProjectilePassHeight -16;
 		+SOLID
 	}
 	States

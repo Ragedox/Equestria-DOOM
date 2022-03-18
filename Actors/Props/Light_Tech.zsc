@@ -9,7 +9,7 @@ Class EquestriaTechLamp : TechLamp replaces TechLamp
 		
 		DamageFactor "Plasma", 0.05;
 		
-		Radius 5.5; Height 80; DeathHeight 80; ProjectilePassHeight -16;
+		Radius 5.5; Height 80; DeathHeight 80;
 		
 		+NOTAUTOAIMED
 		+SOLID
@@ -72,7 +72,7 @@ Class EquestriaColumn : Column replaces Column
 	
 		Health 5;
 		
-		Radius 5.5; Height 48; DeathHeight 48; ProjectilePassHeight -16;
+		Radius 5.5; Height 48; DeathHeight 48;
 		
 		DamageFactor "Plasma", 0.05;
 		
@@ -125,7 +125,6 @@ Class BigLampshade1 : Actor
 	//$NotAngled
 	//$Category Light sources
 		Radius 5; Height 55;
-		ProjectilePassHeight -16;
 		+SOLID
 	}
 	States
