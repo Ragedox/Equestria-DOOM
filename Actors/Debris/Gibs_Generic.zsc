@@ -147,7 +147,7 @@ Class EquestriaBlood_Enemies : EquestriaBlood
 		BLUD C 15 NoDelay
 		{
 			A_SetRoll(frandom(0, 360));
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < 2; i++)
 			{
 				A_SpawnItemEX("BloodTrail",0,0,0, 2,2,random(-2, 2), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
 			}
@@ -156,7 +156,7 @@ Class EquestriaBlood_Enemies : EquestriaBlood
 		BLUD B 15
 		{
 			A_SetRoll(frandom(0, 360));
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < 2; i++)
 			{
 				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 64);
 			}
@@ -165,7 +165,7 @@ Class EquestriaBlood_Enemies : EquestriaBlood
 		BLUD A 15
 		{
 			A_SetRoll(frandom(0, 360));
-			for (int i = 0; i < 4; i++)
+			for (int i = 0; i < 2; i++)
 			{
 				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
 			}
