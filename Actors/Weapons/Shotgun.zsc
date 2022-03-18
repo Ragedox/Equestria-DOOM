@@ -23,7 +23,7 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		SHTG A 0
 		{
 			A_SetCrossHair(9);
-			
+
 			if (GetCVAR("AuraToggle") == true)
 			{
 				A_Overlay(10, "Aura.Ready");
@@ -33,6 +33,7 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 
 		SHTG A 1 A_Raise();
 		Wait;
+		
 	/*
 	SelectAnimation:
 		SHTG A 0 A_PlaySoundEX("misc/w_pkup", 1);
@@ -107,8 +108,8 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		Stop;
 	
 	Aura.Ready:
-		AURA A -1 Bright A_Overlay(11, "Aura.Setup", true);
-		Stop;
+		AURA A 1 Bright A_Overlay(11, "Aura.Setup", true);
+		Wait;
 		
 	Aura.Pump:
 		AURA A 0 A_Overlay(11, "Aura.Setup");
