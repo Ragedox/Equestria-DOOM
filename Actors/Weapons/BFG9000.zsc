@@ -141,8 +141,14 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 	States
 	{
 	Spawn:
-		BFS1 A 0 NoDelay A_SetRoll(random(0, 359));
-		BFS1 AAAAAAAAAAAAAAA 0 A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		BFS1 A 0 NoDelay
+		{
+			A_SetRoll(random(0, 359));
+			for (int i = 0; i < 10; i++)
+			{
+				A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+			}
+		}
 		BFS1 AAAAA 1 A_SetRoll(roll + random(-75, 75), SPF_INTERPOLATE);
 	
 	Projectile:
@@ -152,9 +158,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 		}
 		Loop;
 	
-	Death:
-		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
-		
+	Death:		
 		BFE1 A 2
 		{
 			A_Explode(100, 256, 0);
@@ -163,6 +167,11 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			A_SpawnItem("BFGShockwave", 0, 12);
 						
 			A_QuakeEx(9, 9, 9, 35, 0, 1000, "world/quake", QF_SCALEDOWN,0,0,0,1);
+			
+			for (int i = 0; i < 64; i++)
+			{
+				A_SpawnItemEx("BFGSparkles", frandom(-45, 45), frandom(-45, 45), frandom(0, 45), 75, 75, random(-75, 75), frandom(0, 360));
+			}
 		}
 		BFE1 BCD 2;
 		BFE1 E 8 A_BFGSpray();
@@ -227,13 +236,15 @@ Class BFGSparkles : PuffSparkles
 	Default
 	{
 		+NOINTERACTION
+		RenderStyle "Add";
 		Scale 1;
-		Speed 15;
+		Speed 50;
+		Gravity 0.1;
 	}
 	States
 	{
 	Spawn:
-		TNT1 AA 0 A_SetRoll(random(0, 359));
+		TNT1 A 0 NoDelay A_SetRoll(random(0, 360));
 		
 		PLS2 B random(35,45);
 		
@@ -248,7 +259,7 @@ Class BFGSparkles : PuffSparkles
 		if (!isFrozen())
 		{
 			A_SpawnItemEx("Trail_BFGSparkles", 0,0,0,0,0,0,0, SXF_TRANSFERROLL);
-			A_ScaleVelocity(0.90);
+			A_ScaleVelocity(0.75);
 			A_Recoil(frandom(-5, 5));
 		}	
 	}
