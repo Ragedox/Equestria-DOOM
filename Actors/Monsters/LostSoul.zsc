@@ -142,7 +142,7 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(0, 30), random(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 			}
 		}
 		SKUL J 3;
@@ -213,7 +213,7 @@ Class UnicornSoul : EquestriaLostSoul
 			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", random(-30, 30), random(radius * -1, radius), random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(0, 30), random(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 			}
 		}
 		SKU2 J 3;
@@ -281,7 +281,7 @@ Class NirikSoul : EquestriaLostSoul
 {
 	Default
 	{
-		Speed 12 / 6; Health 75; Damage 5;
+		Speed 12 / 6; Health 75; Damage 5; +MISSILEEVENMORE
 	}
 	States
 	{
@@ -299,10 +299,10 @@ Class NirikSoul : EquestriaLostSoul
 		SKUL C 10 A_FaceTarget();
 		SKUL D 4
 		{
-			A_SkullAttack();
+			A_SkullAttack(30);
 			A_SpawnItem("LostSoulCharge", 0, 15);
 		}
-		SKUL CD 4 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
+		SKUL CCDD 1 A_SpawnItemEx("FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
 		Goto Missile+2;
 	
 	Death:
@@ -312,14 +312,14 @@ Class NirikSoul : EquestriaLostSoul
 		
 		SKUL F 3;
 		SKUL G 3 A_Scream();
-		SKUL H 3 A_Explode(5, 60);
+		SKUL H 3 A_Explode(5, 60, XF_NOTMISSILE);
 		SKUL I 6
 		{
 			A_NoBlocking();
 			
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", random(height * -1, height), random(radius * -1, radius), 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", random(0, 30), random(radius * -1, radius), frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 			}
 		}
 		SKUL J 6;
@@ -367,7 +367,7 @@ Class MissileNirikSoul : FastProjectile
 	Death:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
-		SKUL F 3 A_Explode(5, 50);
+		SKUL F 3 A_Explode(5, 60, XF_NOTMISSILE);
 		SKUL G 3 A_Scream();
 		SKUL H 3;
 		SKUL I 3
@@ -375,7 +375,7 @@ Class MissileNirikSoul : FastProjectile
 			A_NoBlocking();
 			for (int i = 0; i < 25; i++)
 			{
-				A_SpawnProjectile("LostSoulGib", 15, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+				A_SpawnProjectile("LostSoulGib", 15, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 			}
 		}
 		SKUL J 3;
