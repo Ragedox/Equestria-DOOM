@@ -176,7 +176,7 @@ Class AcidBarrel : EquestriaExploBarrel
 	Death:
 	Death.BarrelExp:
 		BAR2 # 5;
-		BAR2 C 5 A_Scream();
+		BAR2 # 5 A_Scream();
 	XDeath:
 	XDeath.BarrelExp:
 		BAR2 D 5 Bright;
