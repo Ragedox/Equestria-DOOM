@@ -1,0 +1,46 @@
+/*
+Sprite "SHTGB0", 320, 200
+{
+	Patch "SHOTGUNA", 117, 71
+}
+
+Sprite "SHTGC0", 320, 200
+{
+	Patch "SHOTGUNA", 115, 61
+}
+
+Sprite "SHTGD0", 320, 200
+{
+	Patch "SHOTGUNA", 110, 55
+}
+
+Sprite "SHTGE0", 320, 200
+{
+	Patch "SHOTGUNA", 98, 47
+}
+
+Sprite "SHTGF0", 320, 200
+{
+	Patch "SHOTGUNB", 73, 29
+}
+
+Sprite "SHTGG0", 320, 200
+{
+	Patch "SHOTGUNB", 52, 24
+}
+
+Sprite "SHTGH0", 320, 200
+{
+	Patch "SHOTGUNB", 30, 22
+}
+
+Sprite "SHTGI0", 320, 200
+{
+	Patch "SHOTGUNC", 29, 42
+}
+
+Sprite "SHTGJ0", 320, 200
+{
+	Patch "SHOTGUNC", 31, 46
+}
+*/
