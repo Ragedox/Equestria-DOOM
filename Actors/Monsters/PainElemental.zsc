@@ -44,22 +44,27 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 		Loop;
 		
 	Missile:
-		PAIN D 5 A_FaceTarget();
-		PAIN E 5 A_FaceTarget();
-		PAIN F 5 BRIGHT A_FaceTarget();
-		PAIN F 0 BRIGHT A_Jump(256, "Missile.Pony", "Missile.Unicorn", "Missile.Nirik");
-		Goto See;
+		#### # 0 A_Jump(256, "Missile.Pony", "Missile.Unicorn", "Missile.Nirik");
+		Wait;
 	
 		Missile.Pony:
-			PAIN F 0 A_PainAttack("EquestriaLostSoul");
+			#### # 0 { A_SetTranslation(""); A_Stop(); }
+			PAIN DE 5 A_FaceTarget();
+			PAIN F 5 BRIGHT A_FaceTarget();
+			#### # 0 { A_PainAttack("EquestriaLostSoul"); A_SetTranslation(""); A_Stop(); }
 			Goto See;
 			
 		Missile.Unicorn:
-			PAIN F 0 A_PainAttack("UnicornSoul");
+			PAIN DE 5 A_FaceTarget();
+			PAIN F 5 BRIGHT A_FaceTarget();
+			#### # 0 { A_PainAttack("UnicornSoul"); A_SetTranslation(""); A_Stop(); }
 			Goto See;
 			
 		Missile.Nirik:
-			PAIN F 0 A_SpawnProjectile("MissileNirikSoul");
+			#### # 0 { A_SetTranslation("Nirik"); A_Stop(); }
+			PAIN DE 5 A_FaceTarget();
+			PAIN F 5 BRIGHT A_FaceTarget(); 
+			#### # 0 { A_SpawnProjectile("MissileNirikSoul"); A_SetTranslation(""); A_Stop(); }
 			Goto See;
 	
 	Pain:
@@ -96,10 +101,6 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 		PAIN M 8 Bright;
 		Stop;
 		
-	Raise:
-		PAIN MLKJIH 8;
-		Goto See;
-		
 	Crush:
 		PAIN H 4 BRIGHT;
 		PAIN I 4 BRIGHT A_Scream();
@@ -109,4 +110,3 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 		Stop;
 	}
 }
-
