@@ -1,0 +1,4 @@
+map DoomTest "Kinsie's Test Map"
+{
+	BorderTexture = "UNKNOWNJ"
+}
