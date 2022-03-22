@@ -45,7 +45,8 @@ Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
 		Loop;
 	
 	Fire:
-		MISG A 4 A_GunFlash();
+		MISG A 2;
+		#### # 2 A_GunFlash();
 		MISG B 4;
 		
 		MISG B 6
@@ -63,10 +64,11 @@ Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
 		Goto Ready;
 	
 	Flash:
-		MISF A 4 Bright;
-		MISF B 3 Bright;
+		TNT1 A 2;
+		MISF A 2 Bright;
+		MISF B 2 Bright;
 		MISF C 3;
-		MISF D 2;
+		MISF D 3;
 		Goto LightDone;
 	
 	CamRecoil:		

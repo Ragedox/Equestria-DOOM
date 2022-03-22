@@ -1,14 +1,42 @@
 Class EquestriaSmallBloodPool : SmallBloodPool replaces SmallBloodPool
-{	Default	{ Height 5; Radius 16; +ForceXYBillboard } }
+{	Default	{ Height 5; Radius 16; +ForceXYBillboard +FLATSPRITE } 
+	States
+	{
+	Spawn:
+		TNT1 A 0 A_Jump(256, 1, 2);
+		Wait;
+		FLAT G -1;
+		Stop;
+		FLAT H -1;
+		Stop;
+}}
 
 Class EquestriaBrainStem : BrainStem replaces BrainStem
-{	Default	{ Height 5; Radius 14.5; +ForceXYBillboard } }
+{	Default	{ Height 5; Radius 14.5; +ForceXYBillboard }
+	States
+	{
+	Spawn:
+		BRS1 A -1 NoDelay A_SpawnItem("EquestriaSmallBloodPool");
+		Stop;
+}}
 
 Class EquestriaGibs : Gibs replaces Gibs
-{	Default	{ Height 5; Radius 27.5; +ForceXYBillboard } }
+{	Default	{ Height 5; Radius 27.5; +ForceXYBillboard }
+	States
+	{
+	Spawn:
+		POL5 A -1 NoDelay A_SpawnItem("EquestriaSmallBloodPool");
+		Stop;
+}}
 
 Class EquestriaColonGibs : ColonGibs replaces ColonGibs
-{	Default	{ Height 5; Radius 20.5; +ForceXYBillboard } }
+{	Default	{ Height 5; Radius 20.5; +ForceXYBillboard }
+	States
+	{
+	Spawn:
+		POB1 A -1 NoDelay A_SpawnItem("EquestriaSmallBloodPool");
+		Stop;
+}}
 
 Class EquestriaGoreProps : Actor
 {
@@ -105,17 +133,23 @@ Class EquestriaMeat3 : EquestriaGoreProps replaces Meat3
 	}
 }
 
-Class EquestriaMeat4 : Meat4 replaces Meat4
+Class EquestriaMeat4 : EquestriaGoreProps replaces Meat4
 {
 	Default
 	{
-		Radius 10;
+		Height 57; Radius 6.5;
 		+NOGRAVITY +SPAWNCEILING
 	}
 	States
 	{
-	Spawn:
-		GOR4 A random(3, 10) A_SpawnItemEx("EquestriaBlood", random(-8, 8), random(-8, 8),0,0,0,0,0,0,150);
+	Species:
+	Prop:
+		GOR4 A random(3, 10)
+		{
+			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(0, 10),0,0,0,0,0,240);
+			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(5, 25),0,0,0,0,0,200);
+			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 40),0,0,0,0,0,150);
+		}
 		Loop;
 	}
 }
@@ -158,8 +192,19 @@ Class EquestriaNonsolidTwitch : EquestriaBloodyTwitch replaces NonsolidTwitch
 	
 //
 
-Class EquestriaHeadOnAStick : HeadOnAStick replaces HeadOnAStick
-{Default { Radius 2; +CASTSPRITESHADOW }}
+Class EquestriaHeadOnAStick : EquestriaGoreProps replaces HeadOnAStick
+{
+	Default
+	{
+		Height 56; Radius 2;
+	}
+	States
+	{
+	Species:
+	Prop:
+		POL4 A -1 A_SpawnItem("EquestriaSmallBloodPool");
+		Stop;
+}}
 
 Class EquestriaHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
 {Default { Radius 2; +CASTSPRITESHADOW }}
