@@ -14,10 +14,10 @@ Glow
 		LAVA3
 		LAVA4
 	}
-	Texture "LAVA1", FF4B00, 100, fullbright
-	Texture "LAVA2", FF4B00, 100, fullbright
-	Texture "LAVA3", FF4B00, 100, fullbright
-	Texture "LAVA4", FF4B00, 100, fullbright
+	Texture "LAVA1", FF4B00, 128, fullbright
+	Texture "LAVA2", FF4B00, 128, fullbright
+	Texture "LAVA3", FF4B00, 128, fullbright
+	Texture "LAVA4", FF4B00, 128, fullbright
 }
 
 Glow
@@ -36,10 +36,10 @@ Glow
 		NUKAGE3
 		NUKAGE4
 	}
-	Texture "NUKAGE1", 80FF80, 50
-	Texture "NUKAGE2", 80FF80, 50
-	Texture "NUKAGE3", 80FF80, 50
-	Texture "NUKAGE4", 80FF80, 50
+	Texture "NUKAGE1", 80FF80, 32
+	Texture "NUKAGE2", 80FF80, 32
+	Texture "NUKAGE3", 80FF80, 32
+	Texture "NUKAGE4", 80FF80, 32
 }
 
 Glow
@@ -58,10 +58,10 @@ Glow
 		SLIME11
 		SLIME12
 	}
-	Texture "SLIME09", FF0000, 25, fullbright
-	Texture "SLIME10", FF0000, 25, fullbright
-	Texture "SLIME11", FF0000, 25, fullbright
-	Texture "SLIME12", FF0000, 25, fullbright
+	Texture "SLIME09", FF0000, 16, fullbright
+	Texture "SLIME10", FF0000, 16, fullbright
+	Texture "SLIME11", FF0000, 16, fullbright
+	Texture "SLIME12", FF0000, 16, fullbright
 }
 
 Glow
@@ -82,11 +82,11 @@ Glow
 		RROCK07
 		RROCK08
 	}
-	Texture "RROCK04", FF0000, 25, fullbright
-	Texture "RROCK05", FF0000, 25, fullbright
-	Texture "RROCK06", FF0000, 25, fullbright
-	Texture "RROCK07", FF0000, 25, fullbright
-	Texture "RROCK08", FF0000, 25, fullbright
+	Texture "RROCK04", FF0000, 16, fullbright
+	Texture "RROCK05", FF0000, 16, fullbright
+	Texture "RROCK06", FF0000, 16, fullbright
+	Texture "RROCK07", FF0000, 16, fullbright
+	Texture "RROCK08", FF0000, 16, fullbright
 }
 
 Glow
@@ -105,8 +105,8 @@ Glow
 		NUKWALK3
 		NUKWALK4
 	}
-	Texture "NUKWALK1", 00ff00, 5
-	Texture "NUKWALK2", 00ff00, 5
-	Texture "NUKWALK3", 00ff00, 5
-	Texture "NUKWALK4", 00ff00, 5
+	Texture "NUKWALK1", 00ff00, 4
+	Texture "NUKWALK2", 00ff00, 4
+	Texture "NUKWALK3", 00ff00, 4
+	Texture "NUKWALK4", 00ff00, 4
 }
