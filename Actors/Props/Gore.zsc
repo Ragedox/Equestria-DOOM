@@ -68,6 +68,7 @@ Class EquestriaBloodyTwitch : EquestriaGoreProps replaces BloodyTwitch
 	{
 		Height 55; Radius 7;
 		+NOGRAVITY +SPAWNCEILING
+		//$Sprite GOR1A0
 	}
 	States
 	{
@@ -92,6 +93,7 @@ Class EquestriaMeat2 : Meat2 replaces Meat2
 	{
 		Radius 10;
 		+NOGRAVITY +SPAWNCEILING
+		//$Sprite GOR2A0
 	}
 	States
 	{
@@ -108,6 +110,7 @@ Class EquestriaMeat3 : EquestriaGoreProps replaces Meat3
 		Height 81; Radius 8;
 		+NOGRAVITY +SPAWNCEILING
 		//+Shootable +DontThrust
+		//$Sprite GOR3A0
 	}
 	States
 	{
@@ -139,6 +142,7 @@ Class EquestriaMeat4 : EquestriaGoreProps replaces Meat4
 	{
 		Height 57; Radius 6.5;
 		+NOGRAVITY +SPAWNCEILING
+		//$Sprite GOR4A0
 	}
 	States
 	{
@@ -160,6 +164,7 @@ Class EquestriaMeat5 : EquestriaGoreProps replaces Meat5
 	{
 		Height 42; Radius 7;
 		+NOGRAVITY +SPAWNCEILING
+		//$Sprite GOR5A0
 	}
 	States
 	{
@@ -197,6 +202,7 @@ Class EquestriaHeadOnAStick : EquestriaGoreProps replaces HeadOnAStick
 	Default
 	{
 		Height 56; Radius 2;
+		//$Sprite POL4A0
 	}
 	States
 	{
