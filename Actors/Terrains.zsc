@@ -99,7 +99,7 @@ Class DELavaBase : CoreSplashBase
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
 		
-		NLAV ABCDEF 5;
+		NLAV ABCDEF 3;
 		Stop;
 	}
 }
@@ -119,7 +119,7 @@ Class DENukageBase : CoreSplashBase
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
 		
-		NWAT EFGHIJK 5 A_FadeOut(0.05);
+		NWAT EFGHIJK 3 A_FadeOut(0.05);
 		Stop;
 	}
 }
@@ -168,7 +168,7 @@ Class DESludgeBase : CoreSplashBase
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
 		
-		NSL2 EFGHIJK 5 A_FadeOut(0.05);
+		NSL2 EFGHIJK 3 A_FadeOut(0.05);
 		Stop;
 	}
 }
@@ -190,7 +190,7 @@ Class DEWaterSplashBase : CoreSplashBase
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
 		
-		NWAT EFGHIJK 5 A_FadeOut(0.05);
+		NWAT EFGHIJK 3 A_FadeOut(0.05);
 		Stop;
 	}
 }
