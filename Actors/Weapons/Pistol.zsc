@@ -25,9 +25,13 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		Stop;
 	
 	Ready:
-		TNT1 A 0 A_JumpIfInventory("KickCheck", 1, "Kick.Normal");
-		
-		PISG A 1 A_WeaponReady();
+		PISG A 1
+		{
+			A_WeaponReady();
+			if (CountInv("KickCheck"))
+				return ResolveState("Kick.Normal");
+			return ResolveState(null);
+		}
 		Loop;
 		
 	Select:
@@ -37,8 +41,12 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		Wait;
 	
 	Deselect:
-		TNT1 A 0 A_TakeInventory("KickCheck", 999);
-		TNT1 A 0 A_JumpIf(health <= 0, "DeathCheck");
+		TNT1 A 0 {
+			A_TakeInventory("KickCheck", 999);
+			if(health <= 0)
+				return ResolveState("DeathCheck");
+			return ResolveState(null);
+		}
 		
 		PISG A 1 A_Lower();
 		Wait;

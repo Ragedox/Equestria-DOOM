@@ -31,8 +31,12 @@ Class EquestriaChainsaw : DoomEquestriaWeapon replaces Chainsaw
 		Wait;
 	
 	Deselect:
-		TNT1 A 0 A_TakeInventory("KickCheck", 999);
-		TNT1 A 0 A_JumpIf(health <= 0, "DeathCheck");
+		TNT1 A 0 {
+			A_TakeInventory("KickCheck", 999);
+			if(health <= 0)
+				return ResolveState("DeathCheck");
+			return ResolveState(null);
+		}
 	
 		SAWG B 1 A_Lower();
 		Wait;
