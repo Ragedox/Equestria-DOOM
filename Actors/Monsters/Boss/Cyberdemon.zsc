@@ -10,7 +10,7 @@ Class EquestriaCyberdemon : DoomEquestriaMonster replaces Cyberdemon
 		
 		Mass 1500;
 		Scale 1.5;
-		Height 110 * 1.5; Radius 30 * 1.5;
+		Height 165; Radius 45; //Height 110 * 1.5; Radius 30 * 1.5;
 
 		Speed 18;
 		PainChance 20;
