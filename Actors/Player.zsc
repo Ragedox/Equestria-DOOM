@@ -101,23 +101,23 @@ Class PopSkull : PlayerChunk
 	
 		Height 8; Radius 4;
 
-		+ForceXYBillBoard;
+		+ForceXYBillBoard
 	
-		+UseBounceState; +BounceOnFloors; +BounceOnActors; +BounceOnWalls;
+		+UseBounceState +BounceOnFloors +BounceOnActors +BounceOnWalls
 		BounceType "Doom";
 	
 		Gravity 0.25;
 	
-		+NOSKIN;
-		-SOLID;
-		-SHOOTABLE;
-		-PICKUP;
-		-NOTDMATCH;
-		-FRIENDLY;
-		-SLIDESONWALLS;
-		-CANPUSHWALLS;
-		-WINDTHRUST;
-		-TELESTOMP;
+		+NOSKIN
+		-SOLID
+		-SHOOTABLE
+		-PICKUP
+		-NOTDMATCH
+		-FRIENDLY
+		-SLIDESONWALLS
+		-CANPUSHWALLS
+		-WINDTHRUST
+		-TELESTOMP
 	}
 	States
 	{
@@ -136,5 +136,16 @@ Class PopSkull : PlayerChunk
 		BSKL F 16 A_CheckPlayerDone();
 		Wait;
 		
+	}
+}
+
+Class EquestriaMarine : EquestriaDoomPlayer
+{
+	Default
+	{
+		Player.DisplayName "Marine";
+		
+		Player.StartItem "EquestriaPistol";
+		Player.StartItem "Clip", 20;
 	}
 }
