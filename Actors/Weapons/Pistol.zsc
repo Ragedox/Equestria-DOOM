@@ -36,13 +36,12 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		
 	Select:
 		PISG A 0 A_SetCrosshair(8);
-		
 		PISG A 1 A_Raise();
 		Wait;
 	
 	Deselect:
 		TNT1 A 0 {
-			A_TakeInventory("KickCheck", 999);
+			TakeInventory("KickCheck", 999);
 			if(health <= 0)
 				return ResolveState("DeathCheck");
 			return ResolveState(null);
