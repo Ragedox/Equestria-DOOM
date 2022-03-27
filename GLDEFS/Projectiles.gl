@@ -126,24 +126,14 @@ object EquestriaBFGBall
 	frame BFE1K { light BFGBALL_X5 }
 }
 
-object BFGExtra
+pulselight BFGEXTRA
 {
-    frame BFE2A { light BFGBALL    }
-    frame BFE2B { light BFGBALL_X1 }
-    frame BFE2C { light BFGBALL_X4 }
-    frame BFE2D { light BFGBALL_X5 }
-}
-
-flickerlight2 BFGSparkle
-{
-    color 0.2 1.0 0.2
-    size 0
-    secondarySize 25
-    interval 0.25
+	color 0.2 1.0 0.2
+	size 0 secondarysize 75
+	interval 0.7
 	attenuate 1
 }
-
-object BFGSparkles
+object EquestriaBFGExtra
 {
-	frame PLS2 { light BFGSparkle }
-}	
+    frame BFE2 { light BFGEXTRA	}
+}
