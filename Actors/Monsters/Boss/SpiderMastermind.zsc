@@ -4,7 +4,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 	{
 		Health 3000;
 		
-		Height 150; Radius 80;
+		Height 150; Radius 64;
 		Speed 14;
 		Scale 1.5;
 		
