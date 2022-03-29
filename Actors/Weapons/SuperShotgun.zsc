@@ -61,11 +61,12 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 		Loop;
 
 	Fire:
-		SHT2 A 8
+		SHT2 A 4
 		{
 			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
 			A_StartSound ("weapons/sshotf", CHAN_WEAPON);
 			A_GunFlash();
+			A_WeaponOffset(-3, 5, WOF_ADD);
 			
 			if (GetCVAR("CamRecoilToggle") == true)
 			{
@@ -76,7 +77,10 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 				A_FireProjectile("SuperShotgunLight",0,0,0, -14);
 			}
 		}
-		Goto Reloading;
+		#### # 1 A_WeaponOffset(1, -2, WOF_ADD);
+		#### # 1 A_WeaponOffset(1, -2, WOF_ADD);
+		#### # 1 A_WeaponOffset(1, -1, WOF_ADD);
+		#### # 1 A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 	
 	Reloading:
 		SHT2 BCDDD 1;
