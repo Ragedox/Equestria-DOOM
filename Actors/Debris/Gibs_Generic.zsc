@@ -50,10 +50,13 @@ Class GenericGib : DebrisCore
 		Goto Roll;
 		
 	Roll:
-		#### # 8 A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(-1,1),random(-1,1),random(-1,1),0, SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		#### # 8 A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
 		Loop;
 	
 	Death:
+		#### # 0 A_Jump(256, "Crash");
+		Wait;
+		
 	Crash:
 		#### # 350;
 		#### # 0 A_JumpIf(GetCVar("GibsStayForever") == 0, "FadeOut");
@@ -88,7 +91,7 @@ Class EquestriaBlood : Blood replaces Blood
 		+NOTELEPORT +NOBLOCKMAP
 		+CORPSE
 		+THRUACTORS
-		//+MISSILE
+		+MISSILE
 		+MOVEWITHSECTOR
 		+ROLLSPRITE +ROLLCENTER
 		
@@ -100,10 +103,14 @@ Class EquestriaBlood : Blood replaces Blood
 		BLUD C 15 NoDelay A_SetRoll(frandom(0, 360));
 		BLUD BA 15;
 		Wait;
+	
+	Death:
+		#### # 35;
+		Stop;
 		
 	Crash:
 		TNT1 A 0 { ACS_NamedExecute("CheckLiquid"); }
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_ChangeVelocity(0, 0, 0, 2); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
+		TNT1 A 0 { bNOINTERACTION = 1; bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
 		
 		BLUD DEF 2 A_FadeOut(FRandom(0.001, 0.1));
 		BLUD G 1 A_FadeOut(0.005);
@@ -270,7 +277,7 @@ Class TinyGenericGib : GenericGib
 		Goto Roll;
 		
 	Roll:
-		#### # 70 A_SpawnItemEx("SmallBloodTrail",0,0,0,random(-1,1),random(-1,1),random(-1,1),0, SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		#### # 70 A_SpawnItemEx("SmallBloodTrail", FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
 		Loop;
 	}
 }
