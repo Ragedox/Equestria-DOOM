@@ -57,7 +57,8 @@ Class Gib_ImpHead : HeadGib
 		
 	Crash:
 		HEDG A 350;
-		Stop;
+		#### # 1 A_FadeOut();
+		Wait;
 	}
 }
 
@@ -75,7 +76,8 @@ Class Gib_ImpTorso : TorsoGib
 	
 	Crash:
 		TRSO A 350;
-		Stop;
+		#### # 1 A_FadeOut();
+		Wait;
 	}
 }
 
@@ -92,8 +94,9 @@ Class Gib_ImpArm1 : LegsArmsGib
 		Goto Roll;
 	
 	Crash:
-		ARMG B 350 A_SetRoll(randompick(-200, 200, -180, 180, 0));
-		Stop;
+		ARMG B 350 A_SetRoll(randompick(-180, 200, 0));
+		#### # 1 A_FadeOut();
+		Wait;
 	}
 }
 
@@ -115,8 +118,9 @@ Class Gib_ImpLeg1 : LegsArmsGib
 		Goto Roll;
 	
 	Crash:
-		LEGG B 350 A_SetRoll(randompick(-200, 200, -180, 180, 0));
-		Stop;
+		LEGG B 350 A_SetRoll(0);
+		#### # 1 A_FadeOut();
+		Wait;
 	}
 }
 
