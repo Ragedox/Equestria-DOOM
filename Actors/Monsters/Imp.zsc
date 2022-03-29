@@ -117,8 +117,10 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 	Real.XDeath:
 		TROO U 0
 		{
-			A_SpawnItemEx("Gib_ImpHead",0,0, 35, random(4, 8), random(4, 8), random(4, 8), frandom(-360,360)); 
-			A_SpawnItemEx("Gib_ImpTorso",0,0, 25, 4, 4, 4, frandom(-360,360));
+			A_FaceTarget();
+			
+			A_SpawnItemEx("Gib_ImpHead",0,0, 35, random(4, 8), random(4, 8), random(4, 8), frandom(0,360)); 
+			A_SpawnItemEx("Gib_ImpTorso",0,0, 25, -4, 0, 4, 0);
 			
 			A_SpawnItemEx("Gib_ImpArm1",10,0, 25, random(1,2), random(1,2), random(1,2), -90);
 			A_SpawnItemEx("Gib_ImpArm2",13,0, 25, random(1,2), random(1,2), random(1,2), 90);
@@ -126,14 +128,15 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 			A_SpawnItemEx("Gib_ImpLeg1",10,0, 0, random(1,2), random(1,2), random(1,2), -90);
 			A_SpawnItemEx("Gib_ImpLeg2",13,0, 0, random(1,2), random(1,2), random(1,2), 90);
 			
-			for (int i = 0; i < 6; i++)
+			for (int i = 0; i < 10; i++)
 			{
-				A_SpawnProjectile("GenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));	
-				A_SpawnProjectile("TinyGenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
-				
-				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+				A_SpawnProjectile("TinyGenericGib", FRandom(8, 56), FRandom(radius * -1, radius), FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, -180));
+			}
+			for (int i = 0; i < 5; i++)
+			{
+				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
 			}
 		}
 		TROO NOPQRST 1;
