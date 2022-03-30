@@ -225,11 +225,16 @@ Class DeadAnimalWall : FlatProps
 	White:			#### # -1 A_SetTranslation("White");		Stop;
 	Gray:			#### # -1 A_SetTranslation("Gray");			Stop;
 	DarkGray:		#### # -1 A_SetTranslation("DarkGray");		Stop;
+	
 	LightishRed:	#### # -1 A_SetTranslation("LightishRed");	Stop;
 	Red:			#### # -1 A_SetTranslation("Red");			Stop;
+	DarkRed:		#### # -1 A_SetTranslation("DarkRed");		Stop;
+	
 	Blue:			#### # -1 A_SetTranslation("Blue");			Stop;
+	
 	LimeGreen:		#### # -1 A_SetTranslation("LimeGreen");	Stop;
 	Green: 			#### # -1 A_SetTranslation("Green");		Stop;
+	
 	Orange:			#### # -1 A_SetTranslation("Orange");		Stop;
 	Beige:			#### # -1 A_SetTranslation("Beige");		Stop;
 	Brown:			#### # -1 A_SetTranslation("Brown");		Stop;
@@ -252,17 +257,17 @@ class EquestriaDeadStick : Actor replaces DeadStick
 	}
 }
 
-class EquestriaLiveStick : Actor replaces LiveStick
+class EquestriaLiveStick : EquestriaGoreProps replaces LiveStick
 {
 	Default
 	{
 		Radius 16; Height 64;
-		ProjectilePassHeight -16;
-		+SOLID +CASTSPRITESHADOW
+		+SOLID
 	}
 	States
 	{
-	Spawn:
+	Species:
+	Prop:
 		POL6 AB random(6, 8);
 		Loop;
 	}
