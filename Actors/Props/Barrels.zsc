@@ -175,11 +175,10 @@ Class AcidBarrel : EquestriaExploBarrel
 		
 	Death:
 	Death.BarrelExp:
-		BAR2 # 5;
-		BAR2 # 5 A_Scream();
+		BAR2 # 10;
 	XDeath:
 	XDeath.BarrelExp:
-		BAR2 D 5 Bright;
+		BAR2 D 5 Bright A_XScream();
 		BAR2 E 5 Bright
 		{
 			A_Explode(5, 64, XF_NOTMISSILE);
