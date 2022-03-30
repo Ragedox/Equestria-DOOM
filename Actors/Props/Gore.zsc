@@ -121,7 +121,6 @@ Class EquestriaMeat3 : EquestriaGoreProps replaces Meat3
 	{
 		Height 81; Radius 8;
 		+NOGRAVITY +SPAWNCEILING
-		//+Shootable +DontThrust
 		//$Sprite GOR3A0
 	}
 	States
@@ -134,15 +133,6 @@ Class EquestriaMeat3 : EquestriaGoreProps replaces Meat3
 			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,240);
 			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,200);
 			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,150);
-		}
-		Loop;
-		
-	Death:
-		GOR5 A random(3, 10)
-		{
-			A_SpawnItemEx("EquestriaBlood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,240);
-			A_SpawnItemEx("BloodTrail",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,200);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,128);
 		}
 		Loop;
 	}
@@ -227,8 +217,9 @@ Class EquestriaHeadOnAStick : EquestriaGoreProps replaces HeadOnAStick
 Class EquestriaHeadsOnAStick : HeadsOnAStick replaces HeadsOnAStick
 {Default { Radius 2; +CASTSPRITESHADOW }}
 
-Class DeadAnimalWall : FlatProps
-{	States {
+Class DeadAnimalWall : EquestriaGoreProps
+{	Default {  +WALLSPRITE -SOLID -CASTSPRITESHADOW}
+	States {
 	Spawn:
 		FLT2 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
 		FLT2 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
