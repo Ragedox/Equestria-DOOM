@@ -5,7 +5,7 @@ Class Bush1 : Actor
 	//$NotAngled
 	//$Category "Decoration/Nature"
 		Radius 10; Height 20;
-		+SOLID +CASTSPRITESHADOW
+		+SOLID
 	}
 	States
 	{
