@@ -43,22 +43,34 @@ Class EquestriaGoreProps : Actor
 	Default { +CASTSPRITESHADOW +SOLID }
 	States
 	{
+	
+	//	Thinking about making more species
+	//	Change to: Choose the species first and then choose the color, I have never seen a green zebra
+	
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		TNT1 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11);
+		TNT1 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
 		Wait;
 		
 	White:			#### # 0 { A_SetTranslation("White");		return ResolveState("Species"); }	Wait;
 	Gray:			#### # 0 { A_SetTranslation("Gray");		return ResolveState("Species"); }	Wait;
 	DarkGray:		#### # 0 { A_SetTranslation("DarkGray");	return ResolveState("Species"); }	Wait;
+	
 	LightishRed:	#### # 0 { A_SetTranslation("LightishRed");	return ResolveState("Species"); }	Wait;
 	Red:			#### # 0 { A_SetTranslation("Red");			return ResolveState("Species"); }	Wait;
+	DarkRed:		#### # 0 { A_SetTranslation("DarkRed");		return ResolveState("Species"); }	Wait;
+	
 	Blue:			#### # 0 { A_SetTranslation("Blue");		return ResolveState("Species"); }	Wait;
+	DarkBlue:		#### # 0 { A_SetTranslation("DarkBlue");	return ResolveState("Species"); }	Wait;
+	
 	LimeGreen:		#### # 0 { A_SetTranslation("LimeGreen");	return ResolveState("Species"); }	Wait;
 	Green: 			#### # 0 { A_SetTranslation("Green");		return ResolveState("Species"); }	Wait;
+	
+	Gold:			#### # 0 { A_SetTranslation("Gold");		return ResolveState("Species"); }	Wait;
 	Orange:			#### # 0 { A_SetTranslation("Orange");		return ResolveState("Species"); }	Wait;
 	Beige:			#### # 0 { A_SetTranslation("Beige");		return ResolveState("Species"); }	Wait;
 	Brown:			#### # 0 { A_SetTranslation("Brown");		return ResolveState("Species"); }	Wait;
+	Bronze:			#### # 0 { A_SetTranslation("Bronze");		return ResolveState("Species"); }	Wait;
 	}
 }
 
@@ -219,7 +231,7 @@ Class DeadAnimalWall : FlatProps
 {	States {
 	Spawn:
 		FLT2 A 0 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
-		FLT2 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11);
+		FLT2 A 0 A_Jump(256, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
 		Wait;
 		
 	White:			#### # -1 A_SetTranslation("White");		Stop;
@@ -231,13 +243,17 @@ Class DeadAnimalWall : FlatProps
 	DarkRed:		#### # -1 A_SetTranslation("DarkRed");		Stop;
 	
 	Blue:			#### # -1 A_SetTranslation("Blue");			Stop;
+	DarkBlue:		#### # -1 A_SetTranslation("DarkBlue");		Stop;
 	
 	LimeGreen:		#### # -1 A_SetTranslation("LimeGreen");	Stop;
 	Green: 			#### # -1 A_SetTranslation("Green");		Stop;
 	
+	Gold:			#### # -1 A_SetTranslation("Gold");			Stop;
 	Orange:			#### # -1 A_SetTranslation("Orange");		Stop;
 	Beige:			#### # -1 A_SetTranslation("Beige");		Stop;
 	Brown:			#### # -1 A_SetTranslation("Brown");		Stop;
+	Bronze:			#### # -1 A_SetTranslation("Bronze");		Stop;
+	
 	}
 }
 
