@@ -137,10 +137,11 @@ Class DoomEquestriaWeapon : Weapon
 			if (!CheckInventory("PowerStrength", 1))
 			{
 				SetPlayerProperty(0, 1, PROP_FROZEN);
+				A_Recoil(-1);
 			}
 			else
 			{
-				A_Recoil(-4);
+				A_Recoil(-2);
 			}
 			
 			return state(null);
