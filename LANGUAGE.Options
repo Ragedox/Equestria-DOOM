@@ -18,7 +18,7 @@ CAMRECOILTOGGLE = 		"Camera Recoil";
 AURATOGGLE = 			"Magic Auras on Weapons";
 
 GORETOGGLE = 			"Gore Type";
-SIMPLISTIC =			"Simplistic";
+ENHANCED =				"Enhanced";
 REALISTIC = 			"Realistic";
 GIBSFOREVER = 			"Gibs don't disappear";
 
