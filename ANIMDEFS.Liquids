@@ -33,10 +33,6 @@ Warp2 Texture FBLOOD3 0.75
 Texture FWATER1
 	pic 1 tics 1
 	pic 1 tics 1
-	
-Texture SWATER1
-	pic 1 tics 1
-	pic 1 tics 1
 
 Texture LAVA1 range LAVA4 tics 16
 
