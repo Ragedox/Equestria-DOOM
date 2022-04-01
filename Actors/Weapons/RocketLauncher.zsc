@@ -59,7 +59,7 @@ Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
 		MISG B 6
 		{
 			A_FireProjectile("EquestriaRocket", 0, 1, 0, -14);
-			A_WeaponOffset(0, random(35, 42), WOF_INTERPOLATE);
+			A_WeaponOffset(0, random(3, 10), WOF_ADD);
 			
 			if (GetCVAR("CamRecoilToggle") == true)
 			{
@@ -71,7 +71,7 @@ Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
 		Goto Ready;
 	
 	Flash:
-		MISF A 4 Bright;
+		MISF A 4 Bright { if(GetCVar("MuzzleStyle")) { A_OverlayFlags(1000, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(1000, STYLE_Add); }}
 		MISF B 3 Bright;
 		MISF C 3;
 		MISF D 2;

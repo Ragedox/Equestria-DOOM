@@ -99,7 +99,7 @@ Class EquestriaRifle : DoomEquestriaWeapon
 		Goto Ready;
 		
 	Flash:
-		TNT1 A 0 { A_OverlayFlags(1000, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(1000, STYLE_Add); }
+		TNT1 A 0 { if(GetCVar("MuzzleStyle")) { A_OverlayFlags(1000, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(1000, STYLE_Add); }}
 		
 		RFLE CD 2 Bright;
 		Goto LightDone;
