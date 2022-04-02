@@ -71,7 +71,7 @@ Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
 		Goto Ready;
 	
 	Flash:
-		MISF A 4 Bright { if(GetCVar("MuzzleStyle")) { A_OverlayFlags(1000, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(1000, STYLE_Add); }}
+		MISF A 4 Bright { if(GetCVar("MuzzleStyle")) { A_OverlayFlags(1000, PSPF_RENDERSTYLE | PSPF_ALPHA, 1); A_OverlayRenderStyle(1000, STYLE_Translucent); A_OverlayAlpha(1000, 0.75); }}
 		MISF B 3 Bright;
 		MISF C 3;
 		MISF D 2;
