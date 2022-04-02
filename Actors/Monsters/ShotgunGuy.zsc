@@ -30,7 +30,7 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 	{
 	
 	Spawn:
-		SPOS A 10 A_Look();
+		ISPS A 10 A_Look();
 		Loop;
 	
 	See:
