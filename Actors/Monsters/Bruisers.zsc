@@ -8,7 +8,7 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		HitObituary "$OB_BARONHIT";
 		
 		Health 1000;
-		Radius 24; Height 64;
+		Radius 15; Height 64;
 		Mass 1000;
 		Speed 8;
 		PainChance 50; PainThreshold 5;
@@ -46,8 +46,8 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		Goto See;
 	
 	Pain:
-		BOSS H  2;
-		BOSS H  2 A_Pain;
+		BOSS H 2;
+		BOSS H 2 A_Pain();
 		Goto See;
 		
 	Death:
@@ -121,6 +121,11 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		BOS2 G 8 A_SpawnProjectile("KnightBall");
 		Goto See;
 	
+	Pain:
+		BOS2 H 2;
+		BOS2 H 2 A_Pain();
+		Goto See;
+		
 	Death:
 		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
 		
