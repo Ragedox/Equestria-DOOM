@@ -208,6 +208,8 @@ OptionMenu "UISettings"
 	Option "$CAMRECOILTOGGLE", "CamRecoilToggle", "onoff"
 	Option "$KICKCAMERA", "KickCamera", "onoff"
 	Option "$AURATOGGLE", "AuraToggle", "onoff"
+	Option "$SMOOTHANIMS", "WEAPONANIM", "WeaponAnim"
+	Option "$MUZZLESTYLE", "MuzzleStyle", "MuzzleStyle"
 	StaticText ""
 	
 	Slider "$DSPLYMNU_MOVEBOB",				"movebob", 0, 1.0, 0.05, 2
@@ -229,19 +231,25 @@ OptionMenu "UISettings"
 	ScaleSlider "$HUDMNU_UISCALE",				"uiscale", 0.0, 8.0, 1.0, "$SCALEMNU_ADAPT"
 	Option "$SCALEMNU_HUDASPECT", 				"hud_aspectscale", "OnOff"
 	Slider "$DSPLYMNU_SCREENSIZE",				"screenblocks", 				3.0, 12.0, 1.0, 0
-	Option		"Warning on Startup", "WarningStartup", "onoff"
+	Option	"Warning on Startup", "WarningStartup", "onoff"
+}
+
+OptionValue "WeaponAnim"
+{
+	0, "DOOM Classic"
+	1, "Smooth"
 }
 	
 OptionValue "MuzzleStyle"
 {
-	0, "Classic Style"
-	1, "Equestria Style" //i know this needs a better name
+	0, "Classic"
+	1, "$ENHANCED"
 }
 
 OptionValue "GoreType"
 {
 	0, "DOOM Classic"
-	1, "$SIMPLISTIC"
+	1, "$ENHANCED"
 	2, "$REALISTIC"
 }
 

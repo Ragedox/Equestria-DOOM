@@ -53,7 +53,7 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 			A_Overlay(-10, "Flash");
 			A_WeaponOffset(0, 35, WOF_KEEPX | WOF_INTERPOLATE);
 		}
-		BFGG C 10
+		BFGG C 10 Bright
 		{
 			A_FireProjectile("EquestriaBFGBall", 0, 1, 0, -20);
 			A_StartSound("weapons/bfgshot");
@@ -73,7 +73,13 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 		Goto Ready;
 	
 	Flash:
-		BFGF A 0 A_OverlayOffset(-10, 0, 15, WOF_KEEPX);
+		BFGF A 0
+		{
+			A_OverlayOffset(-10, 0, 15, WOF_KEEPX);
+			
+			if(GetCVar("MuzzleStyle"))
+			{ A_OverlayFlags(-10, PSPF_RENDERSTYLE, 1); A_OverlayRenderStyle(-10, STYLE_Add); }
+		}
 		
 		BFGF B 5 Bright A_Light(1);
 		BFGF A 5 Bright A_Light(2);

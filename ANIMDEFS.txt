@@ -1,23 +1,19 @@
 Texture MSSINGT1
-allowdecals
 pic MSSINGT1 rand 32 128
 pic MSSINGT2 tics 2
 pic MSSINGT3 tics 3 OSCILLATE
 
 Texture MSSINGT2
-allowdecals
 pic MSSINGT1 rand 32 128
 pic MSSINGT2 tics 2
 pic MSSINGT3 tics 3 OSCILLATE
 
 Texture MSSINGT3
-allowdecals
 pic MSSINGT1 rand 32 128
 pic MSSINGT2 tics 2
 pic MSSINGT3 tics 3 OSCILLATE
 
 Texture UNKNOWNA
-allowdecals
 pic UNKNOWNA rand 128 256
 pic UNKNOWNB tics 4
 pic UNKNOWNC tics 3

@@ -14,7 +14,7 @@ statusbar normal
 	
 	drawbar "PINSA0", "nullimage", poweruptime("BlurSphere"), vertical, interpolate(10), 299, 222;
 	drawbar "PINVA0", "nullimage", poweruptime("InvulnerabilitySphere"), vertical, interpolate(10), 299, 222;
-	drawbar "PVISA0", "NothingB",poweruptime("Infrared"), vertical, interpolate(10), 299, 188;
+	drawbar "PVISA0", "NothingB", poweruptime("Infrared"), vertical, interpolate(10), 299, 188;
 
 	//Keys
 	drawswitchableimage keyslot 2 && 5, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 181, 171;
@@ -81,11 +81,15 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	
 	//health
 
-	drawimage "STATUSA", 50, -32, centerbottom;
 	inInventory PowerStrength, 1
 	{
-		drawimage "STATUSC", 130, -32, centerbottom;
+		drawimage "STATUSC", 50, -32, centerbottom;
 	}
+	else
+	{
+		drawimage "STATUSA", 50, -32, centerbottom;
+	}
+	
 	drawnumber 2147483647, HUDFONT_DOOM, white, health, drawshadow, interpolate(10), 112, -50, 0, red, 50, lightblue, 100;
 
 	//armor
