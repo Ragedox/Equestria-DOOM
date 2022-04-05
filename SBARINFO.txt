@@ -73,6 +73,10 @@ statusbar normal
 
 statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
+	InInventory "HUDDisabled"
+	{	/*Nothing*/	}
+	else
+	{
 	drawkeybar 6, horizontal, reverserows, auto, -14 + center, 42, 0, 3, auto;
 	
 	drawbar "PINSA0", "NothingA", poweruptime("BlurSphere"), vertical, interpolate(10), 0 + center, -10;
@@ -119,5 +123,6 @@ statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 	WeaponAmmo Cell
 	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 100;
+	}
 	}
 }
