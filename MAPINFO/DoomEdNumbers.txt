@@ -129,4 +129,5 @@ DoomEdNums
 	15806 = "BloodSplat2"
 	
 	15807 = "DeadAnimalWall"
+	15808 = "EquestriaWallTorch"
 }
