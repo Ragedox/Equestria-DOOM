@@ -1,3 +1,11 @@
+Automap
+{
+	Base =			"Doom"
+	ShowLocks =		True
+
+	YourColor =		"Red"
+}
+
 map DoomTest "Kinsie's Test Map"
 {
 	BorderTexture = "UNKNOWNJ"
