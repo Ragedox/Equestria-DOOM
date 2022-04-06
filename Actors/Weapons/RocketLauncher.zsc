@@ -95,7 +95,7 @@ Class EquestriaRocket : Actor replaces Rocket
 	{
 		Projectile;
 
-		Radius 15; Height 10;
+		Radius 5; Height 10;
 		
 		Speed 20;
 		Damage 20;
