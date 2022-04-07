@@ -55,6 +55,7 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
+		+CASTSPRITESHADOW
 		
 		+INVENTORY.BIGPOWERUP
 		+INVENTORY.AUTOACTIVATE
@@ -96,6 +97,7 @@ Class EquestriaInvulSphere : CustomInventory replaces InvulnerabilitySphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
+		+CASTSPRITESHADOW
 		
 		+INVENTORY.BIGPOWERUP
 		+INVENTORY.AUTOACTIVATE
@@ -133,6 +135,7 @@ Class EquestriaSoulSphere : CustomInventory replaces Soulsphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
+		+CASTSPRITESHADOW
 		
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
@@ -181,6 +184,7 @@ Class EquestriaMegaSphere : CustomInventory replaces Megasphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
+		+CASTSPRITESHADOW
 		
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
