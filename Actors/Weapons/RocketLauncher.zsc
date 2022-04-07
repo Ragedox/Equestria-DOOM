@@ -116,7 +116,7 @@ Class EquestriaRocket : Actor replaces Rocket
 	Spawn:
 		MISL A 6 Bright;
 		
-		MISL A 2 Bright A_SpawnItem("EquestriaRocketSmoke",0,5);
+		MISL A 2 Bright A_SpawnItem("EquestriaRocketSmoke",0,height / 2);
 		Wait;
 		
 	Death: 
