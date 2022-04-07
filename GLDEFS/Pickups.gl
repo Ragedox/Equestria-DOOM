@@ -1,11 +1,9 @@
 // Soul Sphere
-pulselight SOULSPHERE
+pointlight SOULSPHERE
 {
     color 0.3 0.3 1.0
-    size 60
-    secondarySize 63
-    interval 2.0
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -14,13 +12,11 @@ object EquestriaSoulSphere
     frame SOUL { light SOULSPHERE }
 }
 
-pulselight MEGASPHERE
+pointlight MEGASPHERE
 {
     color 0.5 0.5 0.4
-    size 60
-    secondarySize 63
-    interval 2.0
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -30,13 +26,11 @@ object EquestriaMegaSphere
 }
 
 // Invulnerability Sphere
-pulselight INVULN
+pointlight INVULN
 {
     color 0.3 1.0 0.3
-    size 60
-    secondarySize 63
-    interval 2.0
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -49,40 +43,40 @@ object EquestriaInvulSphere
 pointlight BLURSPHERE1
 {
     color 1.0 0.0 0.0
-    size 60
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
 pointlight BLURSPHERE2
 {
     color 0.0 0.0 1.0
-    size 48
-    offset 0 16 0
+    size 40
+    offset 0 38 0
 	attenuate 1
 }
 
 pointlight BLURSPHERE3
 {
     color 0.0 0.0 1.0
-    size 36
-    offset 0 16 0
+    size 30
+    offset 0 38 0
 	attenuate 1
 }
 
 pointlight BLURSPHERE4
 {
     color 0.0 0.0 1.0
-    size 24
-    offset 0 16 0
+    size 20
+    offset 0 38 0
 	attenuate 1
 }
 
 pointlight BLURSPHERE5
 {
     color 0.0 0.0 1.0
-    size 12
-    offset 0 16 0
+    size 10
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -104,7 +98,7 @@ pulselight HEALTHPOTION
     secondarySize 25
     interval 1.0
 	attenuate 1
-    offset 0 10 0
+    offset 0 5 0
 }
 
 object HealthPotion
