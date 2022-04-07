@@ -18,9 +18,9 @@ CAMRECOILTOGGLE = 		"Camera Recoil";
 AURATOGGLE = 			"Magic Auras on Weapons";
 
 GORETOGGLE = 			"Gore Type";
-SIMPLISTIC =			"Simplistic";
-REALISTIC = 			"Cartoon";
-GIBSFOREVER = 			"Gibs stay down forever";
+ENHANCED =				"Enhanced";
+REALISTIC = 			"Realistic";
+GIBSFOREVER = 			"Gibs don't disappear";
 
 GLPREFMNU_MULTISAMPLE =			"MSAA Quality";
 
@@ -41,6 +41,6 @@ AURATOGGLE = 			"Aura mágica nas armas";
 
 GORETOGGLE = 			"Tipo de Gore";
 REALISTIC = 			"Realista";
-GIBSFOREVER = 			"Gibs ficam no chão para sempre";
+GIBSFOREVER = 			"Gibs não desaparecem";
 
 GLPREFMNU_MULTISAMPLE =			"Qualidade do MSAA";

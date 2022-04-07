@@ -43,9 +43,23 @@ Class DebrisCore : Actor
 	}
 }
 
+Class InvToken : Inventory
+{	Default {	Inventory.MaxAmount 1;	+INVENTORY.QUIET; -INVENTORY.INVBAR;	}}
+
+Class HUDDisabled : InvToken {}
+
+Class DeadCheck : InvToken	{}
+Class Fall : InvToken {}
+Class KickCheck : InvToken	{}
+Class LowHealthCheck : InvToken	{}
+
+/*ToDo
+Class FoundHellPortal : InvToken {} //Season 1 End
+Class FoundDaisy : InvToken	{} //DOOM 2
+*/
+
 //#include "ZScript/DeathFade.zsc"
 
-#include "Actors/Tokens.zsc"
 #include "Actors/Player.zsc"
 #include "Actors/TitleMap.zsc"
 

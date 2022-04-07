@@ -1,5 +1,3 @@
-KickAttack
 EquestriaThings
 BossBar
-Pickups
 FloorCheck

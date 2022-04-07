@@ -1,0 +1,2 @@
+#include "Actors/Weapons/FEDRocketLauncher.zsc"
+#include "Actors/Pickups/FEDPowerups.zsc"

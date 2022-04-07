@@ -10,7 +10,7 @@ map S1E1 lookup "MAINBASE"
 	next = "S1E2"
 	secretnext = "S1E9"
 	
-	Music = "Music/Season1/S1E1.mid"
+	Music = ""
 	
 	OutsideFog = "20 00 00"
 	

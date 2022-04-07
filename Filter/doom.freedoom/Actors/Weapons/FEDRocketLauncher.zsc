@@ -1,0 +1,32 @@
+Class FreeEquestria_RocketLauncher : EquestriaRocketLauncher replaces EquestriaRocketLauncher
+{
+	States
+	{
+	Fire:
+		MISG A 2;
+		#### # 2 A_GunFlash();
+		MISG B 4;
+		
+		MISG B 6
+		{
+			A_FireProjectile("EquestriaRocket", 0, 1, 0, -14);
+			A_WeaponOffset(0, random(35, 42), WOF_INTERPOLATE);
+			
+			if (GetCVAR("CamRecoilToggle") == true)
+			{
+				A_Overlay(2, "CamRecoil");
+			}
+		}
+		MISG A 6 A_WeaponOffset(0, 32, WOF_INTERPOLATE);
+		MISG B 0 A_ReFire();
+		Goto Ready;
+	
+	Flash:
+		TNT1 A 2;
+		MISF A 2 Bright;
+		MISF B 2 Bright;
+		MISF C 3;
+		MISF D 3;
+		Goto LightDone;
+	}
+}

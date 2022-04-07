@@ -11,8 +11,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		Mass 1000;
 		
 		PainChance 40;
-		PainChance "BFGball", 128;
-		PainChance "BFGSplash", 10;
+		PainChance "BFGball", 128; PainChance "BFGSplash", 10;
 		DamageFactor "BFGSplash", 0.25;
 		
 		+BOSS +E3M8BOSS +E4M8BOSS
@@ -22,6 +21,14 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		+DONTMORPH
 		+BOSSDEATH
 		-AVOIDMELEE
+		
+		SeeSound "spider/sight";
+		AttackSound "spider/attack";
+		PainSound "spider/pain";
+		DeathSound "spider/death";
+		ActiveSound "spider/active";
+		Obituary "$OB_SPIDER";
+		Tag "$FN_SPIDER";
 	}
 	States
 	{

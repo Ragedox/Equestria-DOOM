@@ -41,9 +41,9 @@ weapons/casinga		CASINGA
 weapons/casingb		CASINGB
 
 $limit weapons/casinga 0
-$attenuation weapons/casinga 5
+$attenuation weapons/casinga 10
 $limit weapons/casingb 0
-$attenuation weapons/casingb 5
+$attenuation weapons/casingb 10
 
 $limit weapons/bfgx 0
 $attenuation weapons/bfgx 0.5

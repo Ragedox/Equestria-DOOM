@@ -1,0 +1,17 @@
+FCANA0, 12, 53, iwad
+FCANB0, 12, 53, iwad
+FCANC0, 12, 51, iwad
+
+POB1A0, 20, 7, iwad
+POB2A0, 16, 3, iwad
+POL5A0, 27, 10, iwad
+
+TBLUA0, 13, 96, iwad
+TBLUB0, 13, 96, iwad
+TBLUC0, 13, 96, iwad
+TBLUD0, 13, 97, iwad
+
+TGRNA0, 13, 96, iwad
+TGRNB0, 13, 91, iwad
+TGRNC0, 13, 91, iwad
+TGRND0, 13, 97, iwad

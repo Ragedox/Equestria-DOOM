@@ -8,7 +8,7 @@ class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 	States
 	{
 	Spawn:
-		SMBT ABCD 4 BRIGHT;
+		SMBT ABCD random(3,4) BRIGHT;
 		#### # 0 A_SpawnItemEx("Smoke",0,0, height + 10,0,0,0,0,0,200);
 		#### # 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
 		Loop;
@@ -20,12 +20,12 @@ class EquestriaBlueTorch : Actor replaces BlueTorch
 	Default
 	{
 		Radius 2; Height 60;
-		+SOLID
+		+SOLID +BRIGHT
 	}
 	States
 	{
 	Spawn:
-		TBLU ABCD 4 BRIGHT;
+		TBLU ABCD random(3,4);
 		#### # 0 A_SpawnItemEx("Smoke",0,0, height + 10,0,0,0,0,0,200);
 		#### # 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
 		Loop;
@@ -39,7 +39,7 @@ class EquestriaShortGreenTorch : EquestriaShortBlueTorch replaces ShortGreenTorc
 	States
 	{
 	Spawn:
-		SMGT ABCD 4 BRIGHT;
+		SMGT ABCD random(3,4);
 		#### # 0 A_SpawnItemEx("Smoke",0,0, height + 10,0,0,0,0,0,200);
 		#### # 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
 		Loop;
@@ -51,7 +51,7 @@ class EquestriaGreenTorch : EquestriaBlueTorch replaces GreenTorch
 	States
 	{
 	Spawn:
-		TGRN ABCD 4 BRIGHT;
+		TGRN ABCD random(3,4);
 		#### # 0 A_SpawnItemEx("Smoke",0,0, height + 10,0,0,0,0,0,200);
 		#### # 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
 		Loop;
@@ -65,7 +65,7 @@ class EquestriaShortRedTorch : EquestriaShortBlueTorch replaces ShortRedTorch
 	States
 	{
 	Spawn:
-		SMRT ABCD 4 BRIGHT;
+		SMRT ABCD random(3,4);
 		#### # 0 A_SpawnItemEx("Smoke",0,0, height + 10,0,0,0,0,0,200);
 		#### # 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
 		Loop;
@@ -77,7 +77,7 @@ class EquestriaRedTorch : EquestriaBlueTorch replaces RedTorch
 	States
 	{
 	Spawn:
-		TRED ABCD 4 BRIGHT;
+		TRED ABCD random(3,4);
 		#### # 0 A_SpawnItemEx("Smoke",0,0, height + 10,0,0,0,0,0,200);
 		#### # 0 A_StartSound("DoomTorch/Burn", CHAN_BODY, CHANF_LOOPING, 1.0, ATTN_STATIC);
 		Loop;

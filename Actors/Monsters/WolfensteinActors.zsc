@@ -28,6 +28,17 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 	States
 	{
 	Spawn:
+		TNT1 A 0 NoDelay A_Jump(256, 1,2,3,4,5,6);
+		Wait;
+		
+		White:			#### # 0 { A_SetTranslation("Nazi_White");		}	Goto Ready;
+		LightishRed:	#### # 0 { A_SetTranslation("Nazi_LightishRed");}	Goto Ready;
+		LimeGreen:		#### # 0 { A_SetTranslation("Nazi_LimeGreen");	}	Goto Ready;
+		FakeGold:		#### # 0 { A_SetTranslation("Nazi_FakeGold");	}	Goto Ready;
+		Orange:			#### # 0 { A_SetTranslation("Nazi_Orange");		}	Goto Ready;
+
+	Ready:
+	Idle:
 		SSWV AB 10 A_Look();
 		Loop;
 	

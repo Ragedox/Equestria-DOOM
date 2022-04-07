@@ -7,7 +7,7 @@ Class EquestriaMancubus : DoomEquestriaMonster replaces Fatso
 		
 		Health 600;
 		
-		Radius 48; Height 64;
+		Radius 30; Height 60;
 		
 		Mass 1028;
 		Speed 8;

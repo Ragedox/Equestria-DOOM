@@ -30,7 +30,7 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 	{
 	
 	Spawn:
-		SPOS A 10 A_Look();
+		ISPS A 10 A_Look();
 		Loop;
 	
 	See:
@@ -81,25 +81,16 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		Stop;
     
 	Death.Shotgun:
-		#### # 0 A_JumpIfCloser(128, 1);
+		#### # 0 A_JumpIfCloser(radius + 64, 3);
+	Death.SuperShotgun:
+		#### # 0 A_JumpIfCloser(radius + 32, "XDeath");
+		#### # 0 A_JumpIfCloser(radius + 128, 1);
 		Goto Death;
 		#### # 0
 		{
 			A_FaceTarget();
 			ThrustThingZ(0,15,0,1);
 			A_Recoil(2.5);
-		}
-		Goto Death;
-
-	Death.SuperShotgun:
-		#### # 0 A_JumpIfCloser(75, "XDeath");
-		#### # 0 A_JumpIfCloser(150, 1);
-		Goto Death;
-		#### # 0
-		{
-			A_FaceTarget();
-			ThrustThingZ(0,20,0,1);
-			A_Recoil(7.5);
 		}
 		Goto Death;
 		

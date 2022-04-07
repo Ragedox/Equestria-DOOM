@@ -68,3 +68,25 @@ Script "CheckBrutalDoom" enter
 		HUDMSG_TYPEON | HUDMSG_PLAIN, 100, CR_ICE, 1.5, 0.8, 0);
 	}
 }
+
+Script "KickAttack" (void)
+{
+	GiveInventory("KickCheck", 1);
+}
+
+Script "BerserkRemove" ENTER
+{
+	TakeInventory("BerserkFist", 999);
+}
+
+Script "BlurMugshot" (void)
+{   
+	Delay(1);
+	
+	while (CheckInventory("BlurSphereInventory") == 1)
+	{
+		SetMugShotState("Invisibility");
+		
+		Delay(1);
+	}
+}
