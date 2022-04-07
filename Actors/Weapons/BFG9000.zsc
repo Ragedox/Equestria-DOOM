@@ -158,6 +158,9 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			}
 		}
 		BFS1 AAAAA 1 A_SetRoll(roll + random(-75, 75), SPF_INTERPOLATE);
+		
+		#### # 0 A_Jump(256, "Projectile");
+		Wait;
 	
 	Projectile:
 		BFS1 A random(1, 4)

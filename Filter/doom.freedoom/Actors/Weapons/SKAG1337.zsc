@@ -1,0 +1,22 @@
+Class FreeEquestria_SKAGBall : EquestriaBFGBall replaces EquestriaBFGBall
+{
+	States
+	{
+	Projectile:
+		BFS1 AB random(1, 4)
+		{ A_SetRoll(roll + random(-45, 45), SPF_INTERPOLATE);
+		A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, 360));
+		}
+		Loop;
+	}
+	
+	override void Tick()
+	{
+		if (InStateSequence(CurState, ResolveState("Projectile")) && !isFrozen())
+		{
+			A_SpawnItemEx("BFGTrail",0,0,0,0,0,0,0, SXF_TRANSFERSPRITEFRAME | SXF_TRANSFERROLL);
+			A_SetScale(Frandom(0.75, 1.25), Frandom(0.75, 1.25));
+		}
+		Super.Tick();
+	}
+}
