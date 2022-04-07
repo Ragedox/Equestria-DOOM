@@ -7,11 +7,11 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		Obituary "$OB_BARON";
 		HitObituary "$OB_BARONHIT";
 		
-		Health 1000;
+		Health 750;
 		Radius 15; Height 64;
 		Mass 1000;
 		Speed 8;
-		PainChance 50; PainThreshold 5;
+		PainChance 50; PainThreshold 10;
 		BloodColor "darkgreen";
 		
 		+FLOORCLIP
@@ -88,10 +88,9 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		Health 500;
 		
 		Speed 10;
-		PainThreshold 5;
 		PainChance 75;
 		BloodColor "green";
-		-BOSSDEATH;
+		-BOSSDEATH
 		SeeSound "knight/sight";
 		ActiveSound "knight/active";
 		PainSound "knight/pain";
