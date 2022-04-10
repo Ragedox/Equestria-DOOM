@@ -55,7 +55,6 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
-		+CASTSPRITESHADOW
 		
 		+INVENTORY.BIGPOWERUP
 		+INVENTORY.AUTOACTIVATE
