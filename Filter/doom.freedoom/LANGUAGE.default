@@ -6,26 +6,13 @@ NORMALSKILL = 	"Bring on the pain";
 HARDSKILL = 	"Extreme Carnage";
 PLUSSKILL = 	"Immediate Massacre";
 
-QUITMSG = 		"Are you sure you want to quit this great mod?";
-QUITMSG9 = 		"Don't go now, there's a\nKirinware waiting at your computer!";
-QUITMSG10 = 	"Get out of here and go back to your\ninfantile cartoon.";
-QUITMSG13 = 	"just leave.\nwhen you come back, there will be a\nnaughty bat waiting for you!";
-
-QUITGAME1 = 	"I am sorry if this mod is too Brony for you";
-QUITGAME2 = 	"I don't want this mod to support Brutal Doom";
-QUITGAME3 = 	"You're not going to do what I'm thinking\nare you?";
-QUITGAME4 = 	"Maybe you felt hurt by these\ntotally serious, heavy and mean messages\nplease get the hell out of here";
-
-OTARMBONUS = 	"Picked up a Spiritual Armor.";
-GOTARMOR = 		"Picked up a Security Armor.";
-GOTMEGA = 		"Picked up a Combat Armor.";
-
 GOTRIFLE = 		"You got the Total-Automatic Gun!!";
 
 BERSERKFIST = 	"Steroid Hooves";
 GOTBERSERK = 	"Steroids! Let's kick some bad boys ass!";
 
-LOWHEALTH = 	"Low Health";
+GOTARMOR = 		"Picked up a light armor vest.";
+GOTMEGA = 		"Picked up a heavy armor vest.";
 
 /* Monsters */
 
@@ -35,8 +22,3 @@ TECHDUDE = "Possessed Hacker";
 DEMONIRIK = "Demonic Nirik";
 OB_PLASMAKIRIN = "%o turned to dust by the Hacker Leader.";
 NIRIKILL = "%o was bitten by the Demonic Nirik.";
-
-//////////
-
-TAGREPEATER = "Repeater";
-GOTREPEATER = "You got the Repeater!";
