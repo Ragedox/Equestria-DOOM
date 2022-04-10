@@ -236,8 +236,8 @@ Class BFGShockwave : Actor
 	States
 	{
 	Spawn:
-		BFEF ABCDEGIKMOQSU 1 Bright;
-		BFEF W 1 Bright A_FadeOut (0.1);
+		BFEF ABCDEFGHIJKLMN 1 Bright;
+		BFEF O 1 Bright A_FadeOut (0.1);
 		Wait;
 	}
 }

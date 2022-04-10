@@ -8,6 +8,7 @@ Class EquestriaChainsaw : DoomEquestriaWeapon replaces Chainsaw
 		Weapon.SelectionOrder 7;
 		Weapon.UpSound "";
 		Weapon.ReadySound "weapons/sawidle";
+		Weapon.Kickback 50;
 		
 		Inventory.PickupMessage "$GOTCHAINSAW";
 		Inventory.PickupSound "weapons/sawup";

@@ -8,7 +8,7 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 40;
 		Weapon.AmmoType "Cell";
-
+		
 		Inventory.PickupMessage "$GOTPLASMA";
 		Inventory.PickupSound "pickup/plasmagun";
 

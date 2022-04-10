@@ -9,7 +9,7 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		
 		Health 60;
 		
-		Height 56; Radius 10;
+		Height 56; Radius 12;
 		Mass 100;
 		Speed 8;
 		PainChance 200;

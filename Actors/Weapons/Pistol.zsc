@@ -9,6 +9,7 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		Weapon.AmmoUse 1;
 		Weapon.AmmoGive 20;
 		Weapon.AmmoType "Clip";
+		Weapon.Kickback 50;
 		
 		Obituary "$OB_MPPISTOL";
 		
