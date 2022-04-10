@@ -1,24 +1,10 @@
 [enu default]
 
-STARTUP1 = "Github ===================== Ragedox/DOOM-Equestria ===================== Github";
-STARTUP2 = "========== You are playing the Github version of Equestria DOOM Alpha ==========";
-STARTUP3 = "This mod was made by Team Redyusedom, read the credits for more information";
-STARTUP4 = "							Stay tuned for more news!";
-STARTUP5 = "======================== This is NOT a children's game! ========================";
-STARTUP6 = "Github ===================== Ragedox/DOOM-Equestria ===================== Github";
-
-WARNING	= 		"WARNING!";
-NOKIDS = 		"This is NOT a children's game!";
-MAYCONTAIN = 	"May contain images and content sensitive\nfor some audiences, such as\nBlood, Gore and Extreme Violence.";
-
-FREEDOOMCOMP =	"Hey! FreeDOOM compatibility is still in early progress";
-FREEDOOMCOMP2 =	"Stay tuned for more news and updates!";
-
-BABYSKILL =		"I'm a Little Pony";
-EASYSKILL = 	"Hey, not too rough";
-NORMALSKILL = 	"Hurt me plenty";
-HARDSKILL = 	"Ultra-Violence";
-PLUSSKILL = 	"Instant-Violence";
+BABYSKILL =		"I am a Small Filly!";
+EASYSKILL = 	"Will this hurt?";
+NORMALSKILL = 	"Bring on the pain";
+HARDSKILL = 	"Extreme Carnage";
+PLUSSKILL = 	"Immediate Massacre";
 
 QUITMSG = 		"Are you sure you want to quit this great mod?";
 QUITMSG9 = 		"Don't go now, there's a\nKirinware waiting at your computer!";
@@ -34,7 +20,7 @@ OTARMBONUS = 	"Picked up a Spiritual Armor.";
 GOTARMOR = 		"Picked up a Security Armor.";
 GOTMEGA = 		"Picked up a Combat Armor.";
 
-GOTRIFLE = 		"You got the Rifle!";
+GOTRIFLE = 		"You got the Total-Automatic Gun!!";
 
 BERSERKFIST = 	"Berserked Hooves";
 GOTBERSERK = 	"Berserk! Let's punch out some demons!";
