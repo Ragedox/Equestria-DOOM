@@ -1,11 +1,9 @@
 // Soul Sphere
-pulselight SOULSPHERE
+pointlight SOULSPHERE
 {
     color 1.0 0.8 0.0
-    size 60
-    secondarySize 63
-    interval 2.0
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -14,13 +12,11 @@ object FreeEquestria_SoulSphere
     frame SOUL { light SOULSPHERE }
 }
 
-pulselight MEGASPHERE
+pointlight MEGASPHERE
 {
     color 1.0 0.5 0.0
-    size 60
-    secondarySize 63
-    interval 2.0
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -30,13 +26,11 @@ object FreeEquestria_MegaSphere
 }
 
 // Invulnerability Sphere
-pulselight INVULN
+pointlight INVULN
 {
     color 0.3 1.0 0.3
-    size 60
-    secondarySize 63
-    interval 2.0
-    offset 0 16 0
+    size 50
+    offset 0 38 0
 	attenuate 1
 }
 
@@ -48,9 +42,9 @@ object FreeEquestria_InvulSphere
 // Blur Sphere
 pointlight BLURSPHERE
 {
-    color 1.0 1.0 0.5
-    size 60
-    offset 0 16 0
+    color 1.0 0.75 1.0
+    size 50
+    offset 0 38 0
 	attenuate 1
 	subtractive 1
 }

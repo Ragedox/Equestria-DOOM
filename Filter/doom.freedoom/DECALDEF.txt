@@ -1,0 +1,21 @@
+decal BFGLightning1
+{
+	pic BFGLITE1
+	shade "80 80 ff"
+	Y-Scale 2 X-Scale 2
+	fullbright
+	randomflipx
+	animator GoAway2
+	lowerdecal BFGScorch
+}
+
+decal BFGLightning2
+{
+	pic BFGLITE2
+	shade "80 80 ff"
+	Y-Scale 2 X-Scale 2
+	fullbright
+	randomflipx
+	animator GoAway2
+	lowerdecal BFGScorch
+}
