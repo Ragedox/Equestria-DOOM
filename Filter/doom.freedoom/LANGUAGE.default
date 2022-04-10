@@ -22,8 +22,8 @@ GOTMEGA = 		"Picked up a Combat Armor.";
 
 GOTRIFLE = 		"You got the Total-Automatic Gun!!";
 
-BERSERKFIST = 	"Berserked Hooves";
-GOTBERSERK = 	"Berserk! Let's punch out some demons!";
+BERSERKFIST = 	"Steroid Hooves";
+GOTBERSERK = 	"Steroids! Let's kick some bad boys ass!";
 
 LOWHEALTH = 	"Low Health";
 
