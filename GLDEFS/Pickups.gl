@@ -40,10 +40,12 @@ object EquestriaInvulSphere
 }
 
 // Blur Sphere
-pointlight BLURSPHERE1
+pulselight BLURSPHERE1
 {
     color 1.0 0.0 0.0
     size 50
+	secondarysize 25
+	interval 1.0
     offset 0 38 0
 	attenuate 1
 }
