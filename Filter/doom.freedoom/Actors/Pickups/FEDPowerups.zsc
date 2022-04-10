@@ -2,7 +2,6 @@
 
 Class FreeEquestria_BlurSphere : EquestriaBlurSphere replaces EquestriaBlurSphere
 {
-	Default { -CASTSPRITESHADOW }
 	States
 	{
 	Spawn:
