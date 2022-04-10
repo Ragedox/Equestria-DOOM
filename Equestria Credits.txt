@@ -40,9 +40,8 @@ Cinny!
 = Special Thanks to =
 Redly_2XBR
 
-===== Team =====
-					Twitter
-					
+===== Team =====	Twitter	
+
 Ragedox 		  @TheRagedox
 IsaacPony		  @Isaac_Pony
 JoeyTD			@beardeddoomguy
@@ -74,9 +73,11 @@ David G Sprites
 
 NashDecals (Blood decals)
 
-Kinsie's Test Map: https://forum.zdoom.org/viewtopic.php?t=57221
+Kinsie's Test Map : https://forum.zdoom.org/viewtopic.php?t=57221
 
 "Universal" fade-to-black on death : https://forum.zdoom.org/viewtopic.php?f=46&t=65028
+
+AFADoomer : https://forum.zdoom.org/viewtopic.php?t=58842#p1032693
 
 = Other Games =
 
