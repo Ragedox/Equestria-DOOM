@@ -2,7 +2,7 @@
 Season 1: Kee-Deep in the Dead
 *////////////////////
 
-map S1E1 lookup "MAINBASE"
+map S1E1 lookup "SEASON1E1"
 {
 	//Author = "The Ragedox"
 	
@@ -21,7 +21,7 @@ map S1E1 lookup "MAINBASE"
 	BorderTexture = "STARGR2"
 }
 
-map S1E2 lookup "NUCLEAR_PLANT"
+map S1E2 lookup "SEASON1E2"
 {
 	//Author = "The Ragedox"
 	
@@ -38,7 +38,7 @@ map S1E2 lookup "NUCLEAR_PLANT"
 	BorderTexture = "STARTAN2"
 }
 
-map S1E3 lookup "TOXIN_REFINERY"
+map S1E3 lookup "SEASON1E3"
 {	
 	//Author = "SuperWillGaming"
 	
@@ -56,7 +56,7 @@ map S1E3 lookup "TOXIN_REFINERY"
 	BorderTexture = "STARG2"
 }
 
-map S1E4 lookup "COMMAND_CONTROL"
+map S1E4 lookup "SEASON1E4"
 {
 	levelnum = 4
 	
@@ -72,7 +72,7 @@ map S1E4 lookup "COMMAND_CONTROL"
 	BorderTexture = "STARGR2"
 }
 
-map S1E5 lookup "CENTRAL_PROCECESSING"
+map S1E5 lookup "SEASON1E5"
 {
 	levelnum = 5
 	
@@ -87,7 +87,7 @@ map S1E5 lookup "CENTRAL_PROCECESSING"
 	BorderTexture = "STARGR2"
 }
 
-map S1E6 lookup "COMPUTER_STATION"
+map S1E6 lookup "SEASON1E6"
 {
 	levelnum = 6
 	
@@ -102,7 +102,7 @@ map S1E6 lookup "COMPUTER_STATION"
 	BorderTexture = "STARGR2"
 }
 
-map S1E7 lookup "PHOBOS_LAB"
+map S1E7 lookup "SEASON1E7"
 {
 	levelnum = 7
 	
@@ -117,7 +117,7 @@ map S1E7 lookup "PHOBOS_LAB"
 	BorderTexture = "STARGR2"
 }
 
-map S1E8 lookup "PHOBOS_ANOMALY"
+map S1E8 lookup "SEASON1E8"
 {
 	levelnum = 8
 	
@@ -131,7 +131,7 @@ map S1E8 lookup "PHOBOS_ANOMALY"
 	BorderTexture = "STARBR2"
 }
 
-map S1E9 lookup "SEWERS"
+map S1E9 lookup "SEASON1E9"
 {
 	levelnum = 9
 	
@@ -144,7 +144,7 @@ map S1E9 lookup "SEWERS"
 	BorderTexture = "TP6_2"
 }
 
-map S1E10 lookup "MILITARY_BASE"
+map S1E10 lookup "SEASON1E10"
 {
 	levelnum = 10
 	

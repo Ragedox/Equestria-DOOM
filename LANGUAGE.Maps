@@ -1,29 +1,35 @@
 [enu default]
 
+CORPORATION = "Union Aerospace Corporation";
+EVENTLOCATION = "Phobos, Mars, Equestria DOOM Release date mm/dd/2XXX";
+
 /* Season 1 */
 
-MAINBASE = "Main Facility"; SEWERS = "Sewers";
-NUCLEAR_PLANT = "Nuclear Plant";
-TOXIN_REFINERY = "Toxin Refinery";
-CENTRAL_PROCESSING = "Central Processing";
-COMPUTER_STATION = "Computer Station";
-COMMAND_CONTROL = "Command Control";
-PHOBOS_LAB = "Phobos Laboratory";
-PHOBOS_ANOMALY = "Phobos Anomaly";
+SEASON1E1 = "Main Facility"; SEASON1E9 = "Sewers";
+SEASON1E2 = "Nuclear Plant";
+SEASON1E3 = "Toxin Refinery";
+SEASON1E4 = "Central Processing";
+SEASON1E5 = "Computer Station";
+SEASON1E6 = "Command Control";
+SEASON1E7 = "Phobos Laboratory";
+SEASON1E8 = "Phobos Anomaly";
 
-MILITARY_BASE = "Military Base";
+SEASON1E10 = "Military Base";
 
 [ptb pt br]
 
 /* Temporada 1 */
 
-HANGAR = "Base Principal"; SEWERS = "Esgoto";
-NUCLEAR_PLANT = "Usina Nuclear";
-TOXIN_REFINERY = "Refinaria de Toxinas";
-CENTRAL_PROCESSING = "Central de Processamento";
-COMPUTER_STATION = "Estação de Computador";
-COMMAND_CONTROL = "Comando e controle";
-PHOBOS_LAB = "Laboratório de Phobos";
-PHOBOS_ANOMALY = "Anomalia de Phobos";
+CORPORATION = "União das Corporações Aeroespaciais";
+EVENTLOCATION = "Fobos, Marte, data de lançamento do Equestria DOOM dd/mm/2XXX";
 
-MILITARY_BASE = "Base Militar";
+SEASON1E1 = "Base Principal"; SEASON1E9 = "Esgoto";
+SEASON1E2 = "Usina Nuclear";
+SEASON1E3 = "Refinaria de Toxinas";
+SEASON1E4 = "Central de Processamento";
+SEASON1E5 = "Estação de Computador";
+SEASON1E6 = "Comando e controle";
+SEASON1E7 = "Laboratório de Phobos";
+SEASON1E8 = "Anomalia de Phobos";
+
+SEASON1E10 = "Base Militar";

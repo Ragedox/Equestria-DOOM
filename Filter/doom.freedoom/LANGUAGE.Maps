@@ -1,0 +1,35 @@
+[enu default]
+
+CORPORATION = "Associated Global Machinery";
+EVENTLOCATION = "Unknown location, Earth, FreeDOOM Equestria Release date mm/dd/2XXX";
+
+/* Season 1 */
+
+SEASON1E1 = "Outer Prison"; SEASON1E9 = "Sewers";
+SEASON1E2 = "Communications Center";
+SEASON1E3 = "Waste Disposal";
+SEASON1E4 = "Supply Depot";
+SEASON1E5 = "Main Control";
+SEASON1E6 = "Training Facility";
+SEASON1E7 = "Transportation Bay";
+SEASON1E8 = "Outpost Quarry";
+
+SEASON1E10 = "Armory";
+
+[ptb pt br]
+
+/* Temporada 1 */
+
+CORPORATION = "Associação Global de Maquinas";
+EVENTLOCATION = "Local desconhecido, Planeta Água, data de lançamento do FreeDOOM Equestria dd/mm/2XXX";
+
+SEASON1E1 = "Prisão Externa"; SEASON1E9 = "Esgoto";
+SEASON1E2 = "Centro de Comunicações";
+SEASON1E3 = "Lixão";
+SEASON1E4 = "Depósito de Abastecimento";
+SEASON1E5 = "Controle Principal";
+SEASON1E6 = "Instalação de Treinamento";
+SEASON1E7 = "Baía de Transporte";
+SEASON1E8 = "Anomalia de Phobos";
+
+SEASON1E10 = "Depósito de Armas";
