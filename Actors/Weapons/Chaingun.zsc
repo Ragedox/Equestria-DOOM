@@ -27,13 +27,7 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		Stop;
 	
 	Ready:
-		CHGG A 1
-		{
-			A_WeaponReady();
-			if (CountInv("KickCheck"))
-				return ResolveState("Kick.Normal");
-			return ResolveState(null);
-		}
+		CHGG A 1 A_WeaponReady();
 		Loop;
 	
 	Select:
@@ -43,7 +37,6 @@ Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
 		
 	Deselect:
 		TNT1 A 0 {
-			TakeInventory("KickCheck", 999);
 			if(health <= 0)
 				return ResolveState("DeathCheck");
 			return ResolveState(null);

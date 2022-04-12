@@ -21,13 +21,7 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		Stop;
 		
 	Ready:
-		PLSG A 1
-		{
-			A_WeaponReady();
-			if (CountInv("KickCheck"))
-				return ResolveState("Kick.Normal");
-			return ResolveState(null);
-		}
+		PLSG A 1 A_WeaponReady();
 		Loop;
 	
 	Select:
@@ -37,7 +31,6 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		
 	Deselect:
 		TNT1 A 0 {
-			TakeInventory("KickCheck", 999);
 			if(health <= 0)
 				return ResolveState("DeathCheck");
 			return ResolveState(null);

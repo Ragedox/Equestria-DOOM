@@ -36,7 +36,6 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 
 	Deselect:
 		TNT1 A 0 {
-			TakeInventory("KickCheck", 999);
 			if(health <= 0)
 				return ResolveState("DeathCheck");
 			return ResolveState(null);
@@ -72,6 +71,9 @@ Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
 		}
 		Goto Ready;
 	
+	AltFire:
+		Stop;
+		
 	Flash:
 		BFGF A 0
 		{
