@@ -109,7 +109,6 @@ Class HUDDisabled : InvToken {}
 
 Class DeadCheck : InvToken	{}
 Class Fall : InvToken {}
-Class KickCheck : InvToken	{}
 Class LowHealthCheck : InvToken	{}
 
 /*ToDo
