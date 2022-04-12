@@ -1,3 +1,16 @@
 #include "Actors/Weapons/FEDRocketLauncher.zsc"
 #include "Actors/Pickups/FEDPowerups.zsc"
 #include "Actors/Weapons/SKAG1337.zsc"
+
+Class FreeEquestria_DoomPlayer : EquestriaDoomPlayer replaces EquestriaDoomPlayer
+{
+	Default
+	{
+		Player.DisplayName "Magnum";
+
+		Player.WeaponSlot 5, "FreeEquestria_RocketLauncher";
+		
+		Player.Colorset 0, "$TXT_COLOR_RED",		0x20, 0x2F,  0x22;
+		Player.Colorset 3, "$TXT_COLOR_GREEN",		0x70, 0x7F,  0x72;
+	}
+}

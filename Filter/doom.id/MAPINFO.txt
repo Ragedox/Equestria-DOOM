@@ -1,0 +1,4 @@
+gameinfo
+{
+	PlayerClasses = "EquestriaDoomPlayer"//, "EquestriaMarine"
+}
