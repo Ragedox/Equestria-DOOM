@@ -69,11 +69,6 @@ Script "CheckBrutalDoom" enter
 	}
 }
 
-Script "KickAttack" (void)
-{
-	GiveInventory("KickCheck", 1);
-}
-
 Script "BerserkRemove" ENTER
 {
 	TakeInventory("BerserkFist", 999);
