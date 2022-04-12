@@ -1,0 +1,96 @@
+OptionMenu "ActionKeysMenu"
+{
+	Title "$CNTRLMNU_ACTION_TITLE"
+	ScrollTop 2
+	StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
+
+	StaticText ""
+	Control    "$CNTRLMNU_FORWARD"          , "+forward"
+	Control    "$CNTRLMNU_BACK"             , "+back"
+	Control    "$CNTRLMNU_MOVELEFT"         , "+moveleft"
+	Control    "$CNTRLMNU_MOVERIGHT"        , "+moveright"
+	
+	StaticText ""
+	Control    "$CNTRLMNU_RUN"              , "+speed"
+	Control    "$CNTRLMNU_TOGGLERUN"        , "toggle cl_run"
+	Control    "$CNTRLMNU_STRAFE"           , "+strafe"
+	
+	StaticText ""
+	Control    "$CNTRLMNU_ATTACK"           , "+attack"
+	Control    "$CNTRLMNU_ALTATTACK"        , "+altattack"
+	Control    "$CNTRLMNU_RELOAD"           , "+reload"
+	Control    "$CNTRLMNU_ZOOM"             , "+zoom"
+
+	StaticText ""
+	Control    "$CNTRLMNU_USE"              , "+use"
+
+	StaticText ""
+	Control    "$CNTRLMNU_JUMP"             , "+jump"
+
+	StaticText ""
+	Control    "$CNTRLMNU_MOUSELOOK"        , "+mlook"
+	Control    "$CNTRLMNU_KEYBOARDLOOK"     , "+klook"
+	Control    "$CNTRLMNU_LOOKUP"           , "+lookup"
+	Control    "$CNTRLMNU_LOOKDOWN"         , "+lookdown"
+	Control    "$CNTRLMNU_CENTERVIEW"       , "centerview"
+}
+
+OptionMenu "WeaponsKeysMenu"
+{
+	Title "$CNTRLMNU_WEAPONS_TITLE"
+	
+	ScrollTop 2
+	StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
+	Position -100
+
+	StaticText ""
+	Control    "$CNTRLMNU_NEXTWEAPON"     , "weapnext"
+	Control    "$CNTRLMNU_PREVIOUSWEAPON" , "weapprev"
+
+	StaticText ""
+	Control    "$CNTRLMNU_SLOT1"          , "slot 1"
+	Control    "$CNTRLMNU_SLOT2"          , "slot 2"
+	Control    "$CNTRLMNU_SLOT3"          , "slot 3"
+	Control    "$CNTRLMNU_SLOT4"          , "slot 4"
+	Control    "$CNTRLMNU_SLOT5"          , "slot 5"
+	Control    "$CNTRLMNU_SLOT6"          , "slot 6"
+	Control    "$CNTRLMNU_SLOT7"          , "slot 7"
+	Control    "$CNTRLMNU_SLOT8"          , "slot 8"
+	Control    "$CNTRLMNU_SLOT9"          , "slot 9"
+	Control    "$CNTRLMNU_SLOT0"          , "slot 0"
+}
+
+OptionMenu "OtherKeysMenu"
+{
+	Title "$CNTRLMNU_OTHER_TITLE"
+	ScrollTop 2
+	StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
+	Position -50
+	
+	StaticText ""
+	Control    "$CNTRLMNU_AUTOMAP"         , "togglemap"
+
+	StaticText ""
+	Control    "$CNTRLMNU_SCREENSHOT"      , "screenshot"
+	Control    "$CNTRLMNU_CONSOLE"         , "toggleconsole"
+	Control    "$CNTRLMNU_PAUSE"           , "pause"
+
+	StaticText ""
+	Control    "$CNTRLMNU_DISPLAY_INC"     , "sizeup"
+	Control    "$CNTRLMNU_DISPLAY_DEC"     , "sizedown"
+	Control    "$CNTRLMNU_TOGGLE_MESSAGES" , "togglemessages"
+	Control    "$CNTRLMNU_ADJUST_GAMMA"    , "bumpgamma"
+
+	StaticText ""
+	Control    "$CNTRLMNU_OPEN_HELP"       , "menu_help"
+	Control    "$CNTRLMNU_OPEN_SAVE"       , "menu_save"
+	Control    "$CNTRLMNU_OPEN_LOAD"       , "menu_load"
+	Control    "$CNTRLMNU_OPEN_OPTIONS"    , "menu_options"
+	Control    "$CNTRLMNU_OPEN_DISPLAY"    , "menu_display"
+	Control    "$CNTRLMNU_EXIT_TO_MAIN"    , "menu_endgame"
+	Control    "$CNTRLMNU_MENU_QUIT"       , "menu_quit"
+
+	StaticText ""
+	Control    "$CNTRLMNU_QUICKSAVE"       , "quicksave"
+	Control    "$CNTRLMNU_QUICKLOAD"       , "quickload"
+}
