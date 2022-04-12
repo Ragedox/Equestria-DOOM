@@ -22,18 +22,17 @@ ListMenu "MainMenu"
 	Position 105, 150
 	PatchItem "TNT1A0",	"4", "QuitMenu"
 	
-	//Dumb old note
-		//A Morden Look, maybe for a future Doom Equestria
+	/*Dumb old note
+		A Morden Look, maybe for a future Doom Equestria
 	
-	/*	Position 0, 75
+		Position 0, 75
 		TextItem "Campaign", 1, "PlayMenu"
 		Position 0, 100
 		TextItem "Options", 2, "EquestriaOptions"
 		Position 0, 125
 		TextItem "Info", 3, "ReadThisMenu"
 		Position 0, 150
-		TextItem "Quit", 4, "QuitMenu"	*/
-	
+		TextItem "Quit", 4, "QuitMenu" */
 }
 
 ListMenu "PlayMenu"
@@ -93,7 +92,7 @@ ListMenu "ControlSettings"
 	
 	Linespacing 20
 	Position 90, 80
-	PatchItem "TNT1A0",	"1",		"CustomizeControls"
+	PatchItem "TNT1A0",	"1",		"KeyMapping"
 	Position 75, 105
 	PatchItem "TNT1A0",	"2",		"MouseOptions"
 	Position 45, 130
@@ -232,6 +231,21 @@ OptionMenu "UISettings"
 	Option "$SCALEMNU_HUDASPECT", 				"hud_aspectscale", "OnOff"
 	Slider "$DSPLYMNU_SCREENSIZE",				"screenblocks", 				3.0, 12.0, 1.0, 0
 	Option	"Warning on Startup", "WarningStartup", "onoff"
+}
+
+OptionMenu "KeyMapping"
+{
+	Title "$CNTRLMNU_TITLE"
+
+	Position -175
+	
+	Submenu    "$CNTRLMNU_ACTION"      , "ActionKeysMenu"
+	Submenu    "$CNTRLMNU_WEAPONS"     , "WeaponsKeysMenu"
+	Submenu    "$MAPCNTRLMNU_CONTROLS" , "MapControlsMenu"
+	Submenu    "$CNTRLMNU_OTHER"       , "OtherKeysMenu"
+	StaticText ""
+	Option "$CNTRLMNU_LAYOUT",			"cl_defaultconfiguration", "Layouts"
+	SafeCommand "$OPTMNU_DEFAULTS",		"resetb2defaults"
 }
 
 OptionValue "WeaponAnim"
