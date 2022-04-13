@@ -84,6 +84,11 @@ class EquestriaRedTorch : EquestriaBlueTorch replaces RedTorch
 	}
 }
 
+class EquestriaCandleStick : CandleStick replaces CandleStick
+{
+	Default { Radius 8; Height 15; }
+}
+
 // Candelabra
 
 class EquestriaCandelabra : Candelabra replaces Candelabra
