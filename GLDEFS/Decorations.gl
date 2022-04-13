@@ -174,7 +174,7 @@ pointlight CANDLE
 	attenuate 1
 }
 
-object Candlestick
+object EquestriaCandlestick
 {
     frame CAND { light CANDLE }
 }
