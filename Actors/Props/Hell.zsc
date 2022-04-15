@@ -181,7 +181,76 @@ Class DemonArm : Actor
 		Stop;
 	}
 }
-Class TallPinkColumn : TallRedColumn
+
+class EquestriaTallGreenColumn : Actor replaces TallGreenColumn
+{
+	Default
+	{
+		Radius 12.5; Height 53; +SOLID
+	}
+	States
+	{
+	Spawn:
+		COL1 A -1;
+		Stop;
+	}
+}
+
+class EquestriaShortGreenColumn : Actor replaces ShortGreenColumn
+{
+	Default
+	{
+		Radius 12.5; Height 40; +SOLID
+	}
+	States
+	{
+	Spawn:
+		COL2 A -1;
+		Stop;
+	}
+}
+
+class EquestriaTallRedColumn : EquestriaTallGreenColumn replaces TallRedColumn
+{
+	States
+	{
+	Spawn:
+		COL3 A -1;
+		Stop;
+	}
+}
+
+class EquestriaShortRedColumn : EquestriaShortGreenColumn replaces ShortRedColumn
+{
+	States
+	{
+	Spawn:
+		COL4 A -1;
+		Stop;
+	}
+}
+
+class EquestriaSkullColumn : EquestriaShortGreenColumn replaces SkullColumn
+{
+	States
+	{
+	Spawn:
+		COL6 A -1;
+		Stop;
+	}
+}
+
+class EquestriaHeartColumn : EquestriaShortGreenColumn replaces HeartColumn
+{
+	States
+	{
+	Spawn:
+		COL5 AB 14;
+		Loop;
+	}
+}
+
+Class TallPinkColumn : EquestriaTallGreenColumn
 {
 //$NotAngled
 //$Category "Decoration/Hell"
