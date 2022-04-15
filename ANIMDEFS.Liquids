@@ -64,7 +64,7 @@ Texture FBLOOD1
 	pic 1 tics 1
 	pic 1 tics 1
 	
-Texture		BFALL1  	Range	BFALL4  	Tics 8
-Texture		SFALL1  	Range	SFALL4  	Tics 8
+Texture		Optional	BFALL1  	Range	BFALL4  	Tics 8
+Texture		Optional	SFALL1  	Range	SFALL4  	Tics 8
 Texture		SWFALL1  	Range	SWFALL4  	Tics 8
 Texture		WFALL1  	Range	WFALL4  	Tics 8
