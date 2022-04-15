@@ -4,6 +4,17 @@ base Doom;
 
 statusbar normal
 {
+	InInventory "HUDDisabled"
+	{
+		drawimage "STBAR", 0, 168;
+		
+		drawselectedinventory alternateonempty, INDEXFONT, 143, 168
+		{
+			drawmugshot "STF", 5, xdeathface, animatedgodmode, 160, 198;
+		}
+	}
+	else
+	{
 	drawimage "STBAR", 0, 168;
 	
 	drawnumber 3, HUDFONT_DOOM, white, health,	interpolate(10), 135, 173, 0, red, 50, lightblue, 100;
@@ -61,15 +72,11 @@ statusbar normal
 	drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", 259, 182;
 	drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", 271, 182;
 	
-	gamemode cooperative, deathmatch, teamgame
-	{
-		drawimage translatable "STFBANY", 143, 169;
-	}
 	drawselectedinventory alternateonempty, INDEXFONT, 143, 168
 	{
 		drawmugshot "STF", 5, xdeathface, animatedgodmode, 160, 198;
 	}
-}
+}}
 
 statusbar fullscreen, fullscreenoffsets // ZDoom HUD
 {
