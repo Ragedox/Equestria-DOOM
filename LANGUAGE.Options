@@ -22,7 +22,7 @@ ENHANCED =				"Enhanced";
 REALISTIC = 			"Realistic";
 GIBSFOREVER = 			"Gibs don't disappear";
 
-GLPREFMNU_MULTISAMPLE =			"MSAA Quality";
+GLPREFMNU_MULTISAMPLE =	"MSAA Quality";
 
 [ptb pt br]
 
@@ -43,4 +43,4 @@ GORETOGGLE = 			"Tipo de Gore";
 REALISTIC = 			"Realista";
 GIBSFOREVER = 			"Gibs não desaparecem";
 
-GLPREFMNU_MULTISAMPLE =			"Qualidade do MSAA";
+GLPREFMNU_MULTISAMPLE =	"Qualidade do MSAA";

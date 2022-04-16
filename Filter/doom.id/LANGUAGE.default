@@ -6,7 +6,6 @@ NORMALSKILL = 	"Hurt me plenty";
 HARDSKILL = 	"Ultra-Violence";
 PLUSSKILL = 	"Instant-Violence";
 
-QUITMSG = 		"Are you sure you want to quit this great mod?";
 QUITMSG9 = 		"Don't go now, there's a\nKirinware waiting at your computer!";
 QUITMSG10 = 	"Get out of here and go back to your\ninfantile cartoon.";
 QUITMSG13 = 	"just leave.\nwhen you come back, there will be a\nnaughty bat waiting for you!";

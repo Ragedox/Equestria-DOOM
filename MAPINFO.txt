@@ -6,7 +6,11 @@ gameinfo
 	DimAmount = 0.5
 	DefaultDropStyle = 2
 	CursorPic = "cursor"
-	AddQuitMessages = "$QUITGAME1", "$QUITGAME2", "$QUITGAME3", "$QUITGAME4"
+	AddQuitMessages = "$QUITGAME1", "$QUITGAME2", "$QUITGAME3", "$QUITGAME4", "$QUITGAME5", "$QUITGAME7"
+	CorrectPrintBold = true
+	MessageBoxClass = "Equestria_MessageBoxMenu"
+	//EventHandlers = "ScreenEffects"
+	//NormSideMove = 20.0, 40.0
 }
 
 gamedefaults 
