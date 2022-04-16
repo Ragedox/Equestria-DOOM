@@ -183,11 +183,11 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			
 			for (int i = 0; i < 64; i++)
 			{
-				A_SpawnItemEx("BFGSparkles", frandom(-45, 45), frandom(-45, 45), frandom(0, 45), random(25, 50), random(25, 50), random(-50, 50), frandom(0, 360));
+				A_SpawnItemEx("BFGSparkles", 0, 0, height/2, 50, 50, random(-50, 50), frandom(0, 360));
 			}
 		}
 		BFE1 BCD 2;
-		BFE1 E 8 A_BFGSpray();
+		BFE1 E 8 A_BFGSpray("EquestriaBFGExtra", 40, 15, 360, 1024, 32, 0, BFGF_MISSILEORIGIN);
 		BFE1 FGHIJ 3;
 		BFE1 K 1 A_FadeOut(0.1);
 		Wait;
