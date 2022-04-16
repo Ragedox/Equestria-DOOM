@@ -83,6 +83,8 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 	}
 }
 
+Class BlurSphereCheck : InvToken {}
+
 //Invulnerability Sphere
 
 Class EquestriaInvulSphere : CustomInventory replaces InvulnerabilitySphere

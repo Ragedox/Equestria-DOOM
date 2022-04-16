@@ -11,6 +11,23 @@ Class DoomEquestriaMonster : Actor
 		
 		BloodType "EquestriaBlood_Enemies", "EquestriaBloodSplatter", "EquestriaBloodAxe";
 	}
+	
+	/*void A_SmartChase()
+	{
+		if (CheckSight(target)== true)
+		{
+			A_Chase();
+			if (GetCVar("DEBUG"))
+				A_PrintBold("I see you!");
+		}
+		else
+		{
+			A_Wander();
+			if (GetCVar("DEBUG"))
+				A_PrintBold("Where are you!");
+		}
+	}*/
+
 	States
 	{
 	XDeath:
