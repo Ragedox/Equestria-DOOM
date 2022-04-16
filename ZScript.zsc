@@ -116,7 +116,13 @@ Class FoundHellPortal : InvToken {} //Season 1 End
 Class FoundDaisy : InvToken	{} //DOOM 2
 */
 
+//
+
 //#include "ZScript/DeathFade.zsc"
+#include "ZScript/Menus.zsc"
+//#include "ZScript/ScreenEffects.zsc"
+
+//
 
 #include "Actors/Player.zsc"
 #include "Actors/TitleMap.zsc"

@@ -1,0 +1,69 @@
+class Equestria_MessageBoxMenu : MessageBoxMenu
+{   
+	TextureID pic;
+	int w,h;
+
+	override void Drawer()
+	{   
+		pic = TexMan.CheckForTexture ("BGROUND1", TexMan.Type_Any);
+
+		[w,h] = TexMan.GetSize(pic);   
+
+		Screen.DrawTexture(pic, false, destWidth/2 - w/2, destHeight/2 - h/2, DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+	
+		QuitMessage();
+	}
+	
+	//gzdoom.pk3 > zscript > engine > ui > menu > messagebox.zs
+	void QuitMessage()
+	{
+		int i;
+		double y;
+		let fontheight = textFont.GetHeight() * NotifyFontScale;
+
+		y = destHeight / 2;
+
+		int c = mMessage.Count();
+		y -= c * fontHeight / 2;
+
+		for (i = 0; i < c; i++)
+		{
+			screen.DrawText (textFont, Font.CR_UNTRANSLATED, destWidth/2 - mMessage.StringWidth(i)*NotifyFontScale/2, y, mMessage.StringAt(i), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true, 
+				DTA_ScaleX, NotifyFontScale, DTA_ScaleY, NotifyFontScale);
+			y += fontheight;
+		}
+
+		if (mMessageMode == 0)
+		{
+			y += fontheight;
+			mMouseY = int(y);
+			screen.DrawText(textFont, messageSelection == 0? OptionMenuSettings.mFontColorSelection : OptionMenuSettings.mFontColor, destWidth / 2, y, Stringtable.Localize("$TXT_YES"), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, 	true, DTA_ScaleX, NotifyFontScale, DTA_ScaleY, NotifyFontScale);
+			screen.DrawText(textFont, messageSelection == 1? OptionMenuSettings.mFontColorSelection : OptionMenuSettings.mFontColor, destWidth / 2, y + fontheight, Stringtable.Localize("$TXT_NO"), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true, DTA_ScaleX, NotifyFontScale, DTA_ScaleY, NotifyFontScale);
+
+			if (messageSelection >= 0)
+			{
+				if ((MenuTime() % 8) < 6)
+				{
+					screen.DrawText(arrowFont, OptionMenuSettings.mFontColorSelection,
+						destWidth/2 - 11, y + fontheight * messageSelection, selector, DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+				}
+			}
+		}
+	}
+}
+
+class Equestria_MenuBackground : ListMenu
+{   
+	TextureID pic;
+	int w,h;
+
+	override void Drawer()
+	{   
+		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
+
+		[w,h] = TexMan.GetSize(pic);   
+
+		screen.DrawTexture (pic, true, 320/2 - w/2, 205/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
+		Super.Drawer();
+	}
+}

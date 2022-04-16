@@ -41,7 +41,7 @@ OptionMenu "WeaponsKeysMenu"
 	
 	ScrollTop 2
 	StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
-	Position -100
+	//Position -100
 
 	StaticText ""
 	Control    "$CNTRLMNU_NEXTWEAPON"     , "weapnext"
@@ -65,7 +65,7 @@ OptionMenu "OtherKeysMenu"
 	Title "$CNTRLMNU_OTHER_TITLE"
 	ScrollTop 2
 	StaticTextSwitchable "$CNTRLMNU_SWITCHTEXT1", "$CNTRLMNU_SWITCHTEXT2", "ControlMessage"
-	Position -50
+	//Position -50
 	
 	StaticText ""
 	Control    "$CNTRLMNU_AUTOMAP"         , "togglemap"

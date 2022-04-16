@@ -37,6 +37,8 @@ ListMenu "MainMenu"
 
 ListMenu "PlayMenu"
 {
+	Size "OptClean"
+	
 	StaticTextCentered 160, 45, "$CAMPAIGN"
 	
 	StaticTextCentered 160, 80, "$NEWNEWGAME"
@@ -55,47 +57,48 @@ ListMenu "PlayMenu"
 ListMenu "EquestriaOptions"
 {
 	Size "Clean"
-	
-	StaticTextCentered 160, 10,		"Options"
+	Class "Equestria_MenuBackground"
+	StaticTextCentered 160, -40,		"Options"
 
-	StaticTextCentered 160, 50,		"$AUDIOSETTINGS"
-	StaticTextCentered 160, 75,		"$VIDEOSETTINGS"
-	StaticTextCentered 160, 100,	"$MNU_PLAYERSETUP"
-	StaticTextCentered 160, 125,	"$UISETTINGS"
-	StaticTextCentered 160, 150,	"$CONTROLSETTINGS"
-	StaticTextCentered 160, 175,	"$ADVANCEDSETTINGS"
+	StaticTextCentered 160, 25,		"$AUDIOSETTINGS"
+	StaticTextCentered 160, 50,		"$VIDEOSETTINGS"
+	StaticTextCentered 160, 75,	"$MNU_PLAYERSETUP"
+	StaticTextCentered 160, 100,	"$UISETTINGS"
+	StaticTextCentered 160, 125,	"$CONTROLSETTINGS"
+	StaticTextCentered 160, 150,	"$ADVANCEDSETTINGS"
 	
 	Linespacing 25
-	Position 130, 50
+	Position 130, 25
 	PatchItem "TNT1A0",	"1",		"SoundOptions"
-	Position 130, 75
+	Position 130, 50
 	PatchItem "TNT1A0",	"2",		"VideoSettings"
-	Position 85, 100
+	Position 85, 75
 	PatchItem "TNT1A0",	"3",		"NewPlayerMenu"
-	Position 75, 125
+	Position 75, 100
 	PatchItem "TNT1A0",	"4",		"UISettings"
-	Position 45, 150
+	Position 45, 125
 	PatchItem "TNT1A0",	"5",		"ControlSettings"
-	Position 95, 175
+	Position 95, 150
 	PatchItem "TNT1A0",	"6",		"OptionsMenuFull"
 }
 
 ListMenu "ControlSettings"
 {
-	Size "Clean"
+	Size "OptClean"
+	Class "Equestria_MenuBackground"
 	
-	StaticTextCentered 160, 10,		"$CONTROLSETTINGS"
+	StaticTextCentered 160, 20,		"$CONTROLSETTINGS"
 
-	StaticTextCentered 160, 80,		"$OPTMNU_CONTROLS"
-	StaticTextCentered 160, 105,	"$OPTMNU_MOUSE"
-	StaticTextCentered 160, 130,	"$OPTMNU_JOYSTICK"
+	StaticTextCentered 160, 65,		"$OPTMNU_CONTROLS"
+	StaticTextCentered 160, 90,	"$OPTMNU_MOUSE"
+	StaticTextCentered 160, 115,	"$OPTMNU_JOYSTICK"
 	
-	Linespacing 20
-	Position 90, 80
+	Linespacing 25
+	Position 90, 65
 	PatchItem "TNT1A0",	"1",		"KeyMapping"
-	Position 75, 105
+	Position 75, 90
 	PatchItem "TNT1A0",	"2",		"MouseOptions"
-	Position 45, 130
+	Position 45, 115
 	PatchItem "TNT1A0",	"3",		"JoystickOptions"
 }
 
@@ -267,7 +270,7 @@ OptionValue "GoreType"
 	2, "$REALISTIC"
 }
 
-AddOptionMenu "NewPlayerMenu" 
+/*AddOptionMenu "NewPlayerMenu" 
 {
 	Position -115
 }
@@ -294,17 +297,4 @@ AddOptionMenu "MidiPlayerOptions"
 AddOptionMenu "ModReplayerOptions"
 {
 	Position -115
-}
-
-/*ListMenu "SkillMenu" idk what this is
-{
-	IfGame(Doom, Chex)
-	{
-		StaticPatch 96, 14, "M_NEWG", 0, "$MNU_NEWGAME"
-	}
-	IfGame(Doom, Strife, Chex)
-	{
-		//StaticPatch 0, 38, "M_SKILL", 0, "$MNU_CHOOSESKILL"
-		Position 48, 63
-	}
 }*/
