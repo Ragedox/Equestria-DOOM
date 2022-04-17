@@ -59,7 +59,7 @@ class Equestria_MenuBackground : ListMenu
 
 	override void Drawer()
 	{   
-		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
+		pic = TexMan.CheckForTexture ("BGROUND1", TexMan.Type_Any);
 
 		[w,h] = TexMan.GetSize(pic);   
 
