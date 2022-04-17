@@ -149,7 +149,7 @@ Class BarrelDebrisSmoke : EquestriaRocketSmoke
 {	Default{	Alpha 0.35;	Scale 0.2;	VSpeed 0;}	}
 
 Class AcidBarrel : EquestriaExploBarrel
-{	Default { -NOBLOOD +LOOKALLAROUND BloodColor "green"; BloodType "AcidDrop"; }
+{	Default { -NOBLOOD +LOOKALLAROUND BloodColor "green"; BloodType "AcidDrop"; DeathSound "weapons/sshotf"; }
 	States
 	{
 	Pain:
@@ -178,7 +178,7 @@ Class AcidBarrel : EquestriaExploBarrel
 		BAR2 # 10;
 	XDeath:
 	XDeath.BarrelExp:
-		BAR2 D 5 Bright A_XScream();
+		BAR2 D 5 Bright A_Scream();
 		BAR2 E 5 Bright
 		{
 			A_Explode(5, 64, XF_NOTMISSILE);
