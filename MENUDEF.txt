@@ -1,5 +1,7 @@
 ListMenu "MainMenu"
 {
+	AnimatedTransition
+	//Size 430, 310
 	Size "Clean"
 	
 	StaticPatchCentered 160, -40, "M_DOOM"
@@ -37,32 +39,35 @@ ListMenu "MainMenu"
 
 ListMenu "PlayMenu"
 {
+	AnimatedTransition
 	Size "OptClean"
+	Class "Equestria_MenuBackground2"
 	
-	StaticTextCentered 160, 45, "$CAMPAIGN"
+	StaticTextCentered 160, -20, "$CAMPAIGN"
 	
-	StaticTextCentered 160, 80, "$NEWNEWGAME"
-	StaticTextCentered 160, 105, "$MNU_SAVEGAME"
-	StaticTextCentered 160, 130, "$MNU_LOADGAME"
+	StaticTextCentered 160, 65, "$NEWNEWGAME"
+	StaticTextCentered 160, 90, "$MNU_SAVEGAME"
+	StaticTextCentered 160, 115, "$MNU_LOADGAME"
 	
 	Linespacing 25
-	Position 105, 80
+	Position 105, 65
 	PatchItem "TNT1A0",	"1", "PlayerclassMenu"
-	Position 100, 105
+	Position 100, 90
 	PatchItem "TNT1A0",	"2", "SaveGameMenu"
-	Position 100, 130
+	Position 100, 115
 	PatchItem "TNT1A0",	"3", "LoadGameMenu"
 }
 
 ListMenu "EquestriaOptions"
 {
+	AnimatedTransition
 	Size "Clean"
 	Class "Equestria_MenuBackground"
 	StaticTextCentered 160, -40,		"Options"
 
 	StaticTextCentered 160, 25,		"$AUDIOSETTINGS"
 	StaticTextCentered 160, 50,		"$VIDEOSETTINGS"
-	StaticTextCentered 160, 75,	"$MNU_PLAYERSETUP"
+	StaticTextCentered 160, 75,		"$MNU_PLAYERSETUP"
 	StaticTextCentered 160, 100,	"$UISETTINGS"
 	StaticTextCentered 160, 125,	"$CONTROLSETTINGS"
 	StaticTextCentered 160, 150,	"$ADVANCEDSETTINGS"
@@ -84,13 +89,14 @@ ListMenu "EquestriaOptions"
 
 ListMenu "ControlSettings"
 {
+	AnimatedTransition
 	Size "OptClean"
 	Class "Equestria_MenuBackground"
 	
 	StaticTextCentered 160, 20,		"$CONTROLSETTINGS"
 
 	StaticTextCentered 160, 65,		"$OPTMNU_CONTROLS"
-	StaticTextCentered 160, 90,	"$OPTMNU_MOUSE"
+	StaticTextCentered 160, 90,		"$OPTMNU_MOUSE"
 	StaticTextCentered 160, 115,	"$OPTMNU_JOYSTICK"
 	
 	Linespacing 25
@@ -104,6 +110,9 @@ ListMenu "ControlSettings"
 
 ListMenu "EpisodeMenu"
 {
+	AnimatedTransition
+	CenterMenu
+	Class "Equestria_MenuBackground2"
 	Size "Clean"
 
 	NetgameMessage "$NEWGAME"
@@ -115,13 +124,13 @@ ListMenu "EpisodeMenu"
 
 ListMenu "SkillMenu"
 {
+	CenterMenu
+	Class "Equestria_MenuBackground2"
 	StaticPatchCentered 160, 14, "M_NGAME"
 	linespacing 16
 		
 	StaticPatchCentered 160, 38, "M_SKILL"
 	Position 48, 63
-		
-	CenterMenu
 }
 
 OptionMenu "VideoSettings"
@@ -230,17 +239,17 @@ OptionMenu "UISettings"
 	StaticText ""
 	
 	StaticText "$OPTMNU_HUD"
-	ScaleSlider "$HUDMNU_UISCALE",				"uiscale", 0.0, 8.0, 1.0, "$SCALEMNU_ADAPT"
-	Option "$SCALEMNU_HUDASPECT", 				"hud_aspectscale", "OnOff"
-	Slider "$DSPLYMNU_SCREENSIZE",				"screenblocks", 				3.0, 12.0, 1.0, 0
-	Option	"Warning on Startup", "WarningStartup", "onoff"
+	ScaleSlider "$HUDMNU_UISCALE",			"uiscale", 0.0, 8.0, 1.0, "$SCALEMNU_ADAPT"
+	Option "$SCALEMNU_HUDASPECT", 			"hud_aspectscale", "OnOff"
+	Slider "$DSPLYMNU_SCREENSIZE",			"screenblocks", 				3.0, 12.0, 1.0, 0
+	Option	"Warning on Startup", 			"WarningStartup", "onoff"
 }
 
 OptionMenu "KeyMapping"
 {
 	Title "$CNTRLMNU_TITLE"
 
-	Position -175
+	//Position 175
 	
 	Submenu    "$CNTRLMNU_ACTION"      , "ActionKeysMenu"
 	Submenu    "$CNTRLMNU_WEAPONS"     , "WeaponsKeysMenu"
