@@ -3,6 +3,8 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 	Default
 	{
 		//$Title Super Shotgun
+		Tag "$TAG_SUPERSHOTGUN";
+		
 		Weapon.SelectionOrder 2;
 		Weapon.AmmoUse 2;
 		Weapon.AmmoGive 8;
@@ -10,7 +12,8 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 		
 		Inventory.PickupMessage "$GOTSHOTGUN2";
 		Obituary "$OB_MPSSHOTGUN";
-		Tag "$TAG_SUPERSHOTGUN";
+		
+		AttackSound "weapons/sshotf";
 	}
 	States
 	{
@@ -59,7 +62,6 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 		SHT2 A 4
 		{
 			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
-			A_StartSound ("weapons/sshotf", CHAN_WEAPON);
 			A_GunFlash();
 			A_WeaponOffset(-3, 5, WOF_ADD);
 			
@@ -77,7 +79,6 @@ Class EquestriaSuperShotgun : DoomEquestriaWeapon replaces SuperShotgun
 		SHT2 A 4
 		{
 			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
-			A_StartSound ("weapons/sshotf", CHAN_WEAPON);
 			A_GunFlash();
 			A_WeaponOffset(3, 5, WOF_ADD);
 			

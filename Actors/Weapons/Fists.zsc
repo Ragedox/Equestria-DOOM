@@ -38,8 +38,8 @@ Class BerserkFist : DoomEquestriaWeapon
 		Wait;
 		
 	Fire:
-		PUNG B 4 A_StartSound("skeleton/swing");
-		PUNG C 4 A_CustomPunch(10 * Random(1, 10), TRUE, 0, "BerserkPuff", 50, 0, 0, "BasicArmorBonus", "skeleton/melee");
+		PUNG B 4;
+		PUNG C 4 A_CustomPunch(10 * Random(1, 10), TRUE, 0, "BerserkPuff", 50, 0, 0, "BasicArmorBonus", "skeleton/melee", "skeleton/swing");
 		PUNG D 5;
 		PUNG C 4;
 		PUNG B 5 A_ReFire;
