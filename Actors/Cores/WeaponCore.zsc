@@ -293,12 +293,17 @@ Class BulletTracer : FastProjectile
 		+NOPAIN
 		+Bright
 		
-		Speed 200; FastSpeed 400;
+		Speed 256; FastSpeed 512;
 		Damage 0;
 		RenderStyle "Add";
 		Alpha 0.75;
 		
-		Height 2; Radius 1;
+		Height 4; Radius 2;
+	}
+	override void PostBeginPlay()
+	{
+		if(GetCVar("BULLETTRACER")==0)
+			Destroy();
 	}
 	States
 	{
@@ -306,9 +311,9 @@ Class BulletTracer : FastProjectile
 		TNT1 A 2;
 		PUFF A 1;
 		Wait;
-	
+		
 	Death:
-		TNT1 A 1;
+		TNT1 A 0;
 		Stop;
 	}
 }
