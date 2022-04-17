@@ -12,6 +12,8 @@ Class EquestriaRifle : DoomEquestriaWeapon
 		Inventory.PickupMessage "$GOTRIFLE";
 		Obituary "$OB_MPCHAINGUN";
 		Tag "Rifle";
+		
+		AttackSound "weapons/chngun";
 	}
 	States
 	{
@@ -51,7 +53,6 @@ Class EquestriaRifle : DoomEquestriaWeapon
 		{
 			A_FireBullets(1, 2, 1, 5, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash();
-			A_StartSound("weapons/chngun", CHAN_WEAPON);
 		
 			A_WeaponOffset(0, 34, WOF_INTERPOLATE | WOF_KEEPX);
 			

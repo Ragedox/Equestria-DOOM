@@ -18,6 +18,7 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		Inventory.Pickupmessage "$PICKUP_PISTOL_DROPPED";
 		
 		Tag "$TAG_PISTOL";
+		AttackSound "weapons/pistol";
 	}
 	States
 	{
@@ -50,7 +51,6 @@ Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
 		{
 			A_FireBullets (1, 1, 1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_WeaponOffset(0, 40, WOF_KEEPX | WOF_INTERPOLATE);
-			A_StartSound("weapons/pistol", CHAN_WEAPON);
 			A_GunFlash();
 			
 			if (GetCVAR("WeaponLight") == true)
