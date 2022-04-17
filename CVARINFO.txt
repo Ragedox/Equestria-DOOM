@@ -9,5 +9,5 @@ server bool GibsStayForever = false;
 server bool FlatDecorations = true;
 server bool FlatDecals = false;
 server bool WeaponLight = true;
-
+server bool BULLETTRACER = true;
 server bool DEBUG = false;
