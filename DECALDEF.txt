@@ -1,6 +1,6 @@
 Decal ChipDecal
 {
-	Pic BulletDecal
+	Pic BULTDCAL
 	Shade "00 00 00"
 	Y-Scale 0.75 X-Scale 0.75
 	RandomFlipY RandomFlipX
@@ -8,14 +8,14 @@ Decal ChipDecal
 
 Decal ShellLowerDecal
 {
-	Pic BulletDecal
+	Pic BULTDCAL
 	Shade "00 00 00"
 	RandomFlipY RandomFlipX
 }
 
 Decal ShellDecal
 {
-	Pic BulletDecal
+	Pic BULTDCAL
 	Add 1
 	Animator GoAway
 	Shade "Red"
