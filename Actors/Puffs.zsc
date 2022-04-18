@@ -78,13 +78,19 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 	
 	Spawn:
 		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
-		TNT1 AAA 0 A_SpawnProjectile("PuffSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
 		TNT1 A 0
 		{
+			if (abs(pos.z - GetZAt()) <= 5)
+			{	for (int i = 0; i < 3; i++)
+				A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(50, 90));
+				/*A_SpawnItemEx("BulletDecal",0,0,0,0,0,0,0);*/ }
+			else
+			{	for (int i = 0; i < 3; i++)
+				A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360)); }
+
 			bSPRITEFLIP = randompick(0, 1);
 			A_SetRoll(random(0, 359));
 		}
-		
 		PUFF A random(5, 8) Bright;
 		PUFF B 4;
 	
@@ -104,6 +110,35 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 	}
 }
 
+Class BulletDecal : Actor
+{
+	Default
+	{
+		Height 4; Radius 4;
+		
+		+DONTSPLASH
+		+NOTELEPORT
+		+NOBLOCKMAP
+		+THRUACTORS
+		+MOVEWITHSECTOR
+		+NODAMAGETHRUST
+		+FLOORCLIP
+		+GHOST
+		
+		+FLATSPRITE
+		+ROLLSPRITE +ROLLCENTER
+		
+		RenderStyle "Shaded"; StencilColor "Black";
+	}
+	States
+	{
+	Spawn:
+		DCAL A 35 * 10 NoDelay A_SetRoll(random(0, 359));
+		#### # 1 A_FadeOut(0.1);
+		Wait;
+	}
+}
+
 Class Player_BulletPuff : EquestriaBulletPuff
 {	Default	{	AttackSound "";	}	}
 
@@ -119,9 +154,9 @@ Class ChainsawPuff : Player_BulletPuff
 		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
 		TNT1 AAA 0
 		{
-			A_SpawnProjectile("ChainsawSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
-			A_SpawnProjectile("PuffSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
-			A_SpawnProjectile("PuffSmoke",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
+			A_SpawnProjectile("ChainsawSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
+			A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
+			A_SpawnProjectile("PuffSmoke",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 		}
 		TNT1 A 0
 		{
@@ -145,13 +180,15 @@ Class ShotgunPuff : EquestriaBulletPuff
 	{
 	Spawn:
 		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
-		TNT1 AAA 0
-		{
-			A_SpawnProjectile("PuffSmoke",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
-			A_SpawnProjectile("PuffSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
-		}
 		TNT1 A 0
 		{
+			if (abs(pos.z - GetZAt()) <= 1)
+				for (int i = 0; i < 3; i++)
+				A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(50, 90));
+			else
+				for (int i = 0; i < 3; i++)
+				A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
+				
 			bSPRITEFLIP = randompick(0, 1);
 			A_SetRoll(random(0, 359));
 		}
