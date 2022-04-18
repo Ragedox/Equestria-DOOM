@@ -1,6 +1,7 @@
 #include "SBARINFO.Mugshots"
 
 base Doom;
+//height 16;
 
 statusbar normal
 {
@@ -84,7 +85,7 @@ statusbar normal
 	//drawbar "STBLUR01", "STBLURBG", poweruptime("BlurSphere"), vertical, 160, 198; // please, please, please, just work :/
 }}
 
-statusbar fullscreen, fullscreenoffsets // ZDoom HUD
+statusbar fullscreen, fullscreenoffsets
 {
 	InInventory "HUDDisabled"
 	{	/*Nothing*/	}

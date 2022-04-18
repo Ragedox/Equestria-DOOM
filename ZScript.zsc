@@ -120,6 +120,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 
 //#include "ZScript/DeathFade.zsc"
 #include "ZScript/Menus.zsc"
+#include "ZScript/StatusScreen.zsc"
 //#include "ZScript/ScreenEffects.zsc"
 
 //

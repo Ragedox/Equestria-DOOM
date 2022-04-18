@@ -133,6 +133,18 @@ ListMenu "SkillMenu"
 	Position 48, 63
 }
 
+AddListMenu "SaveGameMenu"
+{
+	Position 80,20
+	//Class "Equestria_SaveMenu"
+}
+
+AddListMenu "LoadGameMenu"
+{
+	Position 80,20
+	//Class "Equestria_SaveMenu"
+}
+
 OptionMenu "VideoSettings"
 {
 	Title "$VIDEOSETTINGS"
@@ -251,12 +263,12 @@ OptionMenu "KeyMapping"
 
 	//Position 175
 	
-	Submenu    "$CNTRLMNU_ACTION"      , "ActionKeysMenu"
-	Submenu    "$CNTRLMNU_WEAPONS"     , "WeaponsKeysMenu"
-	Submenu    "$MAPCNTRLMNU_CONTROLS" , "MapControlsMenu"
-	Submenu    "$CNTRLMNU_OTHER"       , "OtherKeysMenu"
+	Submenu		"$CNTRLMNU_ACTION",		"ActionKeysMenu"
+	Submenu		"$CNTRLMNU_WEAPONS",	"WeaponsKeysMenu"
+	Submenu		"$MAPCNTRLMNU_CONTROLS","MapControlsMenu"
+	Submenu		"$CNTRLMNU_OTHER",		"OtherKeysMenu"
 	StaticText ""
-	Option "$CNTRLMNU_LAYOUT",			"cl_defaultconfiguration", "Layouts"
+	Option 		"$CNTRLMNU_LAYOUT",		"cl_defaultconfiguration", "Layouts"
 	SafeCommand "$OPTMNU_DEFAULTS",		"resetb2defaults"
 }
 

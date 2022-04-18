@@ -26,3 +26,7 @@ QUITGAME6 =		"you quit and i'll jizz\nin your cystholes! :3";
 QUITGAME7 =		"Hey!\nIf you press N,\nWe wii say 'fuck' in the game!";
 
 LOWHEALTH = 	"Low Health";
+
+TXT_IMKILLS = "Kills";
+TXT_IMITEMS = "Items";
+TXT_IMSECRETS = "Secrets";
