@@ -115,14 +115,14 @@ Class EquestriaRocket : Actor replaces Rocket
 		TNT1 A 0{
 			if (abs(pos.z - GetZAt()) <= 1)
 				return ResolveState("Death.Floor");
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 16; i++)
 				A_SpawnProjectile("ExplosionSparkle", 0, 0, frandom(0, 360), CMF_AIMDIRECTION,frandom(0, 360));
 	
 			return state(null);
 		}
 	XDeath:
 		TNT1 A 0{
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 16; i++)
 				A_SpawnProjectile("Smoke", 0, 0, frandom(0, 360), CMF_AIMDIRECTION,frandom(0, 360));
 		}
 
@@ -132,7 +132,7 @@ Class EquestriaRocket : Actor replaces Rocket
 			A_QuakeEx(4, 4, 4, 16, 0, 200, "", QF_SCALEDOWN, 0,0,0, 1);
 		}
 		
-		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), random (0, 359), CMF_AIMDIRECTION, random(0, -90));
+		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), frandom(0, 360), CMF_AIMDIRECTION, random(0, -90));
 
 		MISL C 4 Bright;
 		MISL D 1 A_FadeOut(0.1);
@@ -141,11 +141,11 @@ Class EquestriaRocket : Actor replaces Rocket
 	Death.FLoor:
 		TNT1 A 0{
 			bFORCEXYBILLBOARD = false;
-			for (int i = 0; i < 10; i++)
-				A_SpawnProjectile("ExplosionSparkle",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 90));
+			for (int i = 0; i < 16; i++)
+				A_SpawnProjectile("ExplosionSparkle",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 95));
 		}
 		TNT1 A 0{
-			for (int i = 0; i < 10; i++)
+			for (int i = 0; i < 16; i++)
 				A_SpawnProjectile("Smoke",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(0, 90));
 		}
 
@@ -155,7 +155,7 @@ Class EquestriaRocket : Actor replaces Rocket
 			A_QuakeEx(4, 4, 4, 16, 0, 200, "", QF_SCALEDOWN, 0,0,0, 1);
 		}
 		
-		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), random (0, 359), CMF_AIMDIRECTION, random(0, -90));
+		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), frandom(0, 360), CMF_AIMDIRECTION, random(0, -90));
 
 		MISL FGH 2 Bright;
 		MISL HHI 1 A_FadeOut(0.1);
