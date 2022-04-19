@@ -1,5 +1,103 @@
 class Equestria_StatusScreen : DoomStatusScreen
 {
+
+	override int drawLF ()
+	{
+		bool ispatch = wbs.LName0.isValid();
+		int oldy = TITLEY * scaleFactorY + 100;
+		int h;
+		
+		if (!ispatch)
+		{
+			let asc = mapname.mFont.GetMaxAscender(lnametexts[1]);
+			if (asc > TITLEY - 2)
+			{
+				oldy = (asc+2) * scaleFactorY;
+			}
+		}
+		
+		int y = DrawName(oldy, wbs.LName0, lnametexts[0]);
+
+		// If the displayed info is made of patches we need some additional offsetting here.
+		if (ispatch) 
+		{
+			int disp = 0;
+			// The offset getting applied here must at least be as tall as the largest ascender in the following text to avoid overlaps.
+			if (authortexts[0].length() == 0)
+			{
+				int h1 = BigFont.GetHeight() - BigFont.GetDisplacement();
+				int h2 = (y - oldy) / scaleFactorY / 4;
+				disp = min(h1, h2);
+				
+				if (!TexMan.OkForLocalization(finishedPatch, "$WI_FINISHED"))
+				{
+					disp += finished.mFont.GetMaxAscender("$WI_FINISHED");
+				}
+			}
+			else
+			{
+					disp += author.mFont.GetMaxAscender(authortexts[0]);
+			}
+			y += disp * scaleFactorY;
+		}
+		
+		y = DrawAuthor(y, authortexts[0]);
+		
+		// draw "Finished!"
+
+		int statsy = multiplayer? NG_STATSY : SP_STATSY * scaleFactorY;
+		if (y < (statsy - finished.mFont.GetHeight()*3/4) * scaleFactorY)
+		{
+			// don't draw 'finished' if the level name is too tall
+			y = DrawPatchOrText(y, finished, finishedPatch, "$WI_FINISHED");
+		}
+		return y;
+	}
+	
+	override void drawEL ()
+	{
+		bool ispatch = TexMan.OkForLocalization(enteringPatch, "$WI_ENTERING");
+		int oldy = TITLEY * scaleFactorY + 400;
+
+		if (!ispatch)
+		{
+			let asc = entering.mFont.GetMaxAscender("$WI_ENTERING");
+			if (asc > TITLEY - 2)
+			{
+				oldy = (asc+2) * scaleFactorY;
+			}
+		}
+
+		int y = DrawPatchOrText(oldy, entering, enteringPatch, "$WI_ENTERING");
+		
+		// If the displayed info is made of patches we need some additional offsetting here.
+		
+		if (ispatch)
+		{
+			int h1 = BigFont.GetHeight() - BigFont.GetDisplacement();
+			let size = TexMan.GetScaledSize(enteringPatch);
+			int h2 = int(size.Y);
+			let disp = min(h1, h2) / 4;
+			// The offset getting applied here must at least be as tall as the largest ascender in the following text to avoid overlaps.
+			if (!wbs.LName1.isValid())
+			{
+				disp += mapname.mFont.GetMaxAscender(lnametexts[1]);
+			}
+			y += disp * scaleFactorY;
+		}
+
+		y = DrawName(y, wbs.LName1, lnametexts[1]);
+
+		if (wbs.LName1.isValid() && authortexts[1].length() > 0) 
+		{
+			// Consdider the ascender height of the following text.
+			y += author.mFont.GetMaxAscender(authortexts[1]) * scaleFactorY;
+		}
+			
+		DrawAuthor(y, authortexts[1]);
+
+	}
+	
 	override void Ticker(void)
 	{
 		// counter for general background animation
@@ -37,10 +135,10 @@ class Equestria_StatusScreen : DoomStatusScreen
 	override void drawStats (void)
 	{
 		// line height
-		int lh = 20;
+		int lh = 25;
 		
 		drawLF();
-	
+
 		let tcolor = Font.CR_RED;
 
 		Font textFont = BigFont;
@@ -59,16 +157,30 @@ class Equestria_StatusScreen : DoomStatusScreen
 		int allwidth = max(k_width, i_width, s_width) + perc_width;
 		if ((SP_STATSX*2 + allwidth) > 320)	// The content does not fit so adjust the position a bit.
 			statsx = max(0, (320 - allwidth) / 2);
-
-		DrawText (textFont, tcolor, statsx - 50, SP_STATSY+20, "$TXT_IMKILLS");
-		DrawText (textFont, tcolor, statsx - 50, SP_STATSY+lh+20, "$TXT_IMITEMS");
-		DrawText (textFont, tcolor, statsx - 50, SP_STATSY+2*lh+20, "$TXT_IMSECRETS");
-		DrawText (textFont, tcolor, SP_TIMEX, timey + lh, "$TXT_IMTIME");
-		if (wbs.partime) DrawText (textFont, tcolor, 160 + SP_TIMEX + 25, timey + lh, "$TXT_IMPAR");
+		
+		let shadowcolor = Font.CR_BLACK;
+		
+		///// Shadow
+			DrawText (BigFont, shadowcolor, statsx - 50 + 1, SP_STATSY+15 + 1, Stringtable.Localize("$TXT_IMKILLS"));
+			DrawText (BigFont, shadowcolor, statsx - 50 + 1, SP_STATSY+lh+15 + 1, Stringtable.Localize("$TXT_IMITEMS"));
+			DrawText (BigFont, shadowcolor, statsx - 50 + 1, SP_STATSY+2*lh+15 + 1, Stringtable.Localize("$TXT_IMSECRETS"));
+			DrawText (BigFont, shadowcolor, SP_TIMEX + 1, timey + lh + 1, "$TXT_IMTIME");
+			if (wbs.partime) DrawText (textFont, shadowcolor, 160 + SP_TIMEX + 15 + 1, timey + lh + 1, "$TXT_IMPAR");
 			 
-		drawPercent (textFont, 320 - statsx + 50, SP_STATSY+20, cnt_kills[0], wbs.maxkills, true, tcolor);
-		drawPercent (textFont, 320 - statsx + 50, SP_STATSY+lh+20, cnt_items[0], wbs.maxitems, true, tcolor);
-		drawPercent (textFont, 320 - statsx + 50, SP_STATSY+2*lh+20, cnt_secret[0], wbs.maxsecret, true, tcolor);
+			drawPercent (textFont, 320 - statsx + 50 + 1, SP_STATSY+15 + 1, cnt_kills[0], wbs.maxkills, true, shadowcolor);
+			drawPercent (textFont, 320 - statsx + 50 + 1, SP_STATSY+lh+15 + 1, cnt_items[0], wbs.maxitems, true, shadowcolor);
+			drawPercent (textFont, 320 - statsx + 50 + 1, SP_STATSY+2*lh+15 + 1, cnt_secret[0], wbs.maxsecret, true, shadowcolor);
+		///// Shadow
+		
+		DrawText (BigFont, tcolor, statsx - 50, SP_STATSY+15, Stringtable.Localize("$TXT_IMKILLS"));
+		DrawText (BigFont, tcolor, statsx - 50, SP_STATSY+lh+15, Stringtable.Localize("$TXT_IMITEMS"));
+		DrawText (BigFont, tcolor, statsx - 50, SP_STATSY+2*lh+15, Stringtable.Localize("$TXT_IMSECRETS"));
+		DrawText (BigFont, tcolor, SP_TIMEX, timey + lh, "$TXT_IMTIME");
+		if (wbs.partime) DrawText (textFont, tcolor, 160 + SP_TIMEX + 15, timey + lh, "$TXT_IMPAR");
+			 
+		drawPercent (textFont, 320 - statsx + 50, SP_STATSY+15, cnt_kills[0], wbs.maxkills, true, tcolor);
+		drawPercent (textFont, 320 - statsx + 50, SP_STATSY+lh+15, cnt_items[0], wbs.maxitems, true, tcolor);
+		drawPercent (textFont, 320 - statsx + 50, SP_STATSY+2*lh+15, cnt_secret[0], wbs.maxsecret, true, tcolor);
 			 
 		// This really sucks - not just by its message - and should have been removed long ago!
 		// To avoid problems here, the "sucks" text only gets printed if the lump is present, this even applies to the text replacement.
@@ -77,13 +189,17 @@ class Equestria_StatusScreen : DoomStatusScreen
 		{ // "sucks"
 			int x = 160 - SP_TIMEX;
 			int y = timey;
-			DrawText (textFont, tcolor, x  - textFont.StringWidth("$TXT_IMSUCKS"), y - textFont.GetHeight() - 2 +20,	"$TXT_IMSUCKS");
+			
+				DrawText (textFont, shadowcolor, x  - textFont.StringWidth("$TXT_IMSUCKS") + 1, y - textFont.GetHeight() - 2 +20 + 1, "$TXT_IMSUCKS");
+			DrawText (textFont, tcolor, x  - textFont.StringWidth("$TXT_IMSUCKS"), y - textFont.GetHeight() - 2 +20, "$TXT_IMSUCKS");
 		}
 
 		if (wi_showtotaltime)
-			drawTimeFont (textFont, 160 - statsx, timey + lh, cnt_total_time, tcolor);
+		{		drawTimeFont (textFont, 160 - statsx + 1, timey + lh + 1, cnt_total_time, shadowcolor);
+			drawTimeFont (textFont, 160 - statsx, timey + lh, cnt_total_time, tcolor); }
 
 		if (wbs.partime)
-			drawTimeFont (textFont, 320 - statsx + 25, timey + lh, cnt_par, tcolor);
+		{		drawTimeFont (textFont, 320 - statsx + 25 + 1, timey + lh + 1, cnt_par, shadowcolor);
+			drawTimeFont (textFont, 320 - statsx + 25, timey + lh, cnt_par, tcolor); }
 	}
 }
