@@ -1,8 +1,10 @@
 [enu default]
 
+MAINCHARACTER = "Shainer";
+
 BABYSKILL =		"I'm a Little Pony";
-EASYSKILL = 	"Hey, not too rough";
-NORMALSKILL = 	"Hurt me plenty";
+EASYSKILL = 	"Hey, Not Too Rough";
+NORMALSKILL = 	"Hurt Me Plenty";
 HARDSKILL = 	"Ultra-Violence";
 PLUSSKILL = 	"Instant-Violence";
 
