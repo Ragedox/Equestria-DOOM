@@ -1,5 +1,7 @@
 [enu default]
 
+MAINCHARACTER = "Magnum";
+
 BABYSKILL =		"I am a Small Filly!";
 EASYSKILL = 	"Will this hurt?";
 NORMALSKILL = 	"Bring on the pain";
