@@ -1,3 +1,5 @@
+cutscene/intro		S1INTRO
+
 /*Player */
 
 $playersound	player	male	*pain50		Sounds/Player/ds50plpain.wav
