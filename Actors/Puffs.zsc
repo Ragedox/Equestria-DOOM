@@ -82,7 +82,8 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 		{
 			if (abs(pos.z - GetZAt()) <= 5)
 			{	for (int i = 0; i < 3; i++)
-				A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(50, 90));
+				{
+				A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(50, 90)); }
 				/*A_SpawnItemEx("BulletDecal",0,0,0,0,0,0,0);*/ }
 			else
 			{	for (int i = 0; i < 3; i++)
@@ -133,7 +134,7 @@ Class BulletDecal : Actor
 	States
 	{
 	Spawn:
-		DCAL A 35 * 10 NoDelay A_SetRoll(random(0, 359));
+		DCAL A 350 NoDelay A_SetRoll(random(0, 359));
 		#### # 1 A_FadeOut(0.1);
 		Wait;
 	}
