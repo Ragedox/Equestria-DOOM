@@ -6,8 +6,6 @@ Class FreeEquestria_DoomPlayer : EquestriaDoomPlayer replaces EquestriaDoomPlaye
 {
 	Default
 	{
-		Player.DisplayName "Magnum";
-
 		Player.WeaponSlot 5, "FreeEquestria_RocketLauncher";
 		
 		Player.Colorset 0, "$TXT_COLOR_RED",		0x20, 0x2F,  0x22;
