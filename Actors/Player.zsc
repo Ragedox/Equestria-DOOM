@@ -16,7 +16,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		
 		Player.ViewHeight 47; Player.AttackZOffset 19;
 		
-		Player.DisplayName "Shainer";
+		Player.DisplayName "$MAINCHARACTER";
 		
 		Player.DamageScreenColor "Red";
 		
