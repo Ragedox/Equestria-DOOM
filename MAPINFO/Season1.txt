@@ -16,7 +16,7 @@ map S1E1 lookup "SEASON1E1"
 	
 	sky1 = RSKY4
 
-	//par = 30
+	par = 60
 	
 	BorderTexture = "STARGR2"
 }
