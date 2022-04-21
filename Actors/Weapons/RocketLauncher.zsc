@@ -1,4 +1,4 @@
-Class EquestriaRocketLauncher : DoomEquestriaWeapon replaces RocketLauncher
+Class EquestriaRocketLauncher : EquestriaDoomWeapon replaces RocketLauncher
 {
 	Default
 	{

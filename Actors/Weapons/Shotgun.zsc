@@ -1,4 +1,4 @@
-Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
+Class EquestriaShotgun : EquestriaDoomWeapon replaces Shotgun
 {
 	Default
 	{

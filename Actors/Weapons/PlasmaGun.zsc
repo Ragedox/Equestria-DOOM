@@ -1,4 +1,4 @@
-Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
+Class EquestriaPlasmaGun : EquestriaDoomWeapon replaces PlasmaRifle
 {
 	Default
 	{
@@ -42,7 +42,7 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 	Fire:	
 		PLSG A 1
 		{
-			A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -14);
+			//A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -14);
 			A_FirePlasma();
 		}
 		PLSG A 2;
@@ -53,13 +53,9 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		PLSG B 1
 		{
 			if (GetCVAR("AuraToggle") == true)
-			{
 				A_Overlay(10, "Aura.Chill");
-			}
 			else
-			{
 				A_ClearOverlays(10, 11);
-			}
 		}
 		PLSG CDE 1;
 		PLSG F 12;
@@ -135,6 +131,32 @@ Class EquestriaPlasmaGun : DoomEquestriaWeapon replaces PlasmaRifle
 		Stop;
 	}
 }
+
+/*extend Class EquestriaDoomWeapon
+{
+	action void A_FirePlasma2(string missile, double xmissile, double ymissile, double zmissile)
+	{
+		if (player == null)
+		{
+			return;
+		}
+		Weapon weap = player.ReadyWeapon;
+		if (weap != null && invoker == weap && stateinfo != null && stateinfo.mStateType == STATE_Psprite)
+		{
+			if (!weap.DepleteAmmo (weap.bAltFire, true, 1))
+				return;
+			
+			State flash = weap.FindState('Flash');
+			if (flash != null)
+			{
+				player.SetSafeFlash(weap, flash, random[FirePlasma](0, 1));
+			}
+			
+		}
+		
+		SpawnPlayerMissile (missile, 1e37, xmissile,ymissile,zmissile);
+	}
+}*/
 		
 Class EquestriaPlasmaBall : Actor
 {

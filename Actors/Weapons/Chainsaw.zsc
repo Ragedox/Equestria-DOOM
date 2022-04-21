@@ -1,4 +1,4 @@
-Class EquestriaChainsaw : DoomEquestriaWeapon replaces Chainsaw
+Class EquestriaChainsaw : EquestriaDoomWeapon replaces Chainsaw
 {
 	Default
 	{

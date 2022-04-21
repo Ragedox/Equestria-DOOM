@@ -1,4 +1,4 @@
-Class EquestriaPistol : DoomEquestriaWeapon replaces Pistol
+Class EquestriaPistol : EquestriaDoomWeapon replaces Pistol
 {
 	Default
 		{

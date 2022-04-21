@@ -1,4 +1,4 @@
-Class Broom : DoomEquestriaWeapon
+Class Broom : EquestriaDoomWeapon
 {
 	Default
 	{

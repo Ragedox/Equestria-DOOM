@@ -1,4 +1,4 @@
-Class BerserkFist : DoomEquestriaWeapon
+Class BerserkFist : EquestriaDoomWeapon
 {
 	Default
 	{

@@ -1,4 +1,4 @@
-Class EquestriaBFG9K : DoomEquestriaWeapon replaces BFG9000
+Class EquestriaBFG9K : EquestriaDoomWeapon replaces BFG9000
 {
 	Default
 	{

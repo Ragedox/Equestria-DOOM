@@ -1,4 +1,4 @@
-Class EquestriaChaingun : DoomEquestriaWeapon replaces Chaingun
+Class EquestriaChaingun : EquestriaDoomWeapon replaces Chaingun
 {
 	Default
 	{

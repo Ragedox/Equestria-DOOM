@@ -1,4 +1,4 @@
-Class DoomEquestriaWeapon : Weapon
+Class EquestriaDoomWeapon : Weapon
 {
 	Default
 	{
@@ -318,7 +318,7 @@ Class BulletTracer : FastProjectile
 	}
 }
 
-Class Test_DeathCommon : DoomEquestriaWeapon
+Class Test_DeathCommon : EquestriaDoomWeapon
 {
 	States
 	{
