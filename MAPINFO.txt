@@ -1,3 +1,9 @@
+include "MAPINFO/Episodes.txt"
+include "MAPINFO/DoomEdNumbers.txt"
+include "MAPINFO/Season1.txt"
+include "MAPINFO/Season2.txt"
+include "MAPINFO/Intermission.txt"
+
 gameinfo
 {
 	IntermissionMusic = "Music/INTER1.mid"
@@ -49,11 +55,6 @@ Automap
 	SecretSectorColor = "Pink"
 	*/
 }
-
-include "MAPINFO/Episodes.txt"
-include "MAPINFO/DoomEdNumbers.txt"
-include "MAPINFO/Season1.txt"
-include "MAPINFO/Season2.txt"
 
 map TITLEMAP ""
 {
