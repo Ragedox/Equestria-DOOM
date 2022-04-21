@@ -17,8 +17,6 @@ Intermission Doom2Cast
 		CastClass = "PossessedHacker"
 		CastName = "$TECHDUDE"
 		AttackSound = "Missile", 1, "weapons/plasmaf"
-		AttackSound = "Missile", 2, "weapons/plasmaf"
-		AttackSound = "Missile", 3, "weapons/plasmaf"
 	}
 	Cast
 	{
