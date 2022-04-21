@@ -42,7 +42,7 @@ Class EquestriaPlasmaGun : EquestriaDoomWeapon replaces PlasmaRifle
 	Fire:	
 		PLSG A 1
 		{
-			//A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -14);
+			A_FireProjectile("EquestriaPlasmaBall", 0, 0, 0, -14);
 			A_FirePlasma();
 		}
 		PLSG A 2;
