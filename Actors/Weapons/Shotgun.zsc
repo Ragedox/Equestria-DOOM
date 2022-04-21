@@ -27,9 +27,7 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 			A_SetCrossHair(9);
 			
 			if (GetCVAR("AuraToggle") == true)
-			{
 				A_Overlay(10, "Aura.Ready");
-			}
 		}
 		//SHTG A 0 A_PlaySoundEX("misc/w_pkup", 1);
 
@@ -63,13 +61,9 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 			A_GunFlash();
 			
 			if (GetCVAR("CamRecoilToggle") == true)
-			{
 				A_Overlay(2, "CamRecoil");
-			}
 			if (GetCVAR("WeaponLight") == true)
-			{
 				A_FireProjectile("ShotgunLight",0,0,0, -14);
-			}
 		}
 		Goto Pump;
 		
@@ -77,13 +71,9 @@ Class EquestriaShotgun : DoomEquestriaWeapon replaces Shotgun
 		SHTG B 2
 		{
 			if (GetCVAR("AuraToggle") == true)
-			{
 				A_Overlay(10, "Aura.Pump");
-			}
 			else
-			{
 				A_ClearOverlays(10, 11);
-			}
 		}
 		SHTG C 2;
 		SHTG DEFGHIJ 1;

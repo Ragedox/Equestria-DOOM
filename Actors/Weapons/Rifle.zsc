@@ -41,9 +41,7 @@ Class EquestriaRifle : DoomEquestriaWeapon
 			A_SetCrossHair(2);
 			
 			if (GetCVAR("AuraToggle") == true)
-			{
 				A_Overlay(10, "Aura.Ready");
-			}
 		}
 		RFLE A 1 A_Raise();
 		Wait;
@@ -59,23 +57,15 @@ Class EquestriaRifle : DoomEquestriaWeapon
 			A_FireProjectile("BulletCasingSpawn",0,0,0,-25, FPF_NOAUTOAIM);
 			
 			if (GetCVAR("CamRecoilToggle") == true)
-			{
 				A_Overlay(2, "CamRecoil");
-			}
 			
 			if (GetCVAR("WeaponLight") == true)
-			{
 				A_FireProjectile("PistolLight",0,0,0, -14);
-			}
 			
 			if (GetCVAR("AuraToggle") == true)
-			{
 				A_Overlay(10, "Aura.Fire");
-			}
 			else
-			{
 				A_ClearOverlays(10, 11);
-			}
 		}
 		
 		RFLE B 2 A_WeaponOffset(0, random(36, 38), WOF_INTERPOLATE | WOF_KEEPX);
