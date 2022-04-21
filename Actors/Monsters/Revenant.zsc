@@ -2,6 +2,9 @@ Class EquestriaRevenant : DoomEquestriaMonster replaces Revenant
 {
 	Default
 	{
+	//$Title Revenant
+		Tag "$FN_REVEN"; Obituary "$OB_UNDEAD";
+		
 		Health 300;
 		Radius 20; Height 60;
 		
@@ -19,8 +22,6 @@ Class EquestriaRevenant : DoomEquestriaMonster replaces Revenant
 		ActiveSound "skeleton/active";
 		MeleeSound "skeleton/melee";
 		HitObituary "$OB_UNDEADHIT";
-		Obituary "$OB_UNDEAD";
-		Tag "$FN_REVEN";
 	}
 	States
 	{

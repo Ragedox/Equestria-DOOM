@@ -2,8 +2,8 @@ Class EquestriaMancubus : DoomEquestriaMonster replaces Fatso
 {
 	Default
 	{
-		Tag "$FN_MANCU";
-		Obituary "$OB_FATSO";
+	//$Title Mancubus
+		Tag "$FN_MANCU"; Obituary "$OB_FATSO";
 		
 		Health 600;
 		

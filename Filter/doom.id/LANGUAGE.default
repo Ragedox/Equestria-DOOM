@@ -23,12 +23,40 @@ GOTBERSERK = 	"Berserk! Let's punch out some demons!";
 
 /* Monsters */
 
-BURSTBAT = "Possesed Trainer";
+FN_ZOMBIE = "Former Trooper";
+FN_SHOTGUN = "Former Sergeant";
+FN_HEAVY = "Former Commando";
+FN_HACKER = "Former Hacker"; FN_DEMONIRIK = "Demonic Nirik";
+FN_TRAINER = "Former Trainer";
 
-TECHDUDE = "Possessed Hacker";
-DEMONIRIK = "Demonic Nirik";
-OB_PLASMAKIRIN = "%o turned to dust by the Hacker Leader.";
-NIRIKILL = "%o was bitten by the Demonic Nirik.";
+FN_IMP = "Imp";
+
+FN_DEMON = "Pinky";
+FN_SPECTRE = "Spectre";
+
+FN_LOST = "Lost Soul";
+FN_UNICORNSOUL = "Lost Unicorn Soul";
+FN_KIRINSOUL = "Lost Kirin Soul";
+
+FN_CACO = "Cacodemon";
+FN_HELL = "Hell Knight";
+FN_BARON = "Baron of Hell";
+FN_ARACH = "Arachnotron";
+FN_PAIN = "Pain Elemental";
+FN_REVEN = "Revenant";
+FN_MANCU = "Mancubus";
+FN_ARCH = "Arch-Vile";
+
+FN_WOLFSS = "SS Soldier";
+FN_DOG = "Dog";
+
+FN_BARONBROS = "Baron Brothers"; FN_NIGHTMARE = "Night-Mare";
+FN_CYBER = "Tyrant";
+FN_SPIDER = "Spider Mastermind";
+
+OB_CYBER = "%o was splattered by a Tyrant."; OB_CYBORG = "$$OB_CYBER";
+OB_HACKER = "%o turned to dust by Former Hacker.";
+OB_DEMONIRIK = "%o was bitten by a Demonic Nirik.";
 
 //////////
 

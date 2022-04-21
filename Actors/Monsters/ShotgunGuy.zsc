@@ -2,7 +2,8 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 {
 	Default
 	{
-		Monster;
+	//$Title "Former Sergeant"
+		Tag "$FN_SHOTGUN"; Obituary "$OB_SHOTGUY";
 		
 		Health 30;
 		Radius 20; Height 56;
@@ -11,18 +12,14 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		
 		PainChance 170; PainThreshold 4;
 		
-		+CASTSPRITESHADOW;
-		+FLOORCLIP;
+		+CASTSPRITESHADOW
+		+FLOORCLIP
 		
 		SeeSound "shotguy/sight";
 		AttackSound "shotguy/attack";
 		PainSound "shotguy/pain";
 		DeathSound "shotguy/death";
 		ActiveSound "shotguy/active";
-		
-		Obituary "$OB_SHOTGUY";
-		
-		Tag "$FN_SHOTGUN";
 		
 		DropItem "EquestriaShotgun";
 	}

@@ -2,8 +2,8 @@ Class EquestriaArchvile : DoomEquestriaMonster replaces Archvile
 {
 	Default
 	{
-		Tag "$FN_ARCH";
-		Obituary "$OB_VILE";
+	//$Title Arch-Vile
+		Tag "$FN_ARCH"; Obituary "$OB_VILE";
 		
 		Health 700;
 		

@@ -2,8 +2,8 @@ Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 {
 	Default
 	{
-		Tag "$FN_ARACH";
-		Obituary "$OB_BABY";
+	//$Title Arachnotron
+		Tag "$FN_ARACH"; Obituary "$OB_BABY";
 		
 		Health 500;
 		

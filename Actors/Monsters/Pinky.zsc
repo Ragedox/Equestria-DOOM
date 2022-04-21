@@ -2,8 +2,8 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 {
 	Default
 	{
-		Tag "$FN_DEMON";	
-		Obituary "$OB_DEMONHIT";
+	//$Title Pinky
+		Tag "$FN_DEMON"; Obituary "$OB_DEMONHIT";
 		
 		Health 150;
 		PainChance 180; PainThreshold 10;

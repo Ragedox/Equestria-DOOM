@@ -8,6 +8,8 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 {
 	Default
 	{
+		Tag "$FN_WOLFSS"; Obituary "$OB_WOLFSS";
+		
 		Health 50;
 		Height 56; Radius 20;
 		Speed 10;
@@ -21,14 +23,13 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		DeathSound "wolfss/death";
 		ActiveSound "wolfss/active";
 		AttackSound "wolfss/attack";
-		Obituary "$OB_WOLFSS";
-		Tag "$FN_WOLFSS";
-		Dropitem "Clip";
+		
+		Dropitem "EquestriaClip";
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(256, 1,2,3,4,5,6);
+		SSWV A 0 NoDelay A_Jump(256, 1,2,3,4,5,6);
 		Wait;
 		
 		White:			#### # 0 { A_SetTranslation("Nazi_White");		}	Goto Ready;

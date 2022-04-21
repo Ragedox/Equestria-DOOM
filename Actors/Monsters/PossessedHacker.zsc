@@ -2,10 +2,9 @@ Class PossessedHacker : DoomEquestriaMonster
 {
 	Default
 	{
-		Monster;
 	//$Category Monsters
-	//$Title Possessed Hacker
-		Tag "$TECHDUDE";
+	//$Title Former Hacker
+		Tag "$FN_HACKER"; Obituary "$OB_HACKER";
 		
 		Health 15;
 		Radius 20; Height 56;
@@ -23,8 +22,6 @@ Class PossessedHacker : DoomEquestriaMonster
 		PainSound "female/pain";
 		DeathSound "female/death";
 		ActiveSound "female/active";
-		
-		Obituary "$OB_PLASMAKIRIN";
 		
 		DropItem "ArmorBonus";
 		DropItem "Cell", 64; //25% Chance of drop Cells
@@ -160,7 +157,7 @@ Class DemonNirik : DoomEquestriaMonster
 	Default
 	{
 	//$Category Monsters
-		Tag "$DEMONIRIK";
+		Tag "$FN_DEMONIRIK"; Obituary "$FN_DEMONIRIK";
 		
 		Health 50;
 		
@@ -183,8 +180,6 @@ Class DemonNirik : DoomEquestriaMonster
 		PainSound "demon/pain";
 		DeathSound "female/death";
 		ActiveSound "demon/active";
-		
-		Obituary "$NIRIKILL";
 	}
 	States
 	{

@@ -4,8 +4,6 @@ Class DemonicDog : DoomEquestriaMonster
 	{
 		//$Title Possessed Dog
 		//$Category Monsters
-		Monster;
-		
 		Tag "$FN_DOG";
 		
 		Health 75;

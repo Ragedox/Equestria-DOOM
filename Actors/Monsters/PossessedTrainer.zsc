@@ -2,11 +2,10 @@ Class PossessedTrainer : DoomEquestriaMonster
 {
 	Default
 	{
-		Monster;
-		//$Category Monsters
-		//$Title Possessed Trainer
+	//$Category Monsters
+	//$Title Former Trainer
+		Tag "$FN_TRAINER"; Obituary "$OB_BURSTBAT";
 		
-		Tag "$BURSTBAT";
 		Health 75;
 		
 		Radius 20; Height 56;
@@ -31,9 +30,7 @@ Class PossessedTrainer : DoomEquestriaMonster
 		PainSound "female/pain2";
 		DeathSound "female/death";
 		ActiveSound "female/active";
-		
-		Obituary "$OB_BURSTBAT";
-		
+
 		DropItem "LargeClip";
 	}
 	States

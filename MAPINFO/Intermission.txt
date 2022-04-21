@@ -3,25 +3,25 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "EquestriaZombieman"
-		CastName = "$CC_ZOMBIE"
+		CastName = "$FN_ZOMBIE"
 		AttackSound = "Missile", 1, "grunt/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaShotgunGuy"
-		CastName = "$CC_SHOTGUN"
+		CastName = "$FN_SHOTGUN"
 		AttackSound = "Missile", 1, "shotguy/attack"
 	}
 	Cast
 	{
 		CastClass = "PossessedHacker"
-		CastName = "$TECHDUDE"
+		CastName = "$FN_HACKER"
 		AttackSound = "Missile", 1, "weapons/plasmaf"
 	}
 	Cast
 	{
 		CastClass = "EquestriaChaingunGuy"
-		CastName = "$CC_HEAVY"
+		CastName = "$FN_HEAVY"
 		AttackSound = "Missile", 1, "chainguy/attack"
 		AttackSound = "Missile", 2, "chainguy/attack"
 		AttackSound = "Missile", 3, "chainguy/attack"
@@ -29,55 +29,55 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "DoomImp"
-		CastName = "$CC_IMP"
+		CastName = "$FN_IMP"
 		AttackSound = "Missile", 2, "imp/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaPinky"
-		CastName = "$CC_DEMON"
+		CastName = "$FN_DEMON"
 		AttackSound = "Melee", 1, "demon/melee"
 	}
 	Cast
 	{
-		CastClass = "LostSoul"
-		CastName = "$CC_LOST"
+		CastClass = "EquestriaLostSoul"
+		CastName = "$FN_LOST"
 		AttackSound = "Missile", 1, "skull/melee"
 	}
 	Cast
 	{
 		CastClass = "EquestriaCacodemon"
-		CastName = "$CC_CACO"
+		CastName = "$FN_CACO"
 		AttackSound = "Missile", 1, "caco/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaHellKnight"
-		CastName = "$CC_HELL"
+		CastName = "$FN_HELL"
 		AttackSound = "Missile", 1, "baron/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaBaronOfHell"
-		CastName = "$CC_BARON"
+		CastName = "$FN_BARON"
 		AttackSound = "Missile", 1, "baron/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaArachnotron"
-		CastName = "$CC_ARACH"
+		CastName = "$FN_ARACH"
 		AttackSound = "Missile", 1, "baby/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaPainElemental"
-		CastName = "$CC_PAIN"
+		CastName = "$FN_PAIN"
 		AttackSound = "Missile", 2, "skull/melee"
 	}
 	Cast
 	{
 		CastClass = "EquestriaRevenant"
-		CastName = "$CC_REVEN"
+		CastName = "$FN_REVEN"
 		AttackSound = "Missile", 1, "skeleton/attack"
 		AttackSound = "Melee", 1, "skeleton/swing"
 		AttackSound = "Melee", 3, "skeleton/melee"
@@ -85,7 +85,7 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "EquestriaMancubus"
-		CastName = "$CC_MANCU"
+		CastName = "$FN_MANCU"
 		AttackSound = "Missile", 1, "fatso/attack"
 		AttackSound = "Missile", 4, "fatso/attack"
 		AttackSound = "Missile", 7, "fatso/attack"
@@ -93,20 +93,20 @@ Intermission Doom2Cast
 	Cast
 	{
 		CastClass = "EquestriaArchvile"
-		CastName = "$CC_ARCH"
+		CastName = "$FN_ARCH"
 		AttackSound = "Missile", 1, "vile/start"
 	}
 	Cast
 	{
 		CastClass = "EquestriaSpiderMastermind"
-		CastName = "$CC_SPIDER"
+		CastName = "$FN_SPIDER"
 		AttackSound = "Missile", 1, "spider/attack"
 		AttackSound = "Missile", 2, "spider/attack"
 	}
 	Cast
 	{
 		CastClass = "EquestriaCyberdemon"
-		CastName = "$CC_CYBER"
+		CastName = "$FN_CYBER"
 		AttackSound = "Missile", 1, "weapons/rocklf"
 		AttackSound = "Missile", 3, "weapons/rocklf"
 		AttackSound = "Missile", 5, "weapons/rocklf"

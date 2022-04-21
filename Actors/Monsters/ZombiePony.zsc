@@ -2,6 +2,8 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 {
 	Default
 	{
+	//$Title "Former Trooper"
+		Tag "$FN_ZOMBIE"; Obituary "$OB_ZOMBIE";
 		Health 20;
 		
 		Radius 20; Height 56;
@@ -9,7 +11,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		Speed 8;
 		
 		PainChance 200; PainThreshold 4;
-		
+		DamageFactor "Chainsaw", 2;
 		+FLOORCLIP
 		+CASTSPRITESHADOW
 		+MISSILEMORE
@@ -19,11 +21,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		PainSound "grunt/pain";
 		DeathSound "grunt/death";
 		ActiveSound "grunt/active";
-		
-		Obituary "$OB_ZOMBIE";
-		
-		Tag "$FN_ZOMBIE";
-
+	
 		DropItem "EquestriaClip";
 	}
 	States
@@ -77,11 +75,11 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
         Goto See;
    
 	Death.Plasma:
-		"####" "#" 0 A_SetTranslation("Toasted");
+		#### # 0 A_SetTranslation("Toasted");
 	//Death.BFGSplash:
-		"####" "#####" 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-20, 20), random (0, 360), CMF_AIMDIRECTION, random(0, -90));
+		#### ##### 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-20, 20), random (0, 360), CMF_AIMDIRECTION, random(0, -90));
 	Death:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
+		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
 		
         POSS H 5;
         POSS I 5 A_Scream();
@@ -140,9 +138,9 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 
 	Death.Berserk:
 	XDeath.Berserk:
-		"####" "#" 0 ThrustThingZ(0,30,0,1);
+		#### # 0 ThrustThingZ(0,30,0,1);
 		
-		"####" "#" 0 A_Jump(256, "MidAir");
+		#### # 0 A_Jump(256, "MidAir");
 		Wait;
 
 	MidAir:
@@ -150,15 +148,15 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		Loop;
 
 	Crash.Berserk:
-		"####" "#" 0 A_SetRoll(0);
+		#### # 0 A_SetRoll(0);
 
-		"####" "#" 0 A_Jump(256, "XDeath");
+		#### # 0 A_Jump(256, "XDeath");
 		Wait;
 
 	Raise:
         POSS LKJIH 5;
 
-		"####" "#" 0 { bSPRITEFLIP = 0; }
+		#### # 0 { bSPRITEFLIP = 0; }
         Goto See;
     }
 }

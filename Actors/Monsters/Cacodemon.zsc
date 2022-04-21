@@ -2,9 +2,8 @@ Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 {
 	Default
 	{
-		Monster;
-		
-		Tag "$FN_CACO";
+		//$Title Cacodemon
+		Tag "$FN_CACO"; Obituary "$OB_CACO"; HitObituary "$OB_CACOHIT";
 		
 		Health 400;
 		
@@ -18,17 +17,13 @@ Class EquestriaCacodemon : DoomEquestriaMonster replaces Cacodemon
 		+NOGRAVITY
 		+FLOAT
 		+CASTSPRITESHADOW
-		+FLOATBOB
 		+FORCEXYBILLBOARD
-		FloatBobStrength 0.5;
+		+FLOATBOB FloatBobStrength 0.5;
 		
 		SeeSound "caco/sight";
 		PainSound "caco/pain";
 		DeathSound "caco/death";
 		ActiveSound "caco/active";
-		
-		Obituary "$OB_CACO";
-		HitObituary "$OB_CACOHIT";
 	}
 	States
 	{

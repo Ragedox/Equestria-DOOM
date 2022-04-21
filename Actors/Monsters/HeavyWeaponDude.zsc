@@ -2,8 +2,8 @@ Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 {
 	Default
 	{
-		Tag "$FN_HEAVY";
-		Obituary "$OB_CHAINGUY";
+		//$Title Former Commando
+		Tag "$FN_HEAVY"; Obituary "$OB_CHAINGUY";
 		
 		Health 70;
 		Radius 20; Height 56;

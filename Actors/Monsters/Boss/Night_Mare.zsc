@@ -2,6 +2,8 @@ Class NightMare_Eye : Actor
 {
 	Default
 	{
+	//$Title Night-Mare Eye
+	//$Category Monsters
 		Health 500;
 		Height 45; Radius 22.5;
 		Speed 100;

@@ -2,8 +2,7 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 {
 	Default
 	{
-		Monster;
-		
+	//$Title Pain Elemental
 		Tag "$FN_PAIN";
 				
 		Health 400;

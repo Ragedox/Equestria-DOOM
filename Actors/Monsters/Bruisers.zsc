@@ -2,10 +2,8 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 {
 	Default
 	{
-		//$Sprite BOSSA2C8
-		Tag "$FN_BARON";
-		Obituary "$OB_BARON";
-		HitObituary "$OB_BARONHIT";
+	//$Title Baron of Hell
+		Tag "$FN_BARON"; Obituary "$OB_BARON"; HitObituary "$OB_BARONHIT";
 		
 		Health 750;
 		Radius 15; Height 64;
@@ -85,6 +83,9 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 {
 	Default
 	{
+	//$Title Hell Knight
+		Tag "$FN_HELL"; Obituary "$OB_KNIGHT"; HitObituary "$OB_KNIGHTHIT";
+		
 		Health 500;
 		
 		Speed 10;
@@ -95,9 +96,6 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		ActiveSound "knight/active";
 		PainSound "knight/pain";
 		DeathSound "knight/death";
-		HitObituary "$OB_KNIGHTHIT";
-		Obituary "$OB_KNIGHT";
-		Tag "$FN_HELL";
 	}
 	States
 	{

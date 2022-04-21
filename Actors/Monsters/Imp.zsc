@@ -2,10 +2,8 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 {
 	Default
 	{
-		Monster;
-		
-		Tag "$FN_IMP";
-		Obituary "$OB_IMP";
+		//$Title Imp
+		Tag "$FN_IMP"; Obituary "$OB_IMP";
 		
 		Health 60;
 		

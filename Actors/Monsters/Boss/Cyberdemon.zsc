@@ -2,9 +2,8 @@ Class EquestriaCyberdemon : DoomEquestriaMonster replaces Cyberdemon
 {
 	Default
 	{
-		//$Sprite CYBRA2
-		Tag "$FN_CYBER";
-		Obituary "$OB_CYBORG";
+	//$Title Tyrant
+		Tag "$FN_CYBER"; Obituary "$OB_CYBER";
 		
 		Health 4000;
 		

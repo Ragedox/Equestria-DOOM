@@ -2,6 +2,9 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 {
 	Default
 	{
+	//$Title Spider Mastermind
+		Tag "$FN_SPIDER"; Obituary "$OB_SPIDER";
+		
 		Health 3000;
 		
 		Height 150; Radius 64;
@@ -27,8 +30,6 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		PainSound "spider/pain";
 		DeathSound "spider/death";
 		ActiveSound "spider/active";
-		Obituary "$OB_SPIDER";
-		Tag "$FN_SPIDER";
 	}
 	States
 	{
