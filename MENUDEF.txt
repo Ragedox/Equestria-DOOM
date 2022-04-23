@@ -215,6 +215,7 @@ OptionMenu "VideoSettings"
 	Option 		"$GLPREFMNU_MULTISAMPLE", 			gl_multisample,					"Multisample"
 	
 	StaticText 	"Lights", "Brick"
+	Option 		"$GLPREFMNU_SECLIGHTMODE",				gl_lightmode,					"LightingModes"
 	Option 		"$GLLIGHTMNU_LIGHTSENABLED",			gl_lights,				"OnOff"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAP",			gl_light_shadowmap,		"YesNo"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPQUALITY",	gl_shadowmap_quality,	"ShadowMapQuality"
