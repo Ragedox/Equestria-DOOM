@@ -24,6 +24,11 @@ GIBSFOREVER = 			"Gibs don't disappear";
 
 GLPREFMNU_MULTISAMPLE =	"MSAA Quality";
 
+OPTVAL_STANDARD = 		"GZDOOM Standard";
+OPTVAL_BUILD = 			"Build Engine";
+OPTVAL_SOFTWARE = 		"Original DOOM (Software)";
+OPTVAL_VANILLA = 		"Original DOOM (Darker)";
+
 [ptb pt br]
 
 CAMPAIGN =				"Campanha";
