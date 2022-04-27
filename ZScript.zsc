@@ -198,7 +198,6 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Props/Hell.zsc"
 #include "Actors/Props/Gothic.zsc"
 #include "Actors/Props/Gore.zsc"
-#include "Actors/Props/Corpses.zsc"
 #include "Actors/Props/Barrels.zsc"
 
 #include "Actors/Props/Light_Tech.zsc"
