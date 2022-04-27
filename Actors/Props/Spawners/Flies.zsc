@@ -7,11 +7,11 @@ class Equestria_LittleFly : Actor
 	{
 	//$Title Little Fly
 		+NOBLOCKMAP +NOGRAVITY
-		+CANPASS
+		+CANPASS +FORCEXYBILLBOARD
+		+FLOATBOB +FLOAT
 		
-		Speed 6;
-		Radius 5;
-		Height 5;
+		Speed 12;
+		Radius 2; Height 4;
 		Mass 2;
 		ActiveSound "FlyBuzz";
 	}
