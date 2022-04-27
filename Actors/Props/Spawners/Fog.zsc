@@ -34,6 +34,7 @@ class Equestria_FogSpawner : Actor
 	//$Arg3Tooltip "Lifetime countdown for spawned fog patches, see A_FogMove"
 	//$Arg4Tooltip Unused
 	
+		+NOINTERACTION
 		+NOSECTOR +NOBLOCKMAP
 		+FLOATBOB
 		+NOGRAVITY
@@ -95,21 +96,21 @@ class Equestria_FogPatchSmall : Actor replaces FogPatchSmall
 	Default
 	{
 		Speed 1;
-		+NOBLOCKMAP +NOGRAVITY +NOCLIP +FLOAT
-		+NOTELEPORT
-		RenderStyle "Translucent";
+		+NOBLOCKMAP +NOGRAVITY +NOCLIP
+		+NOTELEPORT +NOINTERACTION +FORCEXYBILLBOARD
+		+FLOAT +FLOATBOB
+		RenderStyle "Shaded"; StencilColor "Gray";
 		Alpha 0.6;
 	}
-
 
 	States
 	{
 	Spawn:
-		FOGS ABCDE 7 A_FogMove();
+		FOGS AABCDE 7 A_FogMove();
 		Loop;
 	Death:
-		FOGS E 5;
-		Stop;
+		FOGS E 1 A_FadeOut(0.01);
+		Wait;
 	}
 	
 	//==========================================================================
@@ -141,7 +142,15 @@ class Equestria_FogPatchSmall : Actor replaces FogPatchSmall
 			WeaveIndexZ = (weaveindex + 1) & 63;
 		}
 		VelFromAngle(speed);
+		
+		//A_FadeOut(0.01);
 	}
+	
+	/*override void Tick()
+	{
+		Super.Tick();
+		A_FadeOut(0.0025);
+	}*/
 }
 
 // Medium Fog Patch ---------------------------------------------------------

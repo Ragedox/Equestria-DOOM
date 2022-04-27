@@ -6,6 +6,7 @@ Class DEParticles : DebrisCore
 		+THRUACTORS
 		+DONTSPLASH
 		+Randomize
+		-CORPSE
 	}
 }
 
