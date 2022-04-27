@@ -190,7 +190,8 @@ Class DEWaterSplashBase : CoreSplashBase
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
 		
-		NWAT EFGHIJK random(2,4) A_FadeOut(0.05);
+		SPLS FEDCBA	1;
+		SPLS ABCDEF	random(2,4);
 		Stop;
 	}
 }

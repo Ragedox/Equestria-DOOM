@@ -1,3 +1,33 @@
+mugshot "Normal", health2
+{
+	{ST00, ST01, ST02} 17;
+}
+
+mugshot "Pain", healthspecial, directional
+{
+	{TR00, KILL0, TL00} 35;
+}
+
+mugshot "Rampage", health
+{
+	KILL0 1;
+}
+
+mugshot "Ouch", health
+{
+	OUCH0 35;
+}
+
+mugshot "Grin", health
+{
+	EVL0 70;
+}
+
+mugshot "GodAnimated"
+{
+	{GOD0, GOD1, GOD2} 17;
+}
+
 mugshot "Death"
 {
 	DEAD0 -1;
@@ -41,11 +71,6 @@ mugshot "Death.Lava"
 mugshot "Death.Nukage"
 {
 	NUKE0 -1;
-}
-
-mugshot "GodAnimated"
-{
-	{GOD0, GOD1, GOD2} 17;
 }
 
 mugshot "Invisibility"

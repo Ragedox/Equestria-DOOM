@@ -1,7 +1,7 @@
 // Floor lamp
 pulselight LAMP
 {
-    color 1.0 1.0 0.8
+    color 1.0 1.0 0.25
     size 65 secondarysize 75
     offset 0 44 0
 	attenuate 1

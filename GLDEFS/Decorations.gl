@@ -41,10 +41,9 @@ object EquestriaExploBarrel
 flickerlight2 BIGREDTORCH
 {
     color 0.7 0.2 0.2
-    size 90
-    secondarySize 99
-    interval 0.1
+    size 40 secondarySize 50
     offset 0 60 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -57,10 +56,9 @@ object EquestriaRedTorch
 flickerlight2 BIGGREENTORCH
 {
     color 0.2 0.7 0.2
-    size 90
-    secondarySize 99
-    interval 0.1
+    size 40 secondarySize 50
     offset 0 60 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -73,10 +71,9 @@ object EquestriaGreenTorch
 flickerlight2 BIGBLUETORCH
 {
     color 0.2 0.2 0.7
-    size 90
-    secondarySize 99
-    interval 0.1
+	size 40 secondarySize 50
     offset 0 60 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -91,8 +88,8 @@ flickerlight2 SMALLREDTORCH
     color 0.7 0.2 0.2
     size 40
     secondarySize 50
-    interval 0.5
     offset 0 35 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -107,8 +104,8 @@ flickerlight2 SMALLGREENTORCH
     color 0.2 0.7 0.2
     size 40
     secondarySize 50
-    interval 0.5
     offset 0 35 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -123,8 +120,8 @@ flickerlight2 SMALLBLUETORCH
     color 0.2 0.2 0.7
     size 40
     secondarySize 50
-    interval 0.5
     offset 0 35 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -138,9 +135,9 @@ flickerlight2 FIREBARREL
 {
     color 1.0 0.9 0.4
     size 50
-    secondarySize 80
-    interval 0.1
-    offset 0 32 0
+    secondarySize 75
+    offset 0 40 0
+	interval 0.1
 	attenuate 1
 }
 
@@ -169,7 +166,7 @@ object HeadCandles
 pointlight CANDLE
 {
     color 1.0 1.0 0.3
-    size 24
+    size 15
     offset 0 16 0
 	attenuate 1
 }
@@ -183,7 +180,7 @@ object EquestriaCandlestick
 pointlight CANDELABRA
 {
     color 1.0 1.0 0.3
-    size 50
+    size 45
     offset 0 55 0
 	attenuate 1
 	dontlightself 1

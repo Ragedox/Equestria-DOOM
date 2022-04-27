@@ -97,7 +97,7 @@ pulselight HEALTHPOTION
 {
     color 0.0 0.0 0.5
     size 10
-    secondarySize 25
+    secondarySize 20
     interval 1.0
 	attenuate 1
     offset 0 5 0
@@ -109,20 +109,23 @@ object HealthPotion
 }
 
 // Armour Helmet
+
 pulselight ARMORBONUS
 {
     color 0.1 0.3 0.1
-    size 16
-    secondarySize 20
+    size 10 secondarySize 20
     interval 1.0
-	dontlightself 1
 	attenuate 1
     offset 0 10 0
 }
 
-object ArmorBonus
+pulselight ARMORBONUS2
 {
-    frame BON2 { light ARMORBONUS }
+    color 0.5 0.5 1.0
+    size 10 secondarySize 20
+    interval 1.0
+	attenuate 1
+    offset 0 10 0
 }
 
 // Blue Keys

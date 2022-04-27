@@ -1,0 +1,6 @@
+//Port of some Hexen spawners
+#include "Actors/Props/Spawners/Bats.zsc"
+#include "Actors/Props/Spawners/Flies.zsc"
+#include "Actors/Props/Spawners/Fog.zsc"
+#include "Actors/Props/Spawners/Leafs.zsc"
+//Port of some Hexen spawners
