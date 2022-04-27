@@ -1,0 +1,145 @@
+class Equestria_LeafSpawner : Actor
+{
+	Default
+	{
+	//$Title Leaf Spawner
+	
+		+NOBLOCKMAP +NOSECTOR
+		+INVISIBLE
+	}
+
+
+	States
+	{
+	Spawn:
+		TNT1 A 20 A_LeafSpawn();
+		Loop;
+	}
+	
+	//============================================================================
+	//
+	// A_LeafSpawn
+	//
+	//============================================================================
+
+	void A_LeafSpawn()
+	{
+		static const class<Actor> leaves[] = { "Equestria_Leaf1", "Equestria_Leaf2" };
+
+		for (int i = random[LeafSpawn](1, 4); i; i--)
+		{
+			double xo = random2[LeafSpawn]() / 4.;
+			double yo = random2[LeafSpawn]() / 4.;
+			double zo = random[LeafSpawn]() / 4.;
+			Actor mo = Spawn (leaves[random[LeafSpawn](0, 1)], Vec3Offset(xo, yo, zo), ALLOW_REPLACE);
+
+			if (mo)
+			{
+				mo.Thrust(random[LeafSpawn]() / 128. + 3, angle);
+				mo.target = self;
+				mo.special1 = 0;
+			}
+		}
+	}
+}
+
+
+// Leaf 1 -------------------------------------------------------------------
+
+class Equestria_Leaf1 : Actor replaces Leaf1
+{
+	Default
+	{
+		Radius 2;
+		Height 4;
+		Gravity 0.125;
+		+NOBLOCKMAP +MISSILE
+		+NOTELEPORT +DONTSPLASH
+		+NOICEDEATH
+	}
+
+	States
+	{
+	Spawn:
+		LEF1 ABC 4;
+		LEF1 D 4 A_LeafThrust;
+		LEF1 EFG 4;
+	Looping:
+		LEF1 H 4 A_LeafThrust;
+		LEF1 I 4;
+		LEF1 AB 4;
+		LEF1 C 4 A_LeafThrust;
+		LEF1 DEF 4;
+		LEF1 G 4 A_LeafThrust;
+		LEF1 HI 4;
+		Stop;
+	Death:
+		LEF3 D 10 A_LeafCheck;
+		Wait;
+	}
+	
+	//============================================================================
+	//
+	// A_LeafThrust
+	//
+	//============================================================================
+
+	void A_LeafThrust()
+	{
+		if (random[LeafThrust]() <= 96)
+		{
+			Vel.Z += random[LeafThrust]() / 128. + 1;
+		}
+	}
+
+	//============================================================================
+	//
+	// A_LeafCheck
+	//
+	//============================================================================
+
+	void A_LeafCheck()
+	{
+		special1++;
+		if (special1 >= 20)
+		{
+			Destroy();
+			return;
+		}
+		double ang = target ? target.angle : angle;
+		if (random[LeafCheck]() > 64)
+		{
+			if (Vel.X == 0 && Vel.Y == 0)
+			{
+				Thrust(random[LeafCheck]() / 128. + 1, ang);
+			}
+			return;
+		}
+		SetStateLabel ("Looping");
+		Vel.Z = random[LeafCheck]() / 128. + 1;
+		Thrust(random[LeafCheck]() / 128. + 2, ang);
+		bMissile = true;
+	}
+}
+
+
+// Leaf 2 -------------------------------------------------------------------
+
+class Equestria_Leaf2 : Equestria_Leaf1 replaces Leaf2
+{
+	States
+	{
+	Spawn:
+		LEF2 ABC 4;
+		LEF2 D 4 A_LeafThrust;
+		LEF2 EFG 4;
+		LEF2 H 4 A_LeafThrust;
+		LEF2 I 4;
+		LEF2 AB 4;
+		LEF2 C 4 A_LeafThrust;
+		LEF2 DEF 4;
+		LEF2 G 4 A_LeafThrust;
+		LEF2 HI 4;
+		Stop;
+	}
+}

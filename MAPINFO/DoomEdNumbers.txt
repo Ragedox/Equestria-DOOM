@@ -3,6 +3,11 @@
 
 DoomEdNums
 {
+	112 = 	"Equestria_LittleFly"
+	113 = 	"Equestria_LeafSpawner"
+	10000 = "Equestria_FogSpawner"
+	10225 = "Equestria_BatSpawner"
+
 	/* Weapons */
 	
 	90 = "Broom"
@@ -31,7 +36,8 @@ DoomEdNums
 	15101 = "HealthPack"
 	15102 = "BigHealthBonus"
 	15103 = "BigArmorBonus"
-
+	15104 = "EquestriaHelmetArmor"
+	
 	/* Ammo */
 
 /*	15200 =					*/

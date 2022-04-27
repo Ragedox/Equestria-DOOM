@@ -1,0 +1,175 @@
+//==========================================================================
+// Fog Variables:
+//
+//		args[0]		Speed (0..10) of fog
+//		args[1]		Angle of spread (0..128)
+//		args[2]		Frequency of spawn (1..10)
+//		args[3]		Lifetime countdown
+//		args[4]		Boolean: fog moving?
+//		special1	Internal:  Counter for spawn frequency
+//		WeaveIndexZ	Internal:  Index into floatbob table
+//
+//==========================================================================
+
+// Fog Spawner --------------------------------------------------------------
+
+class Equestria_FogSpawner : Actor
+{
+	Default
+	{
+	//$Title Fog Spawner
+	
+	//$Arg0 Speed of fog
+	//$Arg1 Angle of spread
+	//$Arg2 Frequency of spawn
+	//$Arg3 Lifetime countdown
+	
+	//$Arg4 Fog moving? (Unused)
+	//$Arg4Type 11
+	//$Arg4Enum noyes
+	
+	//$Arg0Tooltip "Moving speed of spawned fog patches"
+	//$Arg1Tooltip "Angle spread of spawned fog patches' movement, in units of +/- 0.7°"
+	//$Arg2Tooltip "Countdown between calls of A_FogSpawn that actually spawn a fog patch"
+	//$Arg3Tooltip "Lifetime countdown for spawned fog patches, see A_FogMove"
+	//$Arg4Tooltip Unused
+	
+		+NOSECTOR +NOBLOCKMAP
+		+FLOATBOB
+		+NOGRAVITY
+		+INVISIBLE
+	}
+
+
+	States
+	{
+	Spawn:
+		TNT1 A 20 A_FogSpawn();
+		Loop;
+	}
+	
+	//==========================================================================
+	//
+	// A_FogSpawn
+	//
+	//==========================================================================
+
+	void A_FogSpawn()
+	{
+		if (special1-- > 0)
+		{
+			return;
+		}
+		special1 = args[2];		// Reset frequency count
+
+		class<Actor> fog;
+		switch (random[FogSpawn](0,2))
+		{
+			default:
+			case 0: fog = "Equestria_FogPatchSmall"; break;
+			case 1: fog = "Equestria_FogPatchMedium"; break;
+			case 2: fog = "Equestria_FogPatchLarge"; break;
+		}
+		Actor mo = Spawn (fog, Pos, ALLOW_REPLACE);
+
+		if (mo)
+		{
+			int delta = args[1];
+			if (delta == 0) delta = 1;
+			mo.angle = angle + ((random[FogSpawn](0, delta-1) - (delta >> 1)) * (360 / 256.));
+			mo.target = self;
+			if (args[0] < 1) args[0] = 1;
+			mo.args[0] = random[FogSpawn](1, args[0]);	// Random speed
+			mo.args[3] = args[3];						// Set lifetime
+			mo.args[4] = 1;									// Set to moving
+			mo.WeaveIndexZ = random[FogSpawn](0, 63);
+		}
+	}
+	
+}
+
+// Small Fog Patch ----------------------------------------------------------
+
+class Equestria_FogPatchSmall : Actor replaces FogPatchSmall
+{
+	Default
+	{
+		Speed 1;
+		+NOBLOCKMAP +NOGRAVITY +NOCLIP +FLOAT
+		+NOTELEPORT
+		RenderStyle "Translucent";
+		Alpha 0.6;
+	}
+
+
+	States
+	{
+	Spawn:
+		FOGS ABCDE 7 A_FogMove();
+		Loop;
+	Death:
+		FOGS E 5;
+		Stop;
+	}
+	
+	//==========================================================================
+	//
+	// A_FogMove
+	//
+	//==========================================================================
+
+	void A_FogMove()
+	{
+		double speed = args[0];
+		int weaveindex;
+
+		if (!args[4])
+		{
+			return;
+		}
+
+		if (args[3]-- <= 0)
+		{
+			SetStateLabel ('Death', true);
+			return;
+		}
+
+		if ((args[3] % 4) == 0)
+		{
+			weaveindex = WeaveIndexZ;
+			AddZ(BobSin(weaveindex) / 2);
+			WeaveIndexZ = (weaveindex + 1) & 63;
+		}
+		VelFromAngle(speed);
+	}
+}
+
+// Medium Fog Patch ---------------------------------------------------------
+
+class Equestria_FogPatchMedium : Equestria_FogPatchSmall replaces FogPatchMedium
+{
+	States
+	{
+	Spawn:
+		FOGM ABCDE 7 A_FogMove();
+		Loop;
+	Death:
+		FOGS ABCDE 5;
+		Goto Super::Death;
+	}
+}
+
+// Large Fog Patch ----------------------------------------------------------
+
+class Equestria_FogPatchLarge : Equestria_FogPatchMedium replaces FogPatchLarge
+{
+	States
+	{
+	Spawn:
+		FOGL ABCDE 7 A_FogMove();
+		Loop;
+	Death:
+		FOGM ABCDEF 4;
+		Goto Super::Death;
+	}
+}
