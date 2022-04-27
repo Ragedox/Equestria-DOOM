@@ -1,3 +1,40 @@
+Class EquestriaSpiritualArmor : BasicArmorBonus replaces ArmorBonus
+{
+	Default
+	{
+	//$Title Spiritual Armor (1)
+		Radius 20; Height 16;
+		Inventory.Pickupmessage "$GOTARMBONUS";
+		Inventory.Icon "BON2A0";
+		Armor.Savepercent 33.335;
+		Armor.Saveamount 1;
+		Armor.Maxsaveamount 200;
+		+COUNTITEM
+		+INVENTORY.ALWAYSPICKUP
+	}
+	States
+	{
+	Spawn:
+		BON2 ABCDCB 6 Light("ARMORBONUS");
+		Loop;
+	}
+}
+
+Class EquestriaHelmetArmor : EquestriaSpiritualArmor
+{
+	Default
+	{
+	//$Title Helmet Armor (1)
+	//$Category Health and Armor
+	}
+	States
+	{
+	Spawn:
+		BON2 EFGF 6 Light("ARMORBONUS2");
+		Loop;
+	}
+}
+
 Class BigArmorBonus : BasicArmorBonus
 {
 	Default
@@ -33,7 +70,12 @@ Class SecurityArmor : GreenArmor replaces GreenArmor
 	Default
 	{
 	//$Title Security Armor (100)
+		Radius 20; Height 16;
+		Inventory.Pickupmessage "$GOTARMOR";
+		Inventory.Icon "ARM1A0";
 		Inventory.PickupSound "pickup/armor1";
+		Armor.SavePercent 33.335;
+		Armor.SaveAmount 100;
 	}
 	States
 	{
@@ -49,7 +91,12 @@ Class CombatArmor : BlueArmor replaces BlueArmor
 	Default
 	{
 	//$Title Security Armor (200)
+		Radius 20; Height 16;
+		Inventory.Pickupmessage "$GOTMEGA";
+		Inventory.Icon "ARM2A0";
 		Inventory.PickupSound "pickup/armor2";
+		Armor.Savepercent 50;
+		Armor.Saveamount 200;
 	}
 	States
 	{
