@@ -1,0 +1,97 @@
+class EquestriaDeadZombieMan : Actor replaces DeadZombieMan
+{
+	Default
+	{ //$Title Dead Zombie Man
+	+CORPSE }
+	States
+	{
+	Spawn:
+		POSS L -1 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		Stop;
+	}
+}
+
+// Dead shotgun guy --------------------------------------------------------
+
+class EquestriaDeadShotgunGuy : Actor replaces DeadShotgunGuy
+{
+	Default
+	{ //$Title Dead Shotgun Guy
+	+CORPSE }
+	States
+	{
+	Spawn:
+		SPOS L -1 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		Stop;
+	}
+}
+
+Class DeadHacker : Actor
+{
+	Default
+	{
+	//$Category Decoration
+	//$Title Dead Hacker
+	+CORPSE }
+	States
+	{
+	Spawn:
+		SPOS L -1 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		Stop;
+	}
+}
+
+// Dead imp ----------------------------------------------------------------
+
+class EquestriaDeadDoomImp : Actor replaces DeadDoomImp
+{
+	Default { //$Title Dead Imp
+	+CORPSE }
+	States
+	{
+	Spawn:
+		TROO M -1 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		Stop;
+	}
+}
+
+// Dead demon --------------------------------------------------------------
+
+class EquestriaDeadPinky : Actor replaces DeadDemon
+{
+	Default { //$Title Dead Pinky
+	+CORPSE }
+	States
+	{
+	Spawn:
+		SARG N -1 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		Stop;
+	}
+}
+
+// Dead cacodemon ----------------------------------------------------------
+
+class EquestriaDeadCacodemon : Actor replaces DeadCacodemon
+{
+	Default { //$Title Dead Cacodemon
+	+CORPSE }
+	States
+	{
+	Spawn:
+		HEAD L -1 NoDelay { bSPRITEFLIP = randompick(0,1); }
+		Stop;
+	}
+}
+
+Class EquestriaDeadLostSoul : Actor replaces DeadLostSoul
+{
+	Default
+	{ //$Title Dead Lost Soul
+	+ForceXYBillboard +CORPSE }
+	States
+	{
+	Spawn:
+		SKUL L -1 NoDelay { bSPRITEFLIP = randompick(0, 1); }
+		Stop;
+	}
+}

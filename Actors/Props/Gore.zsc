@@ -1,5 +1,5 @@
 Class EquestriaSmallBloodPool : SmallBloodPool replaces SmallBloodPool
-{	Default	{ Height 5; Radius 16; +ForceXYBillboard +FLATSPRITE } 
+{	Default	{ Height 5; Radius 16; +ForceXYBillboard +FLATSPRITE +CORPSE } 
 	States
 	{
 	Spawn:
@@ -40,7 +40,7 @@ Class EquestriaColonGibs : ColonGibs replaces ColonGibs
 
 Class EquestriaGoreProps : Actor
 {
-	Default { +CASTSPRITESHADOW +SOLID }
+	Default { +CASTSPRITESHADOW +SOLID +CORPSE}
 	States
 	{
 	
@@ -378,3 +378,5 @@ Class BloodSplat2 : FlatProps
 	Spawn:
 		FLAT H -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
 }	}
+
+#include "Actors/Props/DeadThings.zsc"

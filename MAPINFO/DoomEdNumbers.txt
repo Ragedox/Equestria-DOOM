@@ -121,7 +121,7 @@ DoomEdNums
 	
 	//Gore parts (Bodys, Meat, etc)
 	
-	15700 = "DeadPlasmaKirin"
+	15700 = "DeadHacker"
 	
 	// Wall Sprites/Props
 	
