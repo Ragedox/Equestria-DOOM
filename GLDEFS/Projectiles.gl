@@ -18,8 +18,6 @@ pulselight Explosion
 
 object EquestriaRocket
 {
-    frame MISLA { light ROCKET    }
-
     frame MISLB { light Explosion }
     frame MISLC { light Explosion }
     frame MISLD { light Explosion }

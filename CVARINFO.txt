@@ -11,3 +11,4 @@ server bool FlatDecals = false;
 server bool WeaponLight = true;
 server bool BULLETTRACER = true;
 server bool DEBUG = false;
+server bool CV_MISSILEMODEL = true;

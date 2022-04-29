@@ -188,6 +188,7 @@ OptionMenu "VideoSettings"
 	Option 		"$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", 			"SpriteShadowModes"
 	Option 		"$GORETOGGLE", 						"GoreToggle",					"GoreType"
 	Option 		"$GIBSFOREVER", 					"GibsStayForever",				"onoff"
+	Option 		"$MISSILEMODEL", 					"CV_MISSILEMODEL",			"onoff"
 	StaticText ""
 	
 	Option 		"$GLPREFMNU_BLOOM",		 			gl_bloom,						"OnOff"

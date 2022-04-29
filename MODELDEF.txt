@@ -1,3 +1,32 @@
+Model "BulletTracer"
+{
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "Tracer.png"
+	Scale 1.5 0.3 0.5
+	PITCHFROMMOMENTUM
+	FrameIndex PUFF A 0 0
+}
+
+Model "EquestriaRocket"
+{
+	Path "Models"
+	Model 0 "Rocket.md3"
+	Skin 0 "Rocket.png"
+	
+	Scale 10.0 10.0 10.0 
+	
+	PITCHFROMMOMENTUM
+	ROTATING
+	
+	Offset -20 -7 5
+	Rotation-Center 0.0 5.0 0.0
+	Rotation-Vector 5.0 0.0 0.0
+	Rotation-Speed 5.0
+	ZOffset 5
+	FrameIndex MIS2 A 0 0
+}
+
 /*
 Model "PlasmaScorch1"
 {
@@ -39,13 +68,3 @@ Model "BFGLightning2"
 	FrameIndex NULL A 0 0
 }
 */
-
-Model "BulletTracer"
-{
-	Path "Models"
-	Model 0 "Tracer.md3"
-	Skin 0 "Tracer.png"
-	Scale 1.5 0.3 0.5
-	PITCHFROMMOMENTUM
-	FrameIndex PUFF A 0 0
-}
