@@ -123,9 +123,7 @@ Class EquestriaDoomWeapon : Weapon
 		TNT1 A 3
 		{
 			if (Vel.Z < 0 || Vel.Z > 0)
-			{
 				return ResolveState("Kick.Air");
-			}
 			
 			A_StartSound ("skeleton/swing");
 			A_AlertMonsters (250, 0);
@@ -138,9 +136,7 @@ Class EquestriaDoomWeapon : Weapon
 				A_Recoil(-1);
 			}
 			else
-			{
 				A_Recoil(-2);
-			}
 			
 			return state(null);
 		}
@@ -152,9 +148,7 @@ Class EquestriaDoomWeapon : Weapon
 				SetPlayerProperty(0, 0, 0);
 			}
 			else
-			{
 				A_CustomPunch(20 * Random(1, 10), TRUE, 0, "BerserkPuff", 75, 0, 0, "BasicArmorBonus", "skeleton/melee");
-			}
 		}
 		TNT1 AAAAA 2;
 		Goto GotoReady;
@@ -175,9 +169,7 @@ Class EquestriaDoomWeapon : Weapon
         TNT1 A 2
 		{
 			if (!CheckInventory("PowerStrength", 1))
-			{
 				A_CustomPunch(3*Random(1,10), true, CPF_NOTURN, "KickPuff", 85, 0, 0, "BasicArmorBonus", "*fist");
-			}
 			else
 			{
 				A_CustomPunch(25 * Random(1, 10), TRUE, 0, "BerserkPuff", 85, 0, 0, "BasicArmorBonus", "skeleton/melee");
@@ -203,10 +195,10 @@ Class EquestriaDoomWeapon : Weapon
 			}
 		}
 		KICK H 2 { A_OverlayScale(-3, 1, 1, WOF_INTERPOLATE); if(GetCVar("KickCamera")) { A_ZoomFactor(0.96); } }
-		KICK H 2 { if(GetCVar("KickCamera")) { A_ZoomFactor(0.97); } }
-		KICK H 2 { if(GetCVar("KickCamera")) { A_ZoomFactor(0.98); } }
-		KICK F 1 { if(GetCVar("KickCamera")) { A_ZoomFactor(0.99); } }
-		KICK F 1 { if(GetCVar("KickCamera")) { A_ZoomFactor(1); } }
+		KICK H 2 { if(GetCVar("KickCamera")) A_ZoomFactor(0.97); }
+		KICK H 2 { if(GetCVar("KickCamera")) A_ZoomFactor(0.98); }
+		KICK F 1 { if(GetCVar("KickCamera")) A_ZoomFactor(0.99); }
+		KICK F 1 { if(GetCVar("KickCamera")) A_ZoomFactor(1); }
 		KICK EEDDCC 1
 		{
 			A_OverlayScale(-3, 1, 1, WOF_INTERPOLATE);
@@ -302,7 +294,7 @@ Class BulletTracer : FastProjectile
 	}
 	override void PostBeginPlay()
 	{
-		if(GetCVar("BULLETTRACER")==0)
+		if(GetCVar("CV_BULLETTRACER")==0)
 			Destroy();
 	}
 	States
