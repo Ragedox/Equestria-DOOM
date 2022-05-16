@@ -5,7 +5,7 @@ Class FreeEquestria_SKAGBall : EquestriaBFGBall replaces EquestriaBFGBall
 	Projectile:
 		BFS1 AB random(1, 4)
 		{ A_SetRoll(roll + random(-45, 45), SPF_INTERPOLATE);
-		A_SpawnProjectile("BFGSparkles", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, 360));
+		A_SpawnProjectile("BFGTrailSparkles", 0, 0, random (0, 360), CMF_AIMDIRECTION, random (0, 360));
 		}
 		Loop;
 	}

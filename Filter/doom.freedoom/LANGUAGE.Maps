@@ -1,5 +1,14 @@
 [enu default]
 
+MN_USEDOOM2 =			"Play in FreeDOOM 2 to enjoy the new campaign!";
+
+MN_OG_KDINTHEDEAD =		"Knee-Deep in the Dead: Original";
+MN_OG_SHORESOFHELL = 	"The Shores of Hell: Original";
+MN_OG_INFERNO = 		"Inferno: Original";
+MN_OG_FLESHCONSUMED = 	"Thy Flesh Consumed: Original";
+
+MN_OG_HELLONEARTH = 	"Hell on Earth: Original";
+
 CORPORATION = "Associated Global Machinery";
 EVENTLOCATION = "Unknown location, Earth, FreeDOOM Equestria Release date mm/dd/2XXX";
 

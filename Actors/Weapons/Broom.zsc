@@ -31,7 +31,7 @@ Class Broom : EquestriaDoomWeapon
 			return ResolveState(null);
 		}
 		
-		BROO A 1 A_Lower;
+		BROO A 1 A_Lower();
 		Wait;
   
 	Select:

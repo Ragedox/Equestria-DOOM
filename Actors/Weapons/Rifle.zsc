@@ -11,7 +11,7 @@ Class EquestriaRifle : EquestriaDoomWeapon
 		
 		Inventory.PickupMessage "$GOTRIFLE";
 		Obituary "$OB_MPCHAINGUN";
-		Tag "Rifle";
+		Tag "$TAG_RIFLE";
 		
 		AttackSound "weapons/chngun";
 	}
@@ -36,14 +36,20 @@ Class EquestriaRifle : EquestriaDoomWeapon
 		Wait;
 		
 	Select:
-		TNT1 A 0
+		RFLE A 0 Offset(-67, 100)
 		{
 			A_SetCrossHair(2);
 			
 			if (GetCVAR("AuraToggle") == true)
-				A_Overlay(10, "Aura.Ready");
+				A_Overlay(10, "Aura.Select");
 		}
-		RFLE A 1 A_Raise();
+		#### B 1 A_WeaponOffset(-54, 81, WOF_INTERPOLATE);
+		#### B 1 A_WeaponOffset(-32, 69, WOF_INTERPOLATE);
+		#### B 1 A_WeaponOffset(-22, 58, WOF_INTERPOLATE);
+		#### B 1 A_WeaponOffset(-10, 47, WOF_INTERPOLATE);
+		#### A 1 A_WeaponOffset(-7, 39, WOF_INTERPOLATE);
+		#### A 1 A_WeaponOffset(-2, 34, WOF_INTERPOLATE);
+		#### A 0 A_Raise();
 		Wait;
 		
 	Fire:
@@ -95,6 +101,10 @@ Class EquestriaRifle : EquestriaDoomWeapon
 		//TNT1 A 1 A_ZoomFactor(1, ZOOM_NOSCALETURNING);
 		TNT1 AA 1 A_SetPitch(pitch+0.15);
 		Stop;
+	
+	Aura.Select:
+		AUR2 A 0 A_Overlay(11, "Aura.Setup");
+		AUR2 BBBBAA 1 Bright;
 		
 	Aura.Ready:
 		AUR2 A -1 Bright A_Overlay(11, "Aura.Setup", true);

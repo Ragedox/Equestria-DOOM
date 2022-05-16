@@ -109,14 +109,14 @@ Class EquestriaRocket : Actor replaces Rocket
 	Spawn:
 		MISL A 6 Bright NoDelay Light("ROCKET") { if(GetCVar("CV_MISSILEMODEL")==1) return ResolveState("Spawn2"); return state(null); }
 		
-		#### A 2 Bright Light("ROCKET") A_SpawnItem("EquestriaRocketSmoke",0,height / 2);
+		#### A 2 Bright Light("ROCKET") { A_SpawnItem("EquestriaRocketSmoke",0,height / 2); A_SpawnItem("EquestriaRocketFire",0,-2); }
 		Wait;
 	
 	Spawn2:
 		TNT1 A 3;
 		MIS2 A 3 Bright Light("ROCKET");
 		
-		#### A 2 Bright Light("ROCKET") A_SpawnItem("EquestriaRocketSmoke",0,height / 2);
+		#### A 2 Bright Light("ROCKET") { A_SpawnItem("EquestriaRocketSmoke",0,height / 2); A_SpawnItem("EquestriaRocketFire",0,-2); }
 		Wait;
 		
 	Death:
@@ -141,7 +141,7 @@ Class EquestriaRocket : Actor replaces Rocket
 		MISL B 6 Bright
 		{
 			A_Explode(-1,-1, XF_HURTSOURCE, true, 0,0,10,"","Explosion");
-			A_QuakeEx(4, 4, 4, 16, 0, 200, "", QF_SCALEDOWN, 0,0,0, 1);
+			A_QuakeEx(4, 4, 4, 16, 0, 256, "", QF_SCALEDOWN, 0,0,0, 1);
 		}
 		
 		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), frandom(0, 360), CMF_AIMDIRECTION, random(0, -90));
@@ -213,11 +213,24 @@ Class EquestriaRocketSmoke : Smoke replaces RocketSmokeTrail
 	}
 }
 
+Class EquestriaRocketFire : FireBallTrail
+{
+	States
+	{
+	Spawn:
+		TNT1 A 4;
+		BAL1 CD 2 Bright A_FadeOut(0.125);
+		BAL1 E 1 Bright A_FadeOut(0.1);
+		Wait;
+	}
+}
+
 Class ExplosionSparkle : PuffSparkles
 {
 	Default
 	{
 		Scale 0.75; Speed 10; Gravity 0.5;
+		BounceType "Doom";
 	}
 	States
 	{
