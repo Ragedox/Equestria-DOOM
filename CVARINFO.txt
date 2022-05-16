@@ -1,10 +1,11 @@
-user bool CamRecoilToggle = true;
-user bool AuraToggle = true;
-user bool KickCamera = true;
-user bool WarningStartup = true;
-user int MuzzleStyle = 1;
+user bool	CamRecoilToggle = true;
+user bool	AuraToggle = true;
+user bool   KickCamera = true;
+user bool	WarningStartup = true;
+user int	MuzzleStyle = 1;
+user bool	CV_INTERPOLATEHUD = false;
 
-server int GoreToggle = 1;
+server int	GoreToggle = 1;
 server bool GibsStayForever = false;
 server bool FlatDecorations = true;
 server bool FlatDecals = false;
@@ -12,3 +13,4 @@ server bool WeaponLight = true;
 server bool CV_BULLETTRACER = true;
 server bool DEBUG = false;
 server bool CV_MISSILEMODEL = true;
+server bool CV_CLASSIC = false;

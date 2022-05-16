@@ -131,7 +131,7 @@ Class BarrelDebris : DebrisCore
 	Bounce:
 		#### # 0 A_SetRoll(roll + random(-100, 100));
 	Roll:
-		#### # 1 A_SpawnItem("BarrelDebrisSmoke");
+		#### # 1 A_SpawnItemEx("BarrelDebrisSmoke",0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1), frandom(0, 360));
 		Loop;
 		
 	Death:

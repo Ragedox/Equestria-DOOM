@@ -1,0 +1,80 @@
+
+Class FlatProps : Actor
+{
+	Default
+	{
+	//$Category Wall Props
+		+NOCLIP +NOGRAVITY +NOINTERACTION +FLATSPRITE
+		Height 32; Radius 16;
+	}
+}
+
+Class Wall_FlatProps : FlatProps
+{
+	Default
+	{
+		-FLATSPRITE +WALLSPRITE
+	}
+}
+
+Class ExplosiveWarning : Wall_FlatProps
+{	Default { Height 36; Radius 31; }
+	States
+	{
+	Spawn:
+		FLAT A -1;
+		Stop;
+	}
+}
+
+Class VoltageWarning : ExplosiveWarning
+{
+	States
+	{
+	Spawn:
+		FLAT B -1;
+		Stop;
+	}
+}
+
+Class RadiationWarning : ExplosiveWarning
+{
+	States
+	{
+	Spawn:
+		FLAT C -1;
+		Stop;
+	}
+}
+
+Class PoisonWarning : ExplosiveWarning
+{
+	States
+	{
+	Spawn:
+		FLAT D -1;
+		Stop;
+	}
+}
+
+Class ChickenPainting1 : Wall_FlatProps
+{
+	Default { Health 100; Height 108; Radius 54; +IsMonster -NoInteraction +Shootable }
+	States
+	{
+	Spawn:
+		FLAT I -1;
+		Stop;
+	}
+}
+
+Class ChickenPainting2 : ChickenPainting1
+{
+	Default { Health 75; Radius 39; }
+	States
+	{
+	Spawn:
+		FLAT J -1;
+		Stop;
+	}
+}
