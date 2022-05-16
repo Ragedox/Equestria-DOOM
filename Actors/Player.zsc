@@ -36,7 +36,13 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 	{
 	
 	Pain:
-		PLAY G 4 A_QuakeEx(1,1,1,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN);
+		PLAY G 4
+		{
+			if(health <= 50)
+				A_QuakeEx(1,1,1,8,0,1,0,QF_RELATIVE | QF_SCALEDOWN);
+			if(health > 50)
+				A_QuakeEx(2,2,2,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN);
+		}
 		PLAY G 4 A_Pain();
 		Goto Spawn;
 	
@@ -132,7 +138,7 @@ Class PopSkull : PlayerChunk
 		PHED A 1 
 		{
 			A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR);
-			A_SetRoll(roll + 4, SPF_INTERPOLATE);
+			A_SetRoll(roll + 6, SPF_INTERPOLATE);
 			goodangle = angle;
 		}
 		loop;
