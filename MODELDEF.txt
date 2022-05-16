@@ -20,11 +20,87 @@ Model "EquestriaRocket"
 	ROTATING
 	
 	Offset -20 -7 5
-	Rotation-Center 0.0 5.0 0.0
+	Rotation-Center 0.0 4.5 0.0
 	Rotation-Vector 5.0 0.0 0.0
-	Rotation-Speed 5.0
-	ZOffset 5
+	Rotation-Speed 20.0
+	//ZOffset 5
 	FrameIndex MIS2 A 0 0
+}
+
+Model "ExplosiveWarning"
+{
+	Path "Models"
+	Model 0 "Explosive.md3"
+	Skin 0 "WarningSigns.png"
+	
+	Scale 10.0 10.0 10.0
+	
+	USEACTORROLL
+	USEACTORPITCH
+	
+	AngleOffset 90
+	RollOffset 90
+	
+	//Offset 0.8 0 0
+	Offset 24.8 0 0
+	FrameIndex FLAT A 0 0
+}
+
+Model "VoltageWarning"
+{
+	Path "Models"
+	Model 0 "Voltage.md3"
+	Skin 0 "WarningSigns.png"
+	
+	Scale 10.0 10.0 10.0
+	
+	USEACTORROLL
+	USEACTORPITCH
+	
+	AngleOffset 90
+	RollOffset 90
+	
+	//Offset 0.8 0 0
+	Offset 24.8 0 0
+	FrameIndex FLAT B 0 0
+}
+
+Model "RadiationWarning"
+{
+	Path "Models"
+	Model 0 "Radiation.md3"
+	Skin 0 "WarningSigns.png"
+	
+	Scale 10.0 10.0 10.0
+	
+	USEACTORROLL
+	USEACTORPITCH
+	
+	AngleOffset 90
+	RollOffset 90
+	
+	//Offset 0.8 0 0
+	Offset 24.8 0 0
+	FrameIndex FLAT C 0 0
+}
+
+Model "PoisonWarning"
+{
+	Path "Models"
+	Model 0 "Poison.md3"
+	Skin 0 "WarningSigns.png"
+	
+	Scale 10.0 10.0 10.0
+	
+	USEACTORROLL
+	USEACTORPITCH
+	
+	AngleOffset 90
+	RollOffset 90
+	
+	//Offset 0.8 0 0
+	Offset 24.8 0 0
+	FrameIndex FLAT D 0 0
 }
 
 /*
