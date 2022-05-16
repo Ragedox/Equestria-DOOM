@@ -3,7 +3,7 @@ Class HealthPotion : CustomInventory replaces HealthBonus
 	Default
 	{
 		//$Title Health Potion (1)
-		+COUNTITEM
+		-COUNTITEM
 		+INVENTORY.ALWAYSPICKUP
 		//+INVENTORY.NOSCREENFLASH
 		Inventory.MaxAmount 200;
