@@ -27,7 +27,7 @@ Class EquestriaArchvile : DoomEquestriaMonster replaces Archvile
 	States
 	{
 	Spawn:
-		IDLV AB 5 A_Look;
+		IDLV AB 5 A_Look();
 		Loop;
 	
 	See:
@@ -35,19 +35,25 @@ Class EquestriaArchvile : DoomEquestriaMonster replaces Archvile
 		Loop;
 	
 	Missile:
-		VILE G 10 BRIGHT
+		VILE G 10 Bright
 		{
 			A_VileStart();
 			A_FaceTarget();
 		}
-		VILE H 8 BRIGHT A_VileTarget();
-		VILE IJKLMN 8 BRIGHT A_FaceTarget();
-		VILE O 8 BRIGHT A_VileAttack();
-		VILE P 20 BRIGHT;
+		VILE H 8 Bright A_VileTarget();
+		VILE IJKLMN 8 Bright A_FaceTarget();
+		VILE O 8 Bright A_VileAttack();
+		VILE P 16 Bright;
+		Goto See;
+		
+	Melee:
+		VILE LMN 4 Bright Fast A_FaceTarget();
+		VILE O 4 Bright A_SpawnProjectile("ArchVileFireBall");
+		VILE P 8;
 		Goto See;
 	
 	Heal:
-		VILE [\] 10 BRIGHT;
+		VILE [\] 10 Bright;
 		Goto See;
 	
 	Pain:
@@ -83,5 +89,21 @@ class EquestriaArchvileFire : Actor replaces ArchvileFire
 		FIRE E 2 BRIGHT  A_FireCrackle;
 		FIRE FEFEFGHGHGH 2 BRIGHT  A_Fire;
 		Stop;
+	}
+}
+
+Class ArchVileFireBall : EquestriaFatShot
+{
+	Default { ProjectileKickBack 512; }
+	States
+	{
+	Death:
+		TNT1 AAAAAA 0 A_SpawnProjectile("Smoke", random(-32, 32), 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
+		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), random (0, 359), CMF_AIMDIRECTION, random(0, -90));
+
+		MISL B random(5, 8) Bright A_QuakeEx(4, 4, 4, 8, 0, 175, "", QF_SCALEDOWN, 0,0,0, 1);
+		MISL C 5 Bright;
+		MISL D 1 Bright A_FadeOut(0.1);
+		Wait;
 	}
 }
