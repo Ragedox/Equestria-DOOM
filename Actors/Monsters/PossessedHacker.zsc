@@ -99,21 +99,9 @@ Class PossessedHacker : DoomEquestriaMonster
 		}
 		Goto Death;
 		
-	XDeath:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
-		#### N 5
-		{
-			for (int i = 0; i < 10; i++)
-			{
-				A_SpawnItemEx("GenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 5),Random(2, 5),Random(2, 5), FRandom (0, 359));
-				A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 8),Random(2, 8),Random(2, 8), FRandom (0, 359));
-			}
-			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
-			
-			A_Fall(); A_XScream();
-		}
-		#### OPQRSTU 5;
+	Classic.XDeath:
+	Crush:
+		#### NOPQRSTU 5;
         #### V -1;
         Stop;
 	
@@ -252,21 +240,9 @@ Class DemonNirik : DoomEquestriaMonster
 		}
 		Goto Death;
 		
-	XDeath:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
-		TECH N 5
-		{
-			for (int i = 0; i < 10; i++)
-			{
-				A_SpawnItemEx("GenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 5),Random(2, 5),Random(2, 5), FRandom (0, 359));
-				A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 8),Random(2, 8),Random(2, 8), FRandom (0, 359));
-			}
-			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
-			
-			A_Fall(); A_XScream();
-		}
-		#### OPQRSTU 5;
+	Classic.XDeath:
+	Crush:
+		#### NOPQRSTU 5;
         #### V -1;
         Stop;
 		

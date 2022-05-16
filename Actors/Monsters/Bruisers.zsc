@@ -11,6 +11,7 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		Speed 8;
 		PainChance 50; PainThreshold 10;
 		BloodColor "darkgreen";
+		//Scale 1.25;
 		
 		+FLOORCLIP
 		+BOSSDEATH
@@ -33,7 +34,7 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		Loop;
 		
 	Melee:
-		BOSS E 8 A_FaceTarget();
+		BOSS E 6 A_FaceTarget();
 		BOSS F 6 A_FaceTarget();
 		BOSS G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "monster/miss", "BruisersMelee", true);
 		Goto See;
@@ -155,7 +156,7 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 }
 
 Class BossBaronofHell : EquestriaBaronofHell
-{	Default	{	+MISSILEMORE	}
+{	Default	{ Scale 1.25; +MISSILEMORE Radius 15 * 1.25; Height 64 * 1.25; }
 	States
 	{
 	See:

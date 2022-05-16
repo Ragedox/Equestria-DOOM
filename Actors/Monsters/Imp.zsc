@@ -98,8 +98,7 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		
 	Classic.XDeath:
 	Crush:
-		TROO N 4 { A_Fall(); A_XScream(); }
-		TROO OPQRST 4;
+		TROO NOPQRST 4;
 		TROO U -1;
 		Stop;
 		

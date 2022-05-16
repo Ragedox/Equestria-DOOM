@@ -46,7 +46,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		
 	See:
 		#### # 0 A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
-        POSS AABBCCDD 4 A_Chase();
+        POSS AABBCCDD 4 A_Chase("Melee", "Missile");
         Loop;
 		
 	See.Trainer:
@@ -79,7 +79,14 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 	//Death.BFGSplash:
 		#### ##### 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-20, 20), random (0, 360), CMF_AIMDIRECTION, random(0, -90));
 	Death:
-		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
+		
+		#### # 0
+		{
+			bSPRITEFLIP = randompick(0, 1);
+			/*if (health < -10)
+				return ResolveState("XDeath");
+			return state(null);*/
+		}
 		
         POSS H 5;
         POSS I 5 A_Scream();
@@ -104,14 +111,13 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		}
 		Goto Death;
 	
-	XDeath.Plasma:
-		#### # 0 A_SpawnItem("PlasmaExplosion",0, 25);
+	XDeath.Plasma: //TO DO CUSTOM PLASMA DEATH
+		#### # 0 A_SpawnItem("PlasmaExplosion",0, height / 2);
 		Goto XDeath;
 		
 	Classic.XDeath:
 	Crush:
-		POSS M 4 { A_Fall(); A_XScream(); }
-		POSS NOPQRST 4;
+		POSS MNOPQRST 4;
         POSS U -1;
         Stop;
 		
@@ -125,9 +131,9 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 			}
 			for (int i = 0; i < 6; i++)
 			{
-				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
 			}
 			
 			A_Fall(); A_XScream();

@@ -120,24 +120,9 @@ Class PossessedTrainer : DoomEquestriaMonster
 		#### L -1;
 		Stop;
 									
-	XDeath:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); bFLOATBOB = 0; }
-		
-		CPOS O 5
-		{
-			for (int i = 0; i < 10; i++)
-			{
-				A_SpawnItemEx("GenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 5),Random(2, 5),Random(2, 5), FRandom (0, 359));
-				A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), FRandom(8, 56), Random(2, 8),Random(2, 8),Random(2, 8), FRandom (0, 359));
-			}
-			A_SpawnItemEx("BloodExplosionSphere",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
-			
-			A_Fall(); A_XScream();
-		}
-		CPOS P 5 A_XScream();
-		CPOS Q 5;
-		CPOS R 5;
-		COIS S 5 A_NoBlocking();
+	Classic.XDeath:
+	Crush:
+		CPOS OPQRS 5;
 		CPOS T -1 A_SetFloorClip();
 		Stop;
 	
