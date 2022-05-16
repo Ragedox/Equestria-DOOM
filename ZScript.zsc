@@ -14,23 +14,20 @@ Class DebrisCore : Actor
 	{
 		+Missile
 		+Corpse
-		+NoBlockMap
 		+NotAutoAimed
 		+DropOff
-		+NoTeleport
+		+NoBlockMap +NoTeleport +NoTrigger +NoBlockMonst
 		+ForceXYBillboard
 		+MoveWithSector
-		+CannotPush
-		+NoBlockMonst
 		+CanPass
 		+ThruActors
-	  
-		-ACTIVATEIMPACT -ACTIVATEPCROSS
+		
 		-SOLID
 		
 		+ROLLSPRITE +ROLLCENTER
 		
 		DebrisCore.RollSpeed 15;
+		Damage 0;
 		//DebrisCore.RollState "Roll";
 	}
 	override void Tick()
@@ -165,7 +162,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Pickups/Health.zsc"
 #include "Actors/Pickups/Powerups.zsc"
 
-////Monsters
+////Enemies
 
 #include "Actors/Monsters/Arachnotron.zsc"
 #include "Actors/Monsters/ArchVile.zsc"
@@ -194,6 +191,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 
 #include "Actors/Props/Spawners.zsc"
 #include "Actors/Props/Facility.zsc"
+#include "Actors/Props/Decals.zsc"
 #include "Actors/Props/Nature.zsc"
 #include "Actors/Props/Hell.zsc"
 #include "Actors/Props/Gothic.zsc"
