@@ -1,14 +1,19 @@
 cutscene/intro		S1INTRO
 
+$pitchshiftrange 4
+misc/gibbed			dsslop
+
+$pitchshiftrange 1
+
 /*Player */
 
-$playersound	player	male	*pain50		Sounds/Player/ds50plpain.wav
+$playersound	player	male	*pain50		"Sounds/Player/ds50plpain.wav"
 $playersounddup	player	male	*pain25		*pain50
 
-$playersound	player	female	*pain50		Sounds/Player/ds50plpain.wav
+$playersound	player	female	*pain50		"Sounds/Player/ds50plpain.wav"
 $playersounddup	player	female	*pain25		*pain50
 
-$playersound	player	other	*pain50		Sounds/Player/ds50plpain.wav
+$playersound	player	other	*pain50		"Sounds/Player/ds50plpain.wav"
 $playersounddup	player	other	*pain25		*pain50
 
 /* Ambient */
@@ -23,33 +28,6 @@ $limit world/watersplash	0
 $limit world/lavasizzle		0
 $limit world/sludgegloop	0
 
-/* Weapons */
-
-weapons/bfgshot		BFGSHOT
-
-$random weapons/ricochet	{	weapons/ricochet1	weapons/ricochet2	weapons/ricochet3	}
-weapons/ricochet1	RIC1
-weapons/ricochet2	RIC2
-weapons/ricochet3	RIC3
-$limit weapons/ricochet 0
-$attenuation		weapons/ricochet	0.5
-
-weapons/impact		RIC1
-$attenuation		weapons/impact	0.5
-
-weapons/chaingun	DSCHAIN
-
-weapons/casinga		CASINGA
-weapons/casingb		CASINGB
-
-$limit weapons/casinga 0
-$attenuation weapons/casinga 10
-$limit weapons/casingb 0
-$attenuation weapons/casingb 10
-
-$limit weapons/bfgx 0
-$attenuation weapons/bfgx 0.5
-
 misc/magic		DSMAGIC
 
 /* Pickups */
@@ -62,15 +40,15 @@ pickup/potion "Sounds/Pickups/GetPotion.wav"
 pickup/armor1 "Sounds/Pickups/GetArmor1.wav"
 pickup/armor2 "Sounds/Pickups/GetArmor2.wav"
 
-pickup/clip "Sounds/Pickups/Ammo/GetClip.wav"
-pickup/shell "Sounds/Pickups/Ammo/GetShell.wav"
+pickup/clip 	"Sounds/Pickups/Ammo/GetClip.wav"
+pickup/shell 	"Sounds/Pickups/Ammo/GetShell.wav"
 pickup/backpack "Sounds/Pickups/Ammo/GetBackpack.ogg"
 
-pickup/shotgun "Sounds/Pickups/Weapons/GetShotgun.wav"
-pickup/chaingun "Sounds/Pickups/Weapons/GetChaingun.wav"
-pickup/plasmagun "Sounds/Pickups/Weapons/GetPlasmaGun.wav"
+pickup/shotgun 		"Sounds/Pickups/Weapons/GetShotgun.wav"
+pickup/chaingun 	"Sounds/Pickups/Weapons/GetChaingun.wav"
+pickup/plasmagun 	"Sounds/Pickups/Weapons/GetPlasmaGun.wav"
 pickup/rocklauncher "Sounds/Pickups/Weapons/GetRKTLauncher.wav"
-pickup/bfg "Sounds/Pickups/Weapons/GetBFG.wav"
+pickup/bfg 			"Sounds/Pickups/Weapons/GetBFG.wav"
 
 $limit pickup/skullkey	0
 
@@ -107,3 +85,42 @@ DoomTorch/Burn		DSFIRLOP
 
 $limit DoomTorch/Burn 0
 $attenuation DoomTorch/Burn 3
+
+//===========================================================================
+//
+// MISCELLANEOUS SOUNDS
+//
+//===========================================================================
+
+$pitchshiftrange 0
+
+misc/secret			dssecret
+misc/spawn			dsitmbk		// Item respawn
+misc/chat			dsradio		// Doom 2 chat sound
+misc/chat2			dstink		// Chat sound for everything else
+
+switches/normbutn		dsswtchn
+switches/exitbutn		dsswtchx
+
+misc/teleport			dstelept
+
+menu/activate			dsswtchn	// Activate a new menu
+menu/backup			dsswtchn	// Backup to previous menu
+menu/prompt			dsswtchn	// Activate a prompt "menu"
+menu/cursor			dspstop		// Move cursor up/down
+menu/change			dsstnmov	// Select new value for option
+menu/invalid			dsoof		// Menu not available
+menu/dismiss			dsswtchx	// Dismiss a prompt message
+menu/choose			dspistol	// Choose a menu item
+menu/clear			dsswtchx	// Close top menu
+$alias menu/advance menu/choose	// Open a submenu
+
+$random menu/quit1 { player/male/death1 demon/pain grunt/pain misc/gibbed misc/teleport grunt/sight1 grunt/sight3 demon/melee }
+$random menu/quit2 { vile/active misc/p_pkup brain/cube misc/gibbed skeleton/swing knight/death baby/active demon/melee  }
+
+$alias				intermission/tick			weapons/pistol
+$alias				intermission/cooptotal		*death
+$alias				intermission/nextstage		weapons/rocklx
+$alias				intermission/paststats		weapons/shotgr
+$alias				intermission/pastcoopstats	weapons/shotgr
+$alias				intermission/pastdmstats	*gibbed

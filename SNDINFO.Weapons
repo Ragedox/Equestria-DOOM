@@ -1,0 +1,58 @@
+$pitchshiftrange 3
+weapons/sawup			dssawup
+weapons/sawidle			dssawidl
+weapons/sawfull			dssawful
+weapons/sawhit			dssawhit
+$pitchshiftrange 1
+
+weapons/pistol			dspistol
+weapons/shotgf			dsshotgn
+weapons/shotgr			dssgcock
+weapons/sshotf			dsdshtgn
+weapons/sshoto			dsdbopn
+weapons/sshotc			dsdbcls
+weapons/sshotl			dsdbload
+weapons/chngun			dspistol
+weapons/rocklx			dsbarexp
+weapons/rocklf			dsrlaunc
+weapons/plasmaf			dsplasma
+weapons/plasmax			dsfirxpl
+weapons/bfgf			dsbfg
+weapons/bfgx			dsrxplod
+weapons/railgf			railgf1
+weapons/grbnce          dsbounce
+weapons/grenlx			dsgrnexp
+weapons/grenlf			dsglaunc
+
+weapons/bfgshot		BFGSHOT
+
+$random weapons/ricochet	{	weapons/ricochet1	weapons/ricochet2	weapons/ricochet3	}
+weapons/ricochet1	RIC1
+weapons/ricochet2	RIC2
+weapons/ricochet3	RIC3
+$limit weapons/ricochet 0
+$attenuation		weapons/ricochet	0.5
+
+weapons/impact		RIC1
+$attenuation		weapons/impact	0.5
+
+weapons/chaingun	DSCHAIN
+
+weapons/casinga		CASINGA
+weapons/casingb		CASINGB
+
+$limit weapons/casinga 0
+$attenuation weapons/casinga 10
+$limit weapons/casingb 0
+$attenuation weapons/casingb 10
+
+$limit weapons/bfgx 0
+$attenuation weapons/bfgx 0.5
+
+$alias misc/brainexplode weapons/rocklx
+$limit misc/brainexplode 0
+
+$limit weapons/plasmaf 0
+$limit weapons/chngun 0
+$limit weapons/rocklf 0		// because normal running is almost as fast as a rocket
+$limit weapons/rocklx 0		// and the cyberdemon shoots 3 at once

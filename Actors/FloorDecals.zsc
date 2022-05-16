@@ -22,6 +22,7 @@ Class FloorCheck : Actor
 		+FLOORCLIP;
 		+GHOST;
 		+NOGRAVITY;
+		+RELATIVETOFLOOR
 	}
 }
 
@@ -66,7 +67,7 @@ Class BulletDecal : ScorchBase
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
+		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Null");
 		DCAL A 2100 A_SetRoll(random(0, 359));
 		DCAL A 1 A_FadeOut(0.1);
 		Wait;

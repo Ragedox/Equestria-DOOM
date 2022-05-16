@@ -131,8 +131,7 @@ Class Cell2 : Cell
 	States
 	{
 	Spawn:
-		PLAT A 8;
-		CELL A 20;
+		PLAT A -1;
 		loop;
 	}
 }

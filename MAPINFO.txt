@@ -1,4 +1,3 @@
-include "MAPINFO/Episodes.txt"
 include "MAPINFO/DoomEdNumbers.txt"
 include "MAPINFO/Season1.txt"
 include "MAPINFO/Season2.txt"
@@ -22,6 +21,7 @@ gameinfo
 	
 	StatScreen_Single = "Equestria_StatusScreen" 
 	MessageBoxClass = "Equestria_MessageBoxMenu"
+	GibFactor = 0.5
 }
 
 gamedefaults 

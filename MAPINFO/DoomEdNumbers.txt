@@ -128,6 +128,7 @@ DoomEdNums
 	15800 = "ExplosiveWarning"
 	15801 = "VoltageWarning"
 	15802 = "RadiationWarning"
+	15809 = "PoisonWarning"
 	
 	15803 = "BloodSmear1"
 	15804 = "BloodSmear2"

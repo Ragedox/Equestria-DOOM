@@ -1,3 +1,5 @@
+$pitchshiftrange 1
+
 $alias monster/miss		skeleton/swing
 
 monster/miss2		dsskeswg
@@ -17,86 +19,216 @@ female/death1		MAREDTH
 female/death2		MAREDTH2
 female/death3		MAREDTH3
 
-/* Imp */
+// Zombie man
 
-imp/pain			DSBGPAIN
+$random grunt/sight 		{ grunt/sight1  grunt/sight2  grunt/sight3 }
+$random grunt/death		{ grunt/death1  grunt/death2  grunt/death3 }
+grunt/sight1			dsposit1
+grunt/sight2			dsposit2
+grunt/sight3			dsposit3
+grunt/active			dsposact
+grunt/pain				dspopain
+grunt/death1			dspodth1
+grunt/death2			dspodth2
+grunt/death3			dspodth3
+grunt/attack			dspistol
 
-/* Spiders */
+// Shotgun guy
 
-baby/pain			dsbsppai
+$random shotguy/sight		{ shotguy/sight1  shotguy/sight2  shotguy/sight3 }
+$random shotguy/death		{ shotguy/death1  shotguy/death2  shotguy/death3 }
+shotguy/sight1			dsposit1
+shotguy/sight2			dsposit2
+shotguy/sight3			dsposit3
+shotguy/active			dsposact
+shotguy/pain			dspopain
+shotguy/death1			dspodth1
+shotguy/death2			dspodth2
+shotguy/death3			dspodth3
+shotguy/attack			dsshotgn
 
-spider/pain			dssppain
+// Archvile
 
-/* Arch Vile */
+vile/sight				dsvilsit
+vile/active				dsvilact
+vile/pain				dsvipain
+vile/death				dsvildth
+vile/raise				dsvilrai
+vile/start				dsvilatk
+vile/stop				dsbarexp
+vile/firestrt			dsflamst
+vile/firecrkl			dsflame
 
-vile/raise			dsvilrai
+// Revenant
 
-/* Cacodemon */
+skeleton/sight			dsskesit
+skeleton/active			dsskeact
+skeleton/pain			dsskepai
+skeleton/melee			dsskepch
+skeleton/swing			dsskeswg
+skeleton/death			dsskedth
+skeleton/attack			dsskeatk
+skeleton/tracex			dsbarexp
 
-caco/pain			dscacpai
+// Fatso
 
-caco/active			DSCACACT
+fatso/sight				dsmansit
+fatso/active			dsmanact
+fatso/pain				dsmnpain
+fatso/raiseguns			dsmanatk
+fatso/death				dsmandth
+fatso/attack			dsmnshot
+fatso/shotx				dsfirxpl
 
-/* Chaingunner */
+// Chainguy
 
 $random chainguy/sight		{ chainguy/sight1  chainguy/sight2  chainguy/sight3 }
-chainguy/sight1			DSPOSIT1
-chainguy/sight2			DSPOSIT2
-chainguy/sight3			DSPOSIT3
-//$pitchset chainguy/sight 0.85
-
-chainguy/active			DSPOSACT
-//$pitchset chainguy/active 0.85
-
-chainguy/pain			DSPOPAIN
-//$pitchset chainguy/pain 0.85
-
 $random chainguy/death		{ chainguy/death1  chainguy/death2  chainguy/death3 }
-chainguy/death1 		DSPODTH1
-chainguy/death2			DSPODTH2
-chainguy/death3			DSPODTH3
+chainguy/sight1			dsposit1
+chainguy/sight2			dsposit2
+chainguy/sight3			dsposit3
+chainguy/active			dsposact
+chainguy/pain			dspopain
+chainguy/death1			dspodth1
+chainguy/death2			dspodth2
+chainguy/death3			dspodth3
+chainguy/attack			dsshotgn
+$limit chainguy/attack 0
+//$pitchset chainguy/sight 0.85
+//$pitchset chainguy/active 0.85
+//$pitchset chainguy/pain 0.85
 //$pitchset chainguy/death 0.85
 
+// Imp
 
-/* Cyberdemon */
+$random imp/sight		{ imp/sight1  imp/sight2 }
+$random imp/death		{ imp/death1  imp/death2 }
+imp/sight1				dsbgsit1
+imp/sight2				dsbgsit2
+imp/active				dsbgact
+imp/pain				DSBGPAIN
+imp/melee				dsclaw
+imp/death1				dsbgdth1
+imp/death2				dsbgdth2
+imp/attack				dsfirsht
+imp/shotx				dsfirxpl
+$limit imp/active 6
 
-cyber/active		dscybact
-cyber/pain			dscybpai
+// Demon
 
-/* Lost Soul */
+demon/sight				dssgtsit
+demon/active			dsdmact
+demon/pain				dsdmpain
+demon/melee				dssgtatk
+demon/death				dssgtdth
+$limit demon/melee 4
 
-skull/active	LostSoulActive
+// Spectre
 
-skull/pain		dssklpn
+spectre/sight			dssgtsit
+spectre/active			dsdmact
+spectre/pain			dsdmpain
+spectre/melee			dssgtatk
+spectre/death			dssgtdth
 
-skull/death		dsskldth
+// Cacodemon
 
-/* Nazis */
+caco/sight				dscacsit
+caco/active				DSCACACT
+caco/pain				dscacpai
+caco/death				dscacdth
+caco/attack				dsfirsht
+caco/shotx				dsfirxpl
 
-// SS Soldier
+// Baron of Hell
+
+baron/sight				dsbrssit
+baron/active			dsdmact
+baron/pain				dsdmpain
+baron/melee				dsclaw
+baron/death				dsbrsdth
+baron/attack			dsfirsht
+baron/shotx				dsfirxpl
+
+// Hell Knight
+
+knight/sight			dskntsit
+knight/active			dsdmact
+knight/pain				DSKNTPAI
+knight/death			dskntdth
+
+// Lost Soul
+
+skull/active			LostSoulActive
+skull/pain				dssklpn
+skull/melee				dssklatk
+skull/death				dsskldth
+
+// Spider Mastermind
+
+spider/sight			dsspisit
+spider/active			dsdmact
+spider/pain				dssppain
+spider/attack			dsshotgn
+spider/death			dsspidth
+spider/walk				dsmetal
+
+$limit spider/sight 4
+$limit spider/death 4
+
+// Arachnotron
+
+baby/sight				dsbspsit
+baby/active				dsbspact
+baby/pain				dsbsppai
+baby/death				dsbspdth
+baby/walk				dsbspwlk
+baby/attack				dsplasma
+baby/shotx				dsfirxpl
+
+$limit baby/attack 0
+
+// Cyber Demon
+
+cyber/sight				dscybsit
+cyber/active			dscybact
+cyber/pain				dscybpai
+cyber/death				dscybdth
+cyber/hoof				dshoof
+
+$limit cyber/sight 4
+$limit cyber/death 4
+
+// Pain Elemental
+
+pain/sight				dspesit
+pain/active				dspeact
+pain/pain				dspepain
+pain/death				dspedth
+
+// Wolfenstein SS
+
+weinershitzel1			dsssact1
+weinershitzel2			dsssact2
+wolfss/sight			dssssit
+wolfss/active			dsposact
+wolfss/pain				dssspain
+wolfss/death			dsssdth
+wolfss/attack			dssssht
 
 $random wolfss/active { weinershitzel1 weinershitzel2 }
-weinershitzel1				dsssact1
-weinershitzel2				dsssact2
 
-wolfss/pain			dssspain
+// Commander Keen
 
-wolfss/attack		dssssht
+keen/pain				dskeenpn
+keen/death				dskeendt
 
-/* Mancubus */
+// Boss Brain
 
-fatso/active		dsmanact
-
-fatso/attack		dsmnshot
-
-/* Hell Knight */
-
-knight/pain			DSKNTPAI
-
-/* Revenant */
-
-skeleton/pain		dsskepai
-
-/* Pain Elemental */
-
-pain/active			dspeact
+brain/sight				dsbossit
+brain/pain				dsbospn
+brain/death				dsbosdth
+brain/spit				dsbospit
+brain/cube				dsboscub
+brain/cubeboom			dsfirxpl
+$alias brain/spawn		misc/teleport
