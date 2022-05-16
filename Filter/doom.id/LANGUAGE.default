@@ -9,17 +9,20 @@ HARDSKILL = 	"Ultra-Violence";
 PLUSSKILL = 	"Instant-Violence";
 
 QUITMSG9 = 		"Don't go now, there's a\nKirinware waiting at your computer!";
-QUITMSG10 = 	"Get out of here and go back to your\ninfantile cartoon.";
 QUITMSG13 = 	"just leave.\nwhen you come back, there will be a\nnaughty bat waiting for you!";
 
 OTARMBONUS = 	"Picked up a Spiritual Armor.";
 GOTARMOR = 		"Picked up a Security Armor.";
 GOTMEGA = 		"Picked up a Combat Armor.";
 
+TAG_RIFLE =		"Rifle";
+
 GOTRIFLE = 		"You got the Rifle!";
 
 BERSERKFIST = 	"Berserked Hooves";
 GOTBERSERK = 	"Berserk! Let's punch out some demons!";
+
+GOTSTIM = 		"Picked up a stimpack.";
 
 /* Monsters */
 
@@ -62,3 +65,23 @@ OB_DEMONIRIK = "%o was bitten by a Demonic Nirik.";
 
 TAGREPEATER = "Repeater";
 GOTREPEATER = "You got the Repeater!";
+
+[ptb pt br]
+
+BABYSKILL = 	"Eu sou um Pequeno Ponêi";
+EASYSKILL = 	"Hey, não tão duro";
+NORMALSKILL = 	"Machuque-me bastante";
+HARDSKILL = 	"Ultra-Violento";
+PLUSSKILL = 	"Violência-instantânea";
+
+QUITMSG9 = 		"Não vá agora, tem um vírus daquela Kirin te esperando no seu desktop!";
+QUITMSG13 = 	"Só vá embora.\nQuando você voltar, vai ter uma \nmorcega safada te esperando!";
+
+OTARMBONUS = 	"Pegou uma Armadura Espiritual.";
+GOTARMOR = 		"Pegou uma Armadura de Segurança.";
+GOTMEGA = 		"Pegou uma Armadura de Combate.";
+
+BERSERKFIST = 	"Cascos Fortalecidos";
+GOTBERSERK = 	"Berserk! Vamos esmurrar alguns demônios!";
+
+GOTSTIM = 		"Pegou um Estimulante.";

@@ -1,0 +1,4 @@
+AddListMenu "EpisodeMenu"
+{
+	StaticTextCentered 160, -25, "$MN_USEDOOM2"
+}

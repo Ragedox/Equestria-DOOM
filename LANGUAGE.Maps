@@ -1,5 +1,14 @@
 [enu default]
 
+MN_USEDOOM2 =			"Play in DOOM 2 to enjoy the new campaign!";
+
+MN_OG_KDINTHEDEAD =		"Original: Knee-Deep in the Dead";
+MN_OG_SHORESOFHELL = 	"Original: The Shores of Hell";
+MN_OG_INFERNO = 		"Original: Inferno";
+MN_OG_FLESHCONSUMED = 	"Original: Thy Flesh Consumed";
+
+MN_OG_HELLONEARTH = 	"Original: Hell on Earth";
+
 CORPORATION = "Union Aerospace Corporation";
 EVENTLOCATION = "Phobos, Mars, Equestria DOOM Release date mm/dd/2XXX";
 

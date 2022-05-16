@@ -30,3 +30,15 @@ LOWHEALTH = 	"Low Health";
 TXT_IMKILLS = "Kills";
 TXT_IMITEMS = "Items";
 TXT_IMSECRETS = "Secrets";
+
+[ptb pt br]
+
+WARNING = "ATENÇÃO!";
+NOKIDS = "Isso NÃO é um jogo para CRIANÇAS!";
+MAYCONTAIN = "Pode conter imagens e conteúdos sensiveis\npara alguns publicos, como Violência Extrema e Linguagem Imprópria.";
+
+MNU_CHOOSESKILL = "Nível de Dificuldade:";
+
+QUITMSG = "Você tem certeza que quer sair deste ótimo mod?";
+QUITMSG7 = "Vai, pode ir embora. Tô nem aí.";
+QUITMSG10 = "Vaza e volta pro teu\ndesenho animado infantil";
