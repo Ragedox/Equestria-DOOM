@@ -320,6 +320,12 @@ Sprite "FLATA0", 62, 36
 	Patch "PS19A0", 0, 0
 }
 
+Sprite "FLATB0", 62, 36
+{
+	Offset 31, 36
+	Patch "PS17A0", 0, 0
+}
+
 Sprite "FLATC0", 62, 36
 {
 	Offset 31, 36
