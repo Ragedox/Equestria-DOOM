@@ -49,9 +49,9 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 	
 	Missile:
 		SSWV EF 10 A_FaceTarget(180);
-		SSWV G 4 BRIGHT A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "BulletPuff", 0, CBAF_NORANDOM);
+		SSWV G 4 BRIGHT A_WolfAttack(WAF_USEPUFF, attacksound, 1.0, 64, 128, 2, 4, 160.0, "EquestriaBulletPuff"); //A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "BulletPuff", 0, CBAF_NORANDOM);
 		SSWV F 6 A_FaceTarget(180);
-		SSWV G 4 BRIGHT A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "BulletPuff", 0, CBAF_NORANDOM);
+		SSWV G 4 BRIGHT A_WolfAttack(WAF_USEPUFF, attacksound, 1.0, 64, 128, 2, 4, 160.0, "EquestriaBulletPuff"); //A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "BulletPuff", 0, CBAF_NORANDOM);
 		SSWV F 1 A_CPosRefire();
 		Goto Missile+1;
 	
@@ -99,7 +99,7 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		Stop;
 	
 	Classic.XDeath:
-		SSWV N 4 { A_Fall(); A_XScream(); A_SpawnProjectile("SS_Cap", 56, 0, frandom(0,356), CMF_AIMDIRECTION, frandom(-180,0)); } 
+		SSWV N 4 { A_SpawnProjectile("SS_Cap", 56, 0, frandom(0,356), CMF_AIMDIRECTION, frandom(-180,0)); } 
 		SSWV OPQRSTU 4;
 		SSWV V -1;
 		Stop;
