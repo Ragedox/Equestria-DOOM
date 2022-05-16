@@ -135,52 +135,40 @@ Class EquestriaBlood : Blood replaces Blood
 	{
 		if (InStateSequence(CurState, ResolveState("Spawn")) && !isFrozen())
 		{
-			A_SetRoll((roll + 8), SPF_INTERPOLATE);
+			A_SetRoll((roll + speed), SPF_INTERPOLATE);
 		}
 		else if (InStateSequence(CurState, ResolveState("Falling")) && !isFrozen())
 		{
-			A_SetRoll((roll + 8), SPF_INTERPOLATE);
+			A_SetRoll((roll + speed), SPF_INTERPOLATE);
 		}
 		
 		Super.Tick();
 	}
 }
 
-Class EquestriaBlood_Enemies : EquestriaBlood
+Class EquestriaBlood_Enemies : Actor
 {
+	Default { +NOINTERACTION }
 	States
 	{
 	Spawn:
-		BLUD C 15 NoDelay
+		TNT1 A 0 NoDelay
 		{
-			A_SetRoll(frandom(0, 360));
-			for (int i = 0; i < 2; i++)
-			{
+			for (int i = 0; i < 3; i++)
 				A_SpawnItemEX("BloodTrail",0,0,0, 2,2,random(-2, 2), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
-			}
-		}
-		Goto Falling;
-		BLUD B 15
-		{
-			A_SetRoll(frandom(0, 360));
-			for (int i = 0; i < 2; i++)
-			{
-				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 64);
-			}
-		}
-		Goto Falling+1;
-		BLUD A 15
-		{
-			A_SetRoll(frandom(0, 360));
-			for (int i = 0; i < 2; i++)
-			{
-				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
-			}
 		}
 		Stop;
-		
-	Falling:
-		BLUD BA 15;
+		TNT1 A 0
+		{
+			for (int i = 0; i < 2; i++)
+				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		}
+		Stop;
+		TNT1 A 0
+		{
+			for (int i = 0; i < 1; i++)
+				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		}
 		Stop;
 	}
 }
