@@ -203,7 +203,7 @@ Graphic "ROCKETSCORCH2", 48, 48
 
 Sprite "SHTGB0", 320, 200
 {
-	Patch "SHOTGUNA", 117, 66
+	Patch "SHTGA", 117, 66
 	{
 		UseOffsets
 	}
@@ -211,7 +211,7 @@ Sprite "SHTGB0", 320, 200
 
 Sprite "SHTGC0", 320, 200
 {
-	Patch "SHOTGUNA", 115, 56
+	Patch "SHTGA", 115, 56
 	{
 		UseOffsets
 	}
@@ -219,7 +219,7 @@ Sprite "SHTGC0", 320, 200
 
 Sprite "SHTGD0", 320, 200
 {
-	Patch "SHOTGUNA", 110, 50
+	Patch "SHTGA", 110, 50
 	{
 		UseOffsets
 	}
@@ -227,7 +227,7 @@ Sprite "SHTGD0", 320, 200
 
 Sprite "SHTGE0", 320, 200
 {
-	Patch "SHOTGUNA", 98, 47
+	Patch "SHTGA", 98, 47
 	{
 		UseOffsets
 	}
@@ -235,7 +235,7 @@ Sprite "SHTGE0", 320, 200
 
 Sprite "SHTGF0", 320, 200
 {
-	Patch "SHOTGUNB", 73, 24
+	Patch "SHTGB", 73, 24
 	{
 		UseOffsets
 	}
@@ -243,7 +243,7 @@ Sprite "SHTGF0", 320, 200
 
 Sprite "SHTGG0", 320, 200
 {
-	Patch "SHOTGUNB", 52, 19
+	Patch "SHTGB", 52, 19
 	{
 		UseOffsets
 	}
@@ -251,7 +251,7 @@ Sprite "SHTGG0", 320, 200
 
 Sprite "SHTGH0", 320, 200
 {
-	Patch "SHOTGUNB", 30, 17
+	Patch "SHTGB", 30, 17
 	{
 		UseOffsets
 	}
@@ -259,7 +259,7 @@ Sprite "SHTGH0", 320, 200
 
 Sprite "SHTGI0", 320, 200
 {
-	Patch "SHOTGUNC", 29, 37
+	Patch "SHTGC", 29, 37
 	{
 		UseOffsets
 	}
@@ -267,7 +267,7 @@ Sprite "SHTGI0", 320, 200
 
 Sprite "SHTGJ0", 320, 200
 {
-	Patch "SHOTGUNC", 31, 41
+	Patch "SHTGC", 31, 41
 	{
 		UseOffsets
 	}
