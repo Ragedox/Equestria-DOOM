@@ -217,7 +217,7 @@ Class EquestriaBFGExtra : BFGExtra replaces BFGExtra
 	}
 }
 
-Class BFGTrail : Trails
+Class BFGTrail : Equestria_Trails
 {
 	Default	{ Scale 1; Alpha 0.5;	}
 	States
@@ -280,16 +280,22 @@ Class BFGSparkles : PuffSparkles
 	}
 }
 
-Class BFGSparkles_Trail : Trails
+Class BFGSparkles_Trail : Equestria_Trails
 {
-	Default { RenderStyle "Add"; Alpha 0.25; +Bright }
+	Default { RenderStyle "Add"; Alpha 0.25; Scale 1; +Bright }
 	States
 	{
 	Spawn:
 		PLS2 B random(17,35);
 		
 	Death:
-		PLS2 B 1 A_FadeOut(0.05);
+		PLS2 B 1
+		{
+			A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
+			If(Scale.X <= 0)
+				return ResolveState("Null");
+			return state(null);
+		}
 		Wait;
 	}
 }

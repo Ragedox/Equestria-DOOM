@@ -116,7 +116,7 @@ Class EquestriaRevenantTracer : RevenantTracer replaces RevenantTracer
 	}
 }
 
-Class RevenantTracerTrail : Trails
+Class RevenantTracerTrail : Equestria_Trails
 {
 	Default
 	{

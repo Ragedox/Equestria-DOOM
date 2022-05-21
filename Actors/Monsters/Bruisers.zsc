@@ -102,7 +102,7 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 	{
 	
 	Spawn:
-		IDLB AB 10 A_Look();
+		BOS2 C 10 A_Look();
 		Loop;
 	
 	See:
@@ -226,7 +226,7 @@ Class KnightBall : EquestriaBaronBall
 	}
 }
 
-Class BaronBallTrail : Trails
+Class BaronBallTrail : Equestria_Trails
 {	Default	{	RenderStyle	"Add";	}
 	States
 	{

@@ -46,7 +46,7 @@ pulselight CACOBALLDEATH
 	attenuate 1
 } 
 
-object EquestriaCacodemonBall
+object EquestriaCacoBall
 {
     frame BAL2A { light CACOBALL }
     frame BAL2B { light CACOBALL }

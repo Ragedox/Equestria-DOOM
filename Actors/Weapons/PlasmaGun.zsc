@@ -236,7 +236,7 @@ Class EquestriaPlasmaBall : Actor
 	}
 }
 
-Class PlasmaTrail : Trails
+Class PlasmaTrail : Equestria_Trails
 {
 	Default { Scale 0.8; Alpha 0.7; RenderStyle "Add"; }
 	States

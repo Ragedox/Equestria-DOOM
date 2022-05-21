@@ -10,7 +10,7 @@ Class DEParticles : DebrisCore
 	}
 }
 
-Class Trails : DEParticles
+Class Equestria_Trails : Actor
 {
 	Default
 	{
@@ -18,7 +18,10 @@ Class Trails : DEParticles
 		RenderStyle "Add";
 		Alpha 0.7;
 		
+		+ForceXYBillboard
 		+NoInteraction
+		+NoCLip
+		+RollSprite +RollCenter
 	}
 }
 

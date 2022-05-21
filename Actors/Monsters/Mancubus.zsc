@@ -26,7 +26,7 @@ Class EquestriaMancubus : DoomEquestriaMonster replaces Fatso
 	States
 	{
 	Spawn:
-		FATT AB 15 A_Look();
+		FATT U 15 A_Look();
 		Loop;
 	See:
 		FATT AABBCCDDEEFF 4 A_Chase();
@@ -90,7 +90,7 @@ Class EquestriaFatShot : FatShot replaces FatShot
 		MANF AB 4 Bright
 		{
 			A_SpawnItem("EquestriaRocketSmoke");
-			A_SpawnItemEx("FireBallTrail", 0,0,0,0,0,0,0, SXF_TRANSFERSCALE);
+			A_SpawnItemEx("EQ_FireBallTrail", 0,0,0,0,0,0,0, SXF_TRANSFERSCALE);
 		}
 		Loop;
 		

@@ -24,7 +24,7 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 	States
 	{
 	Spawn:
-		IDLI AB 10 A_Look();
+		IDLI A 10 A_Look();
 		Loop;
 	
 	See:
@@ -175,7 +175,7 @@ Class EquestriaImpBall : DoomImpBall replaces DoomImpBall
 	{
 	Spawn:
 		BAL1 B 2 A_SpawnItem("SmokePuff",0, height / 2);
-		BAL1 A 2 A_SpawnItem("FireBallTrail");
+		BAL1 A 2 A_SpawnItem("EQ_FireBallTrail");
 		Loop;
 		
 	Death:
@@ -186,7 +186,7 @@ Class EquestriaImpBall : DoomImpBall replaces DoomImpBall
 	}
 }
 
-Class FireBallTrail : Trails
+Class EQ_FireBallTrail : Equestria_Trails
 {
 	Default { +ZDOOMTRANS }
 	States
