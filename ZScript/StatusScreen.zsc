@@ -17,7 +17,7 @@ class Equestria_StatusScreen : DoomStatusScreen
 	{
 		int oldy = TITLEY + 400;
 
-		int y = TITLEY;
+		int y = TITLEY + 400;
 
 		y = DrawPatchText(y, entering, "$ENTERING");
 		y += 9;//entering.mFont.GetHeight();
