@@ -186,10 +186,10 @@ OptionMenu "VideoSettings"
 	StaticText ""
 	
 	Option 		"$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", 			"SpriteShadowModes"
-	Option 		"$GORETOGGLE", 						"GoreToggle",					"GoreType"
-	Option 		"$GIBSFOREVER", 					"GibsStayForever",				"onoff"
-	Option 		"$MISSILEMODEL", 					"CV_MISSILEMODEL",				"onoff"
-	Option		"$BULLETTRACER",					"CV_BULLETTRACER",				"onoff"
+	Option 		"$MN_OPT_GORETOGGLE", 						"GoreToggle",					"GoreType"
+	Option 		"$MN_OPT_GIBSFOREVER", 					"GibsStayForever",				"onoff"
+	Option 		"$MN_OPT_MISSILEMODEL", 					"CV_MISSILEMODEL",				"onoff"
+	Option		"$MN_OPT_BULLETTRACER",					"CV_BULLETTRACER",				"onoff"
 	StaticText ""
 	
 	Option 		"$GLPREFMNU_BLOOM",		 			gl_bloom,						"OnOff"
@@ -222,7 +222,7 @@ OptionMenu "VideoSettings"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAP",			gl_light_shadowmap,		"YesNo"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPQUALITY",	gl_shadowmap_quality,	"ShadowMapQuality"
 	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPFILTER",		gl_shadowmap_filter,	"ShadowMapFilter"
-	Option		"$WEAPONLIGHT", "WeaponLight",		"onoff"
+	Option		"$MN_OPT_WEAPONLIGHT", "WeaponLight",		"onoff"
 }
 
 OptionMenu "UISettings"
@@ -231,11 +231,12 @@ OptionMenu "UISettings"
 	
 	Submenu "$HUDMNU_FLASH", 				"FlashOptions"
 	
-	Option "$CAMRECOILTOGGLE", "CamRecoilToggle", "onoff"
-	Option "$KICKCAMERA", "KickCamera", "onoff"
-	Option "$AURATOGGLE", "AuraToggle", "onoff"
-	Option "$SMOOTHANIMS", "WEAPONANIM", "WeaponAnim"
-	Option "$MUZZLESTYLE", "MuzzleStyle", "MuzzleStyle"
+	Option "$MN_OPT_CAMRECOILTOGGLE",	"CamRecoilToggle",	"onoff"
+	Option "$MN_OTP_KICKCAMERA",		"KickCamera", 		"onoff"
+	Option "$MN_OPT_AURATOGGLE",		"AuraToggle", 		"onoff"
+	Option "$MN_OPT_SMOOTHANIMS",		"WEAPONANIM", 		"WeaponAnim"
+	Option "$MN_OPT_MUZZLESTYLE",		"MuzzleStyle",		"MuzzleStyle"
+	Option "$MN_OPT_STATUSBAR",			"CV_SBARSTYLE", 	"SBARStyle"
 	StaticText ""
 	
 	Slider "$DSPLYMNU_MOVEBOB",				"movebob", 0, 1.0, 0.05, 2
@@ -292,6 +293,13 @@ OptionValue "GoreType"
 	0, "DOOM Classic"
 	1, "$ENHANCED"
 	2, "$REALISTIC"
+}
+
+OptionValue "SBARStyle"
+{
+	0, "Equestria"
+	1, "Original"
+	2, "PlayStation"
 }
 
 /*AddOptionMenu "NewPlayerMenu" 

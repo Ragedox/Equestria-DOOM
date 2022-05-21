@@ -18,7 +18,8 @@ gameinfo
 	
 	MenuSliderBackColor = "Gray"
 	MenuSliderColor = "Blue"
-	
+	StatusBarClass = "EquestriaStatusBar"
+
 	StatScreen_Single = "Equestria_StatusScreen" 
 	MessageBoxClass = "Equestria_MessageBoxMenu"
 	GibFactor = 0.5
