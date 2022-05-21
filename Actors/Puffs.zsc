@@ -20,13 +20,17 @@ Class PuffSparkles : DebrisCore
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "Vanish");
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
 		
 		PUFF A random(5, 35);
 	Bye:
-		PUFF A 1 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
-		PUFF A 0 A_JumpIf(Scale.X <= 0, "Null");
+		PUFF A 1
+		{
+			A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
+			If(Scale.X <= 0)
+				return ResolveState("Null");
+			return state(null);
+		}
 		Loop;
 		
 	Vanish:
@@ -45,13 +49,18 @@ Class ChainsawSparkles : PuffSparkles
 	States
 	{
 	Spawn:
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 A_JumpIf(waterlevel > 1, "Vanish");
+		//TNT1 A 0 ACS_NamedExecute("CheckLiquid");
+		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
 		PUFF A random(35, 70);
 	
 	Bye:
-		PUFF A 1 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
-		PUFF A 0 A_JumpIf(Scale.X <= 0, "Null");
+		PUFF A 1
+		{
+			A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
+			If(Scale.X <= 0)
+				return ResolveState("Null");
+			return state(null);
+		}
 		Loop;
 	}
 }
@@ -60,7 +69,7 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 {
 	Default
 	{
-		Height 8; Radius 4;
+		Height 4; Radius 2;
 		RenderStyle "Translucent"; Alpha 0.5;
 		Gravity 0.05;
 		Mass 5;
@@ -71,14 +80,13 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 		+NOBLOCKMAP +NOTELEPORT
 		+FORCEXYBILLBOARD
 		+ROLLSPRITE +ROLLCENTER
-		+CORPSE
 	}
 	States
 	{
 	
 	Spawn:
-		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0
+		//TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
+		TNT1 A 0 NoDelay
 		{
 			if (abs(pos.z - GetZAt()) <= 5)
 			{	for (int i = 0; i < 3; i++)
@@ -153,8 +161,8 @@ Class ChainsawPuff : Player_BulletPuff
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
-		TNT1 AAA 0
+		//TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
+		TNT1 AAA 0 NoDelay
 		{
 			A_SpawnProjectile("ChainsawSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 			A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
@@ -181,8 +189,8 @@ Class ShotgunPuff : EquestriaBulletPuff
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0
+		//TNT1 A 0 NoDelay ACS_NamedExecute("CheckLiquid");
+		TNT1 A 0 NoDelay
 		{
 			if (abs(pos.z - GetZAt()) <= 5)
 			{	for (int i = 0; i < 3; i++)
@@ -233,8 +241,9 @@ Class KickPuff : ShotgunPuff
 		DamageType "Kick";
 		AttackSound "*fist";
 		
-		+BLOODLESSIMPACT;
-		+NODECAL;
+		+BLOODLESSIMPACT
+		+NODECAL
+		+NOEXTREMEDEATH
 	}
 	States
 	{
@@ -263,8 +272,7 @@ Class BerserkPuff : KickPuff
 	
 	Spawn:
 	Melee:
-		RSMK A 0;
-		RSMK A 1
+		RSMK A 1 NoDelay
 		{
 			bSPRITEFLIP = randompick(0, 1);
 			A_SetRoll(random(0, 359));
