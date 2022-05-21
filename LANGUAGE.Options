@@ -9,20 +9,24 @@ SNDMNU_TITLE =			"Audio Settings";
 ADVSNDMNU_TITLE =  		"Advanced Audio Settings";
 
 VIDEOSETTINGS = 		"Video";
+	MN_OPT_BULLETTRACER	=		"Bullet Tracer";
+	MN_OPT_MISSILEMODEL =		"3D Rocket model";
+	MN_OPT_GORETOGGLE = 		"Gore Type";
+	MN_OPT_GIBSFOREVER = 		"Gibs don't disappear";
+	MN_OPT_ENHANCED =			"Enhanced";
+	MN_OPT_REALISTIC = 			"Realistic";
+	GLPREFMNU_MULTISAMPLE =		"MSAA Quality";
+
 UISETTINGS = 			"User Interface";
+	MN_OPT_CAMRECOILTOGGLE = 	"Camera Recoil";
+	MN_OPT_AURATOGGLE = 		"Magic Auras on Weapons";
+	MN_OPT_SMOOTHANIMS =		"Smooth weapons animations";
+	MN_OPT_MUZZLESTYLE = 		"Muzzle Flash Style";
+	MN_OTP_KICKCAMERA =			"Kick camera recoil";
+	
 CONTROLSETTINGS =		"Customize Controls";
 OPTMNU_CONTROLS =		"Key Mapping";
 ADVANCEDSETTINGS =		"All settings";
-
-CAMRECOILTOGGLE = 		"Camera Recoil";
-AURATOGGLE = 			"Magic Auras on Weapons";
-
-GORETOGGLE = 			"Gore Type";
-ENHANCED =				"Enhanced";
-REALISTIC = 			"Realistic";
-GIBSFOREVER = 			"Gibs don't disappear";
-
-GLPREFMNU_MULTISAMPLE =	"MSAA Quality";
 
 OPTVAL_STANDARD = 		"GZDOOM Standard";
 OPTVAL_BUILD = 			"Build Engine";
@@ -41,11 +45,11 @@ UISETTINGS = 			"Interface";
 CONTROLSETTINGS =		"Customizzar Controles";
 ADVANCEDSETTINGS = 		"Todas as Configurações";
 
-CAMRECOILTOGGLE = 		"Recuo de camera";
-AURATOGGLE = 			"Aura mágica nas armas";
+MN_OTP_CAMRECOILTOGGLE = 		"Recuo de camera";
+MN_OTP_AURATOGGLE = 			"Aura mágica nas armas";
 
-GORETOGGLE = 			"Tipo de Gore";
-REALISTIC = 			"Realista";
-GIBSFOREVER = 			"Gibs não desaparecem";
+MN_OTP_GORETOGGLE = 			"Tipo de Gore";
+MN_OTP_REALISTIC = 			"Realista";
+MN_OTP_GIBSFOREVER = 			"Gibs não desaparecem";
 
 GLPREFMNU_MULTISAMPLE =	"Qualidade do MSAA";
