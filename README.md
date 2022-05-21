@@ -11,8 +11,7 @@ This is the **development** version, so it may contain bugs and errors;
 **Make sure you are using GZDoom 4.7.1/LZDoom 3.88a or later and you have a copy of doom2.wad (Original, BFG or Unity);**
 Download repository as a ZIP file and drag it over gzdoom.exe/lzdoom.exe;
 #
-FreeDOOM: Phase 2 is supported, but there will be problems with mismatching textures and sprites,
-for the FreeDOOM version go to [easysqweasy's FreeDOOM Equestria](https://github.com/easysqweasy/FreeDOOM-Equestria)
+FreeDOOM: Phase 2 is supported, but there will be problems with mismatching textures and sprites;
 
 # This project is **NOT Open Source**!
 You can learn from this mod, but if you want to use something, you may not be able to use the content of this project as a basis for your own projects without permission from the authors **(permission is not guaranteed)**, you will have to ask **Ragedox** for permission;
