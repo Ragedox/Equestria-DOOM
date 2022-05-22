@@ -209,10 +209,9 @@ Class AcidDrop : EquestriaBlood
 		Damage 10;
 		DamageType "Nukage";
 
-		+NOTELEPORT +NOBLOCKMAP
+		+NOBLOCKMAP
 		+CORPSE
 		+MISSILE
-		+MOVEWITHSECTOR
 		+ROLLSPRITE +ROLLCENTER
 		+BRIGHT
 		
@@ -226,7 +225,7 @@ Class AcidDrop : EquestriaBlood
 		Wait;
 
 	Death:
-		BLUD CBA 70;
+		BLUD CBA 1;
 		Stop;
 		
 	Crash:
@@ -244,17 +243,21 @@ Class AcidPuddle : Actor
 		DamageType "Nukage";
 		Translation "176:191=112:127";
 		+MOVEWITHSECTOR
-		+CORPSE
-		+NOTELEPORT +NOBLOCKMAP
+		+NOINTERACTION +NOBLOCKMAP
 		+FLATSPRITE
 		+ROLLSPRITE +ROLLCENTER
-		+BRIGHT
+		+RELATIVETOFLOOR
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_Jump(256, 1,2,3,4);
-		Wait;
+		TNT1 A 0 NoDelay
+		{
+			if (GetZAt(24,0) == floorz && GetZAt(-24,0) == floorz && GetZAt(0,24) == floorz && GetZAt(0,-24) == floorz)
+				Return A_Jump(256, 1,2,3,4);
+			Return state(null);
+		}
+		Stop;
 		FLAT E 0;
 		Goto InFloor;
 		FLAT F 0;
@@ -265,7 +268,7 @@ Class AcidPuddle : Actor
 		Goto InFloor;
 		
 	InFloor:
-		FLAT ########## 35 Bright A_Explode(5, 20, XF_NOTMISSILE | XF_NOSPLASH);
+		FLAT ########## 35 Bright A_Explode(5, 16, XF_NOTMISSILE | XF_NOSPLASH,0,0);
 		FLAT #################### 1 A_FadeOut(0.025);
 		
 	Dry:
