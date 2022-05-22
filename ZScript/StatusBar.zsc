@@ -7,8 +7,9 @@ class EquestriaStatusBar : BaseStatusBar
 	HUDFont mAmountFont;
 	InventoryBarState diparms;
 	
-	DynamicValueINterpolator mHealthInterpolator;
-	DynamicValueINterpolator mArmorInterpolator;
+	DynamicValueInterpolator mHealthInterpolator;
+	DynamicValueInterpolator mArmorInterpolator;
+	DynamicValueInterpolator mAmmoInterpolator;
 	
 	override void Init()
 	{
@@ -25,6 +26,7 @@ class EquestriaStatusBar : BaseStatusBar
 		
 		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
+		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 	}
 
 	override void Draw (int state, double TicFrac)
@@ -43,6 +45,14 @@ class EquestriaStatusBar : BaseStatusBar
 		}
 	}
 	
+	override void NewGame()
+	{
+		Super.NewGame();
+		mHealthInterpolator.Reset (0);
+		mArmorInterpolator.Reset (0);
+		mAmmoInterpolator.Reset(0);
+	}
+	
 	override void Tick()
 	{
 		// Run the parent status bar's Tick() function
@@ -57,6 +67,12 @@ class EquestriaStatusBar : BaseStatusBar
         //   until the value reaches 100...  8, 16, 24, 32, ... 96, 100)
         mHealthInterpolator.Update(CPlayer.health); // Set the interpolator's value to this player's health
 		mArmorInterpolator.Update(GetArmorAmount());
+		
+		Ammo ammo1, ammo2;
+		int ammomax;
+		int ammocount1, ammocount2;
+		[ammo1, ammo2, ammocount1, ammocount2] = GetCurrentAmmo();
+		mAmmoInterpolator.Update(ammocount1);
 	}
 	
 	protected void DrawMainBar (double TicFrac)
@@ -71,58 +87,58 @@ class EquestriaStatusBar : BaseStatusBar
 			{
 				default:
 					case 0:
+						int healthcolor =
+							CPlayer.health >= 125 ? Font.CR_LIGHTBLUE :
+							CPlayer.health > 50 && CPlayer.health < 125 ? Font.CR_WHITE :
+							CPlayer.health > 25 && CPlayer.health <= 50 ? Font.CR_BRICK :
+							Font.CR_UNTRANSLATED;
+			
+						int armorcolor =
+							GetArmorAmount() >= 125 ? Font.CR_GREEN :
+							GetArmorAmount() > 50 && GetArmorAmount() < 125 ? Font.CR_WHITE :
+							GetArmorAmount() > 25 && GetArmorAmount() <= 50 ? Font.CR_OLIVE :
+							Font.CR_DARKGRAY;
+							
+						int killcolor =
+							Level.killed_monsters == Level.total_monsters ? Font.CR_UNTRANSLATED :
+							Font.CR_WHITE;
+							
+						int secretcolor =
+							Level.found_secrets == Level.total_secrets ? Font.CR_UNTRANSLATED :
+							Font.CR_WHITE;
+							
 						DrawImage("STBAR", (0, 168), DI_ITEM_OFFSETS);
 						
-						if (CPlayer.health >= 125)
-							DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_LIGHTBLUE);
-						else if	(CPlayer.health > 50 && CPlayer.health < 125)
-							DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_WHITE);
-						else if	(CPlayer.health > 25 && CPlayer.health <= 50)
-							DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_BRICK);
-						else
-							DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-						
-						if (GetArmorAmount() >= 125)
-							DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (76, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_GREEN);
-						else if	(GetArmorAmount() > 50 && GetArmorAmount() < 125)
-							DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (76, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_WHITE);
-						else if	(GetArmorAmount() > 25 && GetArmorAmount() <= 50)
-							DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (76, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_OLIVE);
-						else
-							DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (76, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, Font.CR_DARKGRAY );
+						DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, healthcolor);
+							
+						DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (76, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, armorcolor);
 						
 						EQDrawBarKeys();
 						EQDrawBarAmmo();
 						DrawBarWeapons();
 						
-						if (multiplayer)
-							DrawImage("STFBANY", (143, 168), DI_ITEM_OFFSETS|DI_TRANSLATABLE);
+						DrawString(mIndexFont, FormatNumber(Level.killed_monsters), (24, 190), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, killcolor);
+						DrawString(mIndexFont, FormatNumber(Level.found_secrets), (24, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, secretcolor);
 						
-						if (CPlayer.mo.InvSel != null && !Level.NoInventoryBar)
-						{
-							DrawInventoryIcon(CPlayer.mo.InvSel, (160, 198), DI_DIMDEPLETED);
-							
-							if (CPlayer.mo.InvSel.Amount > 1)
-								DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
-						}
-						
+						if(!CheckInventory("PowerBlurSphere"))
+							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE | MugShot.CUSTOM), (160, 198), DI_ITEM_OFFSETS);
 						else
-							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE), (160, 198), DI_ITEM_OFFSETS);
-
+							DrawImage("STBLUR01", (160, 198), DI_ITEM_OFFSETS);
+							
 						if (isInventoryBarVisible())
 							DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
 							
 						break;
 						
 					case 1:
-						DrawImage("STBAR2", (-52, 168), DI_ITEM_OFFSETS);
+						DrawImage("STBAR2", (-53, 168), DI_ITEM_OFFSETS);
 						
 						DrawImage("STTPRCNT", (90, 171), DI_ITEM_OFFSETS);
-						DrawImage("STTPRCNT", (222, 171), DI_ITEM_OFFSETS);
+						DrawImage("STTPRCNT", (221, 171), DI_ITEM_OFFSETS);
 						
-						if (a1 != null) DrawString(mHUDFont, FormatNumber(a1.Amount, 3), (44, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
+						if (a1 != null) DrawString(mHUDFont, FormatNumber(a1.Amount, 3), (45, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
 						DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (90, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
-						DrawString(mHUDFont, FormatNumber(GetArmorAmount(), 3), (222, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
+						DrawString(mHUDFont, FormatNumber(GetArmorAmount(), 3), (221, 171), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW);
 
 						DrawBarKeys();
 						DrawBarAmmo();
@@ -143,7 +159,7 @@ class EquestriaStatusBar : BaseStatusBar
 								DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 						}
 						else
-							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE ), (160, 198), DI_ITEM_OFFSETS);
+							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE | MugShot.CUSTOM), (160, 198), DI_ITEM_OFFSETS);
 						
 						if (isInventoryBarVisible())
 							DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);						
@@ -179,7 +195,7 @@ class EquestriaStatusBar : BaseStatusBar
 								DrawString(mAmountFont, FormatNumber(CPlayer.mo.InvSel.Amount), (175, 198-mIndexFont.mFont.GetHeight()), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
 						}
 						else
-							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE ), (160, 198), DI_ITEM_OFFSETS);
+							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE | MugShot.CUSTOM), (160, 198), DI_ITEM_OFFSETS);
 						
 						if (isInventoryBarVisible())
 							DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
@@ -357,28 +373,41 @@ class EquestriaStatusBar : BaseStatusBar
 		Vector2 iconbox = (40, 20);
 		// Draw health
 		let berserk = CPlayer.mo.FindInventory("PowerStrength");
-		DrawImage(berserk? "PSTRA0" : "MEDIA0", (20, -2));
-		DrawString(mHUDFont, FormatNumber(CPlayer.health, 3), (44, -20));
+		
+		DrawImage(berserk? "STATUSC" : "STATUSA", (50, -32));
+		
+		int healthcolor =
+			CPlayer.health >= 125 ? Font.CR_LIGHTBLUE :
+			CPlayer.health > 50 && CPlayer.health < 125 ? Font.CR_WHITE :
+			CPlayer.health > 25 && CPlayer.health <= 50 ? Font.CR_BRICK :
+			Font.CR_UNTRANSLATED;
+	
+		int armorcolor =
+			GetArmorAmount() >= 125 ? Font.CR_GREEN :
+			GetArmorAmount() > 50 && GetArmorAmount() < 125 ? Font.CR_WHITE :
+			GetArmorAmount() > 25 && GetArmorAmount() <= 50 ? Font.CR_OLIVE :
+			Font.CR_DARKGRAY;
+							
+			DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (112, -50), DI_TEXT_ALIGN_RIGHT, healthcolor);
 		
 		let armor = CPlayer.mo.FindInventory("BasicArmor");
 		if (armor != null && armor.Amount > 0)
 		{
-			DrawInventoryIcon(armor, (20, -22));
-			DrawString(mHUDFont, FormatNumber(armor.Amount, 3), (44, -40));
+			DrawInventoryIcon(armor, (50, -54));
+			
+			DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (112, -69), DI_TEXT_ALIGN_RIGHT, armorcolor);
 		}
-		Inventory ammotype1, ammotype2;
-		[ammotype1, ammotype2] = GetCurrentAmmo();
+		Inventory ammotype1;
+		ammotype1 = GetCurrentAmmo();
 		int invY = -20;
+		
+		if (CheckInventory("BackpackCheck"))
+			DrawImage("BPAKA0", (-53, -34));
+			
 		if (ammotype1 != null)
 		{
-			DrawInventoryIcon(ammotype1, (-14, -4));
-			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-30, -20), DI_TEXT_ALIGN_RIGHT);
-			invY -= 20;
-		}
-		if (ammotype2 != null && ammotype2 != ammotype1)
-		{
-			DrawInventoryIcon(ammotype2, (-14, invY + 17));
-			DrawString(mHUDFont, FormatNumber(ammotype2.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT);
+			DrawInventoryIcon(ammotype1, (-44, -34));
+			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-55, -50), DI_TEXT_ALIGN_RIGHT);
 			invY -= 20;
 		}
 		if (!isInventoryBarVisible() && !Level.NoInventoryBar && CPlayer.mo.InvSel != null)
@@ -386,14 +415,8 @@ class EquestriaStatusBar : BaseStatusBar
 			DrawInventoryIcon(CPlayer.mo.InvSel, (-14, invY + 17), DI_DIMDEPLETED);
 			DrawString(mHUDFont, FormatNumber(CPlayer.mo.InvSel.Amount, 3), (-30, invY), DI_TEXT_ALIGN_RIGHT);
 		}
-		if (deathmatch)
-		{
-			DrawString(mHUDFont, FormatNumber(CPlayer.FragCount, 3), (-3, 1), DI_TEXT_ALIGN_RIGHT, Font.CR_GOLD);
-		}
-		else
-		{
-			DrawFullscreenKeys();
-		}
+
+		DrawFullscreenKeys();
 		
 		if (isInventoryBarVisible())
 		{
