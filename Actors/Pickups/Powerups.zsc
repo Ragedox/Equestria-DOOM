@@ -43,7 +43,7 @@ Class EquestriaComputerMap : Allmap replaces Allmap
 
 //Invisibility Sphere
 
-Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
+Class EquestriaBlurSphere : PowerupGiver replaces BlurSphere
 {
 	Default
 	{	
@@ -61,6 +61,7 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 		+INVENTORY.ALWAYSPICKUP
 		+INVENTORY.NOSCREENFLASH
 		
+		Powerup.Type "PowerBlurSphere";
 		Inventory.PickupMessage "$GOTINVIS"; // "Partial Invisibility"
 		Inventory.PickupSound "misc/p_pkup";
 		Renderstyle "Translucent";
@@ -75,7 +76,6 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 	Pickup:
 		TNT1 A 0
 		{
-			A_GiveInventory("BlurSphere");
 			A_SetBlend("Red", 0.5, 16, "Blue");
 		}
 		//TNT1 A 0 ACS_NamedExecute("BlurMugshot");
@@ -83,7 +83,7 @@ Class EquestriaBlurSphere : CustomInventory replaces BlurSphere
 	}
 }
 
-Class BlurSphereCheck : InvToken {}
+Class PowerBlurSphere : PowerInvisibility  {}
 
 //Invulnerability Sphere
 
