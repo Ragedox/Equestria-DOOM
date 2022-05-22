@@ -26,9 +26,8 @@ Class GenericGib : DebrisCore
 		TNT1 A 0 NoDelay
 		{
 			if (GetCVar("GoreToggle")== 0)
-			{
 				Destroy();
-			}
+				
 			A_SetRoll(FRandom(0,359));
 			bSPRITEFLIP = RandomPick(0, 1);
 		}
@@ -83,8 +82,8 @@ Class EquestriaBlood : Blood replaces Blood
 		Decal "BloodSplat";
 		Height 4; Radius 2;
 		
-		Gravity 0.75;
-		Speed 8;
+		Gravity 0.5;
+		Speed 4;
 		Mass 2;
 		
 		+ForceXYBillBoard
@@ -105,7 +104,7 @@ Class EquestriaBlood : Blood replaces Blood
 		Wait;
 	
 	Death:
-		#### # 35;
+		TNT1 A 1;
 		Stop;
 		
 	Crash:
