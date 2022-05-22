@@ -31,10 +31,11 @@ Class DoomEquestriaMonster : Actor
 	States
 	{
 	XDeath:
+	Crash.Berserk:
 		#### # 0 //Simple Gibs
 		{
 			bSPRITEFLIP = randompick(0, 1);
-			A_NoBlocking(); A_XScream();
+			A_NoBlocking(); A_XScream(); A_SetRoll(0);
 			
 			if(GetCVar("GoreToggle") == 1)
 			{
