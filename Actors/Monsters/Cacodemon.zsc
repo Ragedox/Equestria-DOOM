@@ -154,7 +154,7 @@ Class EQ_CacoBallTrail : Equestria_Trails
 	Spawn:
 		#### # 2;
 		#### # 0 A_FadeIn(1, FTF_CLAMP);
-		#### # 1 Bright A_FadeOut(0.25);
+		#### # 1 Bright { A_FadeOut(0.25, FTF_REMOVE); A_SetScale(scale.x - 0.25); }
 		Wait;
 	}
 }
