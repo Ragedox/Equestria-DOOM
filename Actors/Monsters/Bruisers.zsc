@@ -34,8 +34,7 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		Loop;
 		
 	Melee:
-		BOSS E 6 A_FaceTarget();
-		BOSS F 6 A_FaceTarget();
+		BOSS EF 6 A_FaceTarget();
 		BOSS G 6 A_CustomMeleeAttack(10 * random(1, 8), "baron/melee", "monster/miss", "BruisersMelee", true);
 		Goto See;
 		
@@ -57,19 +56,12 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		BOSD C 8;
 		BOSD D 8 A_NoBlocking();
 		BOSD E 8;
-		BOSD F -1 A_BossDeath;
+		BOSD F -1 A_BossDeath();
 		Stop;
 		
 	XDeath:
 	Crush:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
-		BOSD G 8;
-		BOSD H 8 A_Scream();
-		BOSD I 8;
-		BOSD J 8 A_NoBlocking();
-		BOSD KL 8;
-		BOSD M -1 A_BossDeath();
+		BOSD M -1 { bSPRITEFLIP = randompick(0, 1); A_BossDeath(); }
 		Stop;
 		
 	Raise:
@@ -137,13 +129,7 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		
 	XDeath:
 	Crush:
-		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
-		
-		BOS2 P 5 A_Scream();
-		BOS2 Q 5 A_NoBlocking();
-		BOS2 R 5 A_XScream;
-		BOS2 STUVW 5;
-		BOS2 X -1;
+		BOS2 X -1 { bSPRITEFLIP = randompick(0, 1); }
 		Stop;
 		
 	Raise:

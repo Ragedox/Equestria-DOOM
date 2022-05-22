@@ -97,9 +97,12 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		Goto Death;
 		
 	Classic.XDeath:
-	Crush:
 		TROO NOPQRST 4;
 		TROO U -1;
+		Stop;
+		
+	Crush:
+		TROO U -1 { bSPRITEFLIP = randompick(0, 1); }
 		Stop;
 		
 	Real.XDeath:
@@ -133,20 +136,12 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 		
 	Death.Berserk:
 	XDeath.Berserk:
-		"####" "#" 0 ThrustThingZ(0,30,0,1);
-		
-		"####" "#" 0 A_Jump(256, "MidAir");
-		Wait;
+		"####" "#" 0 ThrustThingZ(0,30,0,1);	
+		Goto MidAir;
 	
 	MidAir:
 		TROO J 1 A_SetRoll((roll + 20));
 		Loop;
-		
-	Crash.Berserk:
-		"####" "#" 0 A_SetRoll(0);
-		
-		"####" "#" 0 A_Jump(256, "XDeath");
-		Wait;
 		
 	Raise:
 		TROO ML 8;
@@ -158,18 +153,30 @@ Class EquestriaImp : DoomEquestriaMonster Replaces DoomImp
 	}
 }
 
-Class EquestriaImpBall : DoomImpBall replaces DoomImpBall
+Class EquestriaImpBall : Actor replaces DoomImpBall
 {
 	Default
 	{
-		Radius 8; Height 16;
-	
+		Projectile;
+		
+		RenderStyle "Add"; Alpha 1.0;
 		DamageType "Fire";
 		
+		Radius 8; Height 16;
+		
+		Speed 10; FastSpeed 20;
+		
+		Damage 3;
 		Decal "FireBallScorch";
 		
+		RenderStyle "Add"; Alpha 1.0; +ZDOOMTRANS
+		
+		+RANDOMIZE
 		+ForceXYBillBoard
 		+Bright
+		
+		SeeSound "imp/attack";
+		DeathSound "imp/shotx";
 	}
 	States
 	{
