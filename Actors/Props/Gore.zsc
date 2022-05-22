@@ -268,6 +268,7 @@ class EquestriaLiveStick : EquestriaGoreProps replaces LiveStick
 {
 	Default
 	{
+		//$Sprite POL6A0
 		Radius 16; Height 64;
 		+SOLID
 	}
