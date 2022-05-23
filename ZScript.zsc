@@ -33,9 +33,8 @@ Class DebrisCore : Actor
 	override void Tick()
 	{
 		if (InStateSequence(CurState, ResolveState("Roll")) && !isFrozen())
-		{
 			A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
-		}
+			
 		Super.Tick();
 	}
 }
