@@ -312,7 +312,7 @@ Class NirikSoul : EquestriaLostSoul
 		
 		SKUL F 3;
 		SKUL G 3 A_Scream();
-		SKUL H 3 A_Explode(5, 60, XF_NOTMISSILE);
+		SKUL H 3 A_Explode(5, 128, XF_NOTMISSILE);
 		SKUL I 6
 		{
 			A_NoBlocking();

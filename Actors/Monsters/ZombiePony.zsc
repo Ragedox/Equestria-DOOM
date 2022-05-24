@@ -116,10 +116,13 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		Goto XDeath;
 		
 	Classic.XDeath:
-	Crush:
 		POSS MNOPQRST 4;
         POSS U -1;
         Stop;
+		
+	Crush:
+		POSS U -1 { bSPRITEFLIP = randompick(0, 1); }
+		Stop;
 		
 	Real.XDeath:
 		POSS M 5

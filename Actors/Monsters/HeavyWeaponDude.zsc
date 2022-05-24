@@ -99,9 +99,12 @@ Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 		Goto Death;
 	
 	Classic.XDeath:
-	Crush:
 		CPOS OPQRS 5;
 		CPOS T -1;
+		Stop;
+	
+	Crush:
+		CPOS T -1 { bSPRITEFLIP = randompick(0, 1); }
 		Stop;
 	
 	Raise:

@@ -103,6 +103,10 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		SSWV OPQRSTU 4;
 		SSWV V -1;
 		Stop;
+		
+	Crush:
+		SSMV V -1 { bSPRITEFLIP = randompick(0, 1); }
+		Stop;
 	
 	Raise:
 		SSWV MLKJI 5;

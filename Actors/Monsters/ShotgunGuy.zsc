@@ -92,9 +92,12 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		Goto Death;
     
 	Classic.XDeath:
-	Crush:
 		SPOS MNOPQRST 5;
 		SPOS U -1;
+		Stop;
+		
+	Crush:
+		SPOS U -1 { bSPRITEFLIP = randompick(0, 1); }
 		Stop;
 		
 	Death.Berserk:

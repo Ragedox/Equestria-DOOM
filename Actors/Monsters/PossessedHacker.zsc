@@ -100,11 +100,14 @@ Class PossessedHacker : DoomEquestriaMonster
 		Goto Death;
 		
 	Classic.XDeath:
-	Crush:
 		#### NOPQRSTU 5;
         #### V -1;
         Stop;
 	
+	Crush:
+		#### V -1 { bSPRITEFLIP = randompick(0, 1); }
+		Stop;
+		
 	Death.Berserk:
 	XDeath.Berserk:
 		"####" "#" 0 ThrustThingZ(0,30,0,1);
@@ -241,10 +244,13 @@ Class DemonNirik : DoomEquestriaMonster
 		Goto Death;
 		
 	Classic.XDeath:
-	Crush:
 		#### NOPQRSTU 5;
         #### V -1;
         Stop;
+	
+	Crush:
+		#### V -1 { bSPRITEFLIP = randompick(0, 1); }
+		Stop;
 		
 	Raise:
 		FIRE A 2 A_StartFire();

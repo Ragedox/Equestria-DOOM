@@ -5,7 +5,7 @@ Class PuffSparkles : DebrisCore
 		+Bright
 		+ThruActors
 		+DontSplash
-		-MISSILE
+		+MISSILE
 		
 		Scale 0.5;
 		
@@ -16,20 +16,20 @@ Class PuffSparkles : DebrisCore
 		Speed 4;
 		
 		RenderStyle "Add";
+		BounceType "Doom"; BounceFactor 0.5;
 	}
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
 		
-		PUFF A random(5, 35);
-	Bye:
+		PUFF A random(5, 70);
+	Death:
 		PUFF A 1
 		{
 			A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
 			If(Scale.X <= 0)
-				return ResolveState("Null");
-			return state(null);
+				Destroy();
 		}
 		Loop;
 		
@@ -50,16 +50,14 @@ Class ChainsawSparkles : PuffSparkles
 	{
 	Spawn:
 		//TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
-		PUFF A random(35, 70);
+		PUFF A random(35, 70) NoDelay A_JumpIf(waterlevel > 1, "Vanish");
 	
-	Bye:
+	Death:
 		PUFF A 1
 		{
 			A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
 			If(Scale.X <= 0)
-				return ResolveState("Null");
-			return state(null);
+				Destroy();
 		}
 		Loop;
 	}
