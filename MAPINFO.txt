@@ -18,7 +18,7 @@ gameinfo
 	
 	MenuSliderBackColor = "Gray"
 	MenuSliderColor = "Blue"
-	//StatusBarClass = "EquestriaStatusBar" //Need to finish: Power up timer, Keys in Fullscreen, Playstation HUD
+	StatusBarClass = "EquestriaStatusBar" //Need to finish: Power up timer, Keys in Fullscreen, Playstation HUD
 
 	StatScreen_Single = "Equestria_StatusScreen" 
 	MessageBoxClass = "Equestria_MessageBoxMenu"

@@ -101,13 +101,9 @@ statusbar fullscreen, fullscreenoffsets
 	//health
 
 	inInventory PowerStrength, 1
-	{
 		drawimage "STATUSC", 50, -32, centerbottom;
-	}
 	else
-	{
 		drawimage "STATUSA", 50, -32, centerbottom;
-	}
 	
 	drawnumber 2147483647, HUDFONT_DOOM, white, health, drawshadow, interpolate(10), 112, -50, 0, red, 50, lightblue, 100;
 
@@ -118,26 +114,20 @@ statusbar fullscreen, fullscreenoffsets
 	//ammo
 	
 	InInventory BackpackCheck, 1
-    {
          drawimage "BPAKA0", -53, -34, centerbottom;
-    }
+	
 	drawimage ammoicon1, -44, -34, centerbottom;
 	
 	WeaponAmmo Clip
-	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 75;
-	}
+	
 	WeaponAmmo Shell
-	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 10, white, 25;
-	}
+	
 	WeaponAmmo RocketAmmo
-	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 10, white, 25;
-	}
+	
 	WeaponAmmo Cell
-	{
 		drawnumber 2147483647, HUDFONT_DOOM, gray, ammo1, drawshadow, interpolate(50), -55, -50, 0, red, 50, white, 100;
-	}
 	}
 }
