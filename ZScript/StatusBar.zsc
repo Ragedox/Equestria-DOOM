@@ -14,7 +14,7 @@ class EquestriaStatusBar : BaseStatusBar
 	override void Init()
 	{
 		Super.Init();
-		SetSize(32, 320, 200);
+		SetSize(31, 320, 200);
 
 		// Create the font used for the fullscreen HUD
 		Font fnt = "HUDFONT_DOOM";
@@ -98,7 +98,7 @@ class EquestriaStatusBar : BaseStatusBar
 							GetArmorAmount() > 50 && GetArmorAmount() < 125 ? Font.CR_WHITE :
 							GetArmorAmount() > 25 && GetArmorAmount() <= 50 ? Font.CR_OLIVE :
 							Font.CR_DARKGRAY;
-							
+						
 						int killcolor =
 							Level.killed_monsters == Level.total_monsters ? Font.CR_UNTRANSLATED : //If you killed all monsters, turn the numbers into gold!
 							Font.CR_WHITE;
@@ -107,16 +107,19 @@ class EquestriaStatusBar : BaseStatusBar
 							Level.found_secrets == Level.total_secrets ? Font.CR_UNTRANSLATED :
 							Font.CR_WHITE;
 							
-						DrawImage("STBAR", (0, 168), DI_ITEM_OFFSETS);
+						DrawImage("STBARA", (-52, 168), DI_ITEM_OFFSETS);
 						
 						if (CheckInventory("PowerStrength")) //Berserk
 							DrawImage("BSERKBAR", (160, 198), DI_ITEM_OFFSETS);
 							
-						if (CPlayer.health <= 25)
+						if (CPlayer.health > 25 && CPlayer.health <= 50)
 							DrawImage("BLODBARA", (0, 168), DI_ITEM_OFFSETS);
+						else if (CPlayer.health > 0 && CPlayer.health <= 25)
+							DrawImage("BLODBARB", (0, 168), DI_ITEM_OFFSETS);
+						else if (CPlayer.health <= 0)
+							DrawImage("BLODBARC", (0, 168), DI_ITEM_OFFSETS);
 
-						DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, healthcolor);
-							
+						DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (135, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, healthcolor);	
 						DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (76, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, armorcolor);
 						
 						DrawBarKeys();
@@ -126,18 +129,29 @@ class EquestriaStatusBar : BaseStatusBar
 						DrawString(mIndexFont, FormatNumber(Level.killed_monsters), (24, 190), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, killcolor);
 						DrawString(mIndexFont, FormatNumber(Level.found_secrets), (24, 173), DI_TEXT_ALIGN_RIGHT|DI_NOSHADOW, secretcolor);
 						
-						if(!CheckInventory("PowerBlurSphere"))
+						if(!CheckInventory("PowerInvisibility"))
 							DrawTexture(GetMugShot(5, MugShot.STANDARD | MugShot.XDEATHFACE | MugShot.ANIMATEDGODMODE | MugShot.CUSTOM), (160, 198), DI_ITEM_OFFSETS);
 						else
 							DrawImage("STBLUR01", (160, 198), DI_ITEM_OFFSETS);
-							
-						if (isInventoryBarVisible())
-							DrawInventoryBar(diparms, (48, 169), 7, DI_ITEM_LEFT_TOP);
 						
+						int itemTimeLeft, itemDuration;
+						
+						if (CheckInventory("PowerInvisibility", 1))
+						{
+							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
+		
+							DrawBar("PINSA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 1, SHADER_VERT);
+						}
+						if (CheckInventory("PowerInvulnerable", 1))
+						{
+							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
+		
+							DrawBar("PINVA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 1, SHADER_VERT);
+						}
 						break;
 						
 					case 1: //ORIGINAL DOOM HUD
-						DrawImage("STBAR2", (-53, 168), DI_ITEM_OFFSETS);
+						DrawImage("STBARB", (-53, 168), DI_ITEM_OFFSETS);
 						
 						DrawImage("STTPRCNT", (90, 171), DI_ITEM_OFFSETS);
 						DrawImage("STTPRCNT", (221, 171), DI_ITEM_OFFSETS);
@@ -173,7 +187,7 @@ class EquestriaStatusBar : BaseStatusBar
 						break;
 						
 					case 2: //WIP PLAYSTATION DOOM HUD WIP WIP WIP WIP WIP WIP WIP WIP
-						DrawImage("STBAR3", (-29, 168), DI_ITEM_OFFSETS);
+						DrawImage("STBARC", (-29, 168), DI_ITEM_OFFSETS);
 						
 						//DrawImage("STTPRCNT", (90, 171), DI_ITEM_OFFSETS);
 						//DrawImage("STTPRCNT", (222, 171), DI_ITEM_OFFSETS);
@@ -358,8 +372,6 @@ class EquestriaStatusBar : BaseStatusBar
 		
 		if (SBARSTYLE)
 		{
-			Inventory a1 = GetCurrentAmmo();
-			
 			switch(SBARSTYLE.GetInt())
 			{
 				default:
@@ -372,7 +384,6 @@ class EquestriaStatusBar : BaseStatusBar
 						DrawImage(CPlayer.HasWeaponsInSlot(7)? "STYSNUM7" : "STGNUM7", (271, 182), DI_ITEM_OFFSETS);
 						break;
 					case 1: //ORIGINAL DOOM HUD
-						DrawImage("STARMS", (104, 168), DI_ITEM_OFFSETS);
 						DrawImage(CPlayer.HasWeaponsInSlot(2)? "STYSNUM2" : "STGNUM2", (111, 172), DI_ITEM_OFFSETS);
 						DrawImage(CPlayer.HasWeaponsInSlot(3)? "STYSNUM3" : "STGNUM3", (123, 172), DI_ITEM_OFFSETS);
 						DrawImage(CPlayer.HasWeaponsInSlot(4)? "STYSNUM4" : "STGNUM4", (135, 172), DI_ITEM_OFFSETS);
@@ -381,7 +392,6 @@ class EquestriaStatusBar : BaseStatusBar
 						DrawImage(CPlayer.HasWeaponsInSlot(7)? "STYSNUM7" : "STGNUM7", (135, 182), DI_ITEM_OFFSETS);
 						break;
 					case 2: //WIP PLAYSTATION DOOM HUD  WIP WIP WIP WIP WIP
-						DrawImage("STBAR3B", (232, 172), DI_ITEM_OFFSETS);
 						DrawImage(CPlayer.HasWeaponsInSlot(2)? "STYSNUM2" : "STGNUM2", (111, 172), DI_ITEM_OFFSETS);
 						DrawImage(CPlayer.HasWeaponsInSlot(3)? "STYSNUM3" : "STGNUM3", (123, 172), DI_ITEM_OFFSETS);
 						DrawImage(CPlayer.HasWeaponsInSlot(4)? "STYSNUM4" : "STGNUM4", (135, 172), DI_ITEM_OFFSETS);
@@ -417,8 +427,6 @@ class EquestriaStatusBar : BaseStatusBar
 			GetArmorAmount() > 50 && GetArmorAmount() < 125 ? Font.CR_WHITE :
 			GetArmorAmount() > 25 && GetArmorAmount() <= 50 ? Font.CR_OLIVE :
 			Font.CR_DARKGRAY;
-		
-		//int ammocolor =
 
 		DrawString(mHUDFont, FormatNumber(mHealthInterpolator.GetValue()), (112, -50), DI_TEXT_ALIGN_RIGHT, healthcolor);
 							
@@ -429,20 +437,60 @@ class EquestriaStatusBar : BaseStatusBar
 			
 			DrawString(mHUDFont, FormatNumber(mArmorInterpolator.GetValue()), (112, -69), DI_TEXT_ALIGN_RIGHT, armorcolor);
 		}
+		
 		Inventory ammotype1;
 		ammotype1 = GetCurrentAmmo();
-		
+			
 		if (CheckInventory("BackpackCheck"))
 			DrawImage("BPAKA0", (-53, -34));
 			
 		if (ammotype1 != null)
 		{
 			DrawInventoryIcon(ammotype1, (-44, -34));
-			DrawString(mHUDFont, FormatNumber(ammotype1.Amount, 3), (-55, -50), DI_TEXT_ALIGN_RIGHT);
+					
+			if (CPlayer.ReadyWeapon.Ammo1 is "Clip")
+			{
+				int ammocolor =
+					ammotype1.Amount > 50 ? Font.CR_WHITE :
+					ammotype1.Amount > 25 && ammotype1.Amount <= 50 ? Font.CR_BRICK :
+					Font.CR_RED;
+						
+				DrawString(mHUDFont, FormatNumber(mAmmoInterpolator.GetValue()), (-55, -50), DI_TEXT_ALIGN_RIGHT, ammocolor);
+			}
+			
+			if (CPlayer.ReadyWeapon.Ammo1 is "Shell")
+			{
+				int ammocolor =
+					ammotype1.Amount > 50 ? Font.CR_WHITE :
+					ammotype1.Amount > 25 && ammotype1.Amount <= 50 ? Font.CR_BRICK :
+					Font.CR_RED;
+
+				DrawString(mHUDFont, FormatNumber(mAmmoInterpolator.GetValue()), (-55, -50), DI_TEXT_ALIGN_RIGHT, ammocolor);
+			}
+			
+			if (CPlayer.ReadyWeapon.Ammo1 is "Cell")
+			{
+				int ammocolor =
+					ammotype1.Amount > 100 ? Font.CR_WHITE :
+					ammotype1.Amount > 50 && ammotype1.Amount <= 100 ? Font.CR_BRICK :
+					Font.CR_RED;
+
+				DrawString(mHUDFont, FormatNumber(mAmmoInterpolator.GetValue()), (-55, -50), DI_TEXT_ALIGN_RIGHT, ammocolor);
+			}
+			
+			if (CPlayer.ReadyWeapon.Ammo1 is "RocketAmmo")
+			{
+				int ammocolor =
+					ammotype1.Amount > 50 ? Font.CR_WHITE :
+					ammotype1.Amount > 25 && ammotype1.Amount <= 50 ? Font.CR_BRICK :
+					Font.CR_RED;	
+
+				DrawString(mHUDFont, FormatNumber(mAmmoInterpolator.GetValue()), (-55, -50), DI_TEXT_ALIGN_RIGHT, ammocolor);
+			}
 		}
 		
 		DrawFullscreenKeys();
-		
+		//DrawFullKeys();
 		if (isInventoryBarVisible())
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 			
@@ -473,4 +521,35 @@ class EquestriaStatusBar : BaseStatusBar
 			}
 		}
 	}
+	
+	/*void DrawFullKeys()
+	{
+		if (CheckInventory("EquestriaBlueCard", 1) && !CheckInventory("EquestriaRedCard", 1) && !CheckInventory("EquestriaYellowCard", 1))
+			DrawImage("BKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+		else if (!CheckInventory("EquestriaBlueCard", 1) && CheckInventory("EquestriaRedCard", 1) && !CheckInventory("EquestriaYellowCard", 1))
+			DrawImage("RKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+		else if (!CheckInventory("EquestriaBlueCard", 1) && !CheckInventory("EquestriaRedCard", 1) && CheckInventory("EquestriaYellowCard", 1))
+			DrawImage("YKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+			
+		else if (CheckInventory("EquestriaBlueCard", 1) && CheckInventory("EquestriaRedCard", 1) && !CheckInventory("EquestriaYellowCard", 1))
+		{	DrawImage("BKEYB0", (-10,40), DI_SCREEN_CENTER_TOP);
+			DrawImage("RKEYB0", (10,40), DI_SCREEN_CENTER_TOP); }
+		else if (CheckInventory("EquestriaBlueCard", 1) && !CheckInventory("EquestriaRedCard", 1) && CheckInventory("EquestriaYellowCard", 1))
+		{	DrawImage("BKEYB0", (-10,40), DI_SCREEN_CENTER_TOP);
+			DrawImage("YKEYB0", (10,40), DI_SCREEN_CENTER_TOP); }
+		else if (!CheckInventory("EquestriaBlueCard", 1) && CheckInventory("EquestriaRedCard", 1) && CheckInventory("EquestriaYellowCard", 1))
+		{	DrawImage("YKEYB0", (-10,40), DI_SCREEN_CENTER_TOP);
+			DrawImage("RKEYB0", (10,40), DI_SCREEN_CENTER_TOP); }
+		else if (CheckInventory("EquestriaBlueCard", 1) && CheckInventory("EquestriaRedCard", 1) && CheckInventory("EquestriaYellowCard", 1))
+		{	DrawImage("BKEYB0", (-20,40), DI_SCREEN_CENTER_TOP);
+			DrawImage("RKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+			DrawImage("YKEYB0", (20,40), DI_SCREEN_CENTER_TOP); }
+			
+		else if (CheckInventory("EquestriaBlueSkull", 1) && !CheckInventory("EquestriaRedSkull", 1) && !CheckInventory("EquestriaYellowSkull", 1))
+			DrawImage("BKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+		else if (!CheckInventory("EquestriaBlueSkull", 1) && CheckInventory("EquestriaRedSkull", 1) && !CheckInventory("EquestriaYellowSkull", 1))
+			DrawImage("RKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+		else if (!CheckInventory("EquestriaBlueSkull", 1) && !CheckInventory("EquestriaRedSkull", 1) && CheckInventory("EquestriaYellowSkull", 1))
+			DrawImage("YKEYB0", (0,40), DI_SCREEN_CENTER_TOP);
+	}*/
 }
