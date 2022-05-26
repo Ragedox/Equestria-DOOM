@@ -49,7 +49,10 @@ Class GenericGib : DebrisCore
 		Goto Roll;
 		
 	Roll:
-		#### # 8 A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		#### # 8 A_SpawnItemEx("Equestria_SmallBlood",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360),
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+		#### # 16 A_SpawnItemEx("Equestria_TinyBlood",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360),
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
 		Loop;
 	
 	Death:
@@ -75,7 +78,108 @@ Class GenericGib : DebrisCore
 	}
 }
 
-Class EquestriaBlood : Blood replaces Blood
+Class Equestria_BloodEnemies : Actor
+{
+	Default { +NOINTERACTION }
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay
+		{
+			A_SpawnItemEx("Equestria_Blood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("Equestria_SmallBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("Equestria_TinyBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+		}
+		Stop;
+		TNT1 A 0
+		{
+			A_SpawnItemEX("Equestria_SmallBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("Equestria_SmallBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("Equestria_TinyBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+		}
+		Stop;
+		TNT1 A 0
+		{
+			A_SpawnItemEX("Equestria_TinyBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+			A_SpawnItemEX("Equestria_TinyBlood",0,0,0, frandom(0,2),frandom(0,2),random(0, 2), frandom(0,360),
+				SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
+		}
+		Stop;
+	}
+}
+
+Class Equestria_BloodSplatter : Actor replaces BloodSplatter
+{
+	Default{ +NoInteraction }
+	States
+	{
+	Spawn:
+		TNT1 AAA 0 NoDelay A_SpawnItemEX("Equestria_Blood", 0,0,0, random(3,6),random(3,6),random(-6,6), frandom(0,360), 
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
+		TNT1 AAA 0 A_SpawnItemEX("Equestria_SmallBlood", 0,0,0, random(3,6),random(3,6),random(-6,6), frandom(0,360), 
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
+		TNT1 AAA 0 A_SpawnItemEX("Equestria_TinyBlood", 0,0,0, random(3,6),random(3,6),random(-6,6), frandom(0,360), 
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
+		
+		TNT1 AAAAA 0 A_SpawnItemEx("TinyGenericGib",0,0,0, random(1, 4),random(1, 4),random(-4, 4), frandom(0,360), 
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
+		Stop;
+	}
+}
+
+Class Equestria_BloodAxe : Actor replaces BloodSplatter
+{
+	Default{ +NoInteraction }
+	States
+	{
+	Spawn:
+		TNT1 AAAAA 0 NoDelay A_SpawnItemEX("Equestria_Blood", 0,0,0, random(3,6),random(3,6),random(-6,6), frandom(0,360), 
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
+		TNT1 AAA 0 A_SpawnItemEx("TinyGenericGib",0,0,0, random(1, 4),random(1, 4),random(-4, 4), frandom(0,360), 
+			SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
+		Stop;
+	}
+}
+
+Class Equestria_BloodExplosion : DEParticles
+{
+	Default
+	{
+		Speed 0;
+		RenderStyle "Translucent"; Alpha 0.75;
+		+NOINTERACTION
+		+ZDOOMTRANS
+		
+		Height 0; Radius 0;
+	}
+	States
+	{
+	Spawn:
+		TNT1 A random(0,8) NoDelay A_SetScale(frandom(0.5, 1.0));
+		TNT1 A 0
+		{
+			for (int i = 0; i < 6; i++)
+				A_SpawnProjectile("Equestria_TinyBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+			for (int i = 0; i < 5; i++)
+				A_SpawnProjectile("Equestria_SmallBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+			for (int i = 0; i < 4; i++)
+				A_SpawnProjectile("Equestria_Blood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+		}
+		EXP2 A random(3,6) A_StartSound("weapons/rocklx");
+		EXP2 B 4;
+		EXP2 C 1 A_FadeOut(0.1);
+		Wait;
+	}
+}
+
+Class Equestria_Blood : Blood replaces Blood
 {
 	Default
 	{
@@ -104,12 +208,12 @@ Class EquestriaBlood : Blood replaces Blood
 		Wait;
 	
 	Death:
-		TNT1 A 1;
+		#### # 2;
 		Stop;
 		
 	Crash:
 		TNT1 A 0 { ACS_NamedExecute("CheckLiquid"); }
-		TNT1 A 0 { bNOINTERACTION = 1; bSPRITEFLIP = RandomPick(0, 1); A_Stop(); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
+		TNT1 A 0 { bNOINTERACTION = 1; bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.5, 1), 1); }
 		
 		BLUD DEF 2 A_FadeOut(FRandom(0.001, 0.1));
 		BLUD G 1 A_FadeOut(0.005);
@@ -119,13 +223,12 @@ Class EquestriaBlood : Blood replaces Blood
 		TNT1 A 0
 		{
 			for (int i = 0; i < 4; i++)
-			{
-				A_SpawnItemEX("BloodTrail",0,0,0, 2,2,2, frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 64);
-			}
+				A_SpawnItemEX("Equestria_SmallBlood",0,0,0, 2,2,2, frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 64);
+			
 			for (int i = 0; i < 4; i++)
-			{
-				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,1, frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
-			}
+				A_SpawnItemEX("Equestria_SmallBlood",0,0,0, 1,1,1, frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION, 128);
 		}
 		Stop;
 		
@@ -133,58 +236,15 @@ Class EquestriaBlood : Blood replaces Blood
 	override void Tick()
 	{
 		if (InStateSequence(CurState, ResolveState("Spawn")) && !isFrozen())
-		{
 			A_SetRoll((roll + speed), SPF_INTERPOLATE);
-		}
 		else if (InStateSequence(CurState, ResolveState("Falling")) && !isFrozen())
-		{
 			A_SetRoll((roll + speed), SPF_INTERPOLATE);
-		}
 		
 		Super.Tick();
 	}
 }
 
-Class EquestriaBlood_Enemies : Actor
-{
-	Default { +NOINTERACTION }
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay
-		{
-			for (int i = 0; i < 3; i++)
-				A_SpawnItemEX("BloodTrail",0,0,0, 2,2,random(-2, 2), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
-		}
-		Stop;
-		TNT1 A 0
-		{
-			for (int i = 0; i < 2; i++)
-				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
-		}
-		Stop;
-		TNT1 A 0
-		{
-			for (int i = 0; i < 1; i++)
-				A_SpawnItemEX("BloodTrail",0,0,0, 1,1,random(-1, 1), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
-		}
-		Stop;
-	}
-}
-
-Class EquestriaBloodSplatter : Actor replaces BloodSplatter
-{
-	Default{ +NoInteraction }
-	States
-	{
-	Spawn:
-		TNT1 AAAAAAAAAA 0 NoDelay A_SpawnItemEX("EquestriaBlood", 0,0,0, random(3,6),random(3,6),random(-6,6), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
-		TNT1 AAAAA 0 A_SpawnItemEx("TinyGenericGib",0,0,0, random(1, 4),random(1, 4),random(-4, 4), frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION, 128);
-		Stop;
-	}
-}
-
-Class BloodTrail : EquestriaBlood
+Class Equestria_SmallBlood : Equestria_Blood
 {
 	Default
 	{
@@ -192,17 +252,18 @@ Class BloodTrail : EquestriaBlood
 		Alpha 0.75;
 		
 		Gravity 0.2;
-		Scale 0.6;
+		//Scale 0.6;
 	}
 	States
 	{
 	Spawn:
-		BLUD CBA 25;
+		BLUD B 0 NoDelay A_SetRoll(random(0,360));
+		BLUD A 1 A_FadeOut(0.01, FTF_REMOVE);
 		Wait;
 		
 	Crash:
 		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); }
+		TNT1 A 0 { bNOINTERACTION = 1; bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); A_SetScale(frandom(0.25, 0.75), 0.75); }
 		
 		BLUD DEF 1 A_FadeOut(FRandom(0.01, 0.1));
 		BLUD G 1 A_FadeOut(0.01);
@@ -210,24 +271,23 @@ Class BloodTrail : EquestriaBlood
 	}
 }
 
-Class SmallBloodTrail : BloodTrail
+Class Equestria_TinyBlood : Equestria_SmallBlood
 {
 	Default
 	{
 		Gravity 0.1;
-		Scale 0.5;
+		//Scale 0.5;
 	}
 	States
 	{
 	Spawn:
-		BLUD CBA 10;
+		BLUD A 0 NoDelay A_SetRoll(random(0,360));
+		BLUD A 1 A_FadeOut(0.01, FTF_REMOVE);
 		Wait;
 	
+	Death:
 	Crash:
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		TNT1 A 0 { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(0); A_SetRenderStyle(1.0, STYLE_Normal); }
-		
-		POB2 A 1 A_FadeOut(0.025);
+		#### # 1 A_FadeOut(0.01, FTF_REMOVE);
 		Wait;
 	}
 }
@@ -250,9 +310,8 @@ Class TinyGenericGib : GenericGib
 		TNT1 A 0 NoDelay
 		{
 			if (GetCVar("GoreToggle")== 0)
-			{
 				Destroy();
-			}
+				
 			A_SetRoll(FRandom(0,359));
 			bSPRITEFLIP = RandomPick(0, 1);
 		}
@@ -264,7 +323,7 @@ Class TinyGenericGib : GenericGib
 		Goto Roll;
 		
 	Roll:
-		#### # 70 A_SpawnItemEx("SmallBloodTrail", FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		#### # 70 A_SpawnItemEx("Equestria_TinyBlood", FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
 		Loop;
 	}
 }
@@ -345,7 +404,7 @@ Class BigGenericGib : GenericGib
 			A_SetRoll(roll + FRandom(-100, 100));
 		}
 	Roll:
-		#### # 2 A_SpawnItemEx("BloodTrail", FRandom(-10, 10), FRandom(-10, 10), FRandom(-10, 10), random(-1,1),random(-1,1),random(-1,1),0, SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION);
+		#### # 2 A_SpawnItemEx("Equestria_SmallBlood", FRandom(-10, 10), FRandom(-10, 10), FRandom(-10, 10), random(-1,1),random(-1,1),random(-1,1),0, SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
 		Loop;
 		
 	Death:
@@ -418,9 +477,9 @@ Class BloodExplosion : XDeathGibber
 	Spawn:
 		TNT1 A 0 NoDelay { if (GetCVar("GoreToggle")== 0) { Destroy(); } }
 		
-		TNT1 AAAAA 0 A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
-		TNT1 BBBBBB 0 A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
-		TNT1 CCCC 0 A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
+		TNT1 AAAAA 0 A_SpawnProjectile("Equestria_SmallBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
+		TNT1 BBBBBB 0 A_SpawnProjectile("Equestria_TinyBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
+		TNT1 CCCC 0 A_SpawnProjectile("Equestria_Blood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
 		Stop;
 	}
 }
@@ -433,9 +492,9 @@ Class BloodExplosionSphere : BloodExplosion
 	Spawn:
 		TNT1 A 0 NoDelay { if (GetCVar("GoreToggle")== 0) { Destroy(); } }
 
-		TNT1 AAAAA 0 A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-		TNT1 BBBBBB 0 A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-		TNT1 CCCC 0 A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+		TNT1 AAAAA 0 A_SpawnProjectile("Equestria_SmallBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+		TNT1 BBBBBB 0 A_SpawnProjectile("Equestria_TinyBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+		TNT1 CCCC 0 A_SpawnProjectile("Equestria_Blood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
 		Stop;
 	}
 }
