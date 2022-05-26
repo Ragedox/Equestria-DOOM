@@ -19,17 +19,17 @@ Script "BossHealthBar" (void)
 	SetHudSize (300,200, 0);
     HudMessageBold (i:BossHealth; 0, 0, CR_WHITE, 148.0, 19.0, 0.1, 1.0);
 	
-	int acounter;
-    int bcounter;
+	int IDcounter;
+    int Xcounter;
     SetFont ("BossBar"); //Boss Bar Graphic
     HudMessageBold (s:"a"; HUDMSG_FADEOUT | HUDMSG_LAYER_OVERHUD, 101, CR_GREEN, 140.0, 0.0, 0.1, 1.0);	
 
-	for (acounter = 0; acounter <= hdisp; acounter++)
+	for (IDcounter = 0; IDcounter <= hdisp; IDcounter++)
     {
         if (hdisp <= 0)
             break;
 
-        bcounter = bcounter + 2.0;
+        Xcounter = Xcounter + 2.0;
         SetFont ("Normal"); //Shows a Green Bar
 
         if (hdisp < 75) //If the hp is at a caution level (75%) Display a yellow bar.
@@ -41,11 +41,11 @@ Script "BossHealthBar" (void)
         if (hdisp < 25) // If the hp is at a critical level (25%) Display a red bar.
             SetFont ("Critical");
 
-        HudMessageBold (s:"a"; HUDMSG_FADEOUT | HUDMSG_LAYER_UNDERHUD, acounter, CR_GREEN, 47.0 + bcounter, 34.0, 0.1, 1.25);
+        HudMessageBold (s:"a"; HUDMSG_FADEOUT | HUDMSG_LAYER_UNDERHUD, IDcounter, CR_GREEN, 47.0 + Xcounter, 34.0, 0.1, 1.25);
     }
     
-	bcounter = 0;
-    acounter = 0;
+	Xcounter = 0;
+    IDcounter = 0;
     
 	Delay (1);
 	
