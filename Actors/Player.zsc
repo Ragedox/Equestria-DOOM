@@ -137,7 +137,7 @@ Class PopSkull : PlayerChunk
 		PHED AAAAAAA 1 { goodangle = angle; A_SetRoll(roll + 4, SPF_INTERPOLATE); }
 		PHED A 1 
 		{
-			A_SpawnItemEx("BloodTrail",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR);
+			A_SpawnItemEx("Equestria_SmallBlood",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360), SXF_USEBLOODCOLOR);
 			A_SetRoll(roll + 6, SPF_INTERPOLATE);
 			goodangle = angle;
 		}
