@@ -134,9 +134,9 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 			}
 			for (int i = 0; i < 6; i++)
 			{
-				A_SpawnProjectile("BloodTrail", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
-				A_SpawnProjectile("SmallBloodTrail", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
-				A_SpawnProjectile("EquestriaBlood", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("Equestria_SmallBlood", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("Equestria_TinyBlood", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
+				A_SpawnProjectile("Equestria_Blood", 0, 0, FRandom (0, 360), CMF_AIMDIRECTION, FRandom (0, 360));
 			}
 			
 			A_Fall(); A_XScream();
