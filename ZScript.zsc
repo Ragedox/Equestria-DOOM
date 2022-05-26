@@ -21,6 +21,7 @@ Class DebrisCore : Actor
 		+MoveWithSector
 		+CanPass
 		+ThruActors
+		+ClientSideOnly
 		
 		-SOLID
 		
@@ -34,7 +35,7 @@ Class DebrisCore : Actor
 	{
 		if (InStateSequence(CurState, ResolveState("Roll")) && !isFrozen())
 			A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
-			
+		
 		Super.Tick();
 	}
 }
@@ -118,6 +119,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "ZScript/Menus.zsc"
 #include "ZScript/StatusScreen.zsc"
 #include "ZScript/StatusBar.zsc"
+//#include "ZScript/BossHealthBar.zsc"
 //#include "ZScript/ScreenEffects.zsc"
 
 //
