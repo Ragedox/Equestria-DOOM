@@ -74,7 +74,7 @@ Class EquestriaGoreProps : Actor
 	}
 }
 
-Class EquestriaBloodyTwitch : EquestriaGoreProps replaces BloodyTwitch
+Class Equestria_BloodyTwitch : EquestriaGoreProps replaces BloodyTwitch
 {
 	Default
 	{
@@ -89,9 +89,9 @@ Class EquestriaBloodyTwitch : EquestriaGoreProps replaces BloodyTwitch
 	Prop:
 		GOR1 BABCB random(3, 10)
 		{
-			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,240);
-			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,200);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,150);
+			A_SpawnItemEx("Equestria_Blood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,240);
+			A_SpawnItemEx("Equestria_SmallBlood",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,200);
+			A_SpawnItemEx("Equestria_TinyBlood",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,150);
 		}
 		Loop;
 	}
@@ -110,7 +110,7 @@ Class EquestriaMeat2 : Meat2 replaces Meat2
 	States
 	{
 	Spawn:
-		GOR2 A random(3, 10) A_SpawnItemEx("EquestriaBlood", random(-8, 8), random(-8, 8),0,0,0,0,0,0,150);
+		GOR2 A random(3, 10) A_SpawnItemEx("Equestria_Blood", random(-8, 8), random(-8, 8),0,0,0,0,0,0,150);
 		Loop;
 	}
 }
@@ -130,9 +130,9 @@ Class EquestriaMeat3 : EquestriaGoreProps replaces Meat3
 	Prop:
 		GOR3 A random(3, 10)
 		{
-			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,240);
-			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,200);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,150);
+			A_SpawnItemEx("Equestria_Blood",frandom(-8, 8),frandom(-8, 8),frandom(15, 45),0,0,0,0,0,240);
+			A_SpawnItemEx("Equestria_SmallBlood",frandom(-10, 10),frandom(-10, 10),frandom(15, 60),0,0,0,0,0,200);
+			A_SpawnItemEx("Equestria_TinyBlood",frandom(-10, 10),frandom(-10, 10),frandom(15, 75),0,0,0,0,0,150);
 		}
 		Loop;
 	}
@@ -152,9 +152,9 @@ Class EquestriaMeat4 : EquestriaGoreProps replaces Meat4
 	Prop:
 		GOR4 A random(3, 10)
 		{
-			A_SpawnItemEx("EquestriaBlood",frandom(-8, 8),frandom(-8, 8),frandom(0, 10),0,0,0,0,0,240);
-			A_SpawnItemEx("BloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(5, 25),0,0,0,0,0,200);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-10, 10),frandom(-10, 10),frandom(15, 40),0,0,0,0,0,150);
+			A_SpawnItemEx("Equestria_Blood",frandom(-8, 8),frandom(-8, 8),frandom(0, 10),0,0,0,0,0,240);
+			A_SpawnItemEx("Equestria_SmallBlood",frandom(-10, 10),frandom(-10, 10),frandom(5, 25),0,0,0,0,0,200);
+			A_SpawnItemEx("Equestria_TinyBlood",frandom(-10, 10),frandom(-10, 10),frandom(15, 40),0,0,0,0,0,150);
 		}
 		Loop;
 	}
@@ -174,9 +174,9 @@ Class EquestriaMeat5 : EquestriaGoreProps replaces Meat5
 	Prop:
 		GOR5 A random(3, 10)
 		{
-			A_SpawnItemEx("EquestriaBlood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,240);
-			A_SpawnItemEx("BloodTrail",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,200);
-			A_SpawnItemEx("SmallBloodTrail",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,150);
+			A_SpawnItemEx("Equestria_Blood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,240);
+			A_SpawnItemEx("Equestria_SmallBlood",frandom(-7, 7),frandom(-7, 7),0,0,0,0,0,0,200);
+			A_SpawnItemEx("Equestria_TinyBlood",frandom(-7, 7),frandom(-7, 7),frandom(0, 35),0,0,0,0,0,150);
 		}
 		Loop;
 	}
@@ -194,7 +194,7 @@ Class EquestriaNonsolidMeat4 : EquestriaMeat4 replaces NonsolidMeat4
 Class EquestriaNonsolidMeat5 : EquestriaMeat5 replaces NonsolidMeat5
 {Default{ -SOLID }}
 
-Class EquestriaNonsolidTwitch : EquestriaBloodyTwitch replaces NonsolidTwitch
+Class EquestriaNonsolidTwitch : Equestria_BloodyTwitch replaces NonsolidTwitch
 {Default{ -SOLID }}
 	
 //
