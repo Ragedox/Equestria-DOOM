@@ -196,7 +196,7 @@ Class AcidBarrel : EquestriaExploBarrel
 	}
 }
 
-Class AcidDrop : EquestriaBlood
+Class AcidDrop : Equestria_Blood
 {
 	Default
 	{
