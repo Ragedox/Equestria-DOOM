@@ -76,6 +76,9 @@ gore/impact3 GibImp3
 
 gore/bloodimpact	BLUDSPLT
 
+$limit gore/impact 4
+$attenuation gore/impact 4
+
 $limit gore/bloodimpact 5
 $attenuation gore/bloodimpact 8
 
