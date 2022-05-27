@@ -60,34 +60,68 @@ decal PlasmaScorchLower1
 {
 	pic plasma1
 	shade "00 00 00"
-	x-scale 0.6
-	y-scale 0.6
-}
-
-decal PlasmaScorch1
-{
-	pic BAL4C0
-	add 1.0
-	fullbright
-	animator GoAway
-	lowerdecal PlasmaScorchLower1
+	RandomFlipX RandomFlipY
 }
 
 decal PlasmaScorchLower2
 {
 	pic plasma2
 	shade "00 00 00"
-	x-scale 0.6
-	y-scale 0.6
+	RandomFlipX RandomFlipY
+}
+
+decal PlasmaScorch1
+{
+	pic "plasmaa1"
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal PlasmaScorchLower1
+	RandomFlipX RandomFlipY
 }
 
 decal PlasmaScorch2
 {
-	pic BAL4D0
+	pic "plasmaa2"
 	add 1.0
 	fullbright
 	animator GoAway
 	lowerdecal PlasmaScorchLower2
+	RandomFlipX RandomFlipY
+}
+
+decal PlasmaScorchLower1
+{
+	pic plasma1
+	shade "00 00 00"
+	RandomFlipX RandomFlipY
+}
+
+decal PlasmaScorchLower2
+{
+	pic plasma2
+	shade "00 00 00"
+	RandomFlipX RandomFlipY
+}
+
+decal PlasmaScorch1
+{
+	pic "plasmaa1"
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal PlasmaScorchLower1
+	RandomFlipX RandomFlipY
+}
+
+decal PlasmaScorch2
+{
+	pic "plasmaa2"
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal PlasmaScorchLower2
+	RandomFlipX RandomFlipY
 }
 
 decalgroup PlasmaScorchLower
@@ -100,6 +134,32 @@ decalgroup PlasmaScorch
 {
 	PlasmaScorch1	1
 	PlasmaScorch2	1
+}
+
+decal GreenPlasmaScorch1
+{
+	pic "plasmab1"
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal "PlasmaScorchLower1"
+	RandomFlipX RandomFlipY
+}
+
+decal GreenPlasmaScorch2
+{
+	pic "plasmab2"
+	add 1.0
+	fullbright
+	animator GoAway
+	lowerdecal "PlasmaScorchLower2"
+	RandomFlipX RandomFlipY
+}
+
+decalgroup GreenPlasmaScorch
+{
+	GreenPlasmaScorch1	1
+	GreenPlasmaScorch2	1
 }
 
 decal LowerScorch

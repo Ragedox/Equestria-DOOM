@@ -21,8 +21,6 @@ Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 		PainSound "baby/pain";
 		DeathSound "baby/death";
 		ActiveSound "baby/active";
-
-		Translation "160:167=112:127";
 	}
 	States
 	{
@@ -71,7 +69,7 @@ Class EquestriaAracPlasmaBall : EquestriaPlasmaBall replaces ArachnotronPlasma
 {
 	Default
 	{
-		Decal "ArachnotronScorch";
+		Decal "GreenPlasmaScorch";
 		SeeSound "baby/attack";
 		DeathSound "baby/shotx";
 	}
@@ -83,7 +81,6 @@ Class EquestriaAracPlasmaBall : EquestriaPlasmaBall replaces ArachnotronPlasma
 			A_SetRoll(random(0, 359)); bSPRITEFLIP = RandomPick(0,1);
 			A_SpawnProjectile("AracPlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 		}
-		
 	Projectile:
 		BAL4 AB 1 Bright
 		{
@@ -92,14 +89,12 @@ Class EquestriaAracPlasmaBall : EquestriaPlasmaBall replaces ArachnotronPlasma
 		}
 		Loop;
  
-	XDeath:
-		APBX AB 0 A_SpawnItemEx("NoBlood_TinyGenericGib",0,0,0,random(1, 2),random(1, 2),random(1, 2),frandom(0, 359),0, 128);
 	Crash:
 	Death:
 		APBX A 0 A_SpawnItem("SmokePuff");
 		APBX AAAA 0 A_SpawnProjectile("AracPlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
 		APBX ABC 4 Bright;
-		APBX DE 4 A_FadeOut(0.1);
+		APBX DDDDEEEE 1 A_FadeOut(0.025);
 		Stop;
 	}
 }
