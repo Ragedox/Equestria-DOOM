@@ -71,19 +71,11 @@ statusbar normal
 	drawswitchableimage weaponslot 6, "STGNUM6", "STYSNUM6", 259, 182;
 	drawswitchableimage weaponslot 7, "STGNUM7", "STYSNUM7", 271, 182;
 	
-	InInventory PowerBlurSphere, 1
+	InInventory "PowerInvisibility", 1
 		drawimage "STBLUR01", 160, 198;
 	else
 		drawmugshot "STF", 5, xdeathface, animatedgodmode, 160, 198;
 	
-	//DrawSwitchableImage BlurSphere, "STBLUR01", "", 160, 198; // please, just work :/
-	
-	//InInventory BlurSphere, 1
-	//{
-	//	drawimage "STBLUR01", 160, 198;	// please, please, just work :/
-	//}
-	
-	//drawbar "STBLUR01", "STBLURBG", poweruptime("BlurSphere"), vertical, 160, 198; // please, please, please, just work :/
 }}
 
 statusbar fullscreen, fullscreenoffsets
