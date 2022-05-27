@@ -63,7 +63,7 @@ Sound Caulking by Jaxxon R
 
 3P Sound Pack
 
-= Stuff from other mods =
+= Stuff from other mods / Resources =
 
 Doom 2 Minor Sprite Fixing Project
 
@@ -79,6 +79,7 @@ Kinsie's Test Map : https://forum.zdoom.org/viewtopic.php?t=57221
 
 AFADoomer : https://forum.zdoom.org/viewtopic.php?t=58842#p1032693
 
+ZScript Boss bar : https://forum.zdoom.org/viewtopic.php?f=105&t=60783
 = Other Games =
 
 Unused DOOM files
