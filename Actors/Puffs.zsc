@@ -238,7 +238,7 @@ Class KickPuff : ShotgunPuff
 	{
 		DamageType "Kick";
 		AttackSound "*fist";
-		
+		Decal "HorseShoe";
 		+BLOODLESSIMPACT
 		+NODECAL
 		+NOEXTREMEDEATH
@@ -262,8 +262,8 @@ Class BerserkPuff : KickPuff
 		Alpha 0.5;
 		Scale 0.5;
 		VSpeed 0.65;
-		
-		-BLOODLESSIMPACT;
+		Decal "HorseShoe";
+		-BLOODLESSIMPACT
 	}
 	States
 	{
