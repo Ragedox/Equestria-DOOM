@@ -54,9 +54,7 @@ Class EquestriaRocketLauncher : EquestriaDoomWeapon replaces RocketLauncher
 			A_WeaponOffset(0, random(3, 10), WOF_ADD);
 			
 			if (GetCVAR("CamRecoilToggle") == true)
-			{
 				A_Overlay(2, "CamRecoil");
-			}
 		}
 		MISG A 6 A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 		MISG B 0 A_ReFire();
@@ -151,20 +149,15 @@ Class EquestriaRocket : Actor replaces Rocket
 		Wait;
 		
 	Death.FLoor:
-		TNT1 A 0{
-			bFORCEXYBILLBOARD = false;
-			for (int i = 0; i < 16; i++)
-				A_SpawnProjectile("ExplosionSparkle",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 95));
-		}
-		TNT1 A 0{
-			for (int i = 0; i < 16; i++)
-				A_SpawnProjectile("Smoke",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(0, 90));
-		}
-
 		MISL E 4 Bright
 		{
 			A_Explode(-1,-1, XF_HURTSOURCE, true, 0,0,10,"","Explosion");
 			A_QuakeEx(4, 4, 4, 16, 0, 200, "", QF_SCALEDOWN, 0,0,0, 1);
+			
+			bFORCEXYBILLBOARD = false;
+			for (int i = 0; i < 16; i++)
+				A_SpawnProjectile("ExplosionSparkle", frandom(0, 8),0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 95));
+				A_SpawnProjectile("Smoke",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(0, 90));
 		}
 		
 		TNT1 AAAA 0 A_SpawnProjectile("SplashSmoke", random(-20, 20), random (-40, 40), frandom(0, 360), CMF_AIMDIRECTION, random(0, -90));
@@ -232,9 +225,11 @@ Class EquestriaRocketFire : EQ_FireBallTrail
 
 Class ExplosionSparkle : PuffSparkles
 {
+	//int traildelay;
+	
 	Default
 	{
-		Scale 0.75; Speed 10; Gravity 0.5;
+		Scale 1; Speed 10; Gravity 0.5;
 		BounceType "Doom";
 	}
 	States
@@ -243,9 +238,34 @@ Class ExplosionSparkle : PuffSparkles
 		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
 		
 		PUFF A random(35, 70);
-		PUFF AAAA 4 A_SetScale(Scale.X - 0.10, Scale.Y - 0.10);
-		PUFF AA 3 A_SetScale(Scale.X - 0.05, Scale.Y - 0.05);
-		PUFF AAAA 2 A_SetScale(Scale.X - 0.025, Scale.Y - 0.025);
-		Stop;
+		Goto Death;
+		
+	Death:
+		PUFF A 1
+		{
+			A_SetScale(Scale.X - 0.025, Scale.Y - 0.025);
+			If(Scale.X <= 0)
+				Destroy();
+		}
+		Wait;
 	}
+	
+	/*override void Tick()
+	{
+		traildelay++;
+		
+		if (GetCVar("DEBUG"))
+			A_LogInt(traildelay);
+			
+		if (!isFrozen() && traildelay >= 8 && InStateSequence(CurState, ResolveState("Spawn")))
+		{	
+			traildelay = 0;
+			
+			A_SpawnItemEx("BarrelDebrisSmoke",0,0,0, frandom(-1,1),frandom(-1,1),frandom(-1,1));
+		
+			if (GetCVar("DEBUG"))
+				A_Log("Reset Sparkle Trail");
+		}
+		Super.Tick();
+	}*/
 }
