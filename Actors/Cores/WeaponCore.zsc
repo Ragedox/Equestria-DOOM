@@ -31,7 +31,7 @@ Class EquestriaDoomWeapon : Weapon
 				return ResolveState("Extreme.Death");
 			else if(CheckInventory("Death_Explosion", 1))
 				return ResolveState("Explosion.Death");
-				
+
 			return state(null);
 		}
 		Goto Normal.Death;
@@ -144,13 +144,15 @@ Class EquestriaDoomWeapon : Weapon
 		}
 		TNT1 A 6
 		{
+			A_SprayDecal("HorseShoe", 64, (0,0,45));
+			
 			if (!CheckInventory("PowerStrength", 1))
 			{
-				A_CustomPunch(2 * Random(1,10), true, CPF_NOTURN, "KickPuff", 75, 0, 0, "BasicArmorBonus", "*fist");
+				A_CustomPunch(2 * Random(1,10), true, CPF_NOTURN, "KickPuff", 64, 0, 0, "BasicArmorBonus", "*fist");
 				SetPlayerProperty(0, 0, 0);
 			}
 			else
-				A_CustomPunch(20 * Random(1, 10), TRUE, 0, "BerserkPuff", 75, 0, 0, "BasicArmorBonus", "skeleton/melee");
+				A_CustomPunch(20 * Random(1, 10), TRUE, 0, "BerserkPuff", 64, 0, 0, "BasicArmorBonus", "skeleton/melee");
 		}
 		TNT1 AAAAA 2;
 		Goto GotoReady;

@@ -171,22 +171,20 @@ decal LowerScorch
 
 decal Scorch1
 {
-	pic RocketScorch1
+	pic "D_ROCKET1"
 	FullBright
 	shade "Red"
 	randomflipx randomflipy
-	Y-Scale 0.75 X-Scale 0.75
 	animator GoAway2
 	lowerdecal LowerScorch
 }
 
 decal Scorch2
 {
-	pic RocketScorch2
+	pic "D_ROCKET2"
 	FullBright
 	shade "Red"
 	randomflipx randomflipy
-	Y-Scale 0.75 X-Scale 0.75
 	animator GoAway2
 	lowerdecal LowerScorch
 }
@@ -227,7 +225,7 @@ Decal BFGLightning1
 	shade "80 ff 80"
 	Y-Scale 2 X-Scale 2
 	fullbright
-	randomflipx
+	randomflipx randomflipx
 	animator GoAway2
 	lowerdecal BFGScorch
 }
@@ -238,7 +236,7 @@ decal BFGLightning2
 	shade "80 ff 80"
 	Y-Scale 2 X-Scale 2
 	fullbright
-	randomflipy
+	randomflipx randomflipy
 	animator GoAway2
 	lowerdecal BFGScorch
 }
@@ -249,6 +247,12 @@ decalgroup BFGLightning
 	BFGLightning2	1
 }
 
+decal HorseShoe
+{
+	pic "D_SHOE"
+	shade "45 3e 30"
+	randomflipx
+}
 
 ////Weapons
 
