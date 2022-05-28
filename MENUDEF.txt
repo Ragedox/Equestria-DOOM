@@ -198,7 +198,11 @@ OptionMenu "VideoSettings"
 	StaticText ""
 	
 	StaticText 	"Textures", "Brick"
+	
+	StaticText	"Change Texture Filter to ''None (Trilinear)'' for the best image quality", "Gold"
 	Option "$GLTEXMNU_TEXFILTER",			gl_texture_filter,					"FilterModes"
+	StaticText	"--------------------------------------------------", "Gold"
+	
 	Option "$GLTEXMNU_ANISOTROPIC",			gl_texture_filter_anisotropic,		"Anisotropy"
 
 	ifOption(MMX)
