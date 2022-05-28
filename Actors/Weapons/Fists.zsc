@@ -12,6 +12,8 @@ Class BerserkFist : EquestriaDoomWeapon
 		Obituary "$OB_MPFIST";
 		Tag "$BERSERKFIST";
 		
+		Decal "HorseShoe";
+		
 		+WEAPON.WIMPY_WEAPON;
 		+WEAPON.MELEEWEAPON;
 	}
