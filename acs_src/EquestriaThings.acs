@@ -33,7 +33,7 @@ script "YouAreHere" enter
 	1, CR_WHITE, 1.5, 1.0, 3.5, 0.1, 1.0);
 }
 
-script "CheckClopper" enter //Ragedox says: Hands off!
+script "CheckClopper" enter //RageGuy says: Hands off!
 {
 	if (GameType() == GAME_TITLE_MAP)
 	
