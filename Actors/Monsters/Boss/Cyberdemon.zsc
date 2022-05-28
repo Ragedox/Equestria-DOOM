@@ -64,10 +64,10 @@ Class EquestriaCyberdemon : DoomEquestriaMonster replaces Cyberdemon
 			for (int i = 0; i < 16; i++)
 			{
 				A_SpawnItemEx("BigGoreRandom", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
-					frandom(2,8),frandom(2,8),frandom(2,8),
+					frandom(2,8),frandom(2,8),frandom(4,16),
 					frandom(0, 360), SXF_USEBLOODCOLOR);
 				A_SpawnItemEx("GenericGib", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
-					frandom(4,12),frandom(4,12),frandom(4,12), 
+					frandom(8,16),frandom(8,16),frandom(8,24), 
 					frandom(0, 360), SXF_USEBLOODCOLOR);
 			}
 		}
