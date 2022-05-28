@@ -16,9 +16,29 @@ TGRNB0, 13, 91, iwad
 TGRNC0, 13, 91, iwad
 TGRND0, 13, 97, iwad
 
+TREDA0, 13, 96, iwad
+TREDB0, 13, 91, iwad
+TREDC0, 13, 91, iwad
+TREDD0, 13, 97, iwad
+
 COL1A0, 17, 53, iwad
 COL2A0, 17, 40, iwad
 COL3A0, 17, 53, iwad
 COL4A0, 17, 40, iwad
 COL5A0, 17, 45, iwad
 COL5B0, 17, 46, iwad
+
+SMBTA0, 8, 73, iwad
+SMBTB0, 8, 68, iwad
+SMBTC0, 8, 68, iwad
+SMBTD0, 8, 74, iwad
+
+SMGTA0, 8, 73, iwad
+SMGTB0, 8, 68, iwad
+SMGTC0, 8, 68, iwad
+SMGTD0, 8, 74, iwad
+
+SMRTA0, 8, 73, iwad
+SMRTB0, 8, 68, iwad
+SMRTC0, 8, 68, iwad
+SMRTD0, 8, 74, iwad
