@@ -52,29 +52,29 @@ Class DoomEquestriaMonster : Actor
 				for (int i = 0; i < gorequantity; i++)
 					A_SpawnItemEx("GenericGib",  FRandom(radius * -1, radius), FRandom(radius * -1, radius), frandom(height, height * 2),
 						frandom(2,4), frandom(2,4), frandom(4,8),
-						frandom(0, 360), SXF_USEBLOODCOLOR);
+						frandom(0, 360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 				
 				for (int i = 0; i < gorequantity; i++)
 					A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), frandom(height, height * 2),
 						frandom(2,4), frandom(2,4), frandom(4,8),
-						frandom(0, 360), SXF_USEBLOODCOLOR);
+						frandom(0, 360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 
 				for (int i = 0; i < gorequantity; i++)
 				{
 					A_SpawnItemEx("Equestria_TinyBlood",
 					frandom(radius * -1, radius * 2),frandom(radius * -1, radius * 2),frandom(height, height * 2),
 					frandom(0, 4),frandom(0, 4),frandom(0, 8),frandom(0,360),
-					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 					
 					A_SpawnItemEx("Equestria_SmallBlood",
 					frandom(radius * -1, radius * 2),frandom(radius * -1, radius * 2),frandom(height, height * 2),
 					frandom(0, 4),frandom(0, 4),frandom(0, 8),frandom(0,360),
-					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 					
 					A_SpawnItemEx("Equestria_Blood",
 					frandom(radius * -1, radius * 2),frandom(radius*-1, radius * 2),frandom(height, height * 2),
 					frandom(1, 2),frandom(1, 2),frandom(0, 8),frandom(0,360),
-					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 				}
 				
 				for (int i = 0; i < 4; i++)
@@ -82,12 +82,12 @@ Class DoomEquestriaMonster : Actor
 					A_SpawnItemEx("Equestria_SmallBlood",
 					frandom(radius * -1, radius * 2),frandom(radius * -1, radius * 2),frandom(height, height * 2),
 					frandom(0, 1),frandom(0, 1),frandom(0, 2),frandom(0,360),
-					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 					
 					A_SpawnItemEx("Equestria_Blood",
 					frandom(radius * -1, radius * 2),frandom(radius*-1, radius * 2),frandom(height, height * 2),
 					frandom(0, 1),frandom(0, 1),frandom(0, 2),frandom(0,360),
-					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 				}
 				
 				return ResolveState("Classic.XDeath");
