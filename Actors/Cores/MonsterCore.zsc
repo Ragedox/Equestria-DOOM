@@ -12,6 +12,13 @@ Class DoomEquestriaMonster : Actor
 		BloodType "Equestria_BloodEnemies", "Equestria_BloodSplatter", "EquestriaBloodAxe";
 	}
 	
+	/*override void Tick()
+	{
+		Super.Tick();
+		if(health <= woundhealth && health > 0 && bCORPSE == false)
+			sprite = getspriteindex("SPOS");
+	}*/
+	
 	/*void A_SmartChase()
 	{
 		if (CheckSight(target)== true)
@@ -39,20 +46,48 @@ Class DoomEquestriaMonster : Actor
 			
 			if(GetCVar("GoreToggle") == 1)
 			{
-				for (int i = 0; i < 10; i++)
+				int gorequantity;
+				gorequantity = random(8, 16);
+				
+				for (int i = 0; i < gorequantity; i++)
+					A_SpawnItemEx("GenericGib",  FRandom(radius * -1, radius), FRandom(radius * -1, radius), frandom(height, height * 2),
+						frandom(2,4), frandom(2,4), frandom(4,8),
+						frandom(0, 360), SXF_USEBLOODCOLOR);
+				
+				for (int i = 0; i < gorequantity; i++)
+					A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), frandom(height, height * 2),
+						frandom(2,4), frandom(2,4), frandom(4,8),
+						frandom(0, 360), SXF_USEBLOODCOLOR);
+
+				for (int i = 0; i < gorequantity; i++)
 				{
-					A_SpawnItemEx("GenericGib",  FRandom(radius * -1, radius), FRandom(radius * -1, radius), frandom(8, 56),
-						frandom(2,4), frandom(2,4), frandom(2,6),
-						frandom(0, 360), SXF_USEBLOODCOLOR);
-					A_SpawnItemEx("TinyGenericGib", FRandom(radius * -1, radius), FRandom(radius * -1, radius), frandom(8, 56),
-						frandom(2,6), frandom(2,6), frandom(2,8),
-						frandom(0, 360), SXF_USEBLOODCOLOR);
+					A_SpawnItemEx("Equestria_TinyBlood",
+					frandom(radius * -1, radius * 2),frandom(radius * -1, radius * 2),frandom(height, height * 2),
+					frandom(0, 4),frandom(0, 4),frandom(0, 8),frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					
+					A_SpawnItemEx("Equestria_SmallBlood",
+					frandom(radius * -1, radius * 2),frandom(radius * -1, radius * 2),frandom(height, height * 2),
+					frandom(0, 4),frandom(0, 4),frandom(0, 8),frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					
+					A_SpawnItemEx("Equestria_Blood",
+					frandom(radius * -1, radius * 2),frandom(radius*-1, radius * 2),frandom(height, height * 2),
+					frandom(1, 2),frandom(1, 2),frandom(0, 8),frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 				}
-				for (int i = 0; i < 6; i++)
+				
+				for (int i = 0; i < 4; i++)
 				{
-					A_SpawnProjectile("Equestria_SmallBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-					A_SpawnProjectile("Equestria_TinyBlood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-					A_SpawnProjectile("Equestria_Blood", 0, 0, FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
+					A_SpawnItemEx("Equestria_SmallBlood",
+					frandom(radius * -1, radius * 2),frandom(radius * -1, radius * 2),frandom(height, height * 2),
+					frandom(0, 1),frandom(0, 1),frandom(0, 2),frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					
+					A_SpawnItemEx("Equestria_Blood",
+					frandom(radius * -1, radius * 2),frandom(radius*-1, radius * 2),frandom(height, height * 2),
+					frandom(0, 1),frandom(0, 1),frandom(0, 2),frandom(0,360),
+					SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
 				}
 				
 				return ResolveState("Classic.XDeath");
