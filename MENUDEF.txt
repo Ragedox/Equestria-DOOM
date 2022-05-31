@@ -149,7 +149,7 @@ OptionMenu "VideoSettings"
 {
 	Title "$VIDEOSETTINGS"
 	
-	StaticText "Display", "Brick"
+	StaticText "---------- Display ----------", "Brick"
 	StaticText ""
 
 	Option "$VIDMNU_PREFERBACKEND",				"vid_preferbackend", "PreferBackend"
@@ -175,7 +175,7 @@ OptionMenu "VideoSettings"
 	Command		"$VIDMNU_APPLYFS",					"menu_resolution_commit_changes 1"
 	
 	StaticText ""
-	StaticText "Video", "Brick"
+	StaticText "---------- Video and Graphics ----------", "Brick"
 	StaticText ""
 	
 	Slider 		"$DSPLYMNU_FOV",					"fov",						75.0, 125.0, 5.0, 0
@@ -190,6 +190,7 @@ OptionMenu "VideoSettings"
 	Option 		"$MN_OPT_GIBSFOREVER", 				"GibsStayForever",			"onoff"
 	Option 		"$MN_OPT_MISSILEMODEL", 			"CV_MISSILEMODEL",			"onoff"
 	Option		"$MN_OPT_BULLETTRACER",				"CV_BULLETTRACER",			"onoff"
+	Option		"$MN_OPT_FLATDECALS",				"CV_FLATDECALS",			"onoff"
 	StaticText ""
 	
 	Option 		"$GLPREFMNU_BLOOM",		 			gl_bloom,					"OnOff"
@@ -197,14 +198,34 @@ OptionMenu "VideoSettings"
 	Option		"$GLPREFMNU_ENV",					gl_enhanced_nightvision,	"OnOff"
 	StaticText ""
 	
-	StaticText 	"Textures", "Brick"
+	StaticText 	"Anti-Aliasing", "Brick"
+	Option 		"$GLPREFMNU_FXAA",		 			gl_fxaa,					"FXAAQuality"
+	Option 		"$GLPREFMNU_MULTISAMPLE", 			gl_multisample,				"Multisample"
+	StaticText ""
 	
-	StaticText	"Change Texture Filter to ''None (Trilinear)'' for the best image quality", "Gold"
+	StaticText 	"Lights and Dynamic Lights", "Brick"
+	Option 		"$GLPREFMNU_SECLIGHTMODE",				gl_lightmode,			"LightingModes"
+	Option 		"$GLLIGHTMNU_LIGHTSENABLED",			gl_lights,				"OnOff"
+	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAP",			gl_light_shadowmap,		"YesNo"
+	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPQUALITY",	gl_shadowmap_quality,	"ShadowMapQuality"
+	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPFILTER",		gl_shadowmap_filter,	"ShadowMapFilter"
+	Option		"$MN_OPT_WEAPONLIGHT", 					"WeaponLight",			"onoff"
+	StaticText ""
+	
+	StaticText 	"---------- Textures and Sprites ----------", "Brick"
+	StaticText ""
+	
+	StaticText	"Choose any variation of 'None' for the best image quality", "Gold"
 	Option "$GLTEXMNU_TEXFILTER",			gl_texture_filter,					"FilterModes"
-	StaticText	"--------------------------------------------------", "Gold"
+	StaticText	"-----------------------------------------------------", "Gold"
 	
 	Option "$GLTEXMNU_ANISOTROPIC",			gl_texture_filter_anisotropic,		"Anisotropy"
-
+	
+	StaticText ""
+	StaticText	"Use 'Smarter' for better sprite clipping", "Gold"
+	Option "$GLPREFMNU_SPRCLIP",				gl_spriteclip,					"SpriteclipModes"
+	StaticText	"----------------------------------------", "Gold"
+	
 	ifOption(MMX)
 	{
 		Option "$GLTEXMNU_HQRESIZE",		gl_texture_hqresizemode,			"HqResizeModes"
@@ -216,19 +237,6 @@ OptionMenu "VideoSettings"
 	Option "$GLTEXMNU_HQRESIZEMULT",		gl_texture_hqresizemult,			"HqResizeMultipliers"
 	StaticText "!HQRESIZE_WARNING!"
 	Class "GLTextureGLOptions"
-	
-	StaticText 	"Anti-Aliasing", "Brick"
-	Option 		"$GLPREFMNU_FXAA",		 			gl_fxaa,					"FXAAQuality"
-	Option 		"$GLPREFMNU_MULTISAMPLE", 			gl_multisample,				"Multisample"
-	StaticText ""
-	
-	StaticText 	"Lights", "Brick"
-	Option 		"$GLPREFMNU_SECLIGHTMODE",				gl_lightmode,			"LightingModes"
-	Option 		"$GLLIGHTMNU_LIGHTSENABLED",			gl_lights,				"OnOff"
-	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAP",			gl_light_shadowmap,		"YesNo"
-	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPQUALITY",	gl_shadowmap_quality,	"ShadowMapQuality"
-	Option 		"$GLLIGHTMNU_LIGHTSHADOWMAPFILTER",		gl_shadowmap_filter,	"ShadowMapFilter"
-	Option		"$MN_OPT_WEAPONLIGHT", 					"WeaponLight",			"onoff"
 }
 
 OptionMenu "UISettings"
