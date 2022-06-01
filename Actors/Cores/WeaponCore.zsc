@@ -213,7 +213,7 @@ Class EquestriaDoomWeapon : Weapon
 				A_SetRoll(roll + 0.5, SPF_INTERPOLATE);
 			}
 		}
-		KICK B 2 A_OverlayScale(-3, 1, 1, WOF_INTERPOLATE);
+		KICK B 2 { A_OverlayScale(-3, 1, 1, WOF_INTERPOLATE); A_SetRoll(0); }
 		Stop;
 		
 	Overlay.Aside:
@@ -248,10 +248,28 @@ Class EquestriaDoomWeapon : Weapon
 			A_OverlayRenderStyle(10, STYLE_Add);
 		}
 		TNT1 A 0 A_Jump(256,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
-	
+
+		//Sorry
+		TNT1 A 2 A_OverlayAlpha(10, 0.875);
+		TNT1 A 2 A_OverlayAlpha(10, 0.85);
+		TNT1 A 2 A_OverlayAlpha(10, 0.825);
+		TNT1 A 4 A_OverlayAlpha(10, 0.8);
+		TNT1 A 2 A_OverlayAlpha(10, 0.75);
+		TNT1 A 2 A_OverlayAlpha(10, 0.7);
+		TNT1 A 2 A_OverlayAlpha(10, 0.65);
+		TNT1 A 2 A_OverlayAlpha(10, 0.6);
+		TNT1 A 2 A_OverlayAlpha(10, 0.55);
+		TNT1 A 2 A_OverlayAlpha(10, 0.5);
+		TNT1 A 2 A_OverlayAlpha(10, 0.45);
+		TNT1 A 4 A_OverlayAlpha(10, 0.4);
+		TNT1 A 2 A_OverlayAlpha(10, 0.375);
+		TNT1 A 2 A_OverlayAlpha(10, 0.35);
+		TNT1 A 2 A_OverlayAlpha(10, 0.325);
 		TNT1 A 8 A_OverlayAlpha(10, 0.3);
+		TNT1 A 2 A_OverlayAlpha(10, 0.325);
 		TNT1 A 2 A_OverlayAlpha(10, 0.35);
-		TNT1 A 2 A_OverlayAlpha(10, 0.4);
+		TNT1 A 2 A_OverlayAlpha(10, 0.375);
+		TNT1 A 4 A_OverlayAlpha(10, 0.4);
 		TNT1 A 2 A_OverlayAlpha(10, 0.45);
 		TNT1 A 2 A_OverlayAlpha(10, 0.5);
 		TNT1 A 2 A_OverlayAlpha(10, 0.55);
@@ -259,21 +277,12 @@ Class EquestriaDoomWeapon : Weapon
 		TNT1 A 2 A_OverlayAlpha(10, 0.65);
 		TNT1 A 2 A_OverlayAlpha(10, 0.7);
 		TNT1 A 2 A_OverlayAlpha(10, 0.75);
-		TNT1 A 8 A_OverlayAlpha(10, 0.8);
-		TNT1 A 2 A_OverlayAlpha(10, 0.75);
-		TNT1 A 2 A_OverlayAlpha(10, 0.7);
-		TNT1 A 2 A_OverlayAlpha(10, 0.65);
-		TNT1 A 2 A_OverlayAlpha(10, 0.6);
-		TNT1 A 2 A_OverlayAlpha(10, 0.55);
-		TNT1 A 2 A_OverlayAlpha(10, 0.5);
-		TNT1 A 2 A_OverlayAlpha(10, 0.45);
-		TNT1 A 2 A_OverlayAlpha(10, 0.4);
-		TNT1 A 2 A_OverlayAlpha(10, 0.35);
+		TNT1 A 4 A_OverlayAlpha(10, 0.8);
+		TNT1 A 2 A_OverlayAlpha(10, 0.825);
+		TNT1 A 2 A_OverlayAlpha(10, 0.85);
+		TNT1 A 2 A_OverlayAlpha(10, 0.875);
+		TNT1 A 8 A_OverlayAlpha(10, 0.9);
 		Goto Aura.Setup+2;
-		
-	Off:
-		TNT1 A 0;
-		Stop;
 	}
 }
 
