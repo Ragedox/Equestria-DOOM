@@ -245,7 +245,8 @@ class EquestriaHeartColumn : EquestriaShortGreenColumn replaces HeartColumn
 	States
 	{
 	Spawn:
-		COL5 AB 14;
+		COL5 ABABAB random(4,8);
+		COL5 A random(8, 16);
 		Loop;
 	}
 }
