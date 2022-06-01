@@ -131,7 +131,7 @@ splash Water
 terrain Blood
 {
 	splash			"Blood"
-	footclip		10
+	footclip		8
 	liquid
 }
 
@@ -140,7 +140,7 @@ terrain Lava
 {
 	DamageType		"Lava"
 	splash			"Lava"
-	footclip		10
+	footclip		8
 	liquid
 }
 
@@ -157,7 +157,7 @@ terrain Nukage
 {
 	DamageType		"Nukage"
 	splash			"Nukage"
-	footclip		10
+	footclip		8
 	liquid
 }
 
@@ -165,7 +165,7 @@ terrain Nukage
 terrain SlimeBrown
 {
 	splash			"SlimeBrown"
-	footclip		10
+	footclip		8
 	liquid
 }
 
@@ -173,7 +173,7 @@ terrain SlimeBrown
 terrain SludgeGreenBrown
 {
 	splash			"SludgeGreenBrown"
-	footclip		10
+	footclip		8
 	liquid
 }
 
@@ -181,7 +181,7 @@ terrain SludgeGreenBrown
 terrain Water
 {
 	splash			"Water"
-	footclip		10
+	footclip		8
 	liquid
 }
 
