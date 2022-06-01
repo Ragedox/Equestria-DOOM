@@ -91,7 +91,7 @@ class Equestria_FogSpawner : Actor
 
 // Small Fog Patch ----------------------------------------------------------
 
-class Equestria_FogPatchSmall : Actor replaces FogPatchSmall
+class Equestria_FogPatchSmall : DEParticles replaces FogPatchSmall
 {
 	Default
 	{
@@ -146,11 +146,11 @@ class Equestria_FogPatchSmall : Actor replaces FogPatchSmall
 		//A_FadeOut(0.01);
 	}
 	
-	/*override void Tick()
+	override void Tick()
 	{
 		Super.Tick();
-		A_FadeOut(0.0025);
-	}*/
+		A_SetRoll(roll + 0.1);
+	}
 }
 
 // Medium Fog Patch ---------------------------------------------------------
