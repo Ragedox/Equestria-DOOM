@@ -42,3 +42,5 @@ SMRTA0, 8, 73, iwad
 SMRTB0, 8, 68, iwad
 SMRTC0, 8, 68, iwad
 SMRTD0, 8, 74, iwad
+
+SHELA0, 7, 7, iwad
