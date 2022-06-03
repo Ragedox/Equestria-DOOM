@@ -15,9 +15,9 @@ Glow
 		LAVA4
 	}
 	Texture "LAVA1", FF4B00, 128, fullbright
-	Texture "LAVA2", FF4B00, 128, fullbright
-	Texture "LAVA3", FF4B00, 128, fullbright
-	Texture "LAVA4", FF4B00, 128, fullbright
+	Texture "LAVA2", FF4B00, 192, fullbright
+	Texture "LAVA3", FF4B00, 256, fullbright
+	Texture "LAVA4", FF4B00, 192, fullbright
 }
 
 Glow
