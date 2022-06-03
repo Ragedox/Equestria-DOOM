@@ -338,30 +338,6 @@ Sprite "FLATD0", 62, 36
 	Patch "PS20A0", 0, 0
 }
 
-Sprite "FLATE0", 32, 40
-{
-	Offset 16, 20
-	Patch "BSMEAR1", 0, 0
-}
-
-Sprite "FLATF0", 32, 40
-{
-	Offset 16, 20
-	Patch "BSMEAR2", 0, 0
-}
-
-Sprite "FLATG0", 42, 45
-{
-	Offset 21, 22
-	Patch "BSPLAT1", 0, 0
-}
-
-Sprite "FLATH0", 47, 38
-{
-	Offset 23, 19
-	Patch "BSPLAT2", 0, 0
-}
-
 Sprite "FSKUA0", 32, 35
 {
 	Offset 16, 50
