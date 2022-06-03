@@ -13,9 +13,7 @@ Class FreeEquestria_RocketLauncher : EquestriaRocketLauncher replaces EquestriaR
 			A_WeaponOffset(0, random(35, 42), WOF_INTERPOLATE);
 			
 			if (GetCVAR("CamRecoilToggle") == true)
-			{
 				A_Overlay(2, "CamRecoil");
-			}
 		}
 		MISG A 6 A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 		MISG B 0 A_ReFire();
