@@ -185,12 +185,13 @@ Class SuperShotgunLight : Actor
 {
 	Default
 	{
-		Speed 0; Damage 0; +NOINTERACTION
+		Height 0; Radius 0;
+		Speed 8; Damage 0; +NOINTERACTION +MISSILE
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 3;
+		TNT1 A 4;
 		Stop;
 	}
 }
