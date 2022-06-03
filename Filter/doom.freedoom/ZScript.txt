@@ -1,6 +1,7 @@
 #include "Actors/Weapons/FEDRocketLauncher.zsc"
 #include "Actors/Pickups/FEDPowerups.zsc"
 #include "Actors/Weapons/SKAG1337.zsc"
+#include "Actors/Blood.zsc"
 
 Class FreeEquestria_DoomPlayer : EquestriaDoomPlayer replaces EquestriaDoomPlayer
 {
