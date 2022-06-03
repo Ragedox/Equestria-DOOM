@@ -22,12 +22,13 @@ Class DebrisCore : Actor
 		+CanPass
 		+ThruActors
 		+ClientSideOnly
+		+NOTONAUTOMAP
 		
 		-SOLID
 		
 		+ROLLSPRITE +ROLLCENTER
 		
-		DebrisCore.RollSpeed 15;
+		DebrisCore.RollSpeed 16;
 		Damage 0;
 		//DebrisCore.RollState "Roll";
 	}
@@ -37,6 +38,21 @@ Class DebrisCore : Actor
 			A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
 		
 		Super.Tick();
+	}
+}
+
+Class TerrainDebris : DebrisCore
+{
+	Default
+	{
+		DebrisCore.RollSpeed 8;
+		Speed 4;
+	}
+	States
+	{
+	Spawn:
+		DBRA ABCDEF 1;
+		Loop;
 	}
 }
 
