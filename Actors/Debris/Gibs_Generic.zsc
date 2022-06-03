@@ -54,6 +54,7 @@ Class GenericGib : DebrisCore
 		Loop;
 	
 	Death:
+		#### # 0 { bNOINTERACTION = 1; bRELATIVETOFLOOR = 1; }
 		#### # 0 A_Jump(256, "Crash");
 		Wait;
 		
@@ -198,15 +199,34 @@ Class Equestria_Blood : Actor replaces Blood
 		
 		DeathSound "gore/bloodimpact";
 	}
+	
+	static const string liquidfloor[] =
+	{
+		"FWATER1","FWATER2","FWATER3","FWATER4",
+		"SLIME01","SLIME02","SLIME03","SLIME04",
+		"SLIME05","SLIME06","SLIME07","SLIME08",
+		"BLOOD1","BLOOD2","BLOOD3",
+		"NUKAGE1","NUKAGE2","NUKAGE3","LAVA1",
+		"LAVA2","LAVA3","LAVA4"
+	};
+		
 	States
 	{
 	Spawn:
 		BLUD C 15 NoDelay A_SetRoll(frandom(0, 360));
 		BLUD BA 15;
-		Wait;
+		Stop;
 	
 	Death:
-		#### # 2;
+		#### # 2
+		{
+			string floorname = TexMan.GetName(floorpic);
+			for (int i = 0; i < liquidfloor.size(); i++)
+			{
+				if (floorname == liquidfloor[i])
+					Destroy();
+			}
+		}
 		Stop;
 	
 	Crash:
@@ -214,8 +234,9 @@ Class Equestria_Blood : Actor replaces Blood
 		{
 			ACS_NamedExecute("CheckLiquid");
 			
-			bNOINTERACTION = 1; A_Stop();
-
+			bNOINTERACTION = 1; bRELATIVETOFLOOR = 1; bMISSILE = 0;
+			
+			A_Stop();
 			A_SetRenderStyle(1.0, STYLE_Translucent); 
 			
 			if(GetCVar("CV_FLATDECALS"))
@@ -244,13 +265,21 @@ Class Equestria_Blood : Actor replaces Blood
 		Wait;
 		
 	FlatPool:
-		#### # 350 { bFLATSPRITE = 1; }
-		#### # 0 A_JumpIf(GetCVar("GibsStayForever") == 0, +2);
-		#### # 35 A_CheckSight(+1);
+		#### # 0 A_CheckProximity("Null", "Equestria_Blood", 32, 4, CPXF_NOZ | CPXF_CHECKSIGHT);
+		#### # 0 A_Jump(256, 1, 2);
 		Wait;
+		FLAT G -1;
+		Goto PoolTimer;
+		FLAT I -1;
+		Goto PoolTimer;
+	
+	PoolTimer:
+		#### # 350 A_CheckSight(+1);
+		#### # 0 A_JumpIf(GetCVar("GibsStayForever") == 0, +1);
+		Loop;
 		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
 		Wait;
-
+		
 	Spray:
 		TNT1 A 0
 		{
@@ -267,6 +296,8 @@ Class Equestria_Blood : Actor replaces Blood
 	}
 	override void Tick()
 	{
+		if (waterlevel > 0)
+			A_FadeOut(0.1, FTF_REMOVE);
 		if (InStateSequence(CurState, ResolveState("Spawn")) && !isFrozen())
 			A_SetRoll((roll + speed), SPF_INTERPOLATE);
 		else if (InStateSequence(CurState, ResolveState("Falling")) && !isFrozen())
@@ -291,6 +322,14 @@ Class Equestria_SmallBlood : Equestria_Blood
 		BLUD B 0 NoDelay A_SetRoll(random(0,360));
 		BLUD A 1 A_FadeOut(0.01, FTF_REMOVE);
 		Wait;
+	
+	FlatPool:
+		#### # 0 A_Jump(256, 1, 2);
+		Wait;
+		FLAT J -1;
+		Goto PoolTimer;
+		FLAT K -1;
+		Goto PoolTimer;
 		
 	SpritePool:	
 		BLUD DEF 1 A_FadeOut(FRandom(0.01, 0.1));
@@ -313,7 +352,7 @@ Class Equestria_TinyBlood : Equestria_SmallBlood
 		Wait;
 	
 	Death:
-		#### ## 4;
+		#### # 4;
 		Stop;
 		
 	Crash:
