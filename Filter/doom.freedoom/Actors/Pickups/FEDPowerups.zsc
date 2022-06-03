@@ -27,7 +27,6 @@ Class FreeEquestria_InvulSphere : EquestriaInvulSphere replaces EquestriaInvulSp
 	{
 	Pickup:
 		TNT1 A 0 A_Quake(4, 2, 0, 100);
-		TNT1 A 0 A_GiveInventory("InvulSphereInventory");
 		TNT1 A 0 A_SetBlend("DarkGreen", 0.5, 16);
 		Stop;
 	}
