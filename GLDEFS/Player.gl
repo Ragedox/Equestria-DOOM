@@ -11,14 +11,14 @@ flickerlight2 PistolLight
 
 object PistolLight
 {
-	frame TNT1A { light ChaingunLight }
+	frame TNT1A { light PistolLight }
 }
 
 flickerlight2 ShotgunLight
 {
-    color 0.8 0.8 0.2
-    size 50
-	secondarySize 75
+    color 1.0 0.5 0.2
+    size 25
+	secondarySize 50
 	interval 0.05
 	attenuate 1
 }
@@ -30,9 +30,9 @@ object ShotgunLight
 
 flickerlight2 SuperShotgunLight
 {
-    color 0.8 0.8 0.2
-    size 75
-	secondarySize 100
+    color 1.0 0.5 0.2
+    size 50
+	secondarySize 75
 	interval 0.05
 	attenuate 1
 }
@@ -44,9 +44,9 @@ object SuperShotgunLight
 
 flickerlight2 ChaingunLight
 {
-    color 0.8 0.8 0.2
-    size 75
-	secondarySize 100
+    color 1.0 0.8 0.2
+    size 50
+	secondarySize 75
 	interval 0.05
 	attenuate 1
 }
