@@ -222,7 +222,7 @@ decalgroup BFGScorch
 Decal BFGLightning1
 {
 	pic BFGLITE1
-	shade "80 ff 80"
+	shade "77 ff 6f"
 	Y-Scale 2 X-Scale 2
 	fullbright
 	randomflipx randomflipx
@@ -233,7 +233,7 @@ Decal BFGLightning1
 decal BFGLightning2
 {
 	pic BFGLITE2
-	shade "80 ff 80"
+	shade "77 ff 6f"
 	Y-Scale 2 X-Scale 2
 	fullbright
 	randomflipx randomflipy
@@ -250,7 +250,7 @@ decalgroup BFGLightning
 decal HorseShoe
 {
 	pic "D_SHOE"
-	shade "45 3e 30"
+	shade "9f 83 63"
 	randomflipx
 }
 
