@@ -260,7 +260,7 @@ Class Equestria_Blood : Actor replaces Blood
 
 	
 	SpritePool:
-		BLUD DEF 2 A_FadeOut(FRandom(0.001, 0.1));
+		BLUD EF 2;
 		BLUD G 1 A_FadeOut(0.005);
 		Wait;
 		
