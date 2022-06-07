@@ -25,6 +25,7 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		AttackSound "wolfss/attack";
 		
 		Dropitem "EquestriaClip";
+		DropItem "EquestriaWolfRifle", 64;
 	}
 	States
 	{
