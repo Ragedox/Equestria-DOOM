@@ -172,6 +172,8 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #Include "Actors/Weapons/BFG9000.zsc"
 #Include "Actors/Weapons/Chainsaw.zsc"
 
+#Include "Actors/Weapons/MP40.zsc"
+
 ////Items/PowerUps
 
 #include "Actors/Pickups/Keys.zsc"
@@ -199,7 +201,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Monsters/Revenant.zsc"
 #include "Actors/Monsters/Canines.zsc"
 #include "Actors/Monsters/ScriptedMarines.zsc"
-#include "Actors/Monsters/WolfensteinActors.zsc"
+#include "Actors/Monsters/Nazis.zsc"
 
 #include "Actors/Monsters/Boss/Cyberdemon.zsc"
 #include "Actors/Monsters/Boss/Night_Mare.zsc"
