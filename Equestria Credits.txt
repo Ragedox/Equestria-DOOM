@@ -80,6 +80,8 @@ Kinsie's Test Map : https://forum.zdoom.org/viewtopic.php?t=57221
 AFADoomer : https://forum.zdoom.org/viewtopic.php?t=58842#p1032693
 
 ZScript Boss bar : https://forum.zdoom.org/viewtopic.php?f=105&t=60783
+
+DOOM Official Widescreen assets : https://bethesda.net/en/game/doom-widescreen-mods
 = Other Games =
 
 Unused DOOM files
