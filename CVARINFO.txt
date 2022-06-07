@@ -2,8 +2,9 @@ user bool	CamRecoilToggle = true;
 user bool	AuraToggle = true;
 user bool   KickCamera = true;
 user bool	WarningStartup = true;
-user int	MuzzleStyle = 1;
 user bool	CV_INTERPOLATEHUD = false;
+user bool	CV_MUZZLEOFFSET = false;
+user int	MuzzleStyle = 1;
 user int	CV_SBARSTYLE = 0;
 
 server int	GoreToggle = 1;
