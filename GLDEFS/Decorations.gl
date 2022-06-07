@@ -49,7 +49,7 @@ flickerlight2 BIGREDTORCH
 
 object EquestriaRedTorch
 {
-    frame TRED { light BIGREDTORCH }
+    frame TRCH { light BIGREDTORCH }
 }
 
 // Tall green torch
@@ -64,7 +64,7 @@ flickerlight2 BIGGREENTORCH
 
 object EquestriaGreenTorch
 {
-    frame TGRN { light BIGGREENTORCH }
+    frame TRCH { light BIGGREENTORCH }
 }
 
 // Tall blue torch
@@ -79,7 +79,7 @@ flickerlight2 BIGBLUETORCH
 
 object EquestriaBlueTorch
 {
-    frame TBLU { light BIGBLUETORCH }
+    frame TRCH { light BIGBLUETORCH }
 }
 
 // Small red torch
@@ -95,7 +95,7 @@ flickerlight2 SMALLREDTORCH
 
 object EquestriaShortRedTorch
 {
-    frame SMRT { light SMALLREDTORCH }
+    frame TRC2 { light SMALLREDTORCH }
 }
 
 // Small green torch
@@ -110,7 +110,7 @@ flickerlight2 SMALLGREENTORCH
 
 object EquestriaShortGreenTorch
 {
-    frame SMGT { light SMALLGREENTORCH }
+    frame TRC2 { light SMALLGREENTORCH }
 }
 
 // Small blue torch
@@ -125,7 +125,7 @@ flickerlight2 SMALLBLUETORCH
 
 object EquestriaShortBlueTorch
 {
-    frame SMBT { light SMALLBLUETORCH }
+    frame TRC2 { light SMALLBLUETORCH }
 }
 
 // Burning barrel
