@@ -1,63 +1,28 @@
 class Equestria_StatusScreen : DoomStatusScreen
 {	
+	//GZDOOM 4.8.0 broke this :(
 	override int drawLF ()
 	{
 		int y = TITLEY + 100;
 		
 		y = DrawName(y, wbs.LName0, lnametexts[0]);
 	
-		y -= ((mapname.mFont.GetHeight() - finished.mFont.GetHeight())) / 4;
+		y -= ((mapname.mFont.GetHeight() - finishedp.mFont.GetHeight())) / 4;
 
-		y = DrawPatchText(y, finished, "$FINISHED");
+		y = DrawPatchOrText(y, finishedp, finishedPatch, "$WI_FINISHED");
 
 		return y;
 	}
 	
 	override void drawEL ()
 	{
-		int oldy = TITLEY + 400;
-
 		int y = TITLEY + 400;
 
-		y = DrawPatchText(y, entering, "$ENTERING");
+		y = DrawPatchOrText(y, entering, enteringPatch, "$WI_ENTERING");
 		y += 9;//entering.mFont.GetHeight();
 		DrawName(y, wbs.LName1, lnametexts[1]);
 			
 		DrawAuthor(y, authortexts[1]);
-	}
-	
-	override void Ticker(void)
-	{
-		// counter for general background animation
-		bcnt++;  
-	
-		if (bcnt == 1)
-			S_ChangeMusic("");
-		
-		if (bcnt == 24)
-			StartMusic();
-	
-		checkForAccelerate();
-		bg.updateAnimatedBack();
-	
-		switch (CurState)
-		{
-		case StatCount:
-			updateStats();
-			break;
-		
-		case ShowNextLoc:
-			updateShowNextLoc();
-			break;
-		
-		case NoState:
-			updateNoState();
-			break;
-
-		case LeavingIntermission:
-			// Hush, GCC.
-			break;
-		}
 	}
 	
 	override void drawStats (void)
