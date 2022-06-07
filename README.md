@@ -8,7 +8,7 @@ This is the **development** version, so it may contain bugs and errors;
 
 ## Running
 
-**Make sure you are using GZDoom 4.7.1/LZDoom 3.88a or later and you have a copy of doom2.wad (Original, BFG or Unity);**
+**Make sure you are using GZDoom 4.8.0 or later and you have a copy of doom2.wad (Original, BFG or Unity);**
 Download repository as a ZIP file and drag it over gzdoom.exe/lzdoom.exe;
 #
 FreeDOOM: Phase 2 is supported, but there will be problems with mismatching textures and sprites;
