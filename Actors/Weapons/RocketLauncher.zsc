@@ -229,16 +229,16 @@ Class ExplosionSparkle : PuffSparkles
 	
 	Default
 	{
-		Scale 1; Speed 10; Gravity 0.5;
+		Height 4; Radius 2;
+		Scale 1; Speed 12; Gravity 0.5;
 		BounceType "Doom";
+		BounceFactor 0.3;
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
-		
-		PUFF A random(35, 70);
-		Goto Death;
+		PUFF A -1;
+		Stop;
 		
 	Death:
 		PUFF A 1
