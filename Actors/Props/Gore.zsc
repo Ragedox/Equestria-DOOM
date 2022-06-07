@@ -3,7 +3,7 @@
 Class EquestriaGoreProps : Actor
 {
 	Default { +CASTSPRITESHADOW +SOLID +CORPSE}
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		bSPRITEFLIP = randompick(0,1);
 		A_SpawnItemEx("EquestriaSmallBloodPool",0,0,0,0,0,0,random(0, 359));
