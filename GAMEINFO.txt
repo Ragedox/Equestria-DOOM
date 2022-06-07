@@ -2,5 +2,7 @@ IWAD = "DOOM2.WAD"
 STARTUPTITLE = "Equestria DOOM - Alpha"
 StartupType = "Hexen"
 StartupColors = "#FFFFFF", "#2a2e33"
+LOADWIDESCREEN = 1
+LOAD = "DoomedGirls.pk3"
 //DiscordAppID = "how do i use this"
 //SteamAppID = "Equestria DOOM - Alpha"
