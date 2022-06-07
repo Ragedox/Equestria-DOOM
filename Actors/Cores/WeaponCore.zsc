@@ -1,5 +1,7 @@
 Class EquestriaDoomWeapon : Weapon
 {
+	double previousangle;
+	double previouspitch;
 	Default
 	{
 		Weapon.Kickback 100;
