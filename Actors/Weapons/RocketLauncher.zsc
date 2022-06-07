@@ -105,14 +105,14 @@ Class EquestriaRocket : Actor replaces Rocket
 	States
 	{
 	Spawn:
-		MISL A 6 Bright NoDelay Light("ROCKET") { if(GetCVar("CV_MISSILEMODEL")==1) return ResolveState("Spawn2"); return state(null); }
+		MISC BCD 2 Bright NoDelay Light("ROCKET") { if(GetCVar("CV_MISSILEMODEL")==1) return ResolveState("Spawn2"); return state(null); }
 		
-		#### A 2 Bright Light("ROCKET") { A_SpawnItem("EquestriaRocketSmoke",0,height / 2); A_SpawnItem("EquestriaRocketFire",0,-2); }
-		Wait;
+		MISC ABCD 2 Bright Light("ROCKET") { A_SpawnItem("EquestriaRocketSmoke",0,height / 2); A_SpawnItem("EquestriaRocketFire",0,-2); }
+		Goto Spawn+1;
 	
 	Spawn2:
-		TNT1 A 3;
-		MIS2 A 3 Bright Light("ROCKET");
+		TNT1 A 4 Light("ROCKET");
+		MIS2 A 2 Bright Light("ROCKET");
 		
 		#### A 2 Bright Light("ROCKET") { A_SpawnItem("EquestriaRocketSmoke",0,height / 2); A_SpawnItem("EquestriaRocketFire",0,-2); }
 		Wait;
