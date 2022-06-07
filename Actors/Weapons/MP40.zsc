@@ -1,0 +1,10 @@
+Class EquestriaWolfRifle : EquestriaRifle
+{
+	Default
+	{
+		Inventory.PickupMessage "$GOTWOLFRIFLE";
+		Tag "$TAG_WOLFRIFLE";
+		
+		AttackSound "wolfss/attack";
+	}
+}
