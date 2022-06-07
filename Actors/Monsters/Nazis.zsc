@@ -27,20 +27,24 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		Dropitem "EquestriaClip";
 		DropItem "EquestriaWolfRifle", 64;
 	}
+	override void BeginPlay()
+	{
+		int ponycolor;
+		
+		ponycolor = random(1,5);
+		
+		switch(ponycolor)
+		{
+		case 1:	A_SetTranslation("Nazi_White");			break;
+		case 2:	A_SetTranslation("Nazi_LightishRed");	break;
+		case 3: A_SetTranslation("Nazi_LimeGreen");		break;
+		case 4: A_SetTranslation("Nazi_Yellow");		break;
+		case 5: A_SetTranslation("Nazi_Orange");		break;
+		}
+	}
 	States
 	{
 	Spawn:
-		SSWV A 0 NoDelay A_Jump(256, 1,2,3,4,5,6);
-		Wait;
-		
-		White:			#### # 0 { A_SetTranslation("Nazi_White");		}	Goto Ready;
-		LightishRed:	#### # 0 { A_SetTranslation("Nazi_LightishRed");}	Goto Ready;
-		LimeGreen:		#### # 0 { A_SetTranslation("Nazi_LimeGreen");	}	Goto Ready;
-		FakeGold:		#### # 0 { A_SetTranslation("Nazi_FakeGold");	}	Goto Ready;
-		Orange:			#### # 0 { A_SetTranslation("Nazi_Orange");		}	Goto Ready;
-
-	Ready:
-	Idle:
 		SSWV AB 10 A_Look();
 		Loop;
 	
