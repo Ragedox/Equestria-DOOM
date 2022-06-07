@@ -5,15 +5,15 @@ Class PuffSparkles : DebrisCore
 		+Bright
 		+ThruActors
 		+DontSplash
-		+MISSILE
+		+Missile
 		
 		Scale 0.5;
 		
 		Height 2; Radius 1;
 		
-		Gravity 0.25;
+		Gravity 0.5;
 		
-		Speed 4;
+		Speed 6;
 		
 		RenderStyle "Add";
 		BounceType "Doom"; BounceFactor 0.5;
@@ -21,9 +21,7 @@ Class PuffSparkles : DebrisCore
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(waterlevel > 1, "Vanish");
-		
-		PUFF A random(5, 70);
+		PUFF A random(4, 35);
 	Death:
 		PUFF A 1
 		{
@@ -32,10 +30,6 @@ Class PuffSparkles : DebrisCore
 				Destroy();
 		}
 		Loop;
-		
-	Vanish:
-		PUFF A 1 A_FadeOut(0.1);
-		Wait;
 	}
 }
 
