@@ -8,7 +8,8 @@ Class EquestriaGoreProps : Actor
 		bSPRITEFLIP = randompick(0,1);
 		A_SpawnItemEx("EquestriaSmallBloodPool",0,0,0,0,0,0,random(0, 359));
 	}
-	/*	int ponypose;
+	/*	
+		int ponypose;
 		int equestriaspecie;
 		int ponycolor;
 		
@@ -32,6 +33,13 @@ Class EquestriaGoreProps : Actor
 		case 14: A_SetTranslation("Brown");	break;
 		case 15: A_SetTranslation("Bronze");	break;
 		}
+		
+		ponypose = random(1,2);
+		
+		if(ponypose = 2) //&& !ponycolor == 1 || !ponycolor == 3) //idk, if it is a zebra, dont change color, bleh
+			sprite = getspriteindex("SPOS");
+		//I'm not sure if I should do this, it will be a lot of work to make the sprites
+		
 	}*/
 	States
 	{
