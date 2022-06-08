@@ -33,6 +33,9 @@ TXT_IMSECRETS = "Secrets";
 
 OB_WOLFSS = "%o met an Aryanne lover";
 
+WI_FINISHED = "Finished";
+WI_ENTERING = "Entering";
+
 [ptb pt br]
 
 LOWHEALTH = 	"SAÚDE BAIXA";
