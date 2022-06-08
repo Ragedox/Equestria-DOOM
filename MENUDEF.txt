@@ -136,13 +136,13 @@ ListMenu "SkillMenu"
 AddListMenu "SaveGameMenu"
 {
 	Position 80,20
-	//Class "Equestria_SaveMenu"
+	Class "Equestria_SaveMenu"
 }
 
 AddListMenu "LoadGameMenu"
 {
 	Position 80,20
-	//Class "Equestria_SaveMenu"
+	Class "Equestria_LoadMenu"
 }
 
 OptionMenu "VideoSettings"
