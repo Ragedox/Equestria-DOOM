@@ -452,5 +452,3 @@ Class BloodSplat2 : FlatProps
 	Spawn:
 		FLAT H -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }	Stop;
 }	}
-
-#include "Actors/Props/DeadThings.zsc"
