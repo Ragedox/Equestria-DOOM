@@ -25,7 +25,10 @@ class Equestria_MessageBoxMenu : MessageBoxMenu
 
 		int c = mMessage.Count();
 		y -= c * fontHeight / 2;
-
+		
+		if (mMessageMode == 0)
+			screen.DrawText(BigFont, Font.CR_RED, destWidth / 2 - 62,y - 25, "$MN_QUITGAME", DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+		
 		for (i = 0; i < c; i++)
 		{
 			screen.DrawText (textFont, Font.CR_UNTRANSLATED, destWidth/2 - mMessage.StringWidth(i)*NotifyFontScale/2, y, mMessage.StringAt(i), DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true, 
@@ -56,7 +59,7 @@ class Equestria_MenuBackground : ListMenu
 {   
 	TextureID pic;
 	int w,h;
-
+	
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND1", TexMan.Type_Any);
@@ -72,7 +75,7 @@ class Equestria_MenuBackground2 : ListMenu
 {   
 	TextureID pic;
 	int w,h;
-
+	
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
@@ -80,22 +83,6 @@ class Equestria_MenuBackground2 : ListMenu
 		[w,h] = TexMan.GetSize(pic);   
 
 		screen.DrawTexture (pic, true, 320/2 - w/2, 200/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
-		Super.Drawer();
-	}
-}
-
-class Equestria_SaveMenu : LoadSaveMenu
-{
-	TextureID pic;
-	int w,h;
-
-	override void Drawer()
-	{   
-		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
-
-		[w,h] = TexMan.GetSize(pic);   
-
-		screen.DrawTexture (pic, true, 320/2 - w/2, 205/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
 		Super.Drawer();
 	}
 }
