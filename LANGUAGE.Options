@@ -3,6 +3,7 @@
 CAMPAIGN = "Campaign";
 NEWNEWGAME = "New Game";
 MNU_EPISODE = "Which Season?";
+MN_QUITGAME = "Quit Game?";
 
 AUDIOSETTINGS =			"Audio";
 SNDMNU_TITLE =			"Audio Settings";
