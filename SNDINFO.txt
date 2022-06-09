@@ -44,7 +44,7 @@ pickup/clip 	"Sounds/Pickups/Ammo/GetClip.wav"
 pickup/shell 	"Sounds/Pickups/Ammo/GetShell.wav"
 pickup/backpack "Sounds/Pickups/Ammo/GetBackpack.ogg"
 
-pickup/shotgun 		"Sounds/Pickups/Weapons/GetShotgun.wav"
+pickup/shotgun 		DSSWPNUP
 pickup/chaingun 	"Sounds/Pickups/Weapons/GetChaingun.wav"
 pickup/plasmagun 	"Sounds/Pickups/Weapons/GetPlasmaGun.wav"
 pickup/rocklauncher "Sounds/Pickups/Weapons/GetRKTLauncher.wav"
