@@ -6,10 +6,11 @@ Class CoreSplashChunk : PuffSparkles
 	{
 		Radius 2; Height 4;
 		
+		BounceType "None";
 		Renderstyle "Translucent";
 		Alpha 0.7;
 		
-		Gravity 0.1;
+		Gravity 0.5;
 		Scale 1;
 	}
 	States
@@ -17,13 +18,17 @@ Class CoreSplashChunk : PuffSparkles
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); A_SetScale(scale.x = frandom(0.5, 1.0)); A_SetRoll(random(0, 359));}
 
-		NWAT ABCD random(3,6);
-		#### # 1 A_FadeOut(0.01, FTF_REMOVE);
-		Wait;
+		NWAT ABCD random(2,6);
+		Goto Spawn+1;
 		
 	Death:
-		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
-		Wait;
+		TNT1 A 1;
+		Stop;
+	}
+	
+	override void PostBeginPlay()
+	{
+		bSPRITEFLIP = randompick(0, 1);
 	}
 }
 
@@ -38,7 +43,10 @@ Class CoreSplashBase : Actor
 		
 		+NOBLOCKMAP
 		+NOINTERACTION
-		+FLOORCLIP
+	}
+	override void PostBeginPlay()
+	{
+		bSPRITEFLIP = randompick(0, 1);
 	}
 }
 
@@ -71,7 +79,7 @@ Class SplashSmoke : Actor
 
 Class DEBloodChunk : CoreSplashChunk
 {
-	Default { TRANSLATION "193:207=32:47"; } 
+	Default { TRANSLATION "193:207=32:47"; Gravity 0.75; Decal "BloodSplat7"; } 
 }
 
 Class DEBloodBase : DEBloodChunk
@@ -79,8 +87,6 @@ Class DEBloodBase : DEBloodChunk
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }	
-		
 		SPSH EFGHIJK random(3,6) A_FadeOut(0.05);
 		Stop;
 	}
@@ -92,16 +98,14 @@ Class DELavaBase : CoreSplashBase
 {
 	Default
 	{
-		Renderstyle "Add";
-		Alpha 0.8;
+		Alpha 1.0;
+		+Bright
 		TRANSLATION "112:122=160:165", "123:127=43:47";
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
-		
-		NLAV ABCDEF random(2,3);
+		NLAV ABCDEF random(3,5);
 		Stop;
 	}
 }
@@ -113,15 +117,13 @@ Class DENukageBase : CoreSplashBase
 	Default
 	{
 		Translation "192:207=112:127";
-		Renderstyle "Add";
-		Alpha 0.6;
+		Alpha 1.0;
+		+Bright
 	}
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
-		
-		NWAT EFGHIJK random(2,3) A_FadeOut(0.05);
+		NLAV ABCDEF random(3,5);
 		Stop;
 	}
 }
@@ -138,8 +140,6 @@ Class DESlimeBrownBase : DESlimeBrownChunk
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
-		
 		NSL1 EFGHIJK random(3,6) A_FadeOut(0.05);
 		Stop;
 	}
@@ -168,8 +168,6 @@ Class DESludgeBase : CoreSplashBase
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
-		
 		NSL2 EFGHIJK random(2,3) A_FadeOut(0.05);
 		Stop;
 	}
@@ -178,20 +176,13 @@ Class DESludgeBase : CoreSplashBase
 //Water Normal
 
 Class DEWaterSplashChunk : CoreSplashChunk
-{
-	Default
-	{
-		Alpha 0.6;
-	}
-}
+{}
 
 Class DEWaterSplashBase : CoreSplashBase
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); }
-		
 		SPLS FEDCBA	1;
 		SPLS ABCDEF	random(2,4);
 		Stop;
