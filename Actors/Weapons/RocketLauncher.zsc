@@ -101,7 +101,14 @@ Class EquestriaRocket : Actor replaces Rocket
 		DeathSound "weapons/rocklx";
 		Obituary "$OB_MPROCKET";
 	}
-			
+	
+	static const string waterfloor[] =	{ "FWATER1","FWATER2","FWATER3","FWATER4" };
+	static const string slimefloor[] =
+	{ "SLIME01","SLIME02","SLIME03","SLIME04", "SLIME05","SLIME06","SLIME07","SLIME08", "SLIME17", "SLIME18", "SLIME19", "SLIME20" };
+	static const string bloodfloor[] =	{ "BLOOD1","BLOOD2","BLOOD3" };
+	static const string nukagefloor[] =	{ "NUKAGE1","NUKAGE2","NUKAGE3" };
+	static const string lavafloor[] =	{ "LAVA1" ,"LAVA2","LAVA3","LAVA4" };
+	
 	States
 	{
 	Spawn:
@@ -123,7 +130,7 @@ Class EquestriaRocket : Actor replaces Rocket
 			A_SetRoll(0);
 			if (abs(pos.z - GetZAt()) <= 1)
 				return ResolveState("Death.Floor");
-			for (int i = 0; i < 16; i++)
+			for (int i = 0; i < 32; i++)
 				A_SpawnProjectile("ExplosionSparkle", 0, 0, frandom(0, 360), CMF_AIMDIRECTION,frandom(0, 360));
 	
 			return state(null);
@@ -149,6 +156,40 @@ Class EquestriaRocket : Actor replaces Rocket
 		Wait;
 		
 	Death.FLoor:
+		MISL E 0
+		{
+			bool liquidfloor;
+			
+			string floorname = TexMan.GetName(floorpic);
+			for (int i = 0; i < waterfloor.size(); i++)
+			{
+				if (floorname == waterfloor[i])
+				{	liquidfloor = 1;
+					for (int i = 0; i < 64; i++)
+						A_SpawnItemEx("DEWaterSplashChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
+				}
+			}
+			for (int i = 0; i < slimefloor.size(); i++)
+			{
+				if (floorname == slimefloor[i])
+				{	liquidfloor = 1;
+					for (int i = 0; i < 32; i++)
+						A_SpawnItemEx("DESlimeBrownChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
+				}
+			}
+			for (int i = 0; i < bloodfloor.size(); i++)
+			{
+				if (floorname == bloodfloor[i])
+				{	liquidfloor = 1;
+					for (int i = 0; i < 32; i++)
+						A_SpawnItemEx("DEBloodChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
+				}
+			}
+			
+			if (liquidfloor == 0)
+				for (int i = 0; i < 16; i++)
+					A_SpawnProjectile("ExplosionSparkle", frandom(0, 8),0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 95));
+		}
 		MISL E 4 Bright
 		{
 			A_Explode(-1,-1, XF_HURTSOURCE, true, 0,0,10,"","Explosion");
@@ -156,7 +197,6 @@ Class EquestriaRocket : Actor replaces Rocket
 			
 			bFORCEXYBILLBOARD = false;
 			for (int i = 0; i < 16; i++)
-				A_SpawnProjectile("ExplosionSparkle", frandom(0, 8),0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 95));
 				A_SpawnProjectile("Smoke",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(0, 90));
 		}
 		
