@@ -79,7 +79,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		Goto Death;
 	
 	Death.Explosion:
-		PLAY H 10 { deathtype = 1; }//A_GiveInventory("Death_Explosion", 1);
+		PLAY H 10 A_GiveInventory("Death_Explosion", 1);
 		PLAY I 10 A_PlayerScream();
 		PLAY J 10 A_NoBlocking();
 		PLAY KLM 10;
