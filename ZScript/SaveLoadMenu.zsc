@@ -1,14 +1,9 @@
 class Equestria_SaveMenu : SaveMenu
 {
 	TextureID pic;
-	int w,h;
-
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND3", TexMan.Type_Any);
-
-		[w,h] = TexMan.GetSize(pic);   
-
 		screen.DrawTexture (pic, false, 0, 0, DTA_320x200, true, DTA_Fullscreen, true);
 		Super.Drawer();
 	}
@@ -17,14 +12,9 @@ class Equestria_SaveMenu : SaveMenu
 class Equestria_LoadMenu : LoadMenu
 {
 	TextureID pic;
-	int w,h;
-
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND3", TexMan.Type_Any);
-
-		[w,h] = TexMan.GetSize(pic);   
-
 		screen.DrawTexture (pic, false, 0, 0, DTA_320x200, true, DTA_Fullscreen, true);
 		Super.Drawer();
 	}

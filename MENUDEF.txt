@@ -1,3 +1,8 @@
+DefaultOptionMenu
+{
+	Class "Equestria_OptionMenu"
+}
+
 ListMenu "MainMenu"
 {
 	AnimatedTransition

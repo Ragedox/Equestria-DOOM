@@ -58,6 +58,32 @@ class Equestria_MessageBoxMenu : MessageBoxMenu
 	}
 }
 
+class Equestria_OptionMenu : OptionMenu
+{
+	TextureID border1;
+	TextureID border2;
+	int w,h;
+	int destWidth, destHeight;
+
+	override void Drawer()
+	{   
+		destWidth = CleanWidth;
+			destHeight = CleanHeight;
+		
+		border1 = TexMan.CheckForTexture ("BORDER1A", TexMan.Type_Any);
+		[w,h] = TexMan.GetSize(border1);
+		
+		screen.DrawTexture (border1, false, 0, 0,
+			DTA_320x200, true, DTA_KeepRatio, true);
+		
+		border2 = TexMan.CheckForTexture ("BORDER1B", TexMan.Type_Any);
+		[w,h] = TexMan.GetSize(border2);
+		
+		screen.DrawTexture (border2, false, 306, 0,
+			DTA_320x200, true, DTA_KeepRatio, true);
+		Super.Drawer();
+	}
+}
 class Equestria_MenuBackground : ListMenu
 {   
 	TextureID pic;
@@ -66,9 +92,8 @@ class Equestria_MenuBackground : ListMenu
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND1", TexMan.Type_Any);
-
-		[w,h] = TexMan.GetSize(pic);   
-
+		[w,h] = TexMan.GetSize(pic); 
+		
 		screen.DrawTexture (pic, true, 320/2 - w/2, 200/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
 		Super.Drawer();
 	}
@@ -82,9 +107,8 @@ class Equestria_MenuBackground2 : ListMenu
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
-
 		[w,h] = TexMan.GetSize(pic);   
-
+		
 		screen.DrawTexture (pic, true, 320/2 - w/2, 200/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
 		Super.Drawer();
 	}
