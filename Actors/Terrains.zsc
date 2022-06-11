@@ -12,14 +12,16 @@ Class CoreSplashChunk : PuffSparkles
 		
 		Gravity 0.5;
 		Scale 1;
+		+ROLLSPRITE +ROLLCENTER
 	}
 	States
 	{
 	Spawn:
 		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); A_SetScale(scale.x = frandom(0.5, 1.0)); A_SetRoll(random(0, 359));}
-
+		
 		NWAT ABCD random(2,6);
-		Goto Spawn+1;
+		NWAT ABCD random(2,6) A_JumpIf(waterlevel > 1, "Null");
+		Goto Spawn+4;
 		
 	Death:
 		TNT1 A 1;
@@ -29,6 +31,18 @@ Class CoreSplashChunk : PuffSparkles
 	override void PostBeginPlay()
 	{
 		bSPRITEFLIP = randompick(0, 1);
+	}
+}
+
+Class BigSplashChunk : CoreSplashChunk
+{
+	States
+	{
+	Spawn:
+		TNT1 A 0 NoDelay { bSPRITEFLIP = randompick(0, 1); A_SetScale(scale.x = frandom(0.5, 1.0)); A_SetRoll(random(0, 359));}
+		BWAT A 1 A_JumpIf(waterlevel > 1, "Null");
+		BWAT A 0 A_SetRoll(roll + 1);
+		Goto Spawn+1;
 	}
 }
 
