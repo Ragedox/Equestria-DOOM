@@ -7,15 +7,16 @@ Class EquestriaGoreProps : Actor
 	{
 		bSPRITEFLIP = randompick(0,1);
 		A_SpawnItemEx("EquestriaSmallBloodPool",0,0,0,0,0,0,random(0, 359));
+		//EQ_RandomColor();
 	}
-	/*	
-		int ponypose;
-		int equestriaspecie;
-		int ponycolor;
+	
+	void EQ_RandomColor()
+	{
+		int skincolor;
 		
-		ponycolor = random(1,15);
+		skincolor = random(1,15);
 		
-		switch(ponycolor)
+		switch(skincolor)
 		{
 		case 1:	A_SetTranslation("White");	break;
 		case 2:	A_SetTranslation("Gray");	break;
@@ -33,14 +34,27 @@ Class EquestriaGoreProps : Actor
 		case 14: A_SetTranslation("Brown");	break;
 		case 15: A_SetTranslation("Bronze");	break;
 		}
+	}
+	
+	/*void EQ_RandomPose()
+	{
+		string ponypose;
+		int ponypose;
 		
+		ponypose.Split(pose, ", ");
 		ponypose = random(1,2);
-		
 		if(ponypose = 2) //&& !ponycolor == 1 || !ponycolor == 3) //idk, if it is a zebra, dont change color, bleh
-			sprite = getspriteindex("SPOS");
+			sprite = getspriteindex("random(0, tospawn.Size() - 1)");
 		//I'm not sure if I should do this, it will be a lot of work to make the sprites
-		
 	}*/
+	
+	void EQ_AnimalSpecie()
+	{
+		int animalspecie;
+		
+		animalspecie = random(0, 4);
+	}
+	
 	States
 	{
 	
