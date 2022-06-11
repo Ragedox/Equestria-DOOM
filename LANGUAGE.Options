@@ -30,8 +30,9 @@ OPTMNU_CONTROLS =		"Key Mapping";
 ADVANCEDSETTINGS =		"All settings";
 
 OPTVAL_STANDARD = 		"GZDOOM Standard";
+OPTVAL_DOOM =			"Modern 'DOOM'";
 OPTVAL_BUILD = 			"Build Engine";
-OPTVAL_SOFTWARE = 		"Original DOOM (Software)";
+OPTVAL_SOFTWARE = 		"Original DOOM (Faithful)";
 OPTVAL_VANILLA = 		"Original DOOM (Darker)";
 
 [ptb pt br]
