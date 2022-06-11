@@ -67,17 +67,12 @@ class Equestria_OptionMenu : OptionMenu
 
 	override void Drawer()
 	{   
-		destWidth = CleanWidth;
-			destHeight = CleanHeight;
-		
 		border1 = TexMan.CheckForTexture ("BORDER1A", TexMan.Type_Any);
-		[w,h] = TexMan.GetSize(border1);
 		
 		screen.DrawTexture (border1, false, 0, 0,
 			DTA_320x200, true, DTA_KeepRatio, true);
 		
 		border2 = TexMan.CheckForTexture ("BORDER1B", TexMan.Type_Any);
-		[w,h] = TexMan.GetSize(border2);
 		
 		screen.DrawTexture (border2, false, 306, 0,
 			DTA_320x200, true, DTA_KeepRatio, true);

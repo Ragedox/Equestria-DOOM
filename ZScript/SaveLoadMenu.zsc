@@ -1,6 +1,7 @@
 class Equestria_SaveMenu : SaveMenu
 {
 	TextureID pic;
+	
 	override void Drawer()
 	{   
 		pic = TexMan.CheckForTexture ("BGROUND3", TexMan.Type_Any);
