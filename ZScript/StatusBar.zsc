@@ -26,7 +26,7 @@ class EquestriaStatusBar : BaseStatusBar
 		
 		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
-		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
+		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 64);
 	}
 
 	override void Draw (int state, double TicFrac)
@@ -403,9 +403,9 @@ class EquestriaStatusBar : BaseStatusBar
 		}
 	}
 	
-	protected void DrawFullScreenStuff()
+	void DrawFullScreenStuff()
 	{
-	if (!CheckInventory("HUDDisabled") == 1)
+	if (CheckInventory("HUDDisabled") == 0)
 	{
 		if (CPlayer.health <= 25)
 			DrawImage("BLODSCRN", (0,0));
@@ -490,13 +490,31 @@ class EquestriaStatusBar : BaseStatusBar
 		}
 		
 		DrawFullscreenKeys();
-		//DrawFullKeys();
+		DrawPowerUp();
 		if (isInventoryBarVisible())
 			DrawInventoryBar(diparms, (0, 0), 7, DI_SCREEN_CENTER_BOTTOM, HX_SHADOW);
 			
 	}}
 	
-	protected virtual void DrawFullscreenKeys()
+	void DrawPowerUp()
+	{
+		int itemTimeLeft, itemDuration;
+		
+		if (CheckInventory("PowerInvisibility", 1))
+		{
+			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
+		
+			DrawBar("PINSA0", "NOTHINGA", itemTimeLeft, itemDuration, (160, -34), 1, SHADER_VERT);
+		}
+		if (CheckInventory("PowerInvulnerable", 1))
+		{
+			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
+
+			DrawBar("PINVA0", "NOTHINGA", itemTimeLeft, itemDuration, (160, -34), 1, SHADER_VERT);
+		}
+	}
+	
+	void DrawFullscreenKeys()
 	{
 		// Draw the keys. This does not use a special draw function like SBARINFO because the specifics will be different for each mod
 		// so it's easier to copy or reimplement the following piece of code instead of trying to write a complicated all-encompassing solution.
