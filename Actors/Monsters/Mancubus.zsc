@@ -89,7 +89,7 @@ Class EquestriaFatShot : FatShot replaces FatShot
 	Spawn:
 		MANF AB 4 Bright
 		{
-			A_SpawnItem("EquestriaRocketSmoke");
+			A_SpawnItem("EquestriaRocketSmoke",0,height/2);
 			A_SpawnItemEx("EQ_FireBallTrail", 0,0,0,0,0,0,0, SXF_TRANSFERSCALE);
 		}
 		Loop;
