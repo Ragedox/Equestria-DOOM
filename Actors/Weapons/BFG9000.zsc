@@ -152,6 +152,14 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 		DeathSound "weapons/bfgx";
 		Obituary "$OB_MPBFG_BOOM";
 	}
+	
+	static const string waterfloor[] =	{ "FWATER1","FWATER2","FWATER3","FWATER4" };
+	static const string slimefloor[] =
+	{ "SLIME01","SLIME02","SLIME03","SLIME04", "SLIME05","SLIME06","SLIME07","SLIME08", "SLIME17", "SLIME18", "SLIME19", "SLIME20" };
+	static const string bloodfloor[] =	{ "BLOOD1","BLOOD2","BLOOD3" };
+	static const string nukagefloor[] =	{ "NUKAGE1","NUKAGE2","NUKAGE3" };
+	static const string lavafloor[] =	{ "LAVA1" ,"LAVA2","LAVA3","LAVA4" };
+	
 	States
 	{
 	Spawn:
@@ -178,7 +186,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 	Death:		
 		BFE1 A 2
 		{
-			A_Explode(100, 256, 0);
+			A_Explode(32, 256, 0);
 			A_SetRoll(0);
 			A_SetScale(2);
 			A_SpawnItem("BFGShockwave", 0, 12);
@@ -190,6 +198,42 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 				//A_SpawnItemEx("BFGSparkles", 0, 0, random(0,50), random(-50,50), random(-50,50), random(-50, 50), random(0,360));
 				A_SpawnProjectile("BFGSparkles", 0, 0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 				A_SpawnProjectile("BFGTrailSparkles", 0, 0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
+			}
+			
+			if (abs(pos.z - GetZAt()) <= 1)
+			{	bool liquidfloor;
+				
+				int minzvel, maxzvel;
+				minzvel = 16;
+				maxzvel = 64;
+				
+				string floorname = TexMan.GetName(floorpic);
+				for (int i = 0; i < waterfloor.size(); i++)
+				{
+					if (floorname == waterfloor[i])
+					{	liquidfloor = 1;
+						for (int i = 0; i < 32; i++)
+						{	A_SpawnItemEx("BigSplashChunk", frandom(-64, 64),frandom(-64, 64),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
+							A_SpawnItemEx("DEWaterSplashChunk", frandom(-128, 128),frandom(-128, 128),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
+						}
+					}
+				}
+				for (int i = 0; i < slimefloor.size(); i++)
+				{
+					if (floorname == slimefloor[i])
+					{	liquidfloor = 1;
+						for (int i = 0; i < 64; i++)
+							A_SpawnItemEx("DESlimeBrownChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
+					}
+				}
+				for (int i = 0; i < bloodfloor.size(); i++)
+				{
+					if (floorname == bloodfloor[i])
+					{	liquidfloor = 1;
+						for (int i = 0; i < 64; i++)
+							A_SpawnItemEx("DEBloodChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
+					}
+				}
 			}
 		}
 		BFE1 BCD 2;
