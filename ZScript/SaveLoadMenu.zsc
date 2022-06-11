@@ -5,11 +5,11 @@ class Equestria_SaveMenu : SaveMenu
 
 	override void Drawer()
 	{   
-		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
+		pic = TexMan.CheckForTexture ("BGROUND3", TexMan.Type_Any);
 
 		[w,h] = TexMan.GetSize(pic);   
 
-		screen.DrawTexture (pic, true, 320/2 - w/2, 200/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
+		screen.DrawTexture (pic, false, 0, 0, DTA_320x200, true, DTA_Fullscreen, true);
 		Super.Drawer();
 	}
 }
@@ -21,11 +21,11 @@ class Equestria_LoadMenu : LoadMenu
 
 	override void Drawer()
 	{   
-		pic = TexMan.CheckForTexture ("BGROUND2", TexMan.Type_Any);
+		pic = TexMan.CheckForTexture ("BGROUND3", TexMan.Type_Any);
 
 		[w,h] = TexMan.GetSize(pic);   
 
-		screen.DrawTexture (pic, true, 320/2 - w/2, 200/2 - h/2, DTA_320x200, true, DTA_KeepRatio, true);
+		screen.DrawTexture (pic, false, 0, 0, DTA_320x200, true, DTA_Fullscreen, true);
 		Super.Drawer();
 	}
 }

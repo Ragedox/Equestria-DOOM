@@ -11,11 +11,11 @@ class Equestria_MessageBoxMenu : MessageBoxMenu
 
 		Screen.DrawTexture(pic, false, destWidth/2 - w/2, destHeight/2 - h/2, DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
 	
-		QuitMessage();
+		MessageBox();
 	}
 	
 	//gzdoom.pk3 > zscript > engine > ui > menu > messagebox.zs
-	void QuitMessage()
+	void MessageBox()
 	{
 		int i;
 		double y;
@@ -25,9 +25,9 @@ class Equestria_MessageBoxMenu : MessageBoxMenu
 
 		int c = mMessage.Count();
 		y -= c * fontHeight / 2;
-		
-		if (mMessageMode == 0)
-			screen.DrawText(BigFont, Font.CR_RED, destWidth / 2 - 62,y - 25, "$MN_QUITGAME", DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
+
+		//if (mMessageMode == 1)
+			//screen.DrawText(BigFont, Font.CR_RED, destWidth / 2 - 62,y - 25, "$MN_QUITGAME", DTA_VirtualWidth, destWidth, DTA_VirtualHeight, destHeight, DTA_KeepRatio, true);
 		
 		for (i = 0; i < c; i++)
 		{

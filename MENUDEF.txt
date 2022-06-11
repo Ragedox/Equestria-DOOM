@@ -137,12 +137,14 @@ AddListMenu "SaveGameMenu"
 {
 	Position 80,20
 	Class "Equestria_SaveMenu"
+	AnimatedTransition
 }
 
 AddListMenu "LoadGameMenu"
 {
 	Position 80,20
 	Class "Equestria_LoadMenu"
+	AnimatedTransition
 }
 
 OptionMenu "VideoSettings"
