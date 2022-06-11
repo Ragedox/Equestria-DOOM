@@ -17,7 +17,6 @@ gameinfo
 	//NormSideMove = 20.0, 40.0
 	BackpackType = "EquestriaBackpack"
 	
-	MenuSliderBackColor = "Gray"
 	MenuSliderColor = "Blue"
 	StatusBarClass = "EquestriaStatusBar" //Need to finish: Power up timer, Keys in Fullscreen, Playstation HUD
 
