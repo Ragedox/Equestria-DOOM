@@ -181,7 +181,7 @@ Class EquestriaImpBall : Actor replaces DoomImpBall
 	States
 	{
 	Spawn:
-		BAL1 B 2 A_SpawnItem("SmokePuff",0, height / 2);
+		BAL1 B 2 A_SpawnItem("EQ_FireBallSmoke",0, height / 2);
 		BAL1 A 2 A_SpawnItem("EQ_FireBallTrail");
 		Loop;
 		
@@ -201,6 +201,22 @@ Class EQ_FireBallTrail : Equestria_Trails
 	Spawn:
 		BAL1 CD 3 Bright A_FadeOut(0.125);
 		BAL1 E 1 Bright A_FadeOut(0.1);
+		Wait;
+	}
+}
+
+Class EQ_FireBallSmoke : Equestria_Trails
+{
+	Default
+	{
+		RenderStyle "Normal";
+		Scale 1.0; Translation "160:167=81:111";
+	}
+	States
+	{
+	Spawn:
+		PUFF BC 6;
+		PUFF D 1 A_FadeOut(0.1);
 		Wait;
 	}
 }
