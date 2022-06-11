@@ -299,19 +299,19 @@ OptionMenu "KeyMapping"
 
 OptionValue "WeaponAnim"
 {
-	0, "DOOM Classic"
+	0, "Vanilla"
 	1, "Smooth"
 }
 	
 OptionValue "MuzzleStyle"
 {
-	0, "Classic"
+	0, "Vanilla"
 	1, "$ENHANCED"
 }
 
 OptionValue "GoreType"
 {
-	0, "DOOM Classic"
+	0, "Vanilla"
 	1, "$ENHANCED"
 	2, "$REALISTIC"
 }
