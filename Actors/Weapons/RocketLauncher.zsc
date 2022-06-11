@@ -130,8 +130,8 @@ Class EquestriaRocket : Actor replaces Rocket
 			A_SetRoll(0);
 			if (abs(pos.z - GetZAt()) <= 1)
 				return ResolveState("Death.Floor");
-			for (int i = 0; i < 32; i++)
-				A_SpawnProjectile("ExplosionSparkle", 0, 0, frandom(0, 360), CMF_AIMDIRECTION,frandom(0, 360));
+			for (int i = 0; i < 16; i++)
+				A_SpawnItemEx("ExplosionSparkle", 0,0,0, random(-16, 16), random(-16, 16), random(-16, 16), frandom(0,360));
 	
 			return state(null);
 		}
@@ -157,6 +157,10 @@ Class EquestriaRocket : Actor replaces Rocket
 		MISL E 0
 		{
 			bool liquidfloor;
+			int minzvel, maxzvel;
+			
+			minzvel = 4;
+			maxzvel = 20;
 			
 			string floorname = TexMan.GetName(floorpic);
 			for (int i = 0; i < waterfloor.size(); i++)
@@ -164,7 +168,7 @@ Class EquestriaRocket : Actor replaces Rocket
 				if (floorname == waterfloor[i])
 				{	liquidfloor = 1;
 					for (int i = 0; i < 64; i++)
-						A_SpawnItemEx("DEWaterSplashChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
+						A_SpawnItemEx("DEWaterSplashChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
 				}
 			}
 			for (int i = 0; i < slimefloor.size(); i++)
@@ -172,7 +176,7 @@ Class EquestriaRocket : Actor replaces Rocket
 				if (floorname == slimefloor[i])
 				{	liquidfloor = 1;
 					for (int i = 0; i < 32; i++)
-						A_SpawnItemEx("DESlimeBrownChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
+						A_SpawnItemEx("DESlimeBrownChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
 				}
 			}
 			for (int i = 0; i < bloodfloor.size(); i++)
@@ -180,13 +184,13 @@ Class EquestriaRocket : Actor replaces Rocket
 				if (floorname == bloodfloor[i])
 				{	liquidfloor = 1;
 					for (int i = 0; i < 32; i++)
-						A_SpawnItemEx("DEBloodChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
+						A_SpawnItemEx("DEBloodChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
 				}
 			}
 			
 			if (liquidfloor == 0)
 				for (int i = 0; i < 16; i++)
-					A_SpawnProjectile("ExplosionSparkle", frandom(0, 8),0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(45, 95));
+					A_SpawnItemEx("ExplosionSparkle", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(4, 16), frandom(0,360));
 		}
 		MISL E 4 Bright
 		{
