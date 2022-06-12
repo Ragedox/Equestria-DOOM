@@ -202,7 +202,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Monsters/Revenant.zsc"
 #include "Actors/Monsters/Canines.zsc"
 #include "Actors/Monsters/ScriptedMarines.zsc"
-#include "Actors/Monsters/Nazis.zsc"
+#include "Actors/Monsters/Axis.zsc"
 
 #include "Actors/Monsters/Boss/Cyberdemon.zsc"
 #include "Actors/Monsters/Boss/Night_Mare.zsc"
