@@ -120,7 +120,6 @@ Class InvToken : Inventory
 
 Class HUDDisabled : InvToken {}
 
-Class DeadCheck : InvToken	{}
 Class Fall : InvToken {}
 Class LowHealthCheck : InvToken	{}
 
