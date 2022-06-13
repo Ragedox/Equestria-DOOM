@@ -1,0 +1,28 @@
+Class Equestria_Props : Actor
+{
+	//property prefix: Equestria;
+	string lightname;
+		property LightName:		lightname;
+	
+	int lighttype;
+		property LightType:		lighttype;
+	
+	color lightcolor;
+		property LightColor:	lightcolor;
+	
+	double lightradius1, lightradius2;
+		property LightRadius:	lightradius1;
+		property LightRadius2:	lightradius2;
+		
+	int lightflags;
+		property LightFlags:		lightflags;
+	
+	Vector3 LightOffset;
+		property LightOffset:		lightoffset;
+	
+	override void BeginPlay()
+	{
+		A_AttachLight("Light", lighttype, lightcolor, lightradius1, lightradius2,
+						lightflags, lightoffset, lightparam, lightspoti, lightspoto);
+	}
+}
