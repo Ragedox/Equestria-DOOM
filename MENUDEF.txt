@@ -72,8 +72,8 @@ ListMenu "EquestriaOptions"
 
 	StaticTextCentered 160, 25,		"$AUDIOSETTINGS"
 	StaticTextCentered 160, 50,		"$VIDEOSETTINGS"
-	StaticTextCentered 160, 75,		"$MNU_PLAYERSETUP"
-	StaticTextCentered 160, 100,	"$UISETTINGS"
+	StaticTextCentered 160, 75,	"$UISETTINGS"
+	StaticTextCentered 160, 100,		"$MISCSETUP"
 	StaticTextCentered 160, 125,	"$CONTROLSETTINGS"
 	StaticTextCentered 160, 150,	"$ADVANCEDSETTINGS"
 	
@@ -83,9 +83,9 @@ ListMenu "EquestriaOptions"
 	Position 130, 50
 	PatchItem "TNT1A0",	"2",		"VideoSettings"
 	Position 85, 75
-	PatchItem "TNT1A0",	"3",		"NewPlayerMenu"
+	PatchItem "TNT1A0",	"3",		"UISettings"
 	Position 75, 100
-	PatchItem "TNT1A0",	"4",		"UISettings"
+	PatchItem "TNT1A0",	"4",		"NewPlayerMenu"
 	Position 45, 125
 	PatchItem "TNT1A0",	"5",		"ControlSettings"
 	Position 95, 150
@@ -323,11 +323,14 @@ OptionValue "SBARStyle"
 	2, "PlayStation"
 }
 
-/*AddOptionMenu "NewPlayerMenu" 
+AddOptionMenu "NewPlayerMenu" 
 {
-	Position -115
+	//Position -115
+	StaticText ""
+	Option 		"Discord RPC",		"i_discordrpc",	"onoff"
 }
-AddOptionMenu "SoundOptions"
+
+/*AddOptionMenu "SoundOptions"
 {
 	Position -115
 }
