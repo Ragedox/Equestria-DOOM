@@ -3,7 +3,7 @@ class EquestriaTorchFire : Actor
 	Default
 	{
 		Radius 0; Height 0;
-		+NoInteraction +Bright +NoBlockmap +NoClip +RelativeToFloor +MoveWithSector
+		+Randomize +NoInteraction +Bright +NoBlockmap +NoClip +RelativeToFloor +MoveWithSector
 		RenderStyle "Add";
 	}
 	
