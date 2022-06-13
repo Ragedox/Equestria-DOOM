@@ -205,17 +205,15 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 				
 				int minzvel, maxzvel;
 				minzvel = 16;
-				maxzvel = 64;
+				maxzvel = 50;
 				
 				string floorname = TexMan.GetName(floorpic);
 				for (int i = 0; i < waterfloor.size(); i++)
 				{
 					if (floorname == waterfloor[i])
 					{	liquidfloor = 1;
-						for (int i = 0; i < 32; i++)
-						{	A_SpawnItemEx("BigSplashChunk", frandom(-64, 64),frandom(-64, 64),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
-							A_SpawnItemEx("DEWaterSplashChunk", frandom(-128, 128),frandom(-128, 128),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
-						}
+						for (int i = 0; i < 64; i++)
+							A_SpawnItemEx("BigSplashChunk", frandom(-64, 64),frandom(-64, 64),8, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
 					}
 				}
 				for (int i = 0; i < slimefloor.size(); i++)
@@ -223,7 +221,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 					if (floorname == slimefloor[i])
 					{	liquidfloor = 1;
 						for (int i = 0; i < 64; i++)
-							A_SpawnItemEx("DESlimeBrownChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
+							A_SpawnItemEx("DESlimeBrownChunk", frandom(-16, 16),frandom(-16, 16),8, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
 					}
 				}
 				for (int i = 0; i < bloodfloor.size(); i++)
@@ -231,7 +229,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 					if (floorname == bloodfloor[i])
 					{	liquidfloor = 1;
 						for (int i = 0; i < 64; i++)
-							A_SpawnItemEx("DEBloodChunk", frandom(-16, 16),frandom(-16, 16),4, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
+							A_SpawnItemEx("DEBloodChunk", frandom(-16, 16),frandom(-16, 16),8, random(2, 8), random(2, 8), random(minzvel, maxzvel), frandom(0,360));
 					}
 				}
 			}

@@ -78,8 +78,6 @@ Class EquestriaSuperShotgun : EquestriaDoomWeapon replaces SuperShotgun
 			
 			if (GetCVAR("CamRecoilToggle") == true)
 				A_Overlay(2, "CamRecoil");
-			if (GetCVAR("WeaponLight") == true)
-				A_FireProjectile("SuperShotgunLight",0,0,0, -14);
 		}
 		#### # 1 A_WeaponOffset(1, -2, WOF_ADD);
 		#### # 1 A_WeaponOffset(1, -2, WOF_ADD);
@@ -155,28 +153,32 @@ Class EquestriaSuperShotgun : EquestriaDoomWeapon replaces SuperShotgun
 		SHT2 Q 1 Bright
 		{
 			A_WeaponOffset(0, random(45, 50));
-			A_Light(1);
+			
+			if (GetCVar("WeaponLight"))
+				A_AttachLight("FiringLight", DynamicLight.PointLight, "ff 2a 00", random(80,96), 64,
+					DYNAMICLIGHT.LF_SPOT, (-8,0,32),0,20,50,pitch);
+			else
+				A_Light(1);
 		}
-		SHT2 R 2 Bright A_Light(2);
+		SHT2 R 2 Bright { if (!GetCVar("WeaponLight")) A_Light(2); }
 		SHT2 R 1 Bright
 		{
 			A_WeaponOffset(0, random(-5, -10), WOF_ADD);
-			A_Light(1);
+			if (GetCVar("WeaponLight"))
+				A_RemoveLight("FiringLight");
+			else
+				A_Light(1);
 		}
 		SHT2 Q 2 Bright;
 		TNT1 A 0 A_WeaponOffset(0, 32, WOF_INTERPOLATE);
 		Goto LightDone;
 	
 	Muzzle:
-		SHTF C 1 Bright;
-		#### D 2 Bright;
-		#### D 1 Bright;
+		#### D 3 Bright;
 		#### C 2 Bright;
 		Stop;
 	Muzzle2:
-		SHTF C 1 Bright;
-		#### D 2 Bright;
-		#### D 1 Bright;
+		#### D 3 Bright;
 		#### C 2 Bright;
 		Stop;
 		

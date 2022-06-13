@@ -3,7 +3,6 @@
 #include "GLDEFS/Effects.gl"
 #include "GLDEFS/Monsters.gl"
 #include "GLDEFS/Pickups.gl"
-#include "GLDEFS/Player.gl"
 #include "GLDEFS/ProjectileEnemies.gl"
 #include "GLDEFS/Projectiles.gl"
 #include "GLDEFS/Terrains.gl"

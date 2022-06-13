@@ -77,9 +77,6 @@ Class EquestriaPistol : EquestriaDoomWeapon replaces Pistol
 			A_FireBullets (1, 1, 1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_WeaponOffset(0, 40, WOF_KEEPX | WOF_INTERPOLATE);
 			A_GunFlash();
-			
-			if (GetCVAR("WeaponLight") == true)
-				A_FireProjectile("PistolLight",0,0,0, -14);
 		}
 		PISG B 2 A_FireProjectile("BulletCasingSpawn",0,0,0,-10, FPF_NOAUTOAIM);
 		PISG C 0 A_WeaponOffset(0, 32, WOF_KEEPX | WOF_INTERPOLATE);
@@ -114,6 +111,3 @@ Class EquestriaPistol : EquestriaDoomWeapon replaces Pistol
 		Goto Aura.Ready;
 	}
 }
-
-Class PistolLight : ShotgunLight
-{}

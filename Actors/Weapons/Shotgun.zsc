@@ -60,8 +60,8 @@ Class EquestriaShotgun : EquestriaDoomWeapon replaces Shotgun
 
 			if (GetCVAR("CamRecoilToggle") == true)
 				A_Overlay(2, "CamRecoil");
-			if (GetCVAR("WeaponLight") == true)
-				A_FireProjectile("ShotgunLight",0,0,0, -14);
+			//if (GetCVAR("WeaponLight") == true)
+				//A_FireProjectile("ShotgunLight",0,0,0, -14);
 		}
 		Goto Pump;
 		
@@ -112,13 +112,22 @@ Class EquestriaShotgun : EquestriaDoomWeapon replaces Shotgun
 		SHTF A 1 Bright
 		{
 			A_WeaponOffset(0, random(40, 45), WOF_KEEPX | WOF_INTERPOLATE);
-			A_Light(1);
+			
+			if (GetCVar("WeaponLight"))
+				A_AttachLight("FiringLight", DynamicLight.PointLight, "ff 2a 00", random(64,80), 64,
+					DYNAMICLIGHT.LF_SPOT, (-8,0,32),0,10,25,pitch);
+			else
+				A_Light(1);
 		}
-		SHTF B 3 Bright A_Light(2);
+		SHTF B 3 Bright { if (!GetCVAR("WeaponLight")) A_Light(2); }
 		SHTF A 2 Bright
 		{
 			A_WeaponOffset(0, 32, WOF_KEEPX | WOF_INTERPOLATE);
-			A_Light(1);
+			
+			if (GetCVar("WeaponLight"))
+				A_RemoveLight("FiringLight");
+			else
+				A_Light(1);
 		}
 		Goto LightDone;
 	
@@ -158,6 +167,3 @@ Class EquestriaShotgun : EquestriaDoomWeapon replaces Shotgun
 		Goto Aura.Ready;
 	}
 }
-
-Class ShotgunLight : SuperShotgunLight
-{}
