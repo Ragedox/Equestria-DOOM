@@ -25,6 +25,8 @@ UISETTINGS = 			"User Interface";
 	MN_OPT_MUZZLESTYLE = 		"Muzzle Flash Style";
 	MN_OTP_KICKCAMERA =			"Kick camera recoil";
 	
+MISCSETUP = 			"Player and Misc";
+
 CONTROLSETTINGS =		"Customize Controls";
 OPTMNU_CONTROLS =		"Key Mapping";
 ADVANCEDSETTINGS =		"All settings";
