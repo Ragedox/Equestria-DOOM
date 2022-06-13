@@ -1,3 +1,5 @@
+user noarchive int menuselection = 0;
+
 user bool	CamRecoilToggle = true;
 user bool	AuraToggle = true;
 user bool   KickCamera = true;

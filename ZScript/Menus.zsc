@@ -1,3 +1,16 @@
+/*class Equestria_ListMenu : ListMenu
+{
+	override bool MenuEvent(int mkey, bool fromcontroller)
+	{
+		bool ret = Super.MenuEvent(mkey, fromcontroller);
+
+		CVar c = CVar.FindCVar("menuselection");
+		if (c) { c.SetInt(mDesc.mSelectedItem); }
+
+		return ret;
+	}
+}*/
+
 class Equestria_MessageBoxMenu : MessageBoxMenu
 {   
 	TextureID pic;

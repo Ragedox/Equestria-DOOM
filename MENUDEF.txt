@@ -5,6 +5,8 @@ DefaultOptionMenu
 
 ListMenu "MainMenu"
 {
+	//Class "Equestria_ListMenu"
+	
 	AnimatedTransition
 	//Size 430, 310
 	Size "Clean"
