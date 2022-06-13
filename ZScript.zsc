@@ -144,6 +144,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Player.zsc"
 #include "Actors/TitleMap.zsc"
 
+//#include "Actors/Cores/PropsCore.zsc"
 #include "Actors/Cores/WeaponCore.zsc"
 #include "Actors/Cores/MonsterCore.zsc"
 //#include "Actors/NPCs/Hellya.zsc"
