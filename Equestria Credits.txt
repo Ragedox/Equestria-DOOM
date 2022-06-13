@@ -77,8 +77,10 @@ Kinsie's Test Map : https://forum.zdoom.org/viewtopic.php?t=57221
 
 "Universal" fade-to-black on death : https://forum.zdoom.org/viewtopic.php?f=46&t=65028
 
-AFADoomer : https://forum.zdoom.org/viewtopic.php?t=58842#p1032693
-
+AFADoomer :
+	Skybox Parallax : https://forum.zdoom.org/viewtopic.php?t=58842#p1032693
+	Dynamic Titlemap:
+	
 ZScript Boss bar : https://forum.zdoom.org/viewtopic.php?f=105&t=60783
 
 DOOM Official Widescreen assets : https://bethesda.net/en/game/doom-widescreen-mods
