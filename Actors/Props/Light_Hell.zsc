@@ -23,7 +23,7 @@ class EquestriaTorchFire : Actor
 class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 {
 	Default
-	{
+	{	//$Sprite SMBTA0
 		Radius 2; Height 37;
 		+Solid
 		Translation "168:191=192:207", "208:223=192:207", "160:167=192:207", "32:47=192:207", "232:235=198:201";
@@ -45,7 +45,7 @@ class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 class EquestriaBlueTorch : Actor replaces BlueTorch
 {
 	Default
-	{
+	{	//$Sprite TBLUA0
 		Radius 2; Height 60;
 		+SOLID
 		Translation "168:191=192:207", "208:223=192:207", "160:167=192:207", "32:47=192:207", "232:235=198:201";
@@ -67,18 +67,22 @@ class EquestriaBlueTorch : Actor replaces BlueTorch
 // Green Torch
 
 class EquestriaShortGreenTorch : EquestriaShortBlueTorch replaces ShortGreenTorch
-{ Default { Translation "160:235=112:119", "176:191=112:127", "208:222=112:122", "160:167=112:127"; } }
+{ Default { //$Sprite SMGTA0
+			Translation "160:235=112:119", "176:191=112:127", "208:222=112:122", "160:167=112:127"; } }
 
 class EquestriaGreenTorch : EquestriaBlueTorch replaces GreenTorch
-{ Default { Translation "160:235=112:119", "176:191=112:127", "208:222=112:122", "160:167=112:127"; } }
+{ Default { //$Sprite TGRNA0
+			Translation "160:235=112:119", "176:191=112:127", "208:222=112:122", "160:167=112:127"; } }
 
 // Red Torch
 
 class EquestriaShortRedTorch : EquestriaShortBlueTorch replaces ShortRedTorch
-{ Default { Translation "0:255=0:255"; } }
+{ Default { //$Sprite SMRTA0
+			Translation "0:255=0:255"; } }
 
 class EquestriaRedTorch : EquestriaBlueTorch replaces RedTorch
-{ Default { Translation "0:255=0:255"; } }
+{ Default { //$Sprite TREDA0
+			Translation "0:255=0:255"; } }
 
 /////////
 
