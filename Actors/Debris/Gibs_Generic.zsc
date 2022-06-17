@@ -197,6 +197,7 @@ Class Equestria_Blood : Actor replaces Blood
 		+MOVEWITHSECTOR
 		+ROLLSPRITE +ROLLCENTER
 		
+		DistanceCheck "CV_SFXDISTANCE";
 		DeathSound "gore/bloodimpact";
 	}
 	

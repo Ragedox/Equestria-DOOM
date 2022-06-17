@@ -200,6 +200,7 @@ OptionMenu "VideoSettings"
 	Option 		"$MN_OPT_MISSILEMODEL", 			"CV_MISSILEMODEL",			"onoff"
 	Option		"$MN_OPT_BULLETTRACER",				"CV_BULLETTRACER",			"onoff"
 	Option		"$MN_OPT_FLATDECALS",				"CV_FLATDECALS",			"onoff"
+	Slider		"$MN_OPT_SFXDISTANCE",				"CV_SFXDISTANCE",			512.0, 5120.0, 128.0, 0
 	StaticText ""
 	
 	Option 		"$GLPREFMNU_BLOOM",		 			gl_bloom,					"OnOff"

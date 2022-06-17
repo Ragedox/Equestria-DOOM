@@ -22,6 +22,7 @@ Class Equestria_Trails : Actor abstract
 		+NoInteraction
 		+NoCLip
 		+RollSprite +RollCenter
+		DistanceCheck "CV_SFXDISTANCE";
 	}
 }
 

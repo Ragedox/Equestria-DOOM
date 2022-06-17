@@ -28,6 +28,8 @@ Class DebrisCore : Actor abstract
 		
 		+ROLLSPRITE +ROLLCENTER
 		
+		DistanceCheck "CV_SFXDISTANCE";
+		
 		DebrisCore.RollSpeed 16;
 		Damage 0;
 		//DebrisCore.RollState "Roll";
