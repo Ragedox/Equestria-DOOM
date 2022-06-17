@@ -6,7 +6,7 @@ gamedefaults
 
 clearepisodes
 
-episode S1E1
+episode S1INTRO
 {
    picname = "M_EPI1"
    name = "$TXT_D1E1"
