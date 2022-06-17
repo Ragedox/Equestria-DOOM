@@ -2,6 +2,23 @@
 Season 1: Kee-Deep in the Dead
 *////////////////////
 
+map S1INTRO lookup "SEASON1E1"
+{
+	next = "S1E1"
+	
+	Music = ""
+	
+	OutsideFog = "20 00 00"
+	
+	sky1 = RSKY4
+
+	par = 60
+	
+	BorderTexture = "STARGR2"
+	
+	NoIntermission
+}
+
 map S1E1 lookup "SEASON1E1"
 {
 	//Author = "The Ragedox"
