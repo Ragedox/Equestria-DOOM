@@ -75,7 +75,7 @@ map DoomTest "Kinsie's Test Map"
 	BorderTexture = "MSSINGT1"
 }
 
-map SECRET1 "Unknow Mansion"
+map SECRET1 "Unknown Mansion"
 {
 	BorderTexture = "UNKNOWNA"
 	
