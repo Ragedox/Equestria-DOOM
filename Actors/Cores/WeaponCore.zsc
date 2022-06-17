@@ -1,4 +1,4 @@
-Class EquestriaDoomWeapon : Weapon
+Class EquestriaDoomWeapon : Weapon abstract
 {
 	double previousangle;
 	double previouspitch;

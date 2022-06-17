@@ -1,4 +1,4 @@
-Class Equestria_Props : Actor
+Class Equestria_Props : Actor abstract
 {
 	//property prefix: Equestria;
 	string lightname;

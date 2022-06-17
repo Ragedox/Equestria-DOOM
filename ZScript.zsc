@@ -1,6 +1,6 @@
 Version "4.8.0"
 
-Class DebrisCore : Actor
+Class DebrisCore : Actor abstract
 {
 	int rollspd;
 

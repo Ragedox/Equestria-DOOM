@@ -185,7 +185,6 @@ Class ChainsawPuff : Player_BulletPuff
 		{
 			A_SpawnProjectile("ChainsawSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 			A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
-			A_SpawnProjectile("PuffSmoke",0,0, frandom(0, 360), CMF_AIMDIRECTION, frandom(0, 360));
 		}
 		TNT1 A 0
 		{
@@ -230,19 +229,6 @@ Class ShotgunPuff : EquestriaBulletPuff
 	Melee:
 		PUFF C 4;
 		PUFF D 1 A_FadeOut(0.05);
-		Wait;
-	}
-}
-
-Class PuffSmoke : Smoke
-{
-	Default { Speed 5; Scale 1; Alpha 0.25; Gravity 0.25; -NoGravity }
-	States
-	{
-	Spawn:
-		PUFF B random(0, 8) NoDelay { bSPRITEFLIP = RandomPick(0, 1); A_SetRoll(random(0, 359)); A_SetScale(frandom(0.5, 1.0));}
-		PUFF CD random(0,8);
-		PUFF D 1 A_FadeOut(0.1);
 		Wait;
 	}
 }

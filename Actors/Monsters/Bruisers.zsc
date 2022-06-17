@@ -164,8 +164,8 @@ Class BossBaronofHell : EquestriaBaronofHell
 		BOSS J 8 A_FaceTarget();
 		BOSS K 8
 		{
-			A_SpawnProjectile("KnightBall", 32, 0, -25, CMF_AIMOFFSET);
-			A_SpawnProjectile("KnightBall", 32, 0, 25, CMF_AIMOFFSET);
+			A_SpawnProjectile("KnightBall", 32, 16, -16);
+			A_SpawnProjectile("KnightBall", 32, -16, 16);
 		}
 		Goto Chase;
 	}
@@ -195,7 +195,6 @@ Class EquestriaBaronBall : BaronBall replaces BaronBall
 		Wait;
 	}
 }
-
 
 Class KnightBall : EquestriaBaronBall
 {

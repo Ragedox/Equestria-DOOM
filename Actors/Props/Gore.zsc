@@ -1,6 +1,6 @@
 #include "Actors/Props/DeadThings.zsc"
 
-Class EquestriaGoreProps : Actor
+Class EquestriaGoreProps : Actor abstract
 {
 	Default { +CASTSPRITESHADOW +SOLID +CORPSE}
 	override void BeginPlay()

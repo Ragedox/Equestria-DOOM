@@ -107,7 +107,6 @@ Class EquestriaRevenantTracer : RevenantTracer replaces RevenantTracer
 		{
 			A_SpawnProjectile("ChainsawSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
 			A_SpawnProjectile("PuffSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
-			A_SpawnProjectile("PuffSmoke",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
 		}
 		FBXP A 8 Bright;
 		FBXP B 6;

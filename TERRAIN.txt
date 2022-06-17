@@ -119,7 +119,7 @@ splash Water
 	chunkxvelshift	8
 	chunkyvelshift	8
 	chunkzvelshift	8
-	chunkbasezvel	2
+	chunkbasezvel	4
 	sound			world/watersplash
 	NoAlert
 }

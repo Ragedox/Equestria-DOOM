@@ -1,4 +1,4 @@
-Class DoomEquestriaMonster : Actor
+Class DoomEquestriaMonster : Actor abstract
 {
 	Default
 	{
