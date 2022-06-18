@@ -1,11 +1,18 @@
 
 Class FlatProps : Actor
 {
+	bool ticked;
+	
 	Default
 	{
 	//$Category Wall Props
-		+NOCLIP +NOGRAVITY +NOINTERACTION +FLATSPRITE
+		+NOCLIP +NOGRAVITY +NOINTERACTION +FLATSPRITE +SLIDESONWALLS
 		Height 32; Radius 16;
+	}
+	override void Tick()
+	{
+		if(!ticked)
+			Super.Tick();
 	}
 }
 

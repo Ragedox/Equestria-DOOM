@@ -1,0 +1,8 @@
+Decal MD_FEMALESIGN 1
+{	pic MD_FEMLE	FullBright	}
+
+Decal MD_MALESIGN 2
+{	pic MD_MALE		FullBright	}
+
+Decal MD_BATHSIGN 3
+{	pic MD_BATH		FullBright	}

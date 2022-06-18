@@ -122,6 +122,7 @@ Class EquestriaWallTorch : Actor
 		+NOBLOCKMAP
 		+NOGRAVITY
 		+FIXMAPTHINGPOS
+		+SLIDESONWALLS
 		Radius 6.5; Height 10;
 	}
 	States

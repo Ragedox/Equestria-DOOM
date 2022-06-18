@@ -101,43 +101,19 @@ Class Equestria_BloodProp : Actor
 		BLUD D 1;
 		Wait;
 		
-	/*Death:
-		#### # 0
-		{
-			ACS_NamedExecute("CheckLiquid");
-			
-			bNOINTERACTION = 1; bRELATIVETOFLOOR = 1; bMISSILE = 0;
-			
-			A_Stop();
-			A_SetRenderStyle(1.0, STYLE_Translucent); 
-			
-			if(GetCVar("CV_FLATDECALS"))
-			{
-				bFLATSPRITE = 1;
-				return ResolveState("FlatPool");
-			}
-			else
-			{
-				bSPRITEFLIP = RandomPick(0, 1);
-				
-				A_SetRoll(0);
-				A_SetScale(frandom(0.5, 1), 1);
-				
-				return ResolveState("SpritePool");
-			}
-			
-			return state(null);
-		}
-		Wait;
-	
-	SpritePool:
-		BLUD EF 2;
-		BLUD G 1 A_FadeOut(0.005);
-		Wait;
-		
-	FlatPool:
-		FLAT J -1 A_FadeOut(0.005, FTF_REMOVE);
-		Wait;*/
+	Death:
+		TNT1 AAAAA 0 A_SpawnParticle(
+		"Red", //Color
+		SPF_RELATIVE, //Flags
+		6, //Lifetime
+		random(4,8), //Size
+		frandom(0,360), //Angle
+		random(-2,2), random(-2,2), 2, //xyz offset
+		random(1,5), random(1,5), random(2,6), //xyz vel
+		-1, -1, -2, //xyz accel
+		1.0, //start alpha
+		-1); //Fadestep
+		Stop;
 	}
 }
 
