@@ -6,3 +6,32 @@ Decal MD_MALESIGN 2
 
 Decal MD_BATHSIGN 3
 {	pic MD_BATH		FullBright	}
+
+/*
+Decal MD_BloodSplat1
+{	Pic BSPLAT1		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSplat2
+{	Pic BSPLAT2		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSplat3
+{	Pic BSPLAT3		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSplat4
+{	Pic BSPLAT4		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSplat5
+{	Pic BSPLAT5		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSplat6
+{	Pic BSPLAT6 	OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSplat7
+{	Pic BSPLAT7		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSmear1
+{	Pic BSMEAR1		OpaqueBlood		RandomFlipX RandomFlipY	}
+
+Decal MD_BloodSmear2
+{	Pic BSMEAR2		OpaqueBlood		RandomFlipX RandomFlipY	}
+*/
