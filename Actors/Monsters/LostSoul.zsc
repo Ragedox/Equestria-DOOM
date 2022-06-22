@@ -111,12 +111,12 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 	{
 	
 	Spawn:
-		SKUL AB 10 A_Look();
+		LSOL A 10 A_Look();
 		Loop;
 		
 	See:
-		SKUL A 1 A_Chase();
-		SKUL AAAAA 1 A_Chase(null,null);
+		LSOL A 1 A_Chase();
+		LSOL AAAAA 1 A_Chase(null,null);
 		Loop;
 	
 	Missile:
