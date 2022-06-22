@@ -405,7 +405,7 @@ class EquestriaStatusBar : BaseStatusBar
 	
 	void DrawFullScreenStuff()
 	{
-	if (CheckInventory("HUDDisabled") == 0)
+	if (!CheckInventory("HUDDisabled"))
 	{
 		if (CPlayer.health <= 25)
 			DrawImage("BLODSCRN", (0,0));
