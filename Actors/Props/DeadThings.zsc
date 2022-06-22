@@ -17,6 +17,8 @@ class EquestriaDeadMarine : EquestriaGoreProps replaces DeadMarine
 	}
 }
 
+Class EquestriaDeadWorkers : EquestriaDeadMarine
+{}
 
 class EquestriaDeadZombieMan : Actor replaces DeadZombieMan
 {

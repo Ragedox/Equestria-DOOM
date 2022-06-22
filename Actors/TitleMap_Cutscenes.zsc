@@ -67,3 +67,23 @@ Class SpookySkull : TitleMapProps
 
 Class AngrySkull : SpookySkull
 {}
+
+Class Cutscene_BridgeShooter : Actor
+{
+	Default
+	{
+		+NOINTERACTION
+		AttackSound "shotguy/attack";
+	}
+	States
+	{
+	Spawn:
+		SPOS F 10 Bright NoDelay
+		{
+			A_StartSound("shotguy/attack");
+			A_CustomBulletAttack(25, 20, 5, 0, "ShotgunPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_CustomBulletAttack(0, 0, 1, 666, "ShotgunPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+		}
+		Stop;
+	}
+}

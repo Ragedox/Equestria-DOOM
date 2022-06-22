@@ -122,6 +122,7 @@ DoomEdNums
 	//Gore parts (Bodys, Meat, etc)
 	
 	15700 = "DeadHacker"
+	15701 = "EquestriaDeadWorkers"
 	
 	// Wall Sprites/Props
 	
