@@ -8,11 +8,14 @@ Class Death_Extreme : InvToken {}
 Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 {
 	int deathtype;
+	bool hud_disabled;
 	
 	Default
 	{
 		+CASTSPRITESHADOW
 		+NOSKIN
+		
+		Player.Portrait "P_SHAINR";
 		
 		Player.DamageScreenColor "Red", 0.0;
 		
@@ -166,7 +169,7 @@ Class EquestriaMarine : EquestriaDoomPlayer
 	Default
 	{
 		Player.DisplayName "Marine";
-		
+		Player.Portrait	"P_MARINE";
 		Player.StartItem "EquestriaPistol";
 		Player.StartItem "Clip", 20;
 	}
