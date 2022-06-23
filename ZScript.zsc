@@ -41,7 +41,6 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "ZScript/StatusScreen.zsc"
 #include "ZScript/StatusBar.zsc"
 #include "ZScript/SaveLoadMenu.zsc"
-//#include "ZScript/BossHealthBar.zsc"
 //#include "ZScript/ScreenEffects.zsc"
 
 //

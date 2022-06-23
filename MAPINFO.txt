@@ -7,7 +7,6 @@ gameinfo
 {
 	IntermissionMusic = "Music/INTER1.mid"
 	//AddEventHandlers = "DeathFadeBootstrap"
-	//AddEventHandlers = "BossHealthBar"
 	DimColor = "00 00 00"
 	DimAmount = 0.5
 	DefaultDropStyle = 2
