@@ -11,7 +11,7 @@ pulselight Explosion
 {
     color 1.0 0.5 0.0
     size 0
-    secondarySize 50
+    secondarySize 64
     interval 0.25
 	attenuate 1
 } 
@@ -21,6 +21,9 @@ object EquestriaRocket
     frame MISLB { light Explosion }
     frame MISLC { light Explosion }
     frame MISLD { light Explosion }
+	frame MISLE { light Explosion }
+    frame MISLF { light Explosion }
+    frame MISLG { light Explosion }
 }
 
 // Plasma
