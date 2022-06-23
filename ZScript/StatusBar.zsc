@@ -87,6 +87,8 @@ class EquestriaStatusBar : BaseStatusBar
 			{
 				default:
 					case 0: //EQUESTRIA DOOM HUD WIP, Needs power up timer and Full screen keys at the top of the screen
+						DrawImage("STBARA", (0, 168), DI_ITEM_OFFSETS);
+						
 						int healthcolor =
 							CPlayer.health >= 125 ? Font.CR_LIGHTBLUE : //Player has 125 or more health? Yes, then display Light Blue
 							CPlayer.health > 50 && CPlayer.health < 125 ? Font.CR_WHITE :
@@ -106,8 +108,6 @@ class EquestriaStatusBar : BaseStatusBar
 						int secretcolor =
 							Level.found_secrets == Level.total_secrets ? Font.CR_UNTRANSLATED :
 							Font.CR_WHITE;
-							
-						DrawImage("STBARA", (-52, 168), DI_ITEM_OFFSETS);
 						
 						if (CheckInventory("PowerStrength")) //Berserk
 							DrawImage("BSERKBAR", (160, 198), DI_ITEM_OFFSETS);
@@ -151,7 +151,7 @@ class EquestriaStatusBar : BaseStatusBar
 						break;
 						
 					case 1: //ORIGINAL DOOM HUD
-						DrawImage("STBARB", (-53, 168), DI_ITEM_OFFSETS);
+						DrawImage("STBARB", (0, 168), DI_ITEM_OFFSETS);
 						
 						DrawImage("STTPRCNT", (90, 171), DI_ITEM_OFFSETS);
 						DrawImage("STTPRCNT", (221, 171), DI_ITEM_OFFSETS);
