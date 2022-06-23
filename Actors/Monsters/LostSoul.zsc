@@ -107,6 +107,16 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		ActiveSound "skull/active";
 		RenderStyle "SoulTrans";
 	}
+	
+	override void Tick()
+	{
+		Super.Tick();
+		if (GetCVar("CV_HUMANSOUL"))
+		{
+			sprite = getspriteindex("LSO4");
+		}
+	}
+	
 	States
 	{
 	
