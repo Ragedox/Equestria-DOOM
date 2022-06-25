@@ -38,6 +38,9 @@ Class DebrisCore : Actor abstract
 			A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
 		
 		Super.Tick();
+		
+		/*if (vel.x == 0 && vel.y == 0 && vel.z == 0)
+			return;*/
 	}
 }
 
