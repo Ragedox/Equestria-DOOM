@@ -15,12 +15,17 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 		+CASTSPRITESHADOW
 		+NOGRAVITY +FLOAT  +FLOATBOB 
 		+FORCEXYBILLBOARD +AvoidMelee +DONTFALL
+		+ADDLIGHTLEVEL
 		
+		LightLevel 64;
 		SeeSound "pain/sight";
 		PainSound "pain/pain";
 		DeathSound "pain/death";
 		ActiveSound "pain/active";
 	}
+	
+	int lostsoulspecie;
+	
 	States
 	{
 	Spawn:
@@ -43,28 +48,32 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 		Loop;
 		
 	Missile:
-		#### # 0 A_Jump(256, "Missile.Pony", "Missile.Unicorn", "Missile.Nirik");
-		Wait;
-	
-		Missile.Pony:
-			#### # 0 { A_SetTranslation(""); A_Stop(); }
-			PAIN DE 5 A_FaceTarget();
-			PAIN F 5 BRIGHT A_FaceTarget();
-			#### # 0 { A_PainAttack("EquestriaLostSoul"); A_SetTranslation(""); A_Stop(); }
-			Goto See;
+		//#### # 0 A_Jump(256, "Missile.Pony", "Missile.Unicorn", "Missile.Nirik");
+		#### # 0
+		{
+			lostsoulspecie = random(0, 2);
 			
-		Missile.Unicorn:
-			PAIN DE 5 A_FaceTarget();
-			PAIN F 5 BRIGHT A_FaceTarget();
-			#### # 0 { A_PainAttack("UnicornSoul"); A_SetTranslation(""); A_Stop(); }
-			Goto See;
+			if		(lostsoulspecie == 0) A_SetTranslation("");
+			else if	(lostsoulspecie == 1) A_SetTranslation(""); //Make a Unicorn version
+			else if (lostsoulspecie == 2) A_SetTranslation("PainElemental_Nirik");
+		}
+		PAIN DE 5
+		{
+			A_FaceTarget();
+			lightlevel = 128;
+		}
+		PAIN F 3 BRIGHT A_FaceTarget();
+		#### E 2
+		{
+			if		(lostsoulspecie == 0) A_PainAttack("EquestriaLostSoul");
+			else if (lostsoulspecie == 1) A_PainAttack("UnicornSoul");
+			else if	(lostsoulspecie == 2) A_SpawnProjectile("MissileNirikSoul");
 			
-		Missile.Nirik:
-			#### # 0 { A_SetTranslation("Nirik"); A_Stop(); }
-			PAIN DE 5 A_FaceTarget();
-			PAIN F 5 BRIGHT A_FaceTarget(); 
-			#### # 0 { A_SpawnProjectile("MissileNirikSoul"); A_SetTranslation(""); A_Stop(); }
-			Goto See;
+			A_SetTranslation("");
+			A_Stop();
+			lightlevel = 64;
+		}
+		Goto See;
 	
 	Pain:
 		PAIN G 6;
