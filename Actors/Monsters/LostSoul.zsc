@@ -108,10 +108,13 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		RenderStyle "SoulTrans";
 	}
 	
-	override void Tick()
+	override void BeginPlay()
 	{
-		Super.Tick();
-		if (GetCVar("CV_HUMANSOUL"))
+		int lostsoulspecie;
+		
+		lostsoulspecie = random(0,1);
+		
+		if (GetCVar("CV_HUMANSOUL") && lostsoulspecie == 1)
 		{
 			sprite = getspriteindex("LSO4");
 		}
@@ -322,7 +325,7 @@ Class NirikSoul : EquestriaLostSoul
 		
 		SKUL F 3;
 		SKUL G 3 A_Scream();
-		SKUL H 3 A_Explode(5, 128, XF_NOTMISSILE);
+		SKUL H 3 A_Explode(6, 128, XF_NOTMISSILE);
 		SKUL I 6
 		{
 			A_NoBlocking();
@@ -366,7 +369,7 @@ Class MissileNirikSoul : FastProjectile
 		AttackSound "skull/melee";
 		PainSound "skull/pain";
 		DeathSound "skull/death";
-		ActiveSound "skull/active";
+		ActiveSound "skull/melee";
 	}
 	States
 	{
@@ -377,7 +380,7 @@ Class MissileNirikSoul : FastProjectile
 	Death:
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		
-		SKUL F 3 A_Explode(5, 60, XF_NOTMISSILE);
+		SKUL F 3 A_Explode(6, 128, XF_NOTMISSILE);
 		SKUL G 3 A_Scream();
 		SKUL H 3;
 		SKUL I 3
