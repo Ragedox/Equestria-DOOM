@@ -80,18 +80,35 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		SPID K 10 A_NoBlocking();
 		SPID LMN 8
 		{
-			A_SpawnItemEx("BigGibber",0,0,0,0,0,0,0, SXF_TRANSFERPOINTERS);
+			for (int i = 0; i < 16; i++)
+			{
+				A_SpawnItemEx("BigGoreRandom", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
+					frandom(2,8),frandom(2,8),frandom(4,16),
+					frandom(0, 360), SXF_USEBLOODCOLOR);
+				A_SpawnItemEx("GenericGib", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
+					frandom(8,16),frandom(8,16),frandom(8,24), 
+					frandom(0, 360), SXF_USEBLOODCOLOR);
+				A_SpawnItemEx("TinyGenericGib", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
+					frandom(8,16),frandom(8,16),frandom(8,24), 
+					frandom(0, 360), SXF_USEBLOODCOLOR);
+			}
 			A_SpawnItemEx("BloodExplosionSphere",0,0,random(0, 16),0,0,0,0, SXF_TRANSFERPOINTERS);
 		}
 		SPID O 10
 		{
-			A_SpawnItemEx("XDeathGibber",0,0,16,0,0,0,0, SXF_TRANSFERPOINTERS);
-			
-			A_SpawnItemEx("BigGibber",0,0,random(16, 32),0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,random(16, 32),0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,random(16, 32),0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,random(16, 32),0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,random(16, 32),0,0,0,0, SXF_TRANSFERPOINTERS);
+			A_SpawnItemEx("Equestria_BloodExplosion", Frandom(-50, 50), Frandom(-50, 50), frandom(32, 110));
+			for (int i = 0; i < 16; i++)
+			{
+				A_SpawnItemEx("BigGoreRandom", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
+					frandom(2,8),frandom(2,8),frandom(4,16),
+					frandom(0, 360), SXF_USEBLOODCOLOR);
+				A_SpawnItemEx("GenericGib", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
+					frandom(8,16),frandom(8,16),frandom(8,24), 
+					frandom(0, 360), SXF_USEBLOODCOLOR);
+				A_SpawnItemEx("TinyGenericGib", frandom(-50, 50), frandom(-50, 50), frandom(32, 110),
+					frandom(8,16),frandom(8,16),frandom(8,24), 
+					frandom(0, 360), SXF_USEBLOODCOLOR);
+			}
 		}
 		SPID PQR 5;
 		SPID S 30;
