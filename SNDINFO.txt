@@ -23,10 +23,10 @@ world/watersplash 	GLOOP
 world/lavasizzle	ACID5
 world/sludgegloop	MUCK5
 
-$limit world/drip			0
-$limit world/watersplash	0
-$limit world/lavasizzle		0
-$limit world/sludgegloop	0
+$limit world/drip			4
+$limit world/watersplash	4
+$limit world/lavasizzle		4
+$limit world/sludgegloop	4
 
 misc/magic		DSMAGIC
 
@@ -117,6 +117,17 @@ menu/dismiss			dsswtchx	// Dismiss a prompt message
 menu/choose			dspistol	// Choose a menu item
 menu/clear			dsswtchx	// Close top menu
 $alias menu/advance menu/choose	// Open a submenu
+
+$pitchshift menu/activate	0
+$pitchshift menu/backup		0
+$pitchshift menu/prompt		0
+$pitchshift menu/cursor		0
+$pitchshift menu/change		0
+$pitchshift menu/invalid	0
+$pitchshift menu/dismiss	0
+$pitchshift menu/choose		0
+$pitchshift menu/clear		0
+$pitchshift menu/advance	0
 
 $random menu/quit1 { player/male/death1 demon/pain grunt/pain misc/gibbed misc/teleport grunt/sight1 grunt/sight3 demon/melee }
 $random menu/quit2 { vile/active misc/p_pkup brain/cube misc/gibbed skeleton/swing knight/death baby/active demon/melee  }
