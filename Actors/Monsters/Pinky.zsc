@@ -54,7 +54,7 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		SARG I 8;
 		SARG J 8 A_Scream();
-		SARG K 6;
+		SARG K 6 A_Recoil(4);
 		SARG L 4 A_NoBlocking();
 		SARG M 2;
 		SARG N -1;
