@@ -1,245 +1,73 @@
-/*
-		Thinking about discontinuing it, this will end up becoming a spaghetti 
-		just for summoning a flat sprite that hangs around the edges, 
-		maybe I'll find a more practical way to do this;
-
-		this gives me a lot of headaches.
-*/
-
-Class FloorCheck : Actor
+Class Equestria_Decal : Actor
 {
+	bool ticked;
+	
 	Default
 	{
-		Radius 1; Height 2;
+		Radius 6;
 		
-		+MISSILE;
-		+DONTSPLASH;
-		+NOTELEPORT;
-		+NOBLOCKMAP;
-		+THRUACTORS;
-		+MOVEWITHSECTOR;
-		+NODAMAGETHRUST;
-		+FLOORCLIP;
-		+GHOST;
-		+NOGRAVITY;
+		+NOINTERACTION
+		+DONTSPLASH
+		+NOTELEPORT
+		+THRUACTORS
+		+NOBLOCKMAP
+		+MOVEWITHSECTOR
 		+RELATIVETOFLOOR
-	}
-}
-
-Class ScorchBase : FloorCheck
-{
-	Default
-	{
+		+GHOST
+		
 		+FLATSPRITE
 		+ROLLSPRITE +ROLLCENTER
 		
 		RenderStyle "Shaded"; StencilColor "Black";
-		
-		SpriteRotation 90;
 	}
+	
+	override void Tick()
+	{
+		if (!ticked)
+			Super.Tick();
+	}
+	
+	override void PostBeginPlay()
+	{
+		A_SetAngle(0);
+		A_SetRoll(randompick(0, 90, 180, 360));
+		bSPRITEFLIP = randompick(0,1);
+	}
+	
 	States
 	{
-	Vanish:
-		TNT1 A 0;
-		Stop;
-	}
-}
-
-
-
-Class ScorchDecal : ScorchBase
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 {	bNOINTERACTION = 1;	}
-		DCAL B 2100;
-		DCAL B 1 A_FadeOut(0.1);
+	FadeOut:
+		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
 		Wait;
 	}
 }
 
-Class BulletDecal : ScorchBase
+Class EQ_Decal_Bullet : Equestria_Decal
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Null");
-		DCAL A 2100 A_SetRoll(random(0, 359));
-		DCAL A 1 A_FadeOut(0.1);
-		Wait;
+		DCAL A 350;
+		Goto FadeOut;
 	}
 }
 
-Class PlasmaFloorCheck : FloorCheck
+Class EQ_Decal_Shotgun : EQ_Decal_Bullet
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 A_CheckFloor(1);
-		Stop;
-		TNT1 A 0 A_SpawnItemEX("PlasmaScorchLower", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
-		Stop;
+		DCAL B 350;
+		Goto FadeOut;
 	}
 }
 
-Class PlasmaScorchLower : ScorchBase
-{
-	Default	{	Scale 0.6;	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 A_SetRoll(random(0, 359));
-		TNT1 A 0 A_Jump(256, +5, +6);
-		Wait;
-		
-	InFloor:
-		#### ## 0 {	bNOINTERACTION = 1;	}
-		#### # 2100 A_SpawnItemEX("PlasmaScorch", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
-		#### # 1 A_FadeOut(0.1);
-		Wait;
-		DCAL C 0;
-		Goto InFloor;
-		DCAL D 0;
-		Goto InFloor;
-	}
-}
-
-Class PlasmaScorch : RandomSpawner
-{
-	Default
-	{
-		DropItem "PlasmaScorch1";
-		DropItem "PlasmaScorch2";
-	}
-}
-
-Class PlasmaScorch1 : FloorCheck
-{
-	Default
-	{
-		+NoInteraction;
-		+BRIGHT;
-		
-		RenderStyle "Add";
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 {	bNOINTERACTION = 1;	}
-		NULL A 14;
-		NULL A 1 A_FadeOut(0.035);
-		Wait;
-	}
-}
-
-Class PlasmaScorch2 : PlasmaScorch1
+Class EQ_Decal_Rocket : Equestria_Decal
 {
 	States
 	{
 	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 {	bNOINTERACTION = 1;	}
-		NULL A 14;
-		NULL A 1 A_FadeOut(0.035);
-		Wait;
-	}
-}
-
-Class BFGFloorCheck : FloorCheck
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 A_CheckFloor(1);
-		Stop;
-		TNT1 A 0 A_SpawnItemEX("BFGScorch", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
-		Stop;
-	}
-}
-
-Class BFGScorch : ScorchBase
-{
-	Default {	Scale 1.5;	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 A_SetRoll(random(0, 359));
-		TNT1 A 0 A_Jump(256, +5, +6);
-		Wait;
-		
-	InFloor:
-		#### ## 0 {	bNOINTERACTION = 1;	}
-		#### # 2100 A_SpawnItemEX("BFGLightning", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION);
-		#### # 1 A_FadeOut(0.1);
-		Wait;
-		DCAL E 0;
-		Goto InFloor;
-		DCAL F 0;
-		Goto InFloor;
-	}
-}
-
-Class BFGLightning : RandomSpawner
-{
-	Default
-	{
-		DropItem "BFGLightning1";
-		DropItem "BFGLightning2";
-	}
-}
-
-Class BFGLightning1 : FloorCheck
-{
-	Default
-	{
-		+BRIGHT;
-		
-		RenderStyle "Shaded";
-		StencilColor "80 ff 80";
-		
-		+NoInteraction;
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 {	bNOINTERACTION = 1;	}
-		NULL A 35;
-		NULL A 1 A_FadeOut(0.014);
-		Wait;
-	}
-}
-
-Class BFGLightning2 : BFGLightning
-{
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay A_JumpIf(CallACS("FlatDecals") == 0, "Vanish");
-		TNT1 A 0 ACS_NamedExecute("CheckLiquid");
-		
-		TNT1 A 0 {	bNOINTERACTION = 1;	}
-		NULL A 35;
-		NULL A 1 A_FadeOut(0.014);
-		Wait;
+		DCAL C 350;
+		Goto FadeOut;
 	}
 }

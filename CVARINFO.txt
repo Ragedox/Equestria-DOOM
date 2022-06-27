@@ -20,3 +20,5 @@ server bool CV_BULLETTRACER = true;
 server bool DEBUG = false;
 server bool CV_MISSILEMODEL = true;
 server bool CV_CLASSIC = false;
+
+server bool CV_TESTING = false;

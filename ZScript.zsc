@@ -58,6 +58,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Terrains.zsc"
 #include "Actors/Particles.zsc"
 #include "Actors/Puffs.zsc"
+#include "Actors/FloorDecals.zsc"
 
 #include "Actors/Debris/Gibs_Generic.zsc"
 #include "Actors/Debris/Gibs_Enemies.zsc"

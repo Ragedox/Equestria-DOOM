@@ -1,0 +1,61 @@
+/*
+Model EQ_Decal_Bullet
+{
+	Path "Models"
+	Model 0 "PlaneSquare.md3"
+	Path "Graphics/Decals"
+	Skin 0 "D_BULLET.png"
+	Scale 0.08 0.08 0.08
+	FrameIndex DCAL A 0 0 
+}
+
+Model EQ_Decal_Rocket
+{
+	Path "Models"
+	Model 0 "PlaneSquare.md3"
+	Path "Graphics/Decals"
+	Skin 0 "scorch1.png"
+	Scale 1.2 1.2 1.2
+	FrameIndex DCAL c 0 0
+}
+
+Model "PlasmaScorch1"
+{
+	Path "Models"
+	Model 0 "PlaneSquare.md3"
+	Skin 0 "PLSSA0"
+	Scale 0.25 0.25 0.25
+	ZOffset 0.2
+	FrameIndex NULL A 0 0
+}
+
+Model "PlasmaScorch2"
+{
+	Path "Models"
+	Model 0 "PlaneSquare.md3"
+	Skin 0 "PLSSB0"
+	Scale 0.25 0.25 0.25
+	ZOffset 0.2
+	FrameIndex NULL A 0 0
+}
+
+Model "BFGLightning1"
+{
+	Path "Models"
+	Model 0 "PlaneSquare.md3"
+	Skin 0 "BFGLITE1"
+	Scale 2 2 2
+	ZOffset 0.2
+	FrameIndex NULL A 0 0
+}
+
+Model "BFGLightning2"
+{
+	Path "Models"
+	Model 0 "PlaneSquare.md3"
+	Skin 0 "BFGLITE2"
+	Scale 2 2 2
+	ZOffset 0.2
+	FrameIndex NULL A 0 0
+}
+*/
