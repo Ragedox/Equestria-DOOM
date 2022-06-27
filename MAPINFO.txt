@@ -37,6 +37,7 @@ gamedefaults
 	StrictMonsterActivation
 	ClipMidTextures
 	NoCrouch
+	AllowFreelook
 
 	LightMode = 2
 	lightadditivesurfaces = 1
