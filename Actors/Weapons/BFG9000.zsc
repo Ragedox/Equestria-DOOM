@@ -191,7 +191,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			A_SetScale(2);
 			A_SpawnItem("BFGShockwave", 0, 12);
 						
-			A_QuakeEx(9, 9, 9, 35, 0, 1024, "world/quake", QF_SCALEDOWN,0,0,0,1);
+			A_QuakeEx(9, 9, 9, 35, 0, 1024, "world/quake", QF_SCALEDOWN | QF_3D,1,1,1,1,0,1,1);
 			
 			for (int i = 0; i < 32; i++)
 			{
