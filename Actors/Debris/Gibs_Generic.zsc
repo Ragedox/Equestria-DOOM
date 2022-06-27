@@ -52,11 +52,6 @@ Class GenericGib : DebrisCore
 		#### # 8 A_SpawnItemEx("Equestria_SmallBlood",FRandom(-4, 4),FRandom(-4, 4),FRandom(-4, 4), random(1, 2), random(1, 2),random(-2,2),frandom(0,360),
 			SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
 		Loop;
-	
-	Death:
-		#### # 0 { bNOINTERACTION = 1; bRELATIVETOFLOOR = 1; }
-		#### # 0 A_Jump(256, "Crash");
-		Wait;
 		
 	Crash:
 		#### # 350;
@@ -477,11 +472,12 @@ Class BigGenericGib : GenericGib
 		#### # 4 A_SpawnItemEx("Equestria_Blood", FRandom(-10, 10), FRandom(-10, 10), FRandom(-10, 10), random(-1,1),random(-1,1),random(-1,1),0, SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION);
 		Loop;
 		
-	Death:
-		BGOR B 350 A_SetRoll(0);
-		BGOR B 0 A_JumpIf(GetCVar("GibsStayForever") == 0, "FadeOut");
-		BGOR B 0; //A_JumpIf(GetCVar("GibsStayForever") == 2, "CheckSight");
-		Loop;
+	Crash:
+		#### B 350;
+		#### # 0 A_JumpIf(GetCVar("CV_DEBRISQUALITY") == 2, +1);
+		Goto Death;
+		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
+		Wait;
 	}
 }
 
@@ -493,54 +489,16 @@ Class BigGibGore2 : BigGenericGib
 		BGO2 A 0;
 		Goto Spawn2;
 	
-	Death:
-		BGO2 B 350 A_SetRoll(0);
-		BGO2 B 0 A_JumpIf(GetCVar("GibsStayForever") == 0, "FadeOut");
-		BGO2 B 0; //A_JumpIf(GetCVar("GibsStayForever") == 2, "CheckSight");
-		Loop;
+	Crash:
+		#### B 350;
+		#### # 0 A_JumpIf(GetCVar("CV_DEBRISQUALITY") == 2, +1);
+		Goto Death;
+		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
+		Wait;
 	}
 }
 
-Class XDeathGibber : Actor
-{
-	Default
-	{
-		Radius 20; Height 56;
-		
-		+NOCLIP
-		+NOBLOCKMAP
-		+NOTELEPORT
-		+MOVEWITHSECTOR
-		+NOGRAVITY
-		+THRUACTORS
-		+DONTSPLASH
-	}
-	States
-	{
-	Spawn:
-		TNT1 A 0 NoDelay
-		{
-			for (int i = 0; i < 10; i++)
-			{
-				A_SpawnProjectile("GenericGib", FRandom(8, 56), FRandom(-20, 20), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));	
-				A_SpawnProjectile("TinyGenericGib", FRandom(8, 56), FRandom(-20, 20), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, -180));
-			}
-		}
-		Stop;
-	}
-}
-
-Class BigGibber : XDeathGibber
-{
-	States
-	{
-	Spawn:
-		TNT1 AAAAA 0 A_SpawnProjectile("BigGoreRandom", FRandom(8, 32), FRandom(-40, 40), FRandom (0, 359), CMF_AIMDIRECTION, FRandom (0, 359));
-		Stop;
-	}
-}
-
-Class BloodExplosion : XDeathGibber
+Class BloodExplosion : Actor
 {
 	States
 	{
