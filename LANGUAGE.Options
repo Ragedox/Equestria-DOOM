@@ -13,7 +13,12 @@ VIDEOSETTINGS = 		"Video";
 	MN_OPT_BULLETTRACER	=		"Bullet Tracer";
 	MN_OPT_MISSILEMODEL =		"3D Rocket model";
 	MN_OPT_GORETOGGLE = 		"Gore Type";
-	MN_OPT_GIBSFOREVER = 		"Gibs don't disappear";
+	MN_OPT_DEBRISQUALITY = 		"Debris and Gibs quality";
+		OP_DEBRISQUALITY_OFF	=	"Off";
+		OP_DEBRISQUALITY_LOW	=	"Disappears on the floor";
+		OP_DEBRISQUALITY_MEDIUM	=	"Fades out after 10 sec";
+		OP_DEBRISQUALITY_HIGH	=	"Never disappears";
+		
 	MN_OPT_ENHANCED =			"Enhanced";
 	MN_OPT_REALISTIC = 			"Realistic";
 	GLPREFMNU_MULTISAMPLE =		"MSAA Quality";
