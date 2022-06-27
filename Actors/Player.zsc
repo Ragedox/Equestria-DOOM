@@ -47,17 +47,22 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		Player.WeaponSlot 8, "EquestriaPlasmaGun";
 		Player.WeaponSlot 9, "EquestriaBFG9K";*/
 	}
+	
+	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
+	{
+		int dmg = Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
+		if (dmg > 30)		A_QuakeEx(4,4,4,10,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 2,2,2,0,0,4,4);
+		else if (dmg > 20)	A_QuakeEx(3,3,1,8,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 2,2,2,0,0,3,3);
+		else if (dmg > 10)	A_QuakeEx(2,2,2,6,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,2,2);
+		else if (dmg > 1)	A_QuakeEx(1,1,1,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,1,1);
+		return dmg;
+	} 
+	
 	States
 	{
 	
 	Pain:
-		PLAY G 4
-		{
-			if(health <= 50)
-				A_QuakeEx(1,1,1,8,0,1,0,QF_RELATIVE | QF_SCALEDOWN);
-			if(health > 50)
-				A_QuakeEx(2,2,2,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN);
-		}
+		PLAY G 4;
 		PLAY G 4 A_Pain();
 		Goto Spawn;
 	
