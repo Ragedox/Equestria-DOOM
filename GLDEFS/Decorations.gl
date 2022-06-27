@@ -129,6 +129,7 @@ object EquestriaShortBlueTorch
 }
 
 // Burning barrel
+/*
 flickerlight2 FIREBARREL
 {
     color 1.0 0.9 0.4
@@ -137,11 +138,7 @@ flickerlight2 FIREBARREL
 	interval 0.1
 	attenuate 1
 }
-
-object EquestriaBurningBarrel
-{
-    frame FCAN { light FIREBARREL }
-}
+*/
 
 // Skulls w/candles
 flickerlight2 SKULLCANDLES
@@ -185,19 +182,4 @@ pointlight CANDELABRA
 object EquestriaCandelabra
 {
     frame CBRA { light CANDELABRA }
-}
-
-flickerlight2 WALLTORCH
-{
-    color 1.0 1.0 0.3
-    size 30 secondarysize 35
-    offset 0 6 0
-	attenuate 1
-	dontlightself 1
-	interval 0.1
-}
-
-object EquestriaWallTorch
-{
-	frame WTCH { light WALLTORCH }
 }

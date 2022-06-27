@@ -101,6 +101,7 @@ pulselight HEALTHPOTION
     interval 1.0
 	attenuate 1
     offset 0 5 0
+	dontlightothers 1
 }
 
 object HealthPotion
@@ -117,6 +118,7 @@ pulselight ARMORBONUS
     interval 0.75
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 pulselight ARMORBONUS2
@@ -126,6 +128,7 @@ pulselight ARMORBONUS2
     interval 0.75
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 // Blue Keys
@@ -138,6 +141,7 @@ pulselight BLUECARD
     interval 2.0
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 object EquestriaBlueCard
@@ -153,6 +157,7 @@ pulselight BLUESKULL
     interval 1.0
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 object EquestriaBlueSkull
@@ -169,6 +174,7 @@ pulselight YELLOWCARD
     interval 2.0
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 object EquestriaYellowCard
@@ -184,6 +190,7 @@ pulselight YELLOWSKULL
     interval 1.0
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 object EquestriaYellowSkull
@@ -200,6 +207,7 @@ pulselight REDCARD
     interval 2.0
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 object EquestriaRedCard
@@ -215,55 +223,10 @@ pulselight REDSKULL
     interval 1.0
 	attenuate 1
     offset 0 10 0
+	dontlightothers 1
 }
 
 object EquestriaRedSkull
 {
     frame RSKU { light REDSKULL }
-}
-
-// Green armour
-pointlight GREENARMOR1
-{
-    color 0.0 0.3 0.0
-    size 40
-	attenuate 1
-    offset 0 10 0
-}
-
-pointlight GREENARMOR2
-{
-    color 0.0 0.3 0.0
-    size 30
-	attenuate 1
-    offset 0 10 0
-}
-
-object GreenArmor
-{
-    frame ARM1A { light GREENARMOR1 }
-    frame ARM1B { light GREENARMOR2 }
-}
-
-// Blue armour
-pointlight BLUEARMOR1
-{
-    color 0.0 0.0 0.3
-    size 40
-	attenuate 1
-    offset 0 10 0
-}
-
-pointlight BLUEARMOR2
-{
-    color 0.0 0.0 0.3
-    size 30
-	attenuate 1
-    offset 0 10 0
-}
-
-object BlueArmor
-{
-    frame ARM2A { light BLUEARMOR1 }
-    frame ARM2B { light BLUEARMOR2 }
 }

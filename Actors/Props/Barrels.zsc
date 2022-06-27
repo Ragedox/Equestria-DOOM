@@ -306,10 +306,17 @@ Class EquestriaBurningBarrel : BurningBarrel replaces BurningBarrel
 	{
 		Radius 10;
 	}
+	
+	override void BeginPlay()
+	{
+		A_AttachLight("Light", DynamicLight.RandomFlickerLight, "ffff55", 75, 80,
+			DYNAMICLIGHT.LF_ATTENUATE | DYNAMICLIGHT.LF_SPOT, (0,0,16), 0.01, 50, 25, 90);
+	}
+	
 	States
 	{
 	Spawn:
-		FCAN ABC 4 BRIGHT;
+		FCAN ABC random(3,4) BRIGHT;
 		Loop;
 	}
 }

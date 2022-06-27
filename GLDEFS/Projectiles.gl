@@ -29,7 +29,7 @@ object EquestriaRocket
 // Plasma
 pulselight PLASMABALL
 {
-    color 0.25 0.25 1.0
+    color 0.4 0.4 1.0
     size 20
 	secondarysize 40
 	interval 0.5
