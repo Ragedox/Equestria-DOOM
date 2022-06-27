@@ -9,7 +9,7 @@ user bool	CV_MUZZLEOFFSET = false;
 user int	MuzzleStyle = 1;
 user int	CV_SBARSTYLE = 0;
 user int	CV_SFXDISTANCE = 2048;
-
+ 
 server bool CV_HUMANSOUL = false;
 server int	GoreToggle = 1;
 server bool GibsStayForever = false;
@@ -20,5 +20,6 @@ server bool CV_BULLETTRACER = true;
 server bool DEBUG = false;
 server bool CV_MISSILEMODEL = true;
 server bool CV_CLASSIC = false;
+server int CV_DEBRISQUALITY = 2;
 
 server bool CV_TESTING = false;
