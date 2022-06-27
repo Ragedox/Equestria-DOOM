@@ -196,7 +196,7 @@ OptionMenu "VideoSettings"
 	
 	Option 		"$DSPLYMNU_SPRITESHADOW",			"r_actorspriteshadow", 		"SpriteShadowModes"
 	Option 		"$MN_OPT_GORETOGGLE", 				"GoreToggle",				"GoreType"
-	Option 		"$MN_OPT_GIBSFOREVER", 				"GibsStayForever",			"onoff"
+	Option 		"$MN_OPT_DEBRISQUALITY", 			"CV_DEBRISQUALITY",			"DebrisQuality"
 	Option 		"$MN_OPT_MISSILEMODEL", 			"CV_MISSILEMODEL",			"onoff"
 	Option		"$MN_OPT_BULLETTRACER",				"CV_BULLETTRACER",			"onoff"
 	Option		"$MN_OPT_FLATDECALS",				"CV_FLATDECALS",			"onoff"
@@ -324,6 +324,14 @@ OptionValue "SBARStyle"
 	0, "Equestria"
 	1, "Original"
 	2, "PlayStation"
+}
+
+OptionValue "DebrisQuality"
+{
+	0, "$OP_DEBRISQUALITY_OFF"
+	1, "$OP_DEBRISQUALITY_LOW"
+	2, "$OP_DEBRISQUALITY_MEDIUM"
+	3, "$OP_DEBRISQUALITY_HIGH"
 }
 
 AddOptionMenu "NewPlayerMenu" 
