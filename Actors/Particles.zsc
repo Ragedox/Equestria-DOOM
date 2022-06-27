@@ -1,4 +1,4 @@
-Class DEParticles : DebrisCore
+Class DEParticles : Actor abstract
 {
 	Default
 	{
@@ -6,11 +6,15 @@ Class DEParticles : DebrisCore
 		+THRUACTORS
 		+DONTSPLASH
 		+Randomize
-		-CORPSE
+		+RollSprite +RollCenter
+		+ForceXYBillboard
 	}
 }
 
-Class Equestria_Trails : Actor abstract
+Class Equestria_Particles : DEParticles abstract
+{}
+
+Class Equestria_Trails : Equestria_Particles abstract
 {
 	Default
 	{
@@ -18,10 +22,9 @@ Class Equestria_Trails : Actor abstract
 		RenderStyle "Add";
 		Alpha 0.7;
 		
-		+ForceXYBillboard
 		+NoInteraction
 		+NoCLip
-		+RollSprite +RollCenter
+		
 		DistanceCheck "CV_SFXDISTANCE";
 	}
 }
