@@ -1,4 +1,4 @@
 gameinfo
 {
-	PlayerClasses = "EquestriaDoomPlayer"//, "EquestriaMarine"
+	PlayerClasses = "EquestriaDoomPlayer", "EquestriaMarine"
 }
