@@ -48,7 +48,6 @@ Class EquestriaPainElemental : DoomEquestriaMonster replaces PainElemental
 		Loop;
 		
 	Missile:
-		//#### # 0 A_Jump(256, "Missile.Pony", "Missile.Unicorn", "Missile.Nirik");
 		#### # 0
 		{
 			lostsoulspecie = random(0, 2);
