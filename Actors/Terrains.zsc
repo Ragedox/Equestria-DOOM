@@ -4,8 +4,6 @@ Class CoreSplashChunk : PuffSparkles
 {
 	Default
 	{
-		Radius 2; Height 4;
-		
 		BounceType "None";
 		Renderstyle "Translucent";
 		Alpha 0.7;
