@@ -42,6 +42,26 @@ Class DebrisCore : Actor abstract
 		/*if (vel.x == 0 && vel.y == 0 && vel.z == 0)
 			return;*/
 	}
+	override void BeginPlay()
+	{
+		if (GetCVar("CV_DEBRISQUALITY") == 0)
+			Destroy();
+	}
+	
+	States
+	{
+	Death:
+		#### # 0
+		{
+			if (GetCVar("CV_DEBRISQUALITY") == 1)
+				Destroy();
+				
+			bNOINTERACTION = 1; bRELATIVETOFLOOR = 1;
+			
+			return ResolveState("Crash");
+		}
+		Wait;
+	}
 }
 
 Class TerrainDebris : DebrisCore
