@@ -56,7 +56,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		else if (dmg > 10)	A_QuakeEx(2,2,2,6,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,2,2);
 		else if (dmg > 1)	A_QuakeEx(1,1,1,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,1,1);
 		return dmg;
-	} 
+	}
 	
 	States
 	{
@@ -99,10 +99,44 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		{
 			A_GiveInventory("Death_Extreme", 1);
 			A_SkullPop("PopSkull");
-			A_SpawnItemEx("XDeathGibber",0,0,16,0,0,0,0, SXF_TRANSFERPOINTERS);
-			A_SpawnItemEx("BloodExplosionSphere",0,0,16,0,0,0,0, SXF_TRANSFERPOINTERS);
 			A_XScream();
 			A_NoBlocking();
+			
+			if(GetCVar("CV_DEBRISTOGGLE") == 1)
+			{
+				int gorequantity;
+				gorequantity = random(8, 16);
+				
+				for (int i = 0; i < gorequantity; i++)
+					A_SpawnItemEx("GenericGib",
+						FRandom((-radius), radius), FRandom((-radius), radius), frandom(height/3, height),
+						frandom(2,4), frandom(2,4), frandom(4,8),
+						frandom(0, 360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+				
+				for (int i = 0; i < gorequantity; i++)
+					A_SpawnItemEx("TinyGenericGib",
+						FRandom((-radius), radius), FRandom((-radius), radius), frandom(height/3, height),
+						frandom(2,4), frandom(2,4), frandom(4,8),
+						frandom(0, 360), SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+
+				for (int i = 0; i < gorequantity; i++)
+				{
+					A_SpawnItemEx("Equestria_TinyBlood",
+						frandom((-radius), radius),frandom((-radius), radius),frandom(height/3, height),
+						frandom(0, 4),frandom(0, 4),frandom(0, 8),frandom(0,360),
+						SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					
+					A_SpawnItemEx("Equestria_SmallBlood",
+						frandom((-radius), radius),frandom((-radius), radius),frandom(height/3, height),
+						frandom(0, 4),frandom(0, 4),frandom(0, 8),frandom(0,360),
+						SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+					
+					A_SpawnItemEx("Equestria_Blood",
+						frandom((-radius), radius),frandom((-radius), radius),frandom(height/3, height),
+						frandom(1, 2),frandom(1, 2),frandom(0, 8),frandom(0,360),
+						SXF_USEBLOODCOLOR | SXF_TRANSFERTRANSLATION | SXF_ABSOLUTEPOSITION | SXF_NOCHECKPOSITION);
+				}
+			}
 		}
 		PLAY P 5;
 		PLAY Q 5;
