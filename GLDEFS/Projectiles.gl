@@ -41,7 +41,7 @@ pulselight PlasmaExplosion
     color 0.5 0.5 1.0
     size 0
     secondarySize 25
-    interval 0.75
+    interval 0.4
 	attenuate 1
 } 
 
