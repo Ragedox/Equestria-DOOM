@@ -7,15 +7,14 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		
 		Health 3000;
 		
-		Height 150; Radius 64;
+		Height 150; Radius 75;
 		Speed 14;
 		Scale 1.5;
 		
 		Mass 1000;
 		
+		Species "Mastermind";
 		PainChance 40;
-		PainChance "BFGball", 128; PainChance "BFGSplash", 10;
-		DamageFactor "BFGSplash", 0.25;
 		
 		+BOSS +E3M8BOSS +E4M8BOSS
 		+MISSILEMORE
@@ -24,12 +23,19 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		+DONTMORPH
 		+BOSSDEATH
 		-AVOIDMELEE
+		-SHOOTABLE
+		+VULNERABLE
 		
 		SeeSound "spider/sight";
 		AttackSound "spider/attack";
 		PainSound "spider/pain";
 		DeathSound "spider/death";
 		ActiveSound "spider/active";
+	}
+	
+	override void PostBeginPlay()
+	{
+		A_SpawnItemEx("Equestria_MastermindHitbox",0,0,0,0,0,0,0,SXF_SETMASTER);
 	}
 	States
 	{
@@ -51,7 +57,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		SPID GH 3 Bright
 		{
 			A_FaceTarget(90, 270, 0, FAF_MIDDLE);
-			A_CustomBulletAttack(30, 25, 4, random(1,5)*2, "ShotgunPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_CustomBulletAttack(30, 25, 4, random(1,5)*2, "Equestria_MastermindPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
 		}
 		SPID H 1 A_SpidRefire();
 		Goto Missile+1;
@@ -116,3 +122,91 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		Stop;
 	}
 }
+
+Class Equestria_MastermindPuff : ShotgunPuff
+{
+	Default
+	{
+		+ALLOWTHRUFLAGS
+		+THRUSPECIES
+		+ALLOWTHRUBITS
+        ThruBits 1;
+	}
+}
+
+Class Equestria_MastermindHitbox : Actor
+{
+	Default
+	{
+		Health 	0x7FFFFFFF;
+		Mass 	0x7FFFFFFF;
+		Radius 50; Height 100;
+		
+		PainThreshold 5;
+		PainChance 40;
+		PainChance "BFGball", 128; PainChance "BFGSplash", 10;
+		DamageFactor "BFGSplash", 0.25;
+		
+		BloodType "Equestria_BloodEnemies", "Equestria_BloodSplatter", "EquestriaBloodAxe";
+		
+		Species "Mastermind";
+		ThruBits 1;
+		+SHOOTABLE
+		+NODAMAGETHRUST 
+		+NORADIUSDMG 
+		+NOGRAVITY
+		+NEVERTARGET
+		+MTHRUSPECIES
+		+THRUSPECIES
+		+CAUSEPAIN
+		+INVISIBLE
+	}
+	int lastHealth;
+	double hsfactor;
+	
+	override void BeginPlay() 
+		{
+		self.lastHealth = self.health;
+		super.BeginPlay();
+		}	
+		
+	override void Tick()
+	{
+		if(!master)
+			Destroy();
+			
+		Super.Tick();
+			
+		if(master)
+		{						
+			A_Warp(AAPTR_MASTER,0,0,50,master.angle,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
+			
+			if(master.health < 1)
+				{ Destroy(); } 
+		
+			if(self.health < self.lastHealth)
+			{ 
+				A_DamageMaster(int(self.lastHealth - self.Health),"None"); self.lasthealth = self.health;
+			}
+		}
+	}
+	
+	override bool CanCollideWith(actor other, bool passive)
+		{
+		// if an incoming projectile is from the Hitbox's master, ignore it.
+ 		if((other.target && (other.target == master)) || (other == master))
+			return false;
+			
+		return super.CanCollideWith(other, passive);
+		}
+	
+	States
+		{
+		Spawn:
+			AMRK A 1;
+			loop;
+		Death:
+			TNT1 A 1;
+			stop;
+		}
+	}
