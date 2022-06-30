@@ -1,7 +1,7 @@
 Class DebrisCore : Actor abstract
 {
 	int rollspd;
-
+	bool bTicked;
 	property RollSpeed: rollspd;
 	
 	//string rollstt;
@@ -34,18 +34,32 @@ Class DebrisCore : Actor abstract
 	}
 	override void Tick()
 	{
-		if (InStateSequence(CurState, ResolveState("Roll")) && !isFrozen())
-			A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
-		
 		Super.Tick();
 		
-		/*if (vel.x == 0 && vel.y == 0 && vel.z == 0)
-			return;*/
+		if (vel.x == 0 && vel.y == 0 && vel.z == 0 && bTicked)
+		{	bNOINTERACTION = 1; bRELATIVETOFLOOR = 1;
+			if (GetCVar("CV_DEBRISQUALITY") == 1)
+				A_FadeOut(0.1, FTF_REMOVE);
+		}
+		
+		else
+		{
+			if (isFrozen())
+				return;
+				
+			if (InStateSequence(CurState, ResolveState("Roll")))
+				A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
+			
+			if (!bTicked)
+				bTicked = 1;
+		}
 	}
 	override void BeginPlay()
 	{
 		if (GetCVar("CV_DEBRISQUALITY") == 0)
 			Destroy();
+			
+		Super.BeginPlay();
 	}
 	
 	States
@@ -53,9 +67,6 @@ Class DebrisCore : Actor abstract
 	Death:
 		#### # 0
 		{
-			if (GetCVar("CV_DEBRISQUALITY") == 1)
-				Destroy();
-				
 			bNOINTERACTION = 1; bRELATIVETOFLOOR = 1;
 			
 			return ResolveState("Crash");
