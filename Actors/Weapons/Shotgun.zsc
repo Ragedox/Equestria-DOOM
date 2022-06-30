@@ -40,7 +40,7 @@ Class EquestriaShotgun : EquestriaDoomWeapon replaces Shotgun
 		Wait;
 		
 	Deselect:
-		SHTG A 0 A_JumpIf(health <= 0, "DeathCheck");
+		#### # 0 A_JumpIf(health <= 0, "DeathCheck");
 		SHTG A 1 A_Lower();
 		Wait;
 	
@@ -54,7 +54,7 @@ Class EquestriaShotgun : EquestriaDoomWeapon replaces Shotgun
 			invoker.previousangle = angle;
 			invoker.previouspitch = pitch;
 			
-			A_FireBullets (6, 1, 8, 5, "Player_ShotgunPuff", 1, 0, "BulletTracer", -8);
+			A_FireBullets (6, 1, 8, 5, "Player_ShotgunPuff", 1, 0, "ShotgunTracer", -8);
 			A_GunFlash();
 
 			if (GetCVAR("CamRecoilToggle") == true)
