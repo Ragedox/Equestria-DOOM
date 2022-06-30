@@ -72,7 +72,7 @@ Class EquestriaSuperShotgun : EquestriaDoomWeapon replaces SuperShotgun
 	Fire1:
 		SHT2 A 4
 		{
-			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
+			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "ShotgunTracer", -8);
 			A_GunFlash();
 			A_WeaponOffset(-3, 5, WOF_ADD);
 			
@@ -87,7 +87,7 @@ Class EquestriaSuperShotgun : EquestriaDoomWeapon replaces SuperShotgun
 	Fire2:
 		SHT2 A 4
 		{
-			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "BulletTracer", -8);
+			A_FireBullets (12, 8, 20, 5, "Player_SuperShotgunPuff", 1, 0, "ShotgunTracer", -8);
 			A_GunFlash();
 			A_WeaponOffset(3, 5, WOF_ADD);
 			
