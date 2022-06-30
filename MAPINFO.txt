@@ -94,7 +94,7 @@ skill baby
 	DamageFactor = 0.5
 	EasyBossBrain
 
-	Name = "$BABYSKILL"
+	Name = "$MN_BABYSKILL"
 	Key = "1"
 }
 
@@ -103,7 +103,7 @@ skill easy
 	SpawnFilter = easy
 
 	EasyBossBrain
-	Name = "$EASYSKILL"
+	Name = "$MN_EASYSKILL"
 	Key = "2"
 }
 
@@ -112,7 +112,7 @@ skill normal
 	SpawnFilter = normal
 
 	Key = "3"
-	Name = "$NORMALSKILL"
+	Name = "$MN_NORMALSKILL"
 	DefaultSkill
 }
 
@@ -120,7 +120,7 @@ skill hard
 {
 	SpawnFilter = hard
 
-	Name = "$HARDSKILL"
+	Name = "$MN_HARDSKILL"
 	Key = "4"
 }
 
@@ -128,7 +128,7 @@ skill hardplus
 {
 	SpawnFilter = hard
 
-	Name = "$PLUSSKILL"
+	Name = "$MN_PLUSSKILL"
 	Key = "5"
 	FastMonsters
 }
