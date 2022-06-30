@@ -8,6 +8,7 @@ Class EquestriaGoreProps : Actor abstract
 		bSPRITEFLIP = randompick(0,1);
 		A_SpawnItemEx("EquestriaSmallBloodPool",0,0,0,0,0,0,random(0, 359));
 		//EQ_RandomColor();
+		Super.BeginPlay();
 	}
 	
 	void EQ_RandomColor()
