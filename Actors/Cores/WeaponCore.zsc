@@ -20,7 +20,7 @@ Class EquestriaDoomWeapon : Weapon abstract
 		Wait;
 		
 	DeathCheck:
-		TNT1 A 1 offset(0, 32)
+		TNT1 A 0 offset(0, 32)
 		{
 			A_OverlayFlags(1, PSPF_PLAYERTRANSLATED | PSPF_ADDBOB, 1);
 			A_ClearOverlays(2, 1000, false);
@@ -292,8 +292,6 @@ Class BulletTracer : FastProjectile
 {
 	Default
 	{
-		Projectile;
-		
 		+DONTSPLASH
 		+NOEXTREMEDEATH
 		+NOBLOOD
@@ -307,10 +305,21 @@ Class BulletTracer : FastProjectile
 		
 		Height 4; Radius 2;
 	}
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
 		if(GetCVar("CV_BULLETTRACER")==0)
 			Destroy();
+			
+		if(GetCVar("CV_SLOWTRACER"))
+		{
+			speed = 128;
+			
+			//if(GetCVar("CV_TESTING"))
+			//	A_AttachLight("FiringLight", DynamicLight.PointLight, "Orange", 32, 32,
+			//			DYNAMICLIGHT.LF_SPOT, (0,0,0),0,50,150,pitch);
+		}
+			
+		Super.BeginPlay();
 	}
 	States
 	{
@@ -325,6 +334,10 @@ Class BulletTracer : FastProjectile
 	}
 }
 
+Class ShotgunTracer : BulletTracer
+{
+	Default { Translation "164:167=232:235", "160:163=16:31", "224:231=168:175"; }
+}
 Class Test_DeathCommon : EquestriaDoomWeapon
 {
 	States
@@ -336,6 +349,8 @@ Class Test_DeathCommon : EquestriaDoomWeapon
 		TNT1 A 1 A_Raise();
 		Wait;
 	Ready:
+		DTH1 A -1 A_WeaponReady();
+		Loop;
 	Fire:
 		DTH1 ABCDE random(4, 8);
 		Loop;
