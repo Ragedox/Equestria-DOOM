@@ -44,7 +44,7 @@ Class BigSplashChunk : CoreSplashChunk
 	}
 }
 
-Class CoreSplashBase : Actor
+Class CoreSplashBase : DEParticles
 {
 	Default
 	{
@@ -62,7 +62,7 @@ Class CoreSplashBase : Actor
 	}
 }
 
-Class SplashSmoke : Actor
+Class SplashSmoke : DEParticles
 {
 	Default
 	{
