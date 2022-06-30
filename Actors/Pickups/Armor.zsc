@@ -5,7 +5,7 @@ Class EquestriaSpiritualArmor : BasicArmorBonus replaces ArmorBonus
 	//$Title Spiritual Armor (1)
 		Radius 20; Height 16;
 		Inventory.Pickupmessage "$GOTARMBONUS";
-		Inventory.Icon "BON2A0";
+		Inventory.Icon "AMRBA0";
 		Armor.Savepercent 33.335;
 		Armor.Saveamount 1;
 		Armor.Maxsaveamount 200;
@@ -26,6 +26,7 @@ Class EquestriaHelmetArmor : EquestriaSpiritualArmor
 	{
 	//$Title Helmet Armor (1)
 	//$Category Health and Armor
+		Inventory.Pickupmessage "$OTARMBONUS2";
 	}
 	States
 	{
