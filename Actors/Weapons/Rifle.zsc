@@ -58,7 +58,7 @@ Class EquestriaRifle : EquestriaDoomWeapon
 			A_FireBullets(1, 2, 1, 5, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash();
 		
-			A_WeaponOffset(0, 34, WOF_INTERPOLATE | WOF_KEEPX);
+			A_WeaponOffset(random(-1,1), 34, WOF_INTERPOLATE | WOF_KEEPX);
 			
 			A_FireProjectile("BulletCasingSpawn",0,0,0,-25, FPF_NOAUTOAIM);
 			
@@ -78,7 +78,7 @@ Class EquestriaRifle : EquestriaDoomWeapon
 		RFLE B 2
 		{
 			A_RemoveLight("FiringLight");
-			A_WeaponOffset(0, random(36, 38), WOF_INTERPOLATE | WOF_KEEPX);
+			A_WeaponOffset(random(-1,1), random(36, 38), WOF_INTERPOLATE | WOF_KEEPX);
 		}
 		RFLE A 0
 		{
