@@ -72,8 +72,6 @@ Class PossessedHacker : DoomEquestriaMonster
 		Goto See;
 	
 	Death:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
 		TECH H 5;
 		TECH I 5 
 		{
@@ -107,7 +105,7 @@ Class PossessedHacker : DoomEquestriaMonster
         Stop;
 	
 	Crush:
-		#### V -1 { bSPRITEFLIP = randompick(0, 1); }
+		#### V -1;
 		Stop;
 		
 	Death.Berserk:
@@ -215,8 +213,6 @@ Class DemonNirik : PossessedHacker
 		Goto See;
 	
 	Death:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
 		TECH H 5;
 		TECH I 5 
 		{
@@ -251,15 +247,11 @@ Class DemonNirik : PossessedHacker
         Stop;
 	
 	Crush:
-		#### V -1 { bSPRITEFLIP = randompick(0, 1); }
+		#### V -1;
 		Stop;
 		
 	Raise:
-		TNT1 A 8
-		{
-			A_SpawnItem("ArchvileFire",0);
-			bSPRITEFLIP = 0;
-		}
+		TNT1 A 8 A_SpawnItem("ArchvileFire",0);
 		Goto See;
 	}
 }

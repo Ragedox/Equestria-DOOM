@@ -63,7 +63,7 @@ Class EquestriaArchvile : DoomEquestriaMonster replaces Archvile
 	
 	XDeath:
 	Death:
-		VILE Q 7 { bSPRITEFLIP = randompick(0, 1); }
+		VILE Q 7;
 		VILE R 7 A_Scream();
 		VILE S 7 A_NoBlocking();
 		VILE TUVWXY 7;

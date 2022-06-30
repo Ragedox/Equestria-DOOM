@@ -49,8 +49,6 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		Goto See;
 		
 	Death:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
-		
 		BOSD A 8;
 		BOSD B 8 A_Scream();
 		BOSD C 8;
@@ -61,13 +59,11 @@ Class EquestriaBaronofHell : DoomEquestriaMonster replaces BaronOfHell
 		
 	XDeath:
 	Crush:
-		BOSD M -1 { bSPRITEFLIP = randompick(0, 1); A_BossDeath(); }
+		BOSD M -1 A_BossDeath();
 		Stop;
 		
 	Raise:
-		BOSS O 8;
-		BOSS NMLKJI  8;
-		"####" "#" 0 { bSPRITEFLIP = 0; }
+		BOSS ONMLKJI  8;
 		Goto See;
 	}
 }
@@ -117,8 +113,6 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		Goto See;
 		
 	Death:
-		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
-		
 		BOS2 I 8;
 		BOS2 J 8 A_Scream();
 		BOS2 K 8;
@@ -129,14 +123,11 @@ Class EquestriaHellKnight : EquestriaBaronofHell replaces HellKnight
 		
 	XDeath:
 	Crush:
-		BOS2 X -1 { bSPRITEFLIP = randompick(0, 1); }
+		BOS2 X -1;
 		Stop;
 		
 	Raise:
-		BOS2 O 8;
-		BOS2 NMLKJI  8;
-		
-		#### # 0 { bSPRITEFLIP = 0; }
+		BOS2 ONMLKJI  8;
 		Goto See;
 	}
 }

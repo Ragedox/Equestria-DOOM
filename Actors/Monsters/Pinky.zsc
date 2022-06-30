@@ -51,7 +51,6 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 	Death.SuperShotgun:
 		#### # 0 A_JumpIfCloser(radius + 32, "XDeath");
 	Death:
-		"####" "#" 0 { bSPRITEFLIP = randompick(0, 1); }
 		SARG I 8;
 		SARG J 8 A_Scream();
 		SARG K 6 A_Recoil(4);
@@ -69,7 +68,6 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 		
 	Raise:
 		SARG NMLKJI 5;
-		"####" "#" 0 { bSPRITEFLIP = 0; }
 		Goto See;
 	}
 }
