@@ -3,16 +3,17 @@
 MAINCHARACTER = "Shainer";
 
 MN_BABYSKILL =		"I'm a Little Pony";
-MN_EASYSKILL = 	"Hey, Not Too Rough";
+MN_EASYSKILL = 		"Hey, Not Too Rough";
 MN_NORMALSKILL = 	"Hurt Me Plenty";
-MN_HARDSKILL = 	"Ultra-Violence";
-MN_PLUSSKILL = 	"Instant-Violence";
-MN_NMARE =		"Graphics/M_NMREEN";
+MN_HARDSKILL = 		"Ultra-Violence";
+MN_PLUSSKILL = 		"Instant-Violence";
+MN_NMARE =			"Graphics/M_NMREEN";
 
 QUITMSG9 = 		"Don't go now, there's a\nKirinware waiting at your computer!";
 QUITMSG13 = 	"just leave.\nwhen you come back, there will be a\nnaughty bat waiting for you!";
 
 OTARMBONUS = 	"Picked up a Spiritual Armor.";
+OTARMBONUS2 = 	"Picked up a Used Helmet.";
 GOTARMOR = 		"Picked up a Security Armor.";
 GOTMEGA = 		"Picked up a Combat Armor.";
 
@@ -79,6 +80,7 @@ QUITMSG9 = 		"Não vá agora, tem um vírus daquela Kirin te esperando no seu de
 QUITMSG13 = 	"Só vá embora.\nQuando você voltar, vai ter uma \nmorcega safada te esperando!";
 
 OTARMBONUS = 	"Pegou uma Armadura Espiritual.";
+OTARMBONUS2 = 	"Pegou um Capacete Usado.";
 GOTARMOR = 		"Pegou uma Armadura de Segurança.";
 GOTMEGA = 		"Pegou uma Armadura de Combate.";
 
@@ -86,3 +88,16 @@ BERSERKFIST = 	"Cascos Fortalecidos";
 GOTBERSERK = 	"Berserk! Vamos esmurrar alguns demônios!";
 
 GOTSTIM = 		"Pegou um Estimulante.";
+
+FN_BARONBROS = "Irmãos Barão"; FN_NIGHTMARE = "Égua da Noite";
+FN_CYBER = "Tirano";
+
+FN_LOST = "Alma Perdida";
+FN_UNICORNSOUL = "Alma Perdida de Unicórnio";
+FN_KIRINSOUL = "Alma Perdida de Qilin";
+
+OB_HACKER = "%o transformou-se em pó pela Qilin Lider.";
+OB_DEMONIRIK = "%o foi mordido por um(a) Qilin demoniaco(a).";
+
+FN_HACKER = "Hacker Demoniaco"; FN_DEMONIRIK = "Qilin demoniaco";
+FN_TRAINER = "Treinadora Demoniaca";

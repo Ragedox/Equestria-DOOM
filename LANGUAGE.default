@@ -18,12 +18,12 @@ QUITMSG = 		"Are you sure you want to quit this\ngreat mod?";
 QUITMSG10 = 	"Get out of here and go back to your\ninfantile cartoon.";
 
 QUITGAME1 = 	"I'm sorry if this mod is too Brony for you.\nI am serious.";
-QUITGAME2 = 	"I don't want this mod to support \nBrutal Doom";
+QUITGAME2 = 	"I don't want this mod to support \nBrutal Doom.";
 QUITGAME3 = 	"You're not going to do what I'm thinking\nare you?";
-QUITGAME4 = 	"Maybe you felt hurt by these totally\nserious, heavy and mean messages\nplease get the hell out of here.";
+QUITGAME4 = 	"Maybe you felt hurt by these totally\nserious, heavy and mean messages\nplease get the hell out of here!";
 QUITGAME5 =		"Don't quit now!\nWe're still spending your time!";
 QUITGAME6 =		"you quit and i'll jizz\nin your cystholes! :3";
-QUITGAME7 =		"Hey!\nIf you press N,\nWe will say 'fuck' in the game!";
+QUITGAME7 =		"Hey!\nIf you press N,\nWe will fuck in the game!";
 
 LOWHEALTH = 	"LOW HEALTH";
 
@@ -49,5 +49,13 @@ MNU_CHOOSESKILL = "Nível de Dificuldade:";
 QUITMSG = "Você tem certeza que quer sair deste ótimo mod?";
 QUITMSG7 = "Vai, pode ir embora. Tô nem aí.";
 QUITMSG10 = "Vaza e volta pro teu\ndesenhinho infantil";
+
+QUITGAME1 = 	"Desculpe se este mod é muito 'Brony' para você.\nEstou falando sério.";
+QUITGAME2 = 	"Eu não quero que este mod suporte \nBrutal Doom";
+QUITGAME3 = 	"Você não vai fazer o que estou pensando,\nné?";
+QUITGAME4 = 	"Talvez você se magoou com estas\n mensagens totalemte sérias, pesadas e malvadas.\nPor favor, some daqui!";
+QUITGAME5 =		"Não saia agora!\nNós ainda estamos gastando o seu tempo!";
+QUITGAME6 =		"Você desiste e\neu vou gozar em seus cistos! :3";
+QUITGAME7 =		"Ei!\nSe você apertar N, nós iremos foder no jogo!";
 
 OB_WOLFSS = "%o conheceu um amante da Aryanne";
