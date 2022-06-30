@@ -5,6 +5,9 @@ Class TitleMapProps : Actor
 		Speed 0;
 		+NOGRAVITY; +FLOAT; +NOINTERACTION;
 	}
+	
+	override void Tick()
+	{}
 }
 
 Class TheHorse : TitleMapProps
