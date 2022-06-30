@@ -309,14 +309,44 @@ Class EquestriaBurningBarrel : BurningBarrel replaces BurningBarrel
 	
 	override void BeginPlay()
 	{
+		A_SpawnItem("EquestriaBurningBarrel_Fire");
 		A_AttachLight("Light", DynamicLight.RandomFlickerLight, "ffff55", 75, 80,
 			DYNAMICLIGHT.LF_ATTENUATE | DYNAMICLIGHT.LF_SPOT, (0,0,16), 0.01, 50, 25, 90);
+			
+		Super.BeginPlay();
 	}
 	
 	States
 	{
 	Spawn:
-		FCAN ABC random(3,4) BRIGHT;
+		FCAN A -1;
+		Stop;
+	}
+}
+
+Class EquestriaBurningBarrel_Fire : Equestria_Particles
+{
+	bool bTicked;
+	Default
+	{
+		Radius 10; Height 32;
+		-ForceXYBillBoard +NoInteraction +Bright +NoBlockmap +RelativeToFloor +MoveWithSector +NoClip +NoGravity
+		RenderStyle "Add";
+	}
+	
+	override void Tick()
+	{
+		if (!bTicked)
+			Super.Tick();
+			
+		A_Warp(AAPTR_MASTER,0,0,0,0,WARPF_TOFLOOR);
+	}
+		
+	States
+	{
+	Spawn:
+		FCAN BCD random(3,4);
+		#### # 0 A_SpawnItemEx("Smoke",0,0,height+5,0,0,0,0,0,200);
 		Loop;
 	}
 }

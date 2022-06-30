@@ -1,10 +1,10 @@
-class EquestriaTorchFire : Actor
+class EquestriaTorchFire : Equestria_Particles
 {
 	bool bTicked;
 	Default
 	{
 		Radius 0; Height 0;
-		+Randomize +NoInteraction +Bright +NoBlockmap +NoClip +NoGravity
+		-ForceXYBillBoard +NoInteraction +Bright +NoBlockmap +NoClip +NoGravity +RelativeToFloor +MoveWithSector
 		RenderStyle "Add";
 	}
 	
