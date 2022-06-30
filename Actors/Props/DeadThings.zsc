@@ -1,7 +1,7 @@
 class EquestriaDeadMarine : EquestriaGoreProps replaces DeadMarine
 {
 	Default
-	{ //$Title Dead Marine
+	{ //$Title Dead Marines
 	+CORPSE }
 	States
 	{
@@ -18,9 +18,13 @@ class EquestriaDeadMarine : EquestriaGoreProps replaces DeadMarine
 }
 
 Class EquestriaDeadWorkers : EquestriaDeadMarine
-{}
+{
+	Default
+	{ //$Title Dead Workers
+	}
+}
 
-class EquestriaDeadZombieMan : Actor replaces DeadZombieMan
+class EquestriaDeadZombieMan : EquestriaGoreProps replaces DeadZombieMan
 {
 	Default
 	{ //$Title Dead Zombie Man
@@ -35,7 +39,7 @@ class EquestriaDeadZombieMan : Actor replaces DeadZombieMan
 
 // Dead shotgun guy --------------------------------------------------------
 
-class EquestriaDeadShotgunGuy : Actor replaces DeadShotgunGuy
+class EquestriaDeadShotgunGuy : EquestriaGoreProps replaces DeadShotgunGuy
 {
 	Default
 	{ //$Title Dead Shotgun Guy
@@ -65,7 +69,7 @@ Class DeadHacker : Actor
 
 // Dead imp ----------------------------------------------------------------
 
-class EquestriaDeadDoomImp : Actor replaces DeadDoomImp
+class EquestriaDeadDoomImp : EquestriaGoreProps replaces DeadDoomImp
 {
 	Default { //$Title Dead Imp
 	+CORPSE }
@@ -79,7 +83,7 @@ class EquestriaDeadDoomImp : Actor replaces DeadDoomImp
 
 // Dead demon --------------------------------------------------------------
 
-class EquestriaDeadPinky : Actor replaces DeadDemon
+class EquestriaDeadPinky : EquestriaGoreProps replaces DeadDemon
 {
 	Default { //$Title Dead Pinky
 	+CORPSE }
@@ -93,7 +97,7 @@ class EquestriaDeadPinky : Actor replaces DeadDemon
 
 // Dead cacodemon ----------------------------------------------------------
 
-class EquestriaDeadCacodemon : Actor replaces DeadCacodemon
+class EquestriaDeadCacodemon : EquestriaGoreProps replaces DeadCacodemon
 {
 	Default { //$Title Dead Cacodemon
 	+CORPSE }
@@ -105,7 +109,7 @@ class EquestriaDeadCacodemon : Actor replaces DeadCacodemon
 	}
 }
 
-Class EquestriaDeadLostSoul : Actor replaces DeadLostSoul
+Class EquestriaDeadLostSoul : EquestriaGoreProps replaces DeadLostSoul
 {
 	Default
 	{ //$Title Dead Lost Soul
