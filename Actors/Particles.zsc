@@ -8,6 +8,7 @@ Class DEParticles : Actor abstract
 		+Randomize
 		+RollSprite +RollCenter
 		+ForceXYBillboard
+		DistanceCheck "CV_SFXDISTANCE";
 	}
 }
 
