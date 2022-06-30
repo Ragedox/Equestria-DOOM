@@ -1,9 +1,10 @@
 class EquestriaTorchFire : Actor
 {
+	bool bTicked;
 	Default
 	{
 		Radius 0; Height 0;
-		+Randomize +NoInteraction +Bright +NoBlockmap +NoClip +RelativeToFloor +MoveWithSector
+		+Randomize +NoInteraction +Bright +NoBlockmap +NoClip +NoGravity
 		RenderStyle "Add";
 	}
 	
@@ -12,16 +13,36 @@ class EquestriaTorchFire : Actor
 		bSPRITEFLIP = randompick(0,1);
 	}
 	
+	override void Tick()
+	{
+		if (!bTicked)
+			Super.Tick();
+			
+		A_Warp(AAPTR_MASTER,0,0,50,0,WARPF_TOFLOOR);
+	}
 	States
 	{
 	Spawn:
 		TRCH ABCD random(3,4);
-		#### # 0 A_SpawnItemEx("Smoke",0,0,15,0,0,0,0,0,200);
+		#### # 0 A_SpawnItemEx("Smoke",0,0,20,0,0,0,0,0,200);
 		Loop;
 	}
 }
+
+class EquestriaSmallTorchFire : EquestriaTorchFire
+{
+	override void Tick()
+	{
+		if (!bTicked)
+			Super.Tick();
+			
+		A_Warp(AAPTR_MASTER,0,0,25,0,WARPF_TOFLOOR);
+	}
+}
+
 class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 {
+	
 	Default
 	{	//$Sprite SMBTA0
 		Radius 2; Height 37;
@@ -31,7 +52,7 @@ class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 	
 	override void BeginPlay()
 	{
-		A_SpawnItemEx("EquestriaTorchFire",0,0,25,0,0,0,0, SXF_TRANSFERTRANSLATION);
+		A_SpawnItemEx("EquestriaSmallTorchFire",0,0,0,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_SETMASTER);
 	}
 	
 	States
@@ -53,7 +74,7 @@ class EquestriaBlueTorch : Actor replaces BlueTorch
 	
 	override void BeginPlay()
 	{
-		A_SpawnItemEx("EquestriaTorchFire",0,0,50,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_TRANSFERPOINTERS);
+		A_SpawnItemEx("EquestriaTorchFire",0,0,0,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_SETMASTER);
 	}
 	
 	States
@@ -130,6 +151,7 @@ Class EquestriaWallTorch : Actor
 	{
 		A_AttachLight("Light", DynamicLight.RandomFlickerLight, "ffff55", 55, 60,
 			DYNAMICLIGHT.LF_ATTENUATE | DYNAMICLIGHT.LF_SPOT, (0,0,16), 0.01, 125, 150, -90);
+		Super.BeginPlay();
 	}
 	
 	States
