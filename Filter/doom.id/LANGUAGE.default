@@ -2,11 +2,12 @@
 
 MAINCHARACTER = "Shainer";
 
-BABYSKILL =		"I'm a Little Pony";
-EASYSKILL = 	"Hey, Not Too Rough";
-NORMALSKILL = 	"Hurt Me Plenty";
-HARDSKILL = 	"Ultra-Violence";
-PLUSSKILL = 	"Instant-Violence";
+MN_BABYSKILL =		"I'm a Little Pony";
+MN_EASYSKILL = 	"Hey, Not Too Rough";
+MN_NORMALSKILL = 	"Hurt Me Plenty";
+MN_HARDSKILL = 	"Ultra-Violence";
+MN_PLUSSKILL = 	"Instant-Violence";
+MN_NMARE =		"Graphics/M_NMREEN";
 
 QUITMSG9 = 		"Don't go now, there's a\nKirinware waiting at your computer!";
 QUITMSG13 = 	"just leave.\nwhen you come back, there will be a\nnaughty bat waiting for you!";
