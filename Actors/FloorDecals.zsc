@@ -4,7 +4,7 @@ Class Equestria_Decal : Actor
 	
 	Default
 	{
-		Radius 6;
+		Radius 0; Height 0;
 		
 		+NOINTERACTION
 		+DONTSPLASH
@@ -17,6 +17,8 @@ Class Equestria_Decal : Actor
 		
 		+FLATSPRITE
 		+ROLLSPRITE +ROLLCENTER
+		
+		DistanceCheck "CV_SFXDISTANCE";
 		
 		RenderStyle "Shaded"; StencilColor "Black";
 	}
