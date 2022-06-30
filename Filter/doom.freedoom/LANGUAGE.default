@@ -2,11 +2,11 @@
 
 MAINCHARACTER = "Magnum";
 
-BABYSKILL =		"I am a Small Filly!";
-EASYSKILL = 	"Will this hurt?";
-NORMALSKILL = 	"Bring on the pain";
-HARDSKILL = 	"Extreme Carnage";
-PLUSSKILL = 	"Immediate Massacre";
+MN_BABYSKILL =		"I am a Small Filly!";
+MN_EASYSKILL = 	"Will this hurt?";
+MN_NORMALSKILL = 	"Bring on the pain";
+MN_HARDSKILL = 	"Extreme Carnage";
+MN_PLUSSKILL = 	"Immediate Massacre";
 
 GOTRIFLE = 		"You got the Total-Automatic Gun!!";
 
