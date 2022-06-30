@@ -57,7 +57,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		SPID GH 3 Bright
 		{
 			A_FaceTarget(90, 270, 0, FAF_MIDDLE);
-			A_CustomBulletAttack(30, 25, 4, random(1,5)*2, "Equestria_MastermindPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
+			A_CustomBulletAttack(30, 25, 4, random(1,5)*2, "Equestria_MastermindPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "ShotgunTracer");
 		}
 		SPID H 1 A_SpidRefire();
 		Goto Missile+1;
@@ -165,10 +165,10 @@ Class Equestria_MastermindHitbox : Actor
 	double hsfactor;
 	
 	override void BeginPlay() 
-		{
+	{
 		self.lastHealth = self.health;
 		super.BeginPlay();
-		}	
+	}	
 		
 	override void Tick()
 	{
@@ -182,12 +182,10 @@ Class Equestria_MastermindHitbox : Actor
 			A_Warp(AAPTR_MASTER,0,0,50,master.angle,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
 			
 			if(master.health < 1)
-				{ Destroy(); } 
+				Destroy();
 		
 			if(self.health < self.lastHealth)
-			{ 
-				A_DamageMaster(int(self.lastHealth - self.Health),"None"); self.lasthealth = self.health;
-			}
+				A_DamageMaster(int(self.lastHealth - self.Health),"None", DMSS_INFLICTORDMGTYPE ); self.lasthealth = self.health;
 		}
 	}
 	
