@@ -22,6 +22,7 @@ Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 		Species "Couple";
 		
 		Dropitem "EquestriaChaingun";
+		DoomEquestriaMonster.TrainerBuff true;
 	}
 	States
 	{

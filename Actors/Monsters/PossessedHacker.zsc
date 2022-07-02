@@ -29,6 +29,7 @@ Class PossessedHacker : DoomEquestriaMonster
 		DropItem "Cell", 64; //25% Chance of drop Cells
 		
 		MissileType "EquestriaPlasmaBall";
+		DoomEquestriaMonster.TrainerBuff true;
 	}
 	States
 	{

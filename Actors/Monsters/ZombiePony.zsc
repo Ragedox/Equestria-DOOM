@@ -23,6 +23,7 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		ActiveSound "grunt/active";
 	
 		DropItem "EquestriaClip";
+		DoomEquestriaMonster.TrainerBuff true;
 	}
 	
 	/*override void Tick()
@@ -53,17 +54,12 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		Goto See;*/
 		
 	See:
-		#### # 0 A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
-        POSS AABBCCDD 4 A_Chase("Melee", "Missile");
-        Loop;
-		
-	See.Trainer:
-		#### AABBCCDD 4
+        POSS AABBCCDD 4
 		{
-			A_Chase("Melee", "Missile", CHF_FASTCHASE);
-			A_SpawnProjectile("DEWaterSplashChunk", random(32, 56), 0, random (0, 359), CMF_AIMDIRECTION, random (0, -180));
+			EQ_Chase("Melee", "Missile");
+			A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
 		}
-		Goto See;
+        Loop;
 		
 	Missile:
         POSS E 10 A_FaceTarget(180, 270, 0, FAF_MIDDLE);
@@ -75,6 +71,10 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		POSS E 8;
         Goto See;
     
+	See.Trainer:
+		#### AABBCCDD 4 EQ_Chase("Melee", "Missile");
+		Goto See;
+		
 	Pain.Kick:
 		#### # 0 A_Recoil(5);
 	Pain:
