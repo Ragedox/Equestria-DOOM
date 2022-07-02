@@ -93,7 +93,7 @@ Class EquestriaInvulSphere : PowerupGiver replaces InvulnerabilitySphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
-		+CASTSPRITESHADOW
+		//+FORCEXYBILLBOARD
 		
 		+INVENTORY.BIGPOWERUP
 		+INVENTORY.AUTOACTIVATE
@@ -129,7 +129,7 @@ Class EquestriaSoulSphere : CustomInventory replaces Soulsphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
-		+CASTSPRITESHADOW
+		//+FORCEXYBILLBOARD
 		
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
@@ -178,7 +178,7 @@ Class EquestriaMegaSphere : CustomInventory replaces Megasphere
 		+NOGRAVITY
 		+FORCEXYBILLBOARD
 		+RANDOMIZE
-		+CASTSPRITESHADOW
+		//+CASTSPRITESHADOW
 		
 		+INVENTORY.AUTOACTIVATE
 		+INVENTORY.ALWAYSPICKUP
@@ -261,7 +261,7 @@ Class DemonicBible : PowerMorph replaces UnholyBible //Madness Shock, Demon Rune
 	{
 	//$Category "Decoration/Power Ups"
 	//$Title Unholy Bible
-		+ForceXYBillboard
+		+FORCEXYBILLBOARD
 	}
 	States
 	{
