@@ -372,10 +372,10 @@ Class Equestria_Swimming : EquestriaDoomWeapon
 	States
 	{
 	Select:
-		DTH2 AABBCCCDDDD 1 A_Raise();
+		DTH2 ABCCDDD 1 A_Raise();
 		Wait;
 	Deselect:
-		DTH2 DDDDCCCBBAA 1 A_Lower();
+		DTH2 DDDCCBA 1 A_Lower();
 		TNT1 A 0 A_GiveInventory("OutWater", 1);
 		TNT1 A 1;
 		Wait;
