@@ -7,14 +7,16 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		
 		Health 3000;
 		
-		Height 150; Radius 75;
+		Height 150; Radius 128;
 		Speed 14;
 		Scale 1.5;
 		
 		Mass 1000;
 		
-		Species "Mastermind";
+		PainThreshold 5;
 		PainChance 40;
+		PainChance "EquestriaBFGBall", 256; PainChance "EquestriaBFGSplash", 32;
+		DamageFactor "BFGSplash", 0.25;
 		
 		+BOSS +E3M8BOSS +E4M8BOSS
 		+MISSILEMORE
@@ -24,6 +26,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 		+BOSSDEATH
 		-AVOIDMELEE
 		-SHOOTABLE
+		+NONSHOOTABLE
 		+VULNERABLE
 		
 		SeeSound "spider/sight";
@@ -35,8 +38,14 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 	
 	override void PostBeginPlay()
 	{
-		A_SpawnItemEx("Equestria_MastermindHitbox",0,0,0,0,0,0,0,SXF_SETMASTER);
+		A_SpawnItemEx("Equestria_MastermindHitbox",0,0,0,0,0,0,0,SXF_SETMASTER | SXF_NOCHECKPOSITION);
 	}
+	override bool CanCollideWith(actor other, bool passive)
+	{
+		if(other is "PlayerPawn") return false;
+		else return super.CanCollideWith(other, passive);
+	}
+   
 	States
 	{
 	Spawn:
@@ -128,7 +137,6 @@ Class Equestria_MastermindPuff : ShotgunPuff
 	Default
 	{
 		+ALLOWTHRUFLAGS
-		+THRUSPECIES
 		+ALLOWTHRUBITS
         ThruBits 1;
 	}
@@ -144,12 +152,11 @@ Class Equestria_MastermindHitbox : Actor
 		
 		PainThreshold 5;
 		PainChance 40;
-		PainChance "BFGball", 128; PainChance "BFGSplash", 10;
+		PainChance "EquestriaBFGBall", 128; PainChance "EquestriaBFGSplash", 32;
 		DamageFactor "BFGSplash", 0.25;
 		
 		BloodType "Equestria_BloodEnemies", "Equestria_BloodSplatter", "EquestriaBloodAxe";
 		
-		Species "Mastermind";
 		ThruBits 1;
 		+SHOOTABLE
 		+NODAMAGETHRUST 
@@ -160,6 +167,7 @@ Class Equestria_MastermindHitbox : Actor
 		+THRUSPECIES
 		+CAUSEPAIN
 		+INVISIBLE
+		+SOLID
 	}
 	int lastHealth;
 	double hsfactor;
@@ -176,35 +184,32 @@ Class Equestria_MastermindHitbox : Actor
 			Destroy();
 			
 		Super.Tick();
-			
-		if(master)
-		{						
-			A_Warp(AAPTR_MASTER,0,0,50,master.angle,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
-			
-			if(master.health < 1)
-				Destroy();
+								
+		A_Warp(AAPTR_MASTER,0,0,50,master.angle,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
 		
-			if(self.health < self.lastHealth)
-				A_DamageMaster(int(self.lastHealth - self.Health),"None", DMSS_INFLICTORDMGTYPE ); self.lasthealth = self.health;
-		}
+		if(master.health < 1)
+			Destroy();
+		
+		if(self.health < self.lastHealth)
+			A_DamageMaster(int(self.lastHealth - self.Health),"None", DMSS_INFLICTORDMGTYPE ); self.lasthealth = self.health;
 	}
 	
 	override bool CanCollideWith(actor other, bool passive)
-		{
+	{
 		// if an incoming projectile is from the Hitbox's master, ignore it.
  		if((other.target && (other.target == master)) || (other == master))
 			return false;
 			
 		return super.CanCollideWith(other, passive);
-		}
+	}
 	
 	States
-		{
+	{
 		Spawn:
 			AMRK A 1;
 			loop;
 		Death:
 			TNT1 A 1;
 			stop;
-		}
 	}
+}

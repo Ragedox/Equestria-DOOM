@@ -7,7 +7,7 @@ Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 		
 		Health 500;
 		
-		Radius 25; Height 50;
+		Radius 50; Height 50;
 		Mass 500;
 		Speed 12;
 		PainChance 128;
@@ -15,13 +15,25 @@ Class EquestriaArachnotron : DoomEquestriaMonster replaces Arachnotron
 		+FLOORCLIP
 		+BOSSDEATH
 		+MAP07BOSS2
+		+FLOORCLIP
+		+NORADIUSDMG
+		+DONTMORPH
+		+VULNERABLE
 		-AVOIDMELEE
+		-SHOOTABLE
+		+NONSHOOTABLE
 		
 		SeeSound "baby/sight";
 		PainSound "baby/pain";
 		DeathSound "baby/death";
 		ActiveSound "baby/active";
 	}
+	
+	override void PostBeginPlay()
+	{
+		A_SpawnItemEx("Equestria_ArachnotronHitbox",0,0,0,0,0,0,0,SXF_SETMASTER | SXF_NOCHECKPOSITION);
+	}
+	
 	States
 	{
 	Spawn:
@@ -122,5 +134,34 @@ Class AracPlasmaSparkle : PlasmaSparkle
 		PLS2 BBBB 1 A_SetScale(Scale.X + 0.25, Scale.Y + 0.25);
 		PLS2 BBBB 1 A_SetScale(Scale.X - 0.25, Scale.Y - 0.25);
 		Stop;
+	}
+}
+
+Class Equestria_ArachnotronHitbox : Equestria_MastermindHitbox
+{
+	Default
+	{
+		Radius 25; Height 30;
+		
+		PainThreshold 5;
+		PainChance 128;
+		PainChance "EquestriaBFGBall", 128; PainChance "EquestriaBFGSplash", 128;
+		DamageFactor "BFGSplash", 1.0;
+	}
+
+	override void Tick()
+	{
+		if(!master)
+			Destroy();
+			
+		Super.Tick();
+								
+		A_Warp(AAPTR_MASTER,0,0,22,master.angle,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
+			
+		if(master.health < 1)
+			Destroy();
+		
+		if(self.health < self.lastHealth)
+			A_DamageMaster(int(self.lastHealth - self.Health),"None", DMSS_INFLICTORDMGTYPE ); self.lasthealth = self.health;
 	}
 }
