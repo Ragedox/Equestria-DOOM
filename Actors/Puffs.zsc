@@ -115,7 +115,7 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 					A_SpawnItemEx("EQ_Decal_Bullet",0,0,0,0,0,0,0, SXF_ABSOLUTEPOSITION);
 					
 				for (int i = 0; i < 3; i++)
-				{ A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(50, 90)); }
+				{ A_SpawnItemEx("PuffSparkles",0,0,1,frandom(-2,2),frandom(-2,2), frandom(3,8), frandom(0,360), SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION); }
 			}
 			else
 			{	for (int i = 0; i < 3; i++)
@@ -208,9 +208,7 @@ Class ShotgunPuff : EquestriaBulletPuff
 					A_SpawnItemEx("EQ_Decal_Shotgun",0,0,0,0,0,0,0, SXF_ABSOLUTEPOSITION);
 				
 				for (int i = 0; i < 3; i++)
-				{
-					A_SpawnProjectile("PuffSparkles",0,0, frandom(0, 360), CMF_AIMDIRECTION | CMF_BADPITCH, frandom(50, 90));
-				}
+				{ A_SpawnItemEx("PuffSparkles",0,0,1,frandom(-2,2),frandom(-2,2), frandom(3,8), frandom(0,360), SXF_ABSOLUTEANGLE | SXF_ABSOLUTEVELOCITY | SXF_NOCHECKPOSITION); }
 			}
 			else
 			{	for (int i = 0; i < 3; i++)
@@ -250,6 +248,7 @@ Class KickPuff : ShotgunPuff
 	States
 	{
 	
+	Crash:
 	Spawn:
 	Melee:
 		PUFF C 4;
@@ -272,6 +271,7 @@ Class BerserkPuff : KickPuff
 	States
 	{
 	
+	Crash:
 	Spawn:
 	Melee:
 		RSMK A 1 NoDelay
