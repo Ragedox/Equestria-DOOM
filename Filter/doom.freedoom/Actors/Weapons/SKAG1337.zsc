@@ -1,5 +1,9 @@
 Class FreeEquestria_SKAGBall : EquestriaBFGBall replaces EquestriaBFGBall
 {
+	Default
+	{
+		Translation "112:127=192:207";
+	}
 	States
 	{
 	Projectile:
