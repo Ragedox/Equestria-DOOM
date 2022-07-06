@@ -48,7 +48,7 @@ Class DebrisCore : Actor abstract
 				return;
 				
 			if (InStateSequence(CurState, ResolveState("Roll")))
-				A_SetRoll((roll + rollspd), SPF_INTERPOLATE);
+				A_SetRoll(roll + (2*vel.x+vel.y+vel.z));
 			
 			if (!bTicked)
 				bTicked = 1;
