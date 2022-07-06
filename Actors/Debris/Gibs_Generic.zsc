@@ -192,7 +192,7 @@ Class Equestria_Blood : Actor replaces Blood
 		+MOVEWITHSECTOR
 		+ROLLSPRITE +ROLLCENTER
 		
-		DistanceCheck "CV_SFXDISTANCE";
+		DistanceCheck "CV_BLOODDISTANCE";
 		DeathSound "gore/bloodimpact";
 	}
 	
@@ -473,7 +473,7 @@ Class BigGenericGib : GenericGib
 		Loop;
 		
 	Crash:
-		#### B 350;
+		#### B 350 A_SetRoll(0);
 		#### # 0 A_JumpIf(GetCVar("CV_DEBRISQUALITY") == 2, +1);
 		Goto Death;
 		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
@@ -490,7 +490,7 @@ Class BigGibGore2 : BigGenericGib
 		Goto Spawn2;
 	
 	Crash:
-		#### B 350;
+		#### B 350 A_SetRoll(0);
 		#### # 0 A_JumpIf(GetCVar("CV_DEBRISQUALITY") == 2, +1);
 		Goto Death;
 		#### # 1 A_FadeOut(0.1, FTF_REMOVE);
