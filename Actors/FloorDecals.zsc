@@ -1,6 +1,6 @@
 Class Equestria_Decal : Actor
 {
-	bool ticked;
+	bool bTicked;
 	
 	Default
 	{
@@ -13,10 +13,8 @@ Class Equestria_Decal : Actor
 		+NOBLOCKMAP
 		+MOVEWITHSECTOR
 		+RELATIVETOFLOOR
-		+GHOST
 		
 		+FLATSPRITE
-		+ROLLSPRITE +ROLLCENTER
 		
 		DistanceCheck "CV_SFXDISTANCE";
 		
@@ -25,17 +23,17 @@ Class Equestria_Decal : Actor
 	
 	override void Tick()
 	{
-		if (!ticked)
+		if (!bTicked)
 			Super.Tick();
 	}
 	
 	override void PostBeginPlay()
 	{
-		A_SetAngle(0);
-		A_SetRoll(randompick(0, 90, 180, 360));
+		SetXYZ((pos.x,pos.y,FloorZ));
+		A_SetAngle(randompick(0, 90, 180, 360));
 		bSPRITEFLIP = randompick(0,1);
 	}
-	
+
 	States
 	{
 	FadeOut:
