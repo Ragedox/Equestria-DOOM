@@ -19,6 +19,7 @@ Class EquestriaEvilEye : EvilEye replaces EvilEye
 		+FORCEXYBILLBOARD
 		+NOGRAVITY
 		+FLOATBOB
+		+BRIGHT	
 		//-SOLID
 		
 		RenderStyle "Translucent"; Alpha 0;
