@@ -118,7 +118,7 @@ class EquestriaCandelabra : Candelabra replaces Candelabra
 {
 	Default
 	{
-		Radius 10;
+		Radius 2;
 	}
 	States
 	{
