@@ -59,6 +59,7 @@ Class SpookySkull : TitleMapProps
 	{
 		//$Category TitleMap and End Screens
 		+FORCEXYBILLBOARD
+		+FLOATBOB
 	}
 	States
 	{
