@@ -90,7 +90,7 @@ Class EquestriaBulletPuff : Actor replaces BulletPuff
 	Crash:
 		TNT1 A 0
 		{
-			if (abs(pos.z - GetZAt()) <= 5)
+			if (pos.z <= FloorZ)
 			{	
 				string floorname = TexMan.GetName(floorpic);
 				for (int i = 0; i < liquidfloor.size(); i++)
