@@ -29,7 +29,7 @@ $limit world/lavasizzle		4
 $limit world/sludgegloop	4
 
 misc/magic		DSMAGIC
-
+door/keyneed DSDORKEY
 /* Pickups */
 
 pickup/skullkey		dssklatk

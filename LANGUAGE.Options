@@ -42,16 +42,16 @@ OPTVAL_BUILD = 			"Build Engine";
 OPTVAL_SOFTWARE = 		"Original DOOM (Faithful)";
 OPTVAL_VANILLA = 		"Original DOOM (Darker)";
 
-[ptb pt br]
+[pt ptg]
 
 CAMPAIGN =				"Campanha";
 NEWNEWGAME = 			"Novo Jogo";
 MNU_EPISODE = 			"Qual Temporada?";
 
-AUDIOSETTINGS =			"Áudio"
+AUDIOSETTINGS =			"Áudio";
 VIDEOSETTINGS = 		"Vídeo";
 UISETTINGS = 			"Interface";
-CONTROLSETTINGS =		"Customizzar Controles";
+CONTROLSETTINGS =		"Customizar Controles";
 ADVANCEDSETTINGS = 		"Todas as Configurações";
 
 MN_OTP_CAMRECOILTOGGLE = 		"Recuo de camera";

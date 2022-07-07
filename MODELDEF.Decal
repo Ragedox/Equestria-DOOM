@@ -17,8 +17,8 @@ Model EQ_Decal_Rocket
 	Skin 0 "scorch1.png"
 	Scale 1.2 1.2 1.2
 	FrameIndex DCAL c 0 0
-}
-
+}*/
+/*
 Model "PlasmaScorch1"
 {
 	Path "Models"

@@ -9,7 +9,7 @@ STARTUP6 = "Github ===================== Ragedox/DOOM-Equestria ================
 
 WARNING	= 		"WARNING!";
 NOKIDS = 		"This is NOT a children's game!";
-MAYCONTAIN = 	"May contain images and content sensitive\nfor some audiences, such as\nBlood, Gore and Extreme Violence.";
+MAYCONTAIN = 	"This game contain images and content sensitive\nfor some audiences, such as\nBlood, Gore and Extreme Violence.";
 
 FREEDOOMCOMP =	"Hey! FreeDOOM compatibility is still in early progress";
 FREEDOOMCOMP2 =	"Stay tuned for more news and updates!";
@@ -17,11 +17,22 @@ FREEDOOMCOMP2 =	"Stay tuned for more news and updates!";
 QUITMSG = 		"Are you sure you want to quit this\ngreat mod?";
 QUITMSG10 = 	"Get out of here and go back to your\ninfantile cartoon.";
 
-QUITGAME1 = 	"I'm sorry if this mod is too Brony for you.\nI am serious.";
-QUITGAME2 = 	"I don't want this mod to support \nBrutal Doom.";
-QUITGAME3 = 	"You're not going to do what I'm thinking\nare you?";
-QUITGAME4 = 	"Maybe you felt hurt by these totally\nserious, heavy and mean messages\nplease get the hell out of here!";
-QUITGAME5 =		"Don't quit now!\nWe're still spending your time!";
+QUITGAME1 = 	"I'm sorry if this mod is too Brony for you."
+				"\nI am serious.";
+				
+QUITGAME2 = 	"I don't want this mod to support"
+				"\nBrutal Doom.";
+				
+QUITGAME3 = 	"You're not going to do what I'm thinking"
+				"\nare you?";
+				
+QUITGAME4 = 	"Maybe you felt hurt by these totally\n"
+				"serious, heavy and mean messages\n"
+				"please get the hell out of here!";
+				
+QUITGAME5 =		"Don't quit now!\n"
+				"We're still spending your time!";
+				
 QUITGAME6 =		"you quit and i'll jizz\nin your cystholes! :3";
 QUITGAME7 =		"Hey!\nIf you press N,\nWe will fuck in the game!";
 
@@ -35,6 +46,40 @@ OB_WOLFSS = "%o met an Aryanne lover";
 
 WI_FINISHED = "Finished";
 WI_ENTERING = "Entering";
+
+PD_BLUEC =		"You need a\n\cyBlue Key Card\nto open this door";
+PD_REDC =		"You need a\n\caRed Key Card\nto open this door";
+PD_YELLOWC =	"You need a\n\ckYellow Key Card\nto open this door";
+
+PD_BLUES =		"You need a\n\cyBlue Skull Key\nto open this door";
+PD_REDS =		"You need a\n\caRed Skull Key\nto open this door";
+PD_YELLOWS =	"You need a\n\ckYellow Skull Key\nto open this door";
+
+PD_BLUEK =		"You need any\n\cyBlue Key\nto open this door";
+PD_REDK =		"You need any\n\caRed Key\nto open this door";
+PD_YELLOWK =	"You need any\n\ckYellow Key\nto open this door";
+
+PD_ANY =		"You need \cjany Key\nto open this door";
+
+PD_ALL3 =		"You need \cjone key of each color\nto open this door";
+PD_ALL6 =		"You need \cyA\cal\ckl \c-Keys\nto open this door";
+
+PD_BLUECO =		"You need a\n\cyBlue Key Card\nto use this object";
+PD_REDCO =		"You need a\n\caRed Key Card\nto use this object";
+PD_YELLOWCO =	"You need a\n\ckYellow Key Card\nto use this object";
+
+PD_BLUESO =		"You need a\n\cyBlue Skull Key\nto use this object";
+PD_REDSO =		"You need a\n\caRed Skull Key\nto use this object";
+PD_YELLOWSO =	"You need a\n\ckYellow Skull Key\nto use this object";
+
+PD_BLUEO =		"You need any\n\cyBlue Key\nto use this object";
+PD_REDO =		"You need any\n\caRed Key\nto use this object";
+PD_YELLOWO =	"You need any\n\ckYellow Key\nto use this object";
+
+PD_ANYOBJ =		"You need \cjany Key\nto use this object";
+
+PD_ALL3O =		"You need \cjone key of each color\nto use this object";
+PD_ALL6O =		"You need \cyA\cal\ckl \c-Keys\nto use this object";
 
 [ptb pt br]
 
