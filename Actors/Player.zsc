@@ -4,6 +4,7 @@ Class Death_Explosion : InvToken {}
 Class Death_Nukage : InvToken {}
 Class Death_Lava : InvToken {}
 Class Death_Extreme : InvToken {}
+Class OutWater : InvToken {}
 
 Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 {
@@ -48,12 +49,29 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		Player.WeaponSlot 9, "EquestriaBFG9K";*/
 	}
 	
+	override void Tick()
+	{
+		Super.Tick();
+		if(waterlevel > 0 && !FindInventory("OutWater"))
+		{
+			if(GetCVar("DEBUG")) A_Print("In Water");
+			
+			if(!CheckInventory("Equestria_Swimming", 1))
+				GiveInventory("Equestria_Swimming", 1);
+			
+			A_SelectWeapon("Equestria_Swimming");
+		}
+		else if(CheckInventory("OutWater", 1))
+			TakeInventory("Equestria_Swimming", 999);
+			TakeInventory("OutWater", 999);
+	}
+	
 	override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double angle)
 	{
 		int dmg = Super.DamageMobj(inflictor, source, damage, mod, flags, angle);
-		if (dmg > 30)		A_QuakeEx(4,4,4,10,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 2,2,2,0,0,4,4);
-		else if (dmg > 20)	A_QuakeEx(3,3,1,8,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 2,2,2,0,0,3,3);
-		else if (dmg > 10)	A_QuakeEx(2,2,2,6,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,2,2);
+		if (dmg > 30)		A_QuakeEx(4,4,4,24,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 2,2,2,0,0,4,4);
+		else if (dmg > 20)	A_QuakeEx(3,3,1,16,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 2,2,2,0,0,3,3);
+		else if (dmg > 10)	A_QuakeEx(2,2,2,8,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,2,2);
 		else if (dmg > 1)	A_QuakeEx(1,1,1,4,0,1,0,QF_RELATIVE | QF_SCALEDOWN, 1,1,1,0,0,1,1);
 		return dmg;
 	}
@@ -86,6 +104,8 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		TNT1 A 0 A_GiveInventory("Death_Lava", 1);
 		Goto Death;
 	
+	Death.Unicorn:
+		Goto Death.Explosion;
 	Death.Explosion:
 		PLAY H 10 A_GiveInventory("Death_Explosion", 1);
 		PLAY I 10 A_PlayerScream();
