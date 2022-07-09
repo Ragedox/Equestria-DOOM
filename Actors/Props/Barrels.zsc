@@ -150,6 +150,15 @@ Class BarrelDebrisSmoke : EquestriaRocketSmoke
 
 Class AcidBarrel : EquestriaExploBarrel
 {	Default { -NOBLOOD +LOOKALLAROUND BloodColor "green"; BloodType "AcidDrop"; DeathSound "weapons/sshotf"; }
+	
+	override void BeginPlay()
+	{
+		A_AttachLight("Light", DynamicLight.PulseLight, "Green", 16, 18,
+			DYNAMICLIGHT.LF_SPOT | DYNAMICLIGHT.LF_DONTLIGHTSELF | DYNAMICLIGHT.LF_ATTENUATE,
+			(0,0,30), 0.5, 50,100, -90);
+		Super.BeginPlay();
+	}
+			
 	States
 	{
 	Pain:
