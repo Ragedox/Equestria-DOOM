@@ -95,6 +95,7 @@ skill baby
 	EasyBossBrain
 
 	Name = "$MN_BABYSKILL"
+	//PicName = "M_LTPONY"
 	Key = "1"
 }
 
