@@ -177,7 +177,7 @@ Class ShotgunPuff : EquestriaBulletPuff
 {
 	Default
 	{
-		Scale 1;	DamageType "Shotgun";
+		Scale 1.0;	DamageType "Shotgun";
 	}
 	States
 	{
