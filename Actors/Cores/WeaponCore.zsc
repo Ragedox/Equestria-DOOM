@@ -28,15 +28,8 @@ Class EquestriaDoomWeapon : Weapon abstract
 			A_OverlayScale(PSP_WEAPON, 1, 1);
 			A_ZoomFactor(1.0);
 		}
-		TNT1 A 0
-		{
-			if(CheckInventory("Death_Extreme", 1))
-				return ResolveState("Extreme.Death");
-			else if(CheckInventory("Death_Explosion", 1))
-				return ResolveState("Explosion.Death");
-
-			return state(null);
-		}
+		TNT1 A 0 A_JumpIfInventory("Death_Extreme", 1, "Extreme.Death");
+		TNT1 A 0 A_JumpIfInventory("Death_Explosion", 1, "Explosion.Death");
 		Goto Normal.Death;
 	
 	Swimming:
