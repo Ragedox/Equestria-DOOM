@@ -51,8 +51,8 @@ Model "ExplosiveWarning"
 	AngleOffset 90
 	RollOffset 90
 	
-	//Offset 0.8 0 0
-	Offset 24.8 0 0
+	Offset 0.8 0 0
+	//Offset 24.8 0 0
 	FrameIndex FLAT A 0 0
 }
 
@@ -89,8 +89,8 @@ Model "RadiationWarning"
 	AngleOffset 90
 	RollOffset 90
 	
-	//Offset 0.8 0 0
-	Offset 24.8 0 0
+	Offset 0.8 0 0
+	//Offset 24.8 0 0
 	FrameIndex FLAT C 0 0
 }
 
@@ -108,7 +108,7 @@ Model "PoisonWarning"
 	AngleOffset 90
 	RollOffset 90
 	
-	//Offset 0.8 0 0
-	Offset 24.8 0 0
+	Offset 0.8 0 0
+	//Offset 24.8 0 0
 	FrameIndex FLAT D 0 0
 }
