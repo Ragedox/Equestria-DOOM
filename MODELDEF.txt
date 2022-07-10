@@ -70,8 +70,8 @@ Model "VoltageWarning"
 	AngleOffset 90
 	RollOffset 90
 	
-	//Offset 0.8 0 0
-	Offset 24.8 0 0
+	Offset 0.8 0 0
+	//Offset 24.8 0 0
 	FrameIndex FLAT B 0 0
 }
 
