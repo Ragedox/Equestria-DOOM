@@ -52,7 +52,7 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 	override void Tick()
 	{
 		Super.Tick();
-		if(waterlevel > 0 && !FindInventory("OutWater"))
+		if(waterlevel > 0 && !FindInventory("OutWater") && GetCVar("CV_TESTING"))
 		{
 			if(GetCVar("DEBUG")) A_Print("In Water");
 			
