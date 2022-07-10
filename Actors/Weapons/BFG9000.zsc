@@ -236,9 +236,8 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 		}
 		BFE1 BCD 2;
 		BFE1 E 8 A_BFGSpray("EquestriaBFGExtra", 40, 15, 360, 1024, 32, 0, BFGF_MISSILEORIGIN);
-		BFE1 FGHIJ 3;
-		BFE1 K 1 A_FadeOut(0.1);
-		Wait;
+		BFE1 FGHIJK 3;
+		Stop;
 	}
 		
 	override void Tick()
