@@ -42,7 +42,9 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		case 3: A_SetTranslation("Nazi_LimeGreen");		break;
 		case 4: A_SetTranslation("Nazi_Yellow");		break;
 		case 5: A_SetTranslation("Nazi_Orange");		break;
+		case 5: break;
 		}
+		Super.BeginPlay();
 	}
 	States
 	{
@@ -144,4 +146,35 @@ Class SS_Cap : DebrisCore
 		SSWV M -1;
 		Stop;
 	}
+}
+
+Class Beige_SS_Soldier : SS_Soldier
+{
+	override void BeginPlay()
+	{}
+}
+Class White_SS_Soldier : SS_Soldier
+{
+	override void BeginPlay()
+	{ A_SetTranslation("Nazi_White"); }
+}
+Class LightRed_SS_Soldier : SS_Soldier
+{
+	override void BeginPlay()
+	{ A_SetTranslation("Nazi_LightishRed"); }
+}
+Class Lime_SS_Soldier : SS_Soldier
+{
+	override void BeginPlay()
+	{ A_SetTranslation("Nazi_LimeGreen"); }
+}
+Class Yellow_SS_Soldier : SS_Soldier
+{
+	override void BeginPlay()
+	{ A_SetTranslation("Nazi_Yellow"); }
+}
+Class Orange_SS_Soldier : SS_Soldier
+{
+	override void BeginPlay()
+	{ A_SetTranslation("Nazi_Orange"); }
 }
