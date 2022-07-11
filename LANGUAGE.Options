@@ -1,9 +1,10 @@
 [enu default]
 
-CAMPAIGN = "Campaign";
-NEWNEWGAME = "New Game";
-MNU_EPISODE = "Which Season?";
-MN_QUITGAME = "Quit Game?";
+MNU_CAMPAIGN			= "Campaign";
+NEWNEWGAME			= "New Game";
+MNU_EPISODE			= "Which Season?";
+MN_QUITGAME			= "Quit Game?";
+MNU_ACHIEVEMENTS	= "Achievements";
 
 AUDIOSETTINGS =			"Audio";
 SNDMNU_TITLE =			"Audio Settings";

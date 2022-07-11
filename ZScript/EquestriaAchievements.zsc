@@ -1,0 +1,85 @@
+class EQ_Achievements : EventHandler
+{		
+	override void worldThingDied(WorldEvent event)
+	{
+		if (event.thing.bISMONSTER == true)
+		{
+			sa_Achiever.achieve("EQ_FirstKill");
+			
+			if(event.thing.health <= event.thing.SpawnHealth()*0.5*-1)
+				sa_Achiever.achieve("EQ_GibKill");
+				
+			if(event.thing is "EquestriaCyberdemon")
+				sa_Achiever.achieve("EQ_KillTyrant");
+			
+			if(event.thing is "EquestriaSpiderMastermind")
+				sa_Achiever.achieve("EQ_KillMastermind");
+		}
+	}
+}
+
+class EQ_FirstKill : sa_Achievement
+{
+	Default
+	{
+		sa_Achievement.name "$EQ_NAME_FIRSTKILL";
+		sa_Achievement.description "$EQ_DESC_FIRSTKILL";
+		sa_Achievement.borderColor 0xDDDD22;
+		sa_Achievement.boxColor    0xFFFFFF;
+		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
+		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
+	}
+}
+
+class EQ_GibKill : sa_Achievement
+{
+	Default
+	{
+		sa_Achievement.name "$EQ_NAME_GIBKILL";
+		sa_Achievement.description "$EQ_DESC_GIBKILL";
+		sa_Achievement.borderColor 0xDDDD22;
+		sa_Achievement.boxColor    0xFF0000;
+		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
+		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
+	}
+}
+
+class EQ_KillTyrant : sa_Achievement
+{
+	Default
+	{
+		sa_Achievement.name "$EQ_NAME_CYBERDEMON";
+		sa_Achievement.description "$EQ_DESC_CYBERDEMON";
+		sa_Achievement.borderColor 0xDDDD22;
+		sa_Achievement.boxColor    0xFF0000;
+		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
+		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
+	}
+}
+
+class EQ_KillMastermind : sa_Achievement
+{
+	Default
+	{
+		sa_Achievement.name "$EQ_NAME_MASTERMIND";
+		sa_Achievement.description "$EQ_DESC_MASTERMIND";
+		sa_Achievement.borderColor 0xDDDD22;
+		sa_Achievement.boxColor    0xFF0000;
+		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
+		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
+	}
+}
+
+class EQ_UnknownMansion : sa_Achievement
+{
+	Default
+	{
+		sa_Achievement.title "$EQ_TITLE_SECRETA";
+		sa_Achievement.name "$EQ_NAME_SECRETA";
+		sa_Achievement.description "$EQ_DESC_SECRETA";
+		sa_Achievement.borderColor 0x000000;
+		sa_Achievement.boxColor    0xff00ff;
+		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
+		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
+	}
+}

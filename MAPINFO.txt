@@ -6,7 +6,7 @@ include "MAPINFO/Intermission.txt"
 gameinfo
 {
 	IntermissionMusic = "Music/INTER1.mid"
-	AddEventHandlers = "df_EventHandler"
+	AddEventHandlers = "df_EventHandler", "ia_EventHandler", "EQ_Achievements", "sa_Achiever"
 	DimColor = "00 00 00"
 	DimAmount = 0.5
 	DefaultDropStyle = 2

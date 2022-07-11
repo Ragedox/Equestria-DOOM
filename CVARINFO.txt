@@ -26,3 +26,11 @@ server int CV_DEBRISQUALITY = 2;
 server bool CV_TESTING = false;
 server bool CV_SLOWTRACER = false;
 server bool CV_DEATHFLIP = true;
+
+user int sa_vertical_position   = 1;
+user int sa_horizontal_position = 1;
+user int sa_animation_type      = 0;
+
+user bool sa_notification_enabled = true;
+
+nosave string sa_achievements = "";

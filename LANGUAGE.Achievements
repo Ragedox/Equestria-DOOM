@@ -1,0 +1,45 @@
+[enu default]
+
+// Default values //////////////////////////////////////////////////////////////
+
+SA_TITLE       = "Achievement Unlocked!";
+SA_NAME        = "You did something.";
+SA_DESCRIPTION = "Explained something!";
+SA_PROGRESS    = "Achievement Progress: ";
+
+// Options menu ////////////////////////////////////////////////////////////////
+
+SA_MENU_TITLE = "Stupid Achievements Options";
+SA_HORIZONTAL = "Horizontal position";
+SA_VERTICAL   = "Vertical position";
+SA_ANIMATION  = "Animation type";
+SA_LEFT       = "Left";
+SA_RIGHT      = "Right";
+SA_TOP        = "Top";
+SA_BOTTOM     = "Bottom";
+SA_CLEAR      = "Clear achievements";
+SA_TEST       = "Show test achievement";
+
+SA_NOTIFY           = "Notifications";
+SA_SLIDE_VERTICAL   = "Slide vertically";
+SA_SLIDE_HORIZONTAL = "Slide horizontally";
+SA_FADE_IN_OUT      = "Fade in/fade out";
+SA_DISABLED         = "Disabled";
+
+SA_ACHIEVEMENTS   = "Achievements";
+SA_LOCKED         = "Locked";
+SA_UNLOCKED       = "Unlocked";
+SA_LOCKED_TITLE   = "Locked Achievements";
+SA_UNLOCKED_TITLE = "Unlocked Achievements";
+
+// Achievements ////////////////////////////////////////////////////////////////
+
+EQ_NAME_FIRSTKILL	=	"The Beginning of Friendship";
+	EQ_DESC_FIRSTKILL	=	"Kill your first Enemy";
+	
+EQ_NAME_GIBKILL	=	"Bloody Pinata!";
+	EQ_DESC_GIBKILL	=	"Gib a Enemy";
+
+EQ_TITLE_SECRETA	=	"Why did you do this?";
+	EQ_NAME_SECRETA	=	"The Unknown Mansion...";
+		EQ_DESC_SECRETA	=	"Enter Rouse's magazine";

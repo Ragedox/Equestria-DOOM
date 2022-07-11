@@ -85,6 +85,8 @@ DOOM Official Widescreen assets : https://bethesda.net/en/game/doom-widescreen-m
 
 Universal mirrored deaths : https://forum.zdoom.org/viewtopic.php?f=43&t=66117
 
+Stupid Achievements : https://forum.zdoom.org/viewtopic.php?f=105&t=68366
+
 = Other Games =
 
 Unused DOOM files

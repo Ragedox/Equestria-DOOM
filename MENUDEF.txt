@@ -3,6 +3,18 @@ DefaultOptionMenu
 	Class "Equestria_OptionMenu"
 }
 
+AddOptionMenu "MiscOptions"
+{
+	StaticText ""
+	StaticText "Achievements"
+	
+	StaticText ""
+	Command "$SA_TEST", sa_test
+
+	StaticText ""
+	SafeCommand "$SA_CLEAR", sa_clear_achievements
+}
+
 ListMenu "MainMenu"
 {
 	//Class "Equestria_ListMenu"
@@ -14,21 +26,25 @@ ListMenu "MainMenu"
 	StaticPatchCentered 160, -40, "M_DOOM"
 
 	//Original code by Jimmy in ZDoom forums
-	StaticTextCentered 160, 75, "$CAMPAIGN"
+	StaticTextCentered 160, 75, "$MNU_CAMPAIGN"
 	StaticTextCentered 160, 100, "$MNU_OPTIONS"
 	//StaticPatchCentered 75, 128, "Notlog"
 	//StaticTextCentered 160, 125, "Bethesda.net" Why not?
-	StaticTextCentered 160, 125, "$MNU_INFO"
-	StaticTextCentered 160, 150, "$MNU_QUITGAME"
+	StaticTextCentered 160, 125, "$SA_ACHIEVEMENTS"
+	//StaticPatchCentered 70, 128, "Notlog"
+	StaticTextCentered 160, 150, "$MNU_INFO"
+	StaticTextCentered 160, 175, "$MNU_QUITGAME"
 
 	Linespacing 25
 	Position 110, 75
 	PatchItem "TNT1A0",	"1", "PlayMenu"
 	Position 115, 100
 	PatchItem "TNT1A0",	"2", "EquestriaOptions"
-	Position 135, 125
+	Position 80, 125
+	PatchItem "TNT1A0",	"3", "sa_Options"
+	Position 135, 150
 	PatchItem "TNT1A0",	"3", "ReadThisMenu"
-	Position 105, 150
+	Position 105, 175
 	PatchItem "TNT1A0",	"4", "QuitMenu"
 	
 	/*Dumb old note
@@ -74,8 +90,8 @@ ListMenu "EquestriaOptions"
 
 	StaticTextCentered 160, 25,		"$AUDIOSETTINGS"
 	StaticTextCentered 160, 50,		"$VIDEOSETTINGS"
-	StaticTextCentered 160, 75,	"$UISETTINGS"
-	StaticTextCentered 160, 100,		"$MISCSETUP"
+	StaticTextCentered 160, 75,		"$UISETTINGS"
+	StaticTextCentered 160, 100,	"$MISCSETUP"
 	StaticTextCentered 160, 125,	"$CONTROLSETTINGS"
 	StaticTextCentered 160, 150,	"$ADVANCEDSETTINGS"
 	
@@ -152,6 +168,36 @@ AddListMenu "LoadGameMenu"
 	Position 80,20
 	Class "Equestria_LoadMenu"
 	AnimatedTransition
+}
+
+ListMenu sa_Options
+{
+	Size "OptClean"
+	Class "Equestria_MenuBackground2"
+	AnimatedTransition
+	
+	StaticTextCentered 160, 20,		"$SA_ACHIEVEMENTS"
+
+	StaticTextCentered 160, 75,		"$SA_UNLOCKED"
+	StaticTextCentered 160, 100,		"$SA_LOCKED"
+	
+	Linespacing 25
+	Position 100, 75
+	PatchItem "TNT1A0",	"1",	"sa_UnlockedAchievements"
+	Position 120, 100
+	PatchItem "TNT1A0",	"2",	"sa_LockedAchievements"
+}
+
+OptionMenu sa_LockedAchievements
+{
+	Class "sa_LockedAchievements"
+	Title "$SA_LOCKED_TITLE"
+}
+
+OptionMenu sa_UnlockedAchievements
+{
+	Class "sa_UnlockedAchievements"
+	Title "$SA_UNLOCKED_TITLE"
 }
 
 OptionMenu "VideoSettings"
