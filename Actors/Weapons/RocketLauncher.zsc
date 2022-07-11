@@ -164,6 +164,7 @@ Class EquestriaRocket : Actor replaces Rocket
 		MISL E 0
 		{
 			EQ_RocketExplosion();
+			A_SpawnItemEx("Equestria_FlatExplosion", 0,0, 70,0,0,0, 90, SXF_ABSOLUTEANGLE);
 			
 			bool liquidfloor;
 			int minzvel, maxzvel;
@@ -262,6 +263,25 @@ Class EquestriaRocketSmoke : Equestria_Trails replaces RocketSmokeTrail
 	}
 }
 
+Class Equestria_FlatExplosion : Actor
+{
+	Default
+	{
+		+NOINTERACTION
+		+FLATSPRITE
+		+NOCLIP
+		Speed 0; YScale 1.2;
+	}
+	States
+	{
+	Spawn:
+		MISL B 6 Bright NoDelay A_SetRoll(angle);
+		MISL C 4 Bright;
+		MISL D 1 A_FadeOut(0.1);
+		Stop;
+	}
+}
+	
 Class EquestriaRocketFire : EQ_FireBallTrail
 {
 	States
