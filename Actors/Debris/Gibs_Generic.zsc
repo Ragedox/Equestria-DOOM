@@ -261,12 +261,14 @@ Class Equestria_Blood : Actor replaces Blood
 		Wait;
 		
 	FlatPool:
-		#### # 0 A_CheckProximity("Null", "Equestria_Blood", 32, 4, CPXF_NOZ | CPXF_CHECKSIGHT);
-		#### # 0 A_Jump(256, 1, 2);
+		#### # 0 A_CheckProximity("Null", "Equestria_Blood", 64, 4);
+		#### # 0 A_Jump(256, 1, 2, 3);
 		Wait;
-		FLAT G -1;
+		FLAT G 0;
 		Goto PoolTimer;
-		FLAT I -1;
+		FLAT I 0;
+		Goto PoolTimer;
+		FLAT J 0;
 		Goto PoolTimer;
 	
 	PoolTimer:
