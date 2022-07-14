@@ -92,9 +92,17 @@ Class Equestria_BloodProp : Actor
 {
 	Default
 	{
+		Height 4; Radius 1.5;
+		Mass 2;
+		Gravity 0.2;
+		
+		+ForceYBillBoard
+		+NOTELEPORT +NOBLOCKMAP
+		+THRUACTORS
 		+MISSILE
-		Height 8; Radius 1.5;
-		Gravity 0.25;
+		
+		DistanceCheck "CV_BLOODDISTANCE";
+		DeathSound "gore/bloodimpact";
 	}
 	States
 	{
@@ -109,11 +117,11 @@ Class Equestria_BloodProp : Actor
 		6, //Lifetime
 		random(4,8), //Size
 		frandom(0,360), //Angle
-		random(-2,2), random(-2,2), 2, //xyz offset
-		random(1,5), random(1,5), random(2,6), //xyz vel
-		-1, -1, -2, //xyz accel
+		random(-2,2), random(-2,2), 1, //xyz offset
+		frandom(1,3), frandom(1,3), frandom(2,6), //xyz vel
+		frandom(-1,1), frandom(-1,1), frandom(-3,-2), //xyz accel
 		1.0, //start alpha
-		-1); //Fadestep
+		0.1); //Fadestep
 		Stop;
 	}
 }
