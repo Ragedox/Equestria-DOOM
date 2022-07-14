@@ -3,7 +3,7 @@
 
 Script "LowHealth" ENTER
 {
-	if (GetActorProperty (0, APROP_HEALTH) <= 50 && !CheckInventory("LowHealthCheck"))
+	if (GetActorProperty (0, APROP_HEALTH) <= 25 && !CheckInventory("LowHealthCheck"))
 	{
 		GiveInventory("LowHealthCheck", 1);
 		
@@ -15,7 +15,7 @@ Script "LowHealth" ENTER
 		
 		HudMessage(l:"LOWHEALTH"; HUDMSG_TYPEON, 99, CR_RED, 1.5, 1.0, 3.5, 0.05, 1.0);
 	}
-	else if (GetActorProperty (0, APROP_HEALTH) > 50 && CheckInventory("LowHealthCheck"))
+	else if (GetActorProperty (0, APROP_HEALTH) > 25 && CheckInventory("LowHealthCheck"))
 	{
 		TakeInventory("LowHealthCheck", 999);
 	}
@@ -36,11 +36,11 @@ script "YouAreHere" enter
 script "CheckClopper" enter //RageGuy says: Hands off!
 {
 	if (GameType() == GAME_TITLE_MAP)
+		terminate;
 	
-	terminate;
 	if (CheckInventory("EquestriaPistol") && CheckClass("HDoomPlayer") && CheckClass("HDoomMonster"))
 	{
-		Delay(120);
+		Delay(35 * 10);
 		
 		TakeInventory("EquestriaPistol", 999);
 		HudMessage(s:"What..!?"; HUDMSG_TYPEON | HUDMSG_PLAIN, 1, CR_ICE, 1.5, 0.8, 0, 0.05);
@@ -54,8 +54,10 @@ script "CheckClopper" enter //RageGuy says: Hands off!
 		FadeTo (255, 255, 255, 1.0, 0.5); //Fade to White
 		
 		Delay (13);
-
-		ChangeLevel ("SECRET1", 0, CHANGELEVEL_RESETHEALTH | CHANGELEVEL_NOINTERMISSION, SKILL_NORMAL);
+		
+		ChangeLevel ("SECRET1", 0,
+		CHANGELEVEL_RESETHEALTH | CHANGELEVEL_NOINTERMISSION | CHANGELEVEL_PRERAISEWEAPON,
+		SKILL_NORMAL);
 	}
 }
 
