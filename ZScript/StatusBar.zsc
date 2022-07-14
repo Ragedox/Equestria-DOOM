@@ -32,7 +32,7 @@ class EquestriaStatusBar : BaseStatusBar
 	override void Draw (int state, double TicFrac)
 	{
 		Super.Draw (state, TicFrac);
-
+			
 		if (state == HUD_StatusBar)
 		{
 			BeginStatusBar();
@@ -398,11 +398,20 @@ class EquestriaStatusBar : BaseStatusBar
 	
 	void DrawFullScreenStuff()
 	{
+		double dVignetteAlpha;
 	if (!CheckInventory("HUDDisabled"))
 	{
-		if (CPlayer.health <= 25)
-			DrawImage("BLODSCRN", (0,0));
-							
+		if (CPlayer.health > 40 && CPlayer.health <= 50)
+			dVignetteAlpha = 0.2;
+		else if (CPlayer.health > 30 && CPlayer.health <= 40) 
+			dVignetteAlpha = 0.4;
+		else if (CPlayer.health > 20 && CPlayer.health <= 30) 
+			dVignetteAlpha = 0.6;
+		else if (CPlayer.health <= 20) 
+			dVignetteAlpha = 0.8;
+		else dVignetteAlpha = 0;
+		Screen.DrawTexture(TexMan.CheckForTexture ("BLODSCRN", TexMan.Type_Any), false, 0, 0, DTA_FULLSCREEN, true, DTA_Alpha, dVignetteAlpha);
+		
 		Vector2 iconbox = (40, 20);
 		// Draw health
 		let berserk = CPlayer.mo.FindInventory("PowerStrength");
