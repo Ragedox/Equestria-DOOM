@@ -21,6 +21,16 @@ Class Equestria_Decal : Actor
 		RenderStyle "Shaded"; StencilColor "Black";
 	}
 	
+	static const string liquidfloor[] =
+	{
+		"FWATER1","FWATER2","FWATER3","FWATER4",
+		"SLIME01","SLIME02","SLIME03","SLIME04",
+		"SLIME05","SLIME06","SLIME07","SLIME08",
+		"BLOOD1","BLOOD2","BLOOD3",
+		"NUKAGE1","NUKAGE2","NUKAGE3","LAVA1",
+		"LAVA2","LAVA3","LAVA4"
+	};
+	
 	override void Tick()
 	{
 		if (!bTicked)
@@ -32,6 +42,13 @@ Class Equestria_Decal : Actor
 		SetZ(FloorZ);
 		A_SetAngle(randompick(0, 90, 180, 360));
 		bSPRITEFLIP = randompick(0,1);
+		
+		string floorname = TexMan.GetName(floorpic);
+		for (int i = 0; i < liquidfloor.size(); i++)
+		{
+			if (floorname == liquidfloor[i])
+				Destroy();
+		}
 		Super.BeginPlay();
 	}
 
