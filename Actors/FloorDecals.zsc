@@ -27,11 +27,12 @@ Class Equestria_Decal : Actor
 			Super.Tick();
 	}
 	
-	override void PostBeginPlay()
+	override void BeginPlay()
 	{
-		SetXYZ((pos.x,pos.y,FloorZ));
+		SetZ(FloorZ);
 		A_SetAngle(randompick(0, 90, 180, 360));
 		bSPRITEFLIP = randompick(0,1);
+		Super.BeginPlay();
 	}
 
 	States
