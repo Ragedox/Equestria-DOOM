@@ -42,7 +42,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "ZScript/SaveLoadMenu.zsc"
 #include "ZScript/DeathFlip.zsc"
 
-#include "ZScript/StupidAChievements/ImpAchievements.zs"
+#include "ZScript/StupidAchievements/ImpAchievements.zs"
 #include "ZScript/EquestriaAchievements.zsc"
 #include "ZScript/StupidAchievements/StupidAchievements.zs"
 
