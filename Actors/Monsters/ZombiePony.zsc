@@ -12,8 +12,8 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
 		
 		PainChance 200; PainThreshold 4;
 		DamageFactor "Chainsaw", 2;
+		
 		+FLOORCLIP
-		+CASTSPRITESHADOW
 		+MISSILEMORE
 		
 		SeeSound "grunt/sight";
@@ -57,11 +57,17 @@ Class EquestriaZombieMan : DoomEquestriaMonster Replaces ZombieMan
         POSS AABBCCDD 4
 		{
 			EQ_Chase("Melee", "Missile");
-			A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
+			//A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
 		}
         Loop;
 		
 	Missile:
+		#### # 0
+		{
+			if(CheckSight(target)) // Attack if enemy hides behind wall
+				if(!CheckLof() && CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT)) // Is something in the way
+					SetStateLabel("See");
+		}
         POSS E 10 A_FaceTarget(180, 270, 0, FAF_MIDDLE);
         POSS F 8
 		{

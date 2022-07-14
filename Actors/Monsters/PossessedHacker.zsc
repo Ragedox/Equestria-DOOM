@@ -8,7 +8,7 @@ Class PossessedHacker : DoomEquestriaMonster
 	//$Title Former Hacker
 		Tag "$FN_HACKER"; Obituary "$OB_HACKER";
 		
-		Health 15;
+		Health 20;
 		Radius 20; Height 56;
 		Mass 80;
 		Speed 10; FastSpeed 15;

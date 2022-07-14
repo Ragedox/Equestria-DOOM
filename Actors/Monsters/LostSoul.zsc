@@ -106,7 +106,12 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		DeathSound "skull/death";
 		ActiveSound "skull/active";
 		RenderStyle "SoulTrans";
+		
+		EquestriaLostSoul.SpawnTrail true;
 	}
+	
+	bool bTrail;
+	property SpawnTrail : bTrail;
 	
 	override void BeginPlay()
 	{
@@ -115,9 +120,19 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		lostsoulspecie = random(0,1);
 		
 		if (GetCVar("CV_HUMANSOUL") && lostsoulspecie == 1)
-		{
 			sprite = getspriteindex("LSO4");
-		}
+
+		Super.BeginPlay();
+	}
+	
+	override void Tick() 
+	{
+		Super.Tick();
+		
+		if (isFrozen() || !target || !bTrail)
+            return;
+
+		A_SpawnProjectile("LostSoulFire", random(15, 30), 0, random(0, 360), 2, random(0, 360));
 	}
 	
 	States
@@ -168,20 +183,18 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		SKUL K 1 A_FadeOut(0.1);
 		Wait;
 	}
-	
-	/*override void Tick() 
-	{
-		if (!isFrozen())
-		{
-			A_SpawnProjectile("LostSoulFire", random(15, 30), 0, random(0, 360), 2, random(0, 360));
-		}
-		Super.Tick();
-	}*/
 }
 
 Class UnicornSoul : EquestriaLostSoul
 {
-	Default { Tag "$FN_UNICORNSOUL"; Speed 8 / 6 ; -Bright +MISSILEMORE DamageType "Unicorn";}
+	Default
+	{
+		Tag "$FN_UNICORNSOUL";
+		Speed 8 / 6 ;
+		-Bright +MISSILEMORE
+		DamageType "Unicorn";
+		EquestriaLostSoul.SpawnTrail false;
+	}
 	States
 	{
 	
@@ -241,15 +254,6 @@ Class UnicornSoul : EquestriaLostSoul
 		SKU2 K 1 A_FadeOut(0.1);
 		Wait;
 	}
-	
-	/*Override void Tick() ////// cool ///////
-	{
-		if (!isFrozen())
-		{
-			A_SpawnItem("UnicornTrail", -10);
-		}
-		Super.Tick();
-	}*/
 }
 
 Class StonedAura : FastProjectile
@@ -425,7 +429,7 @@ Class LostSoulFire : Equestria_Trails
 	States
 	{
 	Spawn:
-		FIRP ABCDCBA random(8, 16) A_FadeOut(0.25);
+		LSOF ABCDCBA random(8, 16) A_FadeOut(0.25);
 		Loop;
 	}
 }

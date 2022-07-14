@@ -12,7 +12,6 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		
 		PainChance 170; PainThreshold 4;
 		
-		+CASTSPRITESHADOW
 		+FLOORCLIP
 		
 		SeeSound "shotguy/sight";
@@ -32,7 +31,7 @@ Class EquestriaShotgunGuy : DoomEquestriaMonster replaces ShotgunGuy
 		Loop;
 	
 	See:
-		#### # 0 A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
+		//#### # 0 A_CheckProximity("See.Trainer", "PossessedTrainer", 1024, 1);
 		SPOS AABBCCDD 3 A_Chase(); 
 		Loop;
 	See.Trainer:
