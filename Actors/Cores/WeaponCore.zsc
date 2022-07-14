@@ -346,22 +346,23 @@ Class ShotgunTracer : BulletTracer
 	Default { Translation "164:167=232:235", "160:163=16:31", "224:231=168:175"; }
 }
 
-Class Equestria_Swimming : EquestriaDoomWeapon
+Class Equestria_CutsceneWeapons : EquestriaDoomWeapon
 {
 	Default
 	{
-		Weapon.Kickback 100;
 		Weapon.BobStyle "Smooth";
 		Weapon.BobSpeed 2.0;
 		Weapon.BobRangeX 0.0; Weapon.BobRangeY 1.0;
 		
 		-ForceXYBillBoard
 		-CASTSPRITESHADOW
-		+WEAPON.WIMPY_WEAPON
 		+WEAPON.CHEATNOTWEAPON
 		+WEAPON.NOAUTOSWITCHTO
 		+WEAPON.NOALERT
 	}
+}
+Class Equestria_Swimming : Equestria_CutsceneWeapons
+{
 	States
 	{
 	Select:
@@ -388,7 +389,69 @@ Class Equestria_Swimming : EquestriaDoomWeapon
 		Loop;
 	}
 }
-		
+
+Class Equestria_Sleeping : Equestria_CutsceneWeapons
+{
+	States
+	{
+	Select:
+		DTH2 J 1 A_Raise();
+		Wait;
+	Deselect:
+		#### # 1 A_Lower();
+		Wait;
+	Fire:
+		#### # 0;
+	Ready:
+		DTH2 J 0
+		{
+			invoker.previousangle = angle;
+			invoker.previouspitch = pitch;
+		}
+		DTH2 J 1
+		{
+			A_WeaponReady(WRF_NOSWITCH | WRF_NOFIRE);
+			
+			if (pitch > 10) A_SetPitch(10,SPF_INTERPOLATE);
+			else if (pitch < -60) A_SetPitch(-60,SPF_INTERPOLATE);
+			
+			if (angle > 0) A_SetAngle(0,SPF_INTERPOLATE);
+			else if (angle < -180) A_SetAngle(-180,SPF_INTERPOLATE);
+			
+			if(vel.x > 0 || vel.y > 0)
+			{
+				A_WeaponReady();
+				A_GiveInventory("Equestria_Walking",1);
+				A_SelectWeapon("Equestria_Walking");
+			}
+			A_OverlayOffset(1,angle - invoker.previousangle, 32 + (-pitch) - (-invoker.previouspitch), WOF_INTERPOLATE);
+		}
+		Wait;
+	}
+}
+
+Class Equestria_Walking : EquestriaDoomWeapon
+{
+	States
+	{
+	Select:
+		TNT1 A 1 A_Raise();
+		Wait;
+	Deselect:
+		#### # 1 A_Lower();
+		Wait;
+	Fire:
+		#### # 0;
+		Goto AltFire;
+	Ready:
+		TNT1 A 1
+		{
+			A_WeaponReady();
+			A_TakeInventory("Equestria_Sleeping", 999);
+		}
+		Loop;
+	}
+}
 Class Test_DeathCommon : EquestriaDoomWeapon
 {
 	States
