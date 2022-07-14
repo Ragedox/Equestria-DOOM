@@ -228,7 +228,12 @@ Class Equestria_Blood : Actor replaces Blood
 	Crash:
 		#### # 0
 		{
-			ACS_NamedExecute("CheckLiquid");
+			string floorname = TexMan.GetName(floorpic);
+			for (int i = 0; i < liquidfloor.size(); i++)
+			{
+				if (floorname == liquidfloor[i])
+					Destroy();
+			}
 			
 			bNOINTERACTION = 1; bRELATIVETOFLOOR = 1; bMISSILE = 0;
 			
