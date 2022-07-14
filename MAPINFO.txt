@@ -10,7 +10,7 @@ gameinfo
 	DimColor = "00 00 00"
 	DimAmount = 0.5
 	DefaultDropStyle = 2
-	CursorPic = "cursor"
+	CursorPic = "doomcurs"
 	AddQuitMessages = "$QUITGAME1", "$QUITGAME2", "$QUITGAME3", "$QUITGAME4", "$QUITGAME5", "$QUITGAME7"
 	CorrectPrintBold = true
 	//NormSideMove = 20.0, 40.0
