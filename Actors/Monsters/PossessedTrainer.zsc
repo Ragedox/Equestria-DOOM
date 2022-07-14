@@ -11,19 +11,20 @@ Class PossessedTrainer : DoomEquestriaMonster
 		Radius 20; Height 56;
 		
 		Mass 80;
-		Speed 10; FloatSpeed 8;
+		Speed 6; FastSpeed 8;
 		
-		PainChance 128; PainThreshold 10;
+		PainChance 128; PainThreshold 16;
 		
 		ReactionTime 0;
 		
-		+FLOATBOB
+		+FLOATBOB FloatSpeed 8;
 		+FLOAT
 		+NOGRAVITY
 		+QUICKTORETALIATE
 		+MISSILEMORE
 		+AVOIDMELEE
 		+BOSS
+		+LOOKALLAROUND
 		
 		SeeSound "female/sight";
 		AttackSound "weapons/chngun";
@@ -33,14 +34,27 @@ Class PossessedTrainer : DoomEquestriaMonster
 
 		DropItem "LargeClip";
 	}
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if (health <= 0 || !target)
+            return;
+		
+		if(CheckProximity("EquestriaDoomPlayer", 1024, 1, CPXF_CHECKSIGHT | CPXF_ANCESTOR | CPXF_SETTARGET | CPXF_CLOSEST))
+			A_PrintBold("!She can see you!", 0, "BIGFONT");
+		else
+			A_PrintBold("She can hear you", 0, "BIGFONT");
+	}
+		
 	States
 	{
 	Spawn:
-		CPOS AB 10 A_Look();
+		CPOS A 1 A_LookEx(LOF_FULLVOLSEESOUND, 0, 512, 0, 360);
 		Loop;
 
 	See:
-		CPOS A 0 A_AlertMonsters();
+		CPOS A 0 A_AlertMonsters(512);
 		CPOS AABBCCDD 3 A_Chase("Melee", "Missile", CHF_FASTCHASE);
 		Loop;
 	
@@ -52,16 +66,28 @@ Class PossessedTrainer : DoomEquestriaMonster
 	
 	Melee:
 	Dodge:
-		CPOS E 0 A_FaceTarget();
 		CPOS E 8 ThrustThingZ(0, 50, 0, 0);
 		CPOS E 0 A_Stop();
 		Goto Missile+2;
 
 	Missile:
+		#### # 0
+		{
+			A_FaceTarget();
+			
+			if(!CheckProximity("EquestriaDoomPlayer", 1024, 1, CPXF_CHECKSIGHT | CPXF_ANCESTOR))
+				SetStateLabel("See");
+				
+			if(CheckProximity("EquestriaDoomPlayer", 128, 1, CPXF_CHECKSIGHT | CPXF_ANCESTOR))
+				SetStateLabel("Dodge");
+			if(CheckSight(target)) // Attack if enemy hides behind wall
+				if(!CheckLof() && CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT)) // Is something in the way
+					SetStateLabel("See");
+		}
 		CPOS A 0 A_JumpIfCloser(128, "Dodge");
 		//CPOS A 0 A_Jump(128, "Kick");
 		
-		CPOS E 3 A_FaceTarget();
+		CPOS E 3;
 		CPOS F 4 Bright 
 		{
 			A_CustomBulletAttack(10, 0, 1, random(1,5)*3, "EquestriaBulletPuff", 0, CBAF_NORANDOM, AAPTR_TARGET, "BulletTracer");
