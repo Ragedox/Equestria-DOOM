@@ -1,12 +1,10 @@
 Class DoomEquestriaMonster : Actor abstract
 {
-	bool bTrainerBuff;
-	property TrainerBuff: bTrainerBuff;
 	Default
 	{
 		Monster;
 		
-		PainThreshold 5;
+		PainThreshold 4;
 		
 		+CastSpriteShadow
 		+AvoidMelee
@@ -15,8 +13,13 @@ Class DoomEquestriaMonster : Actor abstract
 		
 		DoomEquestriaMonster.TrainerBuff false;
 	}
-		
+	
+	bool bTrainerBuff;
+	property TrainerBuff: bTrainerBuff;
 	double OriginalHeight, OriginalRadius;
+	double dOldSpeed;
+	int iSweatTimer;
+	bool bHasMissileEvenMore;
 	
 	override void PostBeginPlay()
 	{
@@ -24,6 +27,10 @@ Class DoomEquestriaMonster : Actor abstract
 		OriginalRadius = radius * 2;
 		
 		dOldSpeed = speed;
+		
+		if (bMISSILEEVENMORE)
+			bHasMissileEvenMore = 1;
+		
 		Super.PostBeginPlay();
 	}
 	
@@ -36,45 +43,42 @@ Class DoomEquestriaMonster : Actor abstract
 	
 	/*void A_SmartChase()
 	{
-		if (CheckSight(target)== true)
-		{
-			A_Chase();
-			if (GetCVar("DEBUG"))
-				A_PrintBold("I see you!");
-		}
-		else
-		{
-			A_Wander();
-			if (GetCVar("DEBUG"))
-				A_PrintBold("Where are you!");
-		}
+		
 	}*/
-	
-	double dOldSpeed;
 	
 	override void Tick()
 	{
-		int iSweatTimer;
+		Super.Tick();
 		
-		if(health > 0 && CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT) && bTrainerBuff == 1 && iSweatTimer >= 8)
+		if (!bTrainerBuff)
+			return;
+		
+		if(health > 0 && CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT) && iSweatTimer >= 8)
 		{
 			A_SpawnProjectile("DEWaterSplashChunk", frandom(height*0.5, height), 0, frandom(0,360), CMF_AIMDIRECTION, frandom (0, -180));
 			iSweatTimer = 0;
 		}
-		
 		iSweatTimer++;
-		
-		Super.Tick();
 	}
 	
 	void EQ_Chase(statelabel melee = "Melee", statelabel missile = "Missile", int flags = 0)
 	{
-		if(CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT | CPXF_SETMASTER) && bTrainerBuff == 1)
-			speed = dOldSpeed + 4;
+		if (CheckSight(target)== true)
+			A_Chase(melee, missile, flags);
 		else
+			A_Wander();
+
+		if(CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT | CPXF_SETMASTER) && bTrainerBuff == 1)
+		{
+			speed = dOldSpeed + 6;
+			bMISSILEEVENMORE = 1;
+		}
+		else
+		{
 			speed = dOldSpeed;
-			
-		A_Chase(melee, missile, flags);
+			if(bHasMissileEvenMore == 0)
+				bMISSILEEVENMORE = 0;
+		}
 	}
 	
 	States
