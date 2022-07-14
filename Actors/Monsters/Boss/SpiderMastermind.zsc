@@ -42,8 +42,7 @@ Class EquestriaSpiderMastermind : DoomEquestriaMonster replaces SpiderMastermind
 	}
 	override bool CanCollideWith(actor other, bool passive)
 	{
-		if(other is "PlayerPawn") return false;
-		else return super.CanCollideWith(other, passive);
+		return !(other is "PlayerPawn");
 	}
    
 	States
