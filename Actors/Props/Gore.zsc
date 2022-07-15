@@ -2,7 +2,13 @@
 
 Class EquestriaGoreProps : Actor abstract
 {
-	Default { +CASTSPRITESHADOW +SOLID +CORPSE}
+	Default
+	{
+		+CASTSPRITESHADOW +SOLID +CORPSE
+		+VULNERABLE +DONTTHRUST
+		Health -1;
+		BloodType "Equestria_BloodEnemies", "Equestria_BloodSplatter", "EquestriaBloodAxe";
+	}
 	override void BeginPlay()
 	{
 		bSPRITEFLIP = randompick(0,1);
