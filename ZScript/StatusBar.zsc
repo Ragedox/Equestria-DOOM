@@ -26,7 +26,7 @@ class EquestriaStatusBar : BaseStatusBar
 		
 		mHealthInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
 		mArmorInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 32);
-		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 1, 64);
+		mAmmoInterpolator = DynamicValueInterpolator.Create(0, 0.25, 8, 64);
 	}
 
 	override void Draw (int state, double TicFrac)
@@ -290,7 +290,6 @@ class EquestriaStatusBar : BaseStatusBar
 		if (SBARSTYLE)
 		{
 			int amt1, maxamt, iAmmoAmountX, iMaxAmmoX;
-
 			switch(SBARSTYLE.GetInt())
 			{
 			default:
@@ -410,6 +409,7 @@ class EquestriaStatusBar : BaseStatusBar
 		else if (CPlayer.health <= 20) 
 			dVignetteAlpha = 0.8;
 		else dVignetteAlpha = 0;
+		
 		Screen.DrawTexture(TexMan.CheckForTexture ("BLODSCRN", TexMan.Type_Any), false, 0, 0, DTA_FULLSCREEN, true, DTA_Alpha, dVignetteAlpha);
 		
 		Vector2 iconbox = (40, 20);
@@ -501,18 +501,25 @@ class EquestriaStatusBar : BaseStatusBar
 	void DrawPowerUp()
 	{
 		int itemTimeLeft, itemDuration;
-		
+		double dLength;
 		if (CheckInventory("PowerInvisibility", 1))
 		{
 			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
 		
-			DrawBar("PINSA0", "NOTHINGA", itemTimeLeft, itemDuration, (160, -34), 0, SHADER_VERT);
+			dLength = 25 * itemTimeLeft / itemDuration;
+			
+			SetClipRect(148, -57, dLength, 25);
+			DrawImage("PINSA0", (160, -34));
+			//screen.DrawTexture(TexMan.CheckForTexture ("BLURSPHERE", TexMan.Type_Any), true, 148, -57,DTA_TopOffsetF, 1, DTA_LeftOffsetF, 1);
 		}
 		if (CheckInventory("PowerInvulnerable", 1))
 		{
 			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
 
-			DrawBar("PINVA0", "NOTHINGA", itemTimeLeft, itemDuration, (160, -34), 0, SHADER_VERT);
+			dLength = 25 * itemTimeLeft / itemDuration;
+			
+			SetClipRect(148, -57, dLength, 25);
+			DrawImage("PINVA0", (160, -34));
 		}
 	}
 	
