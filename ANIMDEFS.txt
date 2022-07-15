@@ -1,3 +1,15 @@
+Texture BLURSPHERE OSCILLATE
+pic PINSD0 tics 6
+pic PINSC0 tics 6
+pic PINSB0 tics 6
+pic PINSA0 tics 6
+
+Texture INVULSPHERE OSCILLATE
+pic PINVD0 tics 6
+pic PINVC0 tics 6
+pic PINVB0 tics 6
+pic PINVA0 tics 6
+
 Texture STBLUR01 RANDOM
 pic STBLUR01 tics 17
 pic STBLUR02 TICS 17
