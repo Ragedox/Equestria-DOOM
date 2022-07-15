@@ -13,12 +13,15 @@ Class NightMare_Eye : Actor
 		+BOSS
 		+SHOOTABLE
 		+SOLID
+		BloodType "Equestria_BloodEnemies", "Equestria_BloodSplatter", "EquestriaBloodAxe";
 	}
 	States
 	{
 	Spawn:
 		EYES AB 1 BRIGHT A_Look();
 		Loop;
+	Pain: 
+		#### # 70 Bright;
 	See:
 		EYES AAAABBBB 1 BRIGHT
 		{	
