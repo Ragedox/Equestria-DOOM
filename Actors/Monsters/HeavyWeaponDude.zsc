@@ -76,8 +76,6 @@ Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 		Goto See;
 	
 	Death:
-		#### # 0 { bSPRITEFLIP = randompick(0, 1); }
-		
 		CPOS H 5;
 		CPOS I 5 A_Scream(); 
 		CPOS AAA 0 A_SpawnProjectile("TinyGenericGib", 50, random(-15, -10), random (0, 359), CMF_AIMDIRECTION, random (-90, -10));	
@@ -105,13 +103,11 @@ Class EquestriaChaingunGuy : DoomEquestriaMonster replaces ChaingunGuy
 		Stop;
 	
 	Crush:
-		CPOS T -1 { bSPRITEFLIP = randompick(0, 1); }
+		CPOS T -1;
 		Stop;
 	
 	Raise:
 		CPOS NMLKJIH 5;
-		
-		"####" "#" 0 { bSPRITEFLIP = 0; }
 		Goto See;
   }
 }
