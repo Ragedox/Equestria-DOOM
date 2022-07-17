@@ -509,17 +509,17 @@ class EquestriaStatusBar : BaseStatusBar
 			dLength = 25 * itemTimeLeft / itemDuration;
 			
 			SetClipRect(148, -57, dLength, 25);
-			DrawImage("PINSA0", (160, -34));
+			DrawImage("BLURSPHERE", (160, -32));
 			//screen.DrawTexture(TexMan.CheckForTexture ("BLURSPHERE", TexMan.Type_Any), true, 148, -57,DTA_TopOffsetF, 1, DTA_LeftOffsetF, 1);
 		}
 		if (CheckInventory("PowerInvulnerable", 1))
 		{
 			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
 
-			dLength = 25 * itemTimeLeft / itemDuration;
+			dLength = 25.0 * itemTimeLeft / itemDuration;
 			
 			SetClipRect(148, -57, dLength, 25);
-			DrawImage("PINVA0", (160, -34));
+			DrawImage("INVULSPHERE", (160, -32));
 		}
 	}
 	
