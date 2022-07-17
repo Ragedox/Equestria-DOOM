@@ -423,7 +423,7 @@ Class Equestria_Sleeping : Equestria_CutsceneWeapons
 				A_WeaponReady();
 				A_GiveInventory("Equestria_Walking",1);
 				
-				if(CheckINventory("Equestria_Walking", 1));
+				if(CheckInventory("Equestria_Walking", 1))
 					A_SelectWeapon("Equestria_Walking");
 			}
 			A_OverlayOffset(1,angle - invoker.previousangle, 32 + (-pitch) - (-invoker.previouspitch), WOF_INTERPOLATE);
