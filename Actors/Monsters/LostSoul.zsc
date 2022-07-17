@@ -129,7 +129,7 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 	{
 		Super.Tick();
 		
-		if (isFrozen() || !target || !bTrail)
+		if (isFrozen() || !target || !bTrail || health <= 0)
             return;
 
 		A_SpawnProjectile("LostSoulFire", random(15, 30), 0, random(0, 360), 2, random(0, 360));
@@ -152,7 +152,7 @@ Class EquestriaLostSoul : DoomEquestriaMonster
 		SKUL D 4
 		{
 			A_SkullAttack();
-			A_SpawnItem("LostSoulCharge", 0, height / 2);
+			A_SpawnItem("LostSoulCharge", 0, height / 2.0);
 		}
 		SKUL CD 4 A_SpawnItemEx("EQ_FireBallTrail", 0,0,15,0,0,0,0, SXF_TRANSFERSCALE);
 		Goto Missile+2;
