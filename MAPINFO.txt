@@ -7,8 +7,8 @@ gameinfo
 {
 	IntermissionMusic = "Music/INTER1.mid"
 	AddEventHandlers =
-		"df_EventHandler", "ia_EventHandler", "EQ_Achievements", "sa_Achiever", "gd_EventHandler",
-		//"EquusHandler_TrainerWarning", "armor_EventHandler"
+		"df_EventHandler", "ia_EventHandler", "EQ_Achievements", "sa_Achiever"
+		//, "gd_EventHandler", "EquusHandler_TrainerWarning", "armor_EventHandler"
 	DimColor = "00 00 00"
 	DimAmount = 0.5
 	DefaultDropStyle = 2
