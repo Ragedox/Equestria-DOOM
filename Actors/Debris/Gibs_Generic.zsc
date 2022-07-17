@@ -352,6 +352,39 @@ Class Equestria_TinyBlood : Equestria_SmallBlood
 		BLUD A 1 A_FadeOut(0.01, FTF_REMOVE);
 		Wait;
 	
+	Crash:
+		#### # 0
+		{
+			string floorname = TexMan.GetName(floorpic);
+			for (int i = 0; i < liquidfloor.size(); i++)
+			{
+				if (floorname == liquidfloor[i])
+					Destroy();
+			}
+			
+			bNOINTERACTION = 1; bRELATIVETOFLOOR = 1; bMISSILE = 0;
+			
+			A_Stop();
+			
+			if(GetCVar("CV_FLATDECALS"))
+			{
+				bFLATSPRITE = 1;
+				return ResolveState("FlatPool");
+			}
+			else
+			{
+				bSPRITEFLIP = RandomPick(0, 1);
+				
+				A_SetRoll(0);
+				A_SetScale(frandom(0.5, 1), 1);
+				
+				return ResolveState("SpritePool");
+			}
+			
+			return state(null);
+		}
+		Wait;
+		
 	FlatPool:
 		#### # 0;
 		Goto PoolTimer;
