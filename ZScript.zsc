@@ -1,4 +1,4 @@
-Version "4.8.1"
+Version "4.8.2"
 
 /*
 Class EquestriaActor : Actor abstract
@@ -45,6 +45,8 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "ZScript/StupidAchievements/ImpAchievements.zs"
 #include "ZScript/EquestriaAchievements.zsc"
 #include "ZScript/StupidAchievements/StupidAchievements.zs"
+
+//#include "ZScript/TrainerWarning.zsc"
 
 //
 
