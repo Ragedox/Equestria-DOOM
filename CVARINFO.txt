@@ -11,6 +11,7 @@ user int	CV_SBARSTYLE = 0;
 user int	CV_SFXDISTANCE = 2048;
 user int	CV_BLOODDISTANCE = 1024;
 
+server bool CV_PROPBLOCKHITSCAN = true;
 server bool CV_HUMANSOUL = false;
 server int	GoreToggle = 1;
 server bool GibsStayForever = false;
