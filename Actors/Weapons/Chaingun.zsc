@@ -49,14 +49,14 @@ Class EquestriaChaingun : EquestriaDoomWeapon replaces Chaingun
 		CHGG AB 6;
 		CHGG A 5
 		{
-			A_FireBullets(3, 3, -1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
+			A_FireBullets(4, 2, -1, 5, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash("Flash");
 			A_FireProjectile("BulletCasing",frandom(90, 45),0,0,frandom(0, -7), FPF_NOAUTOAIM);
 		}
 		CHGG B 5;
 		CHGG A 3
 		{
-			A_FireBullets(3, 3, -1, 4, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
+			A_FireBullets(4, 2, -1, 5, "Player_BulletPuff", 1, 0, "BulletTracer", -8);
 			A_GunFlash("Flash");
 			A_FireProjectile("BulletCasing",frandom(90, 45),0,0,frandom(0, -7), FPF_NOAUTOAIM);
 		}
