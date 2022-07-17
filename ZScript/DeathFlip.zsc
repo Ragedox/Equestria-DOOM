@@ -17,78 +17,33 @@
 
 class df_EventHandler : EventHandler
 {
+	override void OnRegister()
+	{
+		blacklist = new("df_StringSet").init();
+	}
 
-// public: // EventHandler /////////////////////////////////////////////////////
+	override void WorldThingDied(WorldEvent e)
+	{
+		if (!e.thing || blacklist.contains(e.thing.GetClassName())) return;
 
-  override
-  void OnRegister()
-  {
-    blacklist = new("df_StringSet").init();
-  }
-
-  override
-  void WorldThingDied(WorldEvent event)
-  {
-    let thing = event.thing;
-    if (thing == NULL) { return; }
-
-    if (blacklist.contains(thing.GetClassName())) { return; }
-
-    bool flipped = CV_DEATHFLIP
+		bool flipped = CV_DEATHFLIP
                  ? (isPrevFlipped = !isPrevFlipped)
                  : random(0, 1);
 
-    if (flipped)
-      thing.bSPRITEFLIP = 1;
-  }
+		if (flipped)
+			e.thing.bSPRITEFLIP = 1;
+	}
 
-  override
-  void WorldThingRevived(WorldEvent event)
-  {
-    let thing = event.thing;
-    if (thing == NULL) { return; }
+	override void WorldThingRevived(WorldEvent e)
+	{
+		if (!e.thing || blacklist.contains(e.thing.GetClassName())) return;
+		
+		e.thing.bSPRITEFLIP = 0;
+	}
 
-    if (blacklist.contains(thing.GetClassName())) { return; }
-  }
-
-// public: /////////////////////////////////////////////////////////////////////
-
-  static void flip(Actor thing)
-  {
-    thing.bSPRITEFLIP = 1;
-  }
-
-// private: /////////////////////////////////////////////////////////////////////
-
-  private df_StringSet blacklist;
-  private bool isPrevFlipped;
-
-} // class df_EventHandler
-
-class df_Unflipper : Inventory
-{
-
-// public: /////////////////////////////////////////////////////////////////////
-
-  override
-  void Tick()
-  {
-    if (owner == NULL) { return; }
-
-    state raiseState = owner.ResolveState("Raise");
-    bool isRevived = Actor.InStateSequence(owner.curState.NextState, raiseState);
-
-    if (!isRevived)
-    {
-		if (bSPRITEFLIP == 1)
-			owner.bSPRITEFLIP = 1;
-
-      Destroy();
-    }
-
-  }
-
-} // class df_Unflipper
+	private df_StringSet blacklist;
+	private bool isPrevFlipped;
+}
 
 class df_StringSet
 {
@@ -126,5 +81,3 @@ class df_StringSet
   private Array<String> values;
 
 } // class df_StringSet
-
-class df_MirroredFlag : Inventory {}
