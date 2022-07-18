@@ -40,7 +40,8 @@ Class Equestria_Decal : Actor
 	override void BeginPlay()
 	{
 		SetZ(FloorZ);
-		A_SetAngle(randompick(0, 90, 180, 360));
+		
+		angle = randompick(0, 90, 180, 360);
 		bSPRITEFLIP = randompick(0,1);
 		
 		string floorname = TexMan.GetName(floorpic);
