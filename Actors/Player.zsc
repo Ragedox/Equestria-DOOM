@@ -8,7 +8,7 @@ Class OutWater : InvToken {}
 
 Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 {
-	int deathtype;
+	int iDeathType;
 	bool hud_disabled;
 	
 	Default
@@ -83,7 +83,13 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		PLAY G 4;
 		PLAY G 4 A_Pain();
 		Goto Spawn;
+/*
 	
+1 = Extreme
+2 = Explosion
+	
+*/
+
 	Death:
 		PLAY H 10;
 		PLAY I 10 A_PlayerScream();
@@ -107,7 +113,11 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 	Death.Unicorn:
 		Goto Death.Explosion;
 	Death.Explosion:
-		PLAY H 10 A_GiveInventory("Death_Explosion", 1);
+		PLAY H 10
+		{
+			A_GiveInventory("Death_Explosion", 1);
+			iDeathType = 2;
+		}
 		PLAY I 10 A_PlayerScream();
 		PLAY J 10 A_NoBlocking();
 		PLAY KLM 10;
@@ -118,6 +128,8 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		PLAY O 5
 		{
 			A_GiveInventory("Death_Extreme", 1);
+			iDeathType = 1;
+			
 			A_SkullPop("PopSkull");
 			A_XScream();
 			A_NoBlocking();
