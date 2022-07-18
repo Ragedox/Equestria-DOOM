@@ -1,9 +1,11 @@
 Class DebrisCore : Actor abstract
 {
-	int rollspd;
+	bool rollspd;
 	bool bTicked;
 	property RollSpeed: rollspd;
 	
+	bool bRollMultiplier;
+	property RollMultiplier: bRollMultiplier;
 	//string rollstt;
 	
 	//property RollState: rollstt;
@@ -29,6 +31,7 @@ Class DebrisCore : Actor abstract
 		DistanceCheck "CV_SFXDISTANCE";
 		
 		DebrisCore.RollSpeed 16;
+		DebrisCore.RollMultiplier 2.0;
 		Damage 0;
 		//DebrisCore.RollState "Roll";
 	}
@@ -36,22 +39,20 @@ Class DebrisCore : Actor abstract
 	{
 		Super.Tick();
 		
-		if (vel.x == 0 && vel.y == 0 && vel.z == 0 && bTicked)
-		{	bNOINTERACTION = 1; bRELATIVETOFLOOR = 1;
-			if (GetCVar("CV_DEBRISQUALITY") == 1)
-				A_FadeOut(0.1, FTF_REMOVE);
-		}
-		
-		else
-		{
-			if (isFrozen())
+		if (isFrozen())
 				return;
 				
+		if (vel.x == 0 && vel.y == 0 && vel.z == 0 && bTicked)
+		{	bNOINTERACTION = 1; bRELATIVETOFLOOR = 1;
+			if (GetCVar("CV_DEBRISQUALITY")==1)
+				A_FadeOut(0.1, FTF_REMOVE);
+		}
+		else
+		{
 			if (InStateSequence(CurState, ResolveState("Roll")))
-				A_SetRoll(roll + (2*vel.x+vel.y+vel.z));
-			
-			if (!bTicked)
-				bTicked = 1;
+				A_SetRoll(vel.x*vel.y*bRollMultiplier+vel.z + roll); //bRollMultiplier);
+		
+			bTicked = 1;
 		}
 	}
 	override void BeginPlay()
