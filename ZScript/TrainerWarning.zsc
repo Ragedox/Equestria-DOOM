@@ -1,25 +1,22 @@
 Class EquusHandler_TrainerWarning : EventHandler
 {
-	String sClassName;
 	Bool bTrainerIsAlive;
 	
 	override void WorldThingSpawned(WorldEvent e)
 	{
-		sClassName = "PossessedTrainer";
-		
-		if (e.thing is sClassName)
+		if (e.thing is "PossessedTrainer")
 			bTrainerIsAlive = 1;
 	}
 	
 	override void WorldThingRevived(WorldEvent e)
 	{
-		if (e.thing is sClassName)
+		if (e.thing is "PossessedTrainer")
 			bTrainerIsAlive = 1;
 	}
 	
 	override void WorldThingDied(WorldEvent e)
 	{
-		if (e.thing is sClassName)
+		if (e.thing is "PossessedTrainer")
 			bTrainerIsAlive = 0;
 	}
 	
