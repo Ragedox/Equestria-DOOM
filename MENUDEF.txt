@@ -382,6 +382,7 @@ OptionValue "DebrisQuality"
 
 AddOptionMenu "NewPlayerMenu" 
 {
+	//Class "Equestria_NewPlayerMenu"
 	//Position -115
 	StaticText ""
 	Option 		"Discord RPC",		"i_discordrpc",	"onoff"
