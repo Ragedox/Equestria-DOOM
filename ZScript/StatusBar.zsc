@@ -141,13 +141,13 @@ class EquestriaStatusBar : BaseStatusBar
 						{
 							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
 		
-							DrawBar("PINSA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 1, SHADER_VERT);
+							DrawBar("PINSA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 0, SHADER_VERT);
 						}
 						if (CheckInventory("PowerInvulnerable", 1))
 						{
 							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
 		
-							DrawBar("PINVA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 1, SHADER_VERT);
+							DrawBar("PINVA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 0, SHADER_VERT);
 						}
 						break;
 						
@@ -506,20 +506,13 @@ class EquestriaStatusBar : BaseStatusBar
 		{
 			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
 		
-			dLength = 25 * itemTimeLeft / itemDuration;
-			
-			SetClipRect(148, -57, dLength, 25);
-			DrawImage("BLURSPHERE", (160, -32));
-			//screen.DrawTexture(TexMan.CheckForTexture ("BLURSPHERE", TexMan.Type_Any), true, 148, -57,DTA_TopOffsetF, 1, DTA_LeftOffsetF, 1);
+			DrawBar("BLURSPHERE", "NOTHINGA", itemTimeLeft, itemDuration, (32,58),0,SHADER_VERT,DI_SCREEN_HCENTER);
 		}
 		if (CheckInventory("PowerInvulnerable", 1))
 		{
 			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
 
-			dLength = 25.0 * itemTimeLeft / itemDuration;
-			
-			SetClipRect(148, -57, dLength, 25);
-			DrawImage("INVULSPHERE", (160, -32));
+			DrawBar("INVULSPHERE", "NOTHINGA", itemTimeLeft, itemDuration, (-32,58),0,SHADER_VERT,DI_SCREEN_HCENTER);
 		}
 	}
 	
