@@ -1,31 +1,5 @@
 class Equestria_StatusScreen : DoomStatusScreen
 {	
-	//GZDOOM 4.8.0 broke this :(
-	
-	/*override int drawLF ()
-	{
-		int y = TITLEY + 100;
-		
-		y = DrawName(y, wbs.LName0, lnametexts[0]);
-	
-		y -= ((mapname.mFont.GetHeight() - finishedp.mFont.GetHeight())) / 4;
-
-		y = DrawPatchOrText(y, finishedp, finishedPatch, "$WI_FINISHED");
-
-		return y;
-	}
-	
-	override void drawEL ()
-	{
-		int y = TITLEY;
-
-		y = DrawPatchOrText(y, entering, enteringPatch, "$WI_ENTERING");
-		y += 9;//entering.mFont.GetHeight();
-		DrawName(y, wbs.LName1, lnametexts[1]);
-			
-		DrawAuthor(y, authortexts[1]);
-	}*/
-	
 	override int drawLF ()
 	{
 		bool ispatch = wbs.LName0.isValid();
