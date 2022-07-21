@@ -34,22 +34,12 @@ Class EquestriaSuperShotgun : EquestriaDoomWeapon replaces SuperShotgun
 		Wait;
 	
 	Deselect:
-		TNT1 A 0 {
-			if(health <= 0)
-				return ResolveState("DeathCheck");
-			return ResolveState(null);
-		}
-		
+		#### # 0 A_JumpIf(health <= 0, "DeathCheck");
 		SHT2 A 1 A_Lower();
 		Wait;
 		
 	Deselect2:
-		TNT1 A 0 {
-			if(health <= 0)
-				return ResolveState("DeathCheck");
-			return ResolveState(null);
-		}
-		
+		#### # 0 A_JumpIf(health <= 0, "DeathCheck");
 		SHT2 C 1 A_Lower();
 		Wait;
   
