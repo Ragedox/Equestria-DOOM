@@ -42,14 +42,14 @@ Class DebrisCore : Actor abstract
 		if (isFrozen())
 				return;
 				
-		if (vel.x == 0 && vel.y == 0 && vel.z == 0 && bTicked)
+		if (vel.x == 0 && vel.y == 0 && vel.z == 0 && bTicked && !bNOINTERACTION)
 		{	bNOINTERACTION = 1; bRELATIVETOFLOOR = 1;
 			if (GetCVar("CV_DEBRISQUALITY")==1)
 				A_FadeOut(0.1, FTF_REMOVE);
 		}
 		else
 		{
-			if (InStateSequence(CurState, ResolveState("Roll")))
+			if (FindState("Roll"))
 				A_SetRoll(vel.x*vel.y*bRollMultiplier+vel.z + roll); //bRollMultiplier);
 		
 			bTicked = 1;
