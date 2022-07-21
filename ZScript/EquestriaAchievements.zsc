@@ -1,20 +1,28 @@
 class EQ_Achievements : EventHandler
 {		
-	override void worldThingDied(WorldEvent event)
+	override void worldThingDied(WorldEvent e)
 	{
-		if (event.thing.bISMONSTER == true)
+		if (e.thing.bISMONSTER)
 		{
 			sa_Achiever.achieve("EQ_FirstKill");
 			
-			if(event.thing.health <= event.thing.SpawnHealth()*0.5*-1)
+			if(e.thing.health <= e.thing.SpawnHealth()*0.5*-1)
 				sa_Achiever.achieve("EQ_GibKill");
 				
-			if(event.thing is "EquestriaCyberdemon")
+			if(e.thing is "EquestriaCyberdemon")
 				sa_Achiever.achieve("EQ_KillTyrant");
 			
-			if(event.thing is "EquestriaSpiderMastermind")
+			if(e.thing is "EquestriaSpiderMastermind")
 				sa_Achiever.achieve("EQ_KillMastermind");
+				
+			//if(e.thing is "PossessedTrainer")
+			//	sa_Achiever.achieve("EQ_KillTrainer");
 		}
+	}
+	override void WorldTick()
+	{
+		if (Level.found_secrets > 0)
+			sa_Achiever.achieve("EQ_FoundSecret");
 	}
 }
 
@@ -24,7 +32,7 @@ class EQ_FirstKill : sa_Achievement
 	{
 		sa_Achievement.name "$EQ_NAME_FIRSTKILL";
 		sa_Achievement.description "$EQ_DESC_FIRSTKILL";
-		sa_Achievement.borderColor 0xDDDD22;
+		sa_Achievement.borderColor 0x808080;
 		sa_Achievement.boxColor    0xFFFFFF;
 		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
 		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
@@ -37,8 +45,8 @@ class EQ_GibKill : sa_Achievement
 	{
 		sa_Achievement.name "$EQ_NAME_GIBKILL";
 		sa_Achievement.description "$EQ_DESC_GIBKILL";
-		sa_Achievement.borderColor 0xDDDD22;
-		sa_Achievement.boxColor    0xFF0000;
+		sa_Achievement.borderColor 0x808080;
+		sa_Achievement.boxColor    0x7E0000;
 		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
 		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
 	}
@@ -65,6 +73,20 @@ class EQ_KillMastermind : sa_Achievement
 		sa_Achievement.description "$EQ_DESC_MASTERMIND";
 		sa_Achievement.borderColor 0xDDDD22;
 		sa_Achievement.boxColor    0xFF0000;
+		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
+		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
+	}
+}
+
+class EQ_FoundSecret : sa_Achievement
+{
+	Default
+	{
+		sa_Achievement.title "$EQ_TITLE_FOUNDSECRET";
+		sa_Achievement.name "$EQ_NAME_FOUNDSECRET";
+		sa_Achievement.description "$EQ_DESC_FOUNDSECRET";
+		sa_Achievement.borderColor 0x808080;
+		sa_Achievement.boxColor    0xFFEC00;
 		sa_Achievement.lockedIcon "Graphics/Achievements/sa_icon.png";
 		sa_Achievement.unlockedIcon "Graphics/Achievements/sa_icon.png";
 	}
