@@ -25,18 +25,18 @@ Class EquestriaBackpack : CustomInventory replaces Backpack
 Class BackpackCheck : InvToken {}
 
 Class EquestriaComputerMap : Allmap replaces Allmap
-{	Default { +RANDOMIZE }
+{	Default { +RANDOMIZE +BRIGHT }
 	States
 	{
 	Spawn:
-		PMAP A random( 10, 20) Bright;
-				PMAP E random(0, 10) Bright;
-		PMAP B random( 10, 20) Bright;
-				PMAP E random(0, 10) Bright;
-		PMAP C random( 10, 20) Bright;
-				PMAP E random(0, 10) Bright;
-		PMAP D random( 10, 20) Bright;
-				PMAP E random(0, 10) Bright;
+		PMAP A random(10, 15);
+				PMAP E random(0, 5);
+		PMAP B random(10, 15);
+				PMAP E random(0, 5);
+		PMAP C random(10, 15);
+				PMAP E random(0, 5);
+		PMAP D random(10, 15);
+				PMAP E random(0, 5);
 		Loop;
 	}
 }
