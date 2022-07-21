@@ -17,17 +17,15 @@
 
 class df_EventHandler : EventHandler
 {
-	override void OnRegister()
-	{
-		blacklist = new("df_StringSet").init();
-	}
-
 	override void WorldThingDied(WorldEvent e)
 	{
-		if (!e.thing || blacklist.contains(e.thing.GetClassName())) return;
+		if (!e.thing ||
+			e.thing is "EquestriaChaingunGuy" ||
+			e.thing is "EquestriaCyberdemon")
+		return;
 
 		bool flipped = CV_DEATHFLIP
-                 ? (isPrevFlipped = !isPrevFlipped)
+                 ? (!isPrevFlipped)
                  : random(0, 1);
 
 		if (flipped)
@@ -36,48 +34,13 @@ class df_EventHandler : EventHandler
 
 	override void WorldThingRevived(WorldEvent e)
 	{
-		if (!e.thing || blacklist.contains(e.thing.GetClassName())) return;
+		if (!e.thing ||
+			e.thing is "EquestriaChaingunGuy" ||
+			e.thing is "EquestriaCyberdemon")
+		return;
 		
 		e.thing.bSPRITEFLIP = 0;
 	}
 
-	private df_StringSet blacklist;
-	private bool isPrevFlipped;
+	bool isPrevFlipped;
 }
-
-class df_StringSet
-{
-
-// public: /////////////////////////////////////////////////////////////////////
-
-  df_StringSet init()
-  {
-    // must be sorted.
-    values.push("EquestriaChaingunGuy"); // Doom
-    values.push("EquestriaCyberdemon");  // Doom
-
-    return self;
-  }
-
-  bool contains(string s)
-  {
-    // binary search
-    int L = 0;
-    int R = values.size() - 1;
-
-    while (L <= R)
-    {
-      int m = (L + R) / 2;
-      string current = values[m];
-      if      (current <  s) { L = m + 1; }
-      else if (current >  s) { R = m - 1; }
-      else if (current == s) { return true; }
-    }
-    return false;
-  }
-
-// private: /////////////////////////////////////////////////////////////////////
-
-  private Array<String> values;
-
-} // class df_StringSet
