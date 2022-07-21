@@ -95,24 +95,43 @@ Class EquestriaRevenantTracer : RevenantTracer replaces RevenantTracer
 	States
 	{
 	Spawn:
-		FATB AB 2 A_Tracer();
-		FATB A 0 A_SpawnItemEx("RevenantTracerTrail");
+		FATB AB 2 BRIGHT EQ_Tracer();
+		FATB A 0 A_SpawnItemEx("Equus_RevenantTracerTrail");
 		Loop;
 		
 	Death:
 		TNT1 AAAAAAAAAA 0
 		{
-			A_SpawnProjectile("ChainsawSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
-			A_SpawnProjectile("PuffSparkles",0,0, frandom (0, 359), CMF_AIMDIRECTION, frandom (0, 359));
+			A_SpawnProjectile("ChainsawSparkles",0,0, frandom (0, 360), CMF_AIMDIRECTION, frandom (0, 360));
+			A_SpawnProjectile("PuffSparkles",0,0, frandom (0, 360), CMF_AIMDIRECTION, frandom (0, 360));
 		}
 		FBXP A 8 Bright;
 		FBXP B 6;
 		FBXP C 1 A_FadeOut(0.1);
 		Wait;
 	}
+	void EQ_Tracer()
+	{
+		if (level.maptime & 3)	return;
+	
+		// spawn a puff of smoke behind the rocket
+		SpawnPuff ("Player_ShotgunPuff", pos, angle, angle, 3);
+		Actor smoke = Spawn ("RevenantTracerSmoke", Vec3Offset(-Vel.X, -Vel.Y, 0.), ALLOW_REPLACE);
+	
+		if (smoke != null)
+		{
+			smoke.Vel.Z = 1.;
+			smoke.tics -= random[Tracer](0, 3);
+			if (smoke.tics < 1)
+				smoke.tics = 1;
+		}
+
+		// The rest of this function was identical with Strife's version, except for the angle being used.
+		A_Tracer2(16.875);
+	}
 }
 
-Class RevenantTracerTrail : Equestria_Trails
+Class Equus_RevenantTracerTrail : Equestria_Trails
 {
 	Default
 	{
@@ -124,5 +143,16 @@ Class RevenantTracerTrail : Equestria_Trails
 		FBXP AB 3 Bright A_FadeOut(0.125);
 		FBXP C 1 A_FadeOut(0.1);
 		Stop;
+	}
+}
+
+class Equus_RevenantTracerSmoke : RevenantTracerSmoke replaces RevenantTracerSmoke
+{
+	States
+	{	
+	Spawn:
+		PUFF ABABC 4;
+		#### # 1 A_FadeOut(0.1,FTF_REMOVE);
+		Wait;
 	}
 }
