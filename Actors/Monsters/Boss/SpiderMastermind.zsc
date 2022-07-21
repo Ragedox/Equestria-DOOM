@@ -179,15 +179,12 @@ Class Equestria_MastermindHitbox : Actor
 		
 	override void Tick()
 	{
-		if(!master)
+		if(!master || master.health < 1)
 			Destroy();
 			
 		Super.Tick();
 								
-		A_Warp(AAPTR_MASTER,0,0,50,master.angle,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
-		
-		if(master.health < 1)
-			Destroy();
+		A_Warp(AAPTR_MASTER,0,0,50,0,WARPF_INTERPOLATE|WARPF_COPYINTERPOLATION|WARPF_NOCHECKPOSITION);
 		
 		if(self.health < self.lastHealth)
 			A_DamageMaster(int(self.lastHealth - self.Health),"None", DMSS_INFLICTORDMGTYPE ); self.lasthealth = self.health;
