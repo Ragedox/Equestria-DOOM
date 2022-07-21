@@ -11,6 +11,7 @@ class EquestriaTorchFire : Equestria_Particles
 	override void PostBeginPlay()
 	{
 		bSPRITEFLIP = randompick(0,1);
+		Super.PostBeginPlay();
 	}
 	
 	override void Tick()
@@ -53,6 +54,7 @@ class EquestriaShortBlueTorch : Actor replaces ShortBlueTorch
 	override void BeginPlay()
 	{
 		A_SpawnItemEx("EquestriaSmallTorchFire",0,0,0,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_SETMASTER);
+		Super.BeginPlay();
 	}
 	
 	States
@@ -75,6 +77,7 @@ class EquestriaBlueTorch : Actor replaces BlueTorch
 	override void BeginPlay()
 	{
 		A_SpawnItemEx("EquestriaTorchFire",0,0,0,0,0,0,0, SXF_TRANSFERTRANSLATION | SXF_SETMASTER);
+		Super.BeginPlay();
 	}
 	
 	States
