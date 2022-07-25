@@ -76,6 +76,11 @@ Class EquestriaDoomPlayer : DoomPlayer replaces DoomPlayer
 		return dmg;
 	}
 	
+	override void PostBeginPlay()
+	{
+		A_SpawnItemEx("Equus_3DWeapon_Shotgun",0,0,0,0,0,0,0, SXF_SETMASTER);
+		Super.PostBeginPlay();
+	}
 	States
 	{
 	

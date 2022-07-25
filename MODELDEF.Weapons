@@ -1,0 +1,34 @@
+/////	Shotgun    ////
+
+Model "Equus_3DWeapon_Shotgun"
+{
+	Path "Models"
+	Model 0 "Shotgun.md3"
+	Skin 0 "Palette.png"
+	Scale 10.0 10.0 12.0
+	
+	
+	USEACTORROLL
+	USEROTATIONCENTER
+	
+	FrameIndex WEAP A 0 0
+}
+
+//	Muzzle Flash
+
+Model "Equus_3DWeapon_Shotgun"
+{
+	Path "Models"
+	Model 0 "Shotgun.md3"
+	Skin 0 "Palette.png"
+	Model 1 "Shotgun_Muzzle.md3"
+	Skin 1 "Palette.png"
+	Scale 10.0 10.0 12.0
+	
+	USEACTORROLL
+	
+	FrameIndex WEAP B 0 0
+	FrameIndex WEAP B 1 0
+}
+
+//////////

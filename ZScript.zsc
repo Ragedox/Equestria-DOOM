@@ -40,13 +40,15 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "ZScript/StatusScreen.zsc"
 #include "ZScript/StatusBar.zsc"
 #include "ZScript/SaveLoadMenu.zsc"
+//#include "ZScript/PlayerDisplay.zsc"
+
 #include "ZScript/DeathFlip.zsc"
 
 #include "ZScript/StupidAchievements/ImpAchievements.zs"
 #include "ZScript/EquestriaAchievements.zsc"
 #include "ZScript/StupidAchievements/StupidAchievements.zs"
 
-//#include "ZScript/TrainerWarning.zsc"
+#include "ZScript/TrainerWarning.zsc"
 
 //
 
@@ -57,6 +59,7 @@ Class FoundDaisy : InvToken	{} //DOOM 2
 #include "Actors/Cores/WeaponCore.zsc"
 #include "Actors/Cores/MonsterCore.zsc"
 //#include "Actors/NPCs/Hellya.zsc"
+#include "Actors/3DWeapons.zsc"
 
 ////Effects, Particles, Debris
 
