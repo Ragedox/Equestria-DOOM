@@ -13,7 +13,7 @@ Class PossessedTrainer : DoomEquestriaMonster
 		Mass 80;
 		Speed 6; FastSpeed 8;
 		
-		PainChance 128; PainThreshold 16;
+		PainChance 128; PainThreshold 8;
 		
 		ReactionTime 0;
 		
@@ -28,7 +28,7 @@ Class PossessedTrainer : DoomEquestriaMonster
 		
 		SeeSound "female/sight";
 		AttackSound "weapons/chngun";
-		PainSound "female/pain2";
+		PainSound "female/pain";
 		DeathSound "female/death";
 		ActiveSound "female/active";
 
@@ -108,7 +108,8 @@ Class PossessedTrainer : DoomEquestriaMonster
 		Goto See;
 	
 	Pain:
-		CPOS G 3 A_Pain();
+		CPOS G 1;
+		CPOS G 2 A_Pain();
 		Goto See;
 	
 	Death.Plasma:
