@@ -12,12 +12,10 @@ female/sight		MARESIT
 female/active		MAREACT
 
 female/pain			MAREPAIN
-female/pain2		MAREPAIN2
 
-$random female/death { female/death1 female/death2 female/death3 }
+$random female/death { female/death1 female/death2 }
 female/death1		MAREDTH
 female/death2		MAREDTH2
-female/death3		MAREDTH3
 
 // Zombie man
 

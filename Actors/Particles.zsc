@@ -1,5 +1,7 @@
 Class DEParticles : Actor abstract
 {
+	bool bTicked;
+	
 	Default
 	{
 		+NOGRAVITY

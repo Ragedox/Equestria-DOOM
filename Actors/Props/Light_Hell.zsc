@@ -1,6 +1,5 @@
 class EquestriaTorchFire : Equestria_Particles
 {
-	bool bTicked;
 	Default
 	{
 		Radius 0; Height 0;

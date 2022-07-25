@@ -52,7 +52,8 @@ InfernoKirin 	 @InfernoKirin
 ==========
 = Sounds =
 
-https://freesound.org/
+FreeSound.org
+	https://freesound.org/people/Jamius/sounds/41529/
 
 Per Kristan's Hi-res sound pack
 

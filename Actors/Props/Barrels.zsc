@@ -335,7 +335,6 @@ Class EquestriaBurningBarrel : BurningBarrel replaces BurningBarrel
 
 Class EquestriaBurningBarrel_Fire : Equestria_Particles
 {
-	bool bTicked;
 	Default
 	{
 		Radius 10; Height 32;
