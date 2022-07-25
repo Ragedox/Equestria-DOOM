@@ -8,7 +8,8 @@ Class DoomEquestriaMonster : Actor abstract
 		
 		+CastSpriteShadow
 		+AvoidMelee
-		
+		+AddLightLevel
+
 		BloodType "Equestria_BloodEnemies", "Equestria_BloodSplatter", "EquestriaBloodAxe";
 		
 		DoomEquestriaMonster.TrainerBuff false;
@@ -24,7 +25,7 @@ Class DoomEquestriaMonster : Actor abstract
 	override void PostBeginPlay()
 	{
 		OriginalHeight = height;
-		OriginalRadius = radius * 2;
+		OriginalRadius = radius;
 		
 		dOldSpeed = speed;
 		
