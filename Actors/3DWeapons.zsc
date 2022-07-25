@@ -1,0 +1,48 @@
+Class Equus_3DWeapon_Shotgun : Actor
+{
+	Default
+	{
+		+NOGRAVITY
+		+NOBLOCKMAP
+		+THRUACTORS
+		+NOINTERACTION
+		+NOCLIP
+		+FLOATBOB FloatBobStrength 0.2;
+		+MASTERNOSEE
+	}
+	override void Tick()
+	{
+		Super.Tick();
+		
+		if(!master)
+			Destroy();
+			
+		if(master.health <= 0)
+			bINVISIBLE = 1;
+		else
+			bINVISIBLE = 0;
+		
+		A_Warp(AAPTR_MASTER,radius,0,master.height * 0.5, -80,
+		WARPF_BOB | WARPF_INTERPOLATE | WARPF_COPYINTERPOLATION | WARPF_COPYPITCH | WARPF_NOCHECKPOSITION); //WARPF_COPYPITCH, NULL, 0,0,master.pitch);
+		
+		A_SetRoll(-pitch*0.5);
+	}
+	States
+	{
+	Spawn:
+		WEAP A 1
+		{
+			if(master.InStateSequence(master.CurState, master.ResolveState("Missile")))
+				SetStateLabel("Missile");
+		}
+		Loop;
+	Missile:
+		#### A 10;
+		#### B 10 Bright;
+		#### A 10;
+		Goto Spawn;
+	}
+}
+
+Class Equus_3DWeapon_Rifle : Equus_3DWeapon_Shotgun
+{}
