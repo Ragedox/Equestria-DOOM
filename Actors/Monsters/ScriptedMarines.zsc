@@ -17,7 +17,13 @@ Class EquestriaMarineFist : MarineFist replaces MarineFist
 {	Default {	+CASTSPRITESHADOW	}}
 
 Class EquestriaMarinePistol : MarinePistol replaces MarinePistol
-{	Default {	+CASTSPRITESHADOW	}}
+{	Default {	+CASTSPRITESHADOW	}
+	override void PostBeginPlay()
+	{
+		A_SpawnItemEx("Equus_3DWeapon_Pistol",0,0,0,0,0,0,0,SXF_SETMASTER);
+		Super.PostBeginPlay();
+	}
+}
 
 Class EquestriaMarinePlasma : MarinePlasma replaces MarinePlasma
 {	Default {	+CASTSPRITESHADOW	}}
@@ -32,4 +38,10 @@ Class EquestriaMarineSSG : MarineSSG replaces MarineSSG
 {	Default {	+CASTSPRITESHADOW	}}
 
 Class EquestriaMarineShotgun : MarineShotgun replaces MarineShotgun
-{	Default {	+CASTSPRITESHADOW	}}
+{	Default {	+CASTSPRITESHADOW	}
+	override void PostBeginPlay()
+	{
+		A_SpawnItemEx("Equus_3DWeapon_Shotgun",0,0,0,0,0,0,0,SXF_SETMASTER);
+		Super.PostBeginPlay();
+	}
+}
