@@ -25,15 +25,19 @@ Class Equus_3DWeapon_Shotgun : Actor
 		A_Warp(AAPTR_MASTER,radius,0,master.height * 0.5, -80,
 		WARPF_BOB | WARPF_INTERPOLATE | WARPF_COPYINTERPOLATION | WARPF_COPYPITCH | WARPF_NOCHECKPOSITION); //WARPF_COPYPITCH, NULL, 0,0,master.pitch);
 		
-		A_SetRoll(-pitch*0.5);
+		A_SetRoll(-master.pitch);
 	}
 	States
 	{
 	Spawn:
 		WEAP A 1
 		{
-			if(master.InStateSequence(master.CurState, master.ResolveState("Missile")))
-				SetStateLabel("Missile");
+			if(master is "EquestriaDoomPlayer")
+			{	if(master.InStateSequence(master.CurState, master.ResolveState("Melee")))
+					SetStateLabel("Player.Missile");
+			}
+			else if(master.FindState("Missile"))
+					SetStateLabel("Missile");
 		}
 		Loop;
 	Missile:
@@ -45,4 +49,29 @@ Class Equus_3DWeapon_Shotgun : Actor
 }
 
 Class Equus_3DWeapon_Rifle : Equus_3DWeapon_Shotgun
-{}
+{
+	States
+	{
+	Missile:
+		#### A 10;
+		#### B 8 Bright;
+		#### A 8;
+		Goto Spawn;
+
+	Player.Missile:
+		#### B 6 Bright;
+		Goto Spawn;
+	}
+}
+
+Class Equus_3DWeapon_Pistol : Equus_3DWeapon_Shotgun
+{
+	States
+	{
+	Missile:
+		#### A 10;
+		#### B 8 Bright;
+		#### A 8;
+		Goto Spawn;
+	}
+}

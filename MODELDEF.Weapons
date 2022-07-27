@@ -2,33 +2,35 @@
 
 Model "Equus_3DWeapon_Shotgun"
 {
+	Scale 10.0 10.0 12.0
 	Path "Models"
+	
 	Model 0 "Shotgun.md3"
 	Skin 0 "Palette.png"
-	Scale 10.0 10.0 12.0
-	
-	
-	USEACTORROLL
-	USEROTATIONCENTER
 	
 	FrameIndex WEAP A 0 0
-}
-
-//	Muzzle Flash
-
-Model "Equus_3DWeapon_Shotgun"
-{
-	Path "Models"
-	Model 0 "Shotgun.md3"
-	Skin 0 "Palette.png"
+	FrameIndex WEAP B 0 0
+	
 	Model 1 "Shotgun_Muzzle.md3"
 	Skin 1 "Palette.png"
-	Scale 10.0 10.0 12.0
-	
-	USEACTORROLL
-	
-	FrameIndex WEAP B 0 0
+
 	FrameIndex WEAP B 1 0
 }
 
-//////////
+Model "Equus_3DWeapon_Rifle"
+{
+	Scale 10.0 10.0 12.0
+	USEACTORROLL
+	Path "Models"
+	
+	Model 0 "Rifle.md3"
+	Skin 0 "Palette.png"
+	
+	FrameIndex WEAP A 0 0
+	FrameIndex WEAP B 0 0
+	
+	Model 1 "Shotgun_Muzzle.md3"
+	Skin 1 "Palette.png"
+
+	FrameIndex WEAP B 1 0
+}
