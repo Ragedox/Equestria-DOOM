@@ -67,6 +67,12 @@ Class SS_Soldier : DoomEquestriaMonster Replaces WolfensteinSS
 		Loop;
 	
 	Missile:
+		#### # 0
+		{
+			if(CheckSight(target)) // Attack if enemy hides behind wall
+				if(!CheckLof() && CheckProximity("PossessedTrainer", 1024, 1, CPXF_CHECKSIGHT)) // Is something in the way
+					SetStateLabel("See");
+		}
 		SSWV EF 10 Fast A_FaceTarget(180);
 		SSWV G 4 BRIGHT A_WolfAttack(WAF_USEPUFF, attacksound, 1.0, 64, 128, 2, 4, 160.0, "EquestriaBulletPuff"); //A_CustomBulletAttack(22.5, 0, 1, random(1,5)*3, "BulletPuff", 0, CBAF_NORANDOM);
 		SSWV F 6 A_FaceTarget(180);
