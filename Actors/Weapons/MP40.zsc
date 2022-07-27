@@ -7,4 +7,10 @@ Class EquestriaWolfRifle : EquestriaRifle
 		
 		AttackSound "wolfss/attack";
 	}
+	States
+	{
+	Spawn:
+		MP40 A -1 NoDelay { bSPRITEFLIP = RandomPick(0,1); }
+		Stop;
+	}
 }
