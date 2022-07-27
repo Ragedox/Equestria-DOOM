@@ -9,6 +9,8 @@ Class Equus_3DWeapon_Shotgun : Actor
 		+NOCLIP
 		+FLOATBOB FloatBobStrength 0.2;
 		+MASTERNOSEE
+		
+		DistanceCheck "CV_SFXDISTANCE";
 	}
 	override void Tick()
 	{
@@ -22,6 +24,11 @@ Class Equus_3DWeapon_Shotgun : Actor
 		else
 			bINVISIBLE = 0;
 		
+		if(master.CheckInventory("PowerInvisibility", 1))
+			A_SetRenderStyle(1.0, STYLE_Shadow);
+		else
+			A_SetRenderStyle(1.0, STYLE_Normal);
+			
 		A_Warp(AAPTR_MASTER,radius,0,master.height * 0.5, -80,
 		WARPF_BOB | WARPF_INTERPOLATE | WARPF_COPYINTERPOLATION | WARPF_COPYPITCH | WARPF_NOCHECKPOSITION); //WARPF_COPYPITCH, NULL, 0,0,master.pitch);
 		
@@ -32,12 +39,13 @@ Class Equus_3DWeapon_Shotgun : Actor
 	Spawn:
 		WEAP A 1
 		{
-			if(master is "EquestriaDoomPlayer")
-			{	if(master.InStateSequence(master.CurState, master.ResolveState("Melee")))
+			if(master.InStateSequence(master.CurState, master.ResolveState("Melee")))
+			{
+				if(master is "EquestriaDoomPlayer")
 					SetStateLabel("Player.Missile");
-			}
-			else if(master.FindState("Missile"))
+				else
 					SetStateLabel("Missile");
+			}
 		}
 		Loop;
 	Missile:
