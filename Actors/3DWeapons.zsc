@@ -30,22 +30,22 @@ Class Equus_3DWeapon_Shotgun : Actor
 			A_SetRenderStyle(1.0, STYLE_Normal);
 			
 		A_Warp(AAPTR_MASTER,radius,0,master.height * 0.5, -80,
-		WARPF_BOB | WARPF_INTERPOLATE | WARPF_COPYINTERPOLATION | WARPF_COPYPITCH | WARPF_NOCHECKPOSITION); //WARPF_COPYPITCH, NULL, 0,0,master.pitch);
+		WARPF_BOB | WARPF_INTERPOLATE | WARPF_COPYINTERPOLATION | WARPF_COPYPITCH | WARPF_NOCHECKPOSITION);
 		
-		A_SetRoll(-master.pitch);
+		roll = -master.pitch;
+		A_Face(master.target, 90, 180, -90, 0, FAF_MIDDLE);
 	}
 	States
 	{
 	Spawn:
 		WEAP A 1
 		{
-			if(master.InStateSequence(master.CurState, master.ResolveState("Melee")))
-			{
-				if(master is "EquestriaDoomPlayer")
-					SetStateLabel("Player.Missile");
-				else
-					SetStateLabel("Missile");
+			if(master is "EquestriaDoomPlayer")
+			{	if(master.InStateSequence(master.CurState, master.ResolveState("Melee")))
+					SetStateLabel("Player.Missile");	
 			}
+			else if(master.InStateSequence(master.CurState, master.ResolveState("Missile")))
+					SetStateLabel("Missile");
 		}
 		Loop;
 	Missile:
