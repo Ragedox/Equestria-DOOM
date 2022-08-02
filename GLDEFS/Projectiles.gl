@@ -107,7 +107,7 @@ flickerlight2 BFGBALL_X5
 	attenuate 1
 }
 
-object EquestriaBFGBall
+object Equus_BFGBall
 {
     frame BFS1A { light BFGBALL }
     frame BFS1B { light BFGBALL }
@@ -134,7 +134,7 @@ pulselight BFGEXTRA
 	interval 0.7
 	attenuate 1
 }
-object EquestriaBFGExtra
+object Equus_BFGExtra
 {
     frame BFE2 { light BFGEXTRA	}
 }
