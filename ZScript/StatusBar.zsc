@@ -139,13 +139,13 @@ class EquestriaStatusBar : BaseStatusBar
 						
 						if (CheckInventory("PowerInvisibility", 1))
 						{
-							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
+							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("Equus_BlurSphere");
 		
 							DrawBar("PINSA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 0, SHADER_VERT);
 						}
 						if (CheckInventory("PowerInvulnerable", 1))
 						{
-							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
+							[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("Equus_InvulSphere");
 		
 							DrawBar("PINVA0", "SPHREBAR", itemTimeLeft, itemDuration, (301, 197), 0, SHADER_VERT);
 						}
@@ -504,13 +504,13 @@ class EquestriaStatusBar : BaseStatusBar
 		double dLength;
 		if (CheckInventory("PowerInvisibility", 1))
 		{
-			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaBlurSphere");
+			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("Equus_BlurSphere");
 		
 			DrawBar("BLURSPHERE", "NOTHINGA", itemTimeLeft, itemDuration, (32,58),0,SHADER_VERT,DI_SCREEN_HCENTER);
 		}
 		if (CheckInventory("PowerInvulnerable", 1))
 		{
-			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("EquestriaInvulSphere");
+			[itemTimeLeft,itemDuration] = CPlayer.mo.GetEffectTicsForItem("Equus_InvulSphere");
 
 			DrawBar("INVULSPHERE", "NOTHINGA", itemTimeLeft, itemDuration, (-32,58),0,SHADER_VERT,DI_SCREEN_HCENTER);
 		}
