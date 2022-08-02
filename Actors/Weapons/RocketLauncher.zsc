@@ -107,7 +107,7 @@ Class EquestriaRocket : Actor replaces Rocket
 	void EQ_RocketExplosion()
 	{
 		A_Explode(-1,-1, XF_HURTSOURCE | XF_EXPLICITDAMAGETYPE | XF_THRUSTZ, true, 0,0,10,"","Explosion");
-		A_QuakeEx(3, 3, 3, 16, 0, 256, "", QF_SCALEDOWN | QF_3D,0,0,0, radius);
+		A_QuakeEx(4, 4, 4, 16, 0, 256, "", QF_SCALEDOWN | QF_3D,0,0,0, radius);
 		A_SetRoll(0);
 		bSPRITEFLIP = randompick(0,1);
 		bCASTSPRITESHADOW = 0;
