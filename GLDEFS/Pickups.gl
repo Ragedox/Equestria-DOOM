@@ -7,7 +7,7 @@ pointlight SOULSPHERE
 	attenuate 1
 }
 
-object EquestriaSoulSphere
+object Equus_SoulSphere
 {
     frame SOUL { light SOULSPHERE }
 }
@@ -20,7 +20,7 @@ pointlight MEGASPHERE
 	attenuate 1
 }
 
-object EquestriaMegaSphere
+object Equus_MegaSphere
 {
     frame MEGA { light MEGASPHERE }
 }
@@ -34,7 +34,7 @@ pointlight INVULN
 	attenuate 1
 }
 
-object EquestriaInvulSphere
+object Equus_InvulSphere
 {
     frame PINV { light INVULN }
 }
@@ -82,7 +82,7 @@ pointlight BLURSPHERE5
 	attenuate 1
 }
 
-object EquestriaBlurSphere
+object Equus_BlurSphere
 {
     frame PINS { light BLURSPHERE1 }
 
@@ -144,7 +144,7 @@ pulselight BLUECARD
 	dontlightothers 1
 }
 
-object EquestriaBlueCard
+object Equus_BlueCard
 {
     frame BKEY { light BLUECARD }
 }
@@ -160,7 +160,7 @@ pulselight BLUESKULL
 	dontlightothers 1
 }
 
-object EquestriaBlueSkull
+object Equus_BlueSkull
 {
     frame BSKU { light BLUESKULL }
 }
@@ -177,7 +177,7 @@ pulselight YELLOWCARD
 	dontlightothers 1
 }
 
-object EquestriaYellowCard
+object Equus_YellowCard
 {
     frame YKEY { light YELLOWCARD }
 }
@@ -193,7 +193,7 @@ pulselight YELLOWSKULL
 	dontlightothers 1
 }
 
-object EquestriaYellowSkull
+object Equus_YellowSkull
 {
     frame YSKU { light YELLOWSKULL }
 }
@@ -210,7 +210,7 @@ pulselight REDCARD
 	dontlightothers 1
 }
 
-object EquestriaRedCard
+object Equus_RedCard
 {
     frame RKEY { light REDCARD }
 }
@@ -226,7 +226,7 @@ pulselight REDSKULL
 	dontlightothers 1
 }
 
-object EquestriaRedSkull
+object Equus_RedSkull
 {
     frame RSKU { light REDSKULL }
 }
