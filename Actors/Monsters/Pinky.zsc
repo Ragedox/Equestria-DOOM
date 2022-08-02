@@ -27,17 +27,15 @@ Class EquestriaPinky : DoomEquestriaMonster replaces Demon
 		Loop;
 		
 	See:
-		SARG # 0 A_JumpIfInTargetInventory("EquestriaBlurSphere", 1, "Idle");
-		SARG AABBCCDD 2 Fast A_Chase();
-		SARG # 0 A_JumpIfInTargetInventory("EquestriaBlurSphere", 1, "Idle");
+		SARG AABBCCDD 2 Fast
+		{
+			if(target.CheckInventory("PowerInvisibility", 1) && !CheckProximity("PlayerPawn", radius + 128, 1, CPXF_ANCESTOR | CPXF_SETTARGET | CPXF_CLOSEST) && !bSHADOW)
+				A_Wander();
+			else
+				A_Chase();
+		}
 		Loop;
 
-	Idle:
-		SARG # 0 A_ClearTarget();
-		SARG AABBCCDD 4 A_Wander();
-		SARG # 0 A_JumpIfInTargetInventory("EquestriaBlurSphere", 1, "Idle");
-		Goto See;
-	
 	Melee:
 		SARG EF 8 Fast A_FaceTarget();
 		SARG G 8 Fast A_SargAttack();
@@ -77,8 +75,10 @@ Class EquestriaSpectre : EquestriaPinky replaces Spectre
 	Default
 	{
 		+NOSPRITESHADOW
+		-CASTSPRITESHADOW
 		+SEEINVISIBLE
-
+		+SHADOW
+		
 		RenderStyle "Shaded";
 	
 		SeeSound "spectre/sight";
@@ -88,6 +88,7 @@ Class EquestriaSpectre : EquestriaPinky replaces Spectre
 		ActiveSound "spectre/active";
 	
 		HitObituary "$OB_SPECTREHIT";
+		Tag "$FN_SPECTRE";
 	}
 	States
 	{
