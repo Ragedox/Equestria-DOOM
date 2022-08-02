@@ -64,13 +64,10 @@ Class SpookySkull : TitleMapProps
 	States
 	{
 	Spawn:
-		TNT1 A -1;
+		TMAP D -1 Bright;
 		Stop;
 	}
 }
-
-Class AngrySkull : SpookySkull
-{}
 
 Class Cutscene_BridgeShooter : Actor
 {
