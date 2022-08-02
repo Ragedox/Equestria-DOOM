@@ -19,6 +19,7 @@ DoomEdNums
 	901 = "PoorImp"
 	902 = "GoatHorse"
 	903 = "TitleEvilEye"
+	904 = "SpookySkull"
 	
 	/* Monsters and Bosses*/
 
