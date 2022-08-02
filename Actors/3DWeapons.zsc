@@ -29,11 +29,11 @@ Class Equus_3DWeapon_Shotgun : Actor
 		else
 			A_SetRenderStyle(1.0, STYLE_Normal);
 			
-		A_Warp(AAPTR_MASTER,radius,0,master.height * 0.5, -80,
+		A_Warp(AAPTR_MASTER,radius,0,master.height * 0.5, -70,
 		WARPF_BOB | WARPF_INTERPOLATE | WARPF_COPYINTERPOLATION | WARPF_COPYPITCH | WARPF_NOCHECKPOSITION);
 		
 		roll = -master.pitch;
-		A_Face(master.target, 90, 180, -90, 0, FAF_MIDDLE);
+		A_Face(master.target, 90, 0, -90, FAF_MIDDLE);
 	}
 	States
 	{
