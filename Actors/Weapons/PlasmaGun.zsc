@@ -305,20 +305,12 @@ Class PlasmaSparkle : PuffSparkles
 	}
 }
 
-Class PlasmaExplosion : Actor
+Class PlasmaExplosion : Equus_BFGExtra
 {
 	Default
 	{
 		+ForceXYBillBoard +NoInteraction +Bright
 		RenderStyle "Add"; Translation "112:127=199:192", "224:231=192:196", "160:167=199:192";
-	}
-	States
-	{
-	Spawn:
-		BFE2 AB 0 A_SpawnProjectile("PlasmaSparkle", 0, 0, random (0, 359), CMF_AIMDIRECTION, random (0, 359));
-		BFE2 A 8 Bright A_QuakeEx(1,1,1,10,0,100,0,QF_SCALEDOWN);
-		BFE2 BCD 6 Bright;
-		Stop;
 	}
 }
 

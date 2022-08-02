@@ -1,4 +1,4 @@
-Class EquestriaBackpack : CustomInventory replaces Backpack
+Class Equus_Backpack : CustomInventory replaces Backpack
 {
 	Default
 	{	
@@ -24,7 +24,7 @@ Class EquestriaBackpack : CustomInventory replaces Backpack
 
 Class BackpackCheck : InvToken {}
 
-Class EquestriaComputerMap : Allmap replaces Allmap
+Class Equus_ComputerMap : Allmap replaces Allmap
 {	Default { +RANDOMIZE +BRIGHT }
 	States
 	{
@@ -43,7 +43,7 @@ Class EquestriaComputerMap : Allmap replaces Allmap
 
 //Invisibility Sphere
 
-Class EquestriaBlurSphere : PowerupGiver replaces BlurSphere
+Class Equus_BlurSphere : PowerupGiver replaces BlurSphere
 {
 	Default
 	{	
@@ -82,7 +82,7 @@ Class EquestriaBlurSphere : PowerupGiver replaces BlurSphere
 
 //Invulnerability Sphere
 
-Class EquestriaInvulSphere : PowerupGiver replaces InvulnerabilitySphere
+Class Equus_InvulSphere : PowerupGiver replaces InvulnerabilitySphere
 {
 	Default
 	{
@@ -118,7 +118,7 @@ Class EquestriaInvulSphere : PowerupGiver replaces InvulnerabilitySphere
 }
 
 //SoulSphere
-Class EquestriaSoulSphere : CustomInventory replaces Soulsphere
+Class Equus_SoulSphere : CustomInventory replaces Soulsphere
 {
 	Default
 	{
@@ -167,7 +167,7 @@ Class SoulSphereHealth : Health
 
 //MegaSphere
 
-Class EquestriaMegaSphere : CustomInventory replaces Megasphere
+Class Equus_MegaSphere : CustomInventory replaces Megasphere
 {
 	Default
 	{
@@ -193,16 +193,19 @@ Class EquestriaMegaSphere : CustomInventory replaces Megasphere
 		MEGA ABCDCBA 6 Bright;
 		Loop;
 	Pickup:
-		TNT1 A 0 A_GiveInventory("BlueArmorForMegasphere", 1);
-		TNT1 A 0 A_GiveInventory("MegasphereHealth", 1);
-		TNT1 A 0 A_SetBlend("Beige", 0.5, 16);
+		TNT1 A 0
+		{
+			A_GiveInventory("BlueArmorForMegasphere");
+			A_GiveInventory("MegasphereHealth");
+			A_SetBlend("Beige", 0.5, 16);
+		}
 		Stop;
 	}
 }
 
 //Berserk
 
-Class EquestriaBerserk : Berserk replaces Berserk
+Class Equus_Berserk : Berserk replaces Berserk
 {
 	Default
 	{
@@ -224,13 +227,13 @@ Class EquestriaBerserk : Berserk replaces Berserk
 			
 			HealThing(100, 0);
 			
-			A_GiveInventory("BerserkEffect");
+			A_GiveInventory("Equus_BerserkEffect");
 			A_GiveInventory("BerserkFist");
 			A_SelectWeapon("BerserkFist");
 			
 			A_StartSound("misc/p_pkup", CHAN_VOICE);
 			
-			A_QuakeEX(4, 4, 4, 20, 0, 100, "", QF_RELATIVE | QF_SCALEDOWN | QF_SCALEUP);
+			A_QuakeEx(4, 4, 4, 20, 0, 1, "", QF_RELATIVE | QF_SCALEDOWN | QF_SCALEUP,1,1,1,0,0,4,1);
 			
 			A_SetBlend("Red", 0.5, 160, "Orange");
 		}
@@ -238,19 +241,10 @@ Class EquestriaBerserk : Berserk replaces Berserk
 	}
 }
 
-Class BerserkEffect : PowerupGiver
+Class Equus_BerserkEffect : PowerStrength
 {
 	Default
-	{
-		Powerup.Duration 1;
-		Inventory.MaxAmount 0;
-		Powerup.Color "None";
-		Powerup.Type "PowerStrength";
-		
-		+INVENTORY.HUBPOWER;
-		+INVENTORY.ALWAYSPICKUP;
-		+INVENTORY.AUTOACTIVATE;
-	}
+	{ Powerup.Color "ffffff", 0.0; }
 }
 
 //Unholy Bible

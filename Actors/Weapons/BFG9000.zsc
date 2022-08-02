@@ -49,7 +49,7 @@ Class EquestriaBFG9K : EquestriaDoomWeapon replaces BFG9000
 		}
 		BFGG C 10 Bright
 		{
-			A_FireProjectile("EquestriaBFGBall", 0, 1, 0, -20);
+			A_FireProjectile("Equus_BFGBall", 0, 1, 0, -20);
 			A_StartSound("weapons/bfgshot");
 			A_WeaponOffset(0, 45, WOF_KEEPX | WOF_INTERPOLATE);
 			
@@ -122,7 +122,7 @@ Class EquestriaBFG9K : EquestriaDoomWeapon replaces BFG9000
 	}
 }
 
-Class EquestriaBFGBall : Actor replaces BFGBall
+Class Equus_BFGBall : Actor replaces BFGBall
 {
 	Default
 	{
@@ -186,7 +186,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			A_SetScale(2);
 			A_SpawnItemEx("BFGShockwave", 0, 0, 16,0,0,0,0, SXF_TRANSFERTRANSLATION);
 						
-			A_QuakeEx(9, 9, 9, 35, 0, 1024, "world/quake", QF_SCALEDOWN | QF_3D,1,1,1,radius*2.0,0,1,1);
+			A_QuakeEx(9, 9, 9, 35, 0, 1024, "world/quake", QF_SCALEDOWN | QF_3D,1,1,1,radius,0,2);
 			
 			for (int i = 0; i < 32; i++)
 			{
@@ -230,7 +230,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 			}
 		}
 		BFE1 BCD 2;
-		BFE1 E 8 A_BFGSpray("EquestriaBFGExtra", 40, 15, 360, 1024, 32, 0, BFGF_MISSILEORIGIN);
+		BFE1 E 8 A_BFGSpray("Equus_BFGExtra", 40, 15, 360, 1024, 32, 0, BFGF_MISSILEORIGIN);
 		BFE1 FGHIJK 3;
 		Stop;
 	}
@@ -245,7 +245,7 @@ Class EquestriaBFGBall : Actor replaces BFGBall
 	}
 }
 
-Class EquestriaBFGExtra : BFGExtra replaces BFGExtra
+Class Equus_BFGExtra : BFGExtra replaces BFGExtra
 {	Default { +ForceXYBillBoard }
 	States
 	{
